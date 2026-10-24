@@ -1,0 +1,19 @@
+{
+  "product": "site-yonetim",
+  "version": "1.7.0",
+  "date": "2026-10-24",
+  "notes": [
+    "Otomatik güncelleme: program yeni sürümleri merkezden kendiliğinden indirir, dijital imzayla doğrular ve tek tıkla kurar",
+    "Şifreli bulut yedek: veritabanı her gün sıkıştırılıp şifrelenerek Supabase'e yedeklenir (son 7 gün / 4 hafta / 12 ay)",
+    "Bilgisayar değişince ilk kurulum ekranından \"Buluttaki yedekten geri yükle\"",
+    "Merkezi mobil uygulama: Netlify'a paket yüklemek gerekmez, mobil uygulama da kendiliğinden güncellenir",
+    "Önemli: Supabase SQL Editor'de yeni kurulum.sql bir kez çalıştırılmalıdır (bulut yedek tabloları)"
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.7.0/SiteYonetim-Kurulum-1.7.0.exe",
+    "sha512": "/yRqZ+NmwCcTq52GMTIe8I5xrK+RkVXDogNr3r7mgaFjkpU7NEjOCwJ3F7J54PVCH7D7P91xTeIuMDRvLs8pVQ==",
+    "size": 78736469
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.7.0",
+  "sig": "AX94VzS/fU7i5OWCYMV3QxTWrclQZS5nQxDkTVpVEDyCDrEs2E50HRWjOcTK5P9j933fs3A7UTzqEjvu2EfYBQ=="
+}

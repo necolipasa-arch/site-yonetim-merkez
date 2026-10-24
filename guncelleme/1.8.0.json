@@ -1,0 +1,19 @@
+{
+  "product": "site-yonetim",
+  "version": "1.8.0",
+  "date": "2026-10-24",
+  "notes": [
+    "Anlık bildirimler: duyuru, kargo, misafir girişi, talep durumu, rezervasyon onay/ret ve yeni borç bildirimleri sakinin telefonuna düşer (her olay Ayarlar → Bildirimler'den açılıp kapatılabilir) + yönetimden elle bildirim gönderme",
+    "QR misafir kartı: sakin mobilde misafir kartı oluşturup WhatsApp ile gönderir; güvenlik kartı USB okuyucu, kamera veya kodu yazarak okutur (terminallerde de çalışır)",
+    "KVKK: aydınlatma metni ve kayıtta onay, saklama süreleri ve otomatik imha (ziyaretçi/kargo 2 yıl, taşınan sakin 2 yıl, mali kayıtlar 10 yıl), kişisel veri dökümü ve silme, mobilden KVKK başvurusu",
+    "Mobil uygulama 1.4.0: misafir kartı, bildirim tercihleri, Kişisel Verilerim (verilerimi indir, başvuru, hesabımı sil)",
+    "Önemli: Supabase SQL Editor'de yeni kurulum.sql bir kez çalıştırılmalıdır (bildirim, QR kart ve KVKK fonksiyonları)"
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.8.0/SiteYonetim-Kurulum-1.8.0.exe",
+    "sha512": "lkWQ2gihQB6HlNwWEPbcuHmjMTCgdLZtzmfKnh/Bl8F1oj4vcFAH/GGrL0TiS3zVLOvPmkO1gkoHzEvO9GurzA==",
+    "size": 78813576
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.8.0",
+  "sig": "/aVdfVIsTqfmP0vFpZwfxOU4AxOGsuOzF/HcfHJF8FMsTBxNxJNq5gCik/T8RjSFdaaFVHGCjB/Nfj2AUGj5DA=="
+}

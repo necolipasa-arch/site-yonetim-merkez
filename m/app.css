@@ -195,3 +195,20 @@ a { color: var(--primary); text-decoration: none; }
 .diag.ok { background: #e6f7ef; color: #0d5c40; } .diag.bad { background: #fdecea; color: #8a2417; }
 .diag-tips { margin-top: 14px; font-size: 13.5px; } .diag-tips summary { cursor: pointer; color: var(--primary); font-weight: 600; }
 .diag-tips ul { padding-left: 18px; margin: 8px 0 10px; } .diag-tips li { margin-bottom: 6px; } .diag-tips a { color: var(--primary); word-break: break-all; }
+
+/* ---- v1.4.0: KVKK, bildirimler, QR misafir kartı ---- */
+.txt-red { color: #d6402a; }
+.kvkk-chk { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.45; margin: 0 0 14px; color: var(--muted); }
+.kvkk-chk input { width: 20px; height: 20px; flex: 0 0 20px; margin-top: 1px; accent-color: var(--primary, #4f6bed); }
+.kvkk-chk a { color: var(--primary, #4f6bed); font-weight: 600; }
+.kvkk-text { white-space: pre-wrap; font-size: 13px; line-height: 1.55; max-height: 55vh; overflow: auto; background: #f6f7fb; border-radius: 12px; padding: 12px 14px; margin-top: 8px; }
+.prefs { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.pref { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 14px; border-bottom: 1px solid var(--line); font-size: 14px; cursor: pointer; position: relative; }
+.pref:last-child { border-bottom: 0; }
+.pref input { position: absolute; opacity: 0; pointer-events: none; }
+.pref i { width: 44px; height: 26px; border-radius: 13px; background: #cfd4e0; position: relative; flex: 0 0 44px; transition: background .15s; }
+.pref i::after { content: ''; position: absolute; left: 3px; top: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: transform .15s; }
+.pref input:checked + i { background: #22b07d; } .pref input:checked + i::after { transform: translateX(18px); }
+.pass-img { width: 100%; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.12); display: block; }
+.list.flat { box-shadow: none; margin: 0 -16px -6px; border-radius: 0; }
+.list.flat .li:last-child { border-bottom: 0; }

@@ -1,6 +1,6 @@
 // Site Yönetim Mobil — çevrim dışı önbellek
-const VERSION = 'sym-v1.3.0-202610241008';
-const SHELL = ['./', 'index.html', 'app.css', 'app.js', 'config.js', 'manifest.webmanifest',
+const VERSION = 'sym-v1.4.0-202610241124';
+const SHELL = ['./', 'index.html', 'app.css', 'app.js', 'qrcode.js', 'config.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-32.png'];
 
 self.addEventListener('install', (e) => {
@@ -20,3 +20,24 @@ self.addEventListener('fetch', (e) => {
     }).catch(() => caches.match(req, { ignoreSearch: true }).then(r => r || caches.match('index.html')))
   );
 });
+
+// ---- v1.4.0: anlık bildirimler (site yönetimi programından gönderilir, uçtan uca şifreli) ----
+self.addEventListener('push', (e) => {
+  let d = {};
+  try { d = e.data ? e.data.json() : {}; } catch { d = { b: e.data ? e.data.text() : '' }; }
+  const title = d.t || 'Site Yönetim';
+  e.waitUntil(self.registration.showNotification(title, {
+    body: d.b || '', icon: 'icons/icon-192.png', badge: 'icons/favicon-32.png', tag: d.tag || undefined,
+    renotify: !!d.tag, data: { v: d.v || 'home' }, timestamp: d.ts || Date.now()
+  }));
+});
+self.addEventListener('notificationclick', (e) => {
+  e.notification.close();
+  const v = (e.notification.data && e.notification.data.v) || 'home';
+  e.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
+    for (const c of list) { if ('focus' in c) { c.postMessage({ sym: 'go', v }); return c.focus(); } }
+    return self.clients.openWindow(self.registration.scope + '#' + v);
+  }));
+});
+// Tarayıcı aboneliği kendiliğinden yenilerse uygulama bir sonraki açılışta yeniden kaydeder
+self.addEventListener('pushsubscriptionchange', () => { });

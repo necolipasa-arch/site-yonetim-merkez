@@ -5,7 +5,7 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.3.0';
+const APP_VERSION = '1.4.0';
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -103,6 +103,10 @@ const P = {
   download: 'M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z',
   lock: 'M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z',
   building: 'M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z',
+  bell: 'M12 22c1.1 0 2-.9 2-2h-4a2 2 0 002 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4a1.5 1.5 0 00-3 0v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z',
+  shield: 'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z',
+  qr: 'M3 11h8V3H3v8zm2-6h4v4H5V5zM3 21h8v-8H3v8zm2-6h4v4H5v-4zM13 3v8h8V3h-8zm6 6h-4V5h4v4zM13 13h2v2h-2zM15 15h2v2h-2zM13 17h2v2h-2zM17 17h2v2h-2zM19 19h2v2h-2zM15 19h2v2h-2zM17 13h2v2h-2zM19 15h2v2h-2z',
+  share: 'M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z',
   clock: 'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z'
 };
 const blk = (b) => !b ? '' : /blok/i.test(b) ? b : b + ' Blok';
@@ -189,7 +193,7 @@ const TABS = [
 ];
 const SUB = {
   ann: { title: 'Duyurular', parent: 'more' }, cargo: { title: 'Kargolarım', parent: 'more' }, visitors: { title: 'Ziyaretçi Bildirimi', parent: 'more' },
-  meetings: { title: 'Toplantılar & Kararlar', parent: 'more' }, contacts: { title: 'Önemli Telefonlar', parent: 'more' }, profile: { title: 'Profil & Güvenlik', parent: 'more' }
+  meetings: { title: 'Toplantılar & Kararlar', parent: 'more' }, contacts: { title: 'Önemli Telefonlar', parent: 'more' }, profile: { title: 'Profil & Ayarlar', parent: 'more' }
 };
 
 async function refresh(silent) {
@@ -200,6 +204,7 @@ async function refresh(silent) {
     S.data = d; S.at = new Date().toISOString(); S.offline = false;
     try { localStorage.setItem('sym_cache', JSON.stringify({ d, at: S.at })); } catch { }
     render();
+    kvkkCheck(); Push.heal();
     if (!silent) toast('Bilgiler güncellendi');
   } catch (e) {
     if (e.offline) { S.offline = true; render(); if (!silent) toast(e.message, 'error'); }
@@ -386,6 +391,7 @@ function authView() {
           <div class="fld"><label>Şifre (Tekrar)</label><input name="password2" type="password" autocomplete="new-password" minlength="6" required></div>
         </div>
         <p class="muted small" style="margin:-4px 0 14px">Şifre en az 6 karakter olmalı. Bundan sonra telefon numaranız ve bu şifreyle giriş yapacaksınız.</p>
+        <label class="kvkk-chk"><input type="checkbox" name="kvkk" required> <span><a href="#" data-kvkkread>Kişisel Verilerin Korunması Aydınlatma Metni</a>'ni okudum; kişisel verilerimin site yönetimi tarafından bu metinde açıklanan şekilde işleneceği konusunda bilgilendirildim.</span></label>
         <button class="btn primary block" type="submit">Kayıt Ol ve Başla</button>
       </form>`}
     </div>
@@ -417,9 +423,13 @@ function bindAuth() {
       if (rf.code.value.replace(/-/g, '').length !== 8) return toast('Davet kodu 8 karakter olmalıdır.', 'error');
       if (rf.password.value.length < 6) return toast('Şifre en az 6 karakter olmalıdır.', 'error');
       if (rf.password.value !== rf.password2.value) return toast('Şifreler eşleşmiyor.', 'error');
+      if (!rf.kvkk.checked) return toast('Devam etmek için aydınlatma metnini okuduğunuzu onaylayın.', 'error');
       busy(rf, true, 'Kaydediliyor…');
       try {
-        const r = await rpc('member_register', { p_code: rf.code.value, p_phone: rf.phone.value, p_password: rf.password.value });
+        const kv = await kvkkForCode(rf.code.value);
+        const args = { p_code: rf.code.value, p_phone: rf.phone.value, p_password: rf.password.value };
+        if (kv && kv.version) args.p_kvkk = kv.version;   // eski bulut kurulumunda (1.7) bu alan yok
+        const r = await rpc('member_register', args);
         localStorage.setItem('sym_phone', rf.phone.value);
         clearInvite();
         await afterLogin(r, true);
@@ -427,6 +437,231 @@ function bindAuth() {
     };
   }
 }
+// ---------------- KVKK ----------------
+// Davet koduna ait aydınlatma metni (davet bilgisiyle gelir; kod elle yazıldıysa sorulur)
+async function kvkkForCode(code) {
+  code = String(code || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  if (S.invite && S.invite.info && S.invite.code === code) return S.invite.info.kvkk || null;
+  if (S.kvkkCache && S.kvkkCache.code === code) return S.kvkkCache.kv;
+  if (code.length !== 8) return null;
+  try { const i = await rpc('member_invite_info', { p_code: code }); S.kvkkCache = { code, kv: i.kvkk || null }; return i.kvkk || null; } catch { return null; }
+}
+function kvkkDefaultText(site) {
+  return `KİŞİSEL VERİLERİN KORUNMASI HAKKINDA AYDINLATMA METNİ\n\n${site || 'Site'} yönetimi, 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında veri sorumlusudur. Adınız, telefonunuz, bağımsız bölüm bilginiz, aidat/ödeme kayıtlarınız, talep, rezervasyon, ziyaretçi ve kargo kayıtlarınız; 634 sayılı Kat Mülkiyeti Kanunu kapsamındaki yönetim hizmetlerinin yürütülmesi ve site güvenliğinin sağlanması amacıyla işlenir. Bu uygulamadaki veriler bulut hizmet sağlayıcısında saklanır. KVKK m.11 kapsamındaki haklarınız için site yönetimine başvurabilirsiniz. Ayrıntılı metni site yönetiminden isteyebilirsiniz.`;
+}
+function kvkkSheet(text, opts = {}) {
+  Sheet.open(`<h3>${ic('shield')} Aydınlatma Metni</h3>
+    <div class="kvkk-text">${esc(text || kvkkDefaultText(CFG.siteName))}</div>
+    ${opts.ack ? `<button class="btn primary block" style="margin-top:12px" data-kvkkok>Okudum, bilgilendirildim</button><button class="btn block" style="margin-top:8px" data-close>Daha sonra</button>`
+      : '<button class="btn block" style="margin-top:12px" data-close>Kapat</button>'}`, (el) => {
+    const b = el.querySelector('[data-kvkkok]');
+    if (b) b.onclick = async () => { b.disabled = true; try { await opts.ack(); Sheet.close(); } catch (e) { toast(e.message, 'error'); b.disabled = false; } };
+  });
+}
+// Metin güncellendiyse (veya 1.4 öncesi kayıtsa) bir kez yeniden bilgilendirme göster
+function kvkkCheck() {
+  const d = S.data; if (!d || !d.member || d.push === undefined) return;   // eski bulut kurulumu
+  const ver = d.site && d.site.kvkk_version; if (!ver || d.member.kvkk_version === ver) return;
+  if (S.kvkkAsked === ver || $('#sheet-root .sheet')) return;
+  S.kvkkAsked = ver;
+  setTimeout(() => {
+    if ($('#sheet-root .sheet')) return;
+    kvkkSheet(d.site.kvkk_text, { ack: async () => { await call('member_kvkk_ack', { p_version: ver }); d.member.kvkk_version = ver; toast('Teşekkürler ✓'); } });
+    const h = $('#sheet-root .sheet h3'); if (h) h.insertAdjacentHTML('afterend', `<p class="muted small">${d.member.kvkk_version ? 'Site yönetimi aydınlatma metnini güncelledi.' : 'Site yönetimi kişisel verilerin korunmasına ilişkin aydınlatma metnini yayınladı.'} Lütfen okuyun.</p>`);
+  }, 900);
+}
+
+// ---------------- anlık bildirimler ----------------
+const PUSH_PREFS = [['ann', 'Duyurular'], ['cargo', 'Kargo geldi'], ['guest', 'Ziyaretçim / misafirim geldi'], ['req', 'Talep durumu değişti'], ['resv', 'Rezervasyon onay / ret'], ['accrual', 'Yeni aidat / borç']];
+const Push = {
+  supported() { return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window; },
+  siteKey() { return (S.data && S.data.site && S.data.site.push_vapid_public) || ''; },
+  async sub() { if (!this.supported()) return null; const r = await navigator.serviceWorker.getRegistration(); return r ? r.pushManager.getSubscription() : null; },
+  key(b64) { const p = '='.repeat((4 - b64.length % 4) % 4); const raw = atob((b64 + p).replace(/-/g, '+').replace(/_/g, '/')); return Uint8Array.from(raw, c => c.charCodeAt(0)); },
+  device() { const u = navigator.userAgent; return (/iPhone|iPad/.test(u) ? 'iPhone/iPad' : /Android/.test(u) ? 'Android' : /Windows/.test(u) ? 'Windows' : /Mac/.test(u) ? 'Mac' : 'Cihaz') + (/Firefox/.test(u) ? ' Firefox' : /Edg/.test(u) ? ' Edge' : /SamsungBrowser/.test(u) ? ' Samsung' : /Chrome|CriOS/.test(u) ? ' Chrome' : /Safari/.test(u) ? ' Safari' : ''); },
+  mine(sub) { return sub && (S.data.push || []).find(p => p.endpoint === sub.endpoint); },
+  async enable(prefs) {
+    const key = this.siteKey();
+    if (!key) throw new Error('Site yönetimi anlık bildirimleri henüz açmadı.');
+    const perm = await Notification.requestPermission();
+    if (perm !== 'granted') throw new Error(perm === 'denied' ? 'Bildirim izni reddedilmiş. Telefonun Ayarlar → Bildirimler bölümünden bu uygulamaya izin verin.' : 'Bildirim izni verilmedi.');
+    const reg = await navigator.serviceWorker.ready;
+    let sub = await reg.pushManager.getSubscription();
+    if (sub && localStorage.getItem('sym_push_key') !== key) { await sub.unsubscribe().catch(() => { }); sub = null; }
+    if (!sub) sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: this.key(key) });
+    await this.save(sub, prefs || {});
+    localStorage.setItem('sym_push_key', key); localStorage.setItem('sym_push_on', '1');
+  },
+  async save(sub, prefs) {
+    const j = sub.toJSON();
+    await call('member_push_subscribe', { p_endpoint: j.endpoint, p_p256dh: j.keys.p256dh, p_auth: j.keys.auth, p_prefs: prefs, p_ua: this.device() });
+    const list = S.data.push || (S.data.push = []); const cur = list.find(p => p.endpoint === j.endpoint);
+    if (cur) cur.prefs = prefs; else list.push({ endpoint: j.endpoint, prefs });
+  },
+  async disable(silent) {
+    localStorage.removeItem('sym_push_on');
+    const sub = await this.sub().catch(() => null);
+    if (!sub) return;
+    try { await rpc('member_push_unsubscribe', { p_token: S.token, p_endpoint: sub.endpoint }); } catch { }
+    if (S.data && S.data.push) S.data.push = S.data.push.filter(p => p.endpoint !== sub.endpoint);
+    await sub.unsubscribe().catch(() => { });
+    if (!silent) toast('Bu cihazda bildirimler kapatıldı.');
+  },
+  // Abonelik sunucuda silinmişse (ör. uzun süre kapalı kaldı) sessizce yeniden kaydet
+  async heal() {
+    try {
+      if (!this.supported() || localStorage.getItem('sym_push_on') !== '1' || Notification.permission !== 'granted' || !this.siteKey() || S.data.push === undefined) return;
+      const sub = await this.sub();
+      if (!sub || localStorage.getItem('sym_push_key') !== this.siteKey()) { await this.enable((this.mine(sub) || {}).prefs || {}); return; }
+      if (!this.mine(sub)) await this.save(sub, {});
+    } catch (e) { console.warn('bildirim', e); }
+  }
+};
+async function pushCard(box) {
+  if (!box) return;
+  const d = S.data, key = Push.siteKey();
+  const head = `<div class="card-h"><h3>${ic('bell')} Bildirimler</h3></div>`;
+  if (d.push === undefined || !key) { box.innerHTML = head + `<p class="muted small">Site yönetimi anlık bildirimleri henüz açmadı. Açıldığında duyuru, kargo ve ziyaretçi bildirimlerini telefonunuza alabileceksiniz.</p>`; return; }
+  if (!Push.supported()) {
+    box.innerHTML = head + (isIOS() && !isStandalone()
+      ? `<p class="small">iPhone'da bildirim alabilmek için uygulamayı önce <b>ana ekrana ekleyin</b> ve ana ekrandaki simgeden açın (iOS 16.4 ve üzeri).</p><button class="btn block" data-act="install">Nasıl eklenir?</button>`
+      : `<p class="muted small">Bu tarayıcı anlık bildirimleri desteklemiyor. Android'de Chrome, iPhone'da ana ekrana eklenmiş uygulama kullanın.</p>`);
+    return;
+  }
+  const sub = await Push.sub().catch(() => null), mine = Push.mine(sub);
+  const on = !!(sub && mine && Notification.permission === 'granted');
+  const prefs = (mine && mine.prefs) || {};
+  box.innerHTML = head + (on
+    ? `<p class="small" style="margin-bottom:8px">✓ Bu cihazda bildirimler <b>açık</b>. Almak istediklerinizi seçin:</p>
+       <div class="prefs">${PUSH_PREFS.map(([k, l]) => `<label class="pref"><span>${l}</span><input type="checkbox" data-pref="${k}" ${prefs[k] === false ? '' : 'checked'}><i></i></label>`).join('')}</div>
+       <p class="muted small" style="margin-top:6px">Site yönetiminin doğrudan gönderdiği önemli mesajlar her zaman iletilir.</p>
+       <button class="btn block" style="margin-top:10px" data-pushoff>Bu cihazda bildirimleri kapat</button>`
+    : `<p class="small">Duyuru, kargo, misafir girişi, talep ve rezervasyon gelişmelerinden <b>anında</b> haberdar olun. Uygulama kapalıyken de bildirim gelir.</p>
+       ${Notification.permission === 'denied' ? '<p class="small txt-red">Bildirim izni reddedilmiş. Telefonun Ayarlar → Bildirimler bölümünden bu uygulamaya izin verip tekrar deneyin.</p>' : ''}
+       <button class="btn primary block" style="margin-top:10px" data-pushon>${ic('bell')} Bildirimleri Aç</button>`);
+  const onBtn = box.querySelector('[data-pushon]');
+  if (onBtn) onBtn.onclick = async () => { onBtn.disabled = true; try { await Push.enable({}); toast('Bildirimler açıldı ✓'); } catch (e) { toast(e.message, 'error'); } pushCard(box); };
+  const offBtn = box.querySelector('[data-pushoff]');
+  if (offBtn) offBtn.onclick = async () => { offBtn.disabled = true; await Push.disable(); pushCard(box); };
+  box.querySelectorAll('[data-pref]').forEach(c => c.onchange = async () => {
+    const p = {}; box.querySelectorAll('[data-pref]').forEach(x => { if (!x.checked) p[x.dataset.pref] = false; });
+    try { await Push.save(sub, p); toast('Kaydedildi'); } catch (e) { toast(e.message, 'error'); c.checked = !c.checked; }
+  });
+}
+
+// ---------------- QR misafir kartı ----------------
+const fmtQr = (t) => t ? t.slice(0, 5) + '-' + t.slice(5) : '';
+function passInfo(v) {
+  const from = String(v.expected_date || '').slice(0, 10), to = String(v.valid_until || v.expected_date || '').slice(0, 10);
+  const max = v.max_uses == null ? 1 : Number(v.max_uses), used = Number(v.used_count || 0);
+  const expired = to < today(), spent = max > 0 && used >= max;
+  return { from, to, max, used, expired, spent, valid: v.status !== 'İptal' && !expired && !spent,
+    range: from === to ? fmt.date(from) : `${fmt.dshort(from)} – ${fmt.date(to)}`, uses: max === 0 ? 'Sınırsız giriş' : max === 1 ? 'Tek giriş' : `${max} giriş` };
+}
+function drawPass(v) {
+  const W = 900, H = 1300, c = document.createElement('canvas'); c.width = W; c.height = H;
+  const x = c.getContext('2d'), pi = passInfo(v), site = (S.data.site && S.data.site.site_name) || CFG.siteName || 'Site';
+  const u = S.data.unit || {};
+  x.fillStyle = '#fff'; x.fillRect(0, 0, W, H);
+  const g = x.createLinearGradient(0, 0, W, 0); g.addColorStop(0, '#4f6bed'); g.addColorStop(1, '#6741d9');
+  x.fillStyle = g; x.fillRect(0, 0, W, 230);
+  x.fillStyle = '#fff'; x.textAlign = 'center';
+  x.font = 'bold 46px system-ui, -apple-system, Segoe UI, Roboto, sans-serif'; x.fillText(site.slice(0, 32), W / 2, 100);
+  x.font = '600 34px system-ui, -apple-system, Segoe UI, Roboto, sans-serif'; x.fillText('MİSAFİR GİRİŞ KARTI', W / 2, 165);
+  x.fillStyle = '#1d2433'; x.font = 'bold 54px system-ui, -apple-system, Segoe UI, Roboto, sans-serif'; x.fillText(String(v.guest_name || '').slice(0, 28), W / 2, 320);
+  x.fillStyle = '#5b6478'; x.font = '32px system-ui, -apple-system, Segoe UI, Roboto, sans-serif';
+  x.fillText(`${unitName(u)}  ·  ${pi.range}`, W / 2, 375);
+  // QR
+  const q = qrcode(0, 'M'); q.addData('SYG' + v.qr_token); q.make();
+  const n = q.getModuleCount(), size = 600, cell = Math.floor(size / (n + 8)), qs = cell * (n + 8), ox = (W - qs) / 2, oy = 420;
+  x.fillStyle = '#fff'; x.fillRect(ox, oy, qs, qs); x.fillStyle = '#000';
+  for (let r = 0; r < n; r++) for (let k = 0; k < n; k++) if (q.isDark(r, k)) x.fillRect(ox + (k + 4) * cell, oy + (r + 4) * cell, cell, cell);
+  x.fillStyle = '#1d2433'; x.font = 'bold 60px ui-monospace, Menlo, Consolas, monospace'; x.fillText(fmtQr(v.qr_token), W / 2, oy + qs + 80);
+  x.fillStyle = '#5b6478'; x.font = '30px system-ui, -apple-system, Segoe UI, Roboto, sans-serif';
+  x.fillText(`${pi.uses}${v.plate ? '  ·  Plaka: ' + v.plate : ''}`, W / 2, oy + qs + 135);
+  x.fillStyle = '#eef1fb'; x.fillRect(0, H - 130, W, 130);
+  x.fillStyle = '#3d56d1'; x.font = '600 30px system-ui, -apple-system, Segoe UI, Roboto, sans-serif';
+  x.fillText('Kapıda güvenlik görevlisine bu kartı gösterin.', W / 2, H - 62);
+  return c;
+}
+function passText(v) {
+  const pi = passInfo(v), site = (S.data.site && S.data.site.site_name) || CFG.siteName || 'Site';
+  return `${site} misafir giriş kartınız 🎫\nAd: ${v.guest_name}\nGeçerlilik: ${pi.range} (${pi.uses.toLowerCase()})\nGiriş kodu: ${fmtQr(v.qr_token)}\nKapıda güvenliğe QR kodu veya bu kodu gösterin.`;
+}
+function passSheet(v, isNew) {
+  const pi = passInfo(v), c = drawPass(v), url = c.toDataURL('image/png');
+  Sheet.open(`<h3>${ic('qr')} Misafir Kartı</h3>
+    ${isNew ? `<p class="small" style="margin-bottom:8px">Kart hazır! Misafirinize <b>WhatsApp</b> ile gönderin; kapıda QR kodu okutması yeterli.</p>` : ''}
+    ${!pi.valid ? `<div class="alert orange" style="margin-bottom:10px">${ic('alert')}<div><b>${v.status === 'İptal' ? 'Bu kart iptal edildi' : pi.spent ? 'Bu kart kullanıldı' : 'Bu kartın süresi doldu'}</b></div></div>` : ''}
+    <img class="pass-img" src="${url}" alt="Misafir kartı">
+    <button class="btn primary block" style="margin-top:12px" data-passshare>${ic('share')} WhatsApp ile Gönder / Paylaş</button>
+    <a class="btn block" style="margin-top:8px" href="${url}" download="misafir-karti-${esc(v.qr_token)}.png">${ic('download')} Resmi Kaydet</a>
+    <button class="btn block" style="margin-top:8px" data-close>Kapat</button>`, (el) => {
+    el.querySelector('[data-passshare]').onclick = async () => {
+      const text = passText(v);
+      try {
+        const blob = await new Promise(r => c.toBlob(r, 'image/png'));
+        const file = new File([blob], `misafir-karti-${v.qr_token}.png`, { type: 'image/png' });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) { await navigator.share({ files: [file], text, title: 'Misafir kartı' }); return; }
+      } catch (e) { if (e && e.name === 'AbortError') return; }
+      window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+    };
+  });
+}
+
+// ---------------- kişisel verilerim ----------------
+function privacyCard() {
+  return `<div class="card"><div class="card-h"><h3>${ic('shield')} Kişisel Verilerim (KVKK)</h3></div>
+    <div class="list flat">
+      <div class="li" data-act="kvkk-read"><div class="li-b"><b>Aydınlatma Metni</b><small>${S.data.member && S.data.member.kvkk_at ? 'Onay: ' + esc(fmt.dt(localTs(S.data.member.kvkk_at))) : 'Verilerinizin nasıl işlendiği'}</small></div>${ic('chev', 'chev')}</div>
+      <div class="li" data-act="kvkk-dl"><div class="li-b"><b>Verilerimi İndir</b><small>Uygulamadaki bilgilerinizin kopyası (JSON)</small></div>${ic('chev', 'chev')}</div>
+      <div class="li" data-act="kvkk-req"><div class="li-b"><b>KVKK Başvurusu</b><small>Bilgi, düzeltme, silme talebi (KVKK m.11)</small></div>${ic('chev', 'chev')}</div>
+      <div class="li" data-act="kvkk-del"><div class="li-b"><b class="txt-red">Hesabımı Sil</b><small>Mobil uygulama hesabınız kalıcı olarak silinir</small></div>${ic('chev', 'chev')}</div>
+    </div></div>`;
+}
+function kvkkDownload() {
+  const d = S.data;
+  const out = { aciklama: 'Site Yönetim Mobil — kişisel veri kopyası', tarih: new Date().toISOString(), site: (d.site || {}).site_name, kisi: d.member, daire: d.unit, hesap_hareketleri: d.ledger, talepler: d.requests, rezervasyonlar: d.reservations, ziyaretciler: d.visitors, kargolar: d.cargo, bildirim_cihazlari: (d.push || []).map(p => ({ tercihler: p.prefs })) };
+  const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'kisisel-verilerim.json'; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  toast('Dosya indirildi. Yönetimdeki tüm kayıtlarınızın dökümü için KVKK Başvurusu yapabilirsiniz.');
+}
+function kvkkRequestSheet() {
+  Sheet.open(`<h3>KVKK Başvurusu</h3><form id="kvkkForm">
+    <div class="fld"><label>Talebiniz</label><select name="t">
+      <option>Hakkımda işlenen verilerin dökümünü istiyorum</option><option>Verilerimin düzeltilmesini istiyorum</option>
+      <option>Verilerimin silinmesini istiyorum</option><option>Verilerimin kimlere aktarıldığını öğrenmek istiyorum</option><option>Diğer</option></select></div>
+    <div class="fld"><label>Açıklama</label><textarea name="d" rows="4" maxlength="1000" placeholder="Talebinizi kısaca açıklayın"></textarea></div>
+    <p class="muted small">Başvurunuz site yönetimine iletilir ve en geç 30 gün içinde yanıtlanır. Durumunu <b>Talepler</b> bölümünden takip edebilirsiniz.</p>
+    <button class="btn primary block" type="submit">Başvuruyu Gönder</button></form>`, (sh) => {
+    const f = sh.querySelector('#kvkkForm');
+    f.onsubmit = async (e) => {
+      e.preventDefault(); const b = f.querySelector('[type=submit]'); b.disabled = true;
+      try { await call('member_new_request', { p_title: 'KVKK: ' + f.t.value, p_category: 'KVKK Başvurusu', p_location: '', p_description: f.d.value || f.t.value, p_priority: 'Normal' }); Sheet.close(); toast('Başvurunuz yönetime iletildi ✓'); refresh(true); }
+      catch (err) { toast(err.message, 'error'); b.disabled = false; }
+    };
+  });
+}
+function deleteAccountSheet() {
+  Sheet.open(`<h3 class="txt-red">Hesabımı Sil</h3>
+    <p class="small">Mobil uygulama hesabınız, oturumlarınız ve bildirim kayıtlarınız <b>kalıcı olarak silinir</b>. Aidat, ödeme gibi kayıtlar yasal saklama süresi boyunca site yönetiminde kalır.</p>
+    <p class="muted small" style="margin-top:6px">Tekrar kullanmak isterseniz yönetimden yeni davet kodu istemeniz gerekir.</p>
+    <form id="delForm"><div class="fld" style="margin-top:10px"><label>Onay için şifreniz</label><input name="p" type="password" autocomplete="current-password" required></div>
+    <button class="btn danger block" type="submit">Hesabımı Kalıcı Olarak Sil</button></form>
+    <button class="btn block" style="margin-top:8px" data-close>Vazgeç</button>`, (sh) => {
+    const f = sh.querySelector('#delForm');
+    f.onsubmit = async (e) => {
+      e.preventDefault(); const b = f.querySelector('[type=submit]'); b.disabled = true;
+      try {
+        await Push.disable(true).catch(() => { });
+        await call('member_delete_self', { p_password: f.p.value });
+        Sheet.close(); clearSession(); localStorage.removeItem('sym_phone'); render(); toast('Hesabınız silindi.');
+      } catch (err) { toast(err.message, 'error'); b.disabled = false; }
+    };
+  });
+}
+
 async function afterLogin(r, isNew) {
   S.token = r.token; localStorage.setItem('sym_token', r.token);
   S.view = 'home'; history.replaceState({ view: 'home' }, '', '#home');
@@ -436,6 +671,7 @@ async function afterLogin(r, isNew) {
   if (isNew) setTimeout(maybeInstallTip, 1500);
 }
 async function logout() {
+  await Push.disable(true).catch(() => { });   // bu cihaz başka kişiye geçerse bildirim gitmesin
   try { await rpc('member_logout', { p_token: S.token }); } catch { }
   clearSession(); render();
 }
@@ -673,7 +909,7 @@ function moreView() {
       ${li('data-act="pay"', 'cash', 'green', 'Ödeme Bilgileri', 'IBAN ve açıklama')}
     </div>
     <div class="list">
-      ${li('data-go="profile"', 'lock', 'blue', 'Profil & Şifre', 'Şifre değiştir')}
+      ${li('data-go="profile"', 'lock', 'blue', 'Profil, Bildirimler & Gizlilik', 'Şifre, anlık bildirimler, kişisel veriler')}
       ${!isStandalone() ? li('data-act="install"', 'download', 'purple', 'Uygulamayı Ana Ekrana Ekle', 'Tek dokunuşla açın') : ''}
       ${li('data-act="logout"', 'logout', 'red', 'Çıkış Yap', '')}
     </div>
@@ -703,29 +939,45 @@ function cargoView() {
 }
 function visitorsView() {
   const list = S.data.visitors || [];
-  return `<button class="btn primary block" data-act="newvis" style="margin-bottom:10px">${ic('plus')} Misafir / Ziyaretçi Bildir</button>
-    <p class="muted small" style="margin:0 4px 14px">Bildirdiğiniz misafirler güvenlik/kapı görevlisinin ekranına düşer; girişte bekletilmezler.</p>
-    ${list.length ? list.map(v => `<div class="item"><div class="item-h"><b>${esc(v.guest_name)}</b>${badge(v.status)}</div>
-      <div class="meta">${esc(fmt.rel(v.expected_date))}${v.plate ? ' · 🚗 ' + esc(v.plate) : ''}${v.phone ? ' · ' + esc(v.phone) : ''}</div>${v.notes ? `<p>${esc(v.notes)}</p>` : ''}
-      ${v.status === 'Bekleniyor' ? `<div class="acts"><button class="btn sm danger" data-cancel-vis="${v.id}">İptal Et</button></div>` : ''}</div>`).join('')
-      : `<div class="empty">${ic('guest')}<p>Bildirilmiş ziyaretçi yok.</p></div>`}`;
+  const qr = S.data.push !== undefined;
+  const row = (v) => {
+    const pi = v.qr_token ? passInfo(v) : null;
+    const st = pi ? (v.status === 'İptal' ? badge('İptal') : pi.expired ? badge('Süresi doldu', 'gray') : pi.spent ? badge('Kullanıldı', 'green') : v.status === 'Geldi' ? badge('Geldi · geçerli', 'green') : badge('Geçerli', 'blue')) : badge(v.status);
+    return `<div class="item"><div class="item-h"><b>${esc(v.guest_name)}</b>${st}</div>
+      <div class="meta">${pi ? '🎫 ' + esc(pi.range) + ' · ' + esc(pi.uses) + (pi.max !== 1 && pi.used ? ` (${pi.used} giriş)` : '') : esc(fmt.rel(v.expected_date))}${v.plate ? ' · 🚗 ' + esc(v.plate) : ''}${v.phone ? ' · ' + esc(v.phone) : ''}</div>${v.notes ? `<p>${esc(v.notes)}</p>` : ''}
+      <div class="acts">${pi && pi.valid ? `<button class="btn sm primary" data-pass="${v.id}">${ic('qr')} Kartı Göster / Gönder</button>` : ''}${(v.status === 'Bekleniyor' || (pi && pi.valid)) ? `<button class="btn sm danger" data-cancel-vis="${v.id}">İptal Et</button>` : ''}</div></div>`;
+  };
+  return `<button class="btn primary block" data-act="newvis" style="margin-bottom:10px">${ic('plus')} ${qr ? 'Misafir Kartı Oluştur' : 'Misafir / Ziyaretçi Bildir'}</button>
+    <p class="muted small" style="margin:0 4px 14px">${qr ? 'Misafiriniz için <b>QR\'lı giriş kartı</b> oluşturun ve WhatsApp ile gönderin. Kapıda kartı okutunca girişi kaydedilir, size bildirim gelir.' : 'Bildirdiğiniz misafirler güvenlik/kapı görevlisinin ekranına düşer; girişte bekletilmezler.'}</p>
+    ${list.length ? list.map(row).join('') : `<div class="empty">${ic('guest')}<p>Bildirilmiş ziyaretçi yok.</p></div>`}`;
 }
 function newVisitorSheet() {
-  Sheet.open(`<h3>Ziyaretçi Bildir</h3><form id="visForm">
+  const qr = S.data.push !== undefined;   // bulut 1.8: QR misafir kartı
+  Sheet.open(`<h3>${qr ? 'Misafir Kartı Oluştur' : 'Ziyaretçi Bildir'}</h3><form id="visForm">
     <div class="fld"><label>Ziyaretçinin Adı Soyadı</label><input name="name" maxlength="100" required></div>
-    <div class="row2"><div class="fld"><label>Geliş Tarihi</label><input name="date" type="date" min="${today()}" value="${today()}" required></div>
+    ${qr ? `<div class="row2"><div class="fld"><label>Geçerlilik</label><select name="days"><option value="1">Yalnızca o gün</option><option value="2">2 gün</option><option value="3">3 gün</option><option value="7">1 hafta</option></select></div>
+    <div class="fld"><label>Giriş hakkı</label><select name="multi"><option value="0">Tek giriş</option><option value="1">Sınırsız (süre boyunca)</option></select></div></div>` : ''}
+    <div class="row2"><div class="fld"><label>${qr ? 'Başlangıç Tarihi' : 'Geliş Tarihi'}</label><input name="date" type="date" min="${today()}" value="${today()}" required></div>
     <div class="fld"><label>Araç Plakası</label><input name="plate" maxlength="20" placeholder="06 ABC 123" autocapitalize="characters"></div></div>
     <div class="fld"><label>Telefon (isteğe bağlı)</label><input name="phone" type="tel" maxlength="20"></div>
     <div class="fld"><label>Not (isteğe bağlı)</label><input name="notes" maxlength="200" placeholder="Örn: akşam 19:00 civarı, 3 kişi"></div>
-    <button class="btn primary block" type="submit">${ic('check')} Bildir</button></form>`, (sh) => {
+    <button class="btn primary block" type="submit">${qr ? ic('qr') + ' Kartı Oluştur' : ic('check') + ' Bildir'}</button></form>`, (sh) => {
     const f = sh.querySelector('#visForm');
     f.onsubmit = async (e) => {
       e.preventDefault();
       const b = f.querySelector('[type=submit]'); b.disabled = true;
       try {
-        await call('member_new_visitor', { p_name: f.name.value, p_phone: f.phone.value, p_plate: f.plate.value, p_date: f.date.value, p_notes: f.notes.value });
-        Sheet.close(); toast('Ziyaretçiniz güvenliğe bildirildi ✓');
-        if (S.view !== 'visitors') go('visitors'); refresh(true);
+        const args = { p_name: f.name.value, p_phone: f.phone.value, p_plate: f.plate.value, p_date: f.date.value, p_notes: f.notes.value };
+        if (qr) { args.p_days = Number(f.days.value) || 1; args.p_multi = f.multi.value === '1'; }
+        const r = await call('member_new_visitor', args);
+        Sheet.close();
+        if (S.view !== 'visitors') go('visitors');
+        if (r && r.token) {
+          const v = { id: r.id, guest_name: f.name.value.trim(), plate: f.plate.value.trim(), phone: f.phone.value, expected_date: f.date.value, valid_until: r.valid_until, max_uses: args.p_multi ? 0 : 1, used_count: 0, status: 'Bekleniyor', qr_token: r.token };
+          (S.data.visitors = S.data.visitors || []).unshift(v);
+          render(); passSheet(v, true);
+        } else toast('Ziyaretçiniz güvenliğe bildirildi ✓');
+        refresh(true);
       } catch (err) { toast(err.message, 'error'); b.disabled = false; }
     };
   });
@@ -764,6 +1016,8 @@ function profileView() {
       <form id="pwForm"><div class="fld"><label>Mevcut Şifre</label><input name="old" type="password" autocomplete="current-password" required></div>
       <div class="row2"><div class="fld"><label>Yeni Şifre</label><input name="p1" type="password" autocomplete="new-password" minlength="6" required></div><div class="fld"><label>Yeni Şifre (Tekrar)</label><input name="p2" type="password" autocomplete="new-password" required></div></div>
       <button class="btn primary block" type="submit">Şifreyi Değiştir</button></form></div>
+    <div class="card" id="pushCard"></div>
+    ${d.push !== undefined ? privacyCard() : ''}
     <button class="btn danger block" data-act="logout">${ic('logout')} Çıkış Yap</button>
     ${CFG.central ? `<button class="btn block" style="margin-top:8px" data-act="site-switch">Başka Siteye Bağlan</button>` : ''}
     <p class="ver">Çıkış yaptığınızda bu cihazdaki kayıtlı bilgileriniz silinir.${CFG.central && CFG.siteName ? ` Bağlı site: <b>${esc(CFG.siteName)}</b>.` : ''} Sürüm ${APP_VERSION}</p>`;
@@ -805,6 +1059,14 @@ document.addEventListener('click', async (e) => {
     try { await call('member_cancel_reservation', { p_kind: kind, p_id: Number(id) }); toast('Rezervasyon iptal edildi.'); refresh(true); } catch (err) { toast(err.message, 'error'); }
     return;
   }
+  const ps = t.closest('[data-pass]'); if (ps) { const v = (S.data.visitors || []).find(x => String(x.id) === ps.dataset.pass); if (v) passSheet(v); return; }
+  if (t.closest('[data-kvkkread]')) {
+    e.preventDefault();
+    const code = ($('#regForm [name=code]') || {}).value || '';
+    const kv = await kvkkForCode(code);
+    kvkkSheet(kv && kv.text);
+    return;
+  }
   const cv = t.closest('[data-cancel-vis]');
   if (cv) {
     if (!confirm('Ziyaretçi bildirimi iptal edilsin mi?')) return;
@@ -826,10 +1088,15 @@ document.addEventListener('click', async (e) => {
     case 'install': doInstall(); break;
     case 'install-x': localStorage.setItem('sym_install_x', String(Date.now() + 7 * 86400000)); render(); break;
     case 'ann-toggle': a.classList.toggle('clamp'); break;
+    case 'kvkk-read': kvkkSheet(S.data.site && S.data.site.kvkk_text); break;
+    case 'kvkk-dl': kvkkDownload(); break;
+    case 'kvkk-req': kvkkRequestSheet(); break;
+    case 'kvkk-del': deleteAccountSheet(); break;
   }
 });
 
 function afterRender() {
+  const pc = $('#pushCard'); if (pc) pushCard(pc);
   const rf = $('#rsvForm');
   if (rf) rf.onsubmit = async (e) => {
     e.preventDefault();
@@ -853,6 +1120,12 @@ function afterRender() {
     catch (err) { toast(err.message, 'error'); }
   };
 }
+
+// bildirime dokunulduğunda ilgili ekrana git
+if ('serviceWorker' in navigator) navigator.serviceWorker.addEventListener('message', (e) => {
+  const m = e.data || {};
+  if (m.sym === 'go' && S.token) { const v = String(m.v || 'home'); if (SUB[v] || TABS.some(t => t.k === v)) { Sheet.close(); go(v); } refresh(true); }
+});
 
 // otomatik yenileme
 document.addEventListener('visibilitychange', () => {

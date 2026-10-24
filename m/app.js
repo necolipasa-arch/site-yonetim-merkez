@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.4.3';
-const APP_BUILD = '20261024125811';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.5.0';
+const APP_BUILD = '20261024141819';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -108,7 +108,9 @@ const P = {
   shield: 'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z',
   qr: 'M3 11h8V3H3v8zm2-6h4v4H5V5zM3 21h8v-8H3v8zm2-6h4v4H5v-4zM13 3v8h8V3h-8zm6 6h-4V5h4v4zM13 13h2v2h-2zM15 15h2v2h-2zM13 17h2v2h-2zM17 17h2v2h-2zM19 19h2v2h-2zM15 19h2v2h-2zM17 13h2v2h-2zM19 15h2v2h-2z',
   share: 'M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z',
-  clock: 'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z'
+  clock: 'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z',
+  card: 'M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z',
+  poll: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z',
 };
 const blk = (b) => !b ? '' : /blok/i.test(b) ? b : b + ' Blok';
 const unitName = (u) => u && u.no ? `${blk(u.block)} · Daire ${u.no}` : '';
@@ -207,7 +209,7 @@ const TABS = [
 ];
 const SUB = {
   ann: { title: 'Duyurular', parent: 'more' }, cargo: { title: 'Kargolarım', parent: 'more' }, visitors: { title: 'Ziyaretçi Bildirimi', parent: 'more' },
-  meetings: { title: 'Toplantılar & Kararlar', parent: 'more' }, contacts: { title: 'Önemli Telefonlar', parent: 'more' }, profile: { title: 'Profil & Ayarlar', parent: 'more' }
+  meetings: { title: 'Toplantılar & Kararlar', parent: 'more' }, polls: { title: 'Anketler', parent: 'more' }, contacts: { title: 'Önemli Telefonlar', parent: 'more' }, profile: { title: 'Profil & Ayarlar', parent: 'more' }
 };
 
 async function refresh(silent) {
@@ -249,7 +251,7 @@ function render() {
   const activeTab = sub ? sub.parent : S.view;
   const d = S.data, u = d.unit || {};
   const siteName = (d.site && d.site.site_name) || CFG.siteName || 'Site Yönetim';
-  const views = { home: homeView, account: accountView, requests: requestsView, reserve: reserveView, more: moreView, ann: annView, cargo: cargoView, visitors: visitorsView, meetings: meetingsView, contacts: contactsView, profile: profileView };
+  const views = { home: homeView, account: accountView, requests: requestsView, reserve: reserveView, more: moreView, ann: annView, cargo: cargoView, visitors: visitorsView, meetings: meetingsView, polls: pollsView, contacts: contactsView, profile: profileView };
   const waitingCargo = (d.cargo || []).filter(c => !c.delivered_at).length;
   app.innerHTML = `
     <header class="topbar">
@@ -486,7 +488,7 @@ function kvkkCheck() {
 }
 
 // ---------------- anlık bildirimler ----------------
-const PUSH_PREFS = [['ann', 'Duyurular'], ['cargo', 'Kargo geldi'], ['guest', 'Ziyaretçim / misafirim geldi'], ['req', 'Talep durumu değişti'], ['resv', 'Rezervasyon onay / ret'], ['accrual', 'Yeni aidat / borç']];
+const PUSH_PREFS = [['ann', 'Duyurular'], ['cargo', 'Kargo geldi'], ['guest', 'Ziyaretçim / misafirim geldi'], ['req', 'Talep durumu değişti'], ['resv', 'Rezervasyon onay / ret'], ['accrual', 'Yeni aidat / borç'], ['poll', 'Yeni anket'], ['pay', 'Online ödemem alındı']];
 const Push = {
   supported() { return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window; },
   siteKey() { return (S.data && S.data.site && S.data.site.push_vapid_public) || ''; },
@@ -541,7 +543,7 @@ function deniedMsg() {
 // Sorun gidermek için kısa durum satırı (kullanıcı ekran görüntüsü gönderebilsin)
 function pushDiag(sub, mine) {
   const perm = ('Notification' in window) ? ({ granted: 'verildi', denied: 'reddedildi', default: 'sorulmadı' })[Notification.permission] || Notification.permission : 'yok';
-  const parts = ['İzin: ' + perm, 'Site anahtarı: ' + (Push.siteKey() ? 'var' : 'yok'), 'Bulut: ' + (S.data && S.data.push !== undefined ? '1.8' : 'eski')];
+  const parts = ['İzin: ' + perm, 'Site anahtarı: ' + (Push.siteKey() ? 'var' : 'yok'), 'Bulut: ' + (S.data && S.data.polls !== undefined ? '1.9' : S.data && S.data.push !== undefined ? '1.8' : 'eski')];
   if (sub !== undefined) parts.push('Abonelik: ' + (sub ? (mine ? 'kayıtlı' : 'telefonda var, bulutta yok') : 'yok'));
   parts.push(isStandalone() ? 'Ana ekran simgesi' : viaOldIcon() ? 'Eski simge' : 'Tarayıcı');
   return `<p class="push-diag">${esc(parts.join(' · '))}</p>`;
@@ -580,7 +582,7 @@ async function pushCard(box) {
   const prefs = (mine && mine.prefs) || {};
   box.innerHTML = head + (on
     ? `<p class="small" style="margin-bottom:8px">✓ Bu cihazda bildirimler <b>açık</b>. Almak istediklerinizi seçin:</p>
-       <div class="prefs">${PUSH_PREFS.map(([k, l]) => `<label class="pref"><span>${l}</span><input type="checkbox" data-pref="${k}" ${prefs[k] === false ? '' : 'checked'}><i></i></label>`).join('')}</div>
+       <div class="prefs">${PUSH_PREFS.filter(([k]) => (k !== 'poll' || (S.data && S.data.polls !== undefined)) && (k !== 'pay' || payOn())).map(([k, l]) => `<label class="pref"><span>${l}</span><input type="checkbox" data-pref="${k}" ${prefs[k] === false ? '' : 'checked'}><i></i></label>`).join('')}</div>
        <p class="muted small" style="margin-top:6px">Site yönetiminin doğrudan gönderdiği önemli mesajlar her zaman iletilir.</p>
        <button class="btn block" style="margin-top:10px" data-pushoff>Bu cihazda bildirimleri kapat</button>`
     : `<p class="small">Duyuru, kargo, misafir girişi, talep ve rezervasyon gelişmelerinden <b>anında</b> haberdar olun. Uygulama kapalıyken de bildirim gelir.</p>
@@ -732,7 +734,7 @@ function balanceCard() {
   const bal = Number(u.balance) || 0, od = Number(u.overdue) || 0;
   if (bal > 0.004) return `<div class="balance"><span>Güncel Borcunuz</span><b>${fmt.money(bal)}</b>
     <div class="bl-row"><small>${od > 0.004 ? `⚠ ${fmt.money(od)} vadesi geçmiş` : site.due_day ? `Son ödeme: her ayın ${esc(site.due_day)}. günü` : ''}</small>
-    <button class="btn sm" data-act="pay">${ic('cash')} Nasıl öderim?</button></div></div>`;
+    ${payOn() ? `<button class="btn sm" data-act="paynow">${ic('card')} Online Öde</button>` : `<button class="btn sm" data-act="pay">${ic('cash')} Nasıl öderim?</button>`}</div></div>`;
   if (bal < -0.004) return `<div class="balance credit"><span>Alacak Bakiyeniz</span><b>${fmt.money(-bal)}</b><div class="bl-row"><small>Sonraki aidatlarınızdan düşülecektir.</small></div></div>`;
   return `<div class="balance ok"><span>Aidat Durumu</span><b>Borcunuz yok ✓</b><div class="bl-row"><small>Tüm ödemeleriniz güncel. Teşekkür ederiz!</small><button class="btn sm" data-tab="account">Hesap dökümü</button></div></div>`;
 }
@@ -756,6 +758,7 @@ function homeView() {
     ${installBanner()}
     ${balanceCard()}
     ${cargo.length ? `<div class="alert purple" data-go="cargo">${ic('package')}<div><b>${cargo.length} kargonuz yönetimde sizi bekliyor</b>${esc(cargo.map(c => c.company).filter(Boolean).join(', '))}</div></div>` : ''}
+    ${pendingPolls().length ? `<div class="alert blue" data-go="polls">${ic('poll')}<div><b>${pendingPolls().length === 1 ? 'Bir anket oyunuzu bekliyor' : pendingPolls().length + ' anket oyunuzu bekliyor'}</b>${esc(pendingPolls().map(p => p.title).join(', '))}</div></div>` : ''}
     ${vis.length ? `<div class="alert blue" data-go="visitors">${ic('guest')}<div><b>Bugün ${vis.length} misafiriniz bekleniyor</b>${esc(vis.map(v => v.guest_name).join(', '))}</div></div>` : ''}
     <div class="quick">
       ${[['wrench', 'orange', 'Arıza Bildir', 'data-act="newreq"'], ['calendar', 'blue', 'Rezervasyon', 'data-tab="reserve"'], ['guest', 'green', 'Misafir Bildir', 'data-go="visitors"'], ['megaphone', 'purple', 'Duyurular', 'data-go="ann"'],
@@ -803,7 +806,8 @@ function accountView() {
     <div class="card"><div class="kv"><span>Vadesi geçmiş</span><b class="${Number(u.overdue) > 0 ? 'amt-neg' : ''}">${fmt.money(u.overdue)}</b></div>
       <div class="kv"><span>${year} yılında ödenen</span><b class="amt-pos">${fmt.money(paidYear)}</b></div>
       <div class="kv"><span>Daire</span><b>${esc(unitName(u))}${u.area_m2 ? ' · ' + esc(u.area_m2) + ' m²' : ''}</b></div></div>
-    <div class="card"><div class="card-h"><h3>${ic('cash')} Ödeme Bilgileri</h3></div>${payInfoHtml()}</div>
+    ${onlinePaysCard()}
+    <div class="card"><div class="card-h"><h3>${ic('cash')} ${payOn() ? 'Havale / EFT ile ödeme' : 'Ödeme Bilgileri'}</h3></div>${payInfoHtml()}</div>
     <div class="seg">${[['all', 'Tümü'], ['debt', 'Borçlar'], ['pay', 'Ödemeler']].map(([k, l]) => `<button data-acct="${k}" class="${f === k ? 'on' : ''}">${l}</button>`).join('')}</div>
     ${list.length ? `<div class="list">${Object.entries(groups).map(([k, items]) => `<div class="month-h">${esc(k === 'Tarihsiz' ? k : fmt.month(k))}</div>${items.map(ledgerRow).join('')}`).join('')}</div>`
       : `<div class="empty">${ic('receipt')}<p>Kayıt bulunmuyor.</p></div>`}`;
@@ -952,6 +956,7 @@ function moreView() {
       ${li('data-go="ann"', 'megaphone', 'purple', 'Duyurular', `${(d.announcements || []).length} duyuru`)}
       ${li('data-go="cargo"', 'package', 'teal', 'Kargolarım', cargo ? `${cargo} kargo teslim alınmayı bekliyor` : 'Bekleyen kargo yok', cargo ? badge(String(cargo), 'red') : '')}
       ${li('data-go="visitors"', 'guest', 'green', 'Ziyaretçi Bildirimi', 'Misafirinizi güvenliğe önceden bildirin')}
+      ${S.data.polls === undefined ? '' : li('data-go="polls"', 'poll', 'purple', 'Anketler', pendingPolls().length ? `${pendingPolls().length} anket oyunuzu bekliyor` : 'Site anketlerine oy verin', pendingPolls().length ? badge(String(pendingPolls().length), 'red') : '')}
       ${li('data-go="meetings"', 'gavel', 'blue', 'Toplantılar & Kararlar', 'Genel kurul ve yönetim kararları')}
       ${li('data-go="contacts"', 'phone', 'red', 'Önemli Telefonlar', 'Yönetim, güvenlik, acil durum')}
       ${li('data-act="pay"', 'cash', 'green', 'Ödeme Bilgileri', 'IBAN ve açıklama')}
@@ -1030,6 +1035,109 @@ function newVisitorSheet() {
     };
   });
 }
+// ---------------- ONLINE ÖDEME (v1.5.0) ----------------
+function payOn() { const p = S.data && S.data.pay; return !!(p && p.enabled); }
+function payStatus(o) {
+  if (o.status === 'Ödendi') return o.imported ? badge('Tahsil edildi', 'green') : badge('Alındı · işleniyor', 'green');
+  if (o.status === 'Başarısız') return badge('Başarısız', 'red');
+  if (o.status === 'Yarım kaldı') return badge('Yarım kaldı', 'gray');
+  return badge('Bekliyor', 'orange');
+}
+function onlinePaysCard() {
+  if (!payOn()) return '';
+  const u = S.data.unit || {}, bal = Number(u.balance) || 0;
+  const list = (S.data.online_payments || []).slice(0, 5);
+  return `<div class="card"><div class="card-h"><h3>${ic('card')} Online Ödeme</h3>${S.data.pay.test ? badge('TEST', 'orange') : ''}</div>
+    <p class="muted small">Kredi veya banka kartınızla güvenli ödeme. Borcunuzun tamamını ya da bir kısmını ödeyebilirsiniz; ek ücret alınmaz.</p>
+    ${bal > 0.004 ? `<button class="btn primary block" data-act="paynow" style="margin-top:10px">${ic('card')} Online Öde (${fmt.money(bal)})</button>` : '<p class="small" style="margin-top:8px">Ödenecek borcunuz bulunmuyor. ✓</p>'}
+    ${list.length ? `<div class="sec-title" style="margin-top:12px">Son online ödemelerim</div><div class="list">${list.map(o => `<div class="li"><span class="li-ic qi green">${ic('card')}</span><div class="li-b"><b>${fmt.money(o.amount)}</b><small>${esc(fmt.dt(localTs(o.paid_at || o.created_at)))}</small></div>${payStatus(o)}</div>`).join('')}</div>` : ''}</div>`;
+}
+function payNowSheet() {
+  const u = S.data.unit || {}, bal = Math.round((Number(u.balance) || 0) * 100) / 100, p = S.data.pay || {};
+  if (!payOn()) { toast('Online ödeme şu anda kullanılamıyor.', 'error'); return; }
+  if (bal <= 0.004) { toast('Ödenecek borcunuz bulunmuyor.'); return; }
+  const min = Math.min(Math.max(1, Number(p.min) || 1), bal);
+  Sheet.open(`<h3>${ic('card')} Online Öde</h3>
+    <div class="kv"><span>Güncel borcunuz</span><b>${fmt.money(bal)}</b></div>
+    <form id="payForm"><div class="fld" style="margin-top:10px"><label>Ödenecek tutar (₺)</label>
+      <input name="amt" type="number" inputmode="decimal" step="0.01" min="${min}" max="${bal}" value="${bal.toFixed(2)}" required></div>
+      <div class="row2"><button type="button" class="btn sm" data-amt="${bal.toFixed(2)}">Tamamı</button>${bal >= 2 * min ? `<button type="button" class="btn sm" data-amt="${(Math.round(bal / 2 * 100) / 100).toFixed(2)}">Yarısı</button>` : ''}</div>
+      <p class="muted small" style="margin-top:8px">En az ${fmt.money(min)}, en fazla ${fmt.money(bal)} ödeyebilirsiniz. Ödeme ${esc(p.provider === 'paytr' ? 'PayTR' : 'iyzico')} güvenli ödeme sayfasında yapılır; kart bilgileriniz siteyle paylaşılmaz.${p.test ? ' <b>TEST modu: gerçek para çekilmez.</b>' : ''}</p>
+      <button class="btn primary block" type="submit" style="margin-top:12px">Ödeme Sayfasına Geç</button></form>
+    <button class="btn block" style="margin-top:8px" data-close>Vazgeç</button>`, (el) => {
+    const f = el.querySelector('#payForm');
+    el.querySelectorAll('[data-amt]').forEach(b => b.onclick = () => { f.amt.value = b.dataset.amt; });
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const amt = Math.round(Number(String(f.amt.value).replace(',', '.')) * 100) / 100;
+      if (!(amt >= min - 0.001) || amt > bal + 0.001) { toast(`Tutar ${fmt.money(min)} ile ${fmt.money(bal)} arasında olmalı.`, 'error'); return; }
+      const btn = f.querySelector('[type=submit]'); btn.disabled = true; btn.textContent = 'Ödeme sayfası açılıyor…';
+      try {
+        const ret = location.origin + location.pathname + (CFG.central && CFG.siteRaw ? '?s=' + CFG.siteRaw : '');
+        const r = await fetch(`${BASE}/functions/v1/odeme/baslat`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: S.token, amount: amt, return: ret }) });
+        let d = null; try { d = await r.json(); } catch { }
+        if (!d) throw new Error(r.status === 404 ? 'Online ödeme sunucusu kurulmamış. Lütfen yönetime bildirin.' : 'Ödeme sunucusuna ulaşılamadı (' + r.status + ').');
+        if (d.code === 'SESSION') { forceLogout(d.error); return; }
+        if (d.error || !d.url) throw new Error(d.error || 'Ödeme başlatılamadı.');
+        try { sessionStorage.setItem('sym_pay', JSON.stringify({ oid: d.oid, amt, at: Date.now() })); } catch { }
+        location.href = d.url;
+      } catch (err) {
+        btn.disabled = false; btn.textContent = 'Ödeme Sayfasına Geç';
+        toast(err.message === 'Failed to fetch' ? 'Ödeme sunucusuna ulaşılamadı. İnternet bağlantınızı kontrol edin.' : err.message, 'error');
+      }
+    });
+  });
+}
+function payReturnSheet(kind) {
+  let amt = null; try { const x = JSON.parse(sessionStorage.getItem('sym_pay') || 'null'); if (x) amt = x.amt; sessionStorage.removeItem('sym_pay'); } catch { }
+  const msg = kind === 'ok' ? ['✅ Ödemeniz alındı', `${amt ? fmt.money(amt) + ' tutarındaki ödemeniz' : 'Ödemeniz'} onaylandı. Borcunuz ve makbuzunuz birkaç dakika içinde (yönetim eşitlemesinde) güncellenir.`]
+    : kind === 'bekle' ? ['⏳ Ödemeniz işleniyor', 'Ödeme kuruluşu sonucu birkaç saniye içinde bildirir. Durumu Hesabım → Online Ödeme bölümünden takip edebilirsiniz.']
+      : ['❌ Ödeme tamamlanmadı', 'Kartınızdan para çekilmedi. Bilgilerinizi kontrol edip tekrar deneyebilirsiniz.'];
+  Sheet.open(`<h3>${msg[0]}</h3><p style="margin-top:8px">${esc(msg[1])}</p>${!S.token ? '<p class="muted small" style="margin-top:8px">Uygulamaya geri dönüp hesabınızı kontrol edebilirsiniz.</p>' : ''}
+    <button class="btn primary block" style="margin-top:16px" data-close>Tamam</button>`);
+}
+
+// ---------------- ANKETLER (v1.5.0) ----------------
+function pendingPolls() { return ((S.data && S.data.polls) || []).filter(p => p.open && !(Array.isArray(p.my) && p.my.length)); }
+function pollsView() {
+  const list = S.data.polls || [];
+  if (!list.length) return `<div class="empty">${ic('poll')}<p>Şu anda anket bulunmuyor.</p></div>`;
+  return `<p class="muted small" style="margin-bottom:10px">Her daire bir oy verir. Oy süresi bitmeden oyunuzu değiştirebilirsiniz; son oyunuz geçerli olur.</p>` + list.map(pollCard).join('');
+}
+function pollCard(p) {
+  const opts = Array.isArray(p.options) ? p.options : [], my = Array.isArray(p.my) ? p.my : [];
+  const voted = my.length > 0, edit = S.pollEdit === p.id;
+  const head = `<div class="card-h"><h3>${esc(p.title)}</h3>${p.open ? badge(voted ? 'Oy verdiniz' : 'Oylama açık', voted ? 'green' : 'blue') : badge('Sona erdi', 'gray')}</div>
+    ${p.body ? `<p class="small" style="white-space:pre-line">${esc(p.body)}</p>` : ''}
+    <p class="muted small">${p.ends ? (p.open ? 'Son gün: ' : 'Bitti: ') + esc(fmt.date(p.ends)) + ' · ' : ''}${Number(p.voters) || 0} daire oy verdi${p.anonymous ? ' · gizli oylama' : ''}</p>`;
+  if (p.open && (!voted || edit)) {
+    const type = p.multi ? 'checkbox' : 'radio';
+    return `<div class="card poll" data-poll="${p.id}">${head}
+      <div class="poll-opts">${opts.map((o, i) => `<label class="poll-o"><input type="${type}" name="pv${p.id}" value="${i}" ${my.includes(i) ? 'checked' : ''}><span>${esc(o)}</span></label>`).join('')}</div>
+      ${p.multi ? '<p class="muted small">Birden fazla seçenek işaretleyebilirsiniz.</p>' : ''}
+      <button class="btn primary block" data-vote="${p.id}" style="margin-top:10px">${voted ? 'Oyumu Güncelle' : 'Oy Ver'}</button></div>`;
+  }
+  const res = Array.isArray(p.results) ? p.results : null, tot = res ? Math.max(1, Number(p.voters) || res.reduce((a, b) => a + b, 0)) : 1;
+  return `<div class="card poll">${head}
+    ${voted ? `<p class="small"><b>Oyunuz:</b> ${esc(my.map(i => opts[i]).filter(Boolean).join(', '))}</p>` : (!p.open ? '<p class="muted small">Bu ankete oy vermediniz.</p>' : '')}
+    ${res ? `<div class="poll-res">${opts.map((o, i) => `<div class="pr"><div class="pr-h"><span>${esc(o)}</span><b>${res[i] || 0} · %${Math.round((res[i] || 0) / tot * 100)}</b></div><div class="pr-bar"><i style="width:${Math.round((res[i] || 0) / tot * 100)}%"></i></div></div>`).join('')}</div>`
+      : (!p.open ? '<p class="muted small">Sonuçlar yönetim tarafından duyurulacaktır.</p>' : '<p class="muted small">Sonuçlar anket bitince gösterilir.</p>')}
+    ${p.open && voted ? `<button class="btn block" data-votechange="${p.id}" style="margin-top:10px">Oyumu Değiştir</button>` : ''}</div>`;
+}
+async function submitVote(btn) {
+  const id = Number(btn.dataset.vote), card = btn.closest('[data-poll]');
+  const ch = [...card.querySelectorAll('input:checked')].map(x => Number(x.value));
+  if (!ch.length) { toast('Lütfen bir seçenek işaretleyin.', 'error'); return; }
+  btn.disabled = true;
+  try {
+    await call('member_poll_vote', { p_poll: id, p_choices: ch });
+    const p = (S.data.polls || []).find(x => x.id === id);
+    if (p) { if (!(Array.isArray(p.my) && p.my.length)) p.voters = (Number(p.voters) || 0) + 1; p.my = ch; }
+    S.pollEdit = null; render(); toast('Oyunuz kaydedildi ✓');
+    refresh(true);
+  } catch (e) { btn.disabled = false; toast(e.message, 'error'); }
+}
+
 function meetingsView() {
   const list = S.data.meetings || [];
   if (!list.length) return `<div class="empty">${ic('gavel')}<p>Toplantı kaydı bulunmuyor.</p></div>`;
@@ -1096,6 +1204,8 @@ document.addEventListener('click', async (e) => {
   const cp = t.closest('[data-copy]'); if (cp) { copyText(cp.dataset.copy); return; }
   const led = t.closest('[data-led]'); if (led) { ledgerDetail(led.dataset.led); return; }
   const mt = t.closest('[data-meet]'); if (mt) { meetingDetail(mt.dataset.meet); return; }
+  const vt = t.closest('[data-vote]'); if (vt) { submitVote(vt); return; }
+  const ve = t.closest('[data-votechange]'); if (ve) { S.pollEdit = Number(ve.dataset.votechange); render(); return; }
   const fc = t.closest('[data-fac]'); if (fc) { S.rsv.fac = Number(fc.dataset.fac); S.rsv.a = S.rsv.b = null; render(); return; }
   const dy = t.closest('[data-day]'); if (dy) { S.rsv.date = dy.dataset.day; S.rsv.a = S.rsv.b = null; render(); return; }
   const sl = t.closest('[data-slot]'); if (sl && !sl.disabled) { onSlot(Number(sl.dataset.slot)); return; }
@@ -1126,6 +1236,7 @@ document.addEventListener('click', async (e) => {
     case 'back': history.length > 1 ? history.back() : go('more', true); break;
     case 'newreq': newRequestSheet(); break;
     case 'newvis': newVisitorSheet(); break;
+    case 'paynow': payNowSheet(); break;
     case 'pay': Sheet.open(`<h3>Ödeme Bilgileri</h3>${payInfoHtml()}<button class="btn block" style="margin-top:14px" data-close>Kapat</button>`); break;
     case 'logout': if (confirm('Çıkış yapmak istiyor musunuz?')) logout(); break;
     case 'install': doInstall(); break;
@@ -1230,6 +1341,8 @@ document.addEventListener('focusout', () => { if (Upd.pending) setTimeout(() => 
   const inv = readInviteFromUrl();
   const v = (location.hash || '').slice(1);
   if (v && (SUB[v] || TABS.some(t => t.k === v))) S.view = v;
+  const payRet = (/[?&]odeme=(ok|hata|bekle)\b/.exec(location.search) || [])[1];   // v1.5.0: ödeme sayfasından dönüş
+  if (payRet) S.view = 'account';
   // ?davet=… adresten silinir; merkezi uygulamada ?s=… (site bilgisi) kalır ki iPhone'da "Ana Ekrana Ekle" ile açılan uygulama da siteyi bilsin
   history.replaceState({ view: S.view }, '', location.pathname + (CFG.central && CFG.siteRaw ? '?s=' + CFG.siteRaw : '') + '#' + S.view);
   if (inv && !S.token) startWithInvite(inv);
@@ -1244,6 +1357,7 @@ document.addEventListener('focusout', () => { if (Upd.pending) setTimeout(() => 
       el.querySelector('[data-invkeep]').onclick = () => { clearInvite(); Sheet.close(); };
     });
   }
+  if (payRet) setTimeout(() => payReturnSheet(payRet), 300);
   try { localStorage.removeItem('sym_moved'); } catch { }   // 1.4.1'den kalan bayrak
   if (S.token) refresh(true);
   try { const u = sessionStorage.getItem('sym_upd'); if (u !== null) { sessionStorage.removeItem('sym_upd'); setTimeout(() => toast('Uygulama güncellendi' + (u ? ': v' + u : '') + ' ✓'), 600); } } catch { }

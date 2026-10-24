@@ -219,3 +219,13 @@ a { color: var(--primary); text-decoration: none; }
 .upd-bar button { border: 0; border-radius: 10px; padding: 8px 14px; font-weight: 700; background: #4c6ef5; color: #fff; font-size: 14px; }
 a.btn { text-decoration: none; color: inherit; box-sizing: border-box; }
 .push-diag { margin-top: 10px; font-size: 11.5px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 8px; }
+
+/* v1.5.0 — anketler / online ödeme */
+.poll-opts { display: grid; gap: 8px; margin-top: 10px; }
+.poll-o { display: flex; align-items: center; gap: 10px; padding: 12px; border: 1.5px solid var(--line, #e3e7f0); border-radius: 12px; font-size: 15px; cursor: pointer; }
+.poll-o input { width: 20px; height: 20px; accent-color: var(--primary); flex: 0 0 auto; }
+.poll-o:has(input:checked) { border-color: var(--primary); background: var(--primary-l); }
+.poll-res { display: grid; gap: 10px; margin-top: 10px; }
+.pr-h { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; }
+.pr-bar { height: 8px; background: #eef0f5; border-radius: 6px; overflow: hidden; margin-top: 4px; }
+.pr-bar > i { display: block; height: 100%; background: var(--primary); border-radius: 6px; }

@@ -1,0 +1,19 @@
+{
+  "product": "site-yonetim",
+  "version": "1.8.1",
+  "date": "2026-10-24",
+  "notes": [
+    "Mobil uygulama artık her açılışta ve arka plandan öne gelince yeni sürümü kendiliğinden alır (form doldururken \"Yeni sürüm hazır\" uyarısı çıkar); Profil'e \"Güncellemeleri denetle\" eklendi",
+    "Netlify'dan (kendi adresinden) yayınlanan eski mobil uygulamalar için \"Merkezi Uygulamaya Geç\" ve Yönlendirme Paketi: paket eski adrese bir kez yüklenince telefonlar oturumu korunarak merkezi uygulamaya taşınır, sonraki güncellemeler kendiliğinden gelir",
+    "Ayarlar → Mobil Uygulama: kendi adres kullanılıyorsa uyarı; Mobil Uygulamayı Test Et eski sürümü açıkça bildirir",
+    "Bildirimler: \"Bildirimi açık cihaz yok\" durumunda nedenleri ve çözümü anlatan yardım penceresi",
+    "Mobil uygulama 1.4.1 (SQL değişikliği yok; kurulum.sql 1.8 yeterli)"
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.8.1/SiteYonetim-Kurulum-1.8.1.exe",
+    "sha512": "QRHLKSNLF1+bhZqjBw4PbyHkPwY1t4/uLv2Saw0uG221AHrWjxKB9D+Rm86XZbSDDUb4sK1cR79NeKubN2mznA==",
+    "size": 78817890
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.8.1",
+  "sig": "qk5gab5sCuKFtsldRLCfWwEs7ZxyNWyYC9Z5wCGxwC1iRsuqI4L5lC+kOosRNsDesCVzjN1yrVQeXeMMtDJjBg=="
+}

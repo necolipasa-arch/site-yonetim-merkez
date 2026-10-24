@@ -1,5 +1,5 @@
 // Site Yönetim Mobil — çevrim dışı önbellek
-const VERSION = 'sym-v1.4.0-202610241124';
+const VERSION = 'sym-v1.4.1-20261024121117';
 const SHELL = ['./', 'index.html', 'app.css', 'app.js', 'qrcode.js', 'config.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-32.png'];
 
@@ -13,8 +13,10 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET' || new URL(req.url).origin !== self.location.origin) return;
+  // cache:'no-cache' → tarayıcının HTTP önbelleği atlanır, sunucuyla doğrulanır (değişmediyse 304, hızlı)
+  const net = req.mode === 'navigate' ? fetch(req.url, { cache: 'no-cache', credentials: 'same-origin' }) : fetch(req, { cache: 'no-cache' });
   e.respondWith(
-    fetch(req).then(res => {
+    net.then(res => {
       if (res && res.ok) { const copy = res.clone(); const u = new URL(req.url); u.search = ''; caches.open(VERSION).then(c => c.put(u.toString(), copy)); } // ?davet=… gibi parametreler ayrı önbelleklenmez
       return res;
     }).catch(() => caches.match(req, { ignoreSearch: true }).then(r => r || caches.match('index.html')))

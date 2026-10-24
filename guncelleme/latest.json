@@ -1,19 +1,19 @@
 {
   "product": "site-yonetim",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "date": "2026-10-24",
   "notes": [
-    "Anlık bildirimler: duyuru, kargo, misafir girişi, talep durumu, rezervasyon onay/ret ve yeni borç bildirimleri sakinin telefonuna düşer (her olay Ayarlar → Bildirimler'den açılıp kapatılabilir) + yönetimden elle bildirim gönderme",
-    "QR misafir kartı: sakin mobilde misafir kartı oluşturup WhatsApp ile gönderir; güvenlik kartı USB okuyucu, kamera veya kodu yazarak okutur (terminallerde de çalışır)",
-    "KVKK: aydınlatma metni ve kayıtta onay, saklama süreleri ve otomatik imha (ziyaretçi/kargo 2 yıl, taşınan sakin 2 yıl, mali kayıtlar 10 yıl), kişisel veri dökümü ve silme, mobilden KVKK başvurusu",
-    "Mobil uygulama 1.4.0: misafir kartı, bildirim tercihleri, Kişisel Verilerim (verilerimi indir, başvuru, hesabımı sil)",
-    "Önemli: Supabase SQL Editor'de yeni kurulum.sql bir kez çalıştırılmalıdır (bildirim, QR kart ve KVKK fonksiyonları)"
+    "Mobil uygulama artık her açılışta ve arka plandan öne gelince yeni sürümü kendiliğinden alır (form doldururken \"Yeni sürüm hazır\" uyarısı çıkar); Profil'e \"Güncellemeleri denetle\" eklendi",
+    "Netlify'dan (kendi adresinden) yayınlanan eski mobil uygulamalar için \"Merkezi Uygulamaya Geç\" ve Yönlendirme Paketi: paket eski adrese bir kez yüklenince telefonlar oturumu korunarak merkezi uygulamaya taşınır, sonraki güncellemeler kendiliğinden gelir",
+    "Ayarlar → Mobil Uygulama: kendi adres kullanılıyorsa uyarı; Mobil Uygulamayı Test Et eski sürümü açıkça bildirir",
+    "Bildirimler: \"Bildirimi açık cihaz yok\" durumunda nedenleri ve çözümü anlatan yardım penceresi",
+    "Mobil uygulama 1.4.1 (SQL değişikliği yok; kurulum.sql 1.8 yeterli)"
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.8.0/SiteYonetim-Kurulum-1.8.0.exe",
-    "sha512": "lkWQ2gihQB6HlNwWEPbcuHmjMTCgdLZtzmfKnh/Bl8F1oj4vcFAH/GGrL0TiS3zVLOvPmkO1gkoHzEvO9GurzA==",
-    "size": 78813576
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.8.1/SiteYonetim-Kurulum-1.8.1.exe",
+    "sha512": "QRHLKSNLF1+bhZqjBw4PbyHkPwY1t4/uLv2Saw0uG221AHrWjxKB9D+Rm86XZbSDDUb4sK1cR79NeKubN2mznA==",
+    "size": 78817890
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.8.0",
-  "sig": "/aVdfVIsTqfmP0vFpZwfxOU4AxOGsuOzF/HcfHJF8FMsTBxNxJNq5gCik/T8RjSFdaaFVHGCjB/Nfj2AUGj5DA=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.8.1",
+  "sig": "qk5gab5sCuKFtsldRLCfWwEs7ZxyNWyYC9Z5wCGxwC1iRsuqI4L5lC+kOosRNsDesCVzjN1yrVQeXeMMtDJjBg=="
 }

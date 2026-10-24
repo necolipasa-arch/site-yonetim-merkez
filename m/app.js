@@ -5,7 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.4.0';
+const APP_VERSION = '1.4.1';
+const APP_BUILD = '20261024121117';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -170,6 +171,19 @@ async function call(fn, args) {
   try { return await rpc(fn, { p_token: S.token, ...(args || {}) }); }
   catch (e) { if (e.code === 'SESSION') { forceLogout(e.message); } throw e; }
 }
+
+// ---------------- eski adresten taşınma (v1.4.1) ----------------
+// Netlify vb. kendi adresinde yayınlanmış eski uygulamanın yerine konan yönlendirme paketi, kullanıcıyı
+// oturumuyla birlikte merkezi uygulamaya gönderir: …/m/?s=<site>#oturum=<jeton>. Jeton adres çubuğundan hemen silinir.
+(function takeOverSession() {
+  const m = /[#&]oturum=([A-Za-z0-9_\-]{16,200})/.exec(location.hash || '');
+  if (!m) return;
+  try {
+    if (CFG.anonKey && !localStorage.getItem('sym_token')) { localStorage.setItem('sym_token', m[1]); localStorage.removeItem('sym_cache'); }
+    if (CFG.anonKey) localStorage.setItem('sym_moved', '1');
+  } catch { }
+  history.replaceState(null, '', location.pathname + location.search);
+})();
 
 // ---------------- durum ----------------
 const S = {
@@ -1020,7 +1034,7 @@ function profileView() {
     ${d.push !== undefined ? privacyCard() : ''}
     <button class="btn danger block" data-act="logout">${ic('logout')} Çıkış Yap</button>
     ${CFG.central ? `<button class="btn block" style="margin-top:8px" data-act="site-switch">Başka Siteye Bağlan</button>` : ''}
-    <p class="ver">Çıkış yaptığınızda bu cihazdaki kayıtlı bilgileriniz silinir.${CFG.central && CFG.siteName ? ` Bağlı site: <b>${esc(CFG.siteName)}</b>.` : ''} Sürüm ${APP_VERSION}</p>`;
+    <p class="ver">Çıkış yaptığınızda bu cihazdaki kayıtlı bilgileriniz silinir.${CFG.central && CFG.siteName ? ` Bağlı site: <b>${esc(CFG.siteName)}</b>.` : ''} Sürüm ${APP_VERSION} · <a href="#" data-act="updcheck">Güncellemeleri denetle</a></p>`;
 }
 
 // ---------------- ana ekrana ekle ----------------
@@ -1073,7 +1087,7 @@ document.addEventListener('click', async (e) => {
     try { await call('member_cancel_visitor', { p_id: Number(cv.dataset.cancelVis) }); toast('Bildirim iptal edildi.'); refresh(true); } catch (err) { toast(err.message, 'error'); }
     return;
   }
-  const a = t.closest('[data-act]'); if (!a) return;
+  const a = t.closest('[data-act]'); if (!a) return; if (a.tagName === 'A') e.preventDefault();
   switch (a.dataset.act) {
     case 'refresh': refresh(); break;
     case 'back': history.length > 1 ? history.back() : go('more', true); break;
@@ -1086,6 +1100,11 @@ document.addEventListener('click', async (e) => {
       (async () => { try { await rpc('member_logout', { p_token: S.token }); } catch { } clearSession(); localStorage.removeItem('sym_site'); location.replace(location.pathname); })();
       break;
     case 'install': doInstall(); break;
+    case 'updcheck': {
+      toast('Denetleniyor…');
+      Upd.check(true).then(v => { if (!v) toast(APP_BUILD === 'dev' ? 'Bu kurulum kendi adresinizden yayınlanıyor; güncellemeyi site yönetimi yükler.' : 'Sunucuya ulaşılamadı.', 'error'); else if (!Upd.pending) toast('Uygulamanız güncel: v' + APP_VERSION + ' ✓'); });
+      break;
+    }
     case 'install-x': localStorage.setItem('sym_install_x', String(Date.now() + 7 * 86400000)); render(); break;
     case 'ann-toggle': a.classList.toggle('clamp'); break;
     case 'kvkk-read': kvkkSheet(S.data.site && S.data.site.kvkk_text); break;
@@ -1134,6 +1153,59 @@ document.addEventListener('visibilitychange', () => {
 setInterval(() => { if (document.visibilityState === 'visible' && S.token) refresh(true); }, 5 * 60000);
 window.addEventListener('online', () => { if (S.token) refresh(true); });
 
+// ---------------- otomatik güncelleme (v1.4.1) ----------------
+// Uygulama her açıldığında ve arka plandan öne geldiğinde merkezdeki version.json'a bakar. Yeni yayın varsa
+// (kullanıcı bir form doldurmuyorsa) kendiliğinden yenilenir; doldururken kısa bir uyarı gösterir.
+const Upd = {
+  last: 0, pending: null,
+  busy() { return !!document.querySelector('#sheet-root .sheet, form input:focus, form textarea:focus, form select:focus'); },
+  async check(force) {
+    if (APP_BUILD === 'dev' && !force) return null;
+    if (!force && Date.now() - this.last < 30000) return null;
+    this.last = Date.now();
+    let v = null;
+    try { const r = await fetch('version.json?t=' + Date.now(), { cache: 'no-store' }); if (r.ok) v = await r.json(); } catch { }
+    if (!v || !v.build || v.build === APP_BUILD) return v;
+    this.pending = v;
+    try { sessionStorage.setItem('sym_upd', v.version || ''); } catch { }   // SW değişimiyle (controllerchange) yenilenirse de "güncellendi" denir
+    // önce yeni service worker kurulsun (yoksa sayfa iki kez yenilenir); en çok 4 sn beklenir
+    try {
+      const reg = navigator.serviceWorker && await navigator.serviceWorker.getRegistration();
+      if (reg) {
+        await reg.update();
+        const sw = reg.installing || reg.waiting;
+        if (sw) await new Promise(res => { const t = setTimeout(res, 4000); sw.addEventListener('statechange', () => { if (sw.state === 'activated' || sw.state === 'redundant') { clearTimeout(t); setTimeout(res, 300); } }); });
+      }
+    } catch { }
+    this.apply();
+    return v;
+  },
+  reload() { if (this.reloading) return; this.reloading = true; location.reload(); },
+  apply() {
+    if (!this.pending || this.reloading) return;
+    if (!this.busy()) { this.reload(); return; }
+    if (document.querySelector('.upd-bar')) return;
+    const bar = document.createElement('div'); bar.className = 'upd-bar';
+    bar.innerHTML = `<span>Yeni sürüm hazır${this.pending.version ? ' (v' + esc(this.pending.version) + ')' : ''}</span><button type="button">Güncelle</button>`;
+    bar.querySelector('button').onclick = () => this.reload();
+    document.body.appendChild(bar);
+  }
+};
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') Upd.check(); });
+window.addEventListener('pageshow', (e) => { if (e.persisted) Upd.check(); });
+document.addEventListener('focusout', () => { if (Upd.pending) setTimeout(() => { if (!Upd.busy()) Upd.apply(); }, 400); });
+
+function movedTip() {
+  if (localStorage.getItem('sym_moved') !== '1' || !S.data) return;
+  localStorage.removeItem('sym_moved');
+  Sheet.open(`<h3>Uygulamanın adresi yenilendi</h3><p>Site Yönetim Mobil artık <b>merkezi adresten</b> çalışıyor; yeni sürümler telefonunuza <b>kendiliğinden</b> gelecek. Oturumunuz taşındı, yeniden giriş yapmanız gerekmedi.</p>
+    <p class="muted small" style="margin-top:8px">${isStandalone() ? '' : 'Önerilen: Ana ekrandaki eski simgeyi silip bu sayfayı yeniden ana ekrana ekleyin. Eski simge de çalışmaya devam eder (açılınca buraya yönlenir).'}</p>
+    ${isStandalone() ? '' : `<button class="btn primary block" style="margin-top:14px" data-moveinstall>Ana Ekrana Ekle</button>`}
+    <button class="btn block" style="margin-top:8px" data-close>Tamam</button>`, (el) => {
+    const b = el.querySelector('[data-moveinstall]'); if (b) b.onclick = () => { Sheet.close(); doInstall(); };
+  });
+}
+
 // başlat
 (function start() {
   const inv = readInviteFromUrl();
@@ -1153,13 +1225,20 @@ window.addEventListener('online', () => { if (S.token) refresh(true); });
       el.querySelector('[data-invkeep]').onclick = () => { clearInvite(); Sheet.close(); };
     });
   }
-  if (S.token) refresh(true);
+  if (S.token) refresh(true).then(() => movedTip()).catch(() => { });
+  try { const u = sessionStorage.getItem('sym_upd'); if (u !== null) { sessionStorage.removeItem('sym_upd'); setTimeout(() => toast('Uygulama güncellendi' + (u ? ': v' + u : '') + ' ✓'), 600); } } catch { }
+  setTimeout(() => Upd.check(), 1500);
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
     const hadCtrl = !!navigator.serviceWorker.controller; let reloaded = false;
     navigator.serviceWorker.register('sw.js').then(reg => {
       document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') reg.update().catch(() => { }); });
     }).catch(() => { });
     // yeni sürüm yayınlandığında uygulama kendiliğinden yenilenir
-    navigator.serviceWorker.addEventListener('controllerchange', () => { if (hadCtrl && !reloaded && !document.querySelector('#sheet-root .sheet, form input:focus, form textarea:focus')) { reloaded = true; location.reload(); } });
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!hadCtrl || reloaded) return;
+      reloaded = true;
+      if (!Upd.pending) { Upd.pending = { version: '' }; try { sessionStorage.setItem('sym_upd', ''); } catch { } }
+      Upd.apply();   // form açıksa "Yeni sürüm hazır" uyarısı, değilse yenile
+    });
   }
 })();

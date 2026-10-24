@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.7.0';
-const APP_BUILD = '20261024192118';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.8.0';
+const APP_BUILD = '20261024213534';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -15,10 +15,20 @@ function parseSiteParam(v) {
   try {
     v = String(v || '').trim().replace(/-/g, '+').replace(/_/g, '/'); while (v.length % 4) v += '=';
     const bin = atob(v); const o = JSON.parse(new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0))));
-    const url = o.r ? `https://${String(o.r).toLowerCase().replace(/[^a-z0-9]/g, '')}.supabase.co` : String(o.u || '');
-    const okUrl = /^https:\/\/[^/\s]+$/i.test(url.replace(/\/+$/, '')) || (location.hostname === 'localhost' && /^http:\/\/localhost(:\d+)?$/.test(url));   // http yalnızca yerel test
-    if (!okUrl || !o.k || String(o.k).length > 400) return null;
-    return { u: url.replace(/\/+$/, ''), k: String(o.k), n: String(o.n || '').slice(0, 80), raw: b64uEnc(JSON.stringify(o)) };
+    // 1.8.0 (masaüstü 2.2): Neon kısa biçimi — nu: veri arayüzü sunucusu, nf: ödeme fonksiyonu sunucusu (.aws.neon.tech eklenir).
+    // Anahtar linkte taşınmaz; açılışta fonksiyondan (/anahtar) alınır ve bu cihazda saklanır.
+    const nu = /^ep-[a-z0-9-]+\.apirest\.[a-z0-9.-]+$/i.test(o.nu || '') ? String(o.nu).toLowerCase() : '';
+    const nf = /^br-[a-z0-9-]+-odeme\.compute\.[a-z0-9.-]+$/i.test(o.nf || '') ? String(o.nf).toLowerCase() : '';
+    const url = o.r ? `https://${String(o.r).toLowerCase().replace(/[^a-z0-9]/g, '')}.supabase.co` : nu ? `https://${nu}.aws.neon.tech/neondb` : String(o.u || '');
+    const neon = /^https:\/\/[a-z0-9.-]+\.neon\.tech\/[a-z0-9_]+$/i.test(url.replace(/\/+$/, ''));   // 2.2: Neon Data API (veritabanı yolu ile)
+    const local = location.hostname === 'localhost';
+    const okUrl = neon || /^https:\/\/[^/\s]+$/i.test(url.replace(/\/+$/, '')) || (local && /^http:\/\/localhost(:\d+)?$/.test(url));   // http yalnızca yerel test
+    const f = nf ? `https://${nf}.aws.neon.tech` : (/^https:\/\/[^/\s]+(\/[^\s]*)?$/i.test(o.f || '') || (local && /^http:\/\/localhost(:\d+)?\//.test(o.f || ''))) ? String(o.f).replace(/\/+$/, '') : '';
+    const u = url.replace(/\/+$/, '');
+    let k = String(o.k || '');
+    if (!k && f) { try { k = localStorage.getItem('sym_k@' + u) || ''; } catch { } }
+    if (!okUrl || (!k && !f) || k.length > (neon ? 1200 : 400)) return null;
+    return { u, k, f, n: String(o.n || '').slice(0, 80), raw: b64uEnc(JSON.stringify(o)) };
   } catch { return null; }
 }
 function siteParamFromText(t) {
@@ -50,8 +60,8 @@ const MSites = {
   },
   upsert(site, name, token, unit) {
     if (!site || !site.u || !site.raw) return;
-    const l = this.list(), i = l.findIndex(x => x.u === site.u), v = { u: site.u, k: site.k, n: String(name || site.n || '').slice(0, 80), raw: site.raw, d: String(unit || '').slice(0, 60) };
-    if (i >= 0) { if (l[i].n === v.n && l[i].raw === v.raw && l[i].k === v.k && l[i].d === v.d) { if (token) localStorage.setItem(this.tk(site.u), token); return; } l[i] = v; } else l.push(v);
+    const l = this.list(), i = l.findIndex(x => x.u === site.u), v = { u: site.u, k: site.k, f: site.f || '', n: String(name || site.n || '').slice(0, 80), raw: site.raw, d: String(unit || '').slice(0, 60) };
+    if (i >= 0) { if (l[i].n === v.n && l[i].raw === v.raw && l[i].k === v.k && l[i].d === v.d && (l[i].f || '') === v.f) { if (token) localStorage.setItem(this.tk(site.u), token); return; } l[i] = v; } else l.push(v);
     if (token) localStorage.setItem(this.tk(site.u), token);
     this.save(l);
   },
@@ -68,8 +78,13 @@ const CFG = (function resolveConfig() {
     if (saved && saved.u !== fromUrl.u) { MSites.stash(saved); MSites.restore(fromUrl.u); }   // başka siteye geçildi: eski sitenin oturumu saklanır
     localStorage.setItem('sym_site', JSON.stringify(fromUrl)); saved = fromUrl;
   }
+  if (saved && saved.u && !saved.k && saved.f) {   // 1.8.0: anahtar fonksiyondan alınacak (start → resolveKey)
+    let k = ''; try { k = localStorage.getItem('sym_k@' + saved.u) || ''; } catch { }
+    if (k) { saved.k = k; localStorage.setItem('sym_site', JSON.stringify(saved)); }
+    else return { ...raw, central: true, url: saved.u, anonKey: '', fnUrl: saved.f, needKey: true, siteName: saved.n || '', siteRaw: saved.raw };
+  }
   if (!saved || !saved.u || !saved.k) return { ...raw, central: true, anonKey: '' };
-  return { ...raw, central: true, url: saved.u, anonKey: saved.k, siteName: saved.n || raw.siteName || '', siteRaw: saved.raw };
+  return { ...raw, central: true, url: saved.u, anonKey: saved.k, fnUrl: saved.f || '', siteName: saved.n || raw.siteName || '', siteRaw: saved.raw };
 })();
 // Sunucu adresini sadeleştir (https://xxxx.supabase.co) — yol, boşluk, http vb. hatalara karşı
 function normBase(u) {
@@ -78,11 +93,31 @@ function normBase(u) {
   const dash = /supabase\.com\/dashboard\/project\/([a-z0-9]{10,})/i.exec(u);
   if (dash) return `https://${dash[1].toLowerCase()}.supabase.co`;
   if (!/^[a-z]+:\/\//i.test(u)) u = 'https://' + u;
-  try { const x = new URL(u); return /\.supabase\.co$/i.test(x.hostname) ? 'https://' + x.hostname.toLowerCase() : x.origin; }
+  try {
+    const x = new URL(u);
+    if (/\.supabase\.co$/i.test(x.hostname)) return 'https://' + x.hostname.toLowerCase();
+    // Neon Data API (2.2): veritabanı yolu korunur (https://ep-….apirest.<bölge>.aws.neon.tech/neondb)
+    if (/\.neon\.tech$/i.test(x.hostname)) return 'https://' + x.hostname.toLowerCase() + '/' + ((x.pathname.replace(/\/rest\/v1\/?.*$/i, '').split('/').filter(Boolean)[0]) || 'neondb');
+    return x.origin;
+  }
   catch { return u.replace(/\/+$/, ''); }
 }
 const BASE = normBase(CFG.url);
-const API_KEY = String(CFG.anonKey || '').trim().replace(/\s+/g, '');
+let API_KEY = String(CFG.anonKey || '').trim().replace(/\s+/g, '');
+// Ödeme fonksiyonu: Neon'da kendi adresi var; Supabase'te proje adresi + /functions/v1/odeme
+const FN_BASE = () => (CFG.fnUrl || window.SITE_CONFIG && window.SITE_CONFIG.fnUrl || '').replace(/\/+$/, '') || `${BASE}/functions/v1/odeme`;
+const authHeaders = () => Object.assign({ apikey: API_KEY }, /^eyJ/.test(API_KEY) ? { Authorization: 'Bearer ' + API_KEY } : {});
+// 1.8.0: Neon sitesinin herkese açık anahtarını fonksiyondan al (davet linkinde taşınmaz)
+async function resolveKey() {
+  const r = await fetch(CFG.fnUrl + '/anahtar', { cache: 'no-store' });
+  const d = await r.json().catch(() => null);
+  const k = d && String(d.k || '');
+  if (!r.ok || !/^eyJ[\w-]+\.[\w-]+\.[\w-]+$/.test(k || '') || k.length > 1200) throw new Error('Site bağlantı anahtarı alınamadı (' + r.status + ').');
+  try { localStorage.setItem('sym_k@' + CFG.url, k); } catch { }
+  const saved = JSON.parse(localStorage.getItem('sym_site') || 'null');
+  if (saved && saved.u === CFG.url) { saved.k = k; localStorage.setItem('sym_site', JSON.stringify(saved)); }
+  CFG.anonKey = k; CFG.needKey = false; API_KEY = k;
+}
 // Bağlantı tanılama: güvenlik politikası engelleri
 const NET = { csp: null, lastErr: null };
 document.addEventListener('securitypolicyviolation', (e) => { if (/connect-src/.test(e.violatedDirective || e.effectiveDirective || '')) NET.csp = e.blockedURI || 'engellendi'; });
@@ -284,6 +319,13 @@ window.addEventListener('popstate', (e) => {
 // ---------------- çizim ----------------
 function render() {
   const app = $('#app');
+  if (CFG.needKey) {
+    app.innerHTML = S.keyErr
+      ? `<div class="boot"><img src="icons/icon-192.png" alt=""><p><b>Siteye bağlanılamadı</b></p><p class="muted small">${esc(S.keyErr)}<br>İnternet bağlantınızı kontrol edip tekrar deneyin.</p><button class="btn primary" data-keyretry>Tekrar Dene</button></div>`
+      : `<div class="boot"><img src="icons/icon-192.png" alt=""><div class="spinner"></div><p class="muted">Siteye bağlanılıyor…</p></div>`;
+    const b = app.querySelector('[data-keyretry]'); if (b) b.onclick = () => location.reload();
+    return;
+  }
   if (!CFG.anonKey) { app.innerHTML = notConfigured(); bindConnect(); return; }
   if (!S.token) { app.innerHTML = authView(); bindAuth(); return; }
   if (!S.data) { app.innerHTML = `<div class="boot"><img src="icons/icon-192.png" alt=""><div class="spinner"></div><p class="muted">Bilgileriniz yükleniyor…</p></div>`; return; }
@@ -335,7 +377,7 @@ function hostOf(u) { try { return new URL(u).host; } catch { return u; } }
 async function probe() {
   const t0 = Date.now();
   try {
-    const r = await fetch(`${BASE}/rest/v1/`, { headers: { apikey: API_KEY }, cache: 'no-store' });
+    const r = await fetch(`${BASE}/rest/v1/`, { headers: authHeaders(), cache: 'no-store' });
     return { ok: true, status: r.status, ms: Date.now() - t0 };
   } catch (e) { return { ok: false, err: String(e && e.message || e), ms: Date.now() - t0 }; }
 }
@@ -767,12 +809,12 @@ async function logout() {
 }
 function forceLogout(msg) { clearSession(); render(); toast(msg || 'Oturum sona erdi, lütfen tekrar giriş yapın.', 'error'); }
 function clearSession() { S.token = null; S.data = null; localStorage.removeItem('sym_token'); localStorage.removeItem('sym_cache'); if (CFG.central && CFG.url) MSites.remove(CFG.url); S.authTab = 'login'; }
-function curSite() { return { u: CFG.url, k: CFG.anonKey, n: CFG.siteName || '', raw: CFG.siteRaw }; }
+function curSite() { return { u: CFG.url, k: CFG.anonKey, f: CFG.fnUrl || '', n: CFG.siteName || '', raw: CFG.siteRaw }; }
 // Kayıtlı başka siteye geç: aktif oturum saklanır, hedefin oturumu açılır, sayfa o siteyle yeniden yüklenir
 function switchSite(u, view) {
   const t = MSites.list().find(x => x.u === u); if (!t || u === CFG.url) { Sheet.close(); return; }
   MSites.stash(curSite());
-  localStorage.setItem('sym_site', JSON.stringify({ u: t.u, k: t.k, n: t.n, raw: t.raw }));
+  localStorage.setItem('sym_site', JSON.stringify({ u: t.u, k: t.k, f: t.f || '', n: t.n, raw: t.raw }));
   MSites.restore(t.u);
   location.replace(location.pathname + '?s=' + t.raw + '#' + (/^[a-z]{2,12}$/.test(view || '') ? view : 'home'));
 }
@@ -1246,7 +1288,7 @@ async function payProcess(args, info) {
 // Canlı ödeme (1.6.1): sunucu fonksiyonu → { url } güvenli sayfa | { form } bankaya/PayTR'ye form | { done } kayıtlı kartla sonuç
 function payReturnUrl() { return location.origin + location.pathname + (CFG.central && CFG.siteRaw ? '?s=' + CFG.siteRaw : ''); }
 async function payStart(body) {
-  const r = await fetch(`${BASE}/functions/v1/odeme/baslat`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.assign({ token: S.token, return: payReturnUrl() }, body)) });
+  const r = await fetch(`${FN_BASE()}/baslat`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.assign({ token: S.token, return: payReturnUrl() }, body)) });
   let d = null; try { d = await r.json(); } catch { }
   if (!d) throw new Error(r.status === 404 ? 'Ödeme sunucusu kurulmamış. Lütfen yönetime bildirin.' : 'Ödeme sunucusuna ulaşılamadı (' + r.status + ').');
   if (d.code === 'SESSION') { const e = new Error(d.error); e.session = true; throw e; }
@@ -1663,7 +1705,12 @@ document.addEventListener('focusout', () => { if (Upd.pending) setTimeout(() => 
 
 
 // başlat
-(function start() {
+(async function start() {
+  if (CFG.needKey) {
+    render();
+    try { await resolveKey(); }
+    catch (e) { S.keyErr = e.message || String(e); render(); return; }
+  }
   const inv = readInviteFromUrl();
   const v = (location.hash || '').slice(1);
   if (v && (SUB[v] || isTab(v))) S.view = v;

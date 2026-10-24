@@ -1,17 +1,19 @@
 {
   "product": "site-yonetim",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "date": "2026-10-24",
   "notes": [
-    "Site Üst Yöneticisi artık yeni site ekleyebilir ve site kaldırabilir (site seçici → Yeni Site Ekle / Siteleri Yönet, Ayarlar → Siteler).",
-    "Üst Yönetici bir site eklediğinde oraya Site Üst Yöneticisi olarak girer; Sistem Yöneticileri ve diğer Site Üst Yöneticileri yeni siteye kendiliğinden eklenir (yeni sitenin bulut bağlantısını Sistem Yöneticisi kurar).",
-    "Site Yöneticisi site ekleyemez ve kaldıramaz. Kaldırılan sitenin verileri silinmez, arşivlenir."
+    "Bulut artık tek tıkla kuruluyor: Sistem Yöneticisi ücretsiz Neon hesabının API anahtarını bir kez girer (Ayarlar → Mobil Uygulama & Bulut → Otomatik Bulut), sonra her site için \"Bu Sitenin Bulutunu Otomatik Kur\" düğmesi yaklaşık 20 saniyede veritabanını, veri arayüzünü ve online ödeme fonksiyonunu kurar.",
+    "Yeni site eklerken \"Bulutu otomatik kur (Neon)\" seçilirse bulut ilk girişte kendiliğinden kurulur. API anahtarı yalnızca bu bilgisayarda şifreli saklanır.",
+    "Ücretsiz kullanımı korumak için Neon sitelerinde eşitleme 15 dakikada bir yapılır, gece 00:00-07:00 arası otomatik eşitleme yapılmaz; kullanım %70/%90'ı geçince eşitleme seyrekleşir ve uyarı verilir. Kayıt anındaki eşitlemeler her zaman çalışır.",
+    "Neon sitelerinde davet linkleri kısadır (anahtar linkte taşınmaz). Supabase siteleri eskisi gibi çalışır.",
+    "Düzeltme: Tüm Siteler genel bakışında bulut durumu doğru gösterilir."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.1.1/SiteYonetim-Kurulum-2.1.1.exe",
-    "sha512": "vrph0IkOhbFNj3+sDrNIra1SYZ5iQ8s8MUyIDxrtc3Qylu1RU2AI1SLnVBBXyryFAlGHjaAY54YIcKrifeHW8w==",
-    "size": 78904252
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.2.0/SiteYonetim-Kurulum-2.2.0.exe",
+    "sha512": "BoUKgqIUh/uApwhksLbAvhAEIa3RaSBzgDKCOjJDQgJG96IWJlz4jaS4juWf7ruyBcn1es8bm/9j7hF0oV5w/Q==",
+    "size": 78916353
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.1.1",
-  "sig": "hiDydPbTbOvZ6IUA/n3OTCqvndSnLSZNFAYXIaXP4anY+0Vsf55NXXZar35YCeW10iHazaa6hruRw2esz5cSBg=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.2.0",
+  "sig": "+j5LoYNHhT1OTvnd4k7KYCCQyr1cfbN3M3+7gisFhG0VcmW92T0rTLK/ZdJTvSxtjg2qZ/GmWxo07whuEr2SAg=="
 }

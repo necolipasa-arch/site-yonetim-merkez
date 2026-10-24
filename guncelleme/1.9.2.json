@@ -1,0 +1,19 @@
+{
+  "product": "site-yonetim",
+  "version": "1.9.2",
+  "date": "2026-10-24",
+  "notes": [
+    "Gerçek kartla ödeme: Ayarlar → Kartla Ödeme → Durum: Canlı. iyzico, PayTR (iFrame / Direkt API), Nestpay (İş Bankası, Akbank, Halkbank, Ziraat, TEB, QNB, Şekerbank), Garanti BBVA ve VakıfBank sanal POS bilgileri girilebilir; test modu, kart kaydı desteği uyarısı",
+    "Sunucu fonksiyonu tek düğmeyle kurulur (Supabase erişim anahtarı kaydedilmez); Bağlantıyı Test Et kuruluşu, test modunu ve kart kaydı desteğini gösterir",
+    "Kayıtlı kart ve otomatik ödeme gerçek çekimle çalışır (iyzico, PayTR Direkt API); reddedilen çekimler sebebiyle raporlanır. Banka POS'u kullanılıyorsa bankanın POS gün sonu aktarımı banka entegrasyonunda tanınır, çift tahsilat olmaz",
+    "Mobil uygulama 1.6.1: Kartla Öde normal sekme oldu; yeni kart kuruluşun / bankanın güvenli sayfasında girilir, kayıtlı kartla onaylı tek dokunuşla ödeme, test modu uyarısı; ödenen tutar eşitlemeyi beklemeden üst sınırdan düşülür",
+    "kurulum.sql 1.9.2 yeniden çalıştırılmalı (kuruluş bilgileri ve kart anahtarı alanları)"
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.9.2/SiteYonetim-Kurulum-1.9.2.exe",
+    "sha512": "mXVHSHuL5QlYl8HZclfD8iT1uvPNDHlj9nSFrbkqA8Z0VQKHDHVeKoIQp6MZgk14iy402/SARmxtywJ7/ANsuQ==",
+    "size": 78882418
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.9.2",
+  "sig": "XA6/lnviDM2Kf1URS0n9NZ/DCUQPhlb+O+ZE75xyT1fqejwdRlsUE+ySIGB0OC8PDpnQovB8RNX9CkgxphL6BQ=="
+}

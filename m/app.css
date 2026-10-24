@@ -231,12 +231,6 @@ a.btn { text-decoration: none; color: inherit; box-sizing: border-box; }
 .pr-bar > i { display: block; height: 100%; background: var(--primary); border-radius: 6px; }
 
 /* v1.6.0 — Kartla Öde */
-.bottom-nav button.pay-tab { color: var(--primary); }
-.bottom-nav button.pay-tab::before { display: none; }
-.bottom-nav .pay-bub { width: 46px; height: 46px; margin-top: -22px; border-radius: 50%; display: grid; place-items: center; color: #fff;
-  background: linear-gradient(135deg, #5b7cfa, #3d56d1); box-shadow: 0 6px 16px rgba(61,86,209,.38); border: 3px solid #fff; }
-.bottom-nav .pay-bub .ic { width: 22px; height: 22px; }
-.bottom-nav button.pay-tab.on .pay-bub { background: linear-gradient(135deg, #3d56d1, #2c3fa8); }
 .bottom-nav button span:last-child { white-space: nowrap; }
 .pay-prev { cursor: default; } .pay-prev u { text-decoration: none; font-weight: 700; }
 .pay-hero { background: linear-gradient(135deg, #4f6bed, #6a4fd8); color: #fff; border-radius: 18px; padding: 16px 18px; margin-bottom: 14px; }

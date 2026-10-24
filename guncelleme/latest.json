@@ -1,19 +1,19 @@
 {
   "product": "site-yonetim",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "date": "2026-10-24",
   "notes": [
-    "Kartla Ödeme (önizleme): iyzico / PayTR kurulum ekranı kaldırıldı; yerine Ayarlar → Kartla Ödeme geldi. Durum (Kapalı / Önizleme), asgari tutar, tahsilat hesabı, kart kaydetme ve otomatik ödeme izinleri, yalnızca seçilen deneme dairelerinde açma",
-    "Otomatik ödeme talimatları: Toplu Tahakkuk sonrası kayıtlı karttan otomatik ödeme (önizlemede para çekilmez), aynı dönem için tek çekim, süresi dolan kartta sakine bildirim; Kayıtlı Kartlar & Talimatlar ve Kartla Ödemeler pencereleri",
-    "Mobil uygulama 1.6.0: alt çubuğun ortasında \"Kartla Öde\" sekmesi; tamamı / yarısı / başka tutar, kayıtlı kartla tek dokunuşla ödeme, yeni kart (marka tanıma, numara kontrolü), \"Kartımı kaydet\" ve \"Aidatlarım otomatik ödensin\", Kartlarım",
-    "Güvenlik: kart numarası ve CVV hiçbir yere kaydedilmez; yalnızca marka, son 4 hane ve son kullanma tarihi tutulur. Sakin pasif yapılınca / taşınınca kayıtlı kartları silinir",
-    "kurulum.sql 1.9.1 yeniden çalıştırılmalı (kayıtlı kartlar tablosu); Supabase'e ek fonksiyon kurmak gerekmez"
+    "Gerçek kartla ödeme: Ayarlar → Kartla Ödeme → Durum: Canlı. iyzico, PayTR (iFrame / Direkt API), Nestpay (İş Bankası, Akbank, Halkbank, Ziraat, TEB, QNB, Şekerbank), Garanti BBVA ve VakıfBank sanal POS bilgileri girilebilir; test modu, kart kaydı desteği uyarısı",
+    "Sunucu fonksiyonu tek düğmeyle kurulur (Supabase erişim anahtarı kaydedilmez); Bağlantıyı Test Et kuruluşu, test modunu ve kart kaydı desteğini gösterir",
+    "Kayıtlı kart ve otomatik ödeme gerçek çekimle çalışır (iyzico, PayTR Direkt API); reddedilen çekimler sebebiyle raporlanır. Banka POS'u kullanılıyorsa bankanın POS gün sonu aktarımı banka entegrasyonunda tanınır, çift tahsilat olmaz",
+    "Mobil uygulama 1.6.1: Kartla Öde normal sekme oldu; yeni kart kuruluşun / bankanın güvenli sayfasında girilir, kayıtlı kartla onaylı tek dokunuşla ödeme, test modu uyarısı; ödenen tutar eşitlemeyi beklemeden üst sınırdan düşülür",
+    "kurulum.sql 1.9.2 yeniden çalıştırılmalı (kuruluş bilgileri ve kart anahtarı alanları)"
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.9.1/SiteYonetim-Kurulum-1.9.1.exe",
-    "sha512": "teOv2F66pILxpxEMVC7l7bx9BHmpxZ0iF2ArvMkayk/bgR7I79ZXok+cPyNlhM4OYI2qPy9S09ZvcIV61BtqYw==",
-    "size": 78864913
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.9.2/SiteYonetim-Kurulum-1.9.2.exe",
+    "sha512": "mXVHSHuL5QlYl8HZclfD8iT1uvPNDHlj9nSFrbkqA8Z0VQKHDHVeKoIQp6MZgk14iy402/SARmxtywJ7/ANsuQ==",
+    "size": 78882418
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.9.1",
-  "sig": "VDyuhnltR3sU0q8yJZsf9bQjEthw0LdX1CQGwlkT1iavL4cHRea7SS4ceVE1IuK27HQEyVAPOn/9oZzqrDGjDA=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.9.2",
+  "sig": "XA6/lnviDM2Kf1URS0n9NZ/DCUQPhlb+O+ZE75xyT1fqejwdRlsUE+ySIGB0OC8PDpnQovB8RNX9CkgxphL6BQ=="
 }

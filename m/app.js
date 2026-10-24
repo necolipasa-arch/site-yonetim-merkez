@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.4.2';
-const APP_BUILD = '20261024123448';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.4.3';
+const APP_BUILD = '20261024125811';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -538,6 +538,14 @@ function deniedMsg() {
     ? 'Telefonun Ayarlar → Uygulamalar → Site Yönetim Mobil → Bildirimler bölümünden izin verin, uygulamayı kapatıp yeniden açın ve tekrar deneyin.'
     : 'Telefonun Ayarlar → Bildirimler → Site Yönetim Mobil bölümünden izin verin, uygulamayı kapatıp yeniden açın ve tekrar deneyin.');
 }
+// Sorun gidermek için kısa durum satırı (kullanıcı ekran görüntüsü gönderebilsin)
+function pushDiag(sub, mine) {
+  const perm = ('Notification' in window) ? ({ granted: 'verildi', denied: 'reddedildi', default: 'sorulmadı' })[Notification.permission] || Notification.permission : 'yok';
+  const parts = ['İzin: ' + perm, 'Site anahtarı: ' + (Push.siteKey() ? 'var' : 'yok'), 'Bulut: ' + (S.data && S.data.push !== undefined ? '1.8' : 'eski')];
+  if (sub !== undefined) parts.push('Abonelik: ' + (sub ? (mine ? 'kayıtlı' : 'telefonda var, bulutta yok') : 'yok'));
+  parts.push(isStandalone() ? 'Ana ekran simgesi' : viaOldIcon() ? 'Eski simge' : 'Tarayıcı');
+  return `<p class="push-diag">${esc(parts.join(' · '))}</p>`;
+}
 function viaOldIcon() { try { return sessionStorage.getItem('sym_viaold') === '1' && !isStandalone(); } catch { return false; } }
 function appUrl() { return location.origin + location.pathname + (CFG.siteRaw ? '?s=' + CFG.siteRaw : ''); }
 function oldIconHelp() {
@@ -557,14 +565,16 @@ async function pushCard(box) {
   if (!box) return;
   const d = S.data, key = Push.siteKey();
   const head = `<div class="card-h"><h3>${ic('bell')} Bildirimler</h3></div>`;
-  if (d.push === undefined || !key) { box.innerHTML = head + `<p class="muted small">Site yönetimi anlık bildirimleri henüz açmadı. Açıldığında duyuru, kargo ve ziyaretçi bildirimlerini telefonunuza alabileceksiniz.</p>`; return; }
+  if (d.push === undefined) { box.innerHTML = head + `<p class="muted small">Bildirimler için sitenin bulut veritabanı henüz güncellenmemiş. Site yönetimi, Supabase'de <b>kurulum.sql 1.8</b>'i bir kez çalıştırmalıdır.</p>${pushDiag()}`; return; }
+  if (!key) { box.innerHTML = head + `<p class="muted small">Site yönetimi anlık bildirimleri henüz açmadı (masaüstü program: <b>Ayarlar → Bildirimler → Bildirimleri Aç</b>, ardından eşitleme). Açıldığında duyuru, kargo ve ziyaretçi bildirimlerini telefonunuza alabileceksiniz.</p>${pushDiag()}`; return; }
   if (!Push.supported()) {
     box.innerHTML = head + (isIOS() && !isStandalone()
       ? `<p class="small">iPhone'da bildirim alabilmek için uygulamayı önce <b>ana ekrana ekleyin</b> ve ana ekrandaki simgeden açın (iOS 16.4 ve üzeri).</p><button class="btn block" data-act="install">Nasıl eklenir?</button>`
       : `<p class="muted small">Bu tarayıcı anlık bildirimleri desteklemiyor. Android'de Chrome, iPhone'da ana ekrana eklenmiş uygulama kullanın.</p>`);
     return;
   }
-  if (viaOldIcon()) { box.innerHTML = head + oldIconHelp(); bindOldIconHelp(box); return; }
+  // eski simgeden açıldıysa ve izin yoksa yönerge; izin verilmişse normal kart (abonelik yapılabilir) + öneri
+  if (viaOldIcon() && Notification.permission !== 'granted') { box.innerHTML = head + oldIconHelp() + pushDiag(); bindOldIconHelp(box); return; }
   const sub = await Push.sub().catch(() => null), mine = Push.mine(sub);
   const on = !!(sub && mine && Notification.permission === 'granted');
   const prefs = (mine && mine.prefs) || {};
@@ -576,6 +586,7 @@ async function pushCard(box) {
     : `<p class="small">Duyuru, kargo, misafir girişi, talep ve rezervasyon gelişmelerinden <b>anında</b> haberdar olun. Uygulama kapalıyken de bildirim gelir.</p>
        ${Notification.permission === 'denied' ? `<p class="small txt-red">${deniedMsg()}</p>` : ''}
        <button class="btn primary block" style="margin-top:10px" data-pushon>${ic('bell')} Bildirimleri Aç</button>`);
+  box.insertAdjacentHTML('beforeend', (viaOldIcon() ? `<p class="muted small" style="margin-top:8px">Öneri: uygulamayı yeni simgeyle ana ekrana ekleyip eski simgeyi silin (üstteki adres çubuğu kalkar).</p>` : '') + pushDiag(sub, mine));
   const onBtn = box.querySelector('[data-pushon]');
   if (onBtn) onBtn.onclick = async () => { onBtn.disabled = true; try { await Push.enable({}); toast('Bildirimler açıldı ✓'); } catch (e) { toast(e.message, 'error'); } pushCard(box); };
   const offBtn = box.querySelector('[data-pushoff]');

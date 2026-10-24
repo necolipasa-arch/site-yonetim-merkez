@@ -1,0 +1,16 @@
+{
+  "product": "site-yonetim",
+  "version": "2.2.1",
+  "date": "2026-10-24",
+  "notes": [
+    "Mobil Uygulama sayfası (sakin davetleri, mobil hesaplar) artık yalnızca Sistem Yöneticisi'ne açık. Site Üst Yöneticisi, Site Yöneticisi ve diğer roller bu sayfayı göremez; Rol Yetkileri'nden de açılamaz.",
+    "Sakinler listesindeki \"Mobil uygulama davet kodu\" simgesi de yalnızca Sistem Yöneticisi'nde görünür. Duyurular, talepler, rezervasyonlar ve Bildirim Gönder eskisi gibi çalışır."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.2.1/SiteYonetim-Kurulum-2.2.1.exe",
+    "sha512": "MsrEUKyhoQoNaVYzxoJl5lUuvR8xfUxGjgohp4/MuoCTPHKXCDJ935jkvJ1Q7uDkk6jI7oqREHoWLPgDm9NHmg==",
+    "size": 78916414
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.2.1",
+  "sig": "pPH9RQ9NnN6WLn3VumHn6modrGysO4hDS3/Lzy24YiuleDkUdxndC8m4cx47OQ9t2pJITezGb8XwVLkSigQ0CQ=="
+}

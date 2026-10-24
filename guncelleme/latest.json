@@ -1,20 +1,19 @@
 {
   "product": "site-yonetim",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "date": "2026-10-24",
   "notes": [
-    "Genel Kurul paketi: gündem şablonu, çağrı mektubu + vekâletname, tebliğ listesi, hazirun cetveli, KMK'ya göre toplantı yeter sayısı (sayı ve arsa payı) ve vekâlet sınırı, madde madde oylama (1. ve 2. toplantı kuralları), karar tutanağı ve karar defteri sayfası (PDF); kararlar Toplantı & Kararlar kaydına ve mobil uygulamaya aktarılır",
-    "Anketler: sakinler mobilden oy verir (daire başına bir oy, son oy geçerli), hedef (tüm site / malikler / kiracılar / blok), gizli oylama, çoklu seçim, arsa payı ağırlıklı sonuç, sonuç yazdırma ve duyurma, yeni anket bildirimi",
-    "Online ödeme altyapısı (iyzico / PayTR): Ayarlar → Online Ödeme; sakin mobilden borcunun tamamını veya bir kısmını kartla öder, tahsilat ve makbuz kendiliğinden oluşur; Tahsilat → Online Ödemeler izleme penceresi; test modu ve test tahsilatlarını silme",
-    "Banka entegrasyonu ile birlikte: iyzico / PayTR'nin bankaya yaptığı toplu aktarım tanınır ve yok sayılır (çift tahsilat olmaz)",
-    "Mobil uygulama 1.5.0: Online Öde, son online ödemelerim, Anketler, bildirim tercihlerine \"Yeni anket\" ve \"Online ödemem alındı\"",
-    "kurulum.sql 1.9 yeniden çalıştırılmalı (anket ve online ödeme tabloları); online ödeme için Supabase'e \"odeme\" sunucu fonksiyonu kurulur (Kurulum Kılavuzu Bölüm 13)"
+    "Kartla Ödeme (önizleme): iyzico / PayTR kurulum ekranı kaldırıldı; yerine Ayarlar → Kartla Ödeme geldi. Durum (Kapalı / Önizleme), asgari tutar, tahsilat hesabı, kart kaydetme ve otomatik ödeme izinleri, yalnızca seçilen deneme dairelerinde açma",
+    "Otomatik ödeme talimatları: Toplu Tahakkuk sonrası kayıtlı karttan otomatik ödeme (önizlemede para çekilmez), aynı dönem için tek çekim, süresi dolan kartta sakine bildirim; Kayıtlı Kartlar & Talimatlar ve Kartla Ödemeler pencereleri",
+    "Mobil uygulama 1.6.0: alt çubuğun ortasında \"Kartla Öde\" sekmesi; tamamı / yarısı / başka tutar, kayıtlı kartla tek dokunuşla ödeme, yeni kart (marka tanıma, numara kontrolü), \"Kartımı kaydet\" ve \"Aidatlarım otomatik ödensin\", Kartlarım",
+    "Güvenlik: kart numarası ve CVV hiçbir yere kaydedilmez; yalnızca marka, son 4 hane ve son kullanma tarihi tutulur. Sakin pasif yapılınca / taşınınca kayıtlı kartları silinir",
+    "kurulum.sql 1.9.1 yeniden çalıştırılmalı (kayıtlı kartlar tablosu); Supabase'e ek fonksiyon kurmak gerekmez"
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.9.0/SiteYonetim-Kurulum-1.9.0.exe",
-    "sha512": "9o5fFz1QbgvNKrUScgXE3GP3WLYBQgyrtDL1/o9V8qBUcHTV0qYYDvoJ4dAd5IWF2lYxl+A+Dwl0wavJwW9rzQ==",
-    "size": 78851643
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.9.1/SiteYonetim-Kurulum-1.9.1.exe",
+    "sha512": "teOv2F66pILxpxEMVC7l7bx9BHmpxZ0iF2ArvMkayk/bgR7I79ZXok+cPyNlhM4OYI2qPy9S09ZvcIV61BtqYw==",
+    "size": 78864913
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.9.0",
-  "sig": "kF6WFvFJvW8FBBQ+mrSZ2C5U0jKYkwTKeiHvEEA9bgvu3CC7yZiBli9KmYqbvJlBNCS4oxYf5WdsfdgYMHsXAg=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.9.1",
+  "sig": "VDyuhnltR3sU0q8yJZsf9bQjEthw0LdX1CQGwlkT1iavL4cHRea7SS4ceVE1IuK27HQEyVAPOn/9oZzqrDGjDA=="
 }

@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.5.0';
-const APP_BUILD = '20261024141819';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.6.0';
+const APP_BUILD = '20261024150357';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -111,6 +111,8 @@ const P = {
   clock: 'M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z',
   card: 'M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z',
   poll: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z',
+  info: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z',
+  trash: 'M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z',
 };
 const blk = (b) => !b ? '' : /blok/i.test(b) ? b : b + ' Blok';
 const unitName = (u) => u && u.no ? `${blk(u.block)} · Daire ${u.no}` : '';
@@ -207,6 +209,10 @@ const TABS = [
   { k: 'reserve', label: 'Rezervasyon', icon: 'calendar' },
   { k: 'more', label: 'Diğer', icon: 'grid' }
 ];
+const PAY_TAB = { k: 'pay', label: 'Kartla Öde', icon: 'card' };
+// 1.6.0: kartla ödeme açıksa alt çubuğun ortasında "Kartla Öde" sekmesi
+function navTabs() { return payOn() ? [TABS[0], TABS[1], PAY_TAB, TABS[2], TABS[3], TABS[4]] : TABS; }
+function isTab(v) { return TABS.some(t => t.k === v) || v === 'pay'; }
 const SUB = {
   ann: { title: 'Duyurular', parent: 'more' }, cargo: { title: 'Kargolarım', parent: 'more' }, visitors: { title: 'Ziyaretçi Bildirimi', parent: 'more' },
   meetings: { title: 'Toplantılar & Kararlar', parent: 'more' }, polls: { title: 'Anketler', parent: 'more' }, contacts: { title: 'Önemli Telefonlar', parent: 'more' }, profile: { title: 'Profil & Ayarlar', parent: 'more' }
@@ -219,7 +225,7 @@ async function refresh(silent) {
     const d = await call('member_data');
     S.data = d; S.at = new Date().toISOString(); S.offline = false;
     try { localStorage.setItem('sym_cache', JSON.stringify({ d, at: S.at })); } catch { }
-    render();
+    if (document.querySelector('main input:focus')) S.renderLater = true; else render();
     kvkkCheck(); Push.heal();
     if (!silent) toast('Bilgiler güncellendi');
   } catch (e) {
@@ -251,7 +257,7 @@ function render() {
   const activeTab = sub ? sub.parent : S.view;
   const d = S.data, u = d.unit || {};
   const siteName = (d.site && d.site.site_name) || CFG.siteName || 'Site Yönetim';
-  const views = { home: homeView, account: accountView, requests: requestsView, reserve: reserveView, more: moreView, ann: annView, cargo: cargoView, visitors: visitorsView, meetings: meetingsView, polls: pollsView, contacts: contactsView, profile: profileView };
+  const views = { home: homeView, account: accountView, pay: payView, requests: requestsView, reserve: reserveView, more: moreView, ann: annView, cargo: cargoView, visitors: visitorsView, meetings: meetingsView, polls: pollsView, contacts: contactsView, profile: profileView };
   const waitingCargo = (d.cargo || []).filter(c => !c.delivered_at).length;
   app.innerHTML = `
     <header class="topbar">
@@ -261,7 +267,9 @@ function render() {
     </header>
     ${S.offline ? `<div class="offline-bar">Çevrim dışı — son güncelleme: ${esc(S.at ? fmt.dt(localTs(S.at)) : '—')}</div>` : ''}
     <main class="content">${(views[S.view] || homeView)()}</main>
-    <nav class="bottom-nav">${TABS.map(t => `<button class="${activeTab === t.k ? 'on' : ''}" data-tab="${t.k}">${ic(t.icon)}<span>${t.label}</span>${t.k === 'more' && waitingCargo ? `<i class="dot">${waitingCargo}</i>` : ''}</button>`).join('')}</nav>`;
+    <nav class="bottom-nav">${navTabs().map(t => t.k === 'pay'
+      ? `<button class="pay-tab ${activeTab === 'pay' ? 'on' : ''}" data-tab="pay"><span class="pay-bub">${ic('card')}</span><span>${t.label}</span></button>`
+      : `<button class="${activeTab === t.k ? 'on' : ''}" data-tab="${t.k}">${ic(t.icon)}<span>${t.label}</span>${t.k === 'more' && waitingCargo ? `<i class="dot">${waitingCargo}</i>` : ''}</button>`).join('')}</nav>`;
   afterRender();
 }
 function localTs(iso) { const x = new Date(iso); return isNaN(x) ? '' : `${x.getFullYear()}-${pad(x.getMonth() + 1)}-${pad(x.getDate())} ${pad(x.getHours())}:${pad(x.getMinutes())}`; }
@@ -488,7 +496,7 @@ function kvkkCheck() {
 }
 
 // ---------------- anlık bildirimler ----------------
-const PUSH_PREFS = [['ann', 'Duyurular'], ['cargo', 'Kargo geldi'], ['guest', 'Ziyaretçim / misafirim geldi'], ['req', 'Talep durumu değişti'], ['resv', 'Rezervasyon onay / ret'], ['accrual', 'Yeni aidat / borç'], ['poll', 'Yeni anket'], ['pay', 'Online ödemem alındı']];
+const PUSH_PREFS = [['ann', 'Duyurular'], ['cargo', 'Kargo geldi'], ['guest', 'Ziyaretçim / misafirim geldi'], ['req', 'Talep durumu değişti'], ['resv', 'Rezervasyon onay / ret'], ['accrual', 'Yeni aidat / borç'], ['poll', 'Yeni anket'], ['pay', 'Kartla ödemelerim / otomatik ödeme']];
 const Push = {
   supported() { return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window; },
   siteKey() { return (S.data && S.data.site && S.data.site.push_vapid_public) || ''; },
@@ -543,7 +551,7 @@ function deniedMsg() {
 // Sorun gidermek için kısa durum satırı (kullanıcı ekran görüntüsü gönderebilsin)
 function pushDiag(sub, mine) {
   const perm = ('Notification' in window) ? ({ granted: 'verildi', denied: 'reddedildi', default: 'sorulmadı' })[Notification.permission] || Notification.permission : 'yok';
-  const parts = ['İzin: ' + perm, 'Site anahtarı: ' + (Push.siteKey() ? 'var' : 'yok'), 'Bulut: ' + (S.data && S.data.polls !== undefined ? '1.9' : S.data && S.data.push !== undefined ? '1.8' : 'eski')];
+  const parts = ['İzin: ' + perm, 'Site anahtarı: ' + (Push.siteKey() ? 'var' : 'yok'), 'Bulut: ' + (S.data && S.data.cards !== undefined ? '1.9.1' : S.data && S.data.polls !== undefined ? '1.9' : S.data && S.data.push !== undefined ? '1.8' : 'eski')];
   if (sub !== undefined) parts.push('Abonelik: ' + (sub ? (mine ? 'kayıtlı' : 'telefonda var, bulutta yok') : 'yok'));
   parts.push(isStandalone() ? 'Ana ekran simgesi' : viaOldIcon() ? 'Eski simge' : 'Tarayıcı');
   return `<p class="push-diag">${esc(parts.join(' · '))}</p>`;
@@ -734,7 +742,7 @@ function balanceCard() {
   const bal = Number(u.balance) || 0, od = Number(u.overdue) || 0;
   if (bal > 0.004) return `<div class="balance"><span>Güncel Borcunuz</span><b>${fmt.money(bal)}</b>
     <div class="bl-row"><small>${od > 0.004 ? `⚠ ${fmt.money(od)} vadesi geçmiş` : site.due_day ? `Son ödeme: her ayın ${esc(site.due_day)}. günü` : ''}</small>
-    ${payOn() ? `<button class="btn sm" data-act="paynow">${ic('card')} Online Öde</button>` : `<button class="btn sm" data-act="pay">${ic('cash')} Nasıl öderim?</button>`}</div></div>`;
+    ${payOn() ? `<button class="btn sm" data-tab="pay">${ic('card')} Kartla Öde</button>` : `<button class="btn sm" data-act="pay">${ic('cash')} Nasıl öderim?</button>`}</div></div>`;
   if (bal < -0.004) return `<div class="balance credit"><span>Alacak Bakiyeniz</span><b>${fmt.money(-bal)}</b><div class="bl-row"><small>Sonraki aidatlarınızdan düşülecektir.</small></div></div>`;
   return `<div class="balance ok"><span>Aidat Durumu</span><b>Borcunuz yok ✓</b><div class="bl-row"><small>Tüm ödemeleriniz güncel. Teşekkür ederiz!</small><button class="btn sm" data-tab="account">Hesap dökümü</button></div></div>`;
 }
@@ -1035,56 +1043,198 @@ function newVisitorSheet() {
     };
   });
 }
-// ---------------- ONLINE ÖDEME (v1.5.0) ----------------
+// ---------------- KARTLA ÖDEME (v1.6.0) ----------------
+// Kart numarası ve CVV yalnızca bu ekranda (bellekte) tutulur; buluta / yerel depoya ASLA gönderilmez.
+// Buluta yalnızca maskeli bilgi gider: marka, son 4 hane, son kullanma, kart sahibinin adı.
 function payOn() { const p = S.data && S.data.pay; return !!(p && p.enabled); }
+function payPreview() { const p = S.data && S.data.pay; return !!(p && (p.mode === 'preview' || p.provider === 'onizleme')); }
 function payStatus(o) {
+  if (o.status === 'Önizleme') return badge('Önizleme', 'orange');
   if (o.status === 'Ödendi') return o.imported ? badge('Tahsil edildi', 'green') : badge('Alındı · işleniyor', 'green');
   if (o.status === 'Başarısız') return badge('Başarısız', 'red');
   if (o.status === 'Yarım kaldı') return badge('Yarım kaldı', 'gray');
   return badge('Bekliyor', 'orange');
 }
+const Card = {
+  brand(n) {
+    n = String(n || '').replace(/\D/g, '');
+    if (/^4/.test(n)) return 'Visa';
+    if (/^(5[1-5]|2(2[2-9]|[3-6]\d|7[01]|720))/.test(n)) return 'Mastercard';
+    if (/^3[47]/.test(n)) return 'American Express';
+    if (/^(9792|65)/.test(n)) return 'Troy';
+    return n.length >= 2 ? 'Kart' : '';
+  },
+  luhn(n) { let s = 0, alt = false; for (let i = n.length - 1; i >= 0; i--) { let d = +n[i]; if (alt) { d *= 2; if (d > 9) d -= 9; } s += d; alt = !alt; } return s % 10 === 0; },
+  fmt(n) { const d = String(n || '').replace(/\D/g, '').slice(0, 19); return Card.brand(d) === 'American Express' ? d.replace(/^(\d{0,4})(\d{0,6})(\d{0,5}).*/, (m, a, b, c) => [a, b, c].filter(Boolean).join(' ')) : d.replace(/(\d{4})(?=\d)/g, '$1 '); },
+  expired(m, y) { y = y < 100 ? 2000 + y : y; const n = new Date(); return y < n.getFullYear() || (y === n.getFullYear() && m < n.getMonth() + 1); },
+  label(c) { return `${c.brand} •••• ${c.last4}`; },
+  exp(c) { return `${String(c.exp_month).padStart(2, '0')}/${String(c.exp_year).slice(-2)}`; },
+  logo(b) { return `<span class="cbrand ${({ Visa: 'visa', Mastercard: 'mc', Troy: 'troy', 'American Express': 'amex' })[b] || ''}">${b === 'Mastercard' ? '<i></i><i></i>' : esc(b === 'American Express' ? 'AMEX' : (b || 'KART').toUpperCase())}</span>`; },
+  // form → doğrulanmış maskeli kart (hata varsa {err})
+  read(f) {
+    const num = String(f.cc.value || '').replace(/\D/g, ''), br = Card.brand(num);
+    const holder = String(f.holder.value || '').trim().replace(/\s+/g, ' ');
+    const m = /^(\d{1,2})\s*\/?\s*(\d{2}|\d{4})$/.exec(String(f.exp.value || '').trim());
+    const cvv = String(f.cvv.value || '').replace(/\D/g, '');
+    if (num.length < 15 || num.length > 19 || !Card.luhn(num)) return { err: 'Kart numarası hatalı. Lütfen kontrol edin.', field: 'cc' };
+    if (holder.length < 3) return { err: 'Kart üzerindeki adı yazın.', field: 'holder' };
+    if (!m || +m[1] < 1 || +m[1] > 12) return { err: 'Son kullanma tarihini AA/YY biçiminde yazın (örn. 08/28).', field: 'exp' };
+    const mo = +m[1], yr = m[2].length === 2 ? 2000 + +m[2] : +m[2];
+    if (Card.expired(mo, yr)) return { err: 'Kartın son kullanma tarihi geçmiş.', field: 'exp' };
+    if (cvv.length !== (br === 'American Express' ? 4 : 3)) return { err: `Güvenlik kodu (CVV) ${br === 'American Express' ? 4 : 3} haneli olmalı.`, field: 'cvv' };
+    return { card: { brand: br, last4: num.slice(-4), exp_month: mo, exp_year: yr, holder } };
+  },
+  formHtml(opts) {
+    const p = S.data.pay || {};
+    return `<div class="ccard" data-ccprev><div class="cc-top"><span class="cc-chip"></span><span data-ccbrand>${Card.logo('')}</span></div>
+        <div class="cc-num" data-ccnum>•••• •••• •••• ••••</div>
+        <div class="cc-bot"><div><small>KART SAHİBİ</small><b data-ccname>AD SOYAD</b></div><div><small>SON KUL.</small><b data-ccexp>AA/YY</b></div></div></div>
+      <div class="fld"><label>Kart numarası</label><input name="cc" inputmode="numeric" autocomplete="cc-number" placeholder="0000 0000 0000 0000" maxlength="23" required></div>
+      <div class="fld"><label>Kart üzerindeki ad soyad</label><input name="holder" autocomplete="cc-name" autocapitalize="characters" placeholder="AD SOYAD" maxlength="60" required></div>
+      <div class="row2 cc-row"><div class="fld"><label>Son kullanma (AA/YY)</label><input name="exp" inputmode="numeric" autocomplete="cc-exp" placeholder="08/28" maxlength="7" required></div>
+        <div class="fld"><label>Güvenlik kodu (CVV)</label><input name="cvv" type="password" inputmode="numeric" autocomplete="cc-csc" placeholder="•••" maxlength="4" required></div></div>
+      ${opts.saveOpt && p.save ? `<label class="chk-row"><input type="checkbox" name="save" ${opts.saveDefault ? 'checked' : ''}><span><b>Kartımı kaydet</b><small>Sonraki ödemelerde kart bilgisi girmeden ödeyin.</small></span></label>` : ''}
+      ${opts.autoOpt && p.auto ? `<label class="chk-row"><input type="checkbox" name="auto"><span><b>Aidatlarım bu karttan otomatik ödensin</b><small>Yeni aidat tahakkuk edildiğinde borcunuz bu karttan çekilir; size bildirim gelir. İstediğiniz zaman kapatabilirsiniz.</small></span></label>` : ''}`;
+  },
+  bind(f) {
+    const q = (k) => f.closest('.sheet').querySelector(k);
+    const upd = () => {
+      const n = String(f.cc.value).replace(/\D/g, ''), br = Card.brand(n);
+      q('[data-ccnum]').textContent = n ? Card.fmt(n) : '•••• •••• •••• ••••';
+      q('[data-ccbrand]').innerHTML = Card.logo(br);
+      q('[data-ccname]').textContent = (f.holder.value || 'AD SOYAD').toLocaleUpperCase('tr-TR');
+      q('[data-ccexp]').textContent = f.exp.value || 'AA/YY';
+      q('[data-ccprev]').className = 'ccard ' + (({ Visa: 'visa', Mastercard: 'mc', Troy: 'troy', 'American Express': 'amex' })[br] || '');
+      f.cvv.maxLength = br === 'American Express' ? 4 : 3;
+    };
+    f.cc.addEventListener('input', () => { const p0 = f.cc.selectionStart, before = f.cc.value.length; f.cc.value = Card.fmt(f.cc.value); if (p0 != null && p0 < before) try { f.cc.setSelectionRange(p0, p0); } catch { } upd(); });
+    f.exp.addEventListener('input', (e) => { let v = f.exp.value.replace(/[^\d]/g, '').slice(0, 4); if (v.length >= 3) v = v.slice(0, 2) + '/' + v.slice(2); else if (v.length === 2 && e.inputType !== 'deleteContentBackward') v += '/'; f.exp.value = v; upd(); });
+    f.holder.addEventListener('input', upd); f.cvv.addEventListener('input', () => { f.cvv.value = f.cvv.value.replace(/\D/g, ''); });
+    if (f.save && f.auto) { const s2 = () => { f.auto.disabled = !f.save.checked; if (!f.save.checked) f.auto.checked = false; }; f.save.addEventListener('change', s2); s2(); }
+    upd();
+  },
+  wipe(f) { ['cc', 'cvv', 'exp', 'holder'].forEach(k => { if (f[k]) f[k].value = ''; }); }
+};
+function payAmount() {
+  const bal = Math.round((Number((S.data.unit || {}).balance) || 0) * 100) / 100, p = S.data.pay || {};
+  const min = Math.min(Math.max(1, Number(p.min) || 1), bal), X = S.payx = S.payx || { mode: 'all', custom: '', card: null };
+  let amt = X.mode === 'half' ? Math.round(bal / 2 * 100) / 100 : X.mode === 'custom' ? Math.round(Number(String(X.custom).replace(',', '.')) * 100) / 100 : bal;
+  if (!(amt > 0)) amt = 0;
+  return { bal, min, amt, ok: amt >= min - 0.001 && amt <= bal + 0.001 };
+}
+function payView() {
+  if (!payOn()) return `<div class="empty">${ic('card')}<p>Kartla ödeme bu dairede henüz açık değil.</p><button class="btn" data-tab="account">Hesabım</button></div>`;
+  const d = S.data, p = d.pay || {}, cards = d.cards || [], X = S.payx = S.payx || { mode: 'all', custom: '', card: null };
+  const { bal, min, amt, ok } = payAmount();
+  const usable = cards.filter(c => !Card.expired(c.exp_month, c.exp_year));
+  if (X.card !== 'new' && !usable.some(c => c.id === X.card)) X.card = usable.length ? (usable.find(c => c.auto_pay) || usable[0]).id : 'new';
+  const auto = cards.find(c => c.auto_pay);
+  const list = (d.online_payments || []).slice(0, 6);
+  return `
+    ${payPreview() ? `<div class="alert orange pay-prev">${ic('info')}<div><b>Önizleme</b>Kartla ödeme deneme aşamasında. Deneyebilirsiniz ama <u>kartınızdan para çekilmez</u> ve borcunuz düşmez.</div></div>` : ''}
+    <div class="pay-hero"><span>Güncel borcunuz</span><b>${fmt.money(bal)}</b>${Number((d.unit || {}).overdue) > 0.004 ? `<small>⚠ ${fmt.money(d.unit.overdue)} vadesi geçmiş</small>` : ''}</div>
+    ${bal > 0.004 ? `
+    <div class="card"><div class="card-h"><h3>Ödenecek tutar</h3></div>
+      <div class="seg">${[['all', 'Tamamı'], ...(bal >= 2 * min ? [['half', 'Yarısı']] : []), ['custom', 'Başka tutar']].map(([k, l]) => `<button data-pamt="${k}" class="${X.mode === k ? 'on' : ''}">${l}</button>`).join('')}</div>
+      ${X.mode === 'custom' ? `<div class="fld" style="margin-top:10px"><input data-pcustom type="number" inputmode="decimal" step="0.01" min="${min}" max="${bal}" value="${esc(X.custom)}" placeholder="Tutar (₺)"><small class="muted">En az ${fmt.money(min)}, en fazla ${fmt.money(bal)}</small></div>` : ''}
+    </div>
+    ${!payPreview() ? '' : `<div class="card"><div class="card-h"><h3>Kart</h3>${p.save ? `<a data-act="cardadd">+ Kart ekle</a>` : ''}</div>
+      <div class="pcards">${usable.map(c => `<button class="pcard ${X.card === c.id ? 'on' : ''}" data-pcard="${c.id}">${Card.logo(c.brand)}<span class="pc-b"><b>•••• ${esc(c.last4)}</b><small>${esc(c.holder || '')} · ${Card.exp(c)}</small></span>${c.auto_pay ? badge('Otomatik', 'green') : ''}<i class="radio"></i></button>`).join('')}
+        <button class="pcard ${X.card === 'new' ? 'on' : ''}" data-pcard="new"><span class="cbrand new">${ic('plus')}</span><span class="pc-b"><b>Yeni kart ile öde</b><small>Kredi veya banka kartı</small></span><i class="radio"></i></button></div>
+    </div>`}
+    <button class="btn primary block pay-go" data-act="paygo" ${ok ? '' : 'disabled'}>${ic('lock')} ${ok ? fmt.money(amt) + ' Öde' : 'Tutarı kontrol edin'}</button>
+    <p class="muted small center pay-sec">${ic('lock')} Ödemeler 3D Secure ile korunur. Kart numaranız ve CVV kodunuz siteye ve uygulamaya kaydedilmez.</p>`
+    : `<div class="card center"><p>Ödenecek borcunuz bulunmuyor. ✓</p></div>`}
+    ${p.auto ? `<div class="card auto-card"><div class="card-h"><h3>${ic('refresh')} Otomatik ödeme</h3>${auto ? badge('Açık', 'green') : badge('Kapalı', 'gray')}</div>
+      ${auto ? `<p class="small">Yeni aidat tahakkuk edildiğinde borcunuz <b>${esc(Card.label(auto))}</b> kartınızdan otomatik ödenir. Her çekimden sonra bildirim alırsınız.${Card.expired(auto.exp_month, auto.exp_year) ? ' <b class="amt-neg">Kartın süresi dolmuş, lütfen yeni kart ekleyin.</b>' : ''}</p>
+        <button class="btn sm" data-cardauto="${auto.id}" data-on="0" style="margin-top:8px">Otomatik ödemeyi kapat</button>`
+      : `<p class="small muted">Aidatlarınızı her ay hatırlamanıza gerek kalmaz: kayıtlı bir kartı seçip otomatik ödemeyi açın; yeni aidat tahakkuk edildiğinde borcunuz o karttan çekilir.</p>
+        ${usable.length ? `<div class="row2" style="margin-top:8px">${usable.slice(0, 2).map(c => `<button class="btn sm" data-cardauto="${c.id}" data-on="1">${esc(Card.label(c))} ile aç</button>`).join('')}</div>` : p.save ? `<button class="btn sm" data-act="cardadd" data-auto="1" style="margin-top:8px">+ Kart ekle ve otomatik ödemeyi aç</button>` : ''}`}
+    </div>` : ''}
+    ${cards.length ? `<div class="sec-title">Kayıtlı kartlarım</div><div class="list">${cards.map(c => `<div class="li">${Card.logo(c.brand)}<div class="li-b"><b>${esc(Card.label(c))}</b><small>${esc(c.holder || '')} · Son kul. ${Card.exp(c)}${Card.expired(c.exp_month, c.exp_year) ? ' · süresi doldu' : ''}</small></div>${c.auto_pay ? badge('Otomatik', 'green') : ''}<button class="icon-btn" data-carddel="${c.id}" aria-label="Kartı sil">${ic('trash')}</button></div>`).join('')}</div>` : ''}
+    ${list.length ? `<div class="sec-title">Son kart ödemelerim</div><div class="list">${list.map(o => `<div class="li"><span class="li-ic qi green">${ic('card')}</span><div class="li-b"><b>${fmt.money(o.amount)}${o.kind === 'Otomatik' ? ' · Otomatik' : ''}</b><small>${esc(fmt.dt(localTs(o.paid_at || o.created_at)))}${o.card ? ' · ' + esc(o.card) : ''}${o.error ? ' · ' + esc(o.error) : ''}</small></div>${payStatus(o)}</div>`).join('')}</div>` : ''}
+    <p class="muted small center" style="margin-top:14px">Havale / EFT ile ödemek için <a data-act="pay">banka bilgileri</a>.</p>`;
+}
 function onlinePaysCard() {
   if (!payOn()) return '';
-  const u = S.data.unit || {}, bal = Number(u.balance) || 0;
-  const list = (S.data.online_payments || []).slice(0, 5);
-  return `<div class="card"><div class="card-h"><h3>${ic('card')} Online Ödeme</h3>${S.data.pay.test ? badge('TEST', 'orange') : ''}</div>
-    <p class="muted small">Kredi veya banka kartınızla güvenli ödeme. Borcunuzun tamamını ya da bir kısmını ödeyebilirsiniz; ek ücret alınmaz.</p>
-    ${bal > 0.004 ? `<button class="btn primary block" data-act="paynow" style="margin-top:10px">${ic('card')} Online Öde (${fmt.money(bal)})</button>` : '<p class="small" style="margin-top:8px">Ödenecek borcunuz bulunmuyor. ✓</p>'}
-    ${list.length ? `<div class="sec-title" style="margin-top:12px">Son online ödemelerim</div><div class="list">${list.map(o => `<div class="li"><span class="li-ic qi green">${ic('card')}</span><div class="li-b"><b>${fmt.money(o.amount)}</b><small>${esc(fmt.dt(localTs(o.paid_at || o.created_at)))}</small></div>${payStatus(o)}</div>`).join('')}</div>` : ''}</div>`;
+  const bal = Number((S.data.unit || {}).balance) || 0, auto = (S.data.cards || []).find(c => c.auto_pay);
+  return `<div class="card"><div class="card-h"><h3>${ic('card')} Kartla Ödeme</h3>${payPreview() ? badge('Önizleme', 'orange') : ''}</div>
+    <p class="muted small">Kredi veya banka kartınızla ödeyin, kartınızı kaydedin, isterseniz aidatlarınız otomatik ödensin.${auto ? ` <b>Otomatik ödeme açık (${esc(Card.label(auto))}).</b>` : ''}</p>
+    <button class="btn primary block" data-tab="pay" style="margin-top:10px">${ic('card')} ${bal > 0.004 ? 'Kartla Öde (' + fmt.money(bal) + ')' : 'Kartlarım ve otomatik ödeme'}</button></div>`;
 }
-function payNowSheet() {
-  const u = S.data.unit || {}, bal = Math.round((Number(u.balance) || 0) * 100) / 100, p = S.data.pay || {};
-  if (!payOn()) { toast('Online ödeme şu anda kullanılamıyor.', 'error'); return; }
-  if (bal <= 0.004) { toast('Ödenecek borcunuz bulunmuyor.'); return; }
-  const min = Math.min(Math.max(1, Number(p.min) || 1), bal);
-  Sheet.open(`<h3>${ic('card')} Online Öde</h3>
-    <div class="kv"><span>Güncel borcunuz</span><b>${fmt.money(bal)}</b></div>
-    <form id="payForm"><div class="fld" style="margin-top:10px"><label>Ödenecek tutar (₺)</label>
-      <input name="amt" type="number" inputmode="decimal" step="0.01" min="${min}" max="${bal}" value="${bal.toFixed(2)}" required></div>
-      <div class="row2"><button type="button" class="btn sm" data-amt="${bal.toFixed(2)}">Tamamı</button>${bal >= 2 * min ? `<button type="button" class="btn sm" data-amt="${(Math.round(bal / 2 * 100) / 100).toFixed(2)}">Yarısı</button>` : ''}</div>
-      <p class="muted small" style="margin-top:8px">En az ${fmt.money(min)}, en fazla ${fmt.money(bal)} ödeyebilirsiniz. Ödeme ${esc(p.provider === 'paytr' ? 'PayTR' : 'iyzico')} güvenli ödeme sayfasında yapılır; kart bilgileriniz siteyle paylaşılmaz.${p.test ? ' <b>TEST modu: gerçek para çekilmez.</b>' : ''}</p>
-      <button class="btn primary block" type="submit" style="margin-top:12px">Ödeme Sayfasına Geç</button></form>
+async function payProcess(args, info) {
+  // 3D Secure / işlem ekranı; önizlemede para çekilmez
+  Sheet.open(`<div class="pay-proc"><div class="spinner"></div><h3>Ödeme işleniyor…</h3><p class="muted small">${payPreview() ? 'Önizleme: gerçek ödemede bu adımda bankanızın 3D Secure (SMS şifre) ekranı açılır.' : 'Bankanızın doğrulama ekranı açılıyor.'}</p></div>`);
+  const t0 = Date.now();
+  try {
+    const r = await call('member_card_pay', args);
+    await new Promise(res => setTimeout(res, Math.max(0, 1400 - (Date.now() - t0))));
+    S.payx = { mode: 'all', custom: '', card: r.card_id || null };
+    Sheet.open(`<div class="pay-done"><div class="pd-ic">✓</div><h3>${r.preview ? 'Önizleme tamamlandı' : 'Ödemeniz alındı'}</h3>
+      <p><b>${fmt.money(r.amount)}</b> · ${esc(r.card || '')}</p>
+      ${r.preview ? `<p class="muted small" style="margin-top:8px">Bu bir <b>önizlemedir: kartınızdan para çekilmedi</b>, borcunuz değişmedi. Gerçek ödemeye geçildiğinde bu tutar kartınızdan çekilecek ve makbuzunuz kesilecek.</p>` : `<p class="muted small" style="margin-top:8px">Borcunuz ve makbuzunuz birkaç dakika içinde güncellenir.</p>`}
+      ${info.saved ? `<p class="small" style="margin-top:8px">💳 Kartınız kaydedildi${info.auto ? ' ve <b>otomatik ödeme talimatınız</b> alındı' : ''}.</p>` : ''}
+      <button class="btn primary block" style="margin-top:16px" data-close>Tamam</button></div>`);
+    refresh(true);
+  } catch (err) {
+    Sheet.open(`<div class="pay-done fail"><div class="pd-ic">!</div><h3>Ödeme yapılamadı</h3><p class="small">${esc(err.offline ? 'İnternet bağlantınızı kontrol edin.' : err.message)}</p><p class="muted small" style="margin-top:6px">Kartınızdan para çekilmedi.</p>
+      <button class="btn primary block" style="margin-top:16px" data-close>Tamam</button></div>`);
+  }
+}
+// Canlı bağlantı (ödeme kuruluşunun güvenli ödeme sayfası) — kuruluş bağlandığında kullanılır
+async function payRedirect(amt) {
+  Sheet.open(`<div class="pay-proc"><div class="spinner"></div><h3>Güvenli ödeme sayfası açılıyor…</h3></div>`);
+  try {
+    const ret = location.origin + location.pathname + (CFG.central && CFG.siteRaw ? '?s=' + CFG.siteRaw : '');
+    const r = await fetch(`${BASE}/functions/v1/odeme/baslat`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: S.token, amount: amt, return: ret }) });
+    let d = null; try { d = await r.json(); } catch { }
+    if (!d) throw new Error(r.status === 404 ? 'Ödeme sunucusu kurulmamış. Lütfen yönetime bildirin.' : 'Ödeme sunucusuna ulaşılamadı (' + r.status + ').');
+    if (d.code === 'SESSION') { Sheet.close(); forceLogout(d.error); return; }
+    if (d.error || !d.url) throw new Error(d.error || 'Ödeme başlatılamadı.');
+    try { sessionStorage.setItem('sym_pay', JSON.stringify({ oid: d.oid, amt, at: Date.now() })); } catch { }
+    location.href = d.url;
+  } catch (err) { Sheet.close(); toast(err.message === 'Failed to fetch' ? 'Ödeme sunucusuna ulaşılamadı. İnternet bağlantınızı kontrol edin.' : err.message, 'error'); }
+}
+function payGo() {
+  const X = S.payx || {}, { amt, ok, min, bal } = payAmount();
+  if (!ok) return toast(`Tutar ${fmt.money(min)} ile ${fmt.money(bal)} arasında olmalı.`, 'error');
+  if (!payPreview()) return payRedirect(amt);
+  if (X.card !== 'new') {
+    const c = (S.data.cards || []).find(k => k.id === X.card); if (!c) return;
+    Sheet.open(`<h3>Ödemeyi onaylayın</h3><div class="kv"><span>Tutar</span><b>${fmt.money(amt)}</b></div><div class="kv"><span>Kart</span><b>${esc(Card.label(c))}</b></div>
+      ${payPreview() ? '<p class="muted small" style="margin-top:8px">Önizleme: kartınızdan para çekilmez.</p>' : ''}
+      <button class="btn primary block" style="margin-top:14px" data-pconfirm>${fmt.money(amt)} Öde</button><button class="btn block" style="margin-top:8px" data-close>Vazgeç</button>`, (el) => {
+      el.querySelector('[data-pconfirm]').onclick = () => payProcess({ p_amount: amt, p_card_id: c.id, p_card: null }, {});
+    });
+    return;
+  }
+  Sheet.open(`<h3>${ic('card')} Kart bilgileri</h3><form id="cardForm" autocomplete="on">${Card.formHtml({ saveOpt: true, saveDefault: true, autoOpt: true })}
+      <button class="btn primary block" type="submit" style="margin-top:14px">${ic('lock')} ${fmt.money(amt)} Öde</button></form>
+    <p class="muted small center" style="margin-top:8px">${payPreview() ? '<b>Önizleme:</b> kartınızdan para çekilmez. ' : ''}Kart numarası ve CVV kaydedilmez.</p>
     <button class="btn block" style="margin-top:8px" data-close>Vazgeç</button>`, (el) => {
-    const f = el.querySelector('#payForm');
-    el.querySelectorAll('[data-amt]').forEach(b => b.onclick = () => { f.amt.value = b.dataset.amt; });
+    const f = el.querySelector('#cardForm'); Card.bind(f);
+    f.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const r = Card.read(f); if (r.err) { toast(r.err, 'error'); f[r.field] && f[r.field].focus(); return; }
+      const save = !!(f.save && f.save.checked), auto = !!(save && f.auto && f.auto.checked);
+      Card.wipe(f);
+      payProcess({ p_amount: amt, p_card_id: null, p_card: Object.assign({}, r.card, { save, auto }) }, { saved: save, auto });
+    });
+  });
+}
+function cardAddSheet(autoDefault) {
+  Sheet.open(`<h3>${ic('card')} Kart ekle</h3><form id="cardAdd" autocomplete="on">${Card.formHtml({ autoOpt: true })}
+      <button class="btn primary block" type="submit" style="margin-top:14px">Kartı Kaydet</button></form>
+    <p class="muted small center" style="margin-top:8px">Kart numarası ve CVV kaydedilmez; yalnızca son 4 hane ve son kullanma tarihi görünür.${payPreview() ? ' Önizlemede kartınızdan para çekilmez.' : ''}</p>
+    <button class="btn block" style="margin-top:8px" data-close>Vazgeç</button>`, (el) => {
+    const f = el.querySelector('#cardAdd'); Card.bind(f);
+    if (autoDefault && f.auto) f.auto.checked = true;
     f.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const amt = Math.round(Number(String(f.amt.value).replace(',', '.')) * 100) / 100;
-      if (!(amt >= min - 0.001) || amt > bal + 0.001) { toast(`Tutar ${fmt.money(min)} ile ${fmt.money(bal)} arasında olmalı.`, 'error'); return; }
-      const btn = f.querySelector('[type=submit]'); btn.disabled = true; btn.textContent = 'Ödeme sayfası açılıyor…';
-      try {
-        const ret = location.origin + location.pathname + (CFG.central && CFG.siteRaw ? '?s=' + CFG.siteRaw : '');
-        const r = await fetch(`${BASE}/functions/v1/odeme/baslat`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: S.token, amount: amt, return: ret }) });
-        let d = null; try { d = await r.json(); } catch { }
-        if (!d) throw new Error(r.status === 404 ? 'Online ödeme sunucusu kurulmamış. Lütfen yönetime bildirin.' : 'Ödeme sunucusuna ulaşılamadı (' + r.status + ').');
-        if (d.code === 'SESSION') { forceLogout(d.error); return; }
-        if (d.error || !d.url) throw new Error(d.error || 'Ödeme başlatılamadı.');
-        try { sessionStorage.setItem('sym_pay', JSON.stringify({ oid: d.oid, amt, at: Date.now() })); } catch { }
-        location.href = d.url;
-      } catch (err) {
-        btn.disabled = false; btn.textContent = 'Ödeme Sayfasına Geç';
-        toast(err.message === 'Failed to fetch' ? 'Ödeme sunucusuna ulaşılamadı. İnternet bağlantınızı kontrol edin.' : err.message, 'error');
-      }
+      const r = Card.read(f); if (r.err) { toast(r.err, 'error'); f[r.field] && f[r.field].focus(); return; }
+      const auto = !!(f.auto && f.auto.checked), b = f.querySelector('[type=submit]'); b.disabled = true;
+      try { const x = await call('member_card_add', { p_card: Object.assign({}, r.card, { auto }) }); Card.wipe(f); Sheet.close(); S.payx = Object.assign(S.payx || {}, { card: x.id }); toast(auto ? 'Kartınız kaydedildi, otomatik ödeme açıldı ✓' : 'Kartınız kaydedildi ✓'); refresh(true); }
+      catch (err) { b.disabled = false; toast(err.message, 'error'); }
     });
   });
 }
@@ -1230,13 +1380,33 @@ document.addEventListener('click', async (e) => {
     try { await call('member_cancel_visitor', { p_id: Number(cv.dataset.cancelVis) }); toast('Bildirim iptal edildi.'); refresh(true); } catch (err) { toast(err.message, 'error'); }
     return;
   }
+  const pa = t.closest('[data-pamt]');
+  if (pa) { S.payx = Object.assign(S.payx || {}, { mode: pa.dataset.pamt }); render(); if (pa.dataset.pamt === 'custom') setTimeout(() => { const i = $('[data-pcustom]'); if (i) i.focus(); }, 30); return; }
+  const pcd = t.closest('[data-pcard]');
+  if (pcd) { S.payx = Object.assign(S.payx || {}, { card: pcd.dataset.pcard === 'new' ? 'new' : Number(pcd.dataset.pcard) }); render(); return; }
+  const cau = t.closest('[data-cardauto]');
+  if (cau) {
+    const on = cau.dataset.on === '1'; cau.disabled = true;
+    try { await call('member_card_update', { p_id: Number(cau.dataset.cardauto), p_auto: on, p_delete: false }); toast(on ? 'Otomatik ödeme açıldı ✓' : 'Otomatik ödeme kapatıldı.'); await refresh(true); }
+    catch (err) { cau.disabled = false; toast(err.message, 'error'); }
+    return;
+  }
+  const cdel = t.closest('[data-carddel]');
+  if (cdel) {
+    const c = (S.data.cards || []).find(k => k.id === Number(cdel.dataset.carddel));
+    if (!confirm(`${c ? Card.label(c) : 'Kart'} silinsin mi?${c && c.auto_pay ? ' Otomatik ödeme de kapanır.' : ''}`)) return;
+    try { await call('member_card_update', { p_id: Number(cdel.dataset.carddel), p_auto: false, p_delete: true }); toast('Kart silindi.'); await refresh(true); } catch (err) { toast(err.message, 'error'); }
+    return;
+  }
   const a = t.closest('[data-act]'); if (!a) return; if (a.tagName === 'A') e.preventDefault();
   switch (a.dataset.act) {
     case 'refresh': refresh(); break;
     case 'back': history.length > 1 ? history.back() : go('more', true); break;
     case 'newreq': newRequestSheet(); break;
     case 'newvis': newVisitorSheet(); break;
-    case 'paynow': payNowSheet(); break;
+    case 'paynow': go('pay'); break;
+    case 'paygo': payGo(); break;
+    case 'cardadd': cardAddSheet(a.dataset.auto === '1'); break;
     case 'pay': Sheet.open(`<h3>Ödeme Bilgileri</h3>${payInfoHtml()}<button class="btn block" style="margin-top:14px" data-close>Kapat</button>`); break;
     case 'logout': if (confirm('Çıkış yapmak istiyor musunuz?')) logout(); break;
     case 'install': doInstall(); break;
@@ -1283,7 +1453,7 @@ function afterRender() {
 // bildirime dokunulduğunda ilgili ekrana git
 if ('serviceWorker' in navigator) navigator.serviceWorker.addEventListener('message', (e) => {
   const m = e.data || {};
-  if (m.sym === 'go' && S.token) { const v = String(m.v || 'home'); if (SUB[v] || TABS.some(t => t.k === v)) { Sheet.close(); go(v); } refresh(true); }
+  if (m.sym === 'go' && S.token) { const v = String(m.v || 'home'); if (SUB[v] || isTab(v)) { Sheet.close(); go(v); } refresh(true); }
 });
 
 // otomatik yenileme
@@ -1333,6 +1503,7 @@ const Upd = {
 };
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') Upd.check(); });
 window.addEventListener('pageshow', (e) => { if (e.persisted) Upd.check(); });
+document.addEventListener('focusout', () => { if (S.renderLater) setTimeout(() => { if (!document.querySelector('main input:focus')) { S.renderLater = false; render(); } }, 300); });
 document.addEventListener('focusout', () => { if (Upd.pending) setTimeout(() => { if (!Upd.busy()) Upd.apply(); }, 400); });
 
 
@@ -1340,7 +1511,7 @@ document.addEventListener('focusout', () => { if (Upd.pending) setTimeout(() => 
 (function start() {
   const inv = readInviteFromUrl();
   const v = (location.hash || '').slice(1);
-  if (v && (SUB[v] || TABS.some(t => t.k === v))) S.view = v;
+  if (v && (SUB[v] || isTab(v))) S.view = v;
   const payRet = (/[?&]odeme=(ok|hata|bekle)\b/.exec(location.search) || [])[1];   // v1.5.0: ödeme sayfasından dönüş
   if (payRet) S.view = 'account';
   // ?davet=… adresten silinir; merkezi uygulamada ?s=… (site bilgisi) kalır ki iPhone'da "Ana Ekrana Ekle" ile açılan uygulama da siteyi bilsin

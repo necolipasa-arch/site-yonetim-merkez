@@ -1,0 +1,19 @@
+{
+  "product": "site-yonetim",
+  "version": "1.9.1",
+  "date": "2026-10-24",
+  "notes": [
+    "Kartla Ödeme (önizleme): iyzico / PayTR kurulum ekranı kaldırıldı; yerine Ayarlar → Kartla Ödeme geldi. Durum (Kapalı / Önizleme), asgari tutar, tahsilat hesabı, kart kaydetme ve otomatik ödeme izinleri, yalnızca seçilen deneme dairelerinde açma",
+    "Otomatik ödeme talimatları: Toplu Tahakkuk sonrası kayıtlı karttan otomatik ödeme (önizlemede para çekilmez), aynı dönem için tek çekim, süresi dolan kartta sakine bildirim; Kayıtlı Kartlar & Talimatlar ve Kartla Ödemeler pencereleri",
+    "Mobil uygulama 1.6.0: alt çubuğun ortasında \"Kartla Öde\" sekmesi; tamamı / yarısı / başka tutar, kayıtlı kartla tek dokunuşla ödeme, yeni kart (marka tanıma, numara kontrolü), \"Kartımı kaydet\" ve \"Aidatlarım otomatik ödensin\", Kartlarım",
+    "Güvenlik: kart numarası ve CVV hiçbir yere kaydedilmez; yalnızca marka, son 4 hane ve son kullanma tarihi tutulur. Sakin pasif yapılınca / taşınınca kayıtlı kartları silinir",
+    "kurulum.sql 1.9.1 yeniden çalıştırılmalı (kayıtlı kartlar tablosu); Supabase'e ek fonksiyon kurmak gerekmez"
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.9.1/SiteYonetim-Kurulum-1.9.1.exe",
+    "sha512": "teOv2F66pILxpxEMVC7l7bx9BHmpxZ0iF2ArvMkayk/bgR7I79ZXok+cPyNlhM4OYI2qPy9S09ZvcIV61BtqYw==",
+    "size": 78864913
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.9.1",
+  "sig": "VDyuhnltR3sU0q8yJZsf9bQjEthw0LdX1CQGwlkT1iavL4cHRea7SS4ceVE1IuK27HQEyVAPOn/9oZzqrDGjDA=="
+}

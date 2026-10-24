@@ -1,16 +1,18 @@
 {
   "product": "site-yonetim",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "date": "2026-10-24",
   "notes": [
-    "Mobil Uygulama sayfası (sakin davetleri, mobil hesaplar) artık yalnızca Sistem Yöneticisi'ne açık. Site Üst Yöneticisi, Site Yöneticisi ve diğer roller bu sayfayı göremez; Rol Yetkileri'nden de açılamaz.",
-    "Sakinler listesindeki \"Mobil uygulama davet kodu\" simgesi de yalnızca Sistem Yöneticisi'nde görünür. Duyurular, talepler, rezervasyonlar ve Bildirim Gönder eskisi gibi çalışır."
+    "Ayarlar → Satıcı Bilgileri (yalnızca Sistem Yöneticisi): kurulum firmasının adı, telefonu, e-postası, web adresi ve notu istendiği zaman girilir; Lisans ekranındaki \"Lisans Almak / Yenilemek\" kutusunda ve WhatsApp ile lisans talebinde kullanılır.",
+    "Çevrimiçi lisans sunucusu devrede: deneme kurulumları ve lisanslar internet varken kendiliğinden doğrulanır; iptal ve yenilenen lisansın otomatik inmesi çalışır (30 gün çevrimdışı tolerans aynen sürüyor).",
+    "Sakinler listesindeki mobil davet kodu düğmesi Site Üst Yöneticisi ve Site Yöneticisi'nde yeniden görünür (Mobil Uygulama sayfası yalnızca Sistem Yöneticisi'nde kalır).",
+    "Lisans ekranında satıcı bilgileri tablosu düzeltmeleri."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.2.1/SiteYonetim-Kurulum-2.2.1.exe",
-    "sha512": "MsrEUKyhoQoNaVYzxoJl5lUuvR8xfUxGjgohp4/MuoCTPHKXCDJ935jkvJ1Q7uDkk6jI7oqREHoWLPgDm9NHmg==",
-    "size": 78916414
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.3.0/SiteYonetim-Kurulum-2.3.0.exe",
+    "sha512": "LWSaI9bdYUl+s7lxcPATFpS0VwEd/LXzQ0sxvNm6Mxzgb73HAbjhdITkIwRMH23jnz56SgbNQBTw8j8iHLUSAg==",
+    "size": 78918198
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.2.1",
-  "sig": "pPH9RQ9NnN6WLn3VumHn6modrGysO4hDS3/Lzy24YiuleDkUdxndC8m4cx47OQ9t2pJITezGb8XwVLkSigQ0CQ=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.3.0",
+  "sig": "3P9LaT4QnIw4oIiZg1bSZtOL+4Civvup/gJ0+oHBTAcjDi66AG3tRhECaP5d8CMQHO0PTjikubWmVLEVk1R4Ag=="
 }

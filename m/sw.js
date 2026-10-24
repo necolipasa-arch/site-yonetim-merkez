@@ -1,5 +1,5 @@
 // Site Yönetim Mobil — çevrim dışı önbellek
-const VERSION = 'sym-v1.6.1-20261024161313';
+const VERSION = 'sym-v1.7.0-20261024180957';
 const SHELL = ['./', 'index.html', 'app.css', 'app.js', 'qrcode.js', 'config.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-32.png'];
 
@@ -7,7 +7,7 @@ self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', (e) => {
-  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== VERSION).map(k => caches.delete(k)))).then(() => self.clients.claim()));
+  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== VERSION && k !== 'sym-meta').map(k => caches.delete(k)))).then(() => self.clients.claim()));
 });
 // Uygulama dosyaları: önce ağ (güncel sürüm), ağ yoksa önbellek. API çağrıları (POST) önbelleğe alınmaz.
 self.addEventListener('fetch', (e) => {
@@ -28,17 +28,19 @@ self.addEventListener('push', (e) => {
   let d = {};
   try { d = e.data ? e.data.json() : {}; } catch { d = { b: e.data ? e.data.text() : '' }; }
   const title = d.t || 'Site Yönetim';
-  e.waitUntil(self.registration.showNotification(title, {
+  // 2.0: cihazda birden fazla site varsa başlıkta site adı (uygulama 'sym-meta' önbelleğine yazar)
+  const multi = caches.open('sym-meta').then(c => c.match('multi')).then(r => r ? r.text() : '0').catch(() => '0');
+  e.waitUntil(multi.then(m => self.registration.showNotification(m === '1' && d.n ? `${d.n} · ${title}` : title, {
     body: d.b || '', icon: 'icons/icon-192.png', badge: 'icons/favicon-32.png', tag: d.tag || undefined,
-    renotify: !!d.tag, data: { v: d.v || 'home' }, timestamp: d.ts || Date.now()
-  }));
+    renotify: !!d.tag, data: { v: d.v || 'home', s: /^[A-Za-z0-9_-]{8,1500}$/.test(d.s || '') ? d.s : '' }, timestamp: d.ts || Date.now()
+  })));
 });
 self.addEventListener('notificationclick', (e) => {
   e.notification.close();
-  const v = (e.notification.data && e.notification.data.v) || 'home';
+  const v = (e.notification.data && e.notification.data.v) || 'home', s = (e.notification.data && e.notification.data.s) || '';
   e.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
-    for (const c of list) { if ('focus' in c) { c.postMessage({ sym: 'go', v }); return c.focus(); } }
-    return self.clients.openWindow(self.registration.scope + '#' + v);
+    for (const c of list) { if ('focus' in c) { c.postMessage({ sym: 'go', v, s }); return c.focus(); } }
+    return self.clients.openWindow(self.registration.scope + (s ? '?s=' + s : '') + '#' + v);
   }));
 });
 // Tarayıcı aboneliği kendiliğinden yenilerse uygulama bir sonraki açılışta yeniden kaydeder

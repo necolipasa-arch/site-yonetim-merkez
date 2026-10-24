@@ -1,19 +1,22 @@
 {
   "product": "site-yonetim",
-  "version": "1.9.2",
+  "version": "2.0.0",
   "date": "2026-10-24",
   "notes": [
-    "Gerçek kartla ödeme: Ayarlar → Kartla Ödeme → Durum: Canlı. iyzico, PayTR (iFrame / Direkt API), Nestpay (İş Bankası, Akbank, Halkbank, Ziraat, TEB, QNB, Şekerbank), Garanti BBVA ve VakıfBank sanal POS bilgileri girilebilir; test modu, kart kaydı desteği uyarısı",
-    "Sunucu fonksiyonu tek düğmeyle kurulur (Supabase erişim anahtarı kaydedilmez); Bağlantıyı Test Et kuruluşu, test modunu ve kart kaydı desteğini gösterir",
-    "Kayıtlı kart ve otomatik ödeme gerçek çekimle çalışır (iyzico, PayTR Direkt API); reddedilen çekimler sebebiyle raporlanır. Banka POS'u kullanılıyorsa bankanın POS gün sonu aktarımı banka entegrasyonunda tanınır, çift tahsilat olmaz",
-    "Mobil uygulama 1.6.1: Kartla Öde normal sekme oldu; yeni kart kuruluşun / bankanın güvenli sayfasında girilir, kayıtlı kartla onaylı tek dokunuşla ödeme, test modu uyarısı; ödenen tutar eşitlemeyi beklemeden üst sınırdan düşülür",
-    "kurulum.sql 1.9.2 yeniden çalıştırılmalı (kuruluş bilgileri ve kart anahtarı alanları)"
+    "Çoklu site: tek programla birden fazla site yönetilir (yönetim şirketleri için). Her sitenin verisi, kasası, sakinleri, yedekleri ve bulut bağlantısı ayrıdır; sol üstteki site seçiciyle geçilir, açık siteler arka planda eşitlemeye devam eder",
+    "Ortak kullanıcılar: bir kez giriş yapılır, yetkili olunan diğer sitelere şifresiz geçilir. Her sitede ayrı rol verilebilir (Kullanıcılar → Diğer Siteler); şifre değişikliği tüm sitelere yansır",
+    "Tüm Siteler — Genel Bakış: sitelerin borç, tahsilat oranı, kasa, açık talep ve bulut durumları tek tabloda; Excel'e aktarılır",
+    "Etaplar: aynı sitede blokların üstünde ayrı muhasebeli bölümler (1. Etap, 2. Etap…). Üst bardaki etap seçimi daire listesini, borç durumunu, tahakkuku, tahsilatı, gelir-gideri, kasa-bankayı, bütçeyi ve raporları süzer; yeni Etap Bazlı Özet raporu",
+    "Lisans: şirket paketi (aynı paketten N site, site sayısına göre indirim) ve site başına ayrı lisanslar; deneme sürümünde 3 siteye kadar",
+    "Terminaller site seçerek bağlanır; terminal sayısı tüm siteler için toplam lisans hakkıdır",
+    "Mobil uygulama 1.7.0: birden fazla sitede dairesi olan sakin, başlıktaki site adına dokunarak siteler arasında geçer (yalnızca giriş yaptığı siteler); bildirimde site adı görünür, dokununca ilgili site açılır",
+    "1.x kurulumları olduğu gibi açılır: mevcut site \"ilk site\" olarak kalır, veriler taşınmaz. Bulut tarafında değişiklik yok (kurulum.sql 1.9.2 geçerli)"
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.9.2/SiteYonetim-Kurulum-1.9.2.exe",
-    "sha512": "mXVHSHuL5QlYl8HZclfD8iT1uvPNDHlj9nSFrbkqA8Z0VQKHDHVeKoIQp6MZgk14iy402/SARmxtywJ7/ANsuQ==",
-    "size": 78882418
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.0.0/SiteYonetim-Kurulum-2.0.0.exe",
+    "sha512": "WGCON/qgKTenUgg0n/6gwn+//AZDHmQ1emYSW9ZA9Cus65S0jLSupXDaYO7kHodxq20HXHX0YTCO8svzMy+eOA==",
+    "size": 78902704
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.9.2",
-  "sig": "XA6/lnviDM2Kf1URS0n9NZ/DCUQPhlb+O+ZE75xyT1fqejwdRlsUE+ySIGB0OC8PDpnQovB8RNX9CkgxphL6BQ=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.0.0",
+  "sig": "qL9Pp01CPAEWlL+Pe8smYpdbNAJTfx+4iwIMqM6E67mcEDopGqX9K6vDDJ5pA3H7FMYGngZjLitTuiEcKLD8AA=="
 }

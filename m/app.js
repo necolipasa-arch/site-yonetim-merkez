@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.6.1';
-const APP_BUILD = '20261024161313';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.7.0';
+const APP_BUILD = '20261024180957';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -25,6 +25,39 @@ function siteParamFromText(t) {
   const m = /[?&#]s=([A-Za-z0-9_\-]+)/.exec(String(t || ''));
   return m ? parseSiteParam(m[1]) : null;
 }
+// 2.0: birden fazla sitede kayıtlı sakin — bu cihazda giriş yapılmış siteler arasında geçiş.
+// Liste: sym_sites [{u,k,n,raw}], her sitenin oturumu sym_tok@<u>, önbelleği sym_cache@<u>. Aktif site sym_site / sym_token / sym_cache.
+const MSites = {
+  list() { try { const l = JSON.parse(localStorage.getItem('sym_sites') || '[]'); return Array.isArray(l) ? l.filter(x => x && x.u && x.k && x.raw) : []; } catch { return []; } },
+  save(l) {
+    try { localStorage.setItem('sym_sites', JSON.stringify(l.slice(-12))); } catch { }
+    // bildirim başlığına site adı eklensin mi (hizmet çalışanı okur)
+    try { const n = l.filter(x => localStorage.getItem(this.tk(x.u))).length; caches.open('sym-meta').then(c => c.put('multi', new Response(n > 1 ? '1' : '0'))).catch(() => { }); } catch { }
+  },
+  tk(u) { return 'sym_tok@' + u; },
+  ck(u) { return 'sym_cache@' + u; },
+  stash(site) {   // aktif sitenin oturumunu kendi yuvasına yaz (siteden ayrılırken)
+    if (!site || !site.u) return;
+    const t = localStorage.getItem('sym_token'), c = localStorage.getItem('sym_cache');
+    if (!t) return;
+    localStorage.setItem(this.tk(site.u), t);
+    try { if (c) localStorage.setItem(this.ck(site.u), c); } catch { localStorage.removeItem(this.ck(site.u)); }
+  },
+  restore(u) {    // hedef sitenin oturumunu aktif yap (yoksa giriş ekranı)
+    const t = localStorage.getItem(this.tk(u)), c = localStorage.getItem(this.ck(u));
+    if (t) localStorage.setItem('sym_token', t); else localStorage.removeItem('sym_token');
+    try { if (t && c) localStorage.setItem('sym_cache', c); else localStorage.removeItem('sym_cache'); } catch { localStorage.removeItem('sym_cache'); }
+  },
+  upsert(site, name, token, unit) {
+    if (!site || !site.u || !site.raw) return;
+    const l = this.list(), i = l.findIndex(x => x.u === site.u), v = { u: site.u, k: site.k, n: String(name || site.n || '').slice(0, 80), raw: site.raw, d: String(unit || '').slice(0, 60) };
+    if (i >= 0) { if (l[i].n === v.n && l[i].raw === v.raw && l[i].k === v.k && l[i].d === v.d) { if (token) localStorage.setItem(this.tk(site.u), token); return; } l[i] = v; } else l.push(v);
+    if (token) localStorage.setItem(this.tk(site.u), token);
+    this.save(l);
+  },
+  remove(u) { this.save(this.list().filter(x => x.u !== u)); localStorage.removeItem(this.tk(u)); localStorage.removeItem(this.ck(u)); },
+  others(u) { return this.list().filter(x => x.u !== u && localStorage.getItem(this.tk(x.u))); }
+};
 const CFG = (function resolveConfig() {
   const raw = window.SITE_CONFIG || {};
   if (raw.anonKey && !raw.central) return raw;
@@ -32,7 +65,7 @@ const CFG = (function resolveConfig() {
   try { fromUrl = siteParamFromText(location.search) || siteParamFromText(location.hash); } catch { }
   let saved = null; try { saved = JSON.parse(localStorage.getItem('sym_site') || 'null'); } catch { }
   if (fromUrl) {
-    if (saved && saved.u !== fromUrl.u) { localStorage.removeItem('sym_token'); localStorage.removeItem('sym_cache'); }   // başka siteye geçildi
+    if (saved && saved.u !== fromUrl.u) { MSites.stash(saved); MSites.restore(fromUrl.u); }   // başka siteye geçildi: eski sitenin oturumu saklanır
     localStorage.setItem('sym_site', JSON.stringify(fromUrl)); saved = fromUrl;
   }
   if (!saved || !saved.u || !saved.k) return { ...raw, central: true, anonKey: '' };
@@ -225,6 +258,7 @@ async function refresh(silent) {
     const d = await call('member_data');
     S.data = d; S.at = new Date().toISOString(); S.offline = false;
     try { localStorage.setItem('sym_cache', JSON.stringify({ d, at: S.at })); } catch { }
+    if (CFG.central && CFG.siteRaw) MSites.upsert(curSite(), d.site && d.site.site_name, S.token, d.unit ? unitName(d.unit) : '');
     if (document.querySelector('main input:focus')) S.renderLater = true; else render();
     kvkkCheck(); Push.heal();
     if (!silent) toast('Bilgiler güncellendi');
@@ -262,7 +296,7 @@ function render() {
   app.innerHTML = `
     <header class="topbar">
       ${sub ? `<button class="tb-btn" data-act="back" aria-label="Geri">${ic('back')}</button><h1>${esc(sub.title)}</h1>`
-      : `<h1>${esc(siteName)}<small>${esc(unitName(u))}</small></h1>`}
+      : CFG.central && MSites.others(CFG.url).length ? `<h1 class="site-sw" data-act="sites" role="button" aria-label="Siteyi değiştir">${esc(siteName)} <span class="sw-caret">▾</span><small>${esc(unitName(u))}</small></h1>` : `<h1>${esc(siteName)}<small>${esc(unitName(u))}</small></h1>`}
       <button class="tb-btn ${S.loading ? 'spin' : ''}" data-act="refresh" aria-label="Yenile">${ic('refresh')}</button>
     </header>
     ${S.offline ? `<div class="offline-bar">Çevrim dışı — son güncelleme: ${esc(S.at ? fmt.dt(localTs(S.at)) : '—')}</div>` : ''}
@@ -732,7 +766,30 @@ async function logout() {
   clearSession(); render();
 }
 function forceLogout(msg) { clearSession(); render(); toast(msg || 'Oturum sona erdi, lütfen tekrar giriş yapın.', 'error'); }
-function clearSession() { S.token = null; S.data = null; localStorage.removeItem('sym_token'); localStorage.removeItem('sym_cache'); S.authTab = 'login'; }
+function clearSession() { S.token = null; S.data = null; localStorage.removeItem('sym_token'); localStorage.removeItem('sym_cache'); if (CFG.central && CFG.url) MSites.remove(CFG.url); S.authTab = 'login'; }
+function curSite() { return { u: CFG.url, k: CFG.anonKey, n: CFG.siteName || '', raw: CFG.siteRaw }; }
+// Kayıtlı başka siteye geç: aktif oturum saklanır, hedefin oturumu açılır, sayfa o siteyle yeniden yüklenir
+function switchSite(u, view) {
+  const t = MSites.list().find(x => x.u === u); if (!t || u === CFG.url) { Sheet.close(); return; }
+  MSites.stash(curSite());
+  localStorage.setItem('sym_site', JSON.stringify({ u: t.u, k: t.k, n: t.n, raw: t.raw }));
+  MSites.restore(t.u);
+  location.replace(location.pathname + '?s=' + t.raw + '#' + (/^[a-z]{2,12}$/.test(view || '') ? view : 'home'));
+}
+function sitesSheet() {
+  const cur = (S.data && S.data.site && S.data.site.site_name) || CFG.siteName || 'Bu site';
+  const others = MSites.others(CFG.url);
+  Sheet.open(`<h3>Sitelerim</h3>
+    <p class="muted small">Bu cihazda giriş yaptığınız siteler. Her sitenin bilgileri ayrıdır.</p>
+    <div class="site-list">
+      <div class="site-row on">${ic('home')}<div><b>${esc(cur)}</b><small>${S.data && S.data.unit ? esc(unitName(S.data.unit)) + ' · ' : ''}Açık olan site</small></div><span class="site-check">✓</span></div>
+      ${others.map(x => `<button class="site-row" data-site="${esc(x.u)}">${ic('home')}<div><b>${esc(x.n || hostOf(x.u))}</b><small>${x.d ? esc(x.d) + ' · ' : ''}Geçmek için dokunun</small></div></button>`).join('')}
+    </div>
+    <p class="muted small" style="margin-top:12px">Başka bir sitede de daireniz varsa o sitenin yönetiminden gelen <b>davet linkini</b> açıp giriş yapın; site bu listeye eklenir.</p>
+    <button class="btn block" data-close style="margin-top:10px">Kapat</button>`, (el) => {
+    el.querySelectorAll('[data-site]').forEach(b => b.onclick = () => switchSite(b.dataset.site));
+  });
+}
 
 // ---------------- ANA SAYFA ----------------
 function balanceCard() {
@@ -1418,7 +1475,7 @@ function profileView() {
     <div class="card" id="pushCard"></div>
     ${d.push !== undefined ? privacyCard() : ''}
     <button class="btn danger block" data-act="logout">${ic('logout')} Çıkış Yap</button>
-    <p class="ver">Çıkış yaptığınızda bu cihazdaki kayıtlı bilgileriniz silinir.${CFG.central && CFG.siteName ? ` Bağlı site: <b>${esc(CFG.siteName)}</b>.` : ''} Sürüm ${APP_VERSION} · <a href="#" data-act="updcheck">Güncellemeleri denetle</a></p>`;
+    <p class="ver">Çıkış yaptığınızda bu cihazdaki kayıtlı bilgileriniz silinir.${CFG.central && CFG.siteName ? ` Bağlı site: <b>${esc(CFG.siteName)}</b>.` : ''}${CFG.central && MSites.others(CFG.url).length ? ` <a href="#" data-act="sites">Siteyi değiştir</a> ·` : ''} Sürüm ${APP_VERSION} · <a href="#" data-act="updcheck">Güncellemeleri denetle</a></p>`;
 }
 
 // ---------------- ana ekrana ekle ----------------
@@ -1494,6 +1551,7 @@ document.addEventListener('click', async (e) => {
   const a = t.closest('[data-act]'); if (!a) return; if (a.tagName === 'A') e.preventDefault();
   switch (a.dataset.act) {
     case 'refresh': refresh(); break;
+    case 'sites': sitesSheet(); break;
     case 'back': history.length > 1 ? history.back() : go('more', true); break;
     case 'newreq': newRequestSheet(); break;
     case 'newvis': newVisitorSheet(); break;
@@ -1546,6 +1604,10 @@ function afterRender() {
 // bildirime dokunulduğunda ilgili ekrana git
 if ('serviceWorker' in navigator) navigator.serviceWorker.addEventListener('message', (e) => {
   const m = e.data || {};
+  if (m.sym === 'go' && m.s && CFG.central) {   // başka sitenin bildirimi → o siteye geç
+    const p = parseSiteParam(m.s);
+    if (p && p.u !== CFG.url && MSites.list().some(x => x.u === p.u)) { switchSite(p.u, String(m.v || 'home')); return; }
+  }
   if (m.sym === 'go' && S.token) { const v = String(m.v || 'home'); if (SUB[v] || isTab(v)) { Sheet.close(); go(v); } refresh(true); }
 });
 

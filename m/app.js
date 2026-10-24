@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.4.1';
-const APP_BUILD = '20261024121117';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.4.2';
+const APP_BUILD = '20261024123448';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -180,7 +180,7 @@ async function call(fn, args) {
   if (!m) return;
   try {
     if (CFG.anonKey && !localStorage.getItem('sym_token')) { localStorage.setItem('sym_token', m[1]); localStorage.removeItem('sym_cache'); }
-    if (CFG.anonKey) localStorage.setItem('sym_moved', '1');
+    sessionStorage.setItem('sym_viaold', '1');   // eski (Netlify) simgeden açıldı → bildirim kartında yeni simge önerilir
   } catch { }
   history.replaceState(null, '', location.pathname + location.search);
 })();
@@ -498,7 +498,7 @@ const Push = {
     const key = this.siteKey();
     if (!key) throw new Error('Site yönetimi anlık bildirimleri henüz açmadı.');
     const perm = await Notification.requestPermission();
-    if (perm !== 'granted') throw new Error(perm === 'denied' ? 'Bildirim izni reddedilmiş. Telefonun Ayarlar → Bildirimler bölümünden bu uygulamaya izin verin.' : 'Bildirim izni verilmedi.');
+    if (perm !== 'granted') throw new Error(perm === 'denied' ? deniedMsg() : 'Bildirim izni verilmedi.');
     const reg = await navigator.serviceWorker.ready;
     let sub = await reg.pushManager.getSubscription();
     if (sub && localStorage.getItem('sym_push_key') !== key) { await sub.unsubscribe().catch(() => { }); sub = null; }
@@ -531,6 +531,28 @@ const Push = {
     } catch (e) { console.warn('bildirim', e); }
   }
 };
+// Eski (Netlify) ana ekran simgesinden açılınca uygulama "başka adres" olarak üst çubukla görünür ve
+// telefonun bildirim izni eski simgeye ait olduğundan bildirimler bu adreste reddedilir → yeni simge eklenmeli.
+function deniedMsg() {
+  return 'Bildirim izni reddedilmiş. ' + (/Android/i.test(navigator.userAgent)
+    ? 'Telefonun Ayarlar → Uygulamalar → Site Yönetim Mobil → Bildirimler bölümünden izin verin, uygulamayı kapatıp yeniden açın ve tekrar deneyin.'
+    : 'Telefonun Ayarlar → Bildirimler → Site Yönetim Mobil bölümünden izin verin, uygulamayı kapatıp yeniden açın ve tekrar deneyin.');
+}
+function viaOldIcon() { try { return sessionStorage.getItem('sym_viaold') === '1' && !isStandalone(); } catch { return false; } }
+function appUrl() { return location.origin + location.pathname + (CFG.siteRaw ? '?s=' + CFG.siteRaw : ''); }
+function oldIconHelp() {
+  const android = /Android/i.test(navigator.userAgent);
+  return `<p class="small">Uygulamayı telefonunuzdaki <b>eski simgeden</b> açtınız. Bildirimlerin çalışması ve üstteki adres çubuğunun kalkması için uygulamayı <b>yeni simgeyle</b> ana ekrana eklemeniz gerekir (bir kez):</p>
+    <ol class="ios-steps" style="margin-top:8px">${android
+      ? `<li>Aşağıdaki <b>Chrome'da Aç</b> düğmesine dokunun.</li><li>Chrome'da <b>⋮</b> menüsünden <b>“Uygulamayı yükle”</b> / <b>“Ana ekrana ekle”</b>yi seçin.</li><li>Yeni simgeden açıp <b>Profil → Bildirimleri Aç</b> deyin.</li><li>Ana ekrandaki <b>eski simgeyi silin</b>.</li>`
+      : `<li><b>Bağlantıyı Kopyala</b>'ya dokunun, <b>Safari</b>'yi açıp adres çubuğuna yapıştırın.</li><li><b>Paylaş</b> (□↑) → <b>“Ana Ekrana Ekle”</b>.</li><li>Yeni simgeden açıp <b>Profil → Bildirimleri Aç</b> deyin.</li><li>Ana ekrandaki <b>eski simgeyi silin</b>.</li>`}</ol>
+    ${android ? `<a class="btn primary block" style="margin-top:10px" data-openchrome href="${esc('intent://' + appUrl().replace(/^https?:\/\//, '') + '#Intent;scheme=' + location.protocol.replace(':', '') + ';package=com.android.chrome;S.browser_fallback_url=' + encodeURIComponent(appUrl()) + ';end')}">${ic('bell')} Chrome'da Aç</a>` : ''}
+    <button class="btn block" style="margin-top:8px" data-copyapp>Bağlantıyı Kopyala</button>`;
+}
+function bindOldIconHelp(box) {
+  const c = box.querySelector('[data-copyapp]');
+  if (c) c.onclick = async () => { try { await navigator.clipboard.writeText(appUrl()); toast('Bağlantı kopyalandı ✓'); } catch { prompt('Bağlantıyı kopyalayın:', appUrl()); } };
+}
 async function pushCard(box) {
   if (!box) return;
   const d = S.data, key = Push.siteKey();
@@ -542,6 +564,7 @@ async function pushCard(box) {
       : `<p class="muted small">Bu tarayıcı anlık bildirimleri desteklemiyor. Android'de Chrome, iPhone'da ana ekrana eklenmiş uygulama kullanın.</p>`);
     return;
   }
+  if (viaOldIcon()) { box.innerHTML = head + oldIconHelp(); bindOldIconHelp(box); return; }
   const sub = await Push.sub().catch(() => null), mine = Push.mine(sub);
   const on = !!(sub && mine && Notification.permission === 'granted');
   const prefs = (mine && mine.prefs) || {};
@@ -551,7 +574,7 @@ async function pushCard(box) {
        <p class="muted small" style="margin-top:6px">Site yönetiminin doğrudan gönderdiği önemli mesajlar her zaman iletilir.</p>
        <button class="btn block" style="margin-top:10px" data-pushoff>Bu cihazda bildirimleri kapat</button>`
     : `<p class="small">Duyuru, kargo, misafir girişi, talep ve rezervasyon gelişmelerinden <b>anında</b> haberdar olun. Uygulama kapalıyken de bildirim gelir.</p>
-       ${Notification.permission === 'denied' ? '<p class="small txt-red">Bildirim izni reddedilmiş. Telefonun Ayarlar → Bildirimler bölümünden bu uygulamaya izin verip tekrar deneyin.</p>' : ''}
+       ${Notification.permission === 'denied' ? `<p class="small txt-red">${deniedMsg()}</p>` : ''}
        <button class="btn primary block" style="margin-top:10px" data-pushon>${ic('bell')} Bildirimleri Aç</button>`);
   const onBtn = box.querySelector('[data-pushon]');
   if (onBtn) onBtn.onclick = async () => { onBtn.disabled = true; try { await Push.enable({}); toast('Bildirimler açıldı ✓'); } catch (e) { toast(e.message, 'error'); } pushCard(box); };
@@ -1033,7 +1056,6 @@ function profileView() {
     <div class="card" id="pushCard"></div>
     ${d.push !== undefined ? privacyCard() : ''}
     <button class="btn danger block" data-act="logout">${ic('logout')} Çıkış Yap</button>
-    ${CFG.central ? `<button class="btn block" style="margin-top:8px" data-act="site-switch">Başka Siteye Bağlan</button>` : ''}
     <p class="ver">Çıkış yaptığınızda bu cihazdaki kayıtlı bilgileriniz silinir.${CFG.central && CFG.siteName ? ` Bağlı site: <b>${esc(CFG.siteName)}</b>.` : ''} Sürüm ${APP_VERSION} · <a href="#" data-act="updcheck">Güncellemeleri denetle</a></p>`;
 }
 
@@ -1095,10 +1117,6 @@ document.addEventListener('click', async (e) => {
     case 'newvis': newVisitorSheet(); break;
     case 'pay': Sheet.open(`<h3>Ödeme Bilgileri</h3>${payInfoHtml()}<button class="btn block" style="margin-top:14px" data-close>Kapat</button>`); break;
     case 'logout': if (confirm('Çıkış yapmak istiyor musunuz?')) logout(); break;
-    case 'site-switch':
-      if (!confirm('Bu siteden çıkış yapılıp başka bir siteye bağlanılsın mı?')) break;
-      (async () => { try { await rpc('member_logout', { p_token: S.token }); } catch { } clearSession(); localStorage.removeItem('sym_site'); location.replace(location.pathname); })();
-      break;
     case 'install': doInstall(); break;
     case 'updcheck': {
       toast('Denetleniyor…');
@@ -1195,16 +1213,6 @@ document.addEventListener('visibilitychange', () => { if (document.visibilitySta
 window.addEventListener('pageshow', (e) => { if (e.persisted) Upd.check(); });
 document.addEventListener('focusout', () => { if (Upd.pending) setTimeout(() => { if (!Upd.busy()) Upd.apply(); }, 400); });
 
-function movedTip() {
-  if (localStorage.getItem('sym_moved') !== '1' || !S.data) return;
-  localStorage.removeItem('sym_moved');
-  Sheet.open(`<h3>Uygulamanın adresi yenilendi</h3><p>Site Yönetim Mobil artık <b>merkezi adresten</b> çalışıyor; yeni sürümler telefonunuza <b>kendiliğinden</b> gelecek. Oturumunuz taşındı, yeniden giriş yapmanız gerekmedi.</p>
-    <p class="muted small" style="margin-top:8px">${isStandalone() ? '' : 'Önerilen: Ana ekrandaki eski simgeyi silip bu sayfayı yeniden ana ekrana ekleyin. Eski simge de çalışmaya devam eder (açılınca buraya yönlenir).'}</p>
-    ${isStandalone() ? '' : `<button class="btn primary block" style="margin-top:14px" data-moveinstall>Ana Ekrana Ekle</button>`}
-    <button class="btn block" style="margin-top:8px" data-close>Tamam</button>`, (el) => {
-    const b = el.querySelector('[data-moveinstall]'); if (b) b.onclick = () => { Sheet.close(); doInstall(); };
-  });
-}
 
 // başlat
 (function start() {
@@ -1225,7 +1233,8 @@ function movedTip() {
       el.querySelector('[data-invkeep]').onclick = () => { clearInvite(); Sheet.close(); };
     });
   }
-  if (S.token) refresh(true).then(() => movedTip()).catch(() => { });
+  try { localStorage.removeItem('sym_moved'); } catch { }   // 1.4.1'den kalan bayrak
+  if (S.token) refresh(true);
   try { const u = sessionStorage.getItem('sym_upd'); if (u !== null) { sessionStorage.removeItem('sym_upd'); setTimeout(() => toast('Uygulama güncellendi' + (u ? ': v' + u : '') + ' ✓'), 600); } } catch { }
   setTimeout(() => Upd.check(), 1500);
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {

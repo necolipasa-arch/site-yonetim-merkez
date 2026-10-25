@@ -1,17 +1,18 @@
 {
   "product": "site-yonetim",
-  "version": "2.9.1",
+  "version": "2.10.0",
   "date": "2026-10-25",
   "notes": [
-    "Üstteki site kutucuğundan başka bir site seçildiğinde ekranda pencere kapanıp açılıyormuş gibi görünen hareket kaldırıldı. Artık tüm siteler aynı program penceresinin içinde açılır; site değiştirmek yalnızca içeriği değiştirir.",
-    "Seçilen site ilk kez açılıyorsa giriş ve ana sayfa arka planda hazırlanır, hazır olunca tek seferde gösterilir; bu sırada giriş ekranı ya da yarım yüklenmiş sayfa görünmez.",
-    "Program kapatılırken arka planda açık olan tüm sitelerin verileri son kez kaydedilir."
+    "Tüm Siteler modu: üstteki site kutucuğundan \"Tüm Siteler — Genel Bakış\" seçildikten sonra sol menüdeki sayfalar artık son kullanılan siteye atlamaz; tüm sitelerin kayıtlarını tek tabloda gösterir ve her satırın başında kaydın ait olduğu site yazar. Seçici \"Tüm Siteler\"de kalır.",
+    "Toplu gösterilen bölümler: Bloklar & Daireler, Sakinler, Araçlar, Site Alacakları, Gecikme Zammı (tür bazında özet), Tahsilat, Borç Durumu, Gelir & Gider, Kasa & Banka, Banka Hareketleri, Aidat Hesaplama (blok bazında), Arıza & Talepler, Duyurular, Toplantılar, Genel Kurul, Anketler, Rezervasyon, Ziyaretçi, Kargo, Personel, Tedarikçiler, Periyodik Bakım, Demirbaş, Sayaç Okuma, Belgeler, Rehber ve İşlem Geçmişi. Toplamlar tüm sitelerin toplamıdır; site kutucuklarıyla bazı siteler gizlenebilir; Excel'e aktarma ve yazdırma çalışır.",
+    "Toplu görünüm salt okunurdur. Bir satıra tıklanınca o kaydın sitesine geçilir ve aynı sayfa açılır. Güvenlik Masası, Daire Cari Hesap, Bütçe, Raporlar ve Ayarlar site bazında çalıştığı için bu bölümlerde hangi sitede açılacağı sorulur.",
+    "Her site yalnızca kullanıcının o sitedeki yetkisine göre listelenir; yetkisi olmayan sitelerde açıklama gösterilir."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.9.1/SiteYonetim-Kurulum-2.9.1.exe",
-    "sha512": "mdgThgSakwuvDa8MeB5VbDgE1QsDF1vpWe/jcp9gBCj+zYOtLu7q6agLYjpDYOHrjIFdJwlGn1igVItI0xK2IQ==",
-    "size": 78978813
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.0/SiteYonetim-Kurulum-2.10.0.exe",
+    "sha512": "GbznYfGSkA1lvrM0LV81Kdz7AumL+5bDP5DTYUPpTfmtqabzwcgdr6HsP8pYGcknzB4ehoyf6X8BMQptti9Bbg==",
+    "size": 78988323
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.9.1",
-  "sig": "P4y8qfZ27uaXqld5Xu3AwZBp/RuUCd93VYdylpfqx32zpq0Na9Xj0OBUz/dBQi4x8l7QYfuCJr3A/Q5fXFAmCg=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.0",
+  "sig": "7XQenBkHm3hRz1bFDscJ8omtrBcLUb/GwnOjgG0IAnU0mtrlheFVx2J6pGBMEKdQimr35nu4M7j4w+KeulluCw=="
 }

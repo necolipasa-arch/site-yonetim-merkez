@@ -1,0 +1,19 @@
+{
+  "product": "site-yonetim",
+  "version": "2.6.0",
+  "date": "2026-10-25",
+  "notes": [
+    "Yeni: Programa entegre VPN (NetBird). Ana bilgisayarla terminaller veya merkez ile site ofisleri aynı yerel ağda değilse artık ayrı bir VPN programı kurup ayarlamanız gerekmez.",
+    "Ayarlar'daki \"Mobil Uygulama & Bulut\" sekmesinin adı \"Mobil-VPN-Bulut\" oldu. Burada yeni \"VPN Bağlantısı\" kartına ücretsiz NetBird hesabınızın API anahtarını bir kez girersiniz; NetBird'ün en güncel sürümü internetten indirilip bu bilgisayara otomatik kurulur (Windows bir kez izin ister).",
+    "Program bir \"VPN kodu\" üretir. Terminal ve site ofisi bilgisayarlarında kurulum ekranındaki \"VPN kodu ile bağlanın\" kutusuna bu kodu girmeniz yeterli: NetBird kurulur, VPN'e katılır, ana bilgisayar kendiliğinden bulunur ve adres alanı dolar.",
+    "Yeni Terminal Ekle ve Ofis Bilgisayarına Taşı pencerelerinde VPN adresi ve VPN kodu da gösterilir. VPN kartında VPN'deki bilgisayarlar ve çevrimiçi durumları listelenir; \"Yeni Kod\" ile kod yenilenebilir (bağlı bilgisayarlar etkilenmez).",
+    "NetBird API anahtarı süresi dolmadan program tarafından otomatik yenilenir; anahtar ve kod bilgisayarda şifreli saklanır, terminallere gönderilmez. VPN bağlantısı koparsa program kendiliğinden yeniden bağlar; NetBird güncellemeleri otomatik yapılır, ayrıca \"Güncellemeleri denetle\" düğmesi vardır."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.6.0/SiteYonetim-Kurulum-2.6.0.exe",
+    "sha512": "RYirUtgSdh6QCJyV0t2M6XHZ/UMc0SL7K4CItEqa9zDEVEazyfnuv+lANVDQOllZ63sDth/xQCzNZ7L2wiy0lQ==",
+    "size": 78953244
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.6.0",
+  "sig": "aoAc3QLLhFQWGCcSpJf4dYbQzb7gZf2z8w0ZRlCgO7pfNVKj+xaTU03gEHwfW/iAYs1O5FBCv+pN+0z85H27CA=="
+}

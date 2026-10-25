@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.8.2';
-const APP_BUILD = '20261025201956';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.8.3';
+const APP_BUILD = '20261025204307';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -1013,6 +1013,7 @@ function requestsView() {
       ${r.description ? `<p>${esc(r.description)}</p>` : ''}
       ${r.resolution ? `<div class="res"><b>Yönetim:</b> ${esc(r.resolution)}${r.resolved_at ? ` <small>(${esc(fmt.date(r.resolved_at))})</small>` : ''}</div>` : ''}
       ${r.status === 'Gönderildi' ? `<div class="meta" style="margin-top:8px">⏳ Yönetime iletildi, kısa süre içinde işleme alınacak.</div>` : ''}
+      ${!['Çözüldü', 'İptal'].includes(r.status) ? `<div class="acts"><button class="btn sm danger" data-cancel-req="${r.kind === 'inbox' ? 'inbox' : 'local'}:${r.id}">İptal Et</button></div>` : ''}
     </div>`).join('') : `<div class="empty">${ic('wrench')}<p>Henüz bir talebiniz yok.<br>Arıza, şikayet veya önerilerinizi buradan iletebilirsiniz.</p></div>`}`;
 }
 function newRequestSheet() {
@@ -1715,6 +1716,15 @@ document.addEventListener('click', async (e) => {
   const fc = t.closest('[data-fac]'); if (fc) { S.rsv.fac = Number(fc.dataset.fac); S.rsv.a = S.rsv.b = null; render(); return; }
   const dy = t.closest('[data-day]'); if (dy) { S.rsv.date = dy.dataset.day; S.rsv.a = S.rsv.b = null; render(); return; }
   const sl = t.closest('[data-slot]'); if (sl && !sl.disabled) { onSlot(Number(sl.dataset.slot)); return; }
+  const cq = t.closest('[data-cancel-req]');   // 1.8.3: arıza / talep iptali
+  if (cq) {
+    if (!confirm('Bu arıza / talep bildirimini iptal etmek istiyor musunuz?')) return;
+    const [kind, id] = cq.dataset.cancelReq.split(':');
+    cq.disabled = true;
+    try { await call('member_cancel_request', { p_kind: kind, p_id: Number(id) }); toast('Talep iptal edildi.'); refresh(true); }
+    catch (err) { cq.disabled = false; toast(/PGRST202|Could not find|42883/i.test(err.message) ? 'İptal özelliği sitenizin bulutunda henüz etkin değil. Site yönetimi programı güncellendiğinde kendiliğinden açılır; şimdilik yönetimi arayın.' : err.message, 'error'); }
+    return;
+  }
   const cr = t.closest('[data-cancel-rsv]');
   if (cr) {
     if (!confirm('Bu rezervasyonu iptal etmek istiyor musunuz?')) return;

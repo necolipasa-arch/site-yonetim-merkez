@@ -1,20 +1,18 @@
 {
   "product": "site-yonetim",
-  "version": "2.8.0",
+  "version": "2.8.1",
   "date": "2026-10-25",
   "notes": [
-    "Site Alacakları sayfasındaki \"Toplu Tahakkuk\" ve \"Tekil Tahakkuk\" düğmeleri \"Toplu Alacak\" ve \"Tekil Alacak\" oldu.",
-    "Yeni: Otomatik aylık aidat. Aidat tutarı bir kez belirlenir; program her ay tüm dairelere aidat alacağını kendiliğinden açar (açılacağı gün ve son ödeme günü seçilebilir). O ay aidat kaydı zaten olan daire atlanır; program birkaç ay açılmasa bile eksik aylar tamamlanır; sonradan eklenen daireye o ayın aidatı açılır.",
-    "Aidat yılı varsayılan olarak Şubat'ta başlar: Ocak'ta hesaplanan yeni aidat Şubat'tan itibaren geçerli olur, yeni aidat girilmezse mevcut aidat aynen devam eder. Yeni aidat yılı yaklaşırken hatırlatma çıkar.",
-    "Yıl içinde aidat değişirse \"Aidatı Değiştir\" ile yeni tutar girilir; \"Hemen (bu aydan)\", \"Gelecek aydan\" veya belirli bir aydan geçerli olacağı seçilir. O aydan itibaren açılmış ve henüz tahsil edilmemiş aidatlar yeni tutara güncellenir (ödenmiş olanlar değişmez). Önizlemede daire daire eski ve yeni aidat görünür.",
-    "Yeni menü: Finans → Aidat Hesaplama. \"Yeni Aidat Hesabı\" sekmesinde giderler ve aidat dışı gelirler son 12 ayın kayıtlarından doldurulur; her kaleme TÜFE, Yİ-ÜFE (TEFE), personel maaş artışı veya özel oran uygulanır, yeni kalemler eklenebilir. Yedek akçe, tahsilat kaybı payı ve önceki dönem devri eklenir; yıllık ve aylık aidat ihtiyacı hesaplanır.",
-    "Aylık toplam eşit, arsa payına, m²'ye göre veya mevcut aidatlar aynı oranda artırılarak dairelere dağıtılır (yuvarlama seçilebilir). Hesap yazdırılabilir (işletme projesi ve daire listesi), Bütçe (İşletme Projesi) menüsüne aktarılabilir ve tek tıkla yeni aidat olarak uygulanabilir."
+    "Yeni: Blok blok aidat. Aidat artık tüm site için, blok blok veya daire daire belirlenebilir.",
+    "Aidat Hesaplama sayfasında \"Bloklara Göre Geçerli Aidat\" tablosu eklendi: her bloğun şu anki aidatı, bölüm sayısı, aylık toplamı ve planlanan değişikliği görünür. Satırdaki \"Değiştir\" ile yalnızca o bloğun aidatı değiştirilir; diğer bloklar etkilenmez.",
+    "\"Aidatı Değiştir\" penceresinde hangi blokların değişeceği seçilir (Tümü düğmesiyle hepsi). Yeni yöntemler: \"Bloğa göre tutar\" (her blok için ayrı tutar) ve \"Daire daire tutar\" (her bölüm için ayrı tutar, \"Hepsine yaz\" kısayoluyla).",
+    "Yeni Aidat Hesabı'nda yeni dağıtım yöntemi: \"Bloğa göre (blok katsayısı)\". Örneğin B Blok için 1,2 yazılırsa B Blok'taki her bölüm %20 fazla öder."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.8.0/SiteYonetim-Kurulum-2.8.0.exe",
-    "sha512": "CCMCADytuBTvcyb2eiRTbOHa+da3kK5GBhaKc6rDeZrKirraAJhjc8S0GTrV/Wb73pIRKeR5RNSklxd/hkaRYQ==",
-    "size": 78969480
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.8.1/SiteYonetim-Kurulum-2.8.1.exe",
+    "sha512": "8EA/O9ldcJ8I07fl5Wcoi/xjLzdTxiQwYALsZmxRX6oLu+2PD2Y9NM4EUWt/Qmo6TYcqssDgeigV1A/WMdj7EQ==",
+    "size": 78972632
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.8.0",
-  "sig": "wv8wrvSN+KGlXqMcL+Ao+a2tRTV0iuOS7fl+sCQHZ5e72iLm006zyd4vgnhdxpvAVnhC/FFMYe//0y4RLA2TAQ=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.8.1",
+  "sig": "n9XFX3O856ZtFFTkpIxZPESFOSKv6DlwkKIBNpBJh5z2RFUsZoTfhi+CCqQJHSXId31Jr4/TW+EPok7ISQiGDQ=="
 }

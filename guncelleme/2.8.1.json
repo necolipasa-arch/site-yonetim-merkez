@@ -1,0 +1,18 @@
+{
+  "product": "site-yonetim",
+  "version": "2.8.1",
+  "date": "2026-10-25",
+  "notes": [
+    "Yeni: Blok blok aidat. Aidat artık tüm site için, blok blok veya daire daire belirlenebilir.",
+    "Aidat Hesaplama sayfasında \"Bloklara Göre Geçerli Aidat\" tablosu eklendi: her bloğun şu anki aidatı, bölüm sayısı, aylık toplamı ve planlanan değişikliği görünür. Satırdaki \"Değiştir\" ile yalnızca o bloğun aidatı değiştirilir; diğer bloklar etkilenmez.",
+    "\"Aidatı Değiştir\" penceresinde hangi blokların değişeceği seçilir (Tümü düğmesiyle hepsi). Yeni yöntemler: \"Bloğa göre tutar\" (her blok için ayrı tutar) ve \"Daire daire tutar\" (her bölüm için ayrı tutar, \"Hepsine yaz\" kısayoluyla).",
+    "Yeni Aidat Hesabı'nda yeni dağıtım yöntemi: \"Bloğa göre (blok katsayısı)\". Örneğin B Blok için 1,2 yazılırsa B Blok'taki her bölüm %20 fazla öder."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.8.1/SiteYonetim-Kurulum-2.8.1.exe",
+    "sha512": "8EA/O9ldcJ8I07fl5Wcoi/xjLzdTxiQwYALsZmxRX6oLu+2PD2Y9NM4EUWt/Qmo6TYcqssDgeigV1A/WMdj7EQ==",
+    "size": 78972632
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.8.1",
+  "sig": "n9XFX3O856ZtFFTkpIxZPESFOSKv6DlwkKIBNpBJh5z2RFUsZoTfhi+CCqQJHSXId31Jr4/TW+EPok7ISQiGDQ=="
+}

@@ -1,0 +1,16 @@
+{
+  "product": "site-yonetim",
+  "version": "2.5.1",
+  "date": "2026-10-25",
+  "notes": [
+    "\"Site Üst Yöneticisi\" rolünün adı \"Üst Site Yöneticisi\" olarak değiştirildi.",
+    "Rol Yetkileri yenilendi: yetki vermek istediğiniz rolü listeden seçip menülerini işaretleyin. Roller yan yana dizilmediği için rol sayısı artsa da ekran düzgün kalır."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.5.1/SiteYonetim-Kurulum-2.5.1.exe",
+    "sha512": "tRDUwI0u1WehKnRBnxIvoygSjMLJfx3e2F65R8dxU+kdrPntNJ4zNe27N+B75Z0uNzaVjGQBJ6EMQQVPyWUiwQ==",
+    "size": 78942179
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.5.1",
+  "sig": "mUXY22h1HMldbS4zsYibKskha3ZuQmqpnFNOjhM+8K5UOnVZ1QILJjQ4QVrHKmJHaN8vTrbggVDM4zQcdfFWAQ=="
+}

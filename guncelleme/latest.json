@@ -1,18 +1,20 @@
 {
   "product": "site-yonetim",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "date": "2026-10-25",
   "notes": [
-    "\"Tahakkuk (Borçlandırma)\" menüsünün adı \"Site Alacakları\" oldu; sayfadaki \"Gecikme Tazminatı\" düğmesi \"Gecikme Zammı\" olarak değişti. Eski gecikme tazminatı kayıtları da \"Gecikme Zammı\" adıyla görünür.",
-    "Ayarlar → Finans Ayarları'nda yeni \"Gecikme Zammı\" bölümü: zam oranı dönemi Günlük / Haftalık / Aylık seçilebilir ve gecikme süresine göre kademeli oranlar girilebilir (örn. ilk hafta %2, 1 haftadan 1 aya kadar %3, 1 aydan sonra %5). Her kademe kendi oranıyla ayrı hesaplanır ve toplanır; ilk kademeden önceki günler hoşgörü süresi sayılır. İsteğe bağlı üst sınır ve başlangıç tarihi girilebilir; örnek hesap anında gösterilir, KMK md.20'deki aylık %5 sınırını aşan oranlarda uyarı çıkar.",
-    "İsteğe bağlı otomatik ekleme: açıldığında program gecikme zammını her gün kendisi hesaplayıp ilgili ayın \"Gecikme Zammı\" kalemine ekler. Kapalıyken Site Alacakları → Gecikme Zammı penceresinden önizleyip elle eklenir. Zam, ödemeler düşüldükten sonra kalan borç üzerinden gün gün işler; aynı zam iki kez eklenmez. Pencereden daireler muaf tutulabilir.",
-    "Borç bildirimi yazısındaki gecikme cümlesi seçilen kurala göre otomatik yazılır."
+    "Site Alacakları sayfasındaki \"Toplu Tahakkuk\" ve \"Tekil Tahakkuk\" düğmeleri \"Toplu Alacak\" ve \"Tekil Alacak\" oldu.",
+    "Yeni: Otomatik aylık aidat. Aidat tutarı bir kez belirlenir; program her ay tüm dairelere aidat alacağını kendiliğinden açar (açılacağı gün ve son ödeme günü seçilebilir). O ay aidat kaydı zaten olan daire atlanır; program birkaç ay açılmasa bile eksik aylar tamamlanır; sonradan eklenen daireye o ayın aidatı açılır.",
+    "Aidat yılı varsayılan olarak Şubat'ta başlar: Ocak'ta hesaplanan yeni aidat Şubat'tan itibaren geçerli olur, yeni aidat girilmezse mevcut aidat aynen devam eder. Yeni aidat yılı yaklaşırken hatırlatma çıkar.",
+    "Yıl içinde aidat değişirse \"Aidatı Değiştir\" ile yeni tutar girilir; \"Hemen (bu aydan)\", \"Gelecek aydan\" veya belirli bir aydan geçerli olacağı seçilir. O aydan itibaren açılmış ve henüz tahsil edilmemiş aidatlar yeni tutara güncellenir (ödenmiş olanlar değişmez). Önizlemede daire daire eski ve yeni aidat görünür.",
+    "Yeni menü: Finans → Aidat Hesaplama. \"Yeni Aidat Hesabı\" sekmesinde giderler ve aidat dışı gelirler son 12 ayın kayıtlarından doldurulur; her kaleme TÜFE, Yİ-ÜFE (TEFE), personel maaş artışı veya özel oran uygulanır, yeni kalemler eklenebilir. Yedek akçe, tahsilat kaybı payı ve önceki dönem devri eklenir; yıllık ve aylık aidat ihtiyacı hesaplanır.",
+    "Aylık toplam eşit, arsa payına, m²'ye göre veya mevcut aidatlar aynı oranda artırılarak dairelere dağıtılır (yuvarlama seçilebilir). Hesap yazdırılabilir (işletme projesi ve daire listesi), Bütçe (İşletme Projesi) menüsüne aktarılabilir ve tek tıkla yeni aidat olarak uygulanabilir."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.7.0/SiteYonetim-Kurulum-2.7.0.exe",
-    "sha512": "aBvWeO38K3PFjTErArwRQjob7ASU4AuXR3sKg6oXjVM8LM0QEYThYseuxjjgrUMvzDUvz/lLkMl4awXD3SdtfA==",
-    "size": 78959133
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.8.0/SiteYonetim-Kurulum-2.8.0.exe",
+    "sha512": "CCMCADytuBTvcyb2eiRTbOHa+da3kK5GBhaKc6rDeZrKirraAJhjc8S0GTrV/Wb73pIRKeR5RNSklxd/hkaRYQ==",
+    "size": 78969480
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.7.0",
-  "sig": "xMHZ3OKsJbMkqASN92yA9qth5YQw4PGjDdhwdTAEgLzdo44LXwjpECSSgfnk5i4CMDKZh3uSTPEvx9o6GMuLBw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.8.0",
+  "sig": "wv8wrvSN+KGlXqMcL+Ao+a2tRTV0iuOS7fl+sCQHZ5e72iLm006zyd4vgnhdxpvAVnhC/FFMYe//0y4RLA2TAQ=="
 }

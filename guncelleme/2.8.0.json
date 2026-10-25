@@ -1,0 +1,20 @@
+{
+  "product": "site-yonetim",
+  "version": "2.8.0",
+  "date": "2026-10-25",
+  "notes": [
+    "Site Alacakları sayfasındaki \"Toplu Tahakkuk\" ve \"Tekil Tahakkuk\" düğmeleri \"Toplu Alacak\" ve \"Tekil Alacak\" oldu.",
+    "Yeni: Otomatik aylık aidat. Aidat tutarı bir kez belirlenir; program her ay tüm dairelere aidat alacağını kendiliğinden açar (açılacağı gün ve son ödeme günü seçilebilir). O ay aidat kaydı zaten olan daire atlanır; program birkaç ay açılmasa bile eksik aylar tamamlanır; sonradan eklenen daireye o ayın aidatı açılır.",
+    "Aidat yılı varsayılan olarak Şubat'ta başlar: Ocak'ta hesaplanan yeni aidat Şubat'tan itibaren geçerli olur, yeni aidat girilmezse mevcut aidat aynen devam eder. Yeni aidat yılı yaklaşırken hatırlatma çıkar.",
+    "Yıl içinde aidat değişirse \"Aidatı Değiştir\" ile yeni tutar girilir; \"Hemen (bu aydan)\", \"Gelecek aydan\" veya belirli bir aydan geçerli olacağı seçilir. O aydan itibaren açılmış ve henüz tahsil edilmemiş aidatlar yeni tutara güncellenir (ödenmiş olanlar değişmez). Önizlemede daire daire eski ve yeni aidat görünür.",
+    "Yeni menü: Finans → Aidat Hesaplama. \"Yeni Aidat Hesabı\" sekmesinde giderler ve aidat dışı gelirler son 12 ayın kayıtlarından doldurulur; her kaleme TÜFE, Yİ-ÜFE (TEFE), personel maaş artışı veya özel oran uygulanır, yeni kalemler eklenebilir. Yedek akçe, tahsilat kaybı payı ve önceki dönem devri eklenir; yıllık ve aylık aidat ihtiyacı hesaplanır.",
+    "Aylık toplam eşit, arsa payına, m²'ye göre veya mevcut aidatlar aynı oranda artırılarak dairelere dağıtılır (yuvarlama seçilebilir). Hesap yazdırılabilir (işletme projesi ve daire listesi), Bütçe (İşletme Projesi) menüsüne aktarılabilir ve tek tıkla yeni aidat olarak uygulanabilir."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.8.0/SiteYonetim-Kurulum-2.8.0.exe",
+    "sha512": "CCMCADytuBTvcyb2eiRTbOHa+da3kK5GBhaKc6rDeZrKirraAJhjc8S0GTrV/Wb73pIRKeR5RNSklxd/hkaRYQ==",
+    "size": 78969480
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.8.0",
+  "sig": "wv8wrvSN+KGlXqMcL+Ao+a2tRTV0iuOS7fl+sCQHZ5e72iLm006zyd4vgnhdxpvAVnhC/FFMYe//0y4RLA2TAQ=="
+}

@@ -1,18 +1,18 @@
 {
   "product": "site-yonetim",
-  "version": "2.8.1",
+  "version": "2.9.0",
   "date": "2026-10-25",
   "notes": [
-    "Yeni: Blok blok aidat. Aidat artık tüm site için, blok blok veya daire daire belirlenebilir.",
-    "Aidat Hesaplama sayfasında \"Bloklara Göre Geçerli Aidat\" tablosu eklendi: her bloğun şu anki aidatı, bölüm sayısı, aylık toplamı ve planlanan değişikliği görünür. Satırdaki \"Değiştir\" ile yalnızca o bloğun aidatı değiştirilir; diğer bloklar etkilenmez.",
-    "\"Aidatı Değiştir\" penceresinde hangi blokların değişeceği seçilir (Tümü düğmesiyle hepsi). Yeni yöntemler: \"Bloğa göre tutar\" (her blok için ayrı tutar) ve \"Daire daire tutar\" (her bölüm için ayrı tutar, \"Hepsine yaz\" kısayoluyla).",
-    "Yeni Aidat Hesabı'nda yeni dağıtım yöntemi: \"Bloğa göre (blok katsayısı)\". Örneğin B Blok için 1,2 yazılırsa B Blok'taki her bölüm %20 fazla öder."
+    "Yeni menü: Finans → Gecikme Zammı. Gecikme zammı ayarları Ayarlar'dan bu sayfaya taşındı; Ayarlar'daki \"Finans Ayarları\" sekmesi kaldırıldı (son ödeme günü Aidat Hesaplama'da, sonraki makbuz numarası Tahsilat → Makbuz No düğmesinde).",
+    "Gecikme zammı artık alacak türüne göre ayrı ayrı yönetilir: Aidat, Su, Demirbaş, Yakıt, Doğalgaz… her tür genel kuralı kullanabilir, kendi özel kuralına (oran dönemi, kademeler, üst sınır, başlangıç tarihi, otomatik ekleme) sahip olabilir veya zamdan muaf tutulabilir.",
+    "Hesaplama ve borçlara ekleme tek bir tür, seçilen birkaç tür veya tüm türler için yapılabilir. Her türün zammı ayrı \"<tür> gecikme zammı\" kalemi olarak eklenir; aidat ve diğer alacakların kendi tutarına hiçbir şey eklenmez, her ayın alacağı ayrı izlenir.",
+    "Sayfada her türün vadesi geçmiş borcu, işlemiş zammı, eklenmiş zammı ve eklenecek farkı görünür. Önceki sürümlerde eklenmiş gecikme zamları ilk açılışta otomatik olarak türlere ayrılır."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.8.1/SiteYonetim-Kurulum-2.8.1.exe",
-    "sha512": "8EA/O9ldcJ8I07fl5Wcoi/xjLzdTxiQwYALsZmxRX6oLu+2PD2Y9NM4EUWt/Qmo6TYcqssDgeigV1A/WMdj7EQ==",
-    "size": 78972632
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.9.0/SiteYonetim-Kurulum-2.9.0.exe",
+    "sha512": "aVOoBsiKJCJ3kShltVwOtOTFFcsZgcAGcJXQCf03FxvQPTBb/a+g47oav05l3XNuLr/hPMcTfV125AfUvsRgig==",
+    "size": 78977274
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.8.1",
-  "sig": "n9XFX3O856ZtFFTkpIxZPESFOSKv6DlwkKIBNpBJh5z2RFUsZoTfhi+CCqQJHSXId31Jr4/TW+EPok7ISQiGDQ=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.9.0",
+  "sig": "sECcnzJ2/bJ9pRG0xvVwmwTynOJRoEVrcCTnJJjSgmCtHsJ8Ef0Fx1GOCWzQc70G4mAC3qRe7XJhGz08EY+VCg=="
 }

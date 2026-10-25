@@ -1,0 +1,18 @@
+{
+  "product": "site-yonetim",
+  "version": "2.5.0",
+  "date": "2026-10-25",
+  "notes": [
+    "Özel roller: Ayarlar → Roller sekmesinden siteye özel personel rolleri tanımlayın (ör. Teknik Müdür, Peyzaj Sorumlusu, Danışma). Rol yalnızca seçtiğiniz menüleri görür; Ayarlar'a giremez.",
+    "Yetki hiyerarşisi: her rol bir üst merciye bağlıdır; kimse kendinden yüksek bir merciye rol açamaz ve yalnızca kendi erişebildiği menüleri verebilir. Sistem Yöneticisi her şeyi yapabilir.",
+    "Birden fazla site: rol tüm sitelerde ya da seçilen sitede açılır; silinen roldeki kullanıcılar seçtiğiniz role taşınır.",
+    "Ayrıntılar: Kullanım Kılavuzu 7.3 (Roller)."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.5.0/SiteYonetim-Kurulum-2.5.0.exe",
+    "sha512": "5kr5RX/yIRj0AEe37CDe/Ov7Uvuqz0seAReeQ7tb7YJHYusfqrxruZmQ6Dl74FgTADhXGEBgaD4Hy34K++q8Gw==",
+    "size": 78941624
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.5.0",
+  "sig": "LUpEjtHCSCtH8OBrieWtD46eoBwyQmXTDg1bdekF+wUGpnHtU5js8d6LDTnHvJiDboPRojYzcFCDhEYIEeNyBg=="
+}

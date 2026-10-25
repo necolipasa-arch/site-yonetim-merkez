@@ -1,18 +1,18 @@
 {
   "product": "site-yonetim",
-  "version": "2.10.0",
+  "version": "2.10.1",
   "date": "2026-10-25",
   "notes": [
-    "Tüm Siteler modu: üstteki site kutucuğundan \"Tüm Siteler — Genel Bakış\" seçildikten sonra sol menüdeki sayfalar artık son kullanılan siteye atlamaz; tüm sitelerin kayıtlarını tek tabloda gösterir ve her satırın başında kaydın ait olduğu site yazar. Seçici \"Tüm Siteler\"de kalır.",
-    "Toplu gösterilen bölümler: Bloklar & Daireler, Sakinler, Araçlar, Site Alacakları, Gecikme Zammı (tür bazında özet), Tahsilat, Borç Durumu, Gelir & Gider, Kasa & Banka, Banka Hareketleri, Aidat Hesaplama (blok bazında), Arıza & Talepler, Duyurular, Toplantılar, Genel Kurul, Anketler, Rezervasyon, Ziyaretçi, Kargo, Personel, Tedarikçiler, Periyodik Bakım, Demirbaş, Sayaç Okuma, Belgeler, Rehber ve İşlem Geçmişi. Toplamlar tüm sitelerin toplamıdır; site kutucuklarıyla bazı siteler gizlenebilir; Excel'e aktarma ve yazdırma çalışır.",
-    "Toplu görünüm salt okunurdur. Bir satıra tıklanınca o kaydın sitesine geçilir ve aynı sayfa açılır. Güvenlik Masası, Daire Cari Hesap, Bütçe, Raporlar ve Ayarlar site bazında çalıştığı için bu bölümlerde hangi sitede açılacağı sorulur.",
-    "Her site yalnızca kullanıcının o sitedeki yetkisine göre listelenir; yetkisi olmayan sitelerde açıklama gösterilir."
+    "Tüm Siteler modunda tarihe göre sıralı listeler (Tahsilat, Gelir & Gider, Ziyaretçi, İşlem Geçmişi vb.) artık sitelere göre gruplanmıyor: tüm sitelerin kayıtları tarih sırasında iç içe, en yeni kayıt en üstte gösteriliyor.",
+    "Tüm Siteler modunda bir sitede olup diğerinde olmayan sütunlar (ör. yalnız etaplı sitedeki \"Etap\" sütunu) artık kaybolmuyor; açık site etapsız olsa da etaplı sitenin etap bilgisi görünüyor.",
+    "Örnek verilerle kurulan sitelerde Aidat Hesaplama sayfası \"Belirlenmedi\" gösteriyordu; örnek aidatlarla aynı aidat planı artık kendiliğinden tanımlanıyor (3+1: 3.500 ₺, 2+1: 2.900 ₺).",
+    "Toplu test: masaüstü, mobil, terminal, merkez ⇄ site ofisi, banka, ödeme, bildirim, lisans ve güncelleme testlerinin tamamı yeni arayüze göre güncellendi ve geçti."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.0/SiteYonetim-Kurulum-2.10.0.exe",
-    "sha512": "GbznYfGSkA1lvrM0LV81Kdz7AumL+5bDP5DTYUPpTfmtqabzwcgdr6HsP8pYGcknzB4ehoyf6X8BMQptti9Bbg==",
-    "size": 78988323
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.1/SiteYonetim-Kurulum-2.10.1.exe",
+    "sha512": "WeZbfDNljwEC/4vz+xMCCVrjGkq0OgGcjIfD9addsClnTCRxvayLurOPWgslocx/3K/ja3sX+K9yQDjRXhYBRw==",
+    "size": 78988578
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.0",
-  "sig": "7XQenBkHm3hRz1bFDscJ8omtrBcLUb/GwnOjgG0IAnU0mtrlheFVx2J6pGBMEKdQimr35nu4M7j4w+KeulluCw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.1",
+  "sig": "PWrSC/JRbeFtUhEGqORrWWIxc5I2sSHPcYLcWK5J27U9uHbj1aSP6jP3HRHiZXIdScYWP6LeD88soiw+AnIuAQ=="
 }

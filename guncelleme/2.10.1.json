@@ -1,0 +1,18 @@
+{
+  "product": "site-yonetim",
+  "version": "2.10.1",
+  "date": "2026-10-25",
+  "notes": [
+    "Tüm Siteler modunda tarihe göre sıralı listeler (Tahsilat, Gelir & Gider, Ziyaretçi, İşlem Geçmişi vb.) artık sitelere göre gruplanmıyor: tüm sitelerin kayıtları tarih sırasında iç içe, en yeni kayıt en üstte gösteriliyor.",
+    "Tüm Siteler modunda bir sitede olup diğerinde olmayan sütunlar (ör. yalnız etaplı sitedeki \"Etap\" sütunu) artık kaybolmuyor; açık site etapsız olsa da etaplı sitenin etap bilgisi görünüyor.",
+    "Örnek verilerle kurulan sitelerde Aidat Hesaplama sayfası \"Belirlenmedi\" gösteriyordu; örnek aidatlarla aynı aidat planı artık kendiliğinden tanımlanıyor (3+1: 3.500 ₺, 2+1: 2.900 ₺).",
+    "Toplu test: masaüstü, mobil, terminal, merkez ⇄ site ofisi, banka, ödeme, bildirim, lisans ve güncelleme testlerinin tamamı yeni arayüze göre güncellendi ve geçti."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.1/SiteYonetim-Kurulum-2.10.1.exe",
+    "sha512": "WeZbfDNljwEC/4vz+xMCCVrjGkq0OgGcjIfD9addsClnTCRxvayLurOPWgslocx/3K/ja3sX+K9yQDjRXhYBRw==",
+    "size": 78988578
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.1",
+  "sig": "PWrSC/JRbeFtUhEGqORrWWIxc5I2sSHPcYLcWK5J27U9uHbj1aSP6jP3HRHiZXIdScYWP6LeD88soiw+AnIuAQ=="
+}

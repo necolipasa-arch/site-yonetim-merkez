@@ -1,0 +1,18 @@
+{
+  "product": "site-yonetim",
+  "version": "2.4.0",
+  "date": "2026-10-25",
+  "notes": [
+    "Merkez ve site ofisleri: yönetim şirketi siteleri merkezde açıp her sitenin ofisindeki bilgisayara tüm verisiyle taşıyabilir (Ayarlar → Siteler → Ofis Bilgisayarına Taşı). Her ofis kendi verisini tutar, internet veya merkez kapalıyken de çalışır; merkez ofislere ağ / VPN üzerinden bağlanıp yönetir.",
+    "Lisans tek yerde: merkez lisansı ofislere kendiliğinden geçer; terminal hakkı merkez ve ofisler arasında paylaşılır. İsteyen ofis kendi lisansını da alabilir.",
+    "Site bazında askıya alma: ödeme yapmayan site tek başına durdurulur, diğer siteler çalışmaya devam eder (merkezin Sistem Yöneticisi veya satıcı).",
+    "Ayrıntılar: Kullanım Kılavuzu 7.9, Kurulum Kılavuzu 15."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.4.0/SiteYonetim-Kurulum-2.4.0.exe",
+    "sha512": "TvhRP2taftg4VB/93wXsN6+hEw0PyqdRoGC0deT3CV0Vlxh/1hjecxK04UQ1ngxLWY550hal/pkHTbbnk1w71w==",
+    "size": 78935268
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.4.0",
+  "sig": "vDoxYI4ap3DQ6v4f4cF3+kAQs/vwqK2oAy0wsYKGpSdjZU8FN3oTLalFI3e8Lif1LEHKUGaTfXL2PRPGcUkVCg=="
+}

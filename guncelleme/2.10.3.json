@@ -1,0 +1,15 @@
+{
+  "product": "site-yonetim",
+  "version": "2.10.3",
+  "date": "2026-10-25",
+  "notes": [
+    "Sol menüde Finans bölümünde \"Gecikme Zammı\", \"Aidat Hesaplama\"nın hemen üstüne taşındı (Bütçe → Gecikme Zammı → Aidat Hesaplama)."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.3/SiteYonetim-Kurulum-2.10.3.exe",
+    "sha512": "CST1jqsz5MTmIsfae7pAbJINvXBuebqd6JGN1X7ZVCc5yvCmCM7wjzdc4rGPL+f73amtC7brV8eq0pwB0/seVg==",
+    "size": 78988876
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.3",
+  "sig": "esFnL2i+I/4wGWVooGi4pEYbGa4xgwWFhfQ1R9X3DPPcOFd0AszNfSaSphnriH2xwcMGTPHcnhZaA5XLxg5yCw=="
+}

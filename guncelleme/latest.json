@@ -1,16 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.10.2",
+  "version": "2.10.3",
   "date": "2026-10-25",
   "notes": [
-    "Sol menüdeki \"Mobil Uygulama\" sayfası (sakinlere mobil uygulama davet linki / kodu gönderme, toplu davet, mobil hesapları yönetme) artık Üst Site Yöneticisi ve Site Yöneticisi tarafından da görülüp kullanılabiliyor.",
-    "Bulut bağlantısı ayarları, mobil uygulama adresi ve bağlantı testi yine yalnızca Sistem Yöneticisi'ndedir; bulut henüz kurulmamışsa sayfa kurulumu Sistem Yöneticisi'nin yapacağını belirtir. Muhasebe, Görevli, Güvenlik ve özel rollere bu sayfa verilemez."
+    "Sol menüde Finans bölümünde \"Gecikme Zammı\", \"Aidat Hesaplama\"nın hemen üstüne taşındı (Bütçe → Gecikme Zammı → Aidat Hesaplama)."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.2/SiteYonetim-Kurulum-2.10.2.exe",
-    "sha512": "pWpCwPxeeHKwT7VkDhaBs2aL2YPmv4h9AM2nm4gT4aW3iDdtrE/mYlHwfAPxNsywf3M8IUrd5kPb0WDm4Spz9w==",
-    "size": 78988625
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.3/SiteYonetim-Kurulum-2.10.3.exe",
+    "sha512": "CST1jqsz5MTmIsfae7pAbJINvXBuebqd6JGN1X7ZVCc5yvCmCM7wjzdc4rGPL+f73amtC7brV8eq0pwB0/seVg==",
+    "size": 78988876
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.2",
-  "sig": "5X8DlTnDVIfQLg2rO3Rz9pe3haGQOKPOAP2JBHKog6/yBfo8NQK+l6rsIt28TIsFqfZHoaKQH63OBXpCAyHCCw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.3",
+  "sig": "esFnL2i+I/4wGWVooGi4pEYbGa4xgwWFhfQ1R9X3DPPcOFd0AszNfSaSphnriH2xwcMGTPHcnhZaA5XLxg5yCw=="
 }

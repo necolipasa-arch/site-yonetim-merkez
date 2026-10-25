@@ -1,17 +1,16 @@
 {
   "product": "site-yonetim",
-  "version": "2.10.4",
+  "version": "2.10.5",
   "date": "2026-10-25",
   "notes": [
-    "Davet linkleri kısaldı: WhatsApp / SMS ile gönderilen link artık yalnızca kısa bir koddan oluşur (…/m/?d=KOD); sitenin bulut bağlantı bilgileri linkte yer almaz.",
-    "Mobil uygulama 1.8.1: kısa davet linkleri, uygulamada yalnızca davet kodu yazarak siteye bağlanma; telefonun adres çubuğunda da bulut bilgisi görünmez.",
-    "Eski (uzun) davet linkleri çalışmaya devam eder."
+    "Kartla ödeme: ayarlar artık her açılışta ve bulut bağlantısı değiştiğinde buluta yeniden gönderilir; mobil uygulamada \"Kartla Öde\" sekmesinin kaybolması giderildi.",
+    "Mobil uygulama 1.8.2: ilk girişte kurulum kolaylaştı — Kayıt Ol / Giriş Yap'a dokununca yükleme sorusu hemen açılır, onaylanınca bildirimler kendiliğinden açılır, sonunda \"Uygulamayı Aç\" ile uygulama adres çubuğu olmadan kendi penceresinde açılır. Ana ekran uygulamasında bildirimler ilk açılışta kendiliğinden açılır."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.4/SiteYonetim-Kurulum-2.10.4.exe",
-    "sha512": "N6uSormrDKOoSYZXcbjYvp9/3vuCwNPOFutsuHGhxq4rrEndT057I7yzfXclyoA+80sCJF2+P7JSsJIGCS8Fxg==",
-    "size": 78991966
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.5/SiteYonetim-Kurulum-2.10.5.exe",
+    "sha512": "AT5kw0ANU7X6Yz8ukhq0ZMeqlxcIQOKSKinXS6UH7ZYQSJ0dDjX3Wn+oD/bqx3OKXPXJ+BiJlM08d6sJzqBHWA==",
+    "size": 78994640
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.4",
-  "sig": "IXFHa943NIKqKZwJ8aG+HRRqMr7EvVzrGgqZ8BO43UAnsDdf7MZ+RnVheXGmaeVBKd6D1iYSHzCZbCCIHSNNAQ=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.5",
+  "sig": "05IjJNEZOcOab3uHAXXYMLp1IbYUHRp+VDRfjvH/cY0egnPmkgNRZyrBbs0jYUc57tQKGdAg9EagFrHbrGz0DQ=="
 }

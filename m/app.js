@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.8.1';
-const APP_BUILD = '20261025201239';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.8.2';
+const APP_BUILD = '20261025201956';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -349,7 +349,7 @@ async function refresh(silent) {
     try { localStorage.setItem('sym_cache', JSON.stringify({ d, at: S.at })); } catch { }
     if (CFG.central && CFG.siteRaw) MSites.upsert(curSite(), d.site && d.site.site_name, S.token, d.unit ? unitName(d.unit) : '');
     if (document.querySelector('main input:focus')) S.renderLater = true; else render();
-    kvkkCheck(); Push.heal();
+    kvkkCheck(); Push.heal(); Setup.autoPush(); Setup.maybeShow();
     if (!silent) toast('Bilgiler güncellendi');
   } catch (e) {
     if (e.offline) { S.offline = true; render(); if (!silent) toast(e.message, 'error'); }
@@ -658,7 +658,7 @@ const Push = {
     if (sub && localStorage.getItem('sym_push_key') !== key) { await sub.unsubscribe().catch(() => { }); sub = null; }
     if (!sub) sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: this.key(key) });
     await this.save(sub, prefs || {});
-    localStorage.setItem('sym_push_key', key); localStorage.setItem('sym_push_on', '1');
+    localStorage.setItem('sym_push_key', key); localStorage.setItem('sym_push_on', '1'); localStorage.removeItem('sym_push_off');
   },
   async save(sub, prefs) {
     const j = sub.toJSON();
@@ -668,6 +668,7 @@ const Push = {
   },
   async disable(silent) {
     localStorage.removeItem('sym_push_on');
+    if (!silent) localStorage.setItem('sym_push_off', '1');   // 1.8.2: kendiliğinden yeniden açılmasın
     const sub = await this.sub().catch(() => null);
     if (!sub) return;
     try { await rpc('member_push_unsubscribe', { p_token: S.token, p_endpoint: sub.endpoint }); } catch { }
@@ -868,9 +869,9 @@ async function afterLogin(r, isNew) {
   S.token = r.token; localStorage.setItem('sym_token', r.token);
   S.view = 'home'; history.replaceState({ view: 'home' }, '', '#home');
   render();
+  Setup.afterAuth();   // 1.8.2: dokunuş hâlâ geçerliyken yükleme sorusu
   await refresh(true);
   toast(isNew ? `Hoş geldiniz ${(r.member.full_name || '').split(' ')[0]}! Kaydınız tamamlandı.` : `Hoş geldiniz ${(r.member.full_name || '').split(' ')[0]}`);
-  if (isNew) setTimeout(maybeInstallTip, 1500);
 }
 async function logout() {
   await Push.disable(true).catch(() => { });   // bu cihaz başka kişiye geçerse bildirim gitmesin
@@ -1594,7 +1595,100 @@ function profileView() {
 const isIOS = () => /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
 window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); S.installEvt = e; if (S.data && S.view === 'home') render(); });
-window.addEventListener('appinstalled', () => { S.installEvt = null; toast('Uygulama yüklendi ✓'); render(); });
+window.addEventListener('appinstalled', () => { S.installEvt = null; S.appInstalled = true; if (Setup.onInstalled) { Setup.onInstalled(); return; } toast('Uygulama yüklendi ✓'); render(); });
+// ---------------- 1.8.2: ilk açılış kurulumu ----------------
+// Tarayıcılar "Yükle" / "İzin ver" sorularını sayfanın kendisinin yanıtlamasına izin vermez (güvenlik kuralı); bu yüzden
+// adımlar mümkün olan en az dokunuşa indirilir: Kayıt Ol / Giriş Yap dokunuşuyla yükleme sorusu hemen açılır, onaylanınca
+// bildirim izni kendiliğinden istenir, sonunda "Uygulamayı Aç" ile uygulama kendi penceresinde (adres çubuğu olmadan) açılır.
+// Ana ekran uygulamasında (standalone) bildirimler ilk açılışta kendiliğinden açılır.
+const Setup = {
+  onInstalled: null,
+  done() { try { return localStorage.getItem('sym_setup') === 'done'; } catch { return true; } },
+  mark() { try { localStorage.setItem('sym_setup', 'done'); } catch { } },
+  openUrl() { return 'intent://' + location.host + location.pathname + siteQuery({ y: CFG.siteY, raw: CFG.siteRaw }) + '#Intent;scheme=' + location.protocol.replace(':', '') + ';action=android.intent.action.VIEW;S.browser_fallback_url=' + encodeURIComponent(appUrl()) + ';end'; },
+  // Kayıt Ol / Giriş Yap dokunuşu sürerken (tarayıcı kullanıcı etkileşimi geçerliyken) yükleme sorusunu aç
+  afterAuth() {
+    if (isStandalone() || this.done() || !S.installEvt) return;
+    const act = navigator.userActivation; if (act && !act.isActive) return;   // süre dolduysa ana sayfada kurulum penceresi açılır
+    this.run(null);
+  },
+  // Ana sayfada bir kez: kurulum penceresi (tarayıcıda açılmışsa)
+  maybeShow() {
+    if (isStandalone() || this.done() || this._shown || !S.token || !S.data || S.view !== 'home') return;
+    try { if (sessionStorage.getItem('sym_setup_shown')) return; } catch { }
+    if (!S.installEvt && !isIOS() && !/Android/i.test(navigator.userAgent)) return;   // masaüstü tarayıcı: rahatsız etme
+    setTimeout(() => {
+      if (this._shown || isStandalone() || ($('#sheet-root') && $('#sheet-root').children.length)) return;
+      this._shown = true; try { sessionStorage.setItem('sym_setup_shown', '1'); } catch { }
+      if (isIOS()) {
+        Sheet.open(`<h3>${ic('download')} Uygulamayı yükleyin</h3><p class="small">iPhone'da bu adım Apple kuralı gereği elle yapılır (bir kez):</p>
+          <ol class="ios-steps"><li>Safari'nin alt çubuğundaki <b>Paylaş</b> (□↑) düğmesine dokunun.</li><li><b>"Ana Ekrana Ekle"</b> → <b>Ekle</b>.</li><li>Ana ekrandaki <b>Site Yönetim</b> simgesinden açın; bildirim izni orada tek dokunuşla istenir.</li></ol>
+          <button class="btn primary block" style="margin-top:12px" data-close>Anladım</button>`, () => this.mark());
+        return;
+      }
+      Sheet.open(`<div data-setup><h3>${ic('download')} Uygulamayı hazırlayalım</h3>
+        <p class="small">Tek dokunuşla uygulama telefonunuza yüklenir ve bildirimler açılır. Ardından uygulama kendi penceresinde, adres çubuğu olmadan açılır.</p>
+        <button class="btn primary block" style="margin-top:12px" data-setupgo>${ic('download')} Yükle ve Bildirimleri Aç</button>
+        <button class="btn block" style="margin-top:8px" data-close>Daha sonra</button></div>`, (el) => {
+        el.querySelector('[data-setupgo]').onclick = () => this.run(el.querySelector('[data-setup]'));
+      });
+    }, 900);
+  },
+  async run(box) {
+    this._shown = true; try { sessionStorage.setItem('sym_setup_shown', '1'); } catch { }
+    const show = (html) => {
+      if (!box || !box.isConnected) { Sheet.open(`<div data-setup></div>`); box = $('[data-setup]'); }
+      box.innerHTML = html;
+    };
+    let installed = false;
+    if (S.installEvt) {
+      const e = S.installEvt; S.installEvt = null;
+      try { e.prompt(); const r = await e.userChoice; installed = !!(r && r.outcome === 'accepted'); } catch { }
+      if (!installed && !box) { render(); return; }   // vazgeçti: ana sayfada "Yükle" kartı kalır
+    }
+    // bildirimler (izin daha önce reddedilmediyse) — site bilgisi henüz yüklenmediyse kısa süre bekle
+    for (let i = 0; i < 40 && !S.data; i++) await new Promise(ok => setTimeout(ok, 250));
+    let push = '';
+    if (Push.supported() && Push.siteKey() && Notification.permission !== 'denied' && S.token) {
+      try { await Push.enable({}); push = 'ok'; } catch (err) { push = err.message; }
+    }
+    const pushLine = push === 'ok' ? `<li>✓ Bildirimler açıldı</li>` : push ? `<li>Bildirimler: ${esc(push)}</li>` : '';
+    if (!installed) {
+      show(`<h3>Uygulamayı yükleyin</h3><ol class="ios-steps"><li>Chrome'un sağ üstündeki <b>⋮</b> menüsüne dokunun.</li><li><b>"Uygulamayı yükle"</b> / <b>"Ana ekrana ekle"</b>yi seçin.</li><li>Ana ekrandaki simgeden açın.</li></ol>
+        ${pushLine ? `<ul class="setup-ok">${pushLine}</ul>` : ''}
+        <a class="btn block" style="margin-top:10px" href="${esc(this.openUrl())}">Zaten yüklüyse: Uygulamayı Aç</a>
+        <button class="btn primary block" style="margin-top:8px" data-close>Tamam</button>`);
+      return;
+    }
+    this.mark();
+    show(`<div class="center"><div class="spinner"></div><h3 style="margin-top:10px">Uygulama yükleniyor…</h3><ul class="setup-ok">${pushLine}</ul></div>`);
+    if (!S.appInstalled) await new Promise((ok) => { const t = setTimeout(ok, 15000); this.onInstalled = () => { clearTimeout(t); ok(); }; });
+    this.onInstalled = null;
+    show(`<h3>✓ Hazır</h3><ul class="setup-ok"><li>✓ Uygulama telefonunuza yüklendi</li>${pushLine}</ul>
+      <p class="small" style="margin-top:8px">Uygulamayı bir kez kendi penceresinde açın; bundan sonra ana ekrandaki <b>Site Yönetim</b> simgesini kullanın. Bu tarayıcı sekmesini kapatabilirsiniz.</p>
+      <a class="btn primary block" style="margin-top:12px" href="${esc(this.openUrl())}">${ic('download')} Uygulamayı Aç</a>
+      <p class="muted small center" style="margin-top:8px">Açılmazsa ana ekrandaki simgeye dokunun.</p>`);
+  },
+  // Ana ekran uygulamasında: bildirimleri kendiliğinden aç (kullanıcı kapatmadıysa). iPhone'da izin yalnızca dokunuşla istenebilir.
+  async autoPush() {
+    try {
+      if (!S.token || !S.data || !Push.supported() || !Push.siteKey() || S.data.push === undefined) return;
+      if (localStorage.getItem('sym_push_on') === '1' || localStorage.getItem('sym_push_off') === '1') return;
+      const perm = Notification.permission;
+      if (perm === 'granted') { await Push.enable({}); return; }   // izin zaten var (ör. tarayıcıda verildi): sessizce abone ol
+      if (perm !== 'default' || !isStandalone() || localStorage.getItem('sym_push_asked')) return;
+      localStorage.setItem('sym_push_asked', '1');
+      if (isIOS()) {
+        Sheet.open(`<h3>${ic('bell')} Bildirimler</h3><p class="small">Duyuru, kargo, misafir ve ödeme bildirimlerini almak için bir kez izin verin.</p>
+          <button class="btn primary block" style="margin-top:12px" data-pushgo>${ic('bell')} Bildirimleri Aç</button><button class="btn block" style="margin-top:8px" data-close>Daha sonra</button>`, (el) => {
+          el.querySelector('[data-pushgo]').onclick = async () => { try { await Push.enable({}); toast('Bildirimler açıldı ✓'); } catch (e) { toast(e.message, 'error'); } Sheet.close(); };
+        });
+        return;
+      }
+      await Push.enable({}); toast('Bildirimler açıldı ✓');
+    } catch (e) { console.warn('bildirim', e); }
+  }
+};
 async function doInstall() {
   if (S.installEvt) { S.installEvt.prompt(); const r = await S.installEvt.userChoice.catch(() => null); S.installEvt = null; if (r && r.outcome === 'accepted') toast('Yükleniyor…'); render(); return; }
   if (isIOS()) {

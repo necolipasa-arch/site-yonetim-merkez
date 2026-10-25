@@ -1,16 +1,16 @@
 {
   "product": "site-yonetim",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "date": "2026-10-25",
   "notes": [
-    "Ayarlar → Mobil Uygulama & Bulut sadeleşti: bulut hizmetini (Neon — otomatik veya Supabase — elle) listeden seçin; yalnızca seçtiğiniz hizmetin bilgileri görünür.",
-    "Eşitleme sıklığı ve gece sessiz saatleri artık Eşitleme Durumu kartında; mobil uygulama adresi Mobil Uygulama Paketi bölümünde."
+    "Yan menüde Güvenlik Masası'nın altında çıkan \"Tüm Siteler\" düğmesi kaldırıldı; tüm sitelerin özeti sol üstteki site seçiciden (Tüm Siteler — Genel Bakış) açılır.",
+    "Tüm Siteler — Genel Bakış açıkken site seçicide artık son seçilen sitenin adı değil \"Tüm Siteler\" yazar."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.5.2/SiteYonetim-Kurulum-2.5.2.exe",
-    "sha512": "shkKSBZWunPC0HvaFD+B1vOk5b/pd6gBgWWV87MAe0LrmrSKnY9HiLjo9CKL1TvrBZL8izJw8/A7fIiABzWZ2w==",
-    "size": 78942400
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.5.3/SiteYonetim-Kurulum-2.5.3.exe",
+    "sha512": "ZrpAiL47RruuDARNFV8rYzlV9JNPGGpJKDYPAl21EAqKtz7OqYsKBUNWWp62uWmzwkJtQkc5Npb3FDZJoti3tQ==",
+    "size": 78942564
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.5.2",
-  "sig": "qzI1DzKghOL4XuzqVQiF2EbXH3cc58mihnRd2hssZQz54FUjFCBiz/jqdM7dJE2Cpqw5mkZUAhSJ7Y4LbwGQCg=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.5.3",
+  "sig": "SETui/CZo7VS7jDUdfRk+ZucNMLu67DdKSpai0SIy/tsMaJq3cMZo0e9yaB0RLGelRvuiQ/yZrr2PF02Oh21Ag=="
 }

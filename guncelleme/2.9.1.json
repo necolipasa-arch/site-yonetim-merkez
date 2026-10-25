@@ -1,0 +1,17 @@
+{
+  "product": "site-yonetim",
+  "version": "2.9.1",
+  "date": "2026-10-25",
+  "notes": [
+    "Üstteki site kutucuğundan başka bir site seçildiğinde ekranda pencere kapanıp açılıyormuş gibi görünen hareket kaldırıldı. Artık tüm siteler aynı program penceresinin içinde açılır; site değiştirmek yalnızca içeriği değiştirir.",
+    "Seçilen site ilk kez açılıyorsa giriş ve ana sayfa arka planda hazırlanır, hazır olunca tek seferde gösterilir; bu sırada giriş ekranı ya da yarım yüklenmiş sayfa görünmez.",
+    "Program kapatılırken arka planda açık olan tüm sitelerin verileri son kez kaydedilir."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.9.1/SiteYonetim-Kurulum-2.9.1.exe",
+    "sha512": "mdgThgSakwuvDa8MeB5VbDgE1QsDF1vpWe/jcp9gBCj+zYOtLu7q6agLYjpDYOHrjIFdJwlGn1igVItI0xK2IQ==",
+    "size": 78978813
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.9.1",
+  "sig": "P4y8qfZ27uaXqld5Xu3AwZBp/RuUCd93VYdylpfqx32zpq0Na9Xj0OBUz/dBQi4x8l7QYfuCJr3A/Q5fXFAmCg=="
+}

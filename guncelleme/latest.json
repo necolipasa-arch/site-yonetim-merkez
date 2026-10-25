@@ -1,18 +1,17 @@
 {
   "product": "site-yonetim",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "date": "2026-10-25",
   "notes": [
-    "Yeni menü: Finans → Gecikme Zammı. Gecikme zammı ayarları Ayarlar'dan bu sayfaya taşındı; Ayarlar'daki \"Finans Ayarları\" sekmesi kaldırıldı (son ödeme günü Aidat Hesaplama'da, sonraki makbuz numarası Tahsilat → Makbuz No düğmesinde).",
-    "Gecikme zammı artık alacak türüne göre ayrı ayrı yönetilir: Aidat, Su, Demirbaş, Yakıt, Doğalgaz… her tür genel kuralı kullanabilir, kendi özel kuralına (oran dönemi, kademeler, üst sınır, başlangıç tarihi, otomatik ekleme) sahip olabilir veya zamdan muaf tutulabilir.",
-    "Hesaplama ve borçlara ekleme tek bir tür, seçilen birkaç tür veya tüm türler için yapılabilir. Her türün zammı ayrı \"<tür> gecikme zammı\" kalemi olarak eklenir; aidat ve diğer alacakların kendi tutarına hiçbir şey eklenmez, her ayın alacağı ayrı izlenir.",
-    "Sayfada her türün vadesi geçmiş borcu, işlemiş zammı, eklenmiş zammı ve eklenecek farkı görünür. Önceki sürümlerde eklenmiş gecikme zamları ilk açılışta otomatik olarak türlere ayrılır."
+    "Üstteki site kutucuğundan başka bir site seçildiğinde ekranda pencere kapanıp açılıyormuş gibi görünen hareket kaldırıldı. Artık tüm siteler aynı program penceresinin içinde açılır; site değiştirmek yalnızca içeriği değiştirir.",
+    "Seçilen site ilk kez açılıyorsa giriş ve ana sayfa arka planda hazırlanır, hazır olunca tek seferde gösterilir; bu sırada giriş ekranı ya da yarım yüklenmiş sayfa görünmez.",
+    "Program kapatılırken arka planda açık olan tüm sitelerin verileri son kez kaydedilir."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.9.0/SiteYonetim-Kurulum-2.9.0.exe",
-    "sha512": "aVOoBsiKJCJ3kShltVwOtOTFFcsZgcAGcJXQCf03FxvQPTBb/a+g47oav05l3XNuLr/hPMcTfV125AfUvsRgig==",
-    "size": 78977274
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.9.1/SiteYonetim-Kurulum-2.9.1.exe",
+    "sha512": "mdgThgSakwuvDa8MeB5VbDgE1QsDF1vpWe/jcp9gBCj+zYOtLu7q6agLYjpDYOHrjIFdJwlGn1igVItI0xK2IQ==",
+    "size": 78978813
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.9.0",
-  "sig": "sECcnzJ2/bJ9pRG0xvVwmwTynOJRoEVrcCTnJJjSgmCtHsJ8Ef0Fx1GOCWzQc70G4mAC3qRe7XJhGz08EY+VCg=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.9.1",
+  "sig": "P4y8qfZ27uaXqld5Xu3AwZBp/RuUCd93VYdylpfqx32zpq0Na9Xj0OBUz/dBQi4x8l7QYfuCJr3A/Q5fXFAmCg=="
 }

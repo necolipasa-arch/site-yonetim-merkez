@@ -1,15 +1,17 @@
 {
   "product": "site-yonetim",
-  "version": "2.10.3",
+  "version": "2.10.4",
   "date": "2026-10-25",
   "notes": [
-    "Sol menüde Finans bölümünde \"Gecikme Zammı\", \"Aidat Hesaplama\"nın hemen üstüne taşındı (Bütçe → Gecikme Zammı → Aidat Hesaplama)."
+    "Davet linkleri kısaldı: WhatsApp / SMS ile gönderilen link artık yalnızca kısa bir koddan oluşur (…/m/?d=KOD); sitenin bulut bağlantı bilgileri linkte yer almaz.",
+    "Mobil uygulama 1.8.1: kısa davet linkleri, uygulamada yalnızca davet kodu yazarak siteye bağlanma; telefonun adres çubuğunda da bulut bilgisi görünmez.",
+    "Eski (uzun) davet linkleri çalışmaya devam eder."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.3/SiteYonetim-Kurulum-2.10.3.exe",
-    "sha512": "CST1jqsz5MTmIsfae7pAbJINvXBuebqd6JGN1X7ZVCc5yvCmCM7wjzdc4rGPL+f73amtC7brV8eq0pwB0/seVg==",
-    "size": 78988876
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.4/SiteYonetim-Kurulum-2.10.4.exe",
+    "sha512": "N6uSormrDKOoSYZXcbjYvp9/3vuCwNPOFutsuHGhxq4rrEndT057I7yzfXclyoA+80sCJF2+P7JSsJIGCS8Fxg==",
+    "size": 78991966
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.3",
-  "sig": "esFnL2i+I/4wGWVooGi4pEYbGa4xgwWFhfQ1R9X3DPPcOFd0AszNfSaSphnriH2xwcMGTPHcnhZaA5XLxg5yCw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.4",
+  "sig": "IXFHa943NIKqKZwJ8aG+HRRqMr7EvVzrGgqZ8BO43UAnsDdf7MZ+RnVheXGmaeVBKd6D1iYSHzCZbCCIHSNNAQ=="
 }

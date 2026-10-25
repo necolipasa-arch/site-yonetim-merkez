@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.8.0';
-const APP_BUILD = '20261024220754';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.8.1';
+const APP_BUILD = '20261025201239';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -60,14 +60,68 @@ const MSites = {
   },
   upsert(site, name, token, unit) {
     if (!site || !site.u || !site.raw) return;
-    const l = this.list(), i = l.findIndex(x => x.u === site.u), v = { u: site.u, k: site.k, f: site.f || '', n: String(name || site.n || '').slice(0, 80), raw: site.raw, d: String(unit || '').slice(0, 60) };
-    if (i >= 0) { if (l[i].n === v.n && l[i].raw === v.raw && l[i].k === v.k && l[i].d === v.d && (l[i].f || '') === v.f) { if (token) localStorage.setItem(this.tk(site.u), token); return; } l[i] = v; } else l.push(v);
+    const l = this.list(), i = l.findIndex(x => x.u === site.u), v = { u: site.u, k: site.k, f: site.f || '', n: String(name || site.n || '').slice(0, 80), raw: site.raw, d: String(unit || '').slice(0, 60), y: site.y || '' };
+    if (i >= 0) { if (l[i].n === v.n && l[i].raw === v.raw && l[i].k === v.k && l[i].d === v.d && (l[i].f || '') === v.f && (l[i].y || '') === v.y) { if (token) localStorage.setItem(this.tk(site.u), token); return; } l[i] = v; } else l.push(v);
     if (token) localStorage.setItem(this.tk(site.u), token);
     this.save(l);
   },
   remove(u) { this.save(this.list().filter(x => x.u !== u)); localStorage.removeItem(this.tk(u)); localStorage.removeItem(this.ck(u)); },
   others(u) { return this.list().filter(x => x.u !== u && localStorage.getItem(this.tk(x.u))); }
 };
+// 1.8.1: kısa davet linkleri — …/m/?d=KOD (davet kodu) ve …/m/?y=KIMLIK (sitenin kısa kimliği). Site bağlantı bilgisi
+// linkte taşınmaz; açılışta lisans sunucusundaki davet dizininden alınır (SITE_CONFIG.dir) ve bu cihazda saklanır.
+const dirNorm = (v) => String(v || '').toUpperCase().replace(/[^0-9A-Z]/g, '');
+const DIR_PENDING = (function () {
+  if (!(window.SITE_CONFIG || {}).central) return null;
+  try {
+    const qs = new URLSearchParams(location.search);
+    if (qs.get('s')) return null;
+    try { if (sessionStorage.getItem('sym_dirdone') === location.search) return null; } catch { }   // yeniden yükleme döngüsüne karşı
+    const d = dirNorm(qs.get('d')), y = dirNorm(qs.get('y'));
+    if (d.length >= 6 && d.length <= 24) return { t: 'D', v: d };
+    if (y.length >= 6 && y.length <= 24) {
+      let saved = null; try { saved = JSON.parse(localStorage.getItem('sym_site') || 'null'); } catch { }
+      if (saved && saved.y === y) return null;
+      const known = MSites.list().find(x => x.y === y);   // bu cihazda kayıtlı başka site
+      if (known) {
+        if (saved && saved.u !== known.u) { MSites.stash(saved); MSites.restore(known.u); }
+        localStorage.setItem('sym_site', JSON.stringify({ u: known.u, k: known.k, f: known.f || '', n: known.n, raw: known.raw, y }));
+        return null;
+      }
+      return { t: 'S', v: y };
+    }
+  } catch { }
+  return null;
+})();
+// Site adres sorgusu: kısa kimlik varsa ?y=…, yoksa (eski davetler) ?s=…
+const siteQuery = (site) => site && site.y ? '?y=' + site.y : site && site.raw ? '?s=' + site.raw : '';
+async function dirResolve(p) {
+  const dir = (window.SITE_CONFIG || {}).dir || {};
+  if (!dir.u) { const e = new Error('Bu uygulamada davet dizini tanımlı değil.'); e.code = 'NODIR'; throw e; }
+  const k = String(dir.k || '');
+  let r;
+  try {
+    r = await fetch(String(dir.u).replace(/\/+$/, '') + '/rest/v1/rpc/lic_dizin_coz', {
+      method: 'POST', cache: 'no-store', body: JSON.stringify({ p_tur: p.t, p_deger: p.v }),
+      headers: Object.assign({ 'Content-Type': 'application/json', apikey: k }, /^eyJ/.test(k) ? { Authorization: 'Bearer ' + k } : {})
+    });
+  } catch (e) { const er = new Error('Davet bilgisi alınamadı. İnternet bağlantınızı kontrol edin.'); er.net = true; throw er; }
+  const d = await r.json().catch(() => null);
+  if (!r.ok || !d) { const er = new Error('Davet bilgisi alınamadı (' + r.status + ').'); er.net = r.status >= 500 || r.status === 0; throw er; }
+  if (d.error) { const er = new Error(d.error); er.code = d.code || 'ERR'; throw er; }
+  const site = parseSiteParam(d.cfg);
+  if (!site) { const er = new Error('Site bağlantı bilgisi okunamadı.'); er.code = 'CFG'; throw er; }
+  const y = p.t === 'S' ? p.v : dirNorm(d.y);
+  if (y.length >= 6 && y.length <= 24) site.y = y;
+  let saved = null; try { saved = JSON.parse(localStorage.getItem('sym_site') || 'null'); } catch { }
+  if (saved && saved.u !== site.u) { MSites.stash(saved); MSites.restore(site.u); }
+  if (saved && saved.u === site.u && !site.k && saved.k) site.k = saved.k;
+  localStorage.setItem('sym_site', JSON.stringify(site));
+  const q = siteQuery(site) + (p.t === 'D' ? '&davet=' + p.v : '');
+  try { sessionStorage.setItem('sym_dirdone', q); } catch { }
+  if (location.search === q) location.reload();   // aynı adres (yalnızca #… farkı yeniden yüklemez)
+  else location.replace(location.pathname + q + (p.t === 'S' ? location.hash : ''));
+}
 const CFG = (function resolveConfig() {
   const raw = window.SITE_CONFIG || {};
   if (raw.anonKey && !raw.central) return raw;
@@ -81,10 +135,10 @@ const CFG = (function resolveConfig() {
   if (saved && saved.u && !saved.k && saved.f) {   // 1.8.0: anahtar fonksiyondan alınacak (start → resolveKey)
     let k = ''; try { k = localStorage.getItem('sym_k@' + saved.u) || ''; } catch { }
     if (k) { saved.k = k; localStorage.setItem('sym_site', JSON.stringify(saved)); }
-    else return { ...raw, central: true, url: saved.u, anonKey: '', fnUrl: saved.f, needKey: true, siteName: saved.n || '', siteRaw: saved.raw };
+    else return { ...raw, central: true, url: saved.u, anonKey: '', fnUrl: saved.f, needKey: true, siteName: saved.n || '', siteRaw: saved.raw, siteY: saved.y || '' };
   }
   if (!saved || !saved.u || !saved.k) return { ...raw, central: true, anonKey: '' };
-  return { ...raw, central: true, url: saved.u, anonKey: saved.k, fnUrl: saved.f || '', siteName: saved.n || raw.siteName || '', siteRaw: saved.raw };
+  return { ...raw, central: true, url: saved.u, anonKey: saved.k, fnUrl: saved.f || '', siteName: saved.n || raw.siteName || '', siteRaw: saved.raw, siteY: saved.y || '' };
 })();
 // Sunucu adresini sadeleştir (https://xxxx.supabase.co) — yol, boşluk, http vb. hatalara karşı
 function normBase(u) {
@@ -319,6 +373,13 @@ window.addEventListener('popstate', (e) => {
 // ---------------- çizim ----------------
 function render() {
   const app = $('#app');
+  if (S.dirBusy || S.dirNetErr) {   // 1.8.1 kısa davet linki çözülüyor
+    app.innerHTML = S.dirNetErr
+      ? `<div class="boot"><img src="icons/icon-192.png" alt=""><p><b>Davet bilgisi alınamadı</b></p><p class="muted small">${esc(S.dirNetErr)}</p><button class="btn primary" data-keyretry>Tekrar Dene</button></div>`
+      : `<div class="boot"><img src="icons/icon-192.png" alt=""><div class="spinner"></div><p class="muted">Davetiniz açılıyor…</p></div>`;
+    const b = app.querySelector('[data-keyretry]'); if (b) b.onclick = () => location.reload();
+    return;
+  }
   if (CFG.needKey) {
     app.innerHTML = S.keyErr
       ? `<div class="boot"><img src="icons/icon-192.png" alt=""><p><b>Siteye bağlanılamadı</b></p><p class="muted small">${esc(S.keyErr)}<br>İnternet bağlantınızı kontrol edip tekrar deneyin.</p><button class="btn primary" data-keyretry>Tekrar Dene</button></div>`
@@ -356,7 +417,8 @@ function notConfigured() {
   return `<div class="auth"><div class="auth-top"><img src="icons/icon-192.png" alt=""><h1>Site Yönetim Mobil</h1><p>Sitenize bağlanın</p></div>
     <div class="auth-card"><h3>Siteye Bağlan</h3>
       <p class="muted small" style="margin-top:6px">Site yönetiminin size gönderdiği <b>davet mesajındaki linke dokunun</b>. Uygulamayı ana ekrandan açtıysanız, davet mesajını (veya içindeki linki) kopyalayıp aşağıya yapıştırın.</p>
-      <form id="connForm"><div class="fld" style="margin-top:12px"><label>Davet linki veya mesajı</label><textarea name="t" rows="4" placeholder="https://…/m/?davet=…&amp;s=…" required></textarea></div>
+      ${S.dirErr ? `<div class="alert orange" style="margin-top:10px">${esc(S.dirErr)}</div>` : ''}
+      <form id="connForm"><div class="fld" style="margin-top:12px"><label>Davet linki, mesajı veya davet kodu</label><textarea name="t" rows="4" placeholder="https://…/m/?d=…  veya  ABCD-EFGH" required></textarea></div>
       <button class="btn primary block" type="submit">Bağlan</button></form>
       <p class="muted small center" style="margin-top:12px">Davet mesajınız yoksa site yönetiminden isteyin.</p></div></div>`;
 }
@@ -365,7 +427,15 @@ function bindConnect() {
   f.addEventListener('submit', (e) => {
     e.preventDefault();
     const t = f.t.value, site = siteParamFromText(t);
-    if (!site) { toast('Bu metinde site bağlantı bilgisi bulunamadı. Davet mesajının tamamını yapıştırın.', 'error'); return; }
+    if (!site) {
+      // 1.8.1: kısa link (?d=KOD / ?y=KIMLIK) veya yalnızca davet kodu
+      const dm = /[?&#]d=([A-Za-z0-9-]+)/.exec(t) || /[?&#]davet=([A-Za-z0-9-]+)/.exec(t), ym = /[?&#]y=([A-Za-z0-9]+)/.exec(t);
+      const lone = /^\s*([A-Za-z0-9]{4}-?[A-Za-z0-9]{4})\s*$/.exec(t);
+      const code = dm ? dirNorm(dm[1]) : lone ? dirNorm(lone[1]) : '';
+      if (code.length >= 6 && (window.SITE_CONFIG || {}).dir) { location.replace(location.pathname + '?d=' + code); return; }
+      if (ym && (window.SITE_CONFIG || {}).dir) { location.replace(location.pathname + '?y=' + dirNorm(ym[1])); return; }
+      toast('Bu metinde davet bilgisi bulunamadı. Davet mesajının tamamını veya davet kodunu yazın.', 'error'); return;
+    }
     localStorage.setItem('sym_site', JSON.stringify(site));
     const d = /[?&#]davet=([A-Za-z0-9-]+)/.exec(t);
     location.replace(location.pathname + '?s=' + site.raw + (d ? '&davet=' + d[1] : ''));
@@ -631,7 +701,7 @@ function pushDiag(sub, mine) {
   return `<p class="push-diag">${esc(parts.join(' · '))}</p>`;
 }
 function viaOldIcon() { try { return sessionStorage.getItem('sym_viaold') === '1' && !isStandalone(); } catch { return false; } }
-function appUrl() { return location.origin + location.pathname + (CFG.siteRaw ? '?s=' + CFG.siteRaw : ''); }
+function appUrl() { return location.origin + location.pathname + siteQuery({ y: CFG.siteY, raw: CFG.siteRaw }); }
 function oldIconHelp() {
   const android = /Android/i.test(navigator.userAgent);
   return `<p class="small">Uygulamayı telefonunuzdaki <b>eski simgeden</b> açtınız. Bildirimlerin çalışması ve üstteki adres çubuğunun kalkması için uygulamayı <b>yeni simgeyle</b> ana ekrana eklemeniz gerekir (bir kez):</p>
@@ -809,14 +879,14 @@ async function logout() {
 }
 function forceLogout(msg) { clearSession(); render(); toast(msg || 'Oturum sona erdi, lütfen tekrar giriş yapın.', 'error'); }
 function clearSession() { S.token = null; S.data = null; localStorage.removeItem('sym_token'); localStorage.removeItem('sym_cache'); if (CFG.central && CFG.url) MSites.remove(CFG.url); S.authTab = 'login'; }
-function curSite() { return { u: CFG.url, k: CFG.anonKey, f: CFG.fnUrl || '', n: CFG.siteName || '', raw: CFG.siteRaw }; }
+function curSite() { return { u: CFG.url, k: CFG.anonKey, f: CFG.fnUrl || '', n: CFG.siteName || '', raw: CFG.siteRaw, y: CFG.siteY || '' }; }
 // Kayıtlı başka siteye geç: aktif oturum saklanır, hedefin oturumu açılır, sayfa o siteyle yeniden yüklenir
 function switchSite(u, view) {
   const t = MSites.list().find(x => x.u === u); if (!t || u === CFG.url) { Sheet.close(); return; }
   MSites.stash(curSite());
-  localStorage.setItem('sym_site', JSON.stringify({ u: t.u, k: t.k, f: t.f || '', n: t.n, raw: t.raw }));
+  localStorage.setItem('sym_site', JSON.stringify({ u: t.u, k: t.k, f: t.f || '', n: t.n, raw: t.raw, y: t.y || '' }));
   MSites.restore(t.u);
-  location.replace(location.pathname + '?s=' + t.raw + '#' + (/^[a-z]{2,12}$/.test(view || '') ? view : 'home'));
+  location.replace(location.pathname + siteQuery(t) + '#' + (/^[a-z]{2,12}$/.test(view || '') ? view : 'home'));
 }
 function sitesSheet() {
   const cur = (S.data && S.data.site && S.data.site.site_name) || CFG.siteName || 'Bu site';
@@ -1286,7 +1356,7 @@ async function payProcess(args, info) {
   }
 }
 // Canlı ödeme (1.6.1): sunucu fonksiyonu → { url } güvenli sayfa | { form } bankaya/PayTR'ye form | { done } kayıtlı kartla sonuç
-function payReturnUrl() { return location.origin + location.pathname + (CFG.central && CFG.siteRaw ? '?s=' + CFG.siteRaw : ''); }
+function payReturnUrl() { return location.origin + location.pathname + (CFG.central ? siteQuery({ y: CFG.siteY, raw: CFG.siteRaw }) : ''); }
 async function payStart(body) {
   const r = await fetch(`${FN_BASE()}/baslat`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.assign({ token: S.token, return: payReturnUrl() }, body)) });
   let d = null; try { d = await r.json(); } catch { }
@@ -1706,6 +1776,17 @@ document.addEventListener('focusout', () => { if (Upd.pending) setTimeout(() => 
 
 // başlat
 (async function start() {
+  if (DIR_PENDING) {   // 1.8.1: kısa davet linki (?d=KOD) / site kimliği (?y=…)
+    S.dirBusy = true; render();
+    try { await dirResolve(DIR_PENDING); return; }   // başarılı: sayfa site bilgisiyle yeniden yüklenir
+    catch (e) {
+      S.dirBusy = false;
+      if (e.net) { S.dirNetErr = e.message; render(); return; }
+      S.dirErr = e.message || String(e);
+      history.replaceState(null, '', location.pathname + location.hash);
+      if (CFG.anonKey || CFG.needKey) setTimeout(() => toast(S.dirErr, 'error'), 400);
+    }
+  }
   if (CFG.needKey) {
     render();
     try { await resolveKey(); }
@@ -1716,8 +1797,9 @@ document.addEventListener('focusout', () => { if (Upd.pending) setTimeout(() => 
   if (v && (SUB[v] || isTab(v))) S.view = v;
   const payRet = (/[?&]odeme=(ok|hata|bekle)\b/.exec(location.search) || [])[1];   // v1.5.0: ödeme sayfasından dönüş
   if (payRet) S.view = 'account';
-  // ?davet=… adresten silinir; merkezi uygulamada ?s=… (site bilgisi) kalır ki iPhone'da "Ana Ekrana Ekle" ile açılan uygulama da siteyi bilsin
-  history.replaceState({ view: S.view }, '', location.pathname + (CFG.central && CFG.siteRaw ? '?s=' + CFG.siteRaw : '') + '#' + S.view);
+  // ?davet=… adresten silinir; merkezi uygulamada site bilgisi kalır ki iPhone'da "Ana Ekrana Ekle" ile açılan uygulama da siteyi bilsin.
+  // 1.8.1: kısa kimlik (?y=…) varsa o kalır; bağlantı bilgisi (?s=…) yalnızca eski davetlerle gelinmişse.
+  history.replaceState({ view: S.view }, '', location.pathname + (CFG.central ? siteQuery({ y: CFG.siteY, raw: CFG.siteRaw }) : '') + '#' + S.view);
   if (inv && !S.token) startWithInvite(inv);
   render();
   if (inv && S.token) {

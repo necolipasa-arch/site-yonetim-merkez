@@ -1,16 +1,16 @@
 {
   "product": "site-yonetim",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "date": "2026-10-25",
   "notes": [
-    "\"Site Üst Yöneticisi\" rolünün adı \"Üst Site Yöneticisi\" olarak değiştirildi.",
-    "Rol Yetkileri yenilendi: yetki vermek istediğiniz rolü listeden seçip menülerini işaretleyin. Roller yan yana dizilmediği için rol sayısı artsa da ekran düzgün kalır."
+    "Ayarlar → Mobil Uygulama & Bulut sadeleşti: bulut hizmetini (Neon — otomatik veya Supabase — elle) listeden seçin; yalnızca seçtiğiniz hizmetin bilgileri görünür.",
+    "Eşitleme sıklığı ve gece sessiz saatleri artık Eşitleme Durumu kartında; mobil uygulama adresi Mobil Uygulama Paketi bölümünde."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.5.1/SiteYonetim-Kurulum-2.5.1.exe",
-    "sha512": "tRDUwI0u1WehKnRBnxIvoygSjMLJfx3e2F65R8dxU+kdrPntNJ4zNe27N+B75Z0uNzaVjGQBJ6EMQQVPyWUiwQ==",
-    "size": 78942179
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.5.2/SiteYonetim-Kurulum-2.5.2.exe",
+    "sha512": "shkKSBZWunPC0HvaFD+B1vOk5b/pd6gBgWWV87MAe0LrmrSKnY9HiLjo9CKL1TvrBZL8izJw8/A7fIiABzWZ2w==",
+    "size": 78942400
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.5.1",
-  "sig": "mUXY22h1HMldbS4zsYibKskha3ZuQmqpnFNOjhM+8K5UOnVZ1QILJjQ4QVrHKmJHaN8vTrbggVDM4zQcdfFWAQ=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.5.2",
+  "sig": "qzI1DzKghOL4XuzqVQiF2EbXH3cc58mihnRd2hssZQz54FUjFCBiz/jqdM7dJE2Cpqw5mkZUAhSJ7Y4LbwGQCg=="
 }

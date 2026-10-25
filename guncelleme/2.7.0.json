@@ -1,0 +1,18 @@
+{
+  "product": "site-yonetim",
+  "version": "2.7.0",
+  "date": "2026-10-25",
+  "notes": [
+    "\"Tahakkuk (Borçlandırma)\" menüsünün adı \"Site Alacakları\" oldu; sayfadaki \"Gecikme Tazminatı\" düğmesi \"Gecikme Zammı\" olarak değişti. Eski gecikme tazminatı kayıtları da \"Gecikme Zammı\" adıyla görünür.",
+    "Ayarlar → Finans Ayarları'nda yeni \"Gecikme Zammı\" bölümü: zam oranı dönemi Günlük / Haftalık / Aylık seçilebilir ve gecikme süresine göre kademeli oranlar girilebilir (örn. ilk hafta %2, 1 haftadan 1 aya kadar %3, 1 aydan sonra %5). Her kademe kendi oranıyla ayrı hesaplanır ve toplanır; ilk kademeden önceki günler hoşgörü süresi sayılır. İsteğe bağlı üst sınır ve başlangıç tarihi girilebilir; örnek hesap anında gösterilir, KMK md.20'deki aylık %5 sınırını aşan oranlarda uyarı çıkar.",
+    "İsteğe bağlı otomatik ekleme: açıldığında program gecikme zammını her gün kendisi hesaplayıp ilgili ayın \"Gecikme Zammı\" kalemine ekler. Kapalıyken Site Alacakları → Gecikme Zammı penceresinden önizleyip elle eklenir. Zam, ödemeler düşüldükten sonra kalan borç üzerinden gün gün işler; aynı zam iki kez eklenmez. Pencereden daireler muaf tutulabilir.",
+    "Borç bildirimi yazısındaki gecikme cümlesi seçilen kurala göre otomatik yazılır."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.7.0/SiteYonetim-Kurulum-2.7.0.exe",
+    "sha512": "aBvWeO38K3PFjTErArwRQjob7ASU4AuXR3sKg6oXjVM8LM0QEYThYseuxjjgrUMvzDUvz/lLkMl4awXD3SdtfA==",
+    "size": 78959133
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.7.0",
+  "sig": "xMHZ3OKsJbMkqASN92yA9qth5YQw4PGjDdhwdTAEgLzdo44LXwjpECSSgfnk5i4CMDKZh3uSTPEvx9o6GMuLBw=="
+}

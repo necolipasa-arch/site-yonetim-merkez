@@ -1,18 +1,16 @@
 {
   "product": "site-yonetim",
-  "version": "2.10.1",
+  "version": "2.10.2",
   "date": "2026-10-25",
   "notes": [
-    "Tüm Siteler modunda tarihe göre sıralı listeler (Tahsilat, Gelir & Gider, Ziyaretçi, İşlem Geçmişi vb.) artık sitelere göre gruplanmıyor: tüm sitelerin kayıtları tarih sırasında iç içe, en yeni kayıt en üstte gösteriliyor.",
-    "Tüm Siteler modunda bir sitede olup diğerinde olmayan sütunlar (ör. yalnız etaplı sitedeki \"Etap\" sütunu) artık kaybolmuyor; açık site etapsız olsa da etaplı sitenin etap bilgisi görünüyor.",
-    "Örnek verilerle kurulan sitelerde Aidat Hesaplama sayfası \"Belirlenmedi\" gösteriyordu; örnek aidatlarla aynı aidat planı artık kendiliğinden tanımlanıyor (3+1: 3.500 ₺, 2+1: 2.900 ₺).",
-    "Toplu test: masaüstü, mobil, terminal, merkez ⇄ site ofisi, banka, ödeme, bildirim, lisans ve güncelleme testlerinin tamamı yeni arayüze göre güncellendi ve geçti."
+    "Sol menüdeki \"Mobil Uygulama\" sayfası (sakinlere mobil uygulama davet linki / kodu gönderme, toplu davet, mobil hesapları yönetme) artık Üst Site Yöneticisi ve Site Yöneticisi tarafından da görülüp kullanılabiliyor.",
+    "Bulut bağlantısı ayarları, mobil uygulama adresi ve bağlantı testi yine yalnızca Sistem Yöneticisi'ndedir; bulut henüz kurulmamışsa sayfa kurulumu Sistem Yöneticisi'nin yapacağını belirtir. Muhasebe, Görevli, Güvenlik ve özel rollere bu sayfa verilemez."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.1/SiteYonetim-Kurulum-2.10.1.exe",
-    "sha512": "WeZbfDNljwEC/4vz+xMCCVrjGkq0OgGcjIfD9addsClnTCRxvayLurOPWgslocx/3K/ja3sX+K9yQDjRXhYBRw==",
-    "size": 78988578
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.2/SiteYonetim-Kurulum-2.10.2.exe",
+    "sha512": "pWpCwPxeeHKwT7VkDhaBs2aL2YPmv4h9AM2nm4gT4aW3iDdtrE/mYlHwfAPxNsywf3M8IUrd5kPb0WDm4Spz9w==",
+    "size": 78988625
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.1",
-  "sig": "PWrSC/JRbeFtUhEGqORrWWIxc5I2sSHPcYLcWK5J27U9uHbj1aSP6jP3HRHiZXIdScYWP6LeD88soiw+AnIuAQ=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.2",
+  "sig": "5X8DlTnDVIfQLg2rO3Rz9pe3haGQOKPOAP2JBHKog6/yBfo8NQK+l6rsIt28TIsFqfZHoaKQH63OBXpCAyHCCw=="
 }

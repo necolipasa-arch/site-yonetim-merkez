@@ -1,0 +1,15 @@
+{
+  "product": "site-yonetim",
+  "version": "2.11.12",
+  "date": "2026-10-26",
+  "notes": [
+    "Siteyi ofis bilgisayarına taşıma bitince (ve Taşımayı Geri Al'dan sonra) merkezde açık olan oturum artık kapanmıyor: site penceresi yenilenir ve aynı kullanıcıyla kaldığınız yerden devam edersiniz."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.12/SiteYonetim-Kurulum-2.11.12.exe",
+    "sha512": "A8OwsYPjRFs9YxEa+H2i9yuQIRq3LkZJPaOoyb+p2KkYydgGwFfvkJy8KA81ULkyBP6CjYnC/1yJtAJ+pVvq+g==",
+    "size": 79011580
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.12",
+  "sig": "iJaNBiWSIyWFsjKhLHRIjwsVaSZZayUYwDyZ9ntdfJVMAxu0L4dKoaPNvQVjwKE9XQyBaExvvFYFj9Gmt2wNCw=="
+}

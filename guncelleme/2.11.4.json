@@ -1,0 +1,17 @@
+{
+  "product": "site-yonetim",
+  "version": "2.11.4",
+  "date": "2026-10-26",
+  "notes": [
+    "Site ofisine taşıma yarıda kalırsa en baştan başlatılabilir: ofis bilgisayarında \"Yarım Kalan Site Aktarımı\" ekranı ve \"Aktarımı Baştan Başlat\" düğmesi; merkezde \"Taşımayı Geri Al\" (site, taşımadan önceki haliyle merkezde yeniden açılır) ve taşıma penceresinde \"Baştan Başlat (Yeni Kod)\".",
+    "Terminal bağlantısı kaldırılan bilgisayar, program yeniden başlatılmadan da Site Ofisi olarak kurulabilir (\"Terminal bilgisayarında yapılamaz\" hatası giderildi).",
+    "Aktarım sırasında merkez bağı artık son adımdan önce kurulur; ofis tarafında hata çıkarsa merkez siteyi taşınmış saymaz."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.4/SiteYonetim-Kurulum-2.11.4.exe",
+    "sha512": "H48wKXQnE2TXLZLBh/ZAjSvCKtdapUSehzVv+ntWb79W9lhb2blVtH5KyToKK0XEZZTpUm30SHEL3evEmcxmLQ==",
+    "size": 79002492
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.4",
+  "sig": "xJSlJN9eFCr84hFEep1Hlht4Ifg7KLXDkEeEGa8giHho+W4NDxsMm0S4ODSeUdh8r8LMGID7CkqJZETSdqDYDA=="
+}

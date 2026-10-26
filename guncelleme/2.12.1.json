@@ -1,0 +1,15 @@
+{
+  "product": "site-yonetim",
+  "version": "2.12.1",
+  "date": "2026-10-26",
+  "notes": [
+    "Uzak Destek kodu artık 8 rakamdan oluşuyor (ör. 4829 1537); telefonda kolayca söylenebilir. Teknik servis \"Destek Ver\" sekmesine bu kodu yazıp \"Bağlan\" der. Kod 4 saat geçerlidir ve destek bitince silinir. İnternet yoksa yedek olarak eski uzun kod gösterilir."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.1/SiteYonetim-Kurulum-2.12.1.exe",
+    "sha512": "QEH/FGcCHzoAdcD2rpOIr5IPtv2AcFCUKJyQoZKBr4J/MD4DeTrGOh9opkW5K2lgnRr76qsGHkPDs6BEne/GgA==",
+    "size": 79023583
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.1",
+  "sig": "cMxyhFQ02TNafg7b7iaK4wV8ncA6OeKaV/kIQ76e5ZmpCo3d/yTJxsZwNyAHVvCChmU28JCLC7q+pFzLp8jeBg=="
+}

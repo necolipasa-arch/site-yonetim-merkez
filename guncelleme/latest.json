@@ -1,15 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.12.0",
+  "version": "2.12.1",
   "date": "2026-10-26",
   "notes": [
-    "Yeni: Uzak Destek. Üst bardaki kulaklık simgesi (veya giriş ekranındaki \"Uzak Destek\" düğmesi) ile müşteri \"Destek İste\" der; ücretsiz RustDesk otomatik indirilip açılır ve ekranda bir destek kodu çıkar (Kopyala / WhatsApp ile Gönder). Teknik servis aynı pencerenin \"Destek Ver\" sekmesine kodu yapıştırıp \"Bağlan\" der; sitenin VPN ağına geçici olarak katılır ve müşterinin ekranına bağlanır. Ayrı sunucu gerekmez, bağlantı yalnızca VPN içinden yapılır, müşteri her bağlantıyı \"Kabul et\" ile onaylar ve \"Desteği Bitir\" ile istediği an keser. Ana bilgisayardan istenen kod tek kullanımlık ve 24 saat geçerlidir."
+    "Uzak Destek kodu artık 8 rakamdan oluşuyor (ör. 4829 1537); telefonda kolayca söylenebilir. Teknik servis \"Destek Ver\" sekmesine bu kodu yazıp \"Bağlan\" der. Kod 4 saat geçerlidir ve destek bitince silinir. İnternet yoksa yedek olarak eski uzun kod gösterilir."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.0/SiteYonetim-Kurulum-2.12.0.exe",
-    "sha512": "TFnnTUgX7sIfgdb+a6Q3zKG7KqEczgCPEuDkJM/cO+DELaTjT0o9rKWNmY3fFAVNcyQO7jz9i4ZixdOAdXf++g==",
-    "size": 79022169
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.1/SiteYonetim-Kurulum-2.12.1.exe",
+    "sha512": "QEH/FGcCHzoAdcD2rpOIr5IPtv2AcFCUKJyQoZKBr4J/MD4DeTrGOh9opkW5K2lgnRr76qsGHkPDs6BEne/GgA==",
+    "size": 79023583
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.0",
-  "sig": "HpZK3Hqv7Os2I2fWjd97VSUh0nRekWpmeotsQHT4N4rHlR6e9HGwO1kVhi3Pd2T+vZ8edXSmN08nAJZPr1zwAw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.1",
+  "sig": "cMxyhFQ02TNafg7b7iaK4wV8ncA6OeKaV/kIQ76e5ZmpCo3d/yTJxsZwNyAHVvCChmU28JCLC7q+pFzLp8jeBg=="
 }

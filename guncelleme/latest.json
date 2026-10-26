@@ -1,15 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.12.2",
+  "version": "2.12.3",
   "date": "2026-10-26",
   "notes": [
-    "Program açıldığında giriş ekranında şifre kutusuna tıklandıktan birkaç saniye sonra kutunun seçimi kayboluyordu (arka planda açılan diğer siteler klavye odağını alıyordu). Düzeltildi: tıkladığınız kutu seçili kalır."
+    "Uzak Destek: müşterinin bilgisayarında RustDesk penceresi artık görünmüyor; program arka planda bekliyor. Müşteri yalnızca teknik servis bağlanmak istediğinde çıkan onay penceresini görür ve \"Kabul et\" der."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.2/SiteYonetim-Kurulum-2.12.2.exe",
-    "sha512": "PhMoZTQmZKtfVJX0WDlGynK7qs4hwfQsfn6Mt+vJtlM+2vMIJJTjD8Q3AHy31Bva5ff2WZ+m5pYZAvDQm5mcUg==",
-    "size": 79023860
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.3/SiteYonetim-Kurulum-2.12.3.exe",
+    "sha512": "DZVpVatntUM8bv28VP9EZER32jEV0G3OVHHBDWOU7/urYsVXmMHeucKJa6ECinx+hang2i/s59oggFGhzt7z4w==",
+    "size": 79024164
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.2",
-  "sig": "w3FBUp2AWUqonFWj2s9Bg72w22+jNADI/Q0NNvLWMNFtG7JH95AArF8KiVH91bzfrHD2infudywMRG61W40qCw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.3",
+  "sig": "WjRxXhFTJItTcpICuOCQ20vzCwukAgkErK7q6B4cGeSmpowID9uoXERyCMfk5ewZNU/KkPdnOKR8jaxx2cdxDQ=="
 }

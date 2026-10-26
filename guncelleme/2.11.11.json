@@ -1,0 +1,15 @@
+{
+  "product": "site-yonetim",
+  "version": "2.11.11",
+  "date": "2026-10-26",
+  "notes": [
+    "Merkezden Ayır artık ofis bilgisayarına da bildirilir: merkez siteyi bırakınca ofis bilgisayarı merkez bağlantısını kendiliğinden kaldırır ve site orada verisiyle bağımsız çalışmaya devam eder (ofiste lisans girilmesi hatırlatılır). Ayırmadan önce merkezde ofis kapalıyken girilen kayıtlar ofise aktarılır. Ofise ulaşılamazsa uyarı çıkar; yine de ayrılırsa ofis merkeze bir sonraki bağlanışında haberdar edilir."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.11/SiteYonetim-Kurulum-2.11.11.exe",
+    "sha512": "YlsWhGZKo31yq8XhUdLYgjfQ+kaAsmT/axr1NJYfMccD0yq+92EYCV8LRccg7T+cxcW4GLBHIWffYR0BtbrW4Q==",
+    "size": 79011562
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.11",
+  "sig": "TQLG29T3X6pxWdg+FPbRnVU0fCi8f/mxN1O6R9EniwV3k5uds8+q0YeNI6jzvU20/qMkVeTayhQTtg8LNpz0DA=="
+}

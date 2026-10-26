@@ -1,0 +1,15 @@
+{
+  "product": "site-yonetim",
+  "version": "2.13.4",
+  "date": "2026-10-26",
+  "notes": [
+    "Düzeltme: 2.13.3 ile gelen \"canlıdaki eski örnek verileri temizle\" uyarısı Gösterge Paneli'nde görünmüyordu; artık Sistem Yöneticisi'ne gösteriliyor (Örnek Verileri Temizle — önce otomatik yedek alınır / Bunlar gerçek verilerim)."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.4/SiteYonetim-Kurulum-2.13.4.exe",
+    "sha512": "ShPx1ovrh9MBW0oR4A8P2gwVLCq5vCo6HeWKTIeJTM6bBMSw8qoQEqM3giOJG8UQ/xhYDLt+bpGwYxamWkGy9Q==",
+    "size": 79123965
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.4",
+  "sig": "/MVnYN3anuoSeX3G6hAZAOiZkDL289VOBtsk7TuCUwkxjVaPbI8g97kP2NS9AUZXSQulX1zLZ27UG5KETNskDg=="
+}

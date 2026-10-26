@@ -1,16 +1,16 @@
 {
   "product": "site-yonetim",
-  "version": "2.12.5",
+  "version": "2.12.6",
   "date": "2026-10-26",
   "notes": [
-    "Uzak Destek: \"Destek İste\" ekranı sadeleşti. Destek bağlantısı yalnızca satıcının yetkili teknik servisi tarafından kurulur.",
-    "Güncelleme ekranı ve genel iyileştirmeler."
+    "İlk kurulum ekranı: \"Bu bilgisayar bir Site Ofisi olacak\" ve diğer seçenek düğmelerinin açıklamaları artık kartın dışına taşmıyor; uzun metin alt satıra geçiyor.",
+    "Ofis Bilgisayarı penceresi: \"Taşımayı Geri Al\" açıklaması güncellendi (ofisteki güncel veriler merkeze aktarılır, ofisteki site kapatılır; ofise ulaşılamazsa taşıma öncesi kopya önerilir)."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.5/SiteYonetim-Kurulum-2.12.5.exe",
-    "sha512": "VgK6Ut4lnDzSPzckmtXpIvGu+QTW+M2kKiF4c0GwU0LmGAmd2TRZAqK1TvMzzdLghnLYCu8lCYlSbMSBJRduZQ==",
-    "size": 79025272
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.6/SiteYonetim-Kurulum-2.12.6.exe",
+    "sha512": "DKEcJNMmS7p8T0wF04TBB4noe1mawJ4lvU3CUtdCkHeyHQyPSqbUZo2lFgsX1xi6J/SJDQWyDmDfsLb6xyBCRQ==",
+    "size": 79025343
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.5",
-  "sig": "HaUNbyJIGfRrvDuA8RKi8T5dFAayBZ6SP0p4gtgLhmJqV7UwdIqEyr6seUYg6mCgJgFV+gV5EomFClNNrd5oBw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.6",
+  "sig": "dLO0HsdlvhTBhJzkSjZE/hEi2t6PFCDaW/mzWh6F5vMcr480hVJ5HwJfHKgluD982eiuIn2ahCrytRToBlZhBA=="
 }

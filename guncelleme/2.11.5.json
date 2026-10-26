@@ -1,0 +1,15 @@
+{
+  "product": "site-yonetim",
+  "version": "2.11.5",
+  "date": "2026-10-26",
+  "notes": [
+    "Ofis Bilgisayarı ayrıntı penceresi düzenlendi: \"Taşımayı Geri Al\" ve \"Merkezden Ayır\" pencerenin altında açıklamalı \"Diğer işlemler\" bölümüne alındı; düğmeler artık pencereden taşmıyor."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.5/SiteYonetim-Kurulum-2.11.5.exe",
+    "sha512": "vlgQUZg0I0lDGalLNWrzI71pztkwT0zix9oLyQcaoov7CdbSNCtKNVcZ4mxtylqsS9ehNQaVk5EB2UiSZVUafw==",
+    "size": 79002831
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.5",
+  "sig": "BgQ/uL7JHoFPALZPuuaAou3Ec44TAO+Hxa6SSgcB2xHXUY08OFGXOD3mUqAVxJarlc6Hpy+GtVl0qWdbS6wADg=="
+}

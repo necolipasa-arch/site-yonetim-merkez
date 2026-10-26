@@ -1,15 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.11.9",
+  "version": "2.11.10",
   "date": "2026-10-26",
   "notes": [
-    "Merkez bilgisayarı yanlışlıkla terminale dönüşüyordu: merkezde ofisteki sitenin bağlantı penceresinden \"Terminal Ayarları\" kaydedilince bilgisayar o ofisin terminali gibi açılıyor ve diğer siteler görünmüyordu. Bu sürüm açılışta durumu kendiliğinden düzeltir (merkez ve tüm siteler geri gelir) ve aynı hatanın tekrar olmasını engeller. Merkezdeki ofis penceresinin bağlantı bilgisi artık \"Site Ofisi Bağlantısı\" olarak gösterilir."
+    "Taşımayı Geri Al artık tam geri alma: merkez, ofis bilgisayarındaki GÜNCEL veriyi (taşımadan sonra girilen kayıtlar ve belgeler dahil) kendine alır, site yeniden merkezde çalışır; ofis bilgisayarındaki site kapatılır (verisi arşivlenir, silinmez; program ilk kurulum ekranına döner). Ofise ulaşılamazsa uyarıyla taşıma öncesi kopya açılır ve ofis bilgisayarı merkeze bir sonraki bağlanışında siteyi kendiliğinden kapatır. Ofis bilgisayarında Ayarlar → Lisans → Merkez Bağlantısı kartına \"Siteyi Kapat (Merkez Geri Aldı)\" düğmesi eklendi."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.9/SiteYonetim-Kurulum-2.11.9.exe",
-    "sha512": "uFVvJfDHzR/kEKKWm3NvDmaotcfcQuFD0Y2pEuOIgpfHnSDN9rsKQ5XedhsBWpXbmkBuNZ65YpQ2eXDn9yQ9yw==",
-    "size": 79007575
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.10/SiteYonetim-Kurulum-2.11.10.exe",
+    "sha512": "8hmcecU4bCdQcObviE+ujXrgPu0sZ8gDhOGSwUWeQTprAKLf01j95NFHwE7OPmUnpS6MSVDN9CqMfRN5MpR2qQ==",
+    "size": 79010340
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.9",
-  "sig": "s7p5P3NRBypjQxF2p5XexOqoXP32ymWPHgdYorTuc/B6DxqjThN9qhW7RHB707kooPdRF8PmPJvMLwfGf2h/Cg=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.10",
+  "sig": "mSOYNpay6nQGun78uAQdfr8VuY/zJF5EQeSvXarGQSMMvY4LpLmrCB4G0UBgp5KqxjkEhTmymUEybN/71Um8Dg=="
 }

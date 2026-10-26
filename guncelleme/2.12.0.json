@@ -1,0 +1,15 @@
+{
+  "product": "site-yonetim",
+  "version": "2.12.0",
+  "date": "2026-10-26",
+  "notes": [
+    "Yeni: Uzak Destek. Üst bardaki kulaklık simgesi (veya giriş ekranındaki \"Uzak Destek\" düğmesi) ile müşteri \"Destek İste\" der; ücretsiz RustDesk otomatik indirilip açılır ve ekranda bir destek kodu çıkar (Kopyala / WhatsApp ile Gönder). Teknik servis aynı pencerenin \"Destek Ver\" sekmesine kodu yapıştırıp \"Bağlan\" der; sitenin VPN ağına geçici olarak katılır ve müşterinin ekranına bağlanır. Ayrı sunucu gerekmez, bağlantı yalnızca VPN içinden yapılır, müşteri her bağlantıyı \"Kabul et\" ile onaylar ve \"Desteği Bitir\" ile istediği an keser. Ana bilgisayardan istenen kod tek kullanımlık ve 24 saat geçerlidir."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.0/SiteYonetim-Kurulum-2.12.0.exe",
+    "sha512": "TFnnTUgX7sIfgdb+a6Q3zKG7KqEczgCPEuDkJM/cO+DELaTjT0o9rKWNmY3fFAVNcyQO7jz9i4ZixdOAdXf++g==",
+    "size": 79022169
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.0",
+  "sig": "HpZK3Hqv7Os2I2fWjd97VSUh0nRekWpmeotsQHT4N4rHlR6e9HGwO1kVhi3Pd2T+vZ8edXSmN08nAJZPr1zwAw=="
+}

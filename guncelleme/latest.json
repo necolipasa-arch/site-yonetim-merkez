@@ -1,15 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.11.16",
+  "version": "2.11.17",
   "date": "2026-10-26",
   "notes": [
-    "Ayarlar → Siteler listesinde bir sitenin yanındaki \"Geç\" düğmesine basınca artık gösterge paneline atılmazsınız; seçilen siteye geçilir ve yine Ayarlar → Siteler ekranında kalırsınız. Site ekleme, kaldırma ve arka plan ayarı artık yalnızca Sistem Yöneticisi'ne açık (Üst Site Yöneticisi site listesini görür ve geçiş yapabilir)."
+    "Ayarlar → Siteler: açık olan site de kaldırılabilir; program önce başka bir siteye geçer (oturum korunur), sonra siteyi kaldırır (veriler arşivlenir). İlk kurulum ekranında \"Bu bilgisayar bir Terminal olacak\", \"Bu bilgisayar bir Site Ofisi olacak\" ve \"Buluttaki yedekten geri yükle\" düğmeleri artık en üstte, yeni site kurulum formunun üzerinde."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.16/SiteYonetim-Kurulum-2.11.16.exe",
-    "sha512": "kvClKQpAe7ntoKFBMCVmjO6deB/eG39Uwm+4R6VsAKNYquS/pyDZTOFKjsV+YLT5SQpSw4tiGra24dsnAbJ43A==",
-    "size": 79014183
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.17/SiteYonetim-Kurulum-2.11.17.exe",
+    "sha512": "fZZVbeqAsmIC0G5Db6HLPZ0yAxjMIOWWyLdozgdtbLy6H4WfZ9IT4Eg79m25kVMDpG+KkLZ06U9DWWiOBIo66Q==",
+    "size": 79014641
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.16",
-  "sig": "tohaAspNgdhJMzGU/pitWAHyj0Un0BQp+gzCzhOkbKYrZLacU9/Y6MiXHW9WVvoEsc1pVNOdW4Wxy340ccBiBw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.17",
+  "sig": "U+OeIj+ccFGu+y5tyWpQN2dVH2NTgmbn52qSYgzLuxEmXuoknMzFIoEyBtz1DUDz6cov1yfsI2/RwXYpj8JjAA=="
 }

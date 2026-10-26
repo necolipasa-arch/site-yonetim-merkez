@@ -1,15 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.11.8",
+  "version": "2.11.9",
   "date": "2026-10-26",
   "notes": [
-    "Ofis bilgisayarı kapalıyken merkezden kayıt: Sistem Yöneticisi ve Üst Site Yöneticisi, ofisteki bir sitenin bilgisayarı kapalı olsa da o siteye merkezden kayıt girebilir (tahsilat, gider, sakin, daire, talep, ziyaretçi vb.). Site son kopyasıyla açılır, kayıtlar merkezde şifreli olarak bekler ve ofis bilgisayarı açılınca kendiliğinden aktarılır; merkezde sitenin penceresi kapalı olsa bile. Ofis kapalıyken verilen makbuzlar geçici numara alır, aktarımda ofisin sıradaki makbuz numarasıyla değişir. Kullanıcı, banka bağlantısı, mobil üyelik ve online ödeme işlemleri ofisin açılmasını bekler."
+    "Merkez bilgisayarı yanlışlıkla terminale dönüşüyordu: merkezde ofisteki sitenin bağlantı penceresinden \"Terminal Ayarları\" kaydedilince bilgisayar o ofisin terminali gibi açılıyor ve diğer siteler görünmüyordu. Bu sürüm açılışta durumu kendiliğinden düzeltir (merkez ve tüm siteler geri gelir) ve aynı hatanın tekrar olmasını engeller. Merkezdeki ofis penceresinin bağlantı bilgisi artık \"Site Ofisi Bağlantısı\" olarak gösterilir."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.8/SiteYonetim-Kurulum-2.11.8.exe",
-    "sha512": "pItYoYfiCJy7sMSv/plbE2AUfaCWtZWQS38BEWF/mp8BjG0YUm86BP9SW7RUFAhxc0elmRAYonh7C3FM69rN7A==",
-    "size": 79007000
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.9/SiteYonetim-Kurulum-2.11.9.exe",
+    "sha512": "uFVvJfDHzR/kEKKWm3NvDmaotcfcQuFD0Y2pEuOIgpfHnSDN9rsKQ5XedhsBWpXbmkBuNZ65YpQ2eXDn9yQ9yw==",
+    "size": 79007575
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.8",
-  "sig": "ajJLIdeytb3LgBDO551GKtuP+Q8ZBrg1zigmaNqk4kDBHaAGaowOCQ1ddVzyPA8/Llwmh3c0kp7M49RnNcdUDw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.9",
+  "sig": "s7p5P3NRBypjQxF2p5XexOqoXP32ymWPHgdYorTuc/B6DxqjThN9qhW7RHB707kooPdRF8PmPJvMLwfGf2h/Cg=="
 }

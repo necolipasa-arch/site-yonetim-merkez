@@ -1,15 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.11.7",
+  "version": "2.11.8",
   "date": "2026-10-26",
   "notes": [
-    "Ofisteki siteye merkezden \"Bulutu Kur\": site penceresi ofis bilgisayarına bağlıyken çıkan \"Otomatik bulut kurulumu yalnızca masaüstü programında yapılabilir\" hatası giderildi."
+    "Ofis bilgisayarı kapalıyken merkezden kayıt: Sistem Yöneticisi ve Üst Site Yöneticisi, ofisteki bir sitenin bilgisayarı kapalı olsa da o siteye merkezden kayıt girebilir (tahsilat, gider, sakin, daire, talep, ziyaretçi vb.). Site son kopyasıyla açılır, kayıtlar merkezde şifreli olarak bekler ve ofis bilgisayarı açılınca kendiliğinden aktarılır; merkezde sitenin penceresi kapalı olsa bile. Ofis kapalıyken verilen makbuzlar geçici numara alır, aktarımda ofisin sıradaki makbuz numarasıyla değişir. Kullanıcı, banka bağlantısı, mobil üyelik ve online ödeme işlemleri ofisin açılmasını bekler."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.7/SiteYonetim-Kurulum-2.11.7.exe",
-    "sha512": "7U9BCEWifpbgRSoeSQv9RQGhaT2/kiarutHhKM4LqxeKDuyi+Iv8oYhzNU4FVp+aA1pDJjCFXnW6gUk2XR7hxg==",
-    "size": 79004875
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.8/SiteYonetim-Kurulum-2.11.8.exe",
+    "sha512": "pItYoYfiCJy7sMSv/plbE2AUfaCWtZWQS38BEWF/mp8BjG0YUm86BP9SW7RUFAhxc0elmRAYonh7C3FM69rN7A==",
+    "size": 79007000
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.7",
-  "sig": "l0tsGbv6UJt5JgdKdfQWtqQ+0Tj170AxY+DNJPun4ouxiTtld+F1WVIYzPQiPdShcBvwGqjDjDLQJaufSIdfAQ=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.8",
+  "sig": "ajJLIdeytb3LgBDO551GKtuP+Q8ZBrg1zigmaNqk4kDBHaAGaowOCQ1ddVzyPA8/Llwmh3c0kp7M49RnNcdUDw=="
 }

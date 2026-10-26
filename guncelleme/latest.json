@@ -1,17 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.11.0",
+  "version": "2.11.1",
   "date": "2026-10-26",
   "notes": [
-    "Terminaller ana bilgisayar kapalıyken de çalışır: güvenlik kulübesinde ziyaretçi giriş/çıkış, kargo geldi/teslim, QR misafir kartı ve arıza/olay kayıtları terminalde tutulur; ana bilgisayar açılınca kendiliğinden ona aktarılır (sağ üstte \"Çevrimdışı • N kayıt bekliyor\").",
-    "Ana bilgisayar kapalıyken terminal bilgisayarı yeniden başlasa da açılır ve giriş yapılır (verilerin son kopyası terminalde Windows şifrelemesiyle saklanır).",
-    "Tahsilat, makbuz, aidat gibi diğer işlemler bağlantı gelene kadar yapılamaz."
+    "Terminalin ana bilgisayar kapalıyken çalışması artık terminal başına bir seçenek: Ayarlar → Terminaller listesinde \"Çevrimdışı çalışma\" kutusu (yeni terminal eklerken de seçilebilir). Açıksa ana bilgisayar kapalıyken ziyaretçi, kargo, QR misafir ve arıza/olay kaydı girilir ve sonra aktarılır; kapalıysa eskisi gibi yalnızca görüntüleme yapılır. Varsayılan: kapalı."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.0/SiteYonetim-Kurulum-2.11.0.exe",
-    "sha512": "7RYXrdG+sHCWfNOzIrO46ZqoXW1nP99WQ4fVPKWdQMvqnC4e3R26uvaj8EDk9hJ4XDjcrXq7/uTRdfZcnH0F1g==",
-    "size": 78998639
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.1/SiteYonetim-Kurulum-2.11.1.exe",
+    "sha512": "gKnF8jn+7lEDFmfQDqekbXQeZJIV2/TEEMOl7ytEik9SbQlhEiCObk9vz8KMwrLqSr6TVWefp/aO6aQ5lui6Yw==",
+    "size": 78999457
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.0",
-  "sig": "+7DnqqjPLT9e+1UU3yX1+a8WtIzgxcgySbawfVdqYThj2VczU73SpiwFPv6M9caaSXhtE770muQ4dhZgs1imDQ=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.1",
+  "sig": "MxgoY58sip3aHyqnhbPfQ3ieR2pPAv0udisHBfBkb1OCw/ex+N7+1Ic5mIu1kW7DcpcWi8VpKY9oDGh6MkEuCw=="
 }

@@ -1,0 +1,17 @@
+{
+  "product": "site-yonetim",
+  "version": "2.13.3",
+  "date": "2026-10-26",
+  "notes": [
+    "Test Ortamı'ndaki turuncu çerçeve kaldırıldı; test ortamı yalnızca üstteki \"TEST ORTAMI\" şeridinden anlaşılır.",
+    "Canlı sitede eski sürümlerden kalan örnek veriler: Daha önce \"örnek verilerle başla\" seçilerek kurulan sitelerde Gösterge Paneli'nde Sistem Yöneticisi'ne uyarı çıkar. \"Örnek Verileri Temizle\" düğmesi önce otomatik yedek alır, sonra daireleri, sakinleri ve tüm kayıtları siler. Site bilgileri, kullanıcılar ve banka bağlantıları korunur. Kayıtlar gerçekse \"Bunlar gerçek verilerim\" ile uyarı kapatılır.",
+    "Yeni site eklerken \"Örnek verilerle başla\" seçeneği kaldırıldı. Canlı site her zaman boş başlar; denemek için Test Ortamı kullanılır."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.3/SiteYonetim-Kurulum-2.13.3.exe",
+    "sha512": "1Y0nU79PX/okv0/IPRSZhhquMdezagTMTvSaRdav6LQ0D5QuIyygfoSqntWY4WSQI0JzfJW7k4b0QuSpcTTw/w==",
+    "size": 79123992
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.3",
+  "sig": "Zjcg5t6gRXQwcy87lLrr4wRNZ9FDxI5T8Yw5YHHa1dhftjF5aVOge1WByedEwRkd9B5bcljZKvNL5gckWM84Bw=="
+}

@@ -1,17 +1,19 @@
 {
   "product": "site-yonetim",
-  "version": "2.13.1",
+  "version": "2.13.2",
   "date": "2026-10-26",
   "notes": [
-    "Test Ortamı örnek verileri genişletildi: geçen yılın tamamı (Ocak–Aralık) ve bu yılın Ocak ayından kurulum / sıfırlama gününe kadar olan tüm hareketler oluşur. Aidat artışları (her yıl Ocak genel kurulu, Şubat'tan geçerli plan), mevsimsel giderler (ısınma, havuz, sigorta, asansör muayenesi), demirbaş toplamaları (çatı yalıtımı, kamera), geciken ve yıl sonunda toplu ödeyen daireler, kasadan bankaya aktarımlar, aylık su sayacı okumaları, talepler, toplantılar, duyurular, rezervasyonlar, ziyaretçi / kargo, bakım kayıtları, anketler ve iki yıllık bütçe dahildir.",
-    "Yeni: Yıl seçici. Tahsilat, Gelir & Gider, Tahakkuklar, Daire Cari Hesap ve Raporlar (Aylık Gelir-Gider, Gelir/Gider Dağılımı, Faaliyet Raporu) sayfalarında kayıtlarda bulunan yıllar listelenir; bir yıl seçildiğinde o yılın 1 Ocak – 31 Aralık kayıtları görüntülenir. Tarihleri elle değiştirirseniz seçim \"Özel aralık\" olur.",
-    "Daha önce kurulmuş bir test ortamında yeni örnek verileri görmek için: Ayarlar → Test Ortamı → Örnek Verilerle Sıfırla. Canlı verileriniz etkilenmez."
+    "Yeni: Telefon Önizlemesi (Test Ortamı). Mobil uygulamayı bir sakinin gözünden, test verileriyle programın içinde görün: daire ve sakin seçin; borç, hesap ekstresi, duyurular, anketler, talepler, rezervasyonlar ve ziyaretçi bildirimleri telefon çerçevesinde açılır. Önizlemede gönderilen talep, rezervasyon, ziyaretçi bildirimi ve anket oyu test ortamına kaydedilir. Gerçek telefonlara ve internete hiçbir şey gitmez. Test çubuğundaki \"Telefon Önizlemesi\" düğmesiyle veya Ayarlar → Test Ortamı'ndan açılır.",
+    "Yeni: Başka programdan veri al (Excel .xlsx / CSV). Daire listesi, malik / kiracı bilgileri ve devreden bakiyeler tek seferde aktarılır; sütunlar otomatik eşleştirilir, önce önizleme gösterilir. Ayarlar → Yedekleme & Veri'den veya ilk kurulumda \"eski programdan / Excel'den alacağım\" seçilerek açılır. Örnek şablon indirilebilir.",
+    "İlk kurulum ekranına \"Yedek dosyasından geri yükle (.db)\" eklendi (USB bellek, eski bilgisayar veya otomatik yedekten dönüş).",
+    "Lisans kilit ekranında \"Yedek Al\": lisans veya deneme süresi dolduğunda da yönetici kullanıcı adı ve şifresiyle verilerin yedeği alınabilir.",
+    "Merkeze bağlı site ofisleri: daha önce taşınmış sitelerde ofisin bulut bakım anahtarı yoksa merkez bunu otomatik gönderir (bulut güncellemeleri ofiste de yapılabilir)."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.1/SiteYonetim-Kurulum-2.13.1.exe",
-    "sha512": "iO9mYtud07QQGyYGcFWofFa44cpmTHP1imLf4g/53s2KDHDU8NxulIIt4K+o4BhZHFIiGZnBwvjqaAw2eTG79w==",
-    "size": 79035964
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.2/SiteYonetim-Kurulum-2.13.2.exe",
+    "sha512": "ZHC9DjkQpVepBEq30MCLlSEt/BEf1o5wehFiWbUVCxhQzW7vGEFw56n/4f/H52RuONcoHXYnLoHK61Q5z5/uLA==",
+    "size": 79121975
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.1",
-  "sig": "Vcda6LXRHJXT/3s7k5BYMGuYBAJatB97zNEjIBRNXONjK/vDj7axiKjY2A9zTuo3yuO+JbxU+q0hXxPYfu44DA=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.2",
+  "sig": "mdEJAZ/8nGTtRphYC6AqjOcLFo+iw9/HVzTtrM49tAUwjUld3K8s7MRNrztjRTmPrDZBRf0geGg0xn4cfZAGCw=="
 }

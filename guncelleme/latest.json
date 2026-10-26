@@ -1,15 +1,16 @@
 {
   "product": "site-yonetim",
-  "version": "2.13.4",
+  "version": "2.13.5",
   "date": "2026-10-26",
   "notes": [
-    "Düzeltme: 2.13.3 ile gelen \"canlıdaki eski örnek verileri temizle\" uyarısı Gösterge Paneli'nde görünmüyordu; artık Sistem Yöneticisi'ne gösteriliyor (Örnek Verileri Temizle — önce otomatik yedek alınır / Bunlar gerçek verilerim)."
+    "Lisans denetimi seyreltildi: lisanslı programlar lisans sunucusuna artık haftada bir bağlanır (bitişe 30 gün kala günde bir — yenilenen lisans kendiliğinden insin diye). Deneme kurulumları ilk açılışta bir kez kaydolur, sonra haftada bir. Çok siteli merkezlerde askı bilgisi günde bir sorulur. Program sunucuya bağlanmadan da çalışır; 30 günlük çevrimdışı tolerans aynen geçerli.",
+    "Mobil-VPN-Bulut: bulut hizmeti seçimi kaldırıldı; yeni kurulumlar doğrudan Neon (otomatik kurulum) ile yapılır."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.4/SiteYonetim-Kurulum-2.13.4.exe",
-    "sha512": "ShPx1ovrh9MBW0oR4A8P2gwVLCq5vCo6HeWKTIeJTM6bBMSw8qoQEqM3giOJG8UQ/xhYDLt+bpGwYxamWkGy9Q==",
-    "size": 79123965
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.5/SiteYonetim-Kurulum-2.13.5.exe",
+    "sha512": "z/q7xmL5YXn0MHpauiUtM0t5+PF6gZmKjTndspI2h7NQxw6IeDxVwussGfZvfOSZ1xMSkqMT/QKjGqlDcjR+yA==",
+    "size": 79124484
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.4",
-  "sig": "/MVnYN3anuoSeX3G6hAZAOiZkDL289VOBtsk7TuCUwkxjVaPbI8g97kP2NS9AUZXSQulX1zLZ27UG5KETNskDg=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.5",
+  "sig": "u1QJhwXlyrcGmOhAWdA3tdRkbSQ1n+RJLcD3ae3Xll50Ms12ksEghwLxnFG14FJ+nDJl5SO9uU61zZvSUXtlBQ=="
 }

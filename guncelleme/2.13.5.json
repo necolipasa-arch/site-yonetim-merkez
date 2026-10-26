@@ -1,0 +1,16 @@
+{
+  "product": "site-yonetim",
+  "version": "2.13.5",
+  "date": "2026-10-26",
+  "notes": [
+    "Lisans denetimi seyreltildi: lisanslı programlar lisans sunucusuna artık haftada bir bağlanır (bitişe 30 gün kala günde bir — yenilenen lisans kendiliğinden insin diye). Deneme kurulumları ilk açılışta bir kez kaydolur, sonra haftada bir. Çok siteli merkezlerde askı bilgisi günde bir sorulur. Program sunucuya bağlanmadan da çalışır; 30 günlük çevrimdışı tolerans aynen geçerli.",
+    "Mobil-VPN-Bulut: bulut hizmeti seçimi kaldırıldı; yeni kurulumlar doğrudan Neon (otomatik kurulum) ile yapılır."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.5/SiteYonetim-Kurulum-2.13.5.exe",
+    "sha512": "z/q7xmL5YXn0MHpauiUtM0t5+PF6gZmKjTndspI2h7NQxw6IeDxVwussGfZvfOSZ1xMSkqMT/QKjGqlDcjR+yA==",
+    "size": 79124484
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.5",
+  "sig": "u1QJhwXlyrcGmOhAWdA3tdRkbSQ1n+RJLcD3ae3Xll50Ms12ksEghwLxnFG14FJ+nDJl5SO9uU61zZvSUXtlBQ=="
+}

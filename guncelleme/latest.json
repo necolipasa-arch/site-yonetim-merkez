@@ -1,15 +1,16 @@
 {
   "product": "site-yonetim",
-  "version": "2.12.4",
+  "version": "2.12.5",
   "date": "2026-10-26",
   "notes": [
-    "Uzak Destek: aylık destek hakkı. Her ay belirli sayıda destek ücretsizdir; hak dolunca \"Destek İste\" ekranında ücret gösterilir ve onayınız alınır. Destek ekranında bu ay kullandığınız destek sayısı görünür. \"Destek Ver\" bölümü yalnızca yetkili teknik servis bilgisayarlarında görünür."
+    "Uzak Destek: \"Destek İste\" ekranı sadeleşti. Destek bağlantısı yalnızca satıcının yetkili teknik servisi tarafından kurulur.",
+    "Güncelleme ekranı ve genel iyileştirmeler."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.4/SiteYonetim-Kurulum-2.12.4.exe",
-    "sha512": "Y2iO9Olbp/i/Gau4F9DoSWExYRH1lrlqWvPwzMsbFe206S0UZjTz11vt7izoUsLDzZF2it2xotkS0xHIZuNrtA==",
-    "size": 79027999
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.5/SiteYonetim-Kurulum-2.12.5.exe",
+    "sha512": "VgK6Ut4lnDzSPzckmtXpIvGu+QTW+M2kKiF4c0GwU0LmGAmd2TRZAqK1TvMzzdLghnLYCu8lCYlSbMSBJRduZQ==",
+    "size": 79025272
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.4",
-  "sig": "4JXjnB7Sq0S5cy7bsp/SnqT6tjbHmeaaCz9gfCVG9g3ADyjApAICJM1GIN3BrAi/7+tO0xcmnDd6fyRGZJ5pAA=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.5",
+  "sig": "HaUNbyJIGfRrvDuA8RKi8T5dFAayBZ6SP0p4gtgLhmJqV7UwdIqEyr6seUYg6mCgJgFV+gV5EomFClNNrd5oBw=="
 }

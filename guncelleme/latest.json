@@ -1,15 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.11.15",
+  "version": "2.11.16",
   "date": "2026-10-26",
   "notes": [
-    "Üst yönetime yeniden dahil olma: merkezden ayrılmış (veya hiç bağlanmamış) bir site, verisi kendi bilgisayarında kalarak kolayca merkeze bağlanır. Merkezde Ayarlar → Siteler → \"Ofisteki Siteyi Dahil Et\" ile kod alınır; ofis bilgisayarında Ayarlar → Siteler → \"Üst Yönetime Dahil Ol\" ile adres ve kod girilir. Veri taşınmaz, ilk kurulum ekranına dönülmez, oturum kapanmaz; site merkezin listesine \"ofiste\" olarak eklenir ve merkez lisansıyla çalışır."
+    "Ayarlar → Siteler listesinde bir sitenin yanındaki \"Geç\" düğmesine basınca artık gösterge paneline atılmazsınız; seçilen siteye geçilir ve yine Ayarlar → Siteler ekranında kalırsınız. Site ekleme, kaldırma ve arka plan ayarı artık yalnızca Sistem Yöneticisi'ne açık (Üst Site Yöneticisi site listesini görür ve geçiş yapabilir)."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.15/SiteYonetim-Kurulum-2.11.15.exe",
-    "sha512": "LfnOCEc7p8N6IrjW5SkC2+3tzHZCZbSTGTM3wfw27K7jvwb3l5kExb/v3JogK9yERlNVxQWNo+uKsX/khUk/IA==",
-    "size": 79014237
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.16/SiteYonetim-Kurulum-2.11.16.exe",
+    "sha512": "kvClKQpAe7ntoKFBMCVmjO6deB/eG39Uwm+4R6VsAKNYquS/pyDZTOFKjsV+YLT5SQpSw4tiGra24dsnAbJ43A==",
+    "size": 79014183
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.15",
-  "sig": "hc5upFnyBHxzTLiQyOQs2Nnl293AkQtDngSswiOYEdMy8rtO7LKz0v0roSBh5zmCckAEQWmS6VcJPqXrAyB7Cw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.16",
+  "sig": "tohaAspNgdhJMzGU/pitWAHyj0Un0BQp+gzCzhOkbKYrZLacU9/Y6MiXHW9WVvoEsc1pVNOdW4Wxy340ccBiBw=="
 }

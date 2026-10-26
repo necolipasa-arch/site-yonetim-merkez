@@ -1,0 +1,18 @@
+{
+  "product": "site-yonetim",
+  "version": "2.14.0",
+  "date": "2026-10-26",
+  "notes": [
+    "Yeni: Basit Görünüm. Üstteki \"Basit / Gelişmiş\" düğmesiyle seçilir; Gelişmiş, bugüne kadarki tam menüdür.",
+    "Basit görünümde menü 10 anlaşılır başlığa iner (Ana Sayfa, Daireler & Sakinler, Aidat & Borçlar, Kasa & Giderler, Kapı & Güvenlik, Duyuru & Talepler, Toplantılar, Bina İşleri, Raporlar, Ayarlar); alt bölümler sayfanın üstünde sekme olarak durur.",
+    "Ana Sayfa'da \"Ne yapmak istiyorsunuz?\" büyük düğmeleri: Aidat Tahsil Et ve Gider Gir adım adım (daireyi seç → tutarı yaz → nasıl ödendi → kaydet, makbuz), Borçluları Gör, Duyuru Yap, Arıza Kaydet, Ziyaretçi / Kargo.",
+    "Boş kurulumda \"Programı hazırlayalım\" listesi (daireler, sakinler, aidat, kasa/banka, mobil davet). Yeni kurulumlar Basit görünümle açılır; mevcut kullanıcılar Gelişmiş'te kalır."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.14.0/SiteYonetim-Kurulum-2.14.0.exe",
+    "sha512": "QQlQRHMG992BcsWbntpkGkypCCbxoGVDhakyvZIlFqAv89OS6rHpCPCtzusD+JhnM7IYThsiOHUf5cWH41Kjrg==",
+    "size": 79133421
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.14.0",
+  "sig": "kcT2IeRZ6cjteR8mIDiLxSJtfiLCR0ZTB5WNR/FxXflFV4RngwFvCYG+o/hIei5+dXX6oEy9xIkgInoMi4e4Bg=="
+}

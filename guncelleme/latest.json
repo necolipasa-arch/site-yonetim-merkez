@@ -1,16 +1,18 @@
 {
   "product": "site-yonetim",
-  "version": "2.13.5",
+  "version": "2.14.0",
   "date": "2026-10-26",
   "notes": [
-    "Lisans denetimi seyreltildi: lisanslı programlar lisans sunucusuna artık haftada bir bağlanır (bitişe 30 gün kala günde bir — yenilenen lisans kendiliğinden insin diye). Deneme kurulumları ilk açılışta bir kez kaydolur, sonra haftada bir. Çok siteli merkezlerde askı bilgisi günde bir sorulur. Program sunucuya bağlanmadan da çalışır; 30 günlük çevrimdışı tolerans aynen geçerli.",
-    "Mobil-VPN-Bulut: bulut hizmeti seçimi kaldırıldı; yeni kurulumlar doğrudan Neon (otomatik kurulum) ile yapılır."
+    "Yeni: Basit Görünüm. Üstteki \"Basit / Gelişmiş\" düğmesiyle seçilir; Gelişmiş, bugüne kadarki tam menüdür.",
+    "Basit görünümde menü 10 anlaşılır başlığa iner (Ana Sayfa, Daireler & Sakinler, Aidat & Borçlar, Kasa & Giderler, Kapı & Güvenlik, Duyuru & Talepler, Toplantılar, Bina İşleri, Raporlar, Ayarlar); alt bölümler sayfanın üstünde sekme olarak durur.",
+    "Ana Sayfa'da \"Ne yapmak istiyorsunuz?\" büyük düğmeleri: Aidat Tahsil Et ve Gider Gir adım adım (daireyi seç → tutarı yaz → nasıl ödendi → kaydet, makbuz), Borçluları Gör, Duyuru Yap, Arıza Kaydet, Ziyaretçi / Kargo.",
+    "Boş kurulumda \"Programı hazırlayalım\" listesi (daireler, sakinler, aidat, kasa/banka, mobil davet). Yeni kurulumlar Basit görünümle açılır; mevcut kullanıcılar Gelişmiş'te kalır."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.5/SiteYonetim-Kurulum-2.13.5.exe",
-    "sha512": "z/q7xmL5YXn0MHpauiUtM0t5+PF6gZmKjTndspI2h7NQxw6IeDxVwussGfZvfOSZ1xMSkqMT/QKjGqlDcjR+yA==",
-    "size": 79124484
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.14.0/SiteYonetim-Kurulum-2.14.0.exe",
+    "sha512": "QQlQRHMG992BcsWbntpkGkypCCbxoGVDhakyvZIlFqAv89OS6rHpCPCtzusD+JhnM7IYThsiOHUf5cWH41Kjrg==",
+    "size": 79133421
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.5",
-  "sig": "u1QJhwXlyrcGmOhAWdA3tdRkbSQ1n+RJLcD3ae3Xll50Ms12ksEghwLxnFG14FJ+nDJl5SO9uU61zZvSUXtlBQ=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.14.0",
+  "sig": "kcT2IeRZ6cjteR8mIDiLxSJtfiLCR0ZTB5WNR/FxXflFV4RngwFvCYG+o/hIei5+dXX6oEy9xIkgInoMi4e4Bg=="
 }

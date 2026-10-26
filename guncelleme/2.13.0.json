@@ -1,0 +1,20 @@
+{
+  "product": "site-yonetim",
+  "version": "2.13.0",
+  "date": "2026-10-26",
+  "notes": [
+    "Yeni: Test Ortamı. Üst çubuktaki \"Test Ortamı\" düğmesiyle canlı kayıtlara dokunmadan, örnek verilerle (3 blok, 48 daire, 6 aylık hareket) programı deneyebilirsiniz. Her kullanıcı teste kendi rolüyle girer; \"Canlıya Dön\" ile geri dönülür.",
+    "Test ortamında turuncu çerçeve ve \"TEST ORTAMI\" bandı görünür; yazdırılan belgelerde \"TEST — GEÇERSİZ\" filigranı çıkar. Bulut / mobil eşitleme, sakin davetleri, bildirimler, kartla ödeme, gerçek banka bağlantıları (Deneme Bankası hariç), terminal sunucusu ve WhatsApp mesajları test ortamında kapalıdır.",
+    "Ayarlar → Test Ortamı: \"Canlı Verileri Teste Kopyala\" (Sistem Yöneticisi / Üst Site Yöneticisi; bağlantı ayarları ve anahtarlar kopyalanmaz) ve \"Örnek Verilerle Sıfırla\". Test ortamı site hakkı ve daire sayısı hesabına girmez.",
+    "İlk kurulumda \"örnek verilerle başla\" seçeneği kaldırıldı; örnek veriler artık canlı siteye değil, Test Ortamı'na kurulur.",
+    "Lisans: deneme veya lisans süresi dolduğunda program artık salt okunur çalışmaz, tamamen kapanır. Yalnızca lisans ekranı (makine kimliği, lisans talebi, anahtar girişi, satıcı bilgileri) açık kalır; kayıtlar silinmez, anahtar girildiğinde kaldığı yerden açılır.",
+    "Süresiz lisansta güncelleme hakkı bittiyse, hak bitişinden sonra yayınlanan sürümler otomatik kurulmaz (Ayarlar → Güncelleme'de nedeni yazar)."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.0/SiteYonetim-Kurulum-2.13.0.exe",
+    "sha512": "ni7rlmvFzFnsYJPG77bJMF+5k44cRlPHcXYtiK/XlVebji6ZJg2kmyS7v2IC7L7d9icF/CCtovTe7YM9xyT75Q==",
+    "size": 79031353
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.0",
+  "sig": "ZYDX9xg0vQSWzmTdZYFdAkTPaZEN8RO8qby5G5HXDz93tsBJMgeGWH6c2nJrTzTol56ZmjTBN59h9lY0CyJyDg=="
+}

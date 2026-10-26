@@ -1,0 +1,17 @@
+{
+  "product": "site-yonetim",
+  "version": "2.11.0",
+  "date": "2026-10-26",
+  "notes": [
+    "Terminaller ana bilgisayar kapalıyken de çalışır: güvenlik kulübesinde ziyaretçi giriş/çıkış, kargo geldi/teslim, QR misafir kartı ve arıza/olay kayıtları terminalde tutulur; ana bilgisayar açılınca kendiliğinden ona aktarılır (sağ üstte \"Çevrimdışı • N kayıt bekliyor\").",
+    "Ana bilgisayar kapalıyken terminal bilgisayarı yeniden başlasa da açılır ve giriş yapılır (verilerin son kopyası terminalde Windows şifrelemesiyle saklanır).",
+    "Tahsilat, makbuz, aidat gibi diğer işlemler bağlantı gelene kadar yapılamaz."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.0/SiteYonetim-Kurulum-2.11.0.exe",
+    "sha512": "7RYXrdG+sHCWfNOzIrO46ZqoXW1nP99WQ4fVPKWdQMvqnC4e3R26uvaj8EDk9hJ4XDjcrXq7/uTRdfZcnH0F1g==",
+    "size": 78998639
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.0",
+  "sig": "+7DnqqjPLT9e+1UU3yX1+a8WtIzgxcgySbawfVdqYThj2VczU73SpiwFPv6M9caaSXhtE770muQ4dhZgs1imDQ=="
+}

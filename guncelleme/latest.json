@@ -1,20 +1,17 @@
 {
   "product": "site-yonetim",
-  "version": "2.13.0",
+  "version": "2.13.1",
   "date": "2026-10-26",
   "notes": [
-    "Yeni: Test Ortamı. Üst çubuktaki \"Test Ortamı\" düğmesiyle canlı kayıtlara dokunmadan, örnek verilerle (3 blok, 48 daire, 6 aylık hareket) programı deneyebilirsiniz. Her kullanıcı teste kendi rolüyle girer; \"Canlıya Dön\" ile geri dönülür.",
-    "Test ortamında turuncu çerçeve ve \"TEST ORTAMI\" bandı görünür; yazdırılan belgelerde \"TEST — GEÇERSİZ\" filigranı çıkar. Bulut / mobil eşitleme, sakin davetleri, bildirimler, kartla ödeme, gerçek banka bağlantıları (Deneme Bankası hariç), terminal sunucusu ve WhatsApp mesajları test ortamında kapalıdır.",
-    "Ayarlar → Test Ortamı: \"Canlı Verileri Teste Kopyala\" (Sistem Yöneticisi / Üst Site Yöneticisi; bağlantı ayarları ve anahtarlar kopyalanmaz) ve \"Örnek Verilerle Sıfırla\". Test ortamı site hakkı ve daire sayısı hesabına girmez.",
-    "İlk kurulumda \"örnek verilerle başla\" seçeneği kaldırıldı; örnek veriler artık canlı siteye değil, Test Ortamı'na kurulur.",
-    "Lisans: deneme veya lisans süresi dolduğunda program artık salt okunur çalışmaz, tamamen kapanır. Yalnızca lisans ekranı (makine kimliği, lisans talebi, anahtar girişi, satıcı bilgileri) açık kalır; kayıtlar silinmez, anahtar girildiğinde kaldığı yerden açılır.",
-    "Süresiz lisansta güncelleme hakkı bittiyse, hak bitişinden sonra yayınlanan sürümler otomatik kurulmaz (Ayarlar → Güncelleme'de nedeni yazar)."
+    "Test Ortamı örnek verileri genişletildi: geçen yılın tamamı (Ocak–Aralık) ve bu yılın Ocak ayından kurulum / sıfırlama gününe kadar olan tüm hareketler oluşur. Aidat artışları (her yıl Ocak genel kurulu, Şubat'tan geçerli plan), mevsimsel giderler (ısınma, havuz, sigorta, asansör muayenesi), demirbaş toplamaları (çatı yalıtımı, kamera), geciken ve yıl sonunda toplu ödeyen daireler, kasadan bankaya aktarımlar, aylık su sayacı okumaları, talepler, toplantılar, duyurular, rezervasyonlar, ziyaretçi / kargo, bakım kayıtları, anketler ve iki yıllık bütçe dahildir.",
+    "Yeni: Yıl seçici. Tahsilat, Gelir & Gider, Tahakkuklar, Daire Cari Hesap ve Raporlar (Aylık Gelir-Gider, Gelir/Gider Dağılımı, Faaliyet Raporu) sayfalarında kayıtlarda bulunan yıllar listelenir; bir yıl seçildiğinde o yılın 1 Ocak – 31 Aralık kayıtları görüntülenir. Tarihleri elle değiştirirseniz seçim \"Özel aralık\" olur.",
+    "Daha önce kurulmuş bir test ortamında yeni örnek verileri görmek için: Ayarlar → Test Ortamı → Örnek Verilerle Sıfırla. Canlı verileriniz etkilenmez."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.0/SiteYonetim-Kurulum-2.13.0.exe",
-    "sha512": "ni7rlmvFzFnsYJPG77bJMF+5k44cRlPHcXYtiK/XlVebji6ZJg2kmyS7v2IC7L7d9icF/CCtovTe7YM9xyT75Q==",
-    "size": 79031353
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.1/SiteYonetim-Kurulum-2.13.1.exe",
+    "sha512": "iO9mYtud07QQGyYGcFWofFa44cpmTHP1imLf4g/53s2KDHDU8NxulIIt4K+o4BhZHFIiGZnBwvjqaAw2eTG79w==",
+    "size": 79035964
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.0",
-  "sig": "ZYDX9xg0vQSWzmTdZYFdAkTPaZEN8RO8qby5G5HXDz93tsBJMgeGWH6c2nJrTzTol56ZmjTBN59h9lY0CyJyDg=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.1",
+  "sig": "Vcda6LXRHJXT/3s7k5BYMGuYBAJatB97zNEjIBRNXONjK/vDj7axiKjY2A9zTuo3yuO+JbxU+q0hXxPYfu44DA=="
 }

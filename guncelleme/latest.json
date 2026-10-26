@@ -1,17 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.11.6",
+  "version": "2.11.7",
   "date": "2026-10-26",
   "notes": [
-    "Site ofisine her şeyiyle hazır devir: taşımadan önce sitenin bulutu kurulmamışsa \"Önce Bulutu Kuralım\" penceresi çıkar; \"Bulutu Kur ve Devam Et\" ile Neon bulutu kurulur ve site ofise bulutu bağlı olarak geçer.",
-    "Ofis bilgisayarına yalnızca o sitenin bulut projesine erişebilen bir bakım anahtarı verilir; ofis kendi bulutunun kullanım takibini ve güncellemelerini kendisi yapar.",
-    "Daha önce bulutsuz taşınan siteler için merkezde Ayarlar → Siteler → Ayrıntı → \"Bulutu Kur\": bulut merkezden kurulur ve ofis bilgisayarına iletilir."
+    "Ofisteki siteye merkezden \"Bulutu Kur\": site penceresi ofis bilgisayarına bağlıyken çıkan \"Otomatik bulut kurulumu yalnızca masaüstü programında yapılabilir\" hatası giderildi."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.6/SiteYonetim-Kurulum-2.11.6.exe",
-    "sha512": "kR0ktM9gUZhZX+FA0g+OUmCHL7A0rDFWvezB0SVrbHzbVWUx/6+6Z/JO+g65gDQA3WEFHx86t9R1vHJcbEvuKw==",
-    "size": 79004976
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.7/SiteYonetim-Kurulum-2.11.7.exe",
+    "sha512": "7U9BCEWifpbgRSoeSQv9RQGhaT2/kiarutHhKM4LqxeKDuyi+Iv8oYhzNU4FVp+aA1pDJjCFXnW6gUk2XR7hxg==",
+    "size": 79004875
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.6",
-  "sig": "2VbZznWyZ0OG5WF8dUqz5VO3tzPp/c6GuhV/fidGsU0APaWO+DzWTHUC2s3fL5SnOFcuMmnZdSDtwjG2DdaDAw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.7",
+  "sig": "l0tsGbv6UJt5JgdKdfQWtqQ+0Tj170AxY+DNJPun4ouxiTtld+F1WVIYzPQiPdShcBvwGqjDjDLQJaufSIdfAQ=="
 }

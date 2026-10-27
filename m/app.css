@@ -308,3 +308,19 @@ a.btn { text-decoration: none; color: inherit; box-sizing: border-box; }
 .mg-mini b { color: var(--text); font-size: 17px; } .mg-mini small { font-size: 12px; line-height: 1.2; }
 .mg-stack { display: flex; height: 14px; border-radius: 7px; overflow: hidden; margin: 4px 0 10px; } .mg-stack i { display: block; height: 100%; }
 .mg-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 7px; vertical-align: 1px; }
+/* 1.9.1: Belge Gönder (Telefondan Aktar) */
+.up-top { background: linear-gradient(135deg, #4f6bed, #6a4fd8); color: #fff; padding: calc(env(safe-area-inset-top) + 26px) 20px 32px; border-radius: 0 0 26px 26px; }
+.up-top small { opacity: .85; font-size: 13px; } .up-top h1 { font-size: 22px; margin: 4px 0; color: #fff; }
+.up-wrap { padding: 16px; max-width: 520px; margin: -20px auto 0; }
+.up-card { padding: 14px 16px; margin-bottom: 14px; }
+.up-l { font-size: 13px; font-weight: 600; color: var(--muted); display: block; margin-bottom: 6px; }
+.up-card input[type=text] { width: 100%; font-size: 16px; }
+.up-big { display: flex; align-items: center; gap: 14px; width: 100%; border: 0; border-radius: 18px; padding: 18px; font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 12px; text-align: left; font-family: inherit; box-shadow: 0 3px 12px rgba(0,0,0,.12); }
+.up-big span { font-size: 30px; } .up-big small { display: block; font-weight: 400; font-size: 13px; opacity: .92; margin-top: 2px; }
+.up-big:active { transform: scale(.98); }
+.up-cam { background: linear-gradient(135deg, #17a673, #31c48d); } .up-file { background: linear-gradient(135deg, #4f6bed, #6f86f5); }
+.up-it { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border, #eef0f5); } .up-it:last-child { border: 0; }
+.up-it img, .up-ph { width: 46px; height: 46px; border-radius: 10px; object-fit: cover; flex: none; background: #eef1fe; display: grid; place-items: center; font-size: 22px; }
+.up-it > div:nth-child(2) { flex: 1; min-width: 0; } .up-it b { display: block; font-size: 14px; word-break: break-all; } .up-it small { color: var(--muted); font-size: 12px; }
+.up-ok { color: #17a673; font-weight: 700; } .up-bad { color: #e8553a; font-weight: 700; }
+.up-hint { text-align: center; line-height: 1.5; margin-top: 4px; }

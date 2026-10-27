@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.9.0';
-const APP_BUILD = '20261027062936';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.9.1';
+const APP_BUILD = '20261027071811';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -388,6 +388,7 @@ function render() {
     return;
   }
   if (!CFG.anonKey) { app.innerHTML = notConfigured(); bindConnect(); return; }
+  if (S.up) { app.innerHTML = Up.view(); Up.bind(app); return; }   // 1.9.1
   if (S.mgr && Mgr.code()) { app.innerHTML = mgrView(); return; }
   if (!S.token) { app.innerHTML = authView(); bindAuth(); return; }
   if (!S.data) { app.innerHTML = `<div class="boot"><img src="icons/icon-192.png" alt=""><div class="spinner"></div><p class="muted">Bilgileriniz yükleniyor…</p></div>`; return; }
@@ -1307,7 +1308,8 @@ function payView() {
   const auto = cards.find(c => c.auto_pay);
   const list = (d.online_payments || []).slice(0, 6);
   return `
-    ${payPreview() ? `<div class="alert orange pay-prev">${ic('info')}<div><b>Önizleme</b>Kartla ödeme deneme aşamasında. Deneyebilirsiniz ama <u>kartınızdan para çekilmez</u> ve borcunuz düşmez.</div></div>`
+    ${p.demo ? `<div class="alert orange pay-prev">${ic('info')}<div><b>Test ortamı</b>Gerçek kart gerekmez, para çekilmez. Ödediğiniz tutar test verisine tahsilat olarak işlenir ve borç düşer. Deneme kartı: 4111 1111 1111 1111 · 12/30 · 123</div></div>`
+      : payPreview() ? `<div class="alert orange pay-prev">${ic('info')}<div><b>Önizleme</b>Kartla ödeme deneme aşamasında. Deneyebilirsiniz ama <u>kartınızdan para çekilmez</u> ve borcunuz düşmez.</div></div>`
       : p.test ? `<div class="alert orange pay-prev">${ic('info')}<div><b>Test modu</b>Ödeme sistemi deneniyor; yalnızca kuruluşun test kartları çalışır, gerçek para çekilmez.</div></div>` : ''}
     <div class="pay-hero"><span>Güncel borcunuz</span><b>${fmt.money(bal)}</b>${Number((d.unit || {}).overdue) > 0.004 ? `<small>⚠ ${fmt.money(d.unit.overdue)} vadesi geçmiş</small>` : ''}</div>
     ${bal > 0.004 ? `
@@ -1337,13 +1339,13 @@ function payView() {
 function onlinePaysCard() {
   if (!payOn()) return '';
   const bal = Number((S.data.unit || {}).balance) || 0, auto = (S.data.cards || []).find(c => c.auto_pay);
-  return `<div class="card"><div class="card-h"><h3>${ic('card')} Kartla Ödeme</h3>${payPreview() ? badge('Önizleme', 'orange') : ''}</div>
+  return `<div class="card"><div class="card-h"><h3>${ic('card')} Kartla Ödeme</h3>${(S.data.pay || {}).demo ? badge('Test', 'orange') : payPreview() ? badge('Önizleme', 'orange') : ''}</div>
     <p class="muted small">Kredi veya banka kartınızla ödeyin, kartınızı kaydedin, isterseniz aidatlarınız otomatik ödensin.${auto ? ` <b>Otomatik ödeme açık (${esc(Card.label(auto))}).</b>` : ''}</p>
     <button class="btn primary block" data-tab="pay" style="margin-top:10px">${ic('card')} ${bal > 0.004 ? 'Kartla Öde (' + fmt.money(bal) + ')' : 'Kartlarım ve otomatik ödeme'}</button></div>`;
 }
 async function payProcess(args, info) {
   // 3D Secure / işlem ekranı; önizlemede para çekilmez
-  Sheet.open(`<div class="pay-proc"><div class="spinner"></div><h3>Ödeme işleniyor…</h3><p class="muted small">${payPreview() ? 'Önizleme: gerçek ödemede bu adımda bankanızın 3D Secure (SMS şifre) ekranı açılır.' : 'Bankanızın doğrulama ekranı açılıyor.'}</p></div>`);
+  Sheet.open(`<div class="pay-proc"><div class="spinner"></div><h3>Ödeme işleniyor…</h3><p class="muted small">${(S.data.pay || {}).demo ? 'Test: gerçek ödemede bu adımda bankanızın 3D Secure (SMS şifre) ekranı açılır.' : payPreview() ? 'Önizleme: gerçek ödemede bu adımda bankanızın 3D Secure (SMS şifre) ekranı açılır.' : 'Bankanızın doğrulama ekranı açılıyor.'}</p></div>`);
   const t0 = Date.now();
   try {
     const r = await call('member_card_pay', args);
@@ -1351,7 +1353,7 @@ async function payProcess(args, info) {
     S.payx = { mode: 'all', custom: '', card: r.card_id || null };
     Sheet.open(`<div class="pay-done"><div class="pd-ic">✓</div><h3>${r.preview ? 'Önizleme tamamlandı' : 'Ödemeniz alındı'}</h3>
       <p><b>${fmt.money(r.amount)}</b> · ${esc(r.card || '')}</p>
-      ${r.preview ? `<p class="muted small" style="margin-top:8px">Bu bir <b>önizlemedir: kartınızdan para çekilmedi</b>, borcunuz değişmedi. Gerçek ödemeye geçildiğinde bu tutar kartınızdan çekilecek ve makbuzunuz kesilecek.</p>` : `<p class="muted small" style="margin-top:8px">Borcunuz ve makbuzunuz birkaç dakika içinde güncellenir.</p>`}
+      ${r.demo ? `<p class="muted small" style="margin-top:8px">Test ödemesi: borcunuz düştü${r.receipt_no ? `, makbuz no <b>${esc(r.receipt_no)}</b>` : ''}. Masaüstünde Tahsilatlar ve Online Ödemeler sayfalarında görünür.</p>` : r.preview ? `<p class="muted small" style="margin-top:8px">Bu bir <b>önizlemedir: kartınızdan para çekilmedi</b>, borcunuz değişmedi. Gerçek ödemeye geçildiğinde bu tutar kartınızdan çekilecek ve makbuzunuz kesilecek.</p>` : `<p class="muted small" style="margin-top:8px">Borcunuz ve makbuzunuz birkaç dakika içinde güncellenir.</p>`}
       ${info.saved ? `<p class="small" style="margin-top:8px">💳 Kartınız kaydedildi${info.auto ? ' ve <b>otomatik ödeme talimatınız</b> alındı' : ''}.</p>` : ''}
       <button class="btn primary block" style="margin-top:16px" data-close>Tamam</button></div>`);
     refresh(true);
@@ -1986,6 +1988,79 @@ function finView() {
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && S.mgr && (!S.mgrAt || Date.now() - S.mgrAt > 60000)) Mgr.load(true); });
 setInterval(() => { if (document.visibilityState === 'visible' && S.mgr) Mgr.load(true); }, 5 * 60000);
 
+// ---------------- 1.9.1: BELGE GÖNDER (…/m/?y=SİTE#up=KOD) — giriş gerekmez ----------------
+//   Masaüstünde Belge Arşivi → “Telefondan Aktar” penceresindeki QR ile açılır. Fotoğraf / PDF doğrudan ofisin arşivine gider.
+const Up = {
+  items: [], info: null, err: '', busy: true,
+  async load() {
+    this.busy = true; render();
+    try { this.info = await rpc('doc_session_info', { p_token: S.up }); this.err = ''; }
+    catch (e) { this.err = e.message || String(e); }
+    this.busy = false; render();
+  },
+  view() {
+    const site = (this.info && this.info.site_name) || CFG.siteName || 'Site Yönetim';
+    if (this.busy) return `<div class="boot"><img src="icons/icon-192.png" alt=""><div class="spinner"></div><p class="muted">Hazırlanıyor…</p></div>`;
+    if (this.err) return `<div class="boot"><img src="icons/icon-192.png" alt=""><p><b>Belge gönderilemiyor</b></p><p class="muted small">${esc(this.err)}</p><button class="btn primary" data-uprt>Tekrar Dene</button></div>`;
+    return `<div class="up-top"><small>Belge gönderiliyor →</small><h1>${esc(site)}</h1><small>Bilgisayardaki Belge Arşivi'ne</small></div>
+      <div class="up-wrap">
+        <div class="card up-card"><label class="up-l">Ne belgesi? (isteğe bağlı)</label><input type="text" data-upcap placeholder="Örn: Asansör bakım faturası" maxlength="120"></div>
+        <button class="up-big up-cam" data-upcam><span>📷</span><div>Fotoğraf Çek<small>Faturanın fotoğrafını çekin</small></div></button>
+        <button class="up-big up-file" data-upfile><span>📁</span><div>Galeriden / Dosyadan Seç<small>Fotoğraf veya PDF, birden fazla seçebilirsiniz</small></div></button>
+        <input type="file" accept="image/*" capture="environment" data-upfc hidden><input type="file" accept="image/*,application/pdf,.pdf" multiple data-upff hidden>
+        <div class="card up-card" data-uplist ${this.items.length ? '' : 'hidden'}>${this.items.map(it => this.row(it)).join('')}</div>
+        <p class="muted small up-hint">Gönderilen belgeler bilgisayarda birkaç saniye içinde görünür.<br>Bilgisayarda aktarım penceresi açık olmalıdır.</p>
+      </div>`;
+  },
+  row(it) {
+    return `<div class="up-it" data-upi="${it.k}">${it.thumb ? `<img src="${it.thumb}" alt="">` : '<div class="up-ph">📄</div>'}<div><b>${esc(it.name)}</b><small>${it.st === 'ok' ? `<span class="up-ok">✓ Gönderildi</span> · ${Math.max(1, Math.round(it.size / 1024))} KB` : it.st === 'err' ? `<span class="up-bad">Gönderilemedi</span> · ${esc(it.err || '')}` : 'Gönderiliyor…'}</small></div>${it.st === 'busy' ? '<div class="spinner sm"></div>' : ''}</div>`;
+  },
+  bind(app) {
+    const r = app.querySelector('[data-uprt]'); if (r) r.onclick = () => this.load();
+    const fc = app.querySelector('[data-upfc]'), ff = app.querySelector('[data-upff]');
+    if (!fc) return;
+    app.querySelector('[data-upcam]').onclick = () => fc.click();
+    app.querySelector('[data-upfile]').onclick = () => ff.click();
+    const go = (e) => { const cap = (app.querySelector('[data-upcap]').value || '').trim(); [...e.target.files].forEach(f => this.send(f, cap)); e.target.value = ''; };
+    fc.onchange = go; ff.onchange = go;
+  },
+  paint(it) {
+    const box = $('[data-uplist]'); if (!box) return;
+    box.hidden = false;
+    const old = box.querySelector(`[data-upi="${it.k}"]`), html = this.row(it);
+    if (old) old.outerHTML = html; else box.insertAdjacentHTML('afterbegin', html);
+  },
+  shrink(f) {
+    return new Promise(res => {
+      if (!/^image\//i.test(f.type) || /gif|svg/i.test(f.type)) return res(f);
+      const u = URL.createObjectURL(f), im = new Image();
+      im.onload = () => {
+        const M = 2000; let w = im.naturalWidth, h = im.naturalHeight; const k = Math.min(1, M / Math.max(w, h));
+        w = Math.round(w * k); h = Math.round(h * k);
+        const c = document.createElement('canvas'); c.width = w; c.height = h; c.getContext('2d').drawImage(im, 0, 0, w, h); URL.revokeObjectURL(u);
+        c.toBlob(b => { if (!b || (b.size >= f.size && /jpe?g/i.test(f.type))) return res(f); res(new File([b], (f.name || 'foto').replace(/\.[^.]+$/, '') + '.jpg', { type: 'image/jpeg' })); }, 'image/jpeg', 0.82);
+      };
+      im.onerror = () => { URL.revokeObjectURL(u); res(f); };
+      im.src = u;
+    });
+  },
+  b64(f) { return new Promise((ok, no) => { const r = new FileReader(); r.onload = () => ok(String(r.result).replace(/^data:[^,]*,/, '')); r.onerror = () => no(new Error('Dosya okunamadı')); r.readAsDataURL(f); }); },
+  async send(f0, cap) {
+    const it = { k: Date.now().toString(36) + Math.random().toString(36).slice(2, 5), name: f0.name || 'belge', size: f0.size, st: 'busy' };
+    if (/^image\//i.test(f0.type)) it.thumb = URL.createObjectURL(f0);
+    this.items.unshift(it); this.paint(it);
+    try {
+      const f = await this.shrink(f0);
+      if (f.size > 6 * 1024 * 1024) throw new Error('Dosya çok büyük (en fazla 6 MB). Bilgisayardaki pencerede “Aynı Wi-Fi ile” sekmesini kullanın.');
+      const data = await this.b64(f);
+      it.name = f.name || it.name; it.size = f.size;
+      await rpc('doc_upload', { p_token: S.up, p_name: it.name, p_mime: f.type || '', p_caption: cap || '', p_data: data });
+      it.st = 'ok';
+    } catch (e) { it.st = 'err'; it.err = e.message || String(e); }
+    this.paint(it);
+  }
+};
+
 (async function start() {
   if (DIR_PENDING) {   // 1.8.1: kısa davet linki (?d=KOD) / site kimliği (?y=…)
     S.dirBusy = true; render();
@@ -2003,6 +2078,8 @@ setInterval(() => { if (document.visibilityState === 'visible' && S.mgr) Mgr.loa
     try { await resolveKey(); }
     catch (e) { S.keyErr = e.message || String(e); render(); return; }
   }
+  { const up = (/[#&]up=([A-Za-z0-9]{8,24})/.exec(location.hash || '') || [])[1];   // 1.9.1: belge gönderme linki
+    if (up && CFG.anonKey) { S.up = up.toUpperCase(); Up.load(); return; } }
   { const yk = (/[#&]yk=([A-Za-z0-9]{8,24})/.exec(location.hash || '') || [])[1];   // 1.9.0: yönetici linki
     if (yk && CFG.anonKey) { Mgr.set(yk.toUpperCase()); S.mgrRes = null; }
     if (Mgr.code() && (yk || Mgr.mode() || !S.token)) { S.mgr = true; setTimeout(() => Mgr.load(true), 0); } }

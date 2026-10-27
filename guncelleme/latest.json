@@ -1,22 +1,19 @@
 {
   "product": "site-yonetim",
-  "version": "2.15.0",
+  "version": "2.15.1",
   "date": "2026-10-27",
   "notes": [
-    "Yeni: Borç Takibi — borçlulara tek tıkla WhatsApp / SMS hatırlatma (kademeli metinler), toplu gönderim kuyruğu, hukuki takip (ihtarname → avukat → icra), taksit / ödeme planı ve hazır belgeler: Borcu Yoktur yazısı, ihtarname, ödeme protokolü, borç dosyası.",
-    "Yeni: Isınma Paylaşımı — doğalgaz / kalorimetre faturasını 3 adımda dairelere dağıtır (m², eşit, sayaç; ortak alan payı), tek tuşla borçlandırır, geri alınabilir, dağıtım cetveli yazdırılır.",
-    "Yeni: Yasal Takvim — asansör, yangın tüpü, DASK, paratoner, sığınak, genel kurul gibi 26 yükümlülük hazır gelir; tarihi yaklaşınca menüde ve ana sayfada uyarı verir, \"Yapıldı\" ile sonraki tarih kendiliğinden hesaplanır.",
-    "Yeni: Personel Bordrosu — 2026 asgari ücret, SGK, gelir vergisi ve damga vergisi istisnalarıyla net ⇄ brüt hesap; icmal ve ücret pusulası yazdırma, tek tuşla gider kaydı.",
-    "Yeni: Yıllık Faaliyet Raporu — genel kurula hazır rapor: gelir-gider, bütçe gerçekleşmesi, kasa/banka, alacaklar, yapılan işler, toplantılar ve gelecek dönem aidat önerisi.",
-    "Yeni: Yönetici Mobil — yönetim kurulu ve denetçiler kişiye özel linkle telefondan kasa, tahsilat, borçlular, talepler ve yasal tarihleri görür. Sakinlere Şeffaflık: istenirse sakinler mobil uygulamada \"Site Finansı\" ekranında kasa, gelir-gider ve tahsilat oranını görür.",
-    "Basit görünüm ana sayfasına Yasal Takvim ve Belge Hazırla düğmeleri eklendi. Mobil uygulama 1.9.0.",
-    "Düzeltme: otomatik aylık aidat ve otomatik gecikme zammı artık program açılınca da kendiliğinden çalışır (önceden yalnızca ayar kaydedilince çalışıyordu)."
+    "Yeni: Belge Arşivi → \"Telefondan Aktar\" — faturanın fotoğrafını telefonla çekip tek dokunuşla arşive gönderin. QR kodu okutun, \"Fotoğraf Çek\"e basın; belge saniyeler içinde bilgisayarda görünür. İnternet ile (bulut üzerinden, aynı ağ gerekmez) veya aynı Wi-Fi ile (bulut gerekmez) çalışır; belge adı ve kategorisi pencerede düzenlenebilir. Bluetooth ile alma da anlatılır.",
+    "Yeni: WhatsApp nerede açılsın? — ilk WhatsApp mesajında bir kez sorulur: program içindeki WhatsApp penceresi (bir kez QR okutulur, sonraki mesajlar aynı pencerede hazır açılır), tarayıcıdaki WhatsApp Web veya WhatsApp masaüstü uygulaması. Borç Takibi → Ayarlar'dan değiştirilebilir.",
+    "Telefon Önizlemesi: kartla ödeme artık test modunda denenebilir — gerçek kart gerekmez, para çekilmez; ödeme test verisine tahsilat olarak işlenir, borç düşer, makbuz numarası verilir. Kart kaydetme ve otomatik ödeme de denenebilir. Deneme kartı: 4111 1111 1111 1111.",
+    "Düzeltme: Yıllık Faaliyet Raporu'nda \"Toplantılar ve duyurular\" bölümündeki uzun karar metinleri kutudan taşıyordu; artık satır kaydırılarak sığıyor.",
+    "Mobil uygulama 1.9.1: telefondan belge gönderme sayfası ve test ödemesi ekranları."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.15.0/SiteYonetim-Kurulum-2.15.0.exe",
-    "sha512": "P24veVnCTi2EUmM/aF8L9ai8g+nv9kPz9gKr7VY64VZYt8PgNb6AKDMb3WBG6j2jrXBEoRpOQUzcgFw+Ud8J3g==",
-    "size": 79191594
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.15.1/SiteYonetim-Kurulum-2.15.1.exe",
+    "sha512": "Yd9JrNqHOLww4KKmObjLgYUC1FBajmomyPVhdlaSvV0mB6W5U3AqqPhmaleb/9zhr2TbnQrdSedmCwXUTWLgZA==",
+    "size": 79209084
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.15.0",
-  "sig": "8caWW9+IvPNfRElaXZ4u5BoqZIHD/Z0RRKakObUUEBH2Uvglknuaza1v31cGTDbhBjiHvCK6vzPLXixWddxxCQ=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.15.1",
+  "sig": "b0cW9mhPSIW6BskmxASYThrrJmV6OUka5FsA9RPziICD7xCyaOOMqrR0CkE4zkMJFfDrPVhn/dDs80lDsemIBw=="
 }

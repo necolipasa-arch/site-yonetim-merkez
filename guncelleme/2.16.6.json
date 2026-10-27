@@ -1,0 +1,20 @@
+{
+  "product": "site-yonetim",
+  "version": "2.16.6",
+  "date": "2026-10-27",
+  "notes": [
+    "Menüler arası geçişte ekranın bir an aşağı/yukarı kayması (zıplama) giderildi: sayfa artık ekrana çizilmeden önce yerleşiyor; Duyuru & Talepler, Raporlar ve diğer menülerde hareket olmuyor.",
+    "Bütün menülerde sayfa başlıkları ve alt yazılar aynı punto.",
+    "Basit görünüm Ana Sayfa: Aidat Tahsil Et, Gider Gir gibi kutucuklar ekrandaki boş yere göre büyüyor; yanındaki \"Bu ay\" özeti de orantılı büyüdü.",
+    "Ayrıntılı Özet: alttaki En Yüksek Borçlar, Açık Arıza & Talepler vb. kutular küçültüldü; kaydırma çubuğu çıkmadan ekrana sığıyor (dolu olduklarında kutu kendi içinde kayar).",
+    "Kapı & Güvenlik (Güvenlik Masası): alttaki kartlar (ziyaretçiler, kargolar, rezervasyonlar, araç girişleri) yan yana tek sırada.",
+    "Örnek veri uyarısı tek satıra indirildi."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.6/SiteYonetim-Kurulum-2.16.6.exe",
+    "sha512": "mdD+GU3aMSbBq/R/TZ/jW+bf78pIpIj+tHM7OaHzUOsAqkPQAwPs7hegaGUok+kN6B8QtFT+CqrR6EB5jzriSQ==",
+    "size": 79259745
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.6",
+  "sig": "YSUfjzy8cabwPR16hHX5VRQG8JPpZgosJ7Nqxz6rIl3enfooWUHoxOWLJCOBTTwH7AWzFfeIGWOyDHQp80AABg=="
+}

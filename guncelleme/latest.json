@@ -1,18 +1,20 @@
 {
   "product": "site-yonetim",
-  "version": "2.16.5",
+  "version": "2.16.6",
   "date": "2026-10-27",
   "notes": [
-    "Bütün menülerde ilk ekranlar artık mümkün olduğunca tek ekrana sığıyor; sayfayı aşağı kaydırmak gerekmiyor. Uzun listeler (tablolar, kayıtlar) sayfa yerine kendi içinde kayıyor; başlık, düğmeler, sekmeler, özet kutuları ve sayfa geçiş düğmeleri hep görünür kalıyor. Tablolarda sütun başlıkları kaydırırken sabit duruyor.",
-    "Boşluklar ve büyük kutular sıkılaştırıldı: Basit görünüm grup sekmeleri, sayfa başlıkları, özet kutuları, Güvenlik Masası düğmeleri, Ana Sayfa kutucukları ve filtre alanları daha az yer kaplıyor. Ekran küçükse program görünümü kendiliğinden biraz daha sıklaştırıyor, pencere büyüyünce listeler yeniden uzuyor.",
-    "Birden çok bölümü olan sayfalar sekmelere ayrıldı: Aidat Hesaplama (Geçerli Aidat / Otomatik Aidat Ayarları / Aidat Geçmişi), Gecikme Zammı (Alacak Türleri / Hesapla ve Borçlara Ekle / Genel Kural), Bütçe (Gider / Gelir), Isınma Paylaştırma (Yeni Dağıtım / Geçmiş Dağıtımlar).",
-    "Gösterge Paneli: altı özet kutusu tek sırada, grafik daha kısa, alt listeler kendi içinde kayıyor. Ayarlar ekranında normal kaydırma sürüyor. Yazdırmalar etkilenmez."
+    "Menüler arası geçişte ekranın bir an aşağı/yukarı kayması (zıplama) giderildi: sayfa artık ekrana çizilmeden önce yerleşiyor; Duyuru & Talepler, Raporlar ve diğer menülerde hareket olmuyor.",
+    "Bütün menülerde sayfa başlıkları ve alt yazılar aynı punto.",
+    "Basit görünüm Ana Sayfa: Aidat Tahsil Et, Gider Gir gibi kutucuklar ekrandaki boş yere göre büyüyor; yanındaki \"Bu ay\" özeti de orantılı büyüdü.",
+    "Ayrıntılı Özet: alttaki En Yüksek Borçlar, Açık Arıza & Talepler vb. kutular küçültüldü; kaydırma çubuğu çıkmadan ekrana sığıyor (dolu olduklarında kutu kendi içinde kayar).",
+    "Kapı & Güvenlik (Güvenlik Masası): alttaki kartlar (ziyaretçiler, kargolar, rezervasyonlar, araç girişleri) yan yana tek sırada.",
+    "Örnek veri uyarısı tek satıra indirildi."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.5/SiteYonetim-Kurulum-2.16.5.exe",
-    "sha512": "2k/ZxlKD9ZVjARtcoyUKHBaA1g2oWsW7DEdkCX/OK4Y+SPdLuRn8GnmE1U6jxzbqSXOpKkcaryeEWRzpm5Ox4w==",
-    "size": 79257586
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.6/SiteYonetim-Kurulum-2.16.6.exe",
+    "sha512": "mdD+GU3aMSbBq/R/TZ/jW+bf78pIpIj+tHM7OaHzUOsAqkPQAwPs7hegaGUok+kN6B8QtFT+CqrR6EB5jzriSQ==",
+    "size": 79259745
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.5",
-  "sig": "/o5qVRbZiYd4iVlNAXP9QHpllfqnXQ9UAVokwAnbA2u5tiAC0K6rR0ED8EFEVdSCy6d45ThHlh3VlEyOXSEnDA=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.6",
+  "sig": "YSUfjzy8cabwPR16hHX5VRQG8JPpZgosJ7Nqxz6rIl3enfooWUHoxOWLJCOBTTwH7AWzFfeIGWOyDHQp80AABg=="
 }

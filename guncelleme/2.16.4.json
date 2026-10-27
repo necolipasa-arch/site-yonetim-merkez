@@ -1,0 +1,15 @@
+{
+  "product": "site-yonetim",
+  "version": "2.16.4",
+  "date": "2026-10-27",
+  "notes": [
+    "Plaka Tanıma & Bariyer › Canlı İzleme: kamera kutucuğu ve Son Geçişler listesi ekranın altına kadar uzar; alttaki boşluk kaldırıldı."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.4/SiteYonetim-Kurulum-2.16.4.exe",
+    "sha512": "uKLvbMGqv/JkMN2dRY7672R2zSMIVK9fpxzNGn0BaeUdwUqlwMHtwJeF2O27kuKuunMU6pMi73A0ZGpjgtDSaw==",
+    "size": 79253970
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.4",
+  "sig": "TLcvmFKEQMBdesXteEBp2NqsYKpLsQw5mWkbkKTwE74Jnd1HBawSB6CddxOHmgibp2TLmapDsmT7aFS3HA1UBA=="
+}

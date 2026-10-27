@@ -1,17 +1,20 @@
 {
   "product": "site-yonetim",
-  "version": "2.15.2",
+  "version": "2.16.0",
   "date": "2026-10-27",
   "notes": [
-    "Basit görünüm: sayfaların üstündeki sekmeler (ör. Aidat & Borçlar → Tahsilat, Borçlu Daireler, Daire Hesabı…) artık simgeli, belirgin butonlar; seçili sekme mavi dolgulu.",
-    "Borç Takibi & Hatırlatma: Hatırlatma Gönder, Hukuki Takip, Taksit Planları, Belgeler, Gönderim Geçmişi ve Ayarlar büyük kart butonlar olarak başlığın hemen altında; hepsi aynı anda görünür (dar ekranda yana kayıp gizlenmez), bekleyen sayılar rozetle gösterilir.",
-    "Basit görünümde sayfa içi sekmeler (ör. Aidat Hesaplama) de buton görünümünde."
+    "YENİ: Plaka Tanıma & Bariyer — kayıtlı araçlar plakasıyla kapıdan kendiliğinden girer, tanımsız araç gelince ekranın sağ altında fotoğraflı uyarı çıkar ve tek tuşla kapı açılır. Bütün giriş/çıkışlar fotoğraflı kaydedilir.",
+    "Hazır sürücüler: Hikvision (HiLook, HiWatch ve OEM'ler), Dahua (Imou ve OEM'ler), Genel HTTP (diğer markalar ve ağ röle kartları) ve gerçek kamera olmadan denemek için Test cihazı. Listede olmayan sistemler için \"Sürücü Ekle\" ile .json sürücü dosyası yüklenebilir.",
+    "Çalışma şekli seçilebilir: \"Kamera kendisi açsın\" (program izinli plakaları kameraya yükler; bilgisayar kapalıyken de çalışır), \"Program karar versin\" veya \"Sadece kayıt\". Çıkış kapısında \"herkese aç\" seçeneği.",
+    "İzinli araçlar: sakin araçları (Araçlar sayfasında yeni \"Bariyer\" seçeneği), personel / servis / tedarikçi plakaları (tarih aralıklı) ve sakinin mobil uygulamadan plakasıyla bildirdiği misafirler. Misafir gelince ziyaretçi kaydı kendiliğinden açılır, çıkış kamerası çıkışı işler.",
+    "Güvenlik Masası'nda \"Araç Girişleri\" kartı ve kapı açma düğmeleri. Ağdaki kameraları bulma, bağlantı testi (kamera görüntüsüyle) ve Tanılama ekranı.",
+    "KVKK: geçiş kayıtları ziyaretçi süresi dolunca anonimleştirilir, fotoğraflar seçilen süre sonunda silinir."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.15.2/SiteYonetim-Kurulum-2.15.2.exe",
-    "sha512": "j0IZkVk2V5vqwRBGOKYmfOsajdmNntaxXZHy5ZX6s8wtablArncb+ZbTPenqFYiAGeJ9SM1K0HQt4B7idaHCTA==",
-    "size": 79209570
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.0/SiteYonetim-Kurulum-2.16.0.exe",
+    "sha512": "r1LVTPtTlolCp9Q52JHCDugo/RNKNxTPr8ki6629jd0k2debjhb91eyDpWvG4uEf9pjEwsuR6jOaiJ4LAtSQfg==",
+    "size": 79249103
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.15.2",
-  "sig": "CLjkYPkGKnSoNnC1kroSm6/SUXyiuPeGAXpQ6GNxjHM9BceplI6vx+UFHOCpi3TkiVyD6ypBwiVnOi0dwKZaBA=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.0",
+  "sig": "8NvPI7xH41hVVgJ/BWk/2lJZl6FV34N5A3pyO1rok0dXSmuwRlE+PfJnjjBzSs1A6dRV/WN/TIRHEz0rngWVCg=="
 }

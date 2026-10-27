@@ -1,0 +1,20 @@
+{
+  "product": "site-yonetim",
+  "version": "2.16.0",
+  "date": "2026-10-27",
+  "notes": [
+    "YENİ: Plaka Tanıma & Bariyer — kayıtlı araçlar plakasıyla kapıdan kendiliğinden girer, tanımsız araç gelince ekranın sağ altında fotoğraflı uyarı çıkar ve tek tuşla kapı açılır. Bütün giriş/çıkışlar fotoğraflı kaydedilir.",
+    "Hazır sürücüler: Hikvision (HiLook, HiWatch ve OEM'ler), Dahua (Imou ve OEM'ler), Genel HTTP (diğer markalar ve ağ röle kartları) ve gerçek kamera olmadan denemek için Test cihazı. Listede olmayan sistemler için \"Sürücü Ekle\" ile .json sürücü dosyası yüklenebilir.",
+    "Çalışma şekli seçilebilir: \"Kamera kendisi açsın\" (program izinli plakaları kameraya yükler; bilgisayar kapalıyken de çalışır), \"Program karar versin\" veya \"Sadece kayıt\". Çıkış kapısında \"herkese aç\" seçeneği.",
+    "İzinli araçlar: sakin araçları (Araçlar sayfasında yeni \"Bariyer\" seçeneği), personel / servis / tedarikçi plakaları (tarih aralıklı) ve sakinin mobil uygulamadan plakasıyla bildirdiği misafirler. Misafir gelince ziyaretçi kaydı kendiliğinden açılır, çıkış kamerası çıkışı işler.",
+    "Güvenlik Masası'nda \"Araç Girişleri\" kartı ve kapı açma düğmeleri. Ağdaki kameraları bulma, bağlantı testi (kamera görüntüsüyle) ve Tanılama ekranı.",
+    "KVKK: geçiş kayıtları ziyaretçi süresi dolunca anonimleştirilir, fotoğraflar seçilen süre sonunda silinir."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.0/SiteYonetim-Kurulum-2.16.0.exe",
+    "sha512": "r1LVTPtTlolCp9Q52JHCDugo/RNKNxTPr8ki6629jd0k2debjhb91eyDpWvG4uEf9pjEwsuR6jOaiJ4LAtSQfg==",
+    "size": 79249103
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.0",
+  "sig": "8NvPI7xH41hVVgJ/BWk/2lJZl6FV34N5A3pyO1rok0dXSmuwRlE+PfJnjjBzSs1A6dRV/WN/TIRHEz0rngWVCg=="
+}

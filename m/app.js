@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.9.1';
-const APP_BUILD = '20261027071811';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.10.0';
+const APP_BUILD = '20261027121206';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -216,6 +216,8 @@ const P = {
   back: 'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
   plus: 'M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z',
   check: 'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
+  tag: 'M21.41 11.58l-9-9A2 2 0 0011 2H4a2 2 0 00-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7A1.5 1.5 0 117 5.5 1.5 1.5 0 015.5 7z',
+  door: 'M19 19V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14H3v2h18v-2h-2zm-4-6h-2v-2h2v2z',
   close: 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
   copy: 'M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z',
   chev: 'M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z',
@@ -337,7 +339,8 @@ function navTabs() { return payOn() ? [TABS[0], TABS[1], PAY_TAB, TABS[2], TABS[
 function isTab(v) { return TABS.some(t => t.k === v) || v === 'pay'; }
 const SUB = {
   ann: { title: 'Duyurular', parent: 'more' }, cargo: { title: 'Kargolarım', parent: 'more' }, visitors: { title: 'Ziyaretçi Bildirimi', parent: 'more' },
-  meetings: { title: 'Toplantılar & Kararlar', parent: 'more' }, polls: { title: 'Anketler', parent: 'more' }, contacts: { title: 'Önemli Telefonlar', parent: 'more' }, profile: { title: 'Profil & Ayarlar', parent: 'more' }, fin: { title: 'Site Finansı', parent: 'more' }
+  meetings: { title: 'Toplantılar & Kararlar', parent: 'more' }, polls: { title: 'Anketler', parent: 'more' }, contacts: { title: 'Önemli Telefonlar', parent: 'more' }, profile: { title: 'Profil & Ayarlar', parent: 'more' }, fin: { title: 'Site Finansı', parent: 'more' },
+  deals: { get title() { return typeof Ads !== 'undefined' ? Ads.title() : 'Fırsatlar'; }, parent: 'more' }, doors: { title: 'Kapılar', parent: 'more' }
 };
 
 async function refresh(silent) {
@@ -346,6 +349,7 @@ async function refresh(silent) {
   try {
     const d = await call('member_data');
     S.data = d; S.at = new Date().toISOString(); S.offline = false;
+    try { Door.onData(d); Ads.sync(d); } catch (x) { console.warn(x); }   // 1.10.0
     try { localStorage.setItem('sym_cache', JSON.stringify({ d, at: S.at })); } catch { }
     if (CFG.central && CFG.siteRaw) MSites.upsert(curSite(), d.site && d.site.site_name, S.token, d.unit ? unitName(d.unit) : '');
     if (document.querySelector('main input:focus')) S.renderLater = true; else render();
@@ -396,7 +400,7 @@ function render() {
   const activeTab = sub ? sub.parent : S.view;
   const d = S.data, u = d.unit || {};
   const siteName = (d.site && d.site.site_name) || CFG.siteName || 'Site Yönetim';
-  const views = { fin: finView, home: homeView, account: accountView, pay: payView, requests: requestsView, reserve: reserveView, more: moreView, ann: annView, cargo: cargoView, visitors: visitorsView, meetings: meetingsView, polls: pollsView, contacts: contactsView, profile: profileView };
+  const views = { fin: finView, home: homeView, account: accountView, pay: payView, requests: requestsView, reserve: reserveView, more: moreView, ann: annView, cargo: cargoView, visitors: visitorsView, meetings: meetingsView, polls: pollsView, contacts: contactsView, profile: profileView, deals: () => Ads.pageView(), doors: () => Door.view() };
   const waitingCargo = (d.cargo || []).filter(c => !c.delivered_at).length;
   app.innerHTML = `
     <header class="topbar">
@@ -642,7 +646,7 @@ function kvkkCheck() {
 }
 
 // ---------------- anlık bildirimler ----------------
-const PUSH_PREFS = [['ann', 'Duyurular'], ['cargo', 'Kargo geldi'], ['guest', 'Ziyaretçim / misafirim geldi'], ['req', 'Talep durumu değişti'], ['resv', 'Rezervasyon onay / ret'], ['accrual', 'Yeni aidat / borç'], ['poll', 'Yeni anket'], ['pay', 'Kartla ödemelerim / otomatik ödeme']];
+const PUSH_PREFS = [['ann', 'Duyurular'], ['cargo', 'Kargo geldi'], ['guest', 'Ziyaretçim / misafirim geldi'], ['req', 'Talep durumu değişti'], ['resv', 'Rezervasyon onay / ret'], ['accrual', 'Yeni aidat / borç'], ['poll', 'Yeni anket'], ['pay', 'Kartla ödemelerim / otomatik ödeme'], ['door', 'Kapı zili (diyafon)']];
 const Push = {
   supported() { return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window; },
   siteKey() { return (S.data && S.data.site && S.data.site.push_vapid_public) || ''; },
@@ -737,7 +741,7 @@ async function pushCard(box) {
   const prefs = (mine && mine.prefs) || {};
   box.innerHTML = head + (on
     ? `<p class="small" style="margin-bottom:8px">✓ Bu cihazda bildirimler <b>açık</b>. Almak istediklerinizi seçin:</p>
-       <div class="prefs">${PUSH_PREFS.filter(([k]) => (k !== 'poll' || (S.data && S.data.polls !== undefined)) && (k !== 'pay' || payOn())).map(([k, l]) => `<label class="pref"><span>${l}</span><input type="checkbox" data-pref="${k}" ${prefs[k] === false ? '' : 'checked'}><i></i></label>`).join('')}</div>
+       <div class="prefs">${PUSH_PREFS.filter(([k]) => (k !== 'poll' || (S.data && S.data.polls !== undefined)) && (k !== 'pay' || payOn()) && (k !== 'door' || Door.list().some(x => x))).map(([k, l]) => `<label class="pref"><span>${l}</span><input type="checkbox" data-pref="${k}" ${prefs[k] === false ? '' : 'checked'}><i></i></label>`).join('')}</div>
        <p class="muted small" style="margin-top:6px">Site yönetiminin doğrudan gönderdiği önemli mesajlar her zaman iletilir.</p>
        <button class="btn block" style="margin-top:10px" data-pushoff>Bu cihazda bildirimleri kapat</button>`
     : `<p class="small">Duyuru, kargo, misafir girişi, talep ve rezervasyon gelişmelerinden <b>anında</b> haberdar olun. Uygulama kapalıyken de bildirim gelir.</p>
@@ -935,6 +939,7 @@ function homeView() {
     <div class="hello"><h2>Merhaba ${esc(first)} 👋</h2><p>${esc(longDate())}</p></div>
     ${installBanner()}
     ${balanceCard()}
+    ${Door.homeHtml()}
     ${cargo.length ? `<div class="alert purple" data-go="cargo">${ic('package')}<div><b>${cargo.length} kargonuz yönetimde sizi bekliyor</b>${esc(cargo.map(c => c.company).filter(Boolean).join(', '))}</div></div>` : ''}
     ${pendingPolls().length ? `<div class="alert blue" data-go="polls">${ic('poll')}<div><b>${pendingPolls().length === 1 ? 'Bir anket oyunuzu bekliyor' : pendingPolls().length + ' anket oyunuzu bekliyor'}</b>${esc(pendingPolls().map(p => p.title).join(', '))}</div></div>` : ''}
     ${vis.length ? `<div class="alert blue" data-go="visitors">${ic('guest')}<div><b>Bugün ${vis.length} misafiriniz bekleniyor</b>${esc(vis.map(v => v.guest_name).join(', '))}</div></div>` : ''}
@@ -945,8 +950,10 @@ function homeView() {
     </div>
     <div class="card-h"><h3>Son Duyurular</h3>${(d.announcements || []).length > 3 ? '<a data-go="ann">Tümü</a>' : ''}</div>
     ${anns.length ? anns.map(a => annCard(a, true)).join('') : `<div class="card muted small center">Henüz duyuru yok.</div>`}
+    ${Ads.bandHtml('orta')}
     ${myRes.length ? `<div class="sec-title">Yaklaşan Rezervasyonlarım</div><div class="list">${myRes.map(r => `<div class="li" data-tab="reserve"><span class="li-ic qi blue">${ic('calendar')}</span><div class="li-b"><b>${esc(fac(r.facility_id))}</b><small>${esc(fmt.rel(r.date))} · ${esc(r.start_time)}–${esc(r.end_time)}</small></div>${badge(r.status)}</div>`).join('')}</div>` : ''}
     ${openReq.length ? `<div class="sec-title">Açık Taleplerim</div><div class="list">${openReq.map(r => `<div class="li" data-tab="requests"><span class="li-ic qi orange">${ic('wrench')}</span><div class="li-b"><b>${esc(r.title)}</b><small>${esc(r.category || '')} · ${esc(fmt.date(r.created_at))}</small></div>${badge(r.status)}</div>`).join('')}</div>` : ''}
+    ${Ads.bandHtml('alt')}
     ${S.at ? `<p class="ver">Son güncelleme: ${esc(fmt.dt(localTs(S.at)))}</p>` : ''}`;
 }
 function longDate() { const d = new Date(); return `${d.getDate()} ${MON[d.getMonth()]} ${d.getFullYear()}, ${['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'][d.getDay()]}`; }
@@ -1134,7 +1141,9 @@ function moreView() {
     <div class="list">
       ${li('data-go="ann"', 'megaphone', 'purple', 'Duyurular', `${(d.announcements || []).length} duyuru`)}
       ${li('data-go="cargo"', 'package', 'teal', 'Kargolarım', cargo ? `${cargo} kargo teslim alınmayı bekliyor` : 'Bekleyen kargo yok', cargo ? badge(String(cargo), 'red') : '')}
+      ${Door.moreLi(li)}
       ${li('data-go="visitors"', 'guest', 'green', 'Ziyaretçi Bildirimi', 'Misafirinizi güvenliğe önceden bildirin')}
+      ${Ads.moreLi(li)}
       ${S.data.polls === undefined ? '' : li('data-go="polls"', 'poll', 'purple', 'Anketler', pendingPolls().length ? `${pendingPolls().length} anket oyunuzu bekliyor` : 'Site anketlerine oy verin', pendingPolls().length ? badge(String(pendingPolls().length), 'red') : '')}
       ${li('data-go="meetings"', 'gavel', 'blue', 'Toplantılar & Kararlar', 'Genel kurul ve yönetim kararları')}
       ${li('data-go="contacts"', 'phone', 'red', 'Önemli Telefonlar', 'Yönetim, güvenlik, acil durum')}
@@ -1799,6 +1808,7 @@ document.addEventListener('click', async (e) => {
 
 function afterRender() {
   const pc = $('#pushCard'); if (pc) pushCard(pc);
+  try { Ads.wire(); if (S.view === 'home') setTimeout(() => Ads.maybeSplash(), 400); } catch (x) { console.warn(x); }
   const rf = $('#rsvForm');
   if (rf) rf.onsubmit = async (e) => {
     e.preventDefault();
@@ -1830,7 +1840,7 @@ if ('serviceWorker' in navigator) navigator.serviceWorker.addEventListener('mess
     const p = parseSiteParam(m.s);
     if (p && p.u !== CFG.url && MSites.list().some(x => x.u === p.u)) { switchSite(p.u, String(m.v || 'home')); return; }
   }
-  if (m.sym === 'go' && S.token) { const v = String(m.v || 'home'); if (SUB[v] || isTab(v)) { Sheet.close(); go(v); } refresh(true); }
+  if (m.sym === 'go' && S.token) { symGo(String(m.v || 'home')); refresh(true); }
 });
 
 // otomatik yenileme
@@ -2061,6 +2071,272 @@ const Up = {
   }
 };
 
+// =====================================================================
+// 1.10.0 (masaüstü 2.17.0): REKLAMLAR — site yönetiminin anlaştığı firmaların tanıtımları
+//   Görünüm (ana sayfa bandı / Fırsatlar sayfası / açılış ekranı) site yönetimi tarafından seçilir (site.reklam).
+//   Görseller ayrı çağrıyla (member_ads) alınır ve cihazda önbelleklenir; yalnızca değişince yeniden indirilir.
+//   Gösterim / tıklama sayıları kişi bilgisi olmadan, toplu gönderilir (member_ad_event).
+// =====================================================================
+const Ads = {
+  list: [], v: null, loaded: false, timer: null, splashDone: false,
+  cfg() {
+    const def = { band: 1, pos: 'orta', sec: 6, page: 1, title: 'Fırsatlar', splash: 'kapali' };
+    try { return Object.assign(def, JSON.parse((S.data && S.data.site && S.data.site.reklam) || '{}') || {}); } catch { return def; }
+  },
+  title() { return this.cfg().title || 'Fırsatlar'; },
+  key() { return './__reklam/' + encodeURIComponent(CFG.url || 'site'); },
+  async load() {
+    try { const c = await caches.open('sym-meta'); const r = await c.match(this.key()); if (r) { const j = await r.json(); this.list = Array.isArray(j.list) ? j.list : []; this.v = j.v || null; } } catch { }
+    this.loaded = true;
+  },
+  save() { caches.open('sym-meta').then(c => c.put(this.key(), new Response(JSON.stringify({ v: this.v, list: this.list })))).catch(() => { }); },
+  async sync(d) {
+    if (!this.loaded) await this.load();
+    const v = d.ads_v || null;
+    if (!v) { if (this.list.length) { this.list = []; this.v = null; this.save(); this.repaint(); } return; }
+    if (v === this.v && this.list.length) { this.maybeSplash(); return; }
+    try {
+      const r = await call('member_ads');
+      this.list = (r && r.ads) || []; this.v = v; this.save(); this.repaint(); this.maybeSplash();
+    } catch (e) { /* bulut 1.9.6 değilse sessiz */ }
+  },
+  repaint() { if (['home', 'deals'].includes(S.view) && !$('.sheet-wrap') && !document.querySelector('main input:focus, main textarea:focus')) render(); },
+  spots(a) { try { const s = JSON.parse(a.spots || '[]'); return Array.isArray(s) ? s : []; } catch { return []; } },
+  of(spot) { const td = today(); return this.list.filter(a => (!a.ends || String(a.ends).slice(0, 10) >= td) && this.spots(a).includes(spot)); },
+  BTN: { tel: 'Ara', whatsapp: 'WhatsApp', web: 'Siteye Git', map: 'Yol Tarifi', code: 'Kodu Göster' },
+  href(a) {
+    const v = String(a.value || '').trim();
+    const dig = v.replace(/\D/g, '');
+    if (a.action === 'tel') return 'tel:' + (v.startsWith('+') ? '+' : '') + dig;
+    if (a.action === 'whatsapp') { let n = dig; if (n.startsWith('0')) n = '90' + n.slice(1); else if (n.length === 10) n = '90' + n; return 'https://wa.me/' + n; }
+    if (a.action === 'web') return /^https?:\/\//i.test(v) ? v : 'https://' + v;
+    if (a.action === 'map') return /^https?:\/\//i.test(v) ? v : 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(v);
+    return '';
+  },
+  btn(a, cls) {
+    if (!a.action || !this.BTN[a.action]) return '';
+    if (a.action === 'code') return `<button class="btn sm ${cls || 'primary'}" data-adcode="${a.id}">${this.BTN.code}</button>`;
+    const h = this.href(a);
+    return h ? `<a class="btn sm ${cls || 'primary'}" href="${esc(h)}" ${a.action === 'tel' ? '' : 'target="_blank" rel="noopener"'} data-adgo="${a.id}">${this.BTN[a.action]}</a>` : '';
+  },
+  card(a, big) {
+    return `<div class="adc${big ? ' big' : ''}" data-adid="${a.id}">${a.img ? `<div class="adc-img"><img src="${esc(a.img)}" alt="" loading="lazy"></div>` : ''}
+      <div class="adc-b"><small>${esc(a.firm || '')}<span class="adc-tag">Reklam</span></small><b>${esc(a.title || '')}</b>${a.body ? `<p>${esc(a.body)}</p>` : ''}${this.btn(a)}</div></div>`;
+  },
+  bandHtml(pos) {
+    const c = this.cfg();
+    if (!c.band || (c.pos === 'alt' ? 'alt' : 'orta') !== pos) return '';
+    const list = this.of('band');
+    if (!list.length) return '';
+    const more = c.page && this.of('page').length ? `<a data-go="deals">${esc(c.title || 'Fırsatlar')} ›</a>` : '';
+    return `<div class="adband" data-adband><div class="card-h"><h3>${esc(c.title || 'Fırsatlar')}</h3>${more}</div>
+      <div class="adb-track" data-adtrack>${list.map(a => this.card(a)).join('')}</div>
+      ${list.length > 1 ? `<div class="adb-dots">${list.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}</div>`;
+  },
+  moreLi(li) { const c = this.cfg(); const n = this.of('page').length; return c.page && n ? li('data-go="deals"', 'tag', 'orange', esc(c.title || 'Fırsatlar'), `Sitemize özel ${n} kampanya`) : ''; },
+  pageView() {
+    const list = this.of('page');
+    setTimeout(() => list.forEach(a => this.count(a.id, 'v')), 600);
+    return list.length ? `<p class="muted small" style="margin:0 4px 10px">Site yönetimimizin anlaştığı firmaların sitemize özel teklifleri.</p>${list.map(a => this.card(a, true)).join('')}`
+      : `<div class="card center muted">Şu anda kampanya yok.</div>`;
+  },
+  wire() {
+    clearInterval(this.timer); this.timer = null;
+    const tr = $('[data-adtrack]');
+    if (!tr) return;
+    const cards = [...tr.children];
+    const dots = [...document.querySelectorAll('.adb-dots i')];
+    let cur = 0, seenAt = {};
+    const mark = () => {
+      const i = Math.round(tr.scrollLeft / Math.max(1, tr.clientWidth));
+      if (i !== cur) { cur = i; dots.forEach((d, k) => d.classList.toggle('on', k === i)); }
+      const id = cards[i] && cards[i].dataset.adid;
+      if (id && document.visibilityState === 'visible' && (!seenAt[id] || Date.now() - seenAt[id] > 60000)) { seenAt[id] = Date.now(); this.count(Number(id), 'v'); }
+    };
+    tr.addEventListener('scroll', () => { clearTimeout(tr._t); tr._t = setTimeout(mark, 250); }, { passive: true });
+    setTimeout(mark, 1000);
+    if (cards.length > 1) {
+      const sec = Math.max(3, Math.min(20, Number(this.cfg().sec) || 6));
+      this.timer = setInterval(() => {
+        if (!document.body.contains(tr)) { clearInterval(this.timer); return; }
+        if (document.visibilityState !== 'visible' || tr._touch) return;
+        const next = (cur + 1) % cards.length;
+        tr.scrollTo({ left: next * tr.clientWidth, behavior: 'smooth' });
+      }, sec * 1000);
+      tr.addEventListener('touchstart', () => { tr._touch = true; }, { passive: true });
+      tr.addEventListener('touchend', () => { setTimeout(() => { tr._touch = false; }, 4000); }, { passive: true });
+    }
+  },
+  maybeSplash() {
+    const c = this.cfg();
+    if (this.splashDone || !['gun', 'her'].includes(c.splash) || S.view !== 'home' || $('.sheet-wrap') || $('.adsplash') || Door.activeRing()) return;
+    const list = this.of('splash');
+    if (!list.length) return;
+    const k = 'sym_adsp@' + (CFG.url || '');
+    if (c.splash === 'gun' && localStorage.getItem(k) === today()) { this.splashDone = true; return; }
+    this.splashDone = true;
+    try { localStorage.setItem(k, today()); } catch { }
+    const n = (Number(localStorage.getItem(k + ':i')) || 0) % list.length;
+    try { localStorage.setItem(k + ':i', String(n + 1)); } catch { }
+    const a = list[n];
+    const w = document.createElement('div');
+    w.className = 'adsplash';
+    w.innerHTML = `<div class="ads-in">${this.card(a, true)}</div><button class="ads-skip" disabled>3</button>`;
+    document.body.appendChild(w);
+    this.count(a.id, 'v');
+    const sk = w.querySelector('.ads-skip');
+    let t = 3;
+    const iv = setInterval(() => { t--; if (t > 0) sk.textContent = String(t); else { clearInterval(iv); sk.disabled = false; sk.textContent = 'Geç ›'; } }, 1000);
+    const close = () => { clearInterval(iv); clearTimeout(auto); w.remove(); };
+    const auto = setTimeout(close, 9000);
+    sk.onclick = close;
+    w.addEventListener('click', (e) => { if (e.target.closest('[data-adgo],[data-adcode]')) setTimeout(close, 300); });
+  },
+  // sayaç (cihaz başına günde reklam başına en çok 30 gösterim)
+  count(id, k) {
+    if (!id) return;
+    try {
+      const td = today();
+      let cap = {}; try { cap = JSON.parse(localStorage.getItem('sym_adcap') || '{}') || {}; } catch { }
+      if (cap.d !== td) cap = { d: td, n: {} };
+      if (k === 'v') { if ((cap.n[id] || 0) >= 30) return; cap.n[id] = (cap.n[id] || 0) + 1; localStorage.setItem('sym_adcap', JSON.stringify(cap)); }
+      let ev = {}; try { ev = JSON.parse(localStorage.getItem('sym_adev') || '{}') || {}; } catch { }
+      const e = ev[id] || (ev[id] = { v: 0, c: 0 });
+      e[k] = (e[k] || 0) + 1;
+      localStorage.setItem('sym_adev', JSON.stringify(ev));
+    } catch { }
+    clearTimeout(this._ft); this._ft = setTimeout(() => this.flush(), k === 'c' ? 3000 : 90000);
+  },
+  async flush() {
+    if (!S.token) return;
+    let ev = {}; try { ev = JSON.parse(localStorage.getItem('sym_adev') || '{}') || {}; } catch { }
+    const list = Object.entries(ev).map(([id, x]) => ({ id: Number(id), v: x.v || 0, c: x.c || 0 })).filter(x => x.id && (x.v || x.c)).slice(0, 50);
+    if (!list.length) return;
+    try { localStorage.removeItem('sym_adev'); await call('member_ad_event', { p_ev: list }); }
+    catch (e) { if (!e.offline) return; try { localStorage.setItem('sym_adev', JSON.stringify(ev)); } catch { } }
+  },
+  codeSheet(id) {
+    const a = this.list.find(x => String(x.id) === String(id));
+    if (!a) return;
+    this.count(a.id, 'c');
+    Sheet.open(`<h3>${esc(a.firm || '')}</h3><p class="muted small">${esc(a.title || '')}</p>
+      <div class="adcode">${esc(a.value || '')}</div><p class="muted small center">Bu kodu firmaya söyleyin veya siparişte yazın.</p>
+      <button class="btn primary block" data-copy="${esc(a.value || '')}" style="margin-top:12px">Kopyala</button><button class="btn block" data-close style="margin-top:8px">Kapat</button>`);
+  }
+};
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') Ads.flush(); });
+document.addEventListener('click', (e) => {
+  const g = e.target.closest('[data-adgo]'); if (g) { Ads.count(Number(g.dataset.adgo), 'c'); return; }
+  const cd = e.target.closest('[data-adcode]'); if (cd) { Ads.codeSheet(cd.dataset.adcode); return; }
+  const dop = e.target.closest('[data-dooropen]'); if (dop) { Door.ask(dop.dataset.dooropen); return; }
+  const rop = e.target.closest('[data-ringopen]'); if (rop) { Door.open(Door.ring.door_id, Door.ring.id, rop); return; }
+  if (e.target.closest('[data-ringx]')) { Door.dismissed = Door.ring && Door.ring.id; render(); }
+});
+
+// =====================================================================
+// 1.10.0 (masaüstü 2.17.0): DİYAFON — kapıyı telefondan aç
+//   Zil çalınca sakine anlık bildirim gelir (fotoğraflı); "Kapıyı Aç" komutu buluta yazılır, sitedeki
+//   bilgisayar komutu alıp kapı panelini açar. Yetki (blok, zil, süre) bulutta denetlenir.
+// =====================================================================
+const Door = {
+  ring: null, busy: false, dismissed: null, skew: 0,
+  list() { return (S.data && Array.isArray(S.data.doors)) ? S.data.doors : []; },
+  onData(d) {
+    try { this.skew = d.server_time ? Date.parse(d.server_time) - Date.now() : 0; } catch { this.skew = 0; }
+    if (d.ring && (!this.ring || this.ring.id !== d.ring.id)) this.fetchRing(d.ring.id, false);
+  },
+  async fetchRing(id, show) {
+    try {
+      const r = await call('member_ring_get', { p_id: Number(id) });
+      this.ring = r; this.dismissed = null;
+      if (show) { Sheet.close(); if (S.view !== 'doors') go('doors'); else render(); }
+      else if (['home', 'doors'].includes(S.view) && !$('.sheet-wrap')) render();
+    } catch (e) { if (show) { toast(e.message, 'error'); go('doors'); } }
+  },
+  age(r) { return Date.now() + this.skew - Date.parse(r.at); },
+  activeRing() { const r = this.ring; return r && !r.opened && this.age(r) < 180000 ? r : null; },
+  homeHtml() {
+    const r = this.activeRing();
+    if (r && this.dismissed !== r.id) return `<div class="alert ring-alert" data-go="doors">${ic('bell')}<div><b>Kapıda biri var</b>${esc(r.door || 'Kapı')} · Açmak için dokunun</div></div>`;
+    if (this.list().some(x => x.app_open)) return `<button class="btn block door-quick" data-go="doors">${ic('door')} Kapıyı Aç</button>`;
+    return '';
+  },
+  moreLi(li) { return this.list().length ? li('data-go="doors"', 'door', 'green', 'Kapılar (Diyafon)', 'Kapıyı telefondan açın') : ''; },
+  view() {
+    const r = this.activeRing(), list = this.list();
+    const left = r ? Math.max(0, Math.ceil((180000 - this.age(r)) / 1000)) : 0;
+    if (r) setTimeout(() => this.tick(), 1000);
+    return `${r ? `<div class="card ring-card">
+        <div class="ring-h">${ic('bell')}<div><b>Kapıda biri var</b><small>${esc(r.door || 'Kapı')} · ${esc(fmt.dt(localTs(r.at)).slice(-5))}</small></div></div>
+        ${r.img ? `<div class="ring-img"><img src="${esc(r.img)}" alt="Kapıdaki kişi"></div>` : ''}
+        <button class="btn green block ring-btn" data-ringopen>${ic('door')} KAPIYI AÇ</button>
+        <div class="ring-foot"><small class="muted" data-ringleft>${left} sn içinde açabilirsiniz</small><a data-ringx>Açmayacağım</a></div>
+      </div>` : this.ring && this.ring.opened ? `<div class="card center"><b class="txt-green">✓ Kapı açıldı</b></div>` : ''}
+      ${list.length ? `<div class="sec-title">Kapılar</div><div class="list">${list.map(d => `<div class="li"><span class="li-ic qi green">${ic('door')}</span><div class="li-b"><b>${esc(d.name)}</b><small>${d.app_open ? 'İstediğiniz zaman açabilirsiniz' : 'Zil çaldığında açılabilir'}</small></div>${d.app_open ? `<button class="btn sm green" data-dooropen="${esc(d.id)}">Aç</button>` : ''}</div>`).join('')}</div>
+        <p class="muted small" style="margin:10px 4px">Kapı, sitedeki bilgisayar açıkken ve internete bağlıyken açılır. Açma işlemleri kayıt altındadır.</p>`
+      : '<div class="card center muted">Sitenizde telefondan açılabilen kapı yok.</div>'}`;
+  },
+  tick() {
+    const el = $('[data-ringleft]');
+    if (!el) return;
+    const r = this.activeRing();
+    if (!r) { render(); return; }
+    el.textContent = `${Math.max(0, Math.ceil((180000 - this.age(r)) / 1000))} sn içinde açabilirsiniz`;
+    setTimeout(() => this.tick(), 1000);
+  },
+  ask(id) {
+    const d = this.list().find(x => String(x.id) === String(id));
+    if (!d) return;
+    Sheet.open(`<h3>${esc(d.name)}</h3><p>Kapı açılsın mı?</p>
+      <button class="btn green block" style="margin-top:16px" data-dgo>${ic('door')} Evet, Kapıyı Aç</button><button class="btn block" style="margin-top:8px" data-close>Vazgeç</button>`,
+    (el) => { el.querySelector('[data-dgo]').onclick = (e) => { this.open(d.id, null, e.currentTarget); }; });
+  },
+  async open(doorId, ringId, btn) {
+    if (this.busy) return;
+    this.busy = true;
+    const label = btn ? btn.innerHTML : '';
+    if (btn) { btn.disabled = true; btn.innerHTML = '<span class="spinner sm"></span> Açılıyor…'; }
+    const done = (ok, msg) => {
+      this.busy = false;
+      if (btn && document.body.contains(btn)) { btn.disabled = false; btn.innerHTML = label; }
+      Sheet.close();
+      if (ok) { if (ringId && this.ring) this.ring.opened = true; this.flash(); render(); }
+      else toast(msg, 'error');
+    };
+    try {
+      const r = await call('member_door_open', { p_door: String(doorId), p_ring: ringId ? Number(ringId) : null });
+      if (r.wake) fetch(r.wake, { method: 'POST', mode: 'no-cors', body: 'k' }).catch(() => { });
+      for (let i = 0; i < 24; i++) {
+        await new Promise(res => setTimeout(res, i < 4 ? 700 : 1000));
+        const s = await call('member_door_status', { p_id: r.id }).catch(() => null);
+        if (!s) continue;
+        if (s.done) { done(!!s.success, s.success ? '' : 'Kapı açılamadı: ' + (s.msg || 'cihaz yanıt vermedi')); return; }
+        if (s.late) break;
+      }
+      done(false, 'Kapı yanıt vermedi. Sitedeki bilgisayar kapalı veya internete bağlı olmayabilir.');
+    } catch (e) {
+      done(false, /PGRST202|Could not find|42883/i.test(e.message) ? 'Kapı açma özelliği sitenizin bulutunda henüz etkin değil.' : e.message);
+    }
+  },
+  flash() {
+    const w = document.createElement('div');
+    w.className = 'door-ok';
+    w.innerHTML = `<div>${ic('check')}<b>Kapı açıldı</b></div>`;
+    document.body.appendChild(w);
+    try { if (navigator.vibrate) navigator.vibrate(120); } catch { }
+    setTimeout(() => w.remove(), 2200);
+  }
+};
+// bildirimden / önizlemeden gelen ekran isteği
+function symGo(v) {
+  v = String(v || 'home');
+  const z = /^zil-(\d+)$/.exec(v);
+  if (z) { if (S.token) Door.fetchRing(z[1], true); return true; }
+  if (SUB[v] || isTab(v)) { Sheet.close(); go(v); return true; }
+  return false;
+}
+window.symGo = symGo;
+
 (async function start() {
   if (DIR_PENDING) {   // 1.8.1: kısa davet linki (?d=KOD) / site kimliği (?y=…)
     S.dirBusy = true; render();
@@ -2086,6 +2362,7 @@ const Up = {
   const inv = readInviteFromUrl();
   const v = (location.hash || '').slice(1);
   if (v && (SUB[v] || isTab(v))) S.view = v;
+  { const z = /^zil-(\d+)$/.exec(v); if (z) { S.view = 'doors'; setTimeout(() => { if (S.token) Door.fetchRing(z[1], true); }, 50); } }   // 1.10.0: zil bildirimi
   const payRet = (/[?&]odeme=(ok|hata|bekle)\b/.exec(location.search) || [])[1];   // v1.5.0: ödeme sayfasından dönüş
   if (payRet) S.view = 'account';
   // ?davet=… adresten silinir; merkezi uygulamada site bilgisi kalır ki iPhone'da "Ana Ekrana Ekle" ile açılan uygulama da siteyi bilsin.

@@ -1,16 +1,19 @@
 {
   "product": "site-yonetim",
-  "version": "2.16.7",
+  "version": "2.17.0",
   "date": "2026-10-27",
   "notes": [
-    "Borç Takibi ve Bütçe (Gelişmiş görünüm): sayfa açılırken listenin önce büyük görünüp küçülmesi ve ekranın bir an sağa doğru genişlemesi giderildi.",
-    "Raporlar → Faaliyet Raporu: PDF'in yanında \"Word Kaydet\" düğmesi eklendi. Bilgisayarda Microsoft Word (veya LibreOffice gibi .docx açan bir ofis programı) kuruluysa görünür; rapor grafikleri ve tablolarıyla birlikte düzenlenebilir Word belgesi (.docx) olarak kaydedilir ve hemen açılır. Basit ve Gelişmiş görünümde çalışır."
+    "Yeni menü: Reklamlar — sitenizle anlaşan firmaların (pizzacı, market, kuru temizleme, emlakçı…) tanıtımları sakinlerin mobil uygulamasında gösterilir; site ek gelir elde eder. Reklamın uygulamada nasıl görüneceğini site seçer: ana sayfada kayan reklam bandı (duyuruların altında veya sayfanın en altında), ayrı \"Fırsatlar\" sayfası ve isteğe bağlı açılış ekranı reklamı (günde 1 kez / her açılışta). Firmaya göre \"Ara / WhatsApp / Siteye Git / Yol Tarifi / İndirim Kodu\" düğmesi, blok seçimi, başlangıç-bitiş tarihi.",
+    "Reklam ücretlerinin takibi isteğe bağlı: açıksa ödeme günleri \"Tahsilat\" sekmesinde görünür, tahsil edilince Gelir & Gider'e \"Reklam / Pano Geliri\" olarak işlenir; kapalıysa ücreti kendi yönteminizle takip edersiniz. Gösterim / tıklama istatistiği (kişi bilgisi olmadan) ve firmaya verilebilecek yazdırılabilir rapor.",
+    "Yeni menü: Diyafon & Kapılar — ağ bağlantılı diyafon / kapı panelleri programa tanımlanır (Hikvision, Dahua, Akuvox, Shelly ağ rölesi ve Fermax, Commax, Comelit, 2N, BAS-IP gibi diğer markalar için Genel HTTP). Zil çalınca ekranda \"Kapı çalıyor\" uyarısı ve tek tıkla \"Kapıyı Aç\"; aranan daireye fotoğraflı anlık bildirim gider, sakin kapıyı telefondan açar. Bütün açma işlemleri kayıt altındadır.",
+    "Mobil uygulama 1.10.0: Fırsatlar (reklamlar) ve Kapılar ekranları; zil bildirimine dokununca kapıdaki kişinin fotoğrafı ve büyük \"KAPIYI AÇ\" düğmesi.",
+    "Bulut veritabanı 1.9.6: otomatik kurulan (Neon) bulutlar program güncellenince kendiliğinden yükseltilir; bulutu elle kurduysanız yeni kurulum.sql'i bir kez çalıştırın."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.7/SiteYonetim-Kurulum-2.16.7.exe",
-    "sha512": "PDTCAUcq98pH6kjW2jHasldqyb0+d/HT6Z9prxh42+7JwvMGcPlxcUp3mTScOMqR5bSBVaLEZXIA6yqCd8S/PA==",
-    "size": 79269485
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.17.0/SiteYonetim-Kurulum-2.17.0.exe",
+    "sha512": "R9iy03rI2/lNs31SLDWnSZno5UlX2rBwKqPGnA6FFv9GDTsaBqbhsWncyHDyJqQeUnoC3RnwaSI6ptNplv8+wQ==",
+    "size": 79312719
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.7",
-  "sig": "PKmMLw0Lt3rAxb6DNbsJxhTEs2whfh+0RIIQiYP9J7MffCgP7o22tUBnOSgt7oKlel2KsQVeOzdwMVDJDzPMBg=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.17.0",
+  "sig": "QoDa90dpY2q9RQpIt5J6IQ0894sa2E2/FkQXLciWml6PecriXwPvwEbQEbPARMWJQkQdZlATeBgs5S1YIJwbBw=="
 }

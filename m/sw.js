@@ -1,5 +1,5 @@
 // Site Yönetim Mobil — çevrim dışı önbellek
-const VERSION = 'sym-v1.9.1-20261027071811';
+const VERSION = 'sym-v1.10.0-20261027121206';
 const SHELL = ['./', 'index.html', 'app.css', 'app.js', 'qrcode.js', 'config.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-32.png'];
 
@@ -32,7 +32,9 @@ self.addEventListener('push', (e) => {
   const multi = caches.open('sym-meta').then(c => c.match('multi')).then(r => r ? r.text() : '0').catch(() => '0');
   e.waitUntil(multi.then(m => self.registration.showNotification(m === '1' && d.n ? `${d.n} · ${title}` : title, {
     body: d.b || '', icon: 'icons/icon-192.png', badge: 'icons/favicon-32.png', tag: d.tag || undefined,
-    renotify: !!d.tag, data: { v: d.v || 'home', s: /^[A-Za-z0-9_-]{8,1500}$/.test(d.s || '') ? d.s : '' }, timestamp: d.ts || Date.now()
+    renotify: !!d.tag, data: { v: d.v || 'home', s: /^[A-Za-z0-9_-]{8,1500}$/.test(d.s || '') ? d.s : '' }, timestamp: d.ts || Date.now(),
+    // 1.10.0: kapı zili — ekranda kalsın, belirgin titreşim
+    ...(/^zil-\d+$/.test(d.v || '') ? { requireInteraction: true, vibrate: [300, 150, 300, 150, 600] } : {})
   })));
 });
 self.addEventListener('notificationclick', (e) => {

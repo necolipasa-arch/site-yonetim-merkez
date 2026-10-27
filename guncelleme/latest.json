@@ -1,17 +1,16 @@
 {
   "product": "site-yonetim",
-  "version": "2.16.2",
+  "version": "2.16.3",
   "date": "2026-10-27",
   "notes": [
-    "Plaka Tanıma & Bariyer ekranı sadeleştirildi: üstteki büyük başlık ve açıklama kutusu kaldırıldı, sekmeler en üstte.",
-    "Canlı İzleme tek ekrana sığar: sayaçlar ince bir şerit oldu, kamera görüntüleri ekran yüksekliğine göre boyutlanır, \"Son Geçişler\" listesi kendi içinde kayar — sayfayı aşağı kaydırmak gerekmez.",
-    "Ayarlar sekmesinde genel ayarlar ile fotoğraf ayarları geniş ekranda yan yana durur."
+    "Plaka Tanıma & Bariyer: sekme düğmeleri (Canlı İzleme, Geçiş Kayıtları…) küçültüldü, sayaç şeridi inceltildi; kamera kutucuğuna daha çok yer kaldı.",
+    "Canlı İzleme artık her ekran boyunda tek ekrana sığar: sayfa görünür alana göre boyutlanır, kamera görüntüsü gerekirse küçülür; \"KAPIYI AÇ\" ve \"Araç geçir\" düğmeleri kaydırmadan hep görünür. Son Geçişler listesi kendi içinde kayar."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.2/SiteYonetim-Kurulum-2.16.2.exe",
-    "sha512": "yFbd/sTeNNlqp28iAXrt29RdUACsSNOQ2XqP9oHXE5ybimwuJPaUp6+cTizjhZK4s4NJ8FE7VNyo6aCZF78pRg==",
-    "size": 79253102
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.3/SiteYonetim-Kurulum-2.16.3.exe",
+    "sha512": "i+Ik0n30Yc8j3E6fFbnpziVNJTeYky2PlO3iDa6xCvfPtfQuKFhuHNvVgInCjHQppNcN0TCR6HQoaeWE+/bjog==",
+    "size": 79253749
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.2",
-  "sig": "KQ4e7SQyIf25rqfub41EHnIaUifQ43wP9KuFlhbHd0SeKYlERgNaRnd8BWUY2DDM8S0V8f/pv5+6bpkE5/WbDw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.3",
+  "sig": "fDwFDuUmww9PxQN8tXrqZaaMhnwjpgFHpbbOE8kVAD/5JkvS2A7JIVf8ZOTHCijOq5M8nmLdtyfPH9W8ziBcDA=="
 }

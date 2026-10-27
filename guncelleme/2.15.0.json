@@ -1,0 +1,22 @@
+{
+  "product": "site-yonetim",
+  "version": "2.15.0",
+  "date": "2026-10-27",
+  "notes": [
+    "Yeni: Borç Takibi — borçlulara tek tıkla WhatsApp / SMS hatırlatma (kademeli metinler), toplu gönderim kuyruğu, hukuki takip (ihtarname → avukat → icra), taksit / ödeme planı ve hazır belgeler: Borcu Yoktur yazısı, ihtarname, ödeme protokolü, borç dosyası.",
+    "Yeni: Isınma Paylaşımı — doğalgaz / kalorimetre faturasını 3 adımda dairelere dağıtır (m², eşit, sayaç; ortak alan payı), tek tuşla borçlandırır, geri alınabilir, dağıtım cetveli yazdırılır.",
+    "Yeni: Yasal Takvim — asansör, yangın tüpü, DASK, paratoner, sığınak, genel kurul gibi 26 yükümlülük hazır gelir; tarihi yaklaşınca menüde ve ana sayfada uyarı verir, \"Yapıldı\" ile sonraki tarih kendiliğinden hesaplanır.",
+    "Yeni: Personel Bordrosu — 2026 asgari ücret, SGK, gelir vergisi ve damga vergisi istisnalarıyla net ⇄ brüt hesap; icmal ve ücret pusulası yazdırma, tek tuşla gider kaydı.",
+    "Yeni: Yıllık Faaliyet Raporu — genel kurula hazır rapor: gelir-gider, bütçe gerçekleşmesi, kasa/banka, alacaklar, yapılan işler, toplantılar ve gelecek dönem aidat önerisi.",
+    "Yeni: Yönetici Mobil — yönetim kurulu ve denetçiler kişiye özel linkle telefondan kasa, tahsilat, borçlular, talepler ve yasal tarihleri görür. Sakinlere Şeffaflık: istenirse sakinler mobil uygulamada \"Site Finansı\" ekranında kasa, gelir-gider ve tahsilat oranını görür.",
+    "Basit görünüm ana sayfasına Yasal Takvim ve Belge Hazırla düğmeleri eklendi. Mobil uygulama 1.9.0.",
+    "Düzeltme: otomatik aylık aidat ve otomatik gecikme zammı artık program açılınca da kendiliğinden çalışır (önceden yalnızca ayar kaydedilince çalışıyordu)."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.15.0/SiteYonetim-Kurulum-2.15.0.exe",
+    "sha512": "P24veVnCTi2EUmM/aF8L9ai8g+nv9kPz9gKr7VY64VZYt8PgNb6AKDMb3WBG6j2jrXBEoRpOQUzcgFw+Ud8J3g==",
+    "size": 79191594
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.15.0",
+  "sig": "8caWW9+IvPNfRElaXZ4u5BoqZIHD/Z0RRKakObUUEBH2Uvglknuaza1v31cGTDbhBjiHvCK6vzPLXixWddxxCQ=="
+}

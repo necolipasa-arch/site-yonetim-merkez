@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.8.3';
-const APP_BUILD = '20261025204307';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.9.0';
+const APP_BUILD = '20261027062936';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -337,7 +337,7 @@ function navTabs() { return payOn() ? [TABS[0], TABS[1], PAY_TAB, TABS[2], TABS[
 function isTab(v) { return TABS.some(t => t.k === v) || v === 'pay'; }
 const SUB = {
   ann: { title: 'Duyurular', parent: 'more' }, cargo: { title: 'Kargolarım', parent: 'more' }, visitors: { title: 'Ziyaretçi Bildirimi', parent: 'more' },
-  meetings: { title: 'Toplantılar & Kararlar', parent: 'more' }, polls: { title: 'Anketler', parent: 'more' }, contacts: { title: 'Önemli Telefonlar', parent: 'more' }, profile: { title: 'Profil & Ayarlar', parent: 'more' }
+  meetings: { title: 'Toplantılar & Kararlar', parent: 'more' }, polls: { title: 'Anketler', parent: 'more' }, contacts: { title: 'Önemli Telefonlar', parent: 'more' }, profile: { title: 'Profil & Ayarlar', parent: 'more' }, fin: { title: 'Site Finansı', parent: 'more' }
 };
 
 async function refresh(silent) {
@@ -388,13 +388,14 @@ function render() {
     return;
   }
   if (!CFG.anonKey) { app.innerHTML = notConfigured(); bindConnect(); return; }
+  if (S.mgr && Mgr.code()) { app.innerHTML = mgrView(); return; }
   if (!S.token) { app.innerHTML = authView(); bindAuth(); return; }
   if (!S.data) { app.innerHTML = `<div class="boot"><img src="icons/icon-192.png" alt=""><div class="spinner"></div><p class="muted">Bilgileriniz yükleniyor…</p></div>`; return; }
   const sub = SUB[S.view];
   const activeTab = sub ? sub.parent : S.view;
   const d = S.data, u = d.unit || {};
   const siteName = (d.site && d.site.site_name) || CFG.siteName || 'Site Yönetim';
-  const views = { home: homeView, account: accountView, pay: payView, requests: requestsView, reserve: reserveView, more: moreView, ann: annView, cargo: cargoView, visitors: visitorsView, meetings: meetingsView, polls: pollsView, contacts: contactsView, profile: profileView };
+  const views = { fin: finView, home: homeView, account: accountView, pay: payView, requests: requestsView, reserve: reserveView, more: moreView, ann: annView, cargo: cargoView, visitors: visitorsView, meetings: meetingsView, polls: pollsView, contacts: contactsView, profile: profileView };
   const waitingCargo = (d.cargo || []).filter(c => !c.delivered_at).length;
   app.innerHTML = `
     <header class="topbar">
@@ -1136,6 +1137,8 @@ function moreView() {
       ${S.data.polls === undefined ? '' : li('data-go="polls"', 'poll', 'purple', 'Anketler', pendingPolls().length ? `${pendingPolls().length} anket oyunuzu bekliyor` : 'Site anketlerine oy verin', pendingPolls().length ? badge(String(pendingPolls().length), 'red') : '')}
       ${li('data-go="meetings"', 'gavel', 'blue', 'Toplantılar & Kararlar', 'Genel kurul ve yönetim kararları')}
       ${li('data-go="contacts"', 'phone', 'red', 'Önemli Telefonlar', 'Yönetim, güvenlik, acil durum')}
+      ${finData() ? li('data-go="fin"', 'chart', 'teal', 'Site Finansı', 'Kasa, gelir-gider ve aidatların kullanımı') : ''}
+      ${Mgr.code() ? li('data-mgr="open"', 'shield', 'blue', 'Yönetici Paneli', 'Sitenin finans ve iş özeti') : ''}
       ${li('data-act="pay"', 'cash', 'green', 'Ödeme Bilgileri', 'IBAN ve açıklama')}
     </div>
     <div class="list">
@@ -1704,6 +1707,7 @@ function maybeInstallTip() { if (!isStandalone() && (S.installEvt || isIOS())) d
 document.addEventListener('click', async (e) => {
   const t = e.target;
   const tab = t.closest('[data-tab]'); if (tab && !t.closest('.sheet')) { go(tab.dataset.tab, true); return; }
+  const mg = t.closest('[data-mgr]'); if (mg) { mgrAction(mg.dataset.mgr); return; }
   const g = t.closest('[data-go]'); if (g) { go(g.dataset.go); return; }
   const au = t.closest('[data-auth]'); if (au) { S.authTab = au.dataset.auth; render(); return; }
   if (t.closest('[data-invclear]')) { clearInvite(); render(); const c = $('#regForm [name=code]'); if (c) c.focus(); return; }
@@ -1879,6 +1883,109 @@ document.addEventListener('focusout', () => { if (Upd.pending) setTimeout(() => 
 
 
 // başlat
+// ---------------- 1.9.0: YÖNETİCİ PANELİ (…/m/?y=SİTE#yk=KOD) + SİTE FİNANSI (şeffaflık) ----------------
+P.chart = 'M5 9.2h3V19H5V9.2zM10.6 5h2.8v14h-2.8V5zm5.6 8H19v6h-2.8v-6z';
+P.trend = 'M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z';
+const Mgr = {
+  k() { return 'sym_mgr@' + (CFG.url || ''); },
+  code() { try { return localStorage.getItem(this.k()) || ''; } catch { return ''; } },
+  set(c) { try { localStorage.setItem(this.k(), c); localStorage.setItem(this.k() + ':m', '1'); } catch { } },
+  mode(on) { try { if (on === undefined) return localStorage.getItem(this.k() + ':m') === '1'; localStorage.setItem(this.k() + ':m', on ? '1' : '0'); } catch { } return false; },
+  cache() { try { return JSON.parse(localStorage.getItem(this.k() + ':c') || 'null'); } catch { return null; } },
+  forget() { try { ['', ':m', ':c'].forEach(x => localStorage.removeItem(this.k() + x)); } catch { } },
+  async load(quiet) {
+    if (S.mgrBusy || !this.code()) return;
+    S.mgrBusy = true; if (!quiet) render();
+    try {
+      const r = await rpc('mgr_data', { p_code: this.code() });
+      if (r && r.ok === false) { S.mgrErr = r.error || 'Erişim reddedildi.'; S.mgrErrCode = r.code; }
+      else { S.mgrErr = ''; S.mgrErrCode = ''; S.mgrRes = r; S.mgrAt = Date.now(); try { localStorage.setItem(this.k() + ':c', JSON.stringify(r)); } catch { } }
+    } catch (e) {
+      S.mgrErrCode = e.code || '';
+      S.mgrErr = e.code ? e.message : /PGRST202|Could not find|42883/i.test(e.message || '') ? 'Yönetici paneli sitenizin bulutunda henüz etkin değil. Site ofisindeki program güncellenince açılır.' : (e.offline ? 'İnternet bağlantısı yok — son kaydedilen bilgiler gösteriliyor.' : (e.message || String(e)));
+    } finally { S.mgrBusy = false; if (S.mgr) render(); }
+  }
+};
+function mgrView() {
+  const r = S.mgrRes || Mgr.cache(), d = r && r.data;
+  const site = (d && d.site) || CFG.siteName || 'Site Yönetim';
+  const fatal = S.mgrErrCode === 'MGR_INVALID' || S.mgrErrCode === 'MGR_OFF';
+  const mon = (p) => { const [, m] = String(p).split('-'); return MON3[Number(m) - 1] || ''; };
+  const days = (s) => { const n = Math.round((new Date(String(s).slice(0, 10) + 'T00:00:00') - new Date(today() + 'T00:00:00')) / 864e5); return n < 0 ? `<span class="badge red">${-n} gün geçti</span>` : n === 0 ? '<span class="badge orange">Bugün</span>' : n <= 7 ? `<span class="badge orange">${n} gün</span>` : `<span class="badge blue">${n} gün</span>`; };
+  let body = '';
+  if (fatal || (!d && S.mgrErr)) {
+    body = `<div class="empty" style="padding-top:50px">${ic('lock')}<p style="margin:10px 0 4px"><b>${fatal ? 'Erişim yok' : 'Bilgiler alınamadı'}</b></p><p class="small">${esc(S.mgrErr)}</p>
+      <button class="btn primary" style="margin-top:16px" data-mgr="reload">Tekrar Dene</button><br><button class="btn" style="margin-top:8px" data-mgr="forget">Bu cihazdan kaldır</button></div>`;
+  } else if (!r) {
+    body = `<div class="boot" style="min-height:50vh"><div class="spinner"></div><p class="muted">Yönetici paneli açılıyor…</p></div>`;
+  } else if (!d) {
+    body = `<div class="empty" style="padding-top:50px">${ic('clock')}<p style="margin:10px 0 4px"><b>Henüz bilgi gelmedi</b></p><p class="small">Site ofisindeki program açıldığında bilgiler birkaç dakika içinde burada görünür.</p><button class="btn primary" style="margin-top:16px" data-mgr="reload">Yenile</button></div>`;
+  } else {
+    const mx = Math.max(1, ...d.months.map(m => Math.max(m.inc, m.exp)));
+    const debtors = d.debtors ? (S.mgrAll ? d.debtors : d.debtors.slice(0, 8)) : null;
+    body = `
+      ${S.mgrErr ? `<div class="offline-bar" style="margin:-16px -16px 12px">${esc(S.mgrErr)}</div>` : ''}
+      <div class="hello"><h2>Merhaba ${esc(String(r.name || '').split(' ')[0])} 👋</h2><p>Son güncelleme: ${esc(fmt.dt(localTs(r.updated_at || d.at)))}${r.scope === 'ozet' ? ' · özet görünüm' : ''}</p></div>
+      <div class="balance credit"><span>Kasa + banka toplamı</span><b>${fmt.money(d.cashT)}</b>
+        ${d.cash.length > 1 ? `<div class="mg-accs">${d.cash.map(a => `<div><span>${esc(a.n)}</span><b>${fmt.money(a.b)}</b></div>`).join('')}</div>` : ''}</div>
+      <div class="mg-tiles">
+        <div class="mg-t"><span class="qi green">${ic('cash')}</span><small>${esc(fmt.period(d.month.p))} tahsilat</small><b>${fmt.money(d.month.inc)}</b></div>
+        <div class="mg-t"><span class="qi red">${ic('receipt')}</span><small>${esc(fmt.period(d.month.p))} gider</small><b>${fmt.money(d.month.exp)}</b></div>
+        <div class="mg-t"><span class="qi orange">${ic('alert')}</span><small>Toplam alacak</small><b>${fmt.money(d.debtT)}</b><em>${d.debtN} / ${d.units} daire borçlu</em></div>
+        <div class="mg-t"><span class="qi blue">${ic('trend')}</span><small>Bu yıl tahsilat oranı</small><b>%${d.year.rate}</b><div class="pr-bar"><i style="width:${d.year.rate}%"></i></div></div>
+      </div>
+      <div class="card"><div class="card-h"><h3>${ic('chart')} Son 6 ay</h3><span class="mg-leg"><i class="g"></i>Gelir <i class="o"></i>Gider</span></div>
+        <div class="mg-bars">${d.months.map(m => `<div><div class="mg-bb"><i class="g" style="height:${m.inc * 100 / mx}%"></i><i class="o" style="height:${m.exp * 100 / mx}%"></i></div><span>${mon(m.p)}</span></div>`).join('')}</div></div>
+      ${(d.legal || d.plans) ? `<div class="alert purple">${ic('gavel')}<div><b>Hukuki takip: ${d.legal} dosya · Taksit planı: ${d.plans}</b><span class="small">Borç takip süreçleri</span></div></div>` : ''}
+      ${debtors ? `<div class="sec-title">En yüksek borçlar</div><div class="list">${debtors.length ? debtors.map(x => `<div class="li"><span class="li-ic qi ${x.d > 90 ? 'red' : x.d > 30 ? 'orange' : 'blue'}">${esc((x.n || '?').slice(0, 1))}</span><div class="li-b"><b>${esc(x.u)} — ${esc(x.n || 'Sakin yok')}</b><small>${x.d ? x.d + ' gündür gecikmede' : 'Vadesi gelmedi'}</small></div><div class="mg-r"><b>${fmt.money(x.a)}</b>${x.ph ? `<span><a href="tel:${esc(x.ph)}" aria-label="Ara">${ic('phone')}</a></span>` : ''}</div></div>`).join('') : '<div class="empty">Borçlu daire yok 🎉</div>'}
+        ${d.debtors.length > 8 ? `<div class="li" data-mgr="all" style="justify-content:center;color:var(--primary);font-weight:600">${S.mgrAll ? 'Daha az göster' : `Tümünü göster (${d.debtors.length})`}</div>` : ''}</div>` : ''}
+      <div class="sec-title">Açık talepler ve arızalar ${d.reqN ? `(${d.reqN})` : ''}</div>
+      <div class="list">${d.req.length ? d.req.slice(0, 8).map(q => `<div class="li"><span class="li-ic qi purple">${ic('wrench')}</span><div class="li-b"><b>${esc(q.t)}</b><small>${esc(q.u || '')}${q.u ? ' · ' : ''}${esc(fmt.date(q.d))}</small></div>${badge(q.s)}</div>`).join('') : '<div class="empty">Açık talep yok ✓</div>'}</div>
+      ${d.obl && d.obl.length ? `<div class="sec-title">Yaklaşan yasal tarihler</div><div class="list">${d.obl.map(o => `<div class="li"><span class="li-ic qi teal">${ic('calendar')}</span><div class="li-b"><b>${esc(o.t)}</b><small>${esc(fmt.date(o.d))}</small></div>${days(o.d)}</div>`).join('')}</div>` : ''}
+      ${d.recent ? `<div class="sec-title">Son hareketler</div><div class="list">${d.recent.map(t => `<div class="li"><span class="li-ic qi ${t.k === 'in' ? 'green' : 'red'}">${ic(t.k === 'in' ? 'cash' : 'receipt')}</span><div class="li-b"><b>${esc(t.t)}</b><small>${esc(fmt.date(t.d))}</small></div><b class="${t.k === 'in' ? 'amt-pos' : 'amt-neg'}">${t.k === 'in' ? '+' : '−'}${fmt.money(t.a)}</b></div>`).join('')}</div>` : ''}
+      <div class="mg-mini"><div>${ic('guest')}<b>${d.visitors}</b><small>içerideki ziyaretçi</small></div><div>${ic('package')}<b>${d.cargo}</b><small>bekleyen kargo</small></div></div>`;
+  }
+  return `<header class="topbar"><h1>${esc(site)}<small>Yönetici Paneli</small></h1><button class="tb-btn ${S.mgrBusy ? 'spin' : ''}" data-mgr="reload" aria-label="Yenile">${ic('refresh')}</button></header>
+    <main class="content" style="padding-bottom:30px">${body}
+      <div class="list" style="margin-top:16px">
+        ${S.token ? `<div class="li" data-mgr="resident"><span class="li-ic qi blue">${ic('home')}</span><div class="li-b"><b>Sakin görünümüne geç</b><small>Kendi dairenizin hesabı</small></div>${ic('chev', 'chev')}</div>` : ''}
+        ${!isStandalone() ? `<div class="li" data-act="install"><span class="li-ic qi purple">${ic('download')}</span><div class="li-b"><b>Ana ekrana ekle</b><small>Tek dokunuşla açın</small></div>${ic('chev', 'chev')}</div>` : ''}
+        <div class="li" data-mgr="forget"><span class="li-ic qi red">${ic('logout')}</span><div class="li-b"><b>Bu cihazdan kaldır</b><small>Yönetici linkini bu telefondan sil</small></div></div>
+      </div>
+      <p class="ver">Yönetici paneli yalnızca görüntüleme içindir · v${APP_VERSION}</p></main>`;
+}
+async function mgrAction(a) {
+  if (a === 'reload') return Mgr.load();
+  if (a === 'all') { S.mgrAll = !S.mgrAll; return render(); }
+  if (a === 'resident') { S.mgr = false; Mgr.mode(false); return go('home', true); }
+  if (a === 'open') { S.mgr = true; Mgr.mode(true); window.scrollTo(0, 0); render(); return Mgr.load(true); }
+  if (a === 'forget') {
+    if (!confirm('Yönetici linki bu telefondan silinsin mi? Tekrar görmek için ofisten yeni link istemeniz gerekir.')) return;
+    Mgr.forget(); S.mgr = false; S.mgrRes = null; S.mgrErr = ''; S.mgrErrCode = ''; render();
+  }
+}
+// Sakinlere: Site Finansı (yönetim açtıysa)
+function finData() { try { const t = S.data && S.data.site && S.data.site.seffaflik; return t ? JSON.parse(t) : null; } catch { return null; } }
+function finView() {
+  const f = finData();
+  if (!f) return `<div class="empty">${ic('chart')}<p>Site yönetimi bu ekranı henüz açmadı.</p></div>`;
+  const mon = (p) => MON3[Number(String(p).split('-')[1]) - 1] || '';
+  const mx = f.months ? Math.max(1, ...f.months.map(m => Math.max(m.inc, m.exp))) : 1;
+  const ex = f.exp || [], et = f.expT || ex.reduce((s, e) => s + e.t, 0) || 1;
+  const COL = ['#4f6bed', '#1fa774', '#e69100', '#e8553a', '#7048e8', '#0c9b8a', '#d6336c', '#868e96', '#3bc9db', '#a9e34b'];
+  return `<p class="inv-hint">Aidatlarımızın nasıl kullanıldığını şeffaf olarak paylaşıyoruz. Bilgiler ${esc(fmt.date(f.at))} tarihlidir.</p>
+    ${f.cash != null ? `<div class="balance credit"><span>Kasa + banka toplamı</span><b>${fmt.money(f.cash)}</b></div>` : ''}
+    ${f.incT != null ? `<div class="mg-tiles"><div class="mg-t"><span class="qi green">${ic('cash')}</span><small>${f.y} gelir</small><b>${fmt.money(f.incT)}</b></div><div class="mg-t"><span class="qi red">${ic('receipt')}</span><small>${f.y} gider</small><b>${fmt.money(f.expT)}</b></div></div>` : ''}
+    ${f.rate != null ? `<div class="card"><div class="card-h"><h3>${ic('trend')} Aidat tahsilat oranı (${f.y})</h3><b>%${f.rate}</b></div><div class="pr-bar" style="height:12px"><i style="width:${f.rate}%"></i></div><p class="muted small" style="margin-top:8px">Vadesi gelen aidatların ne kadarının ödendiği.</p></div>` : ''}
+    ${f.months ? `<div class="card"><div class="card-h"><h3>${ic('chart')} Son 12 ay</h3><span class="mg-leg"><i class="g"></i>Gelir <i class="o"></i>Gider</span></div><div class="mg-bars">${f.months.map(m => `<div><div class="mg-bb"><i class="g" style="height:${m.inc * 100 / mx}%"></i><i class="o" style="height:${m.exp * 100 / mx}%"></i></div><span>${mon(m.p)}</span></div>`).join('')}</div></div>` : ''}
+    ${ex.length ? `<div class="card"><div class="card-h"><h3>${ic('receipt')} ${f.y} giderleri nereye gitti?</h3></div>
+      <div class="mg-stack">${ex.map((e, i) => `<i style="width:${e.t * 100 / et}%;background:${COL[i % 10]}"></i>`).join('')}</div>
+      ${ex.map((e, i) => `<div class="kv"><span><i class="mg-dot" style="background:${COL[i % 10]}"></i>${esc(e.c)}</span><b>${fmt.money(e.t)} <small class="muted">%${Math.round(e.t * 100 / et)}</small></b></div>`).join('')}</div>` : ''}
+    ${f.debtT != null ? `<div class="card"><div class="kv"><span>Toplam aidat alacağı</span><b>${fmt.money(f.debtT)}</b></div><div class="kv"><span>Borçlu daire</span><b>${f.debtN} / ${f.units}</b></div></div>` : ''}`;
+}
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && S.mgr && (!S.mgrAt || Date.now() - S.mgrAt > 60000)) Mgr.load(true); });
+setInterval(() => { if (document.visibilityState === 'visible' && S.mgr) Mgr.load(true); }, 5 * 60000);
+
 (async function start() {
   if (DIR_PENDING) {   // 1.8.1: kısa davet linki (?d=KOD) / site kimliği (?y=…)
     S.dirBusy = true; render();
@@ -1896,6 +2003,9 @@ document.addEventListener('focusout', () => { if (Upd.pending) setTimeout(() => 
     try { await resolveKey(); }
     catch (e) { S.keyErr = e.message || String(e); render(); return; }
   }
+  { const yk = (/[#&]yk=([A-Za-z0-9]{8,24})/.exec(location.hash || '') || [])[1];   // 1.9.0: yönetici linki
+    if (yk && CFG.anonKey) { Mgr.set(yk.toUpperCase()); S.mgrRes = null; }
+    if (Mgr.code() && (yk || Mgr.mode() || !S.token)) { S.mgr = true; setTimeout(() => Mgr.load(true), 0); } }
   const inv = readInviteFromUrl();
   const v = (location.hash || '').slice(1);
   if (v && (SUB[v] || isTab(v))) S.view = v;

@@ -287,3 +287,24 @@ a.btn { text-decoration: none; color: inherit; box-sizing: border-box; }
 .site-check { font-weight: 700; color: #2f9e44; }
 /* 1.8.2 ilk açılış kurulumu */
 .setup-ok { list-style: none; padding: 0; margin: 10px 0 0; } .setup-ok li { font-size: 14.5px; margin: 4px 0; }
+
+/* 1.9.0 — Yönetici Paneli + Site Finansı */
+.mg-accs { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.25); display: grid; gap: 4px; }
+.mg-accs div { display: flex; justify-content: space-between; font-size: 13px; } .mg-accs b { font-size: 13.5px !important; margin: 0 !important; display: inline !important; font-weight: 700; }
+.mg-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+.mg-t { background: #fff; border-radius: 16px; box-shadow: var(--shadow); padding: 14px; display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.mg-t .qi { width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; margin-bottom: 4px; } .mg-t .qi .ic { width: 20px; height: 20px; }
+.mg-t small { color: var(--muted); font-size: 12px; } .mg-t b { font-size: 17px; letter-spacing: -.3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mg-t em { font-style: normal; font-size: 11.5px; color: var(--orange); } .mg-t .pr-bar { margin-top: 4px; }
+.mg-leg { font-size: 11.5px; color: var(--muted); display: flex; align-items: center; gap: 4px; } .mg-leg i { width: 9px; height: 9px; border-radius: 3px; display: inline-block; margin-left: 6px; }
+.mg-leg i.g, .mg-bb i.g { background: #2fbf71; } .mg-leg i.o, .mg-bb i.o { background: #f08c3a; }
+.mg-bars { display: flex; gap: 6px; height: 130px; align-items: stretch; }
+.mg-bars > div { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; } .mg-bars span { font-size: 10.5px; color: var(--muted); }
+.mg-bb { flex: 1; width: 100%; display: flex; gap: 2px; align-items: flex-end; } .mg-bb i { flex: 1; border-radius: 4px 4px 0 0; min-height: 2px; }
+.mg-r { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; } .mg-r b { font-size: 14px; white-space: nowrap; }
+.mg-r a { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--green-l); color: var(--green); } .mg-r a .ic { width: 16px; height: 16px; }
+.mg-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+.mg-mini div { background: #fff; border-radius: 14px; box-shadow: var(--shadow); padding: 12px; display: flex; align-items: center; gap: 8px; color: var(--muted); }
+.mg-mini b { color: var(--text); font-size: 17px; } .mg-mini small { font-size: 12px; line-height: 1.2; }
+.mg-stack { display: flex; height: 14px; border-radius: 7px; overflow: hidden; margin: 4px 0 10px; } .mg-stack i { display: block; height: 100%; }
+.mg-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 7px; vertical-align: 1px; }

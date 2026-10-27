@@ -1,18 +1,17 @@
 {
   "product": "site-yonetim",
-  "version": "2.16.1",
+  "version": "2.16.2",
   "date": "2026-10-27",
   "notes": [
-    "Plaka Tanıma › Ayarlar: geçiş fotoğraflarını saklama artık tek düğmeyle açılıp kapatılabiliyor. Kapalıyken fotoğraf yalnızca tanımsız araç uyarısında anlık görünür, hiçbir yere kaydedilmez.",
-    "Fotoğrafların saklanacağı klasör seçilebiliyor (ör. D: diski veya harici disk). Klasör değişince mevcut fotoğraflar yeni yere taşınabiliyor.",
-    "Saklama süresi (7 gün – 1 yıl) ve en fazla kaplanacak alan (1 GB – 100 GB) seçilebiliyor; sınıra gelinince en eski fotoğraflar silinir, diskte 1 GB'tan az yer kalırsa kayıt durur. Kullanılan alan ve diskteki boş yer ekranda görünür.",
-    "Geçiş fotoğrafları buluta gönderilmez ve bulut yedeğine girmez; yalnızca kameraların bağlı olduğu bilgisayarda durur."
+    "Plaka Tanıma & Bariyer ekranı sadeleştirildi: üstteki büyük başlık ve açıklama kutusu kaldırıldı, sekmeler en üstte.",
+    "Canlı İzleme tek ekrana sığar: sayaçlar ince bir şerit oldu, kamera görüntüleri ekran yüksekliğine göre boyutlanır, \"Son Geçişler\" listesi kendi içinde kayar — sayfayı aşağı kaydırmak gerekmez.",
+    "Ayarlar sekmesinde genel ayarlar ile fotoğraf ayarları geniş ekranda yan yana durur."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.1/SiteYonetim-Kurulum-2.16.1.exe",
-    "sha512": "WvbdDqkk8PjPrXCNjvDduXVxG70tnrBkokRBiyfXJag1+MLAjcLKkDxchLx3IDfGthd4sXKS1IgKSEwO61REqg==",
-    "size": 79252984
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.2/SiteYonetim-Kurulum-2.16.2.exe",
+    "sha512": "yFbd/sTeNNlqp28iAXrt29RdUACsSNOQ2XqP9oHXE5ybimwuJPaUp6+cTizjhZK4s4NJ8FE7VNyo6aCZF78pRg==",
+    "size": 79253102
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.1",
-  "sig": "pGqi3tI26a5Irl6G1E1V28GvI2ZIXLHNmiEa/aL8asVx/BLCQlHlDh3cPnfwskVhgOJY6eFMyUmSbUgIlBgMCA=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.2",
+  "sig": "KQ4e7SQyIf25rqfub41EHnIaUifQ43wP9KuFlhbHd0SeKYlERgNaRnd8BWUY2DDM8S0V8f/pv5+6bpkE5/WbDw=="
 }

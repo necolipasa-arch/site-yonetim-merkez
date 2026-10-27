@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.10.0';
-const APP_BUILD = '20261027121206';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.10.1';
+const APP_BUILD = '20261027125945';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -940,6 +940,7 @@ function homeView() {
     ${installBanner()}
     ${balanceCard()}
     ${Door.homeHtml()}
+    ${Ads.bandHtml('kapi')}
     ${cargo.length ? `<div class="alert purple" data-go="cargo">${ic('package')}<div><b>${cargo.length} kargonuz yönetimde sizi bekliyor</b>${esc(cargo.map(c => c.company).filter(Boolean).join(', '))}</div></div>` : ''}
     ${pendingPolls().length ? `<div class="alert blue" data-go="polls">${ic('poll')}<div><b>${pendingPolls().length === 1 ? 'Bir anket oyunuzu bekliyor' : pendingPolls().length + ' anket oyunuzu bekliyor'}</b>${esc(pendingPolls().map(p => p.title).join(', '))}</div></div>` : ''}
     ${vis.length ? `<div class="alert blue" data-go="visitors">${ic('guest')}<div><b>Bugün ${vis.length} misafiriniz bekleniyor</b>${esc(vis.map(v => v.guest_name).join(', '))}</div></div>` : ''}
@@ -2080,7 +2081,7 @@ const Up = {
 const Ads = {
   list: [], v: null, loaded: false, timer: null, splashDone: false,
   cfg() {
-    const def = { band: 1, pos: 'orta', sec: 6, page: 1, title: 'Fırsatlar', splash: 'kapali' };
+    const def = { band: 1, pos: 'orta', style: 'kart', speed: 'normal', sec: 6, page: 1, title: 'Fırsatlar', splash: 'kapali' };
     try { return Object.assign(def, JSON.parse((S.data && S.data.site && S.data.site.reklam) || '{}') || {}); } catch { return def; }
   },
   title() { return this.cfg().title || 'Fırsatlar'; },
@@ -2123,11 +2124,16 @@ const Ads = {
     return `<div class="adc${big ? ' big' : ''}" data-adid="${a.id}">${a.img ? `<div class="adc-img"><img src="${esc(a.img)}" alt="" loading="lazy"></div>` : ''}
       <div class="adc-b"><small>${esc(a.firm || '')}<span class="adc-tag">Reklam</span></small><b>${esc(a.title || '')}</b>${a.body ? `<p>${esc(a.body)}</p>` : ''}${this.btn(a)}</div></div>`;
   },
+  posOf(c) { return ['kapi', 'alt'].includes(c.pos) ? c.pos : 'orta'; },
   bandHtml(pos) {
     const c = this.cfg();
-    if (!c.band || (c.pos === 'alt' ? 'alt' : 'orta') !== pos) return '';
+    if (!c.band || this.posOf(c) !== pos) return '';
     const list = this.of('band');
     if (!list.length) return '';
+    if (c.style === 'yazi') {
+      const items = list.map(a => `<button type="button" data-adopen="${a.id}"><b>${esc(a.firm || '')}</b> ${esc(a.title || '')}</button>`).join('<i>•</i>');
+      return `<div class="adticker" data-adticker data-ids="${list.map(a => a.id).join(',')}"><span class="adt-lbl">Reklam</span><div class="adt-win"><div class="adt-run" data-adrun>${items}<i>•</i>${items}<i>•</i></div></div></div>`;
+    }
     const more = c.page && this.of('page').length ? `<a data-go="deals">${esc(c.title || 'Fırsatlar')} ›</a>` : '';
     return `<div class="adband" data-adband><div class="card-h"><h3>${esc(c.title || 'Fırsatlar')}</h3>${more}</div>
       <div class="adb-track" data-adtrack>${list.map(a => this.card(a)).join('')}</div>
@@ -2141,31 +2147,47 @@ const Ads = {
       : `<div class="card center muted">Şu anda kampanya yok.</div>`;
   },
   wire() {
-    clearInterval(this.timer); this.timer = null;
+    clearTimeout(this.timer); this.timer = null;
+    const tk = $('[data-adticker]');
+    if (tk) {   // kayan yazı: hız piksel/saniye sabit, metin uzunluğuna göre süre
+      const run = tk.querySelector('[data-adrun]');
+      const pxs = { yavas: 35, normal: 55, hizli: 85 }[this.cfg().speed] || 55;
+      const half = run.scrollWidth / 2;
+      run.style.animationDuration = Math.max(6, half / pxs).toFixed(1) + 's';
+      tk.dataset.ids.split(',').forEach(id => this.seen(Number(id)));
+    }
     const tr = $('[data-adtrack]');
     if (!tr) return;
     const cards = [...tr.children];
     const dots = [...document.querySelectorAll('.adb-dots i')];
-    let cur = 0, seenAt = {};
-    const mark = () => {
-      const i = Math.round(tr.scrollLeft / Math.max(1, tr.clientWidth));
-      if (i !== cur) { cur = i; dots.forEach((d, k) => d.classList.toggle('on', k === i)); }
-      const id = cards[i] && cards[i].dataset.adid;
-      if (id && document.visibilityState === 'visible' && (!seenAt[id] || Date.now() - seenAt[id] > 60000)) { seenAt[id] = Date.now(); this.count(Number(id), 'v'); }
+    let cur = 0;
+    const show = (i) => { cur = i; dots.forEach((d, k) => d.classList.toggle('on', k === i)); const id = cards[i] && cards[i].dataset.adid; if (id) this.seen(Number(id)); };
+    tr.addEventListener('scroll', () => { clearTimeout(tr._t); tr._t = setTimeout(() => { const i = Math.round(tr.scrollLeft / Math.max(1, tr.clientWidth)); if (i !== cur) show(i); }, 200); }, { passive: true });
+    setTimeout(() => { if (!$('.adsplash')) show(0); }, 800);
+    if (cards.length < 2) return;
+    tr.addEventListener('touchstart', () => { tr._hold = Date.now(); }, { passive: true });
+    const next = () => {
+      if (!document.body.contains(tr)) return;
+      const sec = Math.max(3, Math.min(20, Number(this.cfg().sec) || 6));   // her turda güncel ayar
+      if (document.visibilityState === 'visible' && !$('.adsplash') && !(tr._hold && Date.now() - tr._hold < 5000)) {
+        const n = (cur + 1) % cards.length;
+        tr.scrollTo({ left: n * tr.clientWidth, behavior: 'smooth' });
+        show(n);
+      }
+      this.timer = setTimeout(next, sec * 1000);
     };
-    tr.addEventListener('scroll', () => { clearTimeout(tr._t); tr._t = setTimeout(mark, 250); }, { passive: true });
-    setTimeout(mark, 1000);
-    if (cards.length > 1) {
-      const sec = Math.max(3, Math.min(20, Number(this.cfg().sec) || 6));
-      this.timer = setInterval(() => {
-        if (!document.body.contains(tr)) { clearInterval(this.timer); return; }
-        if (document.visibilityState !== 'visible' || tr._touch) return;
-        const next = (cur + 1) % cards.length;
-        tr.scrollTo({ left: next * tr.clientWidth, behavior: 'smooth' });
-      }, sec * 1000);
-      tr.addEventListener('touchstart', () => { tr._touch = true; }, { passive: true });
-      tr.addEventListener('touchend', () => { setTimeout(() => { tr._touch = false; }, 4000); }, { passive: true });
-    }
+    this.timer = setTimeout(next, Math.max(3, Math.min(20, Number(this.cfg().sec) || 6)) * 1000);
+  },
+  seen(id) {   // aynı reklam 60 sn içinde ikinci kez sayılmaz
+    this._seen = this._seen || {};
+    if (!id || document.visibilityState !== 'visible' || (this._seen[id] && Date.now() - this._seen[id] < 60000)) return;
+    this._seen[id] = Date.now(); this.count(id, 'v');
+  },
+  detail(id) {
+    const a = this.list.find(x => String(x.id) === String(id));
+    if (!a) return;
+    this.seen(a.id);
+    Sheet.open(`<div class="ad-detail">${this.card(a, true)}</div><button class="btn block" data-close style="margin-top:8px">Kapat</button>`);
   },
   maybeSplash() {
     const c = this.cfg();
@@ -2176,20 +2198,29 @@ const Ads = {
     if (c.splash === 'gun' && localStorage.getItem(k) === today()) { this.splashDone = true; return; }
     this.splashDone = true;
     try { localStorage.setItem(k, today()); } catch { }
-    const n = (Number(localStorage.getItem(k + ':i')) || 0) % list.length;
-    try { localStorage.setItem(k + ':i', String(n + 1)); } catch { }
-    const a = list[n];
+    // açılış reklamı seçili BÜTÜN reklamlar sırayla gösterilir (her biri ~5 sn); "Geç" hepsini kapatır
     const w = document.createElement('div');
     w.className = 'adsplash';
-    w.innerHTML = `<div class="ads-in">${this.card(a, true)}</div><button class="ads-skip" disabled>3</button>`;
+    w.innerHTML = `<div class="ads-in">${list.map((a, i) => `<div class="ads-slide${i ? '' : ' on'}">${this.card(a, true)}</div>`).join('')}
+      ${list.length > 1 ? `<div class="ads-dots">${list.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}</div><button class="ads-skip" disabled>3</button>`;
     document.body.appendChild(w);
-    this.count(a.id, 'v');
+    const slides = [...w.querySelectorAll('.ads-slide')], dots = [...w.querySelectorAll('.ads-dots i')];
+    let cur = 0, timer = null;
+    const per = Math.max(4, Math.min(10, Number(c.sec) || 6)) * 1000;
+    const close = () => { clearInterval(iv); clearTimeout(timer); w.remove(); };
+    const go = (i) => {
+      cur = i;
+      slides.forEach((x, n) => x.classList.toggle('on', n === i)); dots.forEach((x, n) => x.classList.toggle('on', n === i));
+      this.count(list[i].id, 'v');
+      clearTimeout(timer);
+      timer = setTimeout(() => { if (cur + 1 < slides.length) go(cur + 1); else close(); }, per + (i === slides.length - 1 ? 2000 : 0));
+    };
+    go(0);
     const sk = w.querySelector('.ads-skip');
     let t = 3;
     const iv = setInterval(() => { t--; if (t > 0) sk.textContent = String(t); else { clearInterval(iv); sk.disabled = false; sk.textContent = 'Geç ›'; } }, 1000);
-    const close = () => { clearInterval(iv); clearTimeout(auto); w.remove(); };
-    const auto = setTimeout(close, 9000);
     sk.onclick = close;
+    dots.forEach((d, n) => d.addEventListener('click', () => go(n)));
     w.addEventListener('click', (e) => { if (e.target.closest('[data-adgo],[data-adcode]')) setTimeout(close, 300); });
   },
   // sayaç (cihaz başına günde reklam başına en çok 30 gösterim)
@@ -2227,6 +2258,7 @@ const Ads = {
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') Ads.flush(); });
 document.addEventListener('click', (e) => {
   const g = e.target.closest('[data-adgo]'); if (g) { Ads.count(Number(g.dataset.adgo), 'c'); return; }
+  const ao = e.target.closest('[data-adopen]'); if (ao) { Ads.detail(ao.dataset.adopen); return; }
   const cd = e.target.closest('[data-adcode]'); if (cd) { Ads.codeSheet(cd.dataset.adcode); return; }
   const dop = e.target.closest('[data-dooropen]'); if (dop) { Door.ask(dop.dataset.dooropen); return; }
   const rop = e.target.closest('[data-ringopen]'); if (rop) { Door.open(Door.ring.door_id, Door.ring.id, rop); return; }

@@ -372,3 +372,19 @@ a.btn { text-decoration: none; color: inherit; box-sizing: border-box; }
 .door-ok { position: fixed; inset: 0; z-index: 95; display: flex; align-items: center; justify-content: center; background: rgba(31,167,116,.92); color: #fff; animation: dok .25s ease-out; }
 .door-ok div { text-align: center; } .door-ok .ic { width: 84px; height: 84px; display: block; margin: 0 auto 8px; } .door-ok b { font-size: 24px; }
 @keyframes dok { from { opacity: 0; } }
+/* 1.10.1 — kayan yazı reklam + sıralı açılış reklamı */
+.adticker { display: flex; align-items: center; gap: 8px; background: #fff7e0; border: 1px solid #f3d27a; border-radius: 12px; padding: 8px 10px; margin-bottom: 14px; overflow: hidden; }
+.adt-lbl { flex: none; font-size: 11px; font-weight: 700; background: #f0a500; color: #fff; border-radius: 7px; padding: 2px 7px; }
+.adt-win { flex: 1; min-width: 0; overflow: hidden; }
+.adt-run { display: inline-flex; align-items: center; gap: 12px; white-space: nowrap; animation: adTick 20s linear infinite; will-change: transform; }
+.adt-run button { border: 0; background: none; padding: 2px 0; font: inherit; font-size: 14px; color: var(--text, #1d2433); cursor: pointer; }
+.adt-run i { font-style: normal; color: #c58a00; }
+.adticker:active .adt-run { animation-play-state: paused; }
+@keyframes adTick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.adsplash .ads-slide { display: none; }
+.adsplash .ads-slide.on { display: block; animation: adsIn .25s ease; }
+@keyframes adsIn { from { opacity: 0; } to { opacity: 1; } }
+.ads-dots { display: flex; justify-content: center; gap: 6px; margin-top: 12px; }
+.ads-dots i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.45); cursor: pointer; }
+.ads-dots i.on { width: 20px; border-radius: 4px; background: #fff; }
+.ad-detail .adc { margin: 0; }

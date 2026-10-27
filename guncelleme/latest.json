@@ -1,19 +1,17 @@
 {
   "product": "site-yonetim",
-  "version": "2.15.1",
+  "version": "2.15.2",
   "date": "2026-10-27",
   "notes": [
-    "Yeni: Belge Arşivi → \"Telefondan Aktar\" — faturanın fotoğrafını telefonla çekip tek dokunuşla arşive gönderin. QR kodu okutun, \"Fotoğraf Çek\"e basın; belge saniyeler içinde bilgisayarda görünür. İnternet ile (bulut üzerinden, aynı ağ gerekmez) veya aynı Wi-Fi ile (bulut gerekmez) çalışır; belge adı ve kategorisi pencerede düzenlenebilir. Bluetooth ile alma da anlatılır.",
-    "Yeni: WhatsApp nerede açılsın? — ilk WhatsApp mesajında bir kez sorulur: program içindeki WhatsApp penceresi (bir kez QR okutulur, sonraki mesajlar aynı pencerede hazır açılır), tarayıcıdaki WhatsApp Web veya WhatsApp masaüstü uygulaması. Borç Takibi → Ayarlar'dan değiştirilebilir.",
-    "Telefon Önizlemesi: kartla ödeme artık test modunda denenebilir — gerçek kart gerekmez, para çekilmez; ödeme test verisine tahsilat olarak işlenir, borç düşer, makbuz numarası verilir. Kart kaydetme ve otomatik ödeme de denenebilir. Deneme kartı: 4111 1111 1111 1111.",
-    "Düzeltme: Yıllık Faaliyet Raporu'nda \"Toplantılar ve duyurular\" bölümündeki uzun karar metinleri kutudan taşıyordu; artık satır kaydırılarak sığıyor.",
-    "Mobil uygulama 1.9.1: telefondan belge gönderme sayfası ve test ödemesi ekranları."
+    "Basit görünüm: sayfaların üstündeki sekmeler (ör. Aidat & Borçlar → Tahsilat, Borçlu Daireler, Daire Hesabı…) artık simgeli, belirgin butonlar; seçili sekme mavi dolgulu.",
+    "Borç Takibi & Hatırlatma: Hatırlatma Gönder, Hukuki Takip, Taksit Planları, Belgeler, Gönderim Geçmişi ve Ayarlar büyük kart butonlar olarak başlığın hemen altında; hepsi aynı anda görünür (dar ekranda yana kayıp gizlenmez), bekleyen sayılar rozetle gösterilir.",
+    "Basit görünümde sayfa içi sekmeler (ör. Aidat Hesaplama) de buton görünümünde."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.15.1/SiteYonetim-Kurulum-2.15.1.exe",
-    "sha512": "Yd9JrNqHOLww4KKmObjLgYUC1FBajmomyPVhdlaSvV0mB6W5U3AqqPhmaleb/9zhr2TbnQrdSedmCwXUTWLgZA==",
-    "size": 79209084
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.15.2/SiteYonetim-Kurulum-2.15.2.exe",
+    "sha512": "j0IZkVk2V5vqwRBGOKYmfOsajdmNntaxXZHy5ZX6s8wtablArncb+ZbTPenqFYiAGeJ9SM1K0HQt4B7idaHCTA==",
+    "size": 79209570
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.15.1",
-  "sig": "b0cW9mhPSIW6BskmxASYThrrJmV6OUka5FsA9RPziICD7xCyaOOMqrR0CkE4zkMJFfDrPVhn/dDs80lDsemIBw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.15.2",
+  "sig": "CLjkYPkGKnSoNnC1kroSm6/SUXyiuPeGAXpQ6GNxjHM9BceplI6vx+UFHOCpi3TkiVyD6ypBwiVnOi0dwKZaBA=="
 }

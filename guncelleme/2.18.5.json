@@ -1,0 +1,16 @@
+{
+  "product": "site-yonetim",
+  "version": "2.18.5",
+  "date": "2026-10-27",
+  "notes": [
+    "Plaka Tanıma ayarlarında küçük görünüm düzeltmesi",
+    "• Plaka Tanıma → Ayarlar sekmesi: Araç fotoğrafı bölümünün düğmeleri ve yazıları artık düzgün hizalı görünüyor (plaka uyarı penceresinin görünümü bu bölümü bozuyordu)."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.18.5/SiteYonetim-Kurulum-2.18.5.exe",
+    "sha512": "2KPfNK1u//sZYRqtpUu2cMpRTUD7tWxNstoDkhw3z7/J6aBBeG//RH9hnV9U5+OCjLM/v0xQ/14Xui/uh1Rwfg==",
+    "size": 79392001
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.18.5",
+  "sig": "bGEsSAN6T0YBLwSIHLNsMv/L9LbJE4ViTX9j13avuPsG/rVJRHo0icHQf+/rPamJgkqDmt9uXqYnUpGPP4w+Bw=="
+}

@@ -1,0 +1,18 @@
+{
+  "product": "site-yonetim",
+  "version": "2.16.5",
+  "date": "2026-10-27",
+  "notes": [
+    "Bütün menülerde ilk ekranlar artık mümkün olduğunca tek ekrana sığıyor; sayfayı aşağı kaydırmak gerekmiyor. Uzun listeler (tablolar, kayıtlar) sayfa yerine kendi içinde kayıyor; başlık, düğmeler, sekmeler, özet kutuları ve sayfa geçiş düğmeleri hep görünür kalıyor. Tablolarda sütun başlıkları kaydırırken sabit duruyor.",
+    "Boşluklar ve büyük kutular sıkılaştırıldı: Basit görünüm grup sekmeleri, sayfa başlıkları, özet kutuları, Güvenlik Masası düğmeleri, Ana Sayfa kutucukları ve filtre alanları daha az yer kaplıyor. Ekran küçükse program görünümü kendiliğinden biraz daha sıklaştırıyor, pencere büyüyünce listeler yeniden uzuyor.",
+    "Birden çok bölümü olan sayfalar sekmelere ayrıldı: Aidat Hesaplama (Geçerli Aidat / Otomatik Aidat Ayarları / Aidat Geçmişi), Gecikme Zammı (Alacak Türleri / Hesapla ve Borçlara Ekle / Genel Kural), Bütçe (Gider / Gelir), Isınma Paylaştırma (Yeni Dağıtım / Geçmiş Dağıtımlar).",
+    "Gösterge Paneli: altı özet kutusu tek sırada, grafik daha kısa, alt listeler kendi içinde kayıyor. Ayarlar ekranında normal kaydırma sürüyor. Yazdırmalar etkilenmez."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.5/SiteYonetim-Kurulum-2.16.5.exe",
+    "sha512": "2k/ZxlKD9ZVjARtcoyUKHBaA1g2oWsW7DEdkCX/OK4Y+SPdLuRn8GnmE1U6jxzbqSXOpKkcaryeEWRzpm5Ox4w==",
+    "size": 79257586
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.5",
+  "sig": "/o5qVRbZiYd4iVlNAXP9QHpllfqnXQ9UAVokwAnbA2u5tiAC0K6rR0ED8EFEVdSCy6d45ThHlh3VlEyOXSEnDA=="
+}

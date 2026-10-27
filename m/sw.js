@@ -1,5 +1,5 @@
 // Site Yönetim Mobil — çevrim dışı önbellek
-const VERSION = 'sym-v1.10.2-20261027130958';
+const VERSION = 'sym-v1.11.0-20261027135101';
 const SHELL = ['./', 'index.html', 'app.css', 'app.js', 'qrcode.js', 'config.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-32.png'];
 
@@ -34,6 +34,7 @@ self.addEventListener('push', (e) => {
     body: d.b || '', icon: 'icons/icon-192.png', badge: 'icons/favicon-32.png', tag: d.tag || undefined,
     renotify: !!d.tag, data: { v: d.v || 'home', s: /^[A-Za-z0-9_-]{8,1500}$/.test(d.s || '') ? d.s : '' }, timestamp: d.ts || Date.now(),
     // 1.10.0: kapı zili — ekranda kalsın, belirgin titreşim
+    ...(d.v === 'emg' ? { requireInteraction: true, vibrate: [800, 200, 800, 200, 800, 200, 1200] } : {}),
     ...(/^zil-\d+$/.test(d.v || '') ? { requireInteraction: true, vibrate: [300, 150, 300, 150, 600] } : {})
   })));
 });

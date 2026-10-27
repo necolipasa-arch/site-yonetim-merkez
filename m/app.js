@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.10.1';
-const APP_BUILD = '20261027125945';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.10.2';
+const APP_BUILD = '20261027130958';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -2130,12 +2130,14 @@ const Ads = {
     if (!c.band || this.posOf(c) !== pos) return '';
     const list = this.of('band');
     if (!list.length) return '';
-    if (c.style === 'yazi') {
+    let tick = '';
+    if (c.style === 'yazi' || c.style === 'ikisi') {
       const items = list.map(a => `<button type="button" data-adopen="${a.id}"><b>${esc(a.firm || '')}</b> ${esc(a.title || '')}</button>`).join('<i>•</i>');
-      return `<div class="adticker" data-adticker data-ids="${list.map(a => a.id).join(',')}"><span class="adt-lbl">Reklam</span><div class="adt-win"><div class="adt-run" data-adrun>${items}<i>•</i>${items}<i>•</i></div></div></div>`;
+      tick = `<div class="adticker" data-adticker data-ids="${list.map(a => a.id).join(',')}"><span class="adt-lbl">Reklam</span><div class="adt-win"><div class="adt-run" data-adrun>${items}<i>•</i>${items}<i>•</i></div></div></div>`;
+      if (c.style === 'yazi') return tick;
     }
     const more = c.page && this.of('page').length ? `<a data-go="deals">${esc(c.title || 'Fırsatlar')} ›</a>` : '';
-    return `<div class="adband" data-adband><div class="card-h"><h3>${esc(c.title || 'Fırsatlar')}</h3>${more}</div>
+    return tick + `<div class="adband" data-adband><div class="card-h"><h3>${esc(c.title || 'Fırsatlar')}</h3>${more}</div>
       <div class="adb-track" data-adtrack>${list.map(a => this.card(a)).join('')}</div>
       ${list.length > 1 ? `<div class="adb-dots">${list.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}</div>`;
   },

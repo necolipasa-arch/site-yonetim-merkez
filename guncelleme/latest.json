@@ -1,22 +1,19 @@
 {
   "product": "site-yonetim",
-  "version": "2.18.2",
+  "version": "2.18.3",
   "date": "2026-10-27",
   "notes": [
-    "İndir menüsü (PDF / Word / Excel) ve kaymayan ekranlar",
-    "• Bütün \"Excel\" düğmeleri \"İndir\" oldu: tıklayınca PDF, Word ve gerçek Excel (.xlsx) alt alta çıkar, istediğinizi seçersiniz. Yazdır düğmesi olan raporlarda da İndir var.",
-    "• Filtre, sekme, kutucuk veya blok değiştirince listeler artık sağa sola kaymıyor, ekran büyüyüp küçülmüyor; üst çubuk (Basit/Gelişmiş, Canlıya Dön) hiç oynamıyor.",
-    "• Daire Hesabı: Güncel Bakiye kutusuna tıklayınca borç satırları işaretlenir; arama kutusu küçüldü.",
-    "• Aidat Hesaplama ve Borç Takibi bölümleri sabit yükseklikte; Belgeler tek ekrana sığar.",
-    "• Güvenlik Masası Acil Telefonlar: yalnızca sitenin rehberi, resmî 3 haneli numaralar kırmızı.",
-    "• Plaka & Bariyer Ayarlar'da gereksiz kaydırma çubukları kalktı; Bordro personel tablosu yatay kaydırmasız.",
-    "• Ayarlar menüsü en sona alındı."
+    "PDF'ler eksiksiz ve \"Güvenlik Tur Kontrolü\"",
+    "• İndir → PDF'te sütun başlıkları tam adıyla yazılır, rakamlar \"…\" ile kısalmaz; geniş tablolar kendiliğinden yatay sayfaya geçer, gerekirse sayfaya sığacak kadar küçülür. Bu, PDF indirilen bütün yerler için geçerli.",
+    "• Uzun listeler PDF'te birden çok sayfaya akar (önceden ilk sayfada kesiliyordu); toplam satırı yalnızca en sonda çıkar.",
+    "• Bütçe: Gider ve Gelir bütçesi toplam satırına Fark ve Gerçekleşme oranı eklendi.",
+    "• \"Tur Kontrolü\" menüsünün adı \"Güvenlik Tur Kontrolü\" oldu."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.18.2/SiteYonetim-Kurulum-2.18.2.exe",
-    "sha512": "FDmbb3/s8fL9PZEmh/3oyrGdlRr92bOuOQrYgV+DalybXwUK/MJ8TcTJK8fQQUdVkSIPACCKczqUdCIC69Hadg==",
-    "size": 79389369
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.18.3/SiteYonetim-Kurulum-2.18.3.exe",
+    "sha512": "5/FMcaE9HFYRxPNnSSDa7yo4Z+7TyQdNTS5JjGd4XQNO7ZJ6Lu5jVd2N6S7glq6/3Vi8uiR1GNRSQOnhf9K9ag==",
+    "size": 79390664
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.18.2",
-  "sig": "mlo3vRfPhLjKiPTSsQAxKaaJY0R3ZLgvObA+ev36bKdTwI/zofWl+okH6FbeK14NEgag2XIgl4jvAecLye/TBg=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.18.3",
+  "sig": "gRiqkfIPRhPZYeaaT2ZUUzDGEiQ65EI2PyOkIlLQUJw+naYtgxBJbG5PEmfkna4opeFhAySyInrTT7zkdZC2AQ=="
 }

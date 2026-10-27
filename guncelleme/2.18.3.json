@@ -1,0 +1,19 @@
+{
+  "product": "site-yonetim",
+  "version": "2.18.3",
+  "date": "2026-10-27",
+  "notes": [
+    "PDF'ler eksiksiz ve \"Güvenlik Tur Kontrolü\"",
+    "• İndir → PDF'te sütun başlıkları tam adıyla yazılır, rakamlar \"…\" ile kısalmaz; geniş tablolar kendiliğinden yatay sayfaya geçer, gerekirse sayfaya sığacak kadar küçülür. Bu, PDF indirilen bütün yerler için geçerli.",
+    "• Uzun listeler PDF'te birden çok sayfaya akar (önceden ilk sayfada kesiliyordu); toplam satırı yalnızca en sonda çıkar.",
+    "• Bütçe: Gider ve Gelir bütçesi toplam satırına Fark ve Gerçekleşme oranı eklendi.",
+    "• \"Tur Kontrolü\" menüsünün adı \"Güvenlik Tur Kontrolü\" oldu."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.18.3/SiteYonetim-Kurulum-2.18.3.exe",
+    "sha512": "5/FMcaE9HFYRxPNnSSDa7yo4Z+7TyQdNTS5JjGd4XQNO7ZJ6Lu5jVd2N6S7glq6/3Vi8uiR1GNRSQOnhf9K9ag==",
+    "size": 79390664
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.18.3",
+  "sig": "gRiqkfIPRhPZYeaaT2ZUUzDGEiQ65EI2PyOkIlLQUJw+naYtgxBJbG5PEmfkna4opeFhAySyInrTT7zkdZC2AQ=="
+}

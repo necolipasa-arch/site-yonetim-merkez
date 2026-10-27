@@ -1,18 +1,22 @@
 {
   "product": "site-yonetim",
-  "version": "2.18.1",
+  "version": "2.18.2",
   "date": "2026-10-27",
   "notes": [
-    "Firmaya iş emri düğmesi görünür oldu",
-    "• Arıza & Talepler listesinde her açık talebin satırında yeşil \"Firmaya Gönder\" düğmesi var (gönderilmişse \"İş Durumu\").",
-    "• Talebe tıklayınca açılan pencerenin altında da \"Firmaya İş Emri Gönder\" düğmesi var.",
-    "• Test Ortamı'nda veya bulut kurulu değilken neden gönderilemediği açıkça yazılır."
+    "İndir menüsü (PDF / Word / Excel) ve kaymayan ekranlar",
+    "• Bütün \"Excel\" düğmeleri \"İndir\" oldu: tıklayınca PDF, Word ve gerçek Excel (.xlsx) alt alta çıkar, istediğinizi seçersiniz. Yazdır düğmesi olan raporlarda da İndir var.",
+    "• Filtre, sekme, kutucuk veya blok değiştirince listeler artık sağa sola kaymıyor, ekran büyüyüp küçülmüyor; üst çubuk (Basit/Gelişmiş, Canlıya Dön) hiç oynamıyor.",
+    "• Daire Hesabı: Güncel Bakiye kutusuna tıklayınca borç satırları işaretlenir; arama kutusu küçüldü.",
+    "• Aidat Hesaplama ve Borç Takibi bölümleri sabit yükseklikte; Belgeler tek ekrana sığar.",
+    "• Güvenlik Masası Acil Telefonlar: yalnızca sitenin rehberi, resmî 3 haneli numaralar kırmızı.",
+    "• Plaka & Bariyer Ayarlar'da gereksiz kaydırma çubukları kalktı; Bordro personel tablosu yatay kaydırmasız.",
+    "• Ayarlar menüsü en sona alındı."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.18.1/SiteYonetim-Kurulum-2.18.1.exe",
-    "sha512": "vPwM3f5Zj/2fneQL6nHirwZKrwWiEtoUEVWkcjkeJYonZ7DdZt/0mtR2WHyiZqOI2TVUCd0LGNVOr5IBn7UHCg==",
-    "size": 79379419
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.18.2/SiteYonetim-Kurulum-2.18.2.exe",
+    "sha512": "FDmbb3/s8fL9PZEmh/3oyrGdlRr92bOuOQrYgV+DalybXwUK/MJ8TcTJK8fQQUdVkSIPACCKczqUdCIC69Hadg==",
+    "size": 79389369
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.18.1",
-  "sig": "58U6ADVHhfy868BhoT0iKmMIRK85MKPEnSxkI56l2scCmR/a/BLtjvvjQYmiKk381FehOUyg0NJrVbOz6u8CAA=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.18.2",
+  "sig": "mlo3vRfPhLjKiPTSsQAxKaaJY0R3ZLgvObA+ev36bKdTwI/zofWl+okH6FbeK14NEgag2XIgl4jvAecLye/TBg=="
 }

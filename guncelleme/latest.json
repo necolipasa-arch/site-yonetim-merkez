@@ -1,20 +1,18 @@
 {
   "product": "site-yonetim",
-  "version": "2.16.0",
+  "version": "2.16.1",
   "date": "2026-10-27",
   "notes": [
-    "YENİ: Plaka Tanıma & Bariyer — kayıtlı araçlar plakasıyla kapıdan kendiliğinden girer, tanımsız araç gelince ekranın sağ altında fotoğraflı uyarı çıkar ve tek tuşla kapı açılır. Bütün giriş/çıkışlar fotoğraflı kaydedilir.",
-    "Hazır sürücüler: Hikvision (HiLook, HiWatch ve OEM'ler), Dahua (Imou ve OEM'ler), Genel HTTP (diğer markalar ve ağ röle kartları) ve gerçek kamera olmadan denemek için Test cihazı. Listede olmayan sistemler için \"Sürücü Ekle\" ile .json sürücü dosyası yüklenebilir.",
-    "Çalışma şekli seçilebilir: \"Kamera kendisi açsın\" (program izinli plakaları kameraya yükler; bilgisayar kapalıyken de çalışır), \"Program karar versin\" veya \"Sadece kayıt\". Çıkış kapısında \"herkese aç\" seçeneği.",
-    "İzinli araçlar: sakin araçları (Araçlar sayfasında yeni \"Bariyer\" seçeneği), personel / servis / tedarikçi plakaları (tarih aralıklı) ve sakinin mobil uygulamadan plakasıyla bildirdiği misafirler. Misafir gelince ziyaretçi kaydı kendiliğinden açılır, çıkış kamerası çıkışı işler.",
-    "Güvenlik Masası'nda \"Araç Girişleri\" kartı ve kapı açma düğmeleri. Ağdaki kameraları bulma, bağlantı testi (kamera görüntüsüyle) ve Tanılama ekranı.",
-    "KVKK: geçiş kayıtları ziyaretçi süresi dolunca anonimleştirilir, fotoğraflar seçilen süre sonunda silinir."
+    "Plaka Tanıma › Ayarlar: geçiş fotoğraflarını saklama artık tek düğmeyle açılıp kapatılabiliyor. Kapalıyken fotoğraf yalnızca tanımsız araç uyarısında anlık görünür, hiçbir yere kaydedilmez.",
+    "Fotoğrafların saklanacağı klasör seçilebiliyor (ör. D: diski veya harici disk). Klasör değişince mevcut fotoğraflar yeni yere taşınabiliyor.",
+    "Saklama süresi (7 gün – 1 yıl) ve en fazla kaplanacak alan (1 GB – 100 GB) seçilebiliyor; sınıra gelinince en eski fotoğraflar silinir, diskte 1 GB'tan az yer kalırsa kayıt durur. Kullanılan alan ve diskteki boş yer ekranda görünür.",
+    "Geçiş fotoğrafları buluta gönderilmez ve bulut yedeğine girmez; yalnızca kameraların bağlı olduğu bilgisayarda durur."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.0/SiteYonetim-Kurulum-2.16.0.exe",
-    "sha512": "r1LVTPtTlolCp9Q52JHCDugo/RNKNxTPr8ki6629jd0k2debjhb91eyDpWvG4uEf9pjEwsuR6jOaiJ4LAtSQfg==",
-    "size": 79249103
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.1/SiteYonetim-Kurulum-2.16.1.exe",
+    "sha512": "WvbdDqkk8PjPrXCNjvDduXVxG70tnrBkokRBiyfXJag1+MLAjcLKkDxchLx3IDfGthd4sXKS1IgKSEwO61REqg==",
+    "size": 79252984
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.0",
-  "sig": "8NvPI7xH41hVVgJ/BWk/2lJZl6FV34N5A3pyO1rok0dXSmuwRlE+PfJnjjBzSs1A6dRV/WN/TIRHEz0rngWVCg=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.1",
+  "sig": "pGqi3tI26a5Irl6G1E1V28GvI2ZIXLHNmiEa/aL8asVx/BLCQlHlDh3cPnfwskVhgOJY6eFMyUmSbUgIlBgMCA=="
 }

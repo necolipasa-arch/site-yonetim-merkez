@@ -1,0 +1,23 @@
+{
+  "product": "site-yonetim",
+  "version": "2.21.0",
+  "date": "2026-10-28",
+  "time": "2026-10-28T13:24:59.140Z",
+  "notes": [
+    "Çöp Kutusu · Dönem Kilidi · Veri Kontrolü · İlk Ay Rehberi · Daire El Değiştirme · Yönetim Devir Teslim · Mali Müşavir Paketi",
+    "• Çöp Kutusu: silinen sakin, tahsilat, gider vb. kayıtlar 30 gün saklanır; Çöp Kutusu ekranından tek tıkla geri getirilir. Silme sonrasında çıkan \"Geri Al\" düğmesiyle anında da geri alabilirsiniz.",
+    "• Dönem Kilidi (Ayarlar → Dönem Kilidi): kapatılan aylara yeni kayıt girilemez, eski kayıtlar değiştirilemez. Kilidi yalnızca Sistem Yöneticisi açabilir; açılması İşlem Geçmişi'ne yazılır.",
+    "• Veri Kontrolü: telefonu olmayan sakin, aynı telefon iki dairede, boş daireye aidat, eksiye düşmüş kasa, eşleşmemiş banka hareketi, mobil daveti kullanılmamış daire gibi sorunları listeler; her birinde \"Düzelt\" düğmesi vardır.",
+    "• İlk Ay Rehberi: yeni kurulumda üst çubukta ilerleme çubuğuyla adım adım kontrol listesi (daireler → sakinler → aidat → banka → mobil davetler); her adım ilgili ekranı açar.",
+    "• Daire El Değiştirme sihirbazı (satış / kiracı değişikliği): son sayaç okuma, borç kapama, borcu yoktur yazısı, eski sakinin mobil erişimini otomatik kapatma, yeni sakin ekleme ve davet. Daireler listesinde, daire kartında ve Sakinler ekranında.",
+    "• Yönetim Devir Teslim (Raporlar): kasa/banka bakiyeleri, alacak listesi, demirbaşlar, firma sözleşmeleri, belge arşivi listesi ve imza alanlarıyla tek PDF tutanak; eski yöneticinin hesaplarını kapatma.",
+    "• Mali Müşavir Paketi (Raporlar): ay sonunda tek tıkla gelir-gider, tahsilat, banka, bordro ve faturalar Excel + ZIP olarak; isteğe bağlı Luca / Logo / Mikro aktarım dosyası."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.21.0/SiteYonetim-Kurulum-2.21.0.exe",
+    "sha512": "fBz8N6rlLY3+0KbydL2D+0T6Ivm7UNhB46ELE6CelTE5QwhS8WCLKuzJojQyAnRSIS0LXW8IDvvaNr0L248W/g==",
+    "size": 83986360
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.21.0",
+  "sig": "qGYHpV/cxuMAF0IOCNOuEXaz5h8OnQBhkrdLpv9Z2c9Ir38HmE90bacBC+4y0jEby/rJO9f52hF/4RvPm24eAw=="
+}

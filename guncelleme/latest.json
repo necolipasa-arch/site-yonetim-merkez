@@ -1,22 +1,21 @@
 {
   "product": "site-yonetim",
-  "version": "2.23.0",
+  "version": "2.24.0",
   "date": "2026-10-28",
-  "time": "2026-10-28T17:09:35.899Z",
+  "time": "2026-10-28T18:37:56.848Z",
   "notes": [
-    "Yedek bulut + daha az bulut kullanımı + bordro rakamlarını resmî kaynaktan alma",
-    "• Mobil uygulamanın bulutu artık çok daha az uyandırılıyor: program buluta yalnızca gönderilecek bir değişiklik olunca ya da sakin telefondan bir işlem yapınca (talep, rezervasyon, oy, ödeme…) bağlanıyor. Böylece ücretsiz aylık kullanım hakkı çok daha geç doluyor.",
-    "• Yeni: Yedek bulut. Sitenin Neon hesabında ikinci bir bulut kurulur. Ana bulutun aylık ücretsiz kullanımı dolmak üzereyse ya da ana bulut çökerse mobil uygulama ve eşitleme kendiliğinden yedekle devam eder; yeni ayda (ya da ana bulut düzelince) ana buluta geri dönülür. Ek ücret yoktur.",
-    "• Yeni kurulan sitelerde yedek bulut \"Bulutu Kur\" ile birlikte kurulur. Mevcut sitelerde Sistem Yöneticisine bir kez sorulur; daha sonra Ayarlar › Mobil-VPN-Bulut › \"Yedek Bulutu Kur\" ile de kurulabilir.",
-    "• Bordro: \"Resmî Kaynaktan Al\" düğmesi — yeni yılın asgari ücret, SGK alt/üst sınırı ve gelir vergisi dilimleri SGK ve Gelir İdaresi sitelerinden okunur; eski ve yeni değerleri görüp onaylarsınız.",
-    "• Mobil uygulama 1.13.0: ana bulut yanıt vermezse yedek buluta kendiliğinden geçer; ekran açık bırakılıp kullanılmıyorsa buluta boşuna bağlanmaz."
+    "Yazılı destek talebi",
+    "• Yeni: Destek penceresinde \"Yazarak Sor\" — teknik servise yazılı soru, hata bildirimi veya istek gönderebilirsiniz (isteğe bağlı ekran görüntüsüyle). Yazılı talepler aylık uzaktan destek hakkından düşmez.",
+    "• \"Taleplerim\" sekmesinde gönderdiğiniz talepleri ve gelen cevapları görürsünüz; ek bilgi yazabilir, sorun çözülünce talebi kapatabilirsiniz.",
+    "• Cevap gelince üst çubukta yeşil \"Destek cevabı geldi\" düğmesi çıkar.",
+    "• Uzak bağlantıyla destek \"Bağlanıp Yardım Etsin\" sekmesinde, eskisi gibi çalışır."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.23.0/SiteYonetim-Kurulum-2.23.0.exe",
-    "sha512": "/6LwGTGOpD/MnqMtHPen+7Xoj4Sb0UEVnfFUubUwfgDIZneH/UjfHM0IE5Qg0yBwf3ZFs9rqq3HStZ4v1L+a0A==",
-    "size": 83956345
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.24.0/SiteYonetim-Kurulum-2.24.0.exe",
+    "sha512": "nJiTiBJb7pyhh+WFguXkKAUMRR5DzN3WKe0j/rhTgt2Ctg1NjMuiqnbC8F/rPGS6S8PqLo3k0irtOR9oon2DxA==",
+    "size": 83984383
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.23.0",
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.24.0",
   "lisans": [
     {
       "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
@@ -27,5 +26,5 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "O/7ZvqdalxA/4N1GuNi/2Of5JPp+kb0eBATd3qztdiHJft4Azkf2BS7juboRNPnTU6nvFY7RK7xem3ERW+3GBA=="
+  "sig": "CLvT1mq70m3OKqXEvbg2gWLxl8eHNr1w7iyOMM58NKUNgRKokoup+S7s8SPwcM8oN0I7uR26xwnFzU7+MnKNCQ=="
 }

@@ -1,0 +1,28 @@
+{
+  "product": "site-yonetim",
+  "version": "2.25.1",
+  "date": "2026-10-28",
+  "time": "2026-10-28T22:02:05.462Z",
+  "notes": [
+    "Yenileme teklifinde daire sayısı bilgisi",
+    "• Program her ayın en yüksek bağımsız bölüm (daire) sayısını lisans dosyasında saklar ve yenileme talebiyle birlikte firmanıza gönderir.",
+    "• Talepteki sayı son 12 aydaki kullanımla belirgin biçimde farklıysa teklifte \"Bağımsız bölüm sayısı\" başlıklı bir açıklama görürsünüz; bilgi yanlışsa teklifi reddedip nedenini yazabilirsiniz."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.25.1/SiteYonetim-Kurulum-2.25.1.exe",
+    "sha512": "L11EzVhQPxLJ4NyEkKkFwCTq44Epd+YS8YZs2yxFRsOne9aSYfkWxXf7UdjV1j6Li0FTOgNbtY+3x+8BMxQmXw==",
+    "size": 84023535
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.25.1",
+  "lisans": [
+    {
+      "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    },
+    {
+      "u": "https://ep-fancy-pond-b93i3gy6.apirest.c-7.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    }
+  ],
+  "sig": "pKACQqPC4o9C5SkoPz88qPwaa+aXAuQzNOOqAPLXLRoLl2DjpyHUqMSXwYeKZmjl0/5TDXbWf+sZJ6D8deMpDg=="
+}

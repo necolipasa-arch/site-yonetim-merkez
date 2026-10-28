@@ -1,22 +1,19 @@
 {
   "product": "site-yonetim",
-  "version": "2.25.0",
+  "version": "2.25.1",
   "date": "2026-10-28",
-  "time": "2026-10-28T21:33:42.233Z",
+  "time": "2026-10-28T22:02:05.462Z",
   "notes": [
-    "Lisans yenileme artık programın içinden",
-    "• Ayarlar → Lisans sekmesinde yeni \"Lisans Yenileme\" kartı: \"Yenileme Talebi Gönder\" ile firmanızdan yenileme isteyin (aylık, yıllık, özel tarih veya \"satıcı önersin\"). Site adı, daire ve terminal sayısı, birden fazla siteniz varsa tüm siteleriniz talebe kendiliğinden eklenir.",
-    "• Firmanızın teklifi gelince program haber verir; kalemleri, KDV'yi ve ödenecek toplamı görüp \"Teklifi Kabul Et\" deyin. Yeni lisans hazırlanınca programa kendiliğinden yüklenir.",
-    "• Ödemeyi yaptığınızda \"Ödendi — Gidere Yaz\" ile tutar o yılın giderlerine (Yazılım / Lisans) yazılır.",
-    "• Aylık ve özel süreli lisans desteği; aylık lisansta bitiş uyarısı son 7 günde verilir.",
-    "• Üst siteye bağlanan bir sitenin kendi lisansı daha geç bitiyorsa kendi lisansı geçerli kalır; daha erken bitiyorsa üst sitenin lisansı geçerli olur."
+    "Yenileme teklifinde daire sayısı bilgisi",
+    "• Program her ayın en yüksek bağımsız bölüm (daire) sayısını lisans dosyasında saklar ve yenileme talebiyle birlikte firmanıza gönderir.",
+    "• Talepteki sayı son 12 aydaki kullanımla belirgin biçimde farklıysa teklifte \"Bağımsız bölüm sayısı\" başlıklı bir açıklama görürsünüz; bilgi yanlışsa teklifi reddedip nedenini yazabilirsiniz."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.25.0/SiteYonetim-Kurulum-2.25.0.exe",
-    "sha512": "r6MNXYb01QYHN2ISGenN6LKq+LGduWtSySsMSbZ/MgYDWRFMtrZpezk9l+tjO/I909XGswvxiLz2Z56IENpHJQ==",
-    "size": 84022174
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.25.1/SiteYonetim-Kurulum-2.25.1.exe",
+    "sha512": "L11EzVhQPxLJ4NyEkKkFwCTq44Epd+YS8YZs2yxFRsOne9aSYfkWxXf7UdjV1j6Li0FTOgNbtY+3x+8BMxQmXw==",
+    "size": 84023535
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.25.0",
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.25.1",
   "lisans": [
     {
       "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
@@ -27,5 +24,5 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "nzWCSH0VeBEJebYWcguet5LpaPBttYUrB2DJa1YHxWZFvmsPKwgPIEWtQtYXzYmCAPsyu61F+mdPHzvsBk0ACw=="
+  "sig": "pKACQqPC4o9C5SkoPz88qPwaa+aXAuQzNOOqAPLXLRoLl2DjpyHUqMSXwYeKZmjl0/5TDXbWf+sZJ6D8deMpDg=="
 }

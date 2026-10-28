@@ -1,0 +1,30 @@
+{
+  "product": "site-yonetim",
+  "version": "2.26.0",
+  "date": "2026-10-28",
+  "time": "2026-10-28T22:20:44.199Z",
+  "notes": [
+    "Yeni ilk kurulum adımı: Bulut ve VPN hesapları",
+    "• \"Yeni site kur\" seçildiğinde yeni bir adım açılır: önce \"Gmail Hesabı Oluştur\", sonra Neon ve NetBird hesapları \"Google ile giriş\" ile tek tıkla açılır.",
+    "• API anahtarını panelde kopyalamanız yeterli; program anahtarı kendisi alır, doğrular ve panodan siler. Şifreniz hiçbir zaman istenmez.",
+    "• Neon anahtarı kaydedilince satıcınıza Neon kuruluşunuzda Admin daveti kendiliğinden gönderilir (bakım ve destek için); gönderilemezse ekranda hatırlatılır.",
+    "• Kurulum bitince sitenizin bulutu ilk girişte otomatik kurulur; bu bilgisayar VPN'e hemen bağlanır."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.0/SiteYonetim-Kurulum-2.26.0.exe",
+    "sha512": "HhTBcLbrbgEOsRvnxzlQ7oL4+VYggIQBn9xorMNQesWxyqA11VeuNGngaVEDutlC6eTcXAvFKYxzw5e8HiwmLg==",
+    "size": 84029089
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.26.0",
+  "lisans": [
+    {
+      "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    },
+    {
+      "u": "https://ep-fancy-pond-b93i3gy6.apirest.c-7.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    }
+  ],
+  "sig": "nSuAAFmiZC0bQ5QeHpeWWjRtmjExuCj+Rt8MpiD/mYxQBMM2YyfYFDXzPJfsozzGgt2Z7LySfAnSuarXmenZCQ=="
+}

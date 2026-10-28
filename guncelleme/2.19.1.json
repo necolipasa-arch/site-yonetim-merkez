@@ -1,0 +1,18 @@
+{
+  "product": "site-yonetim",
+  "version": "2.19.1",
+  "date": "2026-10-28",
+  "time": "2026-10-28T12:10:36.185Z",
+  "notes": [
+    "Kullanım Kılavuzu güncellendi",
+    "• Yardım → Kullanım Kılavuzu (F1): ekran görüntüleri yenilendi (Site Yöneticisi hesabıyla; yalnızca kendi yetkinizdeki ekranlar).",
+    "• Uzak Destek anlatımı yeni \"Sorununuz\" kutusu ve \"İsteğiniz teknik servise iletildi\" ekranıyla güncellendi."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.19.1/SiteYonetim-Kurulum-2.19.1.exe",
+    "sha512": "7jkTQspM/THNaK+92JuMwzFiZOM+ZKaEzXOvXu+amDLDSWXYmn6x473WS3BFmIjy80TC31P9PM2SXr9laKoo+A==",
+    "size": 83952171
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.19.1",
+  "sig": "Vz3w923bAgx/MH2luNiJwRWGDOxvmY2c328eTq0F73XIfW83nWLpq2QaQEvGqmqVeLb3tFBS1/2fSKCQ1OJQDw=="
+}

@@ -1,0 +1,30 @@
+{
+  "product": "site-yonetim",
+  "version": "2.22.0",
+  "date": "2026-10-28",
+  "time": "2026-10-28T14:45:45.707Z",
+  "notes": [
+    "Yedek lisans sunucusu — kesintisiz çalışma",
+    "• Lisans sunucusunun aylık ücretsiz kullanım hakkı dolarsa veya sunucuya ulaşılamazsa program artık kendiliğinden yedek sunucuya geçer. Lisans doğrulama, deneme kaydı, kısa davet linkleri, Uzak Destek ve kurtarma kodu bu sırada da çalışır.",
+    "• Ana sunucu yeniden açılınca program kendiliğinden ona döner; yedekteyken yapılan kayıtlar kaybolmaz.",
+    "• Ayarlar › Lisans ekranında yedek sunucu kullanılıyorsa bu belirtilir.",
+    "• Mobil uygulama 1.12.0: kısa davet linki ana sunucuda bulunamazsa yedek sunucuda da aranır."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.22.0/SiteYonetim-Kurulum-2.22.0.exe",
+    "sha512": "MGKTm2ccfMD7sgrx3OTf8ixUXXoAkjO7LcufFj9StGOA6odWRWYwmIgcmodWGrJfP2fm4LBXvhKjZkECdtPALg==",
+    "size": 83991993
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.22.0",
+  "lisans": [
+    {
+      "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    },
+    {
+      "u": "https://ep-fancy-pond-b93i3gy6.apirest.c-7.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    }
+  ],
+  "sig": "QkTtjX5NW4SZ31/hv3nm6mg3b72Ur1xkIyGU/aRa4chSQRmUzhkzHienE4bvpfJrPkoE9zd8nsFIMS4LtMKBAw=="
+}

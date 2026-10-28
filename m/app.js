@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.11.0';
-const APP_BUILD = '20261027135101';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.12.0';
+const APP_BUILD = '20261028144554';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -95,9 +95,8 @@ const DIR_PENDING = (function () {
 })();
 // Site adres sorgusu: kısa kimlik varsa ?y=…, yoksa (eski davetler) ?s=…
 const siteQuery = (site) => site && site.y ? '?y=' + site.y : site && site.raw ? '?s=' + site.raw : '';
-async function dirResolve(p) {
-  const dir = (window.SITE_CONFIG || {}).dir || {};
-  if (!dir.u) { const e = new Error('Bu uygulamada davet dizini tanımlı değil.'); e.code = 'NODIR'; throw e; }
+// 1.12.0: davet dizini ana lisans sunucusunda bulunamazsa / sunucuya ulaşılamazsa yedek sunucuda da aranır
+async function dirQuery(dir, p) {
   const k = String(dir.k || '');
   let r;
   try {
@@ -107,8 +106,20 @@ async function dirResolve(p) {
     });
   } catch (e) { const er = new Error('Davet bilgisi alınamadı. İnternet bağlantınızı kontrol edin.'); er.net = true; throw er; }
   const d = await r.json().catch(() => null);
-  if (!r.ok || !d) { const er = new Error('Davet bilgisi alınamadı (' + r.status + ').'); er.net = r.status >= 500 || r.status === 0; throw er; }
+  if (!r.ok || !d) { const er = new Error('Davet bilgisi alınamadı (' + r.status + ').'); er.net = r.status >= 500 || r.status === 0 || r.status === 402 || r.status === 429; throw er; }
   if (d.error) { const er = new Error(d.error); er.code = d.code || 'ERR'; throw er; }
+  return d;
+}
+async function dirResolve(p) {
+  const C0 = window.SITE_CONFIG || {}, dir = C0.dir || {};
+  if (!dir.u) { const e = new Error('Bu uygulamada davet dizini tanımlı değil.'); e.code = 'NODIR'; throw e; }
+  const dirs = [dir, ...(Array.isArray(C0.dir2) ? C0.dir2 : [])].filter(x => x && x.u);
+  let d = null, first = null;
+  for (const x of dirs) {
+    try { d = await dirQuery(x, p); break; }
+    catch (e) { if (!first || (first.net && !e.net)) first = e; if (!(e.net || e.code === 'NOTFOUND')) break; }
+  }
+  if (!d) throw first;
   const site = parseSiteParam(d.cfg);
   if (!site) { const er = new Error('Site bağlantı bilgisi okunamadı.'); er.code = 'CFG'; throw er; }
   const y = p.t === 'S' ? p.v : dirNorm(d.y);

@@ -1,18 +1,19 @@
 {
   "product": "site-yonetim",
-  "version": "2.19.1",
+  "version": "2.20.0",
   "date": "2026-10-28",
-  "time": "2026-10-28T12:10:36.185Z",
+  "time": "2026-10-28T12:46:35.701Z",
   "notes": [
-    "Kullanım Kılavuzu güncellendi",
-    "• Yardım → Kullanım Kılavuzu (F1): ekran görüntüleri yenilendi (Site Yöneticisi hesabıyla; yalnızca kendi yetkinizdeki ekranlar).",
-    "• Uzak Destek anlatımı yeni \"Sorununuz\" kutusu ve \"İsteğiniz teknik servise iletildi\" ekranıyla güncellendi."
+    "Bilgisayar değişince tek kodla geri dönüş · sorunlu güncellemenin geri alınması",
+    "• Bilgisayarınız değişti veya bozulduysa: yeni bilgisayarda programı açın, ilk ekranda \"Kurtarma kodum var\" deyip satıcınızın verdiği kodu yazın. Verileriniz buluttaki yedekten gelir, lisansınız yeni bilgisayara kendiliğinden taşınır.",
+    "• Bir sürümde sorun çıkarsa satıcınız o sürümü geri alabilir: program önceki sağlam sürüme döner (verileriniz korunur, dönmeden önce yedek alınır). \"Şimdi Dön\" diyebilir veya programı kapatınca dönmesini bekleyebilirsiniz.",
+    "• Satıcınız gerektiğinde bulut bağlantınızı uzaktan kontrol edip onarabilir."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.19.1/SiteYonetim-Kurulum-2.19.1.exe",
-    "sha512": "7jkTQspM/THNaK+92JuMwzFiZOM+ZKaEzXOvXu+amDLDSWXYmn6x473WS3BFmIjy80TC31P9PM2SXr9laKoo+A==",
-    "size": 83952171
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.20.0/SiteYonetim-Kurulum-2.20.0.exe",
+    "sha512": "rS+Nb0js7kghPkhUm62C1utVgpbYNEaRtb1sNdfxaI5g8keQCfWdIbkyzkVakRqD+Mc/3IJ3FBlua2q/g2FxPA==",
+    "size": 83958700
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.19.1",
-  "sig": "Vz3w923bAgx/MH2luNiJwRWGDOxvmY2c328eTq0F73XIfW83nWLpq2QaQEvGqmqVeLb3tFBS1/2fSKCQ1OJQDw=="
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.20.0",
+  "sig": "EHLA+bCUyFu7q/TCVrkwvD0tIC94QAVtJq0hAez1zc7wULQzN8h9gwcoGZDfQxLrclz1Zb5edVOMuVrCbFuKDQ=="
 }

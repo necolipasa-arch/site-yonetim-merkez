@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.12.0';
-const APP_BUILD = '20261028144554';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.13.0';
+const APP_BUILD = '20261028170943';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -28,6 +28,10 @@ function parseSiteParam(v) {
     let k = String(o.k || '');
     if (!k && f) { try { k = localStorage.getItem('sym_k@' + u) || ''; } catch { } }
     if (!okUrl || (!k && !f) || k.length > (neon ? 1200 : 400)) return null;
+    // 1.13.0 (masaüstü 2.23): yedek bulut adresleri — ana adrese ulaşılamazsa telefon buraya geçer
+    const nu2 = /^ep-[a-z0-9-]+\.apirest\.[a-z0-9.-]+$/i.test(o.nu2 || '') ? String(o.nu2).toLowerCase() : '';
+    const nf2 = /^br-[a-z0-9-]+-odeme\.compute\.[a-z0-9.-]+$/i.test(o.nf2 || '') ? String(o.nf2).toLowerCase() : '';
+    if (nu2 && nf2) { try { localStorage.setItem('sym_srv@' + u, JSON.stringify({ u2: `https://${nu2}.aws.neon.tech/neondb`, f2: `https://${nf2}.aws.neon.tech` })); } catch { } }
     return { u, k, f, n: String(o.n || '').slice(0, 80), raw: b64uEnc(JSON.stringify(o)) };
   } catch { return null; }
 }
@@ -170,11 +174,37 @@ function normBase(u) {
 const BASE = normBase(CFG.url);
 let API_KEY = String(CFG.anonKey || '').trim().replace(/\s+/g, '');
 // Ödeme fonksiyonu: Neon'da kendi adresi var; Supabase'te proje adresi + /functions/v1/odeme
-const FN_BASE = () => (CFG.fnUrl || window.SITE_CONFIG && window.SITE_CONFIG.fnUrl || '').replace(/\/+$/, '') || `${BASE}/functions/v1/odeme`;
+const FN_BASE = () => { const si = SRV.info(); if (si && si.f2 && SRV.onAlt()) return si.f2; return (CFG.fnUrl || window.SITE_CONFIG && window.SITE_CONFIG.fnUrl || '').replace(/\/+$/, '') || `${BASE}/functions/v1/odeme`; };
+// 1.13.0: YEDEK BULUT — sitenin ikinci bulut adresi (masaüstü 2.23). Ana adres yanıt vermezse (ağ / 5xx / kota) ya da
+// "bu site şu an diğer adreste" (SY_YEDEK_SUNUCU) derse diğerine geçilir; 30 dk sonra ana adres yeniden denenir.
+// Oturum ve önbellek ana adrese bağlı kalır (site kimliği değişmez).
+const SRV = {
+  ok: (u) => /^https:\/\/ep-[a-z0-9.-]+\.neon\.tech\/[a-z0-9_]+$/i.test(u || ''),
+  info() { try { const o = JSON.parse(localStorage.getItem('sym_srv@' + BASE) || 'null'); return o && this.ok(o.u2) && o.u2 !== BASE ? o : null; } catch { return null; } },
+  save(x) {
+    if (!x || !this.ok(x.u2) || (x.u1 && x.u1 !== BASE)) return;
+    const f2 = /^https:\/\/br-[a-z0-9-]+-odeme\.compute\.[a-z0-9.-]+\.neon\.tech$/i.test(x.f2 || '') ? x.f2 : '';
+    const v = JSON.stringify({ u2: x.u2, f2 });
+    try { if (localStorage.getItem('sym_srv@' + BASE) !== v) localStorage.setItem('sym_srv@' + BASE, v); } catch { }
+  },
+  onAlt() { return +(localStorage.getItem('sym_alt@' + BASE) || 0) > Date.now(); },
+  setAlt(on) { try { if (on) localStorage.setItem('sym_alt@' + BASE, String(Date.now() + 30 * 60000)); else localStorage.removeItem('sym_alt@' + BASE); } catch { } }
+};
+// 1.13.0: masaüstü programı uyandır — talep / rezervasyon / oy vb. yazınca masaüstü hemen eşitlesin (bulut sürekli sorgulanmaz)
+const WAKE_FNS = new Set(['member_new_request', 'member_new_visitor', 'member_new_reservation', 'member_cancel_request', 'member_cancel_visitor', 'member_cancel_reservation',
+  'member_poll_vote', 'member_meter_submit', 'member_emg_reply', 'member_card_pay', 'member_card_add', 'member_card_update', 'member_delete_self', 'mgr_exp', 'mgr_patrol', 'job_update']);
+let wakeT = null;
+function wakePing() {
+  let w = ''; try { w = localStorage.getItem('sym_wake@' + BASE) || ''; } catch { }
+  if (!/^https:\/\/ntfy\.sh\/[A-Za-z0-9_-]{16,64}$/.test(w)) return;
+  clearTimeout(wakeT); wakeT = setTimeout(() => { fetch(w, { method: 'POST', mode: 'no-cors', body: 'sync' }).catch(() => { }); }, 3000);
+}
 const authHeaders = () => Object.assign({ apikey: API_KEY }, /^eyJ/.test(API_KEY) ? { Authorization: 'Bearer ' + API_KEY } : {});
 // 1.8.0: Neon sitesinin herkese açık anahtarını fonksiyondan al (davet linkinde taşınmaz)
 async function resolveKey() {
-  const r = await fetch(CFG.fnUrl + '/anahtar', { cache: 'no-store' });
+  let r;
+  try { r = await fetch(CFG.fnUrl + '/anahtar', { cache: 'no-store' }); if (r.status >= 500 || r.status === 402) throw new Error('fn'); }
+  catch (e) { const si = SRV.info(); if (!si || !si.f2) throw e; r = await fetch(si.f2 + '/anahtar', { cache: 'no-store' }); }   // 1.13.0
   const d = await r.json().catch(() => null);
   const k = d && String(d.k || '');
   if (!r.ok || !/^eyJ[\w-]+\.[\w-]+\.[\w-]+$/.test(k || '') || k.length > 1200) throw new Error('Site bağlantı anahtarı alınamadı (' + r.status + ').');
@@ -290,25 +320,41 @@ async function copyText(t, okMsg) {
 
 // ---------------- API ----------------
 async function rpc(fn, args) {
-  let res;
-  try {
-    res = await fetch(`${BASE}/rest/v1/rpc/${fn}`, {
-      method: 'POST',
-      headers: Object.assign({ apikey: API_KEY, 'Content-Type': 'application/json' }, /^eyJ/.test(API_KEY) ? { Authorization: 'Bearer ' + API_KEY } : {}),
-      body: JSON.stringify(args || {})
-    });
-  } catch (e) {
-    const er = new Error(navigator.onLine === false ? 'İnternet bağlantısı yok.' : 'Sunucuya ulaşılamadı.');
-    er.offline = true; er.raw = String(e && e.message || e); NET.lastErr = er.raw; throw er;
+  const si = SRV.info();
+  const order = si ? (SRV.onAlt() ? [si.u2, BASE] : [BASE, si.u2]) : [BASE];
+  let last = null;
+  for (let i = 0; i < order.length; i++) {
+    const b = order[i], more = i < order.length - 1;
+    let res;
+    try {
+      res = await fetch(`${b}/rest/v1/rpc/${fn}`, {
+        method: 'POST',
+        headers: Object.assign({ apikey: API_KEY, 'Content-Type': 'application/json' }, /^eyJ/.test(API_KEY) ? { Authorization: 'Bearer ' + API_KEY } : {}),
+        body: JSON.stringify(args || {})
+      });
+    } catch (e) {
+      const er = new Error(navigator.onLine === false ? 'İnternet bağlantısı yok.' : 'Sunucuya ulaşılamadı.');
+      er.offline = true; er.raw = String(e && e.message || e); NET.lastErr = er.raw; last = er;
+      if (more && navigator.onLine !== false) continue;
+      throw er;
+    }
+    let data = null; try { data = await res.json(); } catch { }
+    const moved = !res.ok && /SY_YEDEK_SUNUCU/.test((data && data.message) || '');
+    if (!res.ok && more && (moved || res.status >= 500 || res.status === 402 || res.status === 429)) { last = new Error('Sunucu hatası (' + res.status + ')'); continue; }
+    if (si && (res.ok || !moved)) { if (b === si.u2) { if (!SRV.onAlt()) SRV.setAlt(true); } else if (SRV.onAlt()) SRV.setAlt(false); }
+    if (!res.ok) {
+      if (moved) throw new Error('Sunucu şu an bakımda. Lütfen birkaç dakika sonra tekrar deneyin.');
+      throw new Error((data && data.message) ? 'Sunucu hatası: ' + data.message : 'Sunucu hatası (' + res.status + ')');
+    }
+    if (data && data.error) { const er = new Error(data.error); er.code = data.code; er.alt = !!(si && b === si.u2); throw er; }
+    if (WAKE_FNS.has(fn)) wakePing();
+    return data;
   }
-  let data = null; try { data = await res.json(); } catch { }
-  if (!res.ok) throw new Error((data && data.message) ? 'Sunucu hatası: ' + data.message : 'Sunucu hatası (' + res.status + ')');
-  if (data && data.error) { const er = new Error(data.error); er.code = data.code; throw er; }
-  return data;
+  throw last || new Error('Sunucuya ulaşılamadı.');
 }
 async function call(fn, args) {
   try { return await rpc(fn, { p_token: S.token, ...(args || {}) }); }
-  catch (e) { if (e.code === 'SESSION') { forceLogout(e.message); } throw e; }
+  catch (e) { if (e.code === 'SESSION' && !e.alt) { forceLogout(e.message); } if (e.code === 'SESSION' && e.alt) e.message = 'Geçici bağlantı sorunu. Lütfen biraz sonra tekrar deneyin.'; throw e; }   // 1.13.0: yedek adreste oturum yoksa çıkış yaptırılmaz
 }
 
 // ---------------- eski adresten taşınma (v1.4.1) ----------------
@@ -361,6 +407,7 @@ async function refresh(silent) {
   try {
     const d = await call('member_data');
     S.data = d; S.at = new Date().toISOString(); S.offline = false;
+    try { if (d.srv) SRV.save(d.srv); if (d.wake) localStorage.setItem('sym_wake@' + BASE, d.wake); } catch { }   // 1.13.0
     try { Door.onData(d); Ads.sync(d); } catch (x) { console.warn(x); }   // 1.10.0
     try { localStorage.setItem('sym_cache', JSON.stringify({ d, at: S.at })); } catch { }
     if (CFG.central && CFG.siteRaw) MSites.upsert(curSite(), d.site && d.site.site_name, S.token, d.unit ? unitName(d.unit) : '');
@@ -1866,7 +1913,10 @@ if ('serviceWorker' in navigator) navigator.serviceWorker.addEventListener('mess
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible' && S.token && (!S.at || Date.now() - new Date(S.at).getTime() > 60000)) refresh(true);
 });
-setInterval(() => { if (document.visibilityState === 'visible' && S.token) refresh(true); }, 5 * 60000);
+// 1.13.0: ekran açık kalsa da kullanıcı 15 dk dokunmadıysa otomatik yenileme yapılmaz (bulut boşuna uyandırılmaz)
+let lastTouch = Date.now();
+['pointerdown', 'keydown', 'scroll'].forEach(ev => document.addEventListener(ev, () => { lastTouch = Date.now(); }, { passive: true, capture: true }));
+setInterval(() => { if (document.visibilityState === 'visible' && S.token && Date.now() - lastTouch < 15 * 60000) refresh(true); }, 5 * 60000);
 window.addEventListener('online', () => { if (S.token) refresh(true); });
 
 // ---------------- otomatik güncelleme (v1.4.1) ----------------
@@ -2893,6 +2943,7 @@ I18N.boot();
   { const z = /^zil-(\d+)$/.exec(v); if (z) { S.view = 'doors'; setTimeout(() => { if (S.token) Door.fetchRing(z[1], true); }, 50); } }   // 1.10.0: zil bildirimi
   const payRet = (/[?&]odeme=(ok|hata|bekle)\b/.exec(location.search) || [])[1];   // v1.5.0: ödeme sayfasından dönüş
   if (payRet) S.view = 'account';
+  if (payRet === 'ok') setTimeout(wakePing, 800);   // 1.13.0: masaüstü tahsilatı hemen alsın
   // ?davet=… adresten silinir; merkezi uygulamada site bilgisi kalır ki iPhone'da "Ana Ekrana Ekle" ile açılan uygulama da siteyi bilsin.
   // 1.8.1: kısa kimlik (?y=…) varsa o kalır; bağlantı bilgisi (?s=…) yalnızca eski davetlerle gelinmişse.
   history.replaceState({ view: S.view }, '', location.pathname + (CFG.central ? siteQuery({ y: CFG.siteY, raw: CFG.siteRaw }) : '') + '#' + S.view);

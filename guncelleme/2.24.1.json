@@ -1,0 +1,29 @@
+{
+  "product": "site-yonetim",
+  "version": "2.24.1",
+  "date": "2026-10-28",
+  "time": "2026-10-28T18:55:03.964Z",
+  "notes": [
+    "Yeni ilk kurulum ekranı",
+    "• Program ilk kez açıldığında karşınıza çıkan \"Hoş geldiniz\" ekranı yenilendi: solda programın tanıtımı, sağda 3 adımlı, sade bir kurulum sihirbazı (Kurulum türü → Site bilgileri → Yönetici hesabı).",
+    "• Terminal, Site Ofisi, kurtarma kodu ve yedekten geri yükleme seçenekleri ilk adımda büyük kartlar olarak görünür.",
+    "• Site bilgilerine \"İl / ilçe\" alanı, yönetici hesabına \"Şifre (tekrar)\" alanı eklendi."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.24.1/SiteYonetim-Kurulum-2.24.1.exe",
+    "sha512": "TVkxSGWAzwunuoNikQiOwIAz2kArgRoJYtTTBLn6MBWXuHxIYr33FpSidmut0HR5c18gXvaM5GxviVdyC9sYrQ==",
+    "size": 83987213
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.24.1",
+  "lisans": [
+    {
+      "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    },
+    {
+      "u": "https://ep-fancy-pond-b93i3gy6.apirest.c-7.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    }
+  ],
+  "sig": "nCnHCWvDyWf1Jxly8qdv+LZdNvqBjHdw3rCSf9hzhtzI9i8TPS5Wpls7PTZsXvyeLJSmzy6kCYFIZUXXbrtNBw=="
+}

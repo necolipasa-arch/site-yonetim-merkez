@@ -1,21 +1,20 @@
 {
   "product": "site-yonetim",
-  "version": "2.24.0",
+  "version": "2.24.1",
   "date": "2026-10-28",
-  "time": "2026-10-28T18:37:56.848Z",
+  "time": "2026-10-28T18:55:03.964Z",
   "notes": [
-    "Yazılı destek talebi",
-    "• Yeni: Destek penceresinde \"Yazarak Sor\" — teknik servise yazılı soru, hata bildirimi veya istek gönderebilirsiniz (isteğe bağlı ekran görüntüsüyle). Yazılı talepler aylık uzaktan destek hakkından düşmez.",
-    "• \"Taleplerim\" sekmesinde gönderdiğiniz talepleri ve gelen cevapları görürsünüz; ek bilgi yazabilir, sorun çözülünce talebi kapatabilirsiniz.",
-    "• Cevap gelince üst çubukta yeşil \"Destek cevabı geldi\" düğmesi çıkar.",
-    "• Uzak bağlantıyla destek \"Bağlanıp Yardım Etsin\" sekmesinde, eskisi gibi çalışır."
+    "Yeni ilk kurulum ekranı",
+    "• Program ilk kez açıldığında karşınıza çıkan \"Hoş geldiniz\" ekranı yenilendi: solda programın tanıtımı, sağda 3 adımlı, sade bir kurulum sihirbazı (Kurulum türü → Site bilgileri → Yönetici hesabı).",
+    "• Terminal, Site Ofisi, kurtarma kodu ve yedekten geri yükleme seçenekleri ilk adımda büyük kartlar olarak görünür.",
+    "• Site bilgilerine \"İl / ilçe\" alanı, yönetici hesabına \"Şifre (tekrar)\" alanı eklendi."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.24.0/SiteYonetim-Kurulum-2.24.0.exe",
-    "sha512": "nJiTiBJb7pyhh+WFguXkKAUMRR5DzN3WKe0j/rhTgt2Ctg1NjMuiqnbC8F/rPGS6S8PqLo3k0irtOR9oon2DxA==",
-    "size": 83984383
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.24.1/SiteYonetim-Kurulum-2.24.1.exe",
+    "sha512": "TVkxSGWAzwunuoNikQiOwIAz2kArgRoJYtTTBLn6MBWXuHxIYr33FpSidmut0HR5c18gXvaM5GxviVdyC9sYrQ==",
+    "size": 83987213
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.24.0",
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.24.1",
   "lisans": [
     {
       "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
@@ -26,5 +25,5 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "CLvT1mq70m3OKqXEvbg2gWLxl8eHNr1w7iyOMM58NKUNgRKokoup+S7s8SPwcM8oN0I7uR26xwnFzU7+MnKNCQ=="
+  "sig": "nCnHCWvDyWf1Jxly8qdv+LZdNvqBjHdw3rCSf9hzhtzI9i8TPS5Wpls7PTZsXvyeLJSmzy6kCYFIZUXXbrtNBw=="
 }

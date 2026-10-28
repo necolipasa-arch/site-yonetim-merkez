@@ -1,0 +1,20 @@
+{
+  "product": "site-yonetim",
+  "version": "2.19.0",
+  "date": "2026-10-28",
+  "time": "2026-10-28T11:37:23.283Z",
+  "notes": [
+    "Destek isteğinde sorununuzu yazabilirsiniz · daha güvenli güncelleme · otomatik hata bildirimi",
+    "• Destek İste: \"Sorununuz\" kutusuna kısaca ne olduğunu yazabilirsiniz; isteğiniz destek ekibine anında düşer, kodu telefonda okumanıza gerek kalmaz. Destek bağlanana kadar durum ekranda görünür.",
+    "• Güncellemeler artık kademeli gelir: yeni sürüm önce az sayıda sitede denenir, sorun yoksa herkese açılır.",
+    "• Program beklenmedik bir hata alırsa, kişisel veri içermeyen kısa bir hata özeti destek ekibine gönderilir; sorunlar siz bildirmeden düzeltilebilir.",
+    "• Bulut kurulumunda birden çok Neon kuruluşu olan hesaplarda kuruluş seçimi soruluyor."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.19.0/SiteYonetim-Kurulum-2.19.0.exe",
+    "sha512": "kPoF6zI2uxOPdNphH/uIPIkycZIJCyMdoqq1qyFvkOK7vuMWPXnWZZ5RDxpb4hI/oCZveSI6RPYP4ZhLa/eY3w==",
+    "size": 83994014
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.19.0",
+  "sig": "ewc4KjCuC3YFclPeexog/jo2zEhcx//rVSs6zXKQAYD0vpdPGx9j8t3VS+gEDRQu7xzOwSR022akD2dl7M7GAw=="
+}

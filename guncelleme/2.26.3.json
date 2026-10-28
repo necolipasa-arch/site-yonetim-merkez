@@ -1,0 +1,29 @@
+{
+  "product": "site-yonetim",
+  "version": "2.26.3",
+  "date": "2026-10-28",
+  "time": "2026-10-28T23:29:54.650Z",
+  "notes": [
+    "Düzeltmeler",
+    "• Ayarlar → Yedekleme ve Veri → Bulut Yedek bölümünde eski bulut hizmetinin adı (Supabase) yerine genel \"Bulut veritabanı\" ifadesi ve doğru ücretsiz alan sınırı (512 MB) gösterilir.",
+    "• KVKK aydınlatma metninde bulut hizmet sağlayıcısının adı sitenin gerçekten kullandığı hizmete göre yazılır. Metin değiştiği için mobil uygulamada sakinlerden yeniden onay istenebilir.",
+    "• Bulut bağlantı denetimi ve hata mesajları, otomatik kurulan bulutta artık eski kurulumun (SQL Editor) talimatlarını göstermez."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.3/SiteYonetim-Kurulum-2.26.3.exe",
+    "sha512": "lDtiQ7bCS9XEshPqz9cXNI6OfVWzhpZiAgFNIHiSvQp3xmKWKcmgyaQfae/XGexUzp/yAQfkQeb4nTSHa+X+JA==",
+    "size": 84020100
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.26.3",
+  "lisans": [
+    {
+      "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    },
+    {
+      "u": "https://ep-fancy-pond-b93i3gy6.apirest.c-7.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    }
+  ],
+  "sig": "/kV0mVCQAGaakWo1a3cDtFjjUKl2XFvHBvRVbuVVxAGJ7IipEmtgzSsUNHorFhUOD0dbujXxnYVSSA/xvz9IBA=="
+}

@@ -1,18 +1,20 @@
 {
   "product": "site-yonetim",
-  "version": "2.26.2",
+  "version": "2.26.3",
   "date": "2026-10-28",
-  "time": "2026-10-28T22:42:56.571Z",
+  "time": "2026-10-28T23:29:54.650Z",
   "notes": [
-    "İlk kurulum iyileştirmesi",
-    "• Gmail hesabı adımında, kurtarma e-postası olarak firmanızın adresini eklemeniz önerilir (Kopyala düğmesiyle). Google, hesap uzun süre kullanılmazsa silmeden önce ve şüpheli girişlerde bu adrese de uyarı gönderir."
+    "Düzeltmeler",
+    "• Ayarlar → Yedekleme ve Veri → Bulut Yedek bölümünde eski bulut hizmetinin adı (Supabase) yerine genel \"Bulut veritabanı\" ifadesi ve doğru ücretsiz alan sınırı (512 MB) gösterilir.",
+    "• KVKK aydınlatma metninde bulut hizmet sağlayıcısının adı sitenin gerçekten kullandığı hizmete göre yazılır. Metin değiştiği için mobil uygulamada sakinlerden yeniden onay istenebilir.",
+    "• Bulut bağlantı denetimi ve hata mesajları, otomatik kurulan bulutta artık eski kurulumun (SQL Editor) talimatlarını göstermez."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.2/SiteYonetim-Kurulum-2.26.2.exe",
-    "sha512": "Byz2Iw0J7NzE+4qFX8j4Uv/+mMpAfZhRgMhUdESohJmESsG0y/TWc1LtkxvxICulaMWtTtVSLBpL7wPb9k6TZQ==",
-    "size": 84029704
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.3/SiteYonetim-Kurulum-2.26.3.exe",
+    "sha512": "lDtiQ7bCS9XEshPqz9cXNI6OfVWzhpZiAgFNIHiSvQp3xmKWKcmgyaQfae/XGexUzp/yAQfkQeb4nTSHa+X+JA==",
+    "size": 84020100
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.26.2",
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.26.3",
   "lisans": [
     {
       "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
@@ -23,5 +25,5 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "IZiyY/djOx34LRFZcnerpfb+2Usl849gQfME2ZRrURUOWvkBx0m/9oyTUXLj/6VIHLfG+6tYddXh0n6OfOaYDw=="
+  "sig": "/kV0mVCQAGaakWo1a3cDtFjjUKl2XFvHBvRVbuVVxAGJ7IipEmtgzSsUNHorFhUOD0dbujXxnYVSSA/xvz9IBA=="
 }

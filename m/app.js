@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.13.0';
-const APP_BUILD = '20261028170943';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.13.1';
+const APP_BUILD = '20261028233001';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -787,7 +787,7 @@ async function pushCard(box) {
   if (!box) return;
   const d = S.data, key = Push.siteKey();
   const head = `<div class="card-h"><h3>${ic('bell')} Bildirimler</h3></div>`;
-  if (d.push === undefined) { box.innerHTML = head + `<p class="muted small">Bildirimler için sitenin bulut veritabanı henüz güncellenmemiş. Site yönetimi, Supabase'de <b>kurulum.sql 1.8</b>'i bir kez çalıştırmalıdır.</p>${pushDiag()}`; return; }
+  if (d.push === undefined) { box.innerHTML = head + `<p class="muted small">Bildirimler için sitenin bulut veritabanı henüz güncellenmemiş. Site yönetiminin Site Yönetim programını güncel sürümle açması yeterlidir.</p>${pushDiag()}`; return; }
   if (!key) { box.innerHTML = head + `<p class="muted small">Site yönetimi anlık bildirimleri henüz açmadı (masaüstü program: <b>Ayarlar → Bildirimler → Bildirimleri Aç</b>, ardından eşitleme). Açıldığında duyuru, kargo ve ziyaretçi bildirimlerini telefonunuza alabileceksiniz.</p>${pushDiag()}`; return; }
   if (!Push.supported()) {
     box.innerHTML = head + (isIOS() && !isStandalone()

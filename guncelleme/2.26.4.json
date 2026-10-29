@@ -1,0 +1,30 @@
+{
+  "product": "site-yonetim",
+  "version": "2.26.4",
+  "date": "2026-10-29",
+  "time": "2026-10-29T00:05:51.135Z",
+  "notes": [
+    "Düzeltmeler",
+    "• İlk kurulum → Hesaplar adımı: 1366×768 gibi küçük ekranlarda Gmail adımının içeriği taşıyordu; ekran sıkıştırıldı, alt düğmeler kaydırmadan görünür. Adıma geri dönüldüğünde bulut ve VPN durumu tazelenir.",
+    "• Ayarlar → Kartla Ödeme: bulutu henüz kurulmamış sitelerde eski bulut hizmetinin (Supabase) elle kurulum talimatı çıkıyordu; artık \"Bulut kurulunca otomatik kurulur\" bilgisi gösterilir. Bulut veritabanı güncel değilse verilen mesaj da otomatik güncellemeyi anlatır.",
+    "• Buluttaki yedekten geri yükleme sırasında verilen \"veritabanı güncel değil\" mesajı, bağlanılan bulutun türüne göre doğru talimatı gösterir.",
+    "• NetBird API anahtarı pano yakalaması, programın kabul ettiği anahtar biçimiyle aynı hâle getirildi (geçersiz anahtar artık kutuya gelmez)."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.4/SiteYonetim-Kurulum-2.26.4.exe",
+    "sha512": "Xrr0OEPphu/ue4QbO4OF7RCoErGfHI4KjuJGr+F/3KUASbmOZSvQ675FBdT9awVIle2voMg9SPIhrftXQfmLLA==",
+    "size": 84020227
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.26.4",
+  "lisans": [
+    {
+      "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    },
+    {
+      "u": "https://ep-fancy-pond-b93i3gy6.apirest.c-7.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    }
+  ],
+  "sig": "giy4PdeUn0oVOthInccKfIo3oejJRVbw8fbfDgzM2IThb/8+zTYtYpiaknYcpn7alOJIhWQ/Qj9lUcbexw8+Bg=="
+}

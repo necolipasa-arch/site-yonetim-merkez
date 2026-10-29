@@ -1,18 +1,19 @@
 {
   "product": "site-yonetim",
-  "version": "2.26.12",
+  "version": "2.26.13",
   "date": "2026-10-29",
-  "time": "2026-10-29T10:44:02.123Z",
+  "time": "2026-10-29T11:05:33.682Z",
   "notes": [
     "Yeni",
-    "• Basit görünümde Destek, Şifre Değiştir ve Çıkış artık sayfanın üstünde, sekmelerin (ör. Ana Sayfa | Ayrıntılı Özet) sağında yazılı, büyük düğmeler: yeşil \"Destek\", \"Şifre Değiştir\" ve kırmızı \"Çıkış\". Her Basit sayfada aynı yerde durur. Sağ üstteki küçük simgeler Basit görünümde kaldırıldı; Gelişmiş görünüm değişmedi."
+    "• Yeni Ana Sayfa (Basit görünüm): sitenizin tek bakışta özeti. Renkli kartlarda bu ayın tahsilatı, gideri, kasa + banka toplamı ve toplam alacak, geçen aya göre artış/azalışla birlikte. Ayrıca son 12 ayın gelir & gider grafiği (fareyle üzerine gelince ay ay tutarlar), bu ayın aidat tahsilat göstergesi, gider dağılımı, daire doluluğu ve site nabzı (arıza, ziyaretçi, kargo, bakım, rezervasyon, duyuru). Kutulara tıklayınca ilgili sayfa açılır.",
+    "• Eski Ana Sayfa'daki büyük işlem kutucukları aynen \"Hızlı İşlemler\" sekmesinde (Ayrıntılı Özet'in yanında)."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.12/SiteYonetim-Kurulum-2.26.12.exe",
-    "sha512": "QHZ0xZ+xVEzinMHrWi/NswmxXKvTFgey3f0e+P8ncvdTgn70aCUzw0tCvvtnb1K77aaqYqOPIhnPeTOcLn/gIg==",
-    "size": 84023621
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.13/SiteYonetim-Kurulum-2.26.13.exe",
+    "sha512": "o3M+5jB/UL65aadqzTnJyHNJ4ye2/vKbPQoF2q+V6vCC2nq2xqsoqpXj2R1ipOwzB7ovdX28gAk3rwSePzciCQ==",
+    "size": 84036548
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.26.12",
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.26.13",
   "lisans": [
     {
       "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
@@ -23,5 +24,5 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "LO55RMzzcH4T1aQ+bQg5x5mG4dPtYKbYRJ/g2IAD0qw63ahwKgWToopBTKLO6EREOU9fW90AqXVIRt6yh1hJCw=="
+  "sig": "XrQXYSUpd2tfZpkjb6E/2qJE/RP9vhm2TWyUwIw/cST2Wz7llZKSFfWbcxh8AbvZG1riWcIyOL8uqKOHBcTDBQ=="
 }

@@ -439,3 +439,24 @@ a.btn { text-decoration: none; color: inherit; box-sizing: border-box; }
 .qr-cam { position: relative; border-radius: 14px; overflow: hidden; background: #000; aspect-ratio: 1; margin: 10px 0; }
 .qr-cam video { width: 100%; height: 100%; object-fit: cover; } .qr-cam i { position: absolute; inset: 18%; border: 3px solid rgba(255,255,255,.9); border-radius: 14px; }
 .lang-sw { margin-top: 10px; background: rgba(255,255,255,.18); color: #fff; border: 1px solid rgba(255,255,255,.4); border-radius: 18px; padding: 5px 14px; font-size: 13px; font-weight: 600; cursor: pointer; }
+
+/* 1.14.0: belgeler, değerlendirme, yazdırma */
+.red-t { color: var(--red); font-weight: 600; }
+.x-stars i { font-style: normal; color: #cbd5e1; font-size: 15px; letter-spacing: 1px; } .x-stars i.on { color: #f59e0b; }
+.x-rate { display: flex; justify-content: center; gap: 6px; margin: 10px 0 14px; }
+.x-rate button { border: 0; background: none; font-size: 40px; line-height: 1; color: #cbd5e1; padding: 2px; cursor: pointer; } .x-rate button.on { color: #f59e0b; }
+.xdoc-wrap { border: 1px solid var(--line, #e2e8f0); border-radius: 12px; padding: 14px; background: #fff; max-height: 52vh; overflow: auto; }
+.xdoc { color: #111; font-size: 13px; line-height: 1.55; } .xdoc p { margin: 8px 0; }
+.xdoc-h { text-align: center; border-bottom: 2px solid #23284d; padding-bottom: 8px; margin-bottom: 10px; } .xdoc-h b { display: block; font-size: 16px; } .xdoc-h small { color: #555; }
+.xdoc h2 { text-align: center; font-size: 16px; letter-spacing: .5px; margin: 10px 0 2px; } .xdoc-no { text-align: center; color: #555; font-size: 12px; }
+.xdoc-v { display: flex; gap: 12px; align-items: center; border: 1px solid #ccd; border-radius: 8px; padding: 8px 10px; margin-top: 14px; font-size: 12px; }
+.xdoc-qr { width: 92px; height: 92px; flex: none; } .xdoc-qr svg { width: 100%; height: 100%; display: block; }
+.xdoc-f { text-align: right; margin-top: 18px !important; font-weight: 600; }
+.xdoc-t { width: 100%; border-collapse: collapse; font-size: 12px; margin: 8px 0; } .xdoc-t th, .xdoc-t td { border-bottom: 1px solid #ddd; padding: 4px 3px; text-align: left; }
+.xdoc-t .r { text-align: right; white-space: nowrap; } .xdoc-t tfoot td { font-weight: 700; border-top: 2px solid #333; }
+#xPrint { display: none; }
+@media print {
+  body.x-printing > *:not(#xPrint) { display: none !important; }
+  body.x-printing #xPrint { display: block; padding: 10mm; }
+  body.x-printing { background: #fff !important; }
+}

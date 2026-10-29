@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.13.1';
-const APP_BUILD = '20261028233001';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.14.0';
+const APP_BUILD = '20261029145606';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -398,7 +398,9 @@ const SUB = {
   ann: { title: 'Duyurular', parent: 'more' }, cargo: { title: 'Kargolarım', parent: 'more' }, visitors: { title: 'Ziyaretçi Bildirimi', parent: 'more' },
   meetings: { title: 'Toplantılar & Kararlar', parent: 'more' }, polls: { title: 'Anketler', parent: 'more' }, contacts: { title: 'Önemli Telefonlar', parent: 'more' }, profile: { title: 'Profil & Ayarlar', parent: 'more' }, fin: { title: 'Site Finansı', parent: 'more' },
   deals: { get title() { return typeof Ads !== 'undefined' ? Ads.title() : 'Fırsatlar'; }, parent: 'more' }, doors: { title: 'Kapılar', parent: 'more' },
-  meter: { title: 'Sayaç Okuma', parent: 'home' }
+  meter: { title: 'Sayaç Okuma', parent: 'home' },
+  works: { title: 'Tadilat & Taşınma', parent: 'more' }, docs: { title: 'Belgelerim', parent: 'more' }, cons: { title: 'Tüketimim', parent: 'more' },
+  deposits: { title: 'Anahtar & Emanet', parent: 'more' }, gk: { title: 'Genel Kurul', parent: 'more' }   // 1.14.0
 };
 
 async function refresh(silent) {
@@ -413,6 +415,7 @@ async function refresh(silent) {
     if (CFG.central && CFG.siteRaw) MSites.upsert(curSite(), d.site && d.site.site_name, S.token, d.unit ? unitName(d.unit) : '');
     if (document.querySelector('main input:focus')) S.renderLater = true; else render();
     kvkkCheck(); Push.heal(); Setup.autoPush(); Setup.maybeShow();
+    try { const qa = sessionStorage.getItem('sym_qa'); if (qa) { sessionStorage.removeItem('sym_qa'); setTimeout(() => X.fault(qa), 200); } } catch { }   // 1.14.0
     if (!silent) toast('Bilgiler güncellendi');
   } catch (e) {
     if (e.offline) { S.offline = true; render(); if (!silent) toast(e.message, 'error'); }
@@ -452,7 +455,8 @@ function render() {
   }
   if (!CFG.anonKey) { app.innerHTML = notConfigured(); bindConnect(); return; }
   if (S.up) { app.innerHTML = Up.view(); Up.bind(app); return; }   // 1.9.1
-  if (S.job) { app.innerHTML = Job.view(); Job.bind(app); return; }   // 1.11.0: firma iş emri
+  if (S.job) { app.innerHTML = Job.view(); Job.bind(app); return; }
+  if (S.dv) { app.innerHTML = Dv.view(); Dv.bind(app); return; }   // 1.14.0: belge doğrulama (girişsiz)   // 1.11.0: firma iş emri
   if (S.mgr && Mgr.code()) { app.innerHTML = mgrView(); return; }
   if (!S.token) { app.innerHTML = authView(); bindAuth(); return; }
   if (!S.data) { app.innerHTML = `<div class="boot"><img src="icons/icon-192.png" alt=""><div class="spinner"></div><p class="muted">Bilgileriniz yükleniyor…</p></div>`; return; }
@@ -460,7 +464,7 @@ function render() {
   const activeTab = sub ? sub.parent : S.view;
   const d = S.data, u = d.unit || {};
   const siteName = (d.site && d.site.site_name) || CFG.siteName || 'Site Yönetim';
-  const views = { fin: finView, home: homeView, account: accountView, pay: payView, requests: requestsView, reserve: reserveView, more: moreView, ann: annView, cargo: cargoView, visitors: visitorsView, meetings: meetingsView, polls: pollsView, contacts: contactsView, profile: profileView, deals: () => Ads.pageView(), doors: () => Door.view(), meter: () => Meter.view() };
+  const views = { works: () => X.worksView(), docs: () => X.docsView(), cons: () => X.consView(), deposits: () => X.depView(), gk: () => X.gkView(), fin: finView, home: homeView, account: accountView, pay: payView, requests: requestsView, reserve: reserveView, more: moreView, ann: annView, cargo: cargoView, visitors: visitorsView, meetings: meetingsView, polls: pollsView, contacts: contactsView, profile: profileView, deals: () => Ads.pageView(), doors: () => Door.view(), meter: () => Meter.view() };
   const waitingCargo = (d.cargo || []).filter(c => !c.delivered_at).length;
   app.innerHTML = `
     <header class="topbar">
@@ -1001,6 +1005,7 @@ function homeView() {
     ${installBanner()}
     ${balanceCard()}
     ${Meter.homeHtml()}
+    ${X.homeHtml()}
     ${Door.homeHtml()}
     ${Ads.bandHtml('kapi')}
     ${cargo.length ? `<div class="alert purple" data-go="cargo">${ic('package')}<div><b>${cargo.length} kargonuz yönetimde sizi bekliyor</b>${esc(cargo.map(c => c.company).filter(Boolean).join(', '))}</div></div>` : ''}
@@ -1086,6 +1091,7 @@ function requestsView() {
       ${r.job && r.job.status ? `<div class="meta job-st">🛠 ${esc(r.job.firm || 'Firma')}: ${badge(r.job.status, Job.ST[r.job.status])}${r.job.at ? ` <small>${esc(fmt.dt(localTs(r.job.at)))}</small>` : ''}</div>` : ''}
       ${r.resolution ? `<div class="res"><b>Yönetim:</b> ${esc(r.resolution)}${r.resolved_at ? ` <small>(${esc(fmt.date(r.resolved_at))})</small>` : ''}</div>` : ''}
       ${r.status === 'Gönderildi' ? `<div class="meta" style="margin-top:8px">⏳ Yönetime iletildi, kısa süre içinde işleme alınacak.</div>` : ''}
+      ${X.reqExtra(r)}
       ${!['Çözüldü', 'İptal'].includes(r.status) ? `<div class="acts"><button class="btn sm danger" data-cancel-req="${r.kind === 'inbox' ? 'inbox' : 'local'}:${r.id}">İptal Et</button></div>` : ''}
     </div>`).join('') : `<div class="empty">${ic('wrench')}<p>Henüz bir talebiniz yok.<br>Arıza, şikayet veya önerilerinizi buradan iletebilirsiniz.</p></div>`}`;
 }
@@ -1209,6 +1215,7 @@ function moreView() {
       ${li('data-go="visitors"', 'guest', 'green', 'Ziyaretçi Bildirimi', 'Misafirinizi güvenliğe önceden bildirin')}
       ${Ads.moreLi(li)}
       ${S.data.polls === undefined ? '' : li('data-go="polls"', 'poll', 'purple', 'Anketler', pendingPolls().length ? `${pendingPolls().length} anket oyunuzu bekliyor` : 'Site anketlerine oy verin', pendingPolls().length ? badge(String(pendingPolls().length), 'red') : '')}
+      ${X.moreLis(li)}
       ${li('data-go="meetings"', 'gavel', 'blue', 'Toplantılar & Kararlar', 'Genel kurul ve yönetim kararları')}
       ${li('data-go="contacts"', 'phone', 'red', 'Önemli Telefonlar', 'Yönetim, güvenlik, acil durum')}
       ${finData() ? li('data-go="fin"', 'chart', 'teal', 'Site Finansı', 'Kasa, gelir-gider ve aidatların kullanımı') : ''}
@@ -1874,6 +1881,7 @@ document.addEventListener('click', async (e) => {
 function afterRender() {
   const pc = $('#pushCard'); if (pc) pushCard(pc);
   if (S.view === 'meter') Meter.bind();
+  if (S.view === 'gk') X.bind();
   try { Ads.wire(); if (S.view === 'home') setTimeout(() => Ads.maybeSplash(), 400); } catch (x) { console.warn(x); }
   const rf = $('#rsvForm');
   if (rf) rf.onsubmit = async (e) => {
@@ -2910,6 +2918,296 @@ const I18N = {
 };
 I18N.boot();
 
+// =====================================================================
+// 1.14.0 (masaüstü 2.27.0): BORCU YOKTUR (QR doğrulamalı) + HESAP ÖZETİ · TADİLAT & TAŞINMA ·
+//   ORTAK ALAN ARIZA QR'ı (#qa=) · TALEP DEĞERLENDİRME · GENEL KURUL KATILIM · TÜKETİMİM ·
+//   ANAHTAR & EMANET · HERKESE AÇIK BELGE DOĞRULAMA (#dv=)
+// =====================================================================
+P.key = 'M7 14a2 2 0 110-4 2 2 0 010 4zm5.6-4A6 6 0 101 12a6 6 0 0011.6 2H16v3h3v-3h2v-4h-8.4z';
+P.doc = 'M6 2h8l6 6v12a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm7 1.5V9h5.5L13 3.5zM8 13h8v2H8v-2zm0 4h8v2H8v-2z';
+P.truck = 'M3 5h11v9h2V8h3l3 4v5h-2a3 3 0 01-6 0H9a3 3 0 01-6 0H1V7a2 2 0 012-2zm3 13a1 1 0 100-2 1 1 0 000 2zm11 0a1 1 0 100-2 1 1 0 000 2zm1-8v3h3l-2-3h-1z';
+P.star = 'M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z';
+const X = {
+  d() { return (S.data && S.data.x) || null; },
+  on() { return !!this.d(); },
+  WK: ['Tadilat', 'Taşınma (Giriş)', 'Taşınma (Çıkış)'],
+  WST: { 'Bekliyor': 'orange', 'Onaylandı': 'green', 'Reddedildi': 'red', 'Tamamlandı': 'blue', 'İptal': 'gray' },
+  async call(act, args) { return call('member_x', { p_act: act, p_args: args || {} }); },
+  qrSvg(text) { try { const q = qrcode(0, 'M'); q.addData(text); q.make(); return q.createSvgTag({ cellSize: 4, margin: 0, scalable: true }); } catch { return ''; } },
+  // ---- ana sayfa uyarıları ----
+  homeHtml() {
+    const x = this.d(); if (!x) return '';
+    let h = '';
+    const dep = (x.deposits || []).filter(d => !d.delivered_at);
+    if (dep.length) h += `<div class="alert purple" data-go="deposits">${ic('key')}<div><b>Güvenlikte size ait ${dep.length === 1 ? (dep[0].kind === 'Anahtar' ? 'anahtar' : 'emanet') : dep.length + ' emanet'} var</b>${esc(dep.map(d => d.item || d.kind).join(', '))}</div></div>`;
+    const g = x.gk;
+    if (g && g.id && !g.my) h += `<div class="alert blue" data-go="gk">${ic('gavel')}<div><b>Genel kurul: ${esc(fmt.date(g.date1))}${g.time1 ? ' ' + esc(g.time1) : ''}</b>Katılım durumunuzu bildirin</div></div>`;
+    const w = (x.works || []).find(w => w.status === 'Onaylandı' && (w.end_date || w.start_date) >= today());
+    if (w) h += `<div class="alert green" data-go="works">${ic('truck')}<div><b>${esc(w.kind)} onaylandı</b>${esc(fmt.date(w.start_date))}${w.office_note ? ' · ' + esc(w.office_note) : ''}</div></div>`;
+    return h;
+  },
+  moreLis(li) {
+    const x = this.d(); if (!x) return '';
+    const dep = (x.deposits || []).filter(d => !d.delivered_at).length;
+    return li('data-go="works"', 'truck', 'orange', 'Tadilat & Taşınma', 'Bildirin, yönetim onayını buradan görün')
+      + li('data-go="docs"', 'doc', 'blue', 'Belgelerim', 'Borcu yoktur belgesi, yıllık hesap özeti')
+      + ((x.cons || []).length ? li('data-go="cons"', 'meter', 'teal', 'Tüketimim', 'Sayaç tüketim grafiğiniz') : '')
+      + ((x.deposits || []).length ? li('data-go="deposits"', 'key', 'purple', 'Anahtar & Emanet', dep ? `${dep} emanet sizi bekliyor` : 'Teslim edilenler', dep ? badge(String(dep), 'red') : '') : '')
+      + (x.gk && x.gk.id ? li('data-go="gk"', 'gavel', 'blue', 'Genel Kurul', `${fmt.date(x.gk.date1)} · ${x.gk.my ? 'bildiriminiz: ' + x.gk.my.mode : 'katılım bildirin'}`) : '');
+  },
+
+  // ---- TADİLAT & TAŞINMA ----
+  worksView() {
+    const x = this.d() || {}, list = x.works || [], rules = (S.data.site && S.data.site.work_rules) || '';
+    return `<button class="btn primary block" data-xa="worknew" style="margin-bottom:12px">${ic('plus')} Tadilat / Taşınma Bildir</button>
+      ${rules ? `<div class="card"><div class="card-h"><h3>${ic('info')} Site kuralları</h3></div><p class="small" style="white-space:pre-wrap">${esc(rules)}</p></div>` : ''}
+      ${list.length ? list.map(w => `<div class="item"><div class="item-h"><b>${esc(w.kind)}</b>${badge(w.status, this.WST[w.status])}</div>
+        <div class="meta">${esc(fmt.date(w.start_date))}${w.end_date && w.end_date !== w.start_date ? ' – ' + esc(fmt.date(w.end_date)) : ''}${w.time_from ? ' · ' + esc(w.time_from) + '–' + esc(w.time_to || '') : ''}${w.elevator ? ' · asansör koruma' : ''}</div>
+        ${[w.firm, w.plate].filter(Boolean).length ? `<div class="meta">${esc([w.firm, w.plate].filter(Boolean).join(' · '))}</div>` : ''}
+        ${w.note ? `<p>${esc(w.note)}</p>` : ''}
+        ${w.office_note ? `<div class="res"><b>Yönetim:</b> ${esc(w.office_note)}</div>` : ''}
+        ${w.deposit ? `<div class="meta">Depozito: <b>${esc(fmt.money(w.deposit))}</b></div>` : ''}
+        ${['Bekliyor', 'Onaylandı'].includes(w.status) ? `<div class="acts"><button class="btn sm danger" data-xa="workcancel" data-id="${w.id}">İptal Et</button></div>` : ''}</div>`).join('')
+      : `<div class="empty">${ic('truck')}<p>Henüz bildiriminiz yok.<br>Tadilat ya da taşınmadan önce yönetime buradan bildirin.</p></div>`}`;
+  },
+  workSheet() {
+    let kind = 'Tadilat';
+    Sheet.open(`<h3>Tadilat / Taşınma Bildir</h3><form id="workForm">
+      <div class="fld"><label>Tür</label><div class="chips" data-chips="k">${this.WK.map(k => `<button type="button" class="chip ${k === kind ? 'on' : ''}" data-v="${k}">${k}</button>`).join('')}</div></div>
+      <div class="row2"><div class="fld"><label>Başlangıç</label><input type="date" name="d1" min="${today()}" value="${addDays(today(), 1)}" required></div><div class="fld"><label>Bitiş</label><input type="date" name="d2" min="${today()}" value="${addDays(today(), 1)}"></div></div>
+      <div class="row2"><div class="fld"><label>Saat (başlangıç)</label><input type="time" name="t1" value="09:00"></div><div class="fld"><label>Saat (bitiş)</label><input type="time" name="t2" value="18:00"></div></div>
+      <div class="fld"><label>Firma / nakliyeci (isteğe bağlı)</label><input name="firm" maxlength="120"></div>
+      <div class="fld"><label>Araç plakası (isteğe bağlı)</label><input name="plate" maxlength="12" style="text-transform:uppercase"></div>
+      <label class="emg-chk"><input type="checkbox" name="elev"> Asansör koruması / ayırma gerekli</label>
+      <div class="fld"><label>Yapılacak iş / açıklama</label><textarea name="note" maxlength="1000" placeholder="Örn: Mutfak dolapları değişecek, 2 gün sürecek"></textarea></div>
+      <button class="btn primary block" type="submit">${ic('check')} Gönder</button>
+      <p class="muted small center" style="margin-top:8px">Yönetim onayladığında bildirim alırsınız. Onay ve notlar bu ekranda görünür.</p></form>`, (sh) => {
+      sh.querySelector('[data-chips]').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; kind = b.dataset.v; sh.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === b)); });
+      const f = sh.querySelector('#workForm');
+      f.onsubmit = async (e) => {
+        e.preventDefault();
+        const b = f.querySelector('[type=submit]'); b.disabled = true; b.textContent = 'Gönderiliyor…';
+        try {
+          await this.call('work', { kind, start_date: f.d1.value, end_date: f.d2.value || f.d1.value, time_from: f.t1.value, time_to: f.t2.value, firm: f.firm.value.trim(), plate: f.plate.value.trim(), elevator: f.elev.checked, note: f.note.value.trim() });
+          Sheet.close(); toast('Bildiriminiz yönetime iletildi ✓'); if (S.view !== 'works') go('works', true); refresh(true);
+        } catch (x) { toast(x.message, 'error'); b.disabled = false; b.innerHTML = `${ic('check')} Gönder`; }
+      };
+    });
+  },
+
+  // ---- BELGELERİM ----
+  docsView() {
+    const x = this.d() || {}, u = S.data.unit || {}, docs = (x.docs || []).filter(d => d.kind === 'nodebt');
+    const bal = Number(u.balance || 0);
+    return `<div class="card"><div class="card-h"><h3>${ic('doc')} Borcu Yoktur Belgesi</h3></div>
+        <p class="small">Daire satışı, kiralama veya tapu işlemlerinde istenir. Belgede <b>QR doğrulama kodu</b> bulunur; karşı taraf telefonuyla okutarak belgenin gerçek olduğunu kontrol eder. 30 gün geçerlidir.</p>
+        ${bal > 0.004 ? `<div class="alert orange" style="margin-top:10px">${ic('alert')}<div><b>${esc(fmt.money(bal))} ödenmemiş borcunuz görünüyor</b>Borç kapandıktan sonra belge alabilirsiniz.</div></div>` : `<button class="btn primary block" data-xa="nodebt" style="margin-top:10px">${ic('doc')} Belge Oluştur</button>`}</div>
+      ${docs.length ? `<div class="sec-title">Aldığınız belgeler</div><div class="list">${docs.map(d => `<div class="li" data-xa="docshow" data-code="${esc(d.code)}"><span class="li-ic qi ${d.revoked ? 'red' : 'blue'}">${ic('doc')}</span><div class="li-b"><b>Borcu yoktur · ${esc(d.no || '')}</b><small>${esc(fmt.date(d.issued))} · ${d.revoked ? 'iptal edildi' : (d.valid_until && d.valid_until < today() ? 'süresi doldu' : 'geçerli: ' + esc(fmt.date(d.valid_until)))}</small></div>${ic('chev', 'chev')}</div>`).join('')}</div>` : ''}
+      <div class="card"><div class="card-h"><h3>${ic('receipt')} Yıllık Hesap Özeti</h3></div>
+        <p class="small">Seçtiğiniz yılın tahakkuk ve ödemelerini yazdırın / PDF olarak kaydedin.</p>
+        <div class="chips" style="margin-top:8px">${[0, 1, 2].map(i => { const y = new Date().getFullYear() - i; return `<button class="chip" data-xa="stmt" data-y="${y}">${y}</button>`; }).join('')}</div></div>`;
+  },
+  docHtml(d) {
+    const site = (S.data.site || {}), link = appUrl() + '#dv=' + d.code;
+    return `<div class="xdoc">
+      <div class="xdoc-h"><b>${esc(site.site_name || d.site || 'Site Yönetimi')}</b>${site.site_address ? `<small>${esc(site.site_address)}</small>` : ''}</div>
+      <h2>BORCU YOKTUR YAZISI</h2><p class="xdoc-no">No: ${esc(d.no || '')} · Tarih: ${esc(fmt.date(d.issued))}</p>
+      <p><b>İLGİLİ MAKAMA / İLGİLİ KİŞİYE</b></p>
+      <p>${esc(site.site_name || '')} bünyesindeki <b>${esc(d.unit || '')}</b> numaralı bağımsız bölümün${d.holder ? ` (malik: <b>${esc(d.holder)}</b>)` : ''}, <b>${esc(fmt.date(d.issued))}</b> tarihi itibarıyla site yönetimi kayıtlarına göre aidat, ortak gider ve diğer ödemelerden kaynaklanan <b>herhangi bir borcu bulunmamaktadır.</b></p>
+      ${d.credit ? `<p>Bağımsız bölümün ayrıca ${esc(fmt.money(d.credit))} tutarında alacak (avans) bakiyesi bulunmaktadır.</p>` : ''}
+      <p>Bu belge sakin tarafından site mobil uygulamasından alınmıştır; düzenlenme tarihinden sonra tahakkuk edecek ödemeleri kapsamaz. Geçerlilik: ${esc(fmt.date(d.valid_until))}.</p>
+      <div class="xdoc-v"><div class="xdoc-qr">${this.qrSvg(link)}</div><div><b>Belge doğrulama</b><br>Telefon kamerasıyla QR kodu okutun veya site mobil uygulamasında kodu girin.<br>Doğrulama kodu: <b>${esc(d.code.replace(/(.{5})/, '$1-'))}</b></div></div>
+      <p class="xdoc-f">${esc(site.site_name || '')} Yönetimi${site.manager_name ? ' · ' + esc(site.manager_name) : ''}</p></div>`;
+  },
+  showDoc(d) {
+    Sheet.open(`<h3>Borcu Yoktur Belgesi</h3><div class="xdoc-wrap">${this.docHtml(d)}</div>
+      <button class="btn primary block" data-xprint style="margin-top:12px">${ic('download')} Yazdır / PDF Kaydet</button>
+      <button class="btn block" data-xshare style="margin-top:8px">${ic('share')} Doğrulama Linkini Paylaş</button>`, (sh) => {
+      sh.querySelector('[data-xprint]').onclick = () => this.print(this.docHtml(d));
+      sh.querySelector('[data-xshare]').onclick = () => { const l = appUrl() + '#dv=' + d.code, t = `Borcu yoktur belgesi doğrulama (${d.no}): ${l}`; if (navigator.share) navigator.share({ text: t }).catch(() => { }); else copyText(t, 'Link kopyalandı ✓'); };
+    });
+  },
+  print(html) {
+    let el = document.getElementById('xPrint'); if (!el) { el = document.createElement('div'); el.id = 'xPrint'; document.body.appendChild(el); }
+    el.innerHTML = html; document.body.classList.add('x-printing');
+    const done = () => { document.body.classList.remove('x-printing'); el.innerHTML = ''; window.removeEventListener('afterprint', done); };
+    window.addEventListener('afterprint', done);
+    setTimeout(() => { try { window.print(); } catch { } setTimeout(done, 60000); }, 120);
+  },
+  stmtHtml(y) {
+    const d = S.data, u = d.unit || {}, site = d.site || {};
+    const L = (d.ledger || []).filter(l => String(l.date || '').slice(0, 4) === String(y)).sort((a, b) => String(a.date).localeCompare(String(b.date)));
+    const ta = L.filter(l => l.kind === 'Tahakkuk').reduce((s, l) => s + Number(l.amount || 0), 0), tp = L.filter(l => l.kind === 'Tahsilat').reduce((s, l) => s + Number(l.amount || 0), 0);
+    return `<div class="xdoc"><div class="xdoc-h"><b>${esc(site.site_name || 'Site Yönetimi')}</b><small>${esc(unitName(u))} · ${esc((d.member || {}).full_name || '')}</small></div>
+      <h2>${y} YILI HESAP ÖZETİ</h2>
+      <table class="xdoc-t"><thead><tr><th>Tarih</th><th>Açıklama</th><th class="r">Borç</th><th class="r">Ödeme</th></tr></thead><tbody>
+      ${L.map(l => `<tr><td>${esc(fmt.date(l.date))}</td><td>${esc(l.description || l.type || '')}${l.period ? ' · ' + esc(fmt.period(l.period)) : ''}</td><td class="r">${l.kind === 'Tahakkuk' ? esc(fmt.money(l.amount)) : ''}</td><td class="r">${l.kind === 'Tahsilat' ? esc(fmt.money(l.amount)) : ''}</td></tr>`).join('') || '<tr><td colspan="4">Bu yıl için hareket yok.</td></tr>'}
+      </tbody><tfoot><tr><td colspan="2">TOPLAM</td><td class="r">${esc(fmt.money(ta))}</td><td class="r">${esc(fmt.money(tp))}</td></tr></tfoot></table>
+      <p>Güncel bakiye: <b>${esc(fmt.money(u.balance || 0))}</b> ${Number(u.balance || 0) > 0 ? '(borç)' : Number(u.balance || 0) < 0 ? '(alacak)' : ''} · Düzenlenme: ${esc(fmt.date(today()))}</p>
+      <p class="xdoc-f">Bu özet site mobil uygulamasından alınmıştır; resmî yazı yerine geçmez.</p></div>`;
+  },
+
+  // ---- TÜKETİMİM ----
+  consView() {
+    const list = (this.d() || {}).cons || [];
+    if (!list.length) return `<div class="empty">${ic('meter')}<p>Henüz tüketim verisi yok.</p></div>`;
+    return list.map(c => {
+      const data = c.data || [], max = Math.max(1, ...data.map(x => Number(x[1]) || 0)), n = data.length || 1;
+      const last = data[data.length - 1], prev = data.slice(-5, -1), avg = prev.length ? prev.reduce((s, x) => s + Number(x[1]), 0) / prev.length : null;
+      const ch = avg && last ? (last[1] - avg) * 100 / avg : null;
+      const bars = data.map((x, i) => { const h = Math.round((Number(x[1]) || 0) * 110 / max), bw = 260 / n; return `<rect x="${i * bw + 3}" y="${120 - h}" width="${Math.max(6, bw - 6)}" height="${h}" rx="3" fill="${i === n - 1 ? '#0fa597' : '#93c5fd'}"/><text x="${i * bw + bw / 2}" y="134" font-size="8" text-anchor="middle" fill="#64748b">${esc(String(x[0]).slice(5))}</text>`; }).join('');
+      return `<div class="card"><div class="card-h"><h3>${ic('meter')} ${esc(c.type)}</h3></div>
+        <svg viewBox="0 0 266 140" style="width:100%">${bars}</svg>
+        ${last ? `<div class="kv"><span>Son dönem (${esc(fmt.period(last[0]))})</span><b>${esc(String(last[1]))}</b></div>` : ''}
+        ${avg != null ? `<div class="kv"><span>Önceki dönemler ortalaması</span><b>${esc(avg.toFixed(2))}</b></div>` : ''}
+        ${ch != null ? `<p class="small ${ch > 60 ? 'red-t' : 'muted'}" style="margin-top:6px">${ch > 60 ? '⚠️ ' : ''}Son dönem ortalamaya göre ${ch > 0 ? '%' + Math.round(ch) + ' fazla' : '%' + Math.round(-ch) + ' az'}.${ch > 150 ? ' Tesisatta kaçak olabilir; kontrol ettirmenizi öneririz.' : ''}</p>` : ''}</div>`;
+    }).join('');
+  },
+
+  // ---- ANAHTAR & EMANET ----
+  depView() {
+    const list = (this.d() || {}).deposits || [];
+    if (!list.length) return `<div class="empty">${ic('key')}<p>Güvenlikte size ait emanet yok.</p></div>`;
+    return `<div class="list">${list.map(d => `<div class="li"><span class="li-ic qi ${d.delivered_at ? 'green' : 'purple'}">${ic('key')}</span><div class="li-b"><b>${esc(d.item || d.kind)}</b><small>${esc(d.kind)} · ${d.delivered_at ? 'teslim edildi ' + esc(fmt.dt(d.delivered_at)) : 'bırakıldı ' + esc(fmt.dt(d.received_at)) + (d.place ? ' · ' + esc(d.place) : '')}</small></div>${d.delivered_at ? badge('Teslim', 'green') : badge('Bekliyor', 'orange')}</div>`).join('')}</div>
+      <p class="muted small center">Emanetinizi kimliğinizle güvenlikten / yönetimden teslim alabilirsiniz.</p>`;
+  },
+
+  // ---- GENEL KURUL ----
+  gkView() {
+    const g = (this.d() || {}).gk;
+    if (!g || !g.id) return `<div class="empty">${ic('gavel')}<p>Yaklaşan genel kurul toplantısı yok.</p></div>`;
+    const items = Array.isArray(g.items) ? g.items : [];
+    return `<div class="card"><div class="card-h"><h3>${ic('gavel')} ${esc(g.title || 'Genel Kurul')}</h3></div>
+      <div class="kv"><span>1. toplantı</span><b>${esc(fmt.date(g.date1))} ${esc(g.time1 || '')}</b></div>
+      ${g.date2 ? `<div class="kv"><span>2. toplantı</span><b>${esc(fmt.date(g.date2))} ${esc(g.time2 || g.time1 || '')}</b></div>` : ''}
+      ${g.place ? `<div class="kv"><span>Yer</span><b>${esc(g.place)}</b></div>` : ''}
+      ${items.length ? `<div class="sec-title" style="margin:12px 0 6px">Gündem</div><ol class="small" style="padding-left:20px">${items.map(t => `<li>${esc(t)}</li>`).join('')}</ol>` : ''}</div>
+      ${g.my ? `<div class="alert green">${ic('check')}<div><b>Bildiriminiz: ${esc(g.my.mode)}</b>${g.my.proxy ? 'Vekil: ' + esc(g.my.proxy) : ''} · değiştirmek için aşağıdan tekrar seçin</div></div>` : ''}
+      <div class="card"><div class="card-h"><h3>Katılım durumunuz</h3></div><form id="gkForm">
+        <div class="chips" data-chips="m">${['Katılacağım', 'Vekil Göndereceğim', 'Katılamayacağım'].map(m => `<button type="button" class="chip ${g.my && g.my.mode === m ? 'on' : ''}" data-v="${m}">${m}</button>`).join('')}</div>
+        <div class="fld" data-px style="margin-top:10px;${g.my && g.my.mode === 'Vekil Göndereceğim' ? '' : 'display:none'}"><label>Vekilin adı soyadı</label><input name="proxy" maxlength="120" value="${esc((g.my && g.my.proxy) || '')}"></div>
+        <div class="fld"><label>Not (isteğe bağlı)</label><input name="note" maxlength="300"></div>
+        <button class="btn primary block" type="submit">${ic('check')} Bildir</button>
+        <p class="muted small center" style="margin-top:8px">Vekiliniz toplantıda <b>imzalı vekâletname</b> getirmelidir (KMK m.31). Bu bildirim yönetime ön bilgidir.</p></form></div>`;
+  },
+
+  // ---- ORTAK ALAN ARIZA QR (#qa=) ----
+  async fault(code) {
+    let r;
+    try { r = await this.call('fault_point', { code }); }
+    catch (e) { toast(e.code === 'NOPOINT' ? e.message : 'QR kodu açılamadı: ' + e.message, 'error'); return; }
+    const p = r.point || {}, open = r.open || [];
+    let img = null, pri = 'Normal';
+    Sheet.open(`<h3>${ic('wrench')} ${esc(p.name)}</h3>${p.place ? `<p class="muted small">${esc(p.place)}</p>` : ''}
+      ${open.length ? `<div class="alert orange" style="margin-top:10px">${ic('info')}<div><b>Bu yer için zaten bildirilmiş ${open.length} talep var</b>${esc(open.slice(0, 3).map(o => `${o.title} (${o.status})`).join(', '))}. Yönetim ilgileniyor; farklı bir sorunsa yine de bildirebilirsiniz.</div></div>` : ''}
+      <form id="qaForm">
+        <button type="button" class="mt-photo" data-qaph><span data-qaimg>📷</span><b>Fotoğraf ekleyin (önerilir)</b><small>Sorunu gösteren bir fotoğraf</small></button>
+        <div class="fld"><label>Ne oldu?</label><textarea name="d" maxlength="2000" placeholder="Örn: Asansör 3. katta kapı açılmıyor" required></textarea></div>
+        <div class="fld"><label>Öncelik</label><div class="chips" data-chips="p">${['Normal', 'Yüksek', 'Acil'].map(c => `<button type="button" class="chip ${c === pri ? 'on' : ''}" data-v="${c}">${c}</button>`).join('')}</div></div>
+        <button class="btn primary block" type="submit">${ic('check')} Gönder</button></form>`, (sh) => {
+      sh.querySelector('[data-chips="p"]').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; pri = b.dataset.v; sh.querySelectorAll('[data-chips="p"] .chip').forEach(c => c.classList.toggle('on', c === b)); });
+      sh.querySelector('[data-qaph]').onclick = async () => {
+        const file = await pickPhoto(true); if (!file) return;
+        try { img = await imgB64(file, 1280, 380000); sh.querySelector('[data-qaimg]').innerHTML = `<img src="data:image/jpeg;base64,${img}" alt="">`; sh.querySelector('[data-qaph] b').textContent = 'Fotoğraf hazır ✓'; } catch (e) { toast(e.message, 'error'); }
+      };
+      const f = sh.querySelector('#qaForm');
+      f.onsubmit = async (e) => {
+        e.preventDefault();
+        if (f.d.value.trim().length < 3) return toast('Kısaca ne olduğunu yazın.', 'error');
+        const b = f.querySelector('[type=submit]'); b.disabled = true; b.textContent = 'Gönderiliyor…';
+        try { await this.call('fault', { code, description: f.d.value.trim(), priority: pri, img }); Sheet.close(); toast('Arıza bildiriminiz yönetime iletildi ✓'); go('requests', true); refresh(true); }
+        catch (x) { toast(x.message, 'error'); b.disabled = false; b.innerHTML = `${ic('check')} Gönder`; }
+      };
+    });
+  },
+
+  // ---- TALEP DEĞERLENDİRME ----
+  rated(id) { const x = this.d(); return x && x.ratings ? Number(x.ratings[String(id)]) || 0 : 0; },
+  stars(n) { return `<span class="x-stars">${[1, 2, 3, 4, 5].map(i => `<i class="${i <= n ? 'on' : ''}">★</i>`).join('')}</span>`; },
+  reqExtra(r) {
+    if (!this.on() || r.kind === 'inbox' || r.status !== 'Çözüldü') return '';
+    const n = this.rated(r.id);
+    return n ? `<div class="meta">Değerlendirmeniz: ${this.stars(n)}</div>` : `<div class="acts"><button class="btn sm primary" data-xa="rate" data-id="${r.id}">${ic('star')} Değerlendir</button></div>`;
+  },
+  rateSheet(id) {
+    let n = 0;
+    Sheet.open(`<h3>Talebiniz nasıl çözüldü?</h3><div class="x-rate" data-r>${[1, 2, 3, 4, 5].map(i => `<button type="button" data-n="${i}">★</button>`).join('')}</div>
+      <div class="fld"><label>Yorumunuz (isteğe bağlı)</label><textarea data-note maxlength="500" placeholder="Hızlı ve özenliydi / geç kalındı…"></textarea></div>
+      <button class="btn primary block" data-send>${ic('check')} Gönder</button>`, (sh) => {
+      const bs = [...sh.querySelectorAll('[data-n]')];
+      bs.forEach(b => b.onclick = () => { n = Number(b.dataset.n); bs.forEach(x => x.classList.toggle('on', Number(x.dataset.n) <= n)); });
+      sh.querySelector('[data-send]').onclick = async (e) => {
+        const btn = e.currentTarget;
+        if (!n) return toast('Yıldız seçin.', 'error');
+        btn.disabled = true;
+        try { await this.call('rate', { req: id, stars: n, note: sh.querySelector('[data-note]').value.trim() }); Sheet.close(); toast('Teşekkürler, değerlendirmeniz iletildi ✓'); refresh(true); }
+        catch (x) { toast(x.message, 'error'); btn.disabled = false; }
+      };
+    });
+  },
+
+  // ---- eylemler ----
+  async act(b) {
+    const a = b.dataset.xa;
+    if (a === 'worknew') return this.workSheet();
+    if (a === 'workcancel') { if (!confirm('Bildirim iptal edilsin mi?')) return; try { await this.call('work_cancel', { id: Number(b.dataset.id) }); toast('İptal edildi'); refresh(true); } catch (x) { toast(x.message, 'error'); } return; }
+    if (a === 'nodebt') {
+      b.disabled = true;
+      try { const d = await this.call('nodebt'); refresh(true); this.showDoc(d); }
+      catch (x) { toast(x.message, 'error'); }
+      b.disabled = false; return;
+    }
+    if (a === 'docshow') { const d = ((this.d() || {}).docs || []).find(x => x.code === b.dataset.code); if (d) this.showDoc({ ...d, site: (S.data.site || {}).site_name }); return; }
+    if (a === 'stmt') return this.print(this.stmtHtml(b.dataset.y));
+    if (a === 'rate') return this.rateSheet(Number(b.dataset.id));
+  },
+  bind() {
+    const f = $('#gkForm'); if (!f) return;
+    let mode = ((this.d() || {}).gk || {}).my ? this.d().gk.my.mode : null;
+    f.querySelector('[data-chips]').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; mode = b.dataset.v; f.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === b)); f.querySelector('[data-px]').style.display = mode === 'Vekil Göndereceğim' ? '' : 'none'; });
+    f.onsubmit = async (e) => {
+      e.preventDefault();
+      if (!mode) return toast('Bir seçim yapın.', 'error');
+      const b = f.querySelector('[type=submit]'); b.disabled = true;
+      try { await this.call('gk', { id: this.d().gk.id, mode, proxy: f.proxy.value.trim(), note: f.note.value.trim() }); toast('Bildiriminiz yönetime iletildi ✓'); await refresh(true); }
+      catch (x) { toast(x.message, 'error'); b.disabled = false; }
+    };
+  }
+};
+document.addEventListener('click', (e) => { const b = e.target.closest('[data-xa]'); if (b && !b.disabled) { e.preventDefault(); X.act(b); } });
+
+// ---- herkese açık belge doğrulama (#dv=KOD) — giriş gerekmez ----
+const Dv = {
+  code: '', info: null, err: '', busy: true,
+  async load() {
+    this.busy = true; render();
+    try { this.info = await rpc('doc_verify', { p_code: this.code }); this.err = ''; }
+    catch (e) { this.info = null; this.err = e.message || String(e); this.errCode = e.code; }
+    this.busy = false; render();
+  },
+  view() {
+    if (this.busy) return `<div class="boot"><img src="icons/icon-192.png" alt=""><div class="spinner"></div><p class="muted">Belge doğrulanıyor…</p></div>`;
+    const i = this.info, ok = i && !i.revoked && !i.expired;
+    return `<div class="up-top"><small>Belge doğrulama</small><h1>${esc((i && i.site) || 'Site Yönetimi')}</h1><small>Kod: ${esc(this.code)}</small></div>
+      <div class="up-wrap">
+        ${i ? `<div class="card" style="text-align:center"><div style="font-size:52px;line-height:1">${ok ? '✅' : '⚠️'}</div>
+          <h2 style="margin:8px 0">${ok ? 'Belge geçerli' : i.revoked ? 'Belge iptal edilmiş' : 'Belgenin süresi dolmuş'}</h2>
+          <p class="muted small">${i.kind === 'nodebt' ? 'Borcu yoktur yazısı' : esc(i.kind)} · ${i.src === 'mobil' ? 'sakin mobil uygulamasından alındı' : 'site yönetimince düzenlendi'}</p></div>
+          <div class="card"><div class="kv"><span>Bağımsız bölüm</span><b>${esc(i.unit || '')}</b></div>${i.holder ? `<div class="kv"><span>Malik</span><b>${esc(i.holder)}</b></div>` : ''}
+          <div class="kv"><span>Belge no</span><b>${esc(i.no || '')}</b></div><div class="kv"><span>Düzenlenme</span><b>${esc(fmt.date(i.issued))}</b></div>
+          ${i.valid_until ? `<div class="kv"><span>Geçerlilik</span><b>${esc(fmt.date(i.valid_until))}</b></div>` : ''}</div>
+          <p class="muted small center">Belgedeki bilgilerin bu ekrandakiyle aynı olduğunu kontrol edin. Belge, düzenlendiği tarihteki kayıtları gösterir.</p>`
+        : `<div class="card" style="text-align:center"><div style="font-size:52px;line-height:1">❌</div><h2 style="margin:8px 0">${this.errCode === 'NOTFOUND' ? 'Belge bulunamadı' : 'Doğrulanamadı'}</h2><p class="muted small">${esc(this.err)}</p>
+          <button class="btn primary" data-dvre style="margin-top:10px">Tekrar Dene</button></div>`}
+        ${S.token ? `<button class="btn block" data-dvx style="margin-top:10px">Uygulamaya Dön</button>` : ''}
+      </div>`;
+  },
+  bind(app) {
+    const r = app.querySelector('[data-dvre]'); if (r) r.onclick = () => this.load();
+    const x = app.querySelector('[data-dvx]'); if (x) x.onclick = () => { S.dv = false; history.replaceState({ view: 'home' }, '', location.pathname + location.search + '#home'); render(); };
+  }
+};
+
 (async function start() {
   if (DIR_PENDING) {   // 1.8.1: kısa davet linki (?d=KOD) / site kimliği (?y=…)
     S.dirBusy = true; render();
@@ -2931,6 +3229,10 @@ I18N.boot();
     if (up && CFG.anonKey) { S.up = up.toUpperCase(); Up.load(); return; } }
   { const jt = (/[#&]is=([A-Za-z0-9]{12,32})/.exec(location.hash || '') || [])[1];   // 1.11.0: firma iş emri linki
     if (jt && CFG.anonKey) { S.job = true; Job.tok = jt.toUpperCase(); history.replaceState(null, '', location.pathname + location.search); Job.load(); return; } }
+  { const dv = (/[#&]dv=([A-Za-z0-9-]{6,24})/.exec(location.hash || '') || [])[1];   // 1.14.0: belge doğrulama QR'ı
+    if (dv && CFG.anonKey) { S.dv = true; Dv.code = dv.replace(/-/g, '').toUpperCase(); history.replaceState(null, '', location.pathname + location.search); Dv.load(); return; } }
+  { const qa = (/[#&]qa=([A-Za-z0-9]{4,24})/.exec(location.hash || '') || [])[1];   // 1.14.0: ortak alan arıza QR'ı
+    if (qa && CFG.anonKey) { try { sessionStorage.setItem('sym_qa', qa.toUpperCase()); } catch { } history.replaceState(null, '', location.pathname + location.search); if (!S.token) setTimeout(() => toast('Arızayı bildirmek için önce giriş yapın.'), 600); } }
   const tq = (/[#&]tq=([A-Za-z0-9]{3,24})/.exec(location.hash || '') || [])[1];   // 1.11.0: tur noktası QR
   if (tq && CFG.anonKey) { if (Mgr.code()) { S.mgr = true; S.mgrTab = 'tur'; Mgr.mode(true); setTimeout(() => Mgr.load(true), 0); } setTimeout(() => MgrX.scan(tq), 300); }
   { const yk = (/[#&]yk=([A-Za-z0-9]{8,24})/.exec(location.hash || '') || [])[1];   // 1.9.0: yönetici linki

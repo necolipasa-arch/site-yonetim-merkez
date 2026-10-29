@@ -1,14 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.28.2",
+  "version": "2.29.0",
   "date": "2026-10-29",
-  "time": "2026-10-29T15:56:13.837Z",
+  "time": "2026-10-29T20:25:49.955Z",
+  "notesX": "D7O3WsQjOB2f1ntXSnd+XkhDHpuo5EAQjKzHRYd2H38epCXPn8LN16BPaiiarKytjU9l8E4Gaj6naEuO68F6hBzGiZXOJwpzfCdHhO6e47JUff/TVgqXQ8f4Z7Mhw6KJEEYK6fKHzz9o8jwh0+wh3LszJqMYCM++SYd51cYGBqMzy/Y2F3rFCsgYRN1QNLqizzpQR5zd6ZVuCHfNHxFJDw+bhEHuo0CIG73RysvVC0KLXT+/2bWZYyBMtbMIOdy6/aAYo6HhXLWf10yF7oz4/OY8jJHz5RbfJC0l7KkkLKDN2o0NqjH3kTTv20qCNwBGbcP2c+GIge8sHFTJm3EPC3X9O8Uc27bXmVptCdOUXwTUKAh/rh6gfOgen1lmccJhrGTabKsz1GtE0b4DE7GvCzDtLrh2KcR0pJ+Jo+/HeOUAidn27yJOo4GZMbNGxvBcjzQ=",
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.28.2/SiteYonetim-Kurulum-2.28.2.exe",
-    "sha512": "P+MAKiqWewJru50Wyj2eu1H9Eq/PYBtuV6MUlCNQenWILxrMgTgNgnNqF3zNr4YhmnUwZ8nanxc8QkmQhGIliA==",
-    "size": 84268218
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.29.0/SiteYonetim-Kurulum-2.29.0.exe",
+    "sha512": "zWCs7AmX+U5G049x+vVfmBj+PTWLS5U14aOxKT/Kg6HmS4auYE+KBa5mFtsJVw+1uuEc3yYSsTQXspkpvzXnTw==",
+    "size": 84610632
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.28.2",
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.29.0",
   "lisans": [
     {
       "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
@@ -19,6 +20,5 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "notesX": "mBVRBfJp/tBzn77CluWYRI7qGVqlQJ+RmLuSWaFpmFDZEBOmuc8QXhdBdhST8x1fa3Yi1Q6iMUuZUFUl/uTrGIxPco4mdrnCuOjw30de99qoQQtSrD6nNtBA22OfnLlPpuYH4W57syk90LJ6fqSMb99lHPHqZWCiKJKJpVnI0J4UjXVuoaEVb20nYFi7GYBU2TlZ5E4s8djDRFJ7jbesjauMZSA0eb8uQrwYCiMgRo04szGOqikBy7LDQUmMb0RJxjcA09mJ+JVezbR74WBiDznTrgyNmoI2rTo78vfHzE6c61uEpLZAZsA16a1K2rqwqtGNv2r2q95AKvbm5gclKnOpViPpf4d/qjzsNbuI+bTTZiNlrpN0p2CH+s3eXyNkTfj0O20rRbxTMu/eUovAf1RSOW3xSCJ1wdyqO60dNKt4iUtGE9xD8rCAhjitYxiC2U507OrNyYjN+VoGqst8P96IsC4+jBRKYcj9s9PP",
-  "sig": "Nm/DK+kd7tz2bA+p+UuwjELqatCE89LLHLgDynrRCzeYnWniQZZ6JIzK9x4Ejbo3C+3dLMPd+z+gt6qZIlWRDw=="
+  "sig": "BP7QFJnyigYwSnnWtG5+yVNUWbAXVQ8jG2xER8dsO9k6iMbwCXSTrGTWyCTxktemDiyUxMOCbcWEieg8712TBg=="
 }

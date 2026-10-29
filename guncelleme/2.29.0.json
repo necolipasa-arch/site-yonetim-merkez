@@ -1,0 +1,24 @@
+{
+  "product": "site-yonetim",
+  "version": "2.29.0",
+  "date": "2026-10-29",
+  "time": "2026-10-29T20:25:49.955Z",
+  "notesX": "D7O3WsQjOB2f1ntXSnd+XkhDHpuo5EAQjKzHRYd2H38epCXPn8LN16BPaiiarKytjU9l8E4Gaj6naEuO68F6hBzGiZXOJwpzfCdHhO6e47JUff/TVgqXQ8f4Z7Mhw6KJEEYK6fKHzz9o8jwh0+wh3LszJqMYCM++SYd51cYGBqMzy/Y2F3rFCsgYRN1QNLqizzpQR5zd6ZVuCHfNHxFJDw+bhEHuo0CIG73RysvVC0KLXT+/2bWZYyBMtbMIOdy6/aAYo6HhXLWf10yF7oz4/OY8jJHz5RbfJC0l7KkkLKDN2o0NqjH3kTTv20qCNwBGbcP2c+GIge8sHFTJm3EPC3X9O8Uc27bXmVptCdOUXwTUKAh/rh6gfOgen1lmccJhrGTabKsz1GtE0b4DE7GvCzDtLrh2KcR0pJ+Jo+/HeOUAidn27yJOo4GZMbNGxvBcjzQ=",
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.29.0/SiteYonetim-Kurulum-2.29.0.exe",
+    "sha512": "zWCs7AmX+U5G049x+vVfmBj+PTWLS5U14aOxKT/Kg6HmS4auYE+KBa5mFtsJVw+1uuEc3yYSsTQXspkpvzXnTw==",
+    "size": 84610632
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.29.0",
+  "lisans": [
+    {
+      "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    },
+    {
+      "u": "https://ep-fancy-pond-b93i3gy6.apirest.c-7.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    }
+  ],
+  "sig": "BP7QFJnyigYwSnnWtG5+yVNUWbAXVQ8jG2xER8dsO9k6iMbwCXSTrGTWyCTxktemDiyUxMOCbcWEieg8712TBg=="
+}

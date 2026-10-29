@@ -1,31 +1,19 @@
 {
   "product": "site-yonetim",
-  "version": "2.27.0",
+  "version": "2.28.0",
   "date": "2026-10-29",
-  "time": "2026-10-29T14:55:58.916Z",
+  "time": "2026-10-29T15:26:11.417Z",
   "notes": [
     "Yeni",
-    "• Borç Takibi → Otomatik: her ay seçtiğiniz günlerde geciken borçlulara hatırlatma. \"Önizleyip onaylarım\" (önerilen) veya \"Tam otomatik\" (mobil bildirim sormadan gider; SMS yalnızca işaretlenirse; WhatsApp asla kendiliğinden gitmez, sıralı gönderim açılır).",
-    "• Kiracı borcunu malike bildir: kiracının borcu seçtiğiniz günü geçince kat malikine mobil bildirim / SMS / WhatsApp (KMK m.22); aynı daireye en fazla 30 günde bir.",
-    "• Borcu Yoktur belgesinde QR doğrulama kodu: belgeyi alan kişi QR'ı okutarak gerçek olduğunu görür. Borcu olmayan sakin belgeyi mobil uygulamadan kendisi de alabilir.",
-    "• Operasyon → Tadilat & Taşınma: sakin mobilden bildirir, yönetim onaylar/reddeder, not ve depozito yazar; \"Güvenlik İçin Bugünkü Liste\" yazdırılır; kurallar sakine gösterilir.",
-    "• Operasyon → Anahtar & Emanet: güvenliğe bırakılan anahtar ve emanetler; teslimde ekranda imza; sakine bildirim.",
-    "• Talepler → Arıza QR Noktaları: ortak alanlara asılacak QR etiketleri; sakin okutunca o yer seçili, fotoğraflı arıza bildirir.",
-    "• Talepler → Memnuniyet: sakin çözülen talebine 1–5 yıldız verir; ortalama ve dağılım raporu.",
-    "• Sayaçlar → Tüketim Analizi: daire bazında tüketim; ortalamanın çok üstündekiler (olası kaçak) işaretlenir.",
-    "• Genel Kurul: malikler mobilden katılım / vekil bildirir, hazirun ekranında görünür ve listeye işlenir; çağrı WhatsApp / SMS ile gönderilebilir.",
-    "Mobil uygulama 1.14.0",
-    "• Diğer → Belgelerim (borcu yoktur + yıllık hesap özeti), Tadilat & Taşınma, Tüketimim, Anahtar & Emanet, Genel Kurul.",
-    "• Çözülen talepleri değerlendirme; ortak alan QR'ı ile arıza bildirimi; giriş gerekmeden belge doğrulama.",
-    "Bulut",
-    "• Bulut veritabanı 1.9.9'a kendiliğinden güncellenir."
+    "• Duyurular: yazılım firmanızın gönderdiği duyurular (bakım, yeni özellik, yasal hatırlatma) programın sağ alt köşesinde kart olarak görünür; \"Tamam\" deyince bir daha çıkmaz. Tümü Yardım → Duyurular menüsünde.",
+    "• Günlük sağlık bildirimi artık yalnızca kullanım SAYILARINI da içerir (tahsilat / tahakkuk / sakin / mobil üye / işlem adedi). Kişisel bilgi gönderilmez; size daha iyi destek verebilmek için kullanılır."
   ],
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.27.0/SiteYonetim-Kurulum-2.27.0.exe",
-    "sha512": "4lxByrb9V6PH74FuIl+in1thuMUM6T79XtB0xurUduHIVdNrSYNo5NtEzQJ/1i9jPB33mKoHF9IqIjpan47cvw==",
-    "size": 84080840
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.28.0/SiteYonetim-Kurulum-2.28.0.exe",
+    "sha512": "MX8a85Mm/Ax8lV67XwlZ+1N6lbSLXLVrivcDSTB3g6JyIjFeo++bFRX3nw3sPdwVRnKZ8Y2JxyihL9oVRxV0Ew==",
+    "size": 84265223
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.27.0",
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.28.0",
   "lisans": [
     {
       "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
@@ -36,5 +24,5 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "jQGsvHvw3/lDglFKge+yKyU6BDGhewV7UKkLbKwXAMXbkHP1jRx1mwoQbUO2P4SEn7MXCmGMC4mlicyZAkMPBg=="
+  "sig": "nz1j4Jc997O9VQ78XUe+7sTBH4rXuUoQasO7ePEnfPmiMcwF5sbPlXmOHKpop2W5nfvJpb+/2X8x83mf35peAQ=="
 }

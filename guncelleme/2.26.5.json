@@ -1,0 +1,31 @@
+{
+  "product": "site-yonetim",
+  "version": "2.26.5",
+  "date": "2026-10-29",
+  "time": "2026-10-29T05:21:57.330Z",
+  "notes": [
+    "Yenilikler",
+    "• Deneme süresindeki siteler de artık programdan lisans talep edebilir: Ayarlar → Lisans → \"Lisans Talebi\" kartı → \"Lisans Talebi Gönder\". Satıcınızın teklifi programda görünür; kabul edince lisansınız bu bilgisayarda kendiliğinden etkinleşir (anahtar kopyalamaya gerek yok).",
+    "• Terminal hakkı: her lisans paketinde 2 terminal bilgisayarı dahildir. Daha fazlası lisansla birlikte verilir; yeni lisansı girince Ayarlar → Terminaller'deki hak kendiliğinden artar.",
+    "Düzeltmeler",
+    "• Raporlar → Mali Müşavir Paketi ve Yönetim Devir Teslim: onay kutuları çok büyük görünüyordu; tüm programda onay kutuları ve seçim düğmeleri yazıyla orantılı boyuta getirildi. \"Devreden yöneticinin erişimlerini kapat\" listesi düzgün hizalanır.",
+    "• Faaliyet Raporu (Takvim yılı / Özel tarih): \"Artış tahmini\" kutusu diğer kutularla aynı hizada."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.5/SiteYonetim-Kurulum-2.26.5.exe",
+    "sha512": "Us1VCa6Q77BK5VNVL6McGOHdTrNpDv9KycQSuXg09v3FhNn/rk27U8wdLQTy8UHTrSxUmHFOdE3xrTieWu2wKQ==",
+    "size": 84021706
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.26.5",
+  "lisans": [
+    {
+      "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    },
+    {
+      "u": "https://ep-fancy-pond-b93i3gy6.apirest.c-7.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    }
+  ],
+  "sig": "P4dhwGmYvmDy2ubML9Kf83iArNYeVrTnH77t1IevRL6A8PTaCpHWRKNKJd4lczMwo83tAO0t3mUSH56PCWsfDQ=="
+}

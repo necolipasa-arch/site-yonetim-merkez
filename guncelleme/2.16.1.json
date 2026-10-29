@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.16.1",
   "date": "2026-10-27",
-  "notes": [
-    "Plaka Tanıma › Ayarlar: geçiş fotoğraflarını saklama artık tek düğmeyle açılıp kapatılabiliyor. Kapalıyken fotoğraf yalnızca tanımsız araç uyarısında anlık görünür, hiçbir yere kaydedilmez.",
-    "Fotoğrafların saklanacağı klasör seçilebiliyor (ör. D: diski veya harici disk). Klasör değişince mevcut fotoğraflar yeni yere taşınabiliyor.",
-    "Saklama süresi (7 gün – 1 yıl) ve en fazla kaplanacak alan (1 GB – 100 GB) seçilebiliyor; sınıra gelinince en eski fotoğraflar silinir, diskte 1 GB'tan az yer kalırsa kayıt durur. Kullanılan alan ve diskteki boş yer ekranda görünür.",
-    "Geçiş fotoğrafları buluta gönderilmez ve bulut yedeğine girmez; yalnızca kameraların bağlı olduğu bilgisayarda durur."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.1/SiteYonetim-Kurulum-2.16.1.exe",
     "sha512": "WvbdDqkk8PjPrXCNjvDduXVxG70tnrBkokRBiyfXJag1+MLAjcLKkDxchLx3IDfGthd4sXKS1IgKSEwO61REqg==",
     "size": 79252984
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.1",
-  "sig": "pGqi3tI26a5Irl6G1E1V28GvI2ZIXLHNmiEa/aL8asVx/BLCQlHlDh3cPnfwskVhgOJY6eFMyUmSbUgIlBgMCA=="
+  "notesX": "9vOIMKsiogCZ0LQFJKEeKfeOb4zeyG4mjy5EXM2T8sW+MTRHxEGlazFOxjWfHlYHgQiLwwCTEDJ7+TBEPDuR+VPbWVdSMXzOT41W0pXtExMg5Q9m6ZTdXDChuXRJrqRZVxm+HIPKLw1LlSfvZx34lKSw+DUZgeiAE5fzrcywLwtq1dqD8GYKA3Si1f27alz19y38I3pIUBIVeEvyX5FnbUaWglzFOAspD2pxN7iE5r8ugXX0NgB3qf2iwNBx91rnQ40TqZ03Dn4Frx+ROiEYIfcsV3Q6hifzMvztoXw3+YST5gHAb7fNc5ZLHQyitpmWmtKgEhMx3+SvhAT8MXVV6kiB7ACeCXtJkrZxUsXKcEm0d5TH5fe/d7Z0h+/IwlRUi/IAaOsxGJLGm9LgNf4xnBFb4sdhLd+WMm1Okrx5kg2qBm0ZgGeHDVRZvv3vV4CxBW6pmXkI91mc7XO9padv20xvYoHJ/VpOmvcXveyixJ0U8bnaLRewZi9mRfC2Ms/fbDJhWUs82UTiIiPKODSy+nt/o0WSEl2+eKoYMKkHY8BG244CNLV3gwaoHKb6Q7eyJPLyEoKkAlDOLDAtWeik43OuaXscTnqh6CEGvrPmR8DxXWpRr5JXzXMgUblfo+B3Pxamlu47PZc8ybT+66Psgzh+nVtRLNPgRH9S/w1pab6QpC0GNI9Dld7ojtUk9U1lBfZ/JlwEvtHqd+9ShKMSM4C9C4QxlxBnl+hekEZUsICO74/yIq7SdjTOl5qcWyXJGv/VWHAqQfmGfVqklXCCraYaq2aL2JDpelxGVmuwRl2EaaXqPmRtMYUFnjTxEtqSqLhZMO1S7yrQt0fbsinKyK0JU/zH6+S8AHR83Bs+ueQCoB31IUo4ChcecO15a3xL+AY2R9LcXybxGpKUE9e83CIKkq8ZxnlWNbHadibn71kvbgb/EpmoOHy7TGCT3scxMHEF1jJNqU3JnC1Y/gYs4Ir7xZeK+S5a4ae9PCkLY/L6rteKD8clHDfefJVr08ZCPOacad4kAcHKR+8xPS3gARookvQB",
+  "sig": "bwlxy2yoBZCGeIsi0+gnaE54qSH9y9m691WqhVuiAWz8qdUJZTUClpSoXfGzzqPViaVvIdkEt1HeWwh+bN4hDw=="
 }

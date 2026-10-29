@@ -2,14 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.7",
   "date": "2026-10-26",
-  "notes": [
-    "Ofisteki siteye merkezden \"Bulutu Kur\": site penceresi ofis bilgisayarına bağlıyken çıkan \"Otomatik bulut kurulumu yalnızca masaüstü programında yapılabilir\" hatası giderildi."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.7/SiteYonetim-Kurulum-2.11.7.exe",
     "sha512": "7U9BCEWifpbgRSoeSQv9RQGhaT2/kiarutHhKM4LqxeKDuyi+Iv8oYhzNU4FVp+aA1pDJjCFXnW6gUk2XR7hxg==",
     "size": 79004875
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.7",
-  "sig": "l0tsGbv6UJt5JgdKdfQWtqQ+0Tj170AxY+DNJPun4ouxiTtld+F1WVIYzPQiPdShcBvwGqjDjDLQJaufSIdfAQ=="
+  "notesX": "fcEsi8/TzCrkrWXZddSvaFYGif7nNchb8EeA7TLy9hy9PbF2w60EibW8iV3js+BlRr3+yXre57GX+BrCfUoTamj632ZPxWkQD90pEVh/pgHOeJJ3p00MIVG6oDa5XHtfu2inry/FS9RqktQjsy9eIS/q6RhzNppYe4xubqdQX5jRbbn11Mwhpo2RaTuT6LC6TBiOFyI1GsFGN8/AjsTLXP0gWPqC2ajRybr5I/gfW/mZgYbNB/PoACJoZCHT1bn/45tC4NzG3KmtjEmkTT4UeoXIwHmYjl7qLnEbxS7B",
+  "sig": "9EElQXzf7ghdqK+g7jrMzFcsgqgWZJbPkiwk07WHNFGIntcGL9pvQQyLpSAVBiOwqqB4CMWMvsJvZ+c0zY28DQ=="
 }

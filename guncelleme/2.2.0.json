@@ -2,18 +2,12 @@
   "product": "site-yonetim",
   "version": "2.2.0",
   "date": "2026-10-24",
-  "notes": [
-    "Bulut artık tek tıkla kuruluyor: Sistem Yöneticisi ücretsiz Neon hesabının API anahtarını bir kez girer (Ayarlar → Mobil Uygulama & Bulut → Otomatik Bulut), sonra her site için \"Bu Sitenin Bulutunu Otomatik Kur\" düğmesi yaklaşık 20 saniyede veritabanını, veri arayüzünü ve online ödeme fonksiyonunu kurar.",
-    "Yeni site eklerken \"Bulutu otomatik kur (Neon)\" seçilirse bulut ilk girişte kendiliğinden kurulur. API anahtarı yalnızca bu bilgisayarda şifreli saklanır.",
-    "Ücretsiz kullanımı korumak için Neon sitelerinde eşitleme 15 dakikada bir yapılır, gece 00:00-07:00 arası otomatik eşitleme yapılmaz; kullanım %70/%90'ı geçince eşitleme seyrekleşir ve uyarı verilir. Kayıt anındaki eşitlemeler her zaman çalışır.",
-    "Neon sitelerinde davet linkleri kısadır (anahtar linkte taşınmaz). Supabase siteleri eskisi gibi çalışır.",
-    "Düzeltme: Tüm Siteler genel bakışında bulut durumu doğru gösterilir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.2.0/SiteYonetim-Kurulum-2.2.0.exe",
     "sha512": "BoUKgqIUh/uApwhksLbAvhAEIa3RaSBzgDKCOjJDQgJG96IWJlz4jaS4juWf7ruyBcn1es8bm/9j7hF0oV5w/Q==",
     "size": 78916353
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.2.0",
-  "sig": "+j5LoYNHhT1OTvnd4k7KYCCQyr1cfbN3M3+7gisFhG0VcmW92T0rTLK/ZdJTvSxtjg2qZ/GmWxo07whuEr2SAg=="
+  "notesX": "GJQ5ItyCDhGQ9yqaB55wIhH7WhkL5cuPR1zzhNstQFo7sZhxgnL5zDkPXYTDbsPoRfgKOQFqFndbzXyw6JfpvEvE8YtRnCM73ucNxL4C6gFf6URS66Hzo2ROF+u57aO9yG2fzRcYYoIuwnwNNiSqnPIc4+s4bBGa1ksf9DDD1wwQASrh1fmWNMkrcVdrZl4Yb/iMKIl9TZ+8ux3FJ0C6jnjcvFMUCQ+ud5BGnCjH1oJPH4JmLbLntgsa6HUFFqqaUTNLvpdkJ5gJo3Zgl3UGfwXLSkPqBBCqmbthzr9wE5txMg/lwfyhfN81daGp7z5FEJZ6tBLTDuFN1B1DCHNrY5z3ZcUmINIbPMUSG5jrKKjp6c7eOkKaLwXfTpHDdaj/PIYgOAeTprx23agLyX7QVliqGyrtJ40kpoAnb7VB0MSonbOaH4NzuzKoV//iteh8h9Mi6Q+BrpNqofOId8hIaLKjq4vaLfLWZdgPvrfrSH+myvYBOkD7+pbIo7SFSGJwb5unRzjd7AXAYLUf19s6XolZPpQ4JrqpcJymzyaoxuKD1k9z6IsxBGarzYVq33xxECk2WMAdd73cRPqoj+DinCUoxIFvOU32JpI7GH70geGM7MQHaN4AvNf8Qsv1IKHXQGmRkW/5OumGSde9bZlyLSr0Sbr7Q34Frev6KPIfQH6axVAzedYGyWlwP9BMrY13qrlRxEk8ozfCg8c+LMjJJGsbMc5wbXPEuInlpSnI65BDmCVillROAWilInuR3ZmKONxLLnsOs0UcKVPkoheBITCIMMquzYG976WNgahwYhzV+cJk2a5QZgC2SGbvtZpgfZE4ddWYidM4W0/RhpkMBGhhYp3ct3jZg+XRpf+TOQsg3Lv2baNLyJH+ZGluiRNBQUIFeT3zPiQX0syufmghNCqMmdYWq6eDkUClWiYgXb0jCAUPi74e4+kVCotwH2glD5v666pyJXkVvTpKJjh6mfFvPp8OLqaSrAqW51H8Rbf70J0qf/xO1JbX8mnFS4jF3jcCVCs53SCbosV7k5et4ASwqD73MJ5xZRzAw7NsFSofziCPZH6phOyW/rQgDWKGZig1GEjjtee7mv7cBjVpB79UNVgtbMj6ydW+JTqwamt9wZZ4qJ1Cx9c4jfmbMnT45oOBoVZj5sE94A+F50yASwLxWqBB2GfE7NJ91l5wABkqYl3LhR9aNtkZoh+Ut3novVlDammFMMSXx5gymWVau9KYvmsbGDPuKVH+3TIBkvRXvLrTszYjRRVm5Ki8sd4AUMURmih5SbRWllxJTGwBcdlam9lpPPjvRuZlSj946Ngh",
+  "sig": "9Tbi5VTy6CEy9nts3A8rknLsTQTTJnVU9ZT7fdxbLyPtFizvqhqBwe6VbZCkfhK4GPOiCr+ieOE4QKsoRx92CQ=="
 }

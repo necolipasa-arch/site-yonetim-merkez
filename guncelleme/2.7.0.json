@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.7.0",
   "date": "2026-10-25",
-  "notes": [
-    "\"Tahakkuk (Borçlandırma)\" menüsünün adı \"Site Alacakları\" oldu; sayfadaki \"Gecikme Tazminatı\" düğmesi \"Gecikme Zammı\" olarak değişti. Eski gecikme tazminatı kayıtları da \"Gecikme Zammı\" adıyla görünür.",
-    "Ayarlar → Finans Ayarları'nda yeni \"Gecikme Zammı\" bölümü: zam oranı dönemi Günlük / Haftalık / Aylık seçilebilir ve gecikme süresine göre kademeli oranlar girilebilir (örn. ilk hafta %2, 1 haftadan 1 aya kadar %3, 1 aydan sonra %5). Her kademe kendi oranıyla ayrı hesaplanır ve toplanır; ilk kademeden önceki günler hoşgörü süresi sayılır. İsteğe bağlı üst sınır ve başlangıç tarihi girilebilir; örnek hesap anında gösterilir, KMK md.20'deki aylık %5 sınırını aşan oranlarda uyarı çıkar.",
-    "İsteğe bağlı otomatik ekleme: açıldığında program gecikme zammını her gün kendisi hesaplayıp ilgili ayın \"Gecikme Zammı\" kalemine ekler. Kapalıyken Site Alacakları → Gecikme Zammı penceresinden önizleyip elle eklenir. Zam, ödemeler düşüldükten sonra kalan borç üzerinden gün gün işler; aynı zam iki kez eklenmez. Pencereden daireler muaf tutulabilir.",
-    "Borç bildirimi yazısındaki gecikme cümlesi seçilen kurala göre otomatik yazılır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.7.0/SiteYonetim-Kurulum-2.7.0.exe",
     "sha512": "aBvWeO38K3PFjTErArwRQjob7ASU4AuXR3sKg6oXjVM8LM0QEYThYseuxjjgrUMvzDUvz/lLkMl4awXD3SdtfA==",
     "size": 78959133
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.7.0",
-  "sig": "xMHZ3OKsJbMkqASN92yA9qth5YQw4PGjDdhwdTAEgLzdo44LXwjpECSSgfnk5i4CMDKZh3uSTPEvx9o6GMuLBw=="
+  "notesX": "Yz5t4YyblhdO8f20aJumGqW4Cv4botLGjLxPeilLZoH6hI5XxONrWa0CQQ4557YoCVzd40na8bWuIW2QfTN7O6RDkY9UImx/+1qLXQCMafIxRCphMr3BFwxNG8IyjkZuz8kkc9xMuP3cxWgXkr1QEAPQiLCpiCd/b9eLbjizEusPOAW3Kc6Fw66/PJys5I8evMJaIRKaa43qLOOV14n9agWmkRjvzzKGmAkrcEqGHY96oPe5c6J1vUUmyc9nS34q8CY+GHNaVIzkyfeAjk1EIRNUmHm5B53MgpmknZ2X5hhHVxr3y3ep8uTDGPs4/G4TFgy0nXGwKp+5VWE3lrvwbVuA3aVyhYf8PqspwcvzxwG3VkgocMdntS3D1yCOuTizmPcvIrqt67Th9xAo9FIa+I2Kl4o/3eu/l1CnMiKhIAHoczerPUz6a9qdUn55WYG2vkWthrczhbBKI8Ot/O1Rp+oelqbOU4OifIqnxwVfpJrvqPdLiacis0Ew7uId3XCWTRr1dTITVsGkYyRkc4foHvpQqi3brDeEW8srkJgDUHjb4Y/2bYa0lQ4RnXJWiZVf5ZtauQM5sss50ENGzEyFe57OXjyuydfCOm+iIgsVckQhSr5cLBCHt1glnEhD1s6+d/IWXMA6/wBOiqx5mu2sakvIYRKsWrpWzn34MXngeJP+KRj7ngW5cyNQjPXj+qDI9V7umvr4adEK9kyzYsLuI4rGcTuPVwYMj+nAYQsLxoaAetjglUq1bdnfpgxcuVx5m7fwmkbcX7OcZNGPPJnmJV2K1fyCpf6TR3PF9gJZgQD8qXiDKvnl66i7wQqBziX54V2xmMYYmj5WoUkzhp/xbEtJoa6noCEZcwk8lYifSplHsuThCApX68S3kSuQTcCvqyZS/qxVKxChAGlHdo1fhR90Hwu54mm6uwKQP1oDrYWUy/Ea5xwTmSQq5Ujos4kE43L06JndZ7+29Z7dX8RB6AGSl/QP40BchjRsFOqyx8KBc499mhQp4y9i1u6/pnZpHnZRERk71CiDueLKXJT/zA42ZrIMtVKkJqgFYeJ7YEFCk8xiEUfr6Q/rMlOW2fh0Uup1pC4ButdIFAgDh71+ghXoqPX0EtFdIatYmj/wx4WfqDfzwxalvaHvuqh7FPKKKk2ae/LCGmjNBcvHyR6zBxic3Cuz0l+QAFR7MKnwbONuZ2y2tTg0++Ebj5LzGavdTbClNDot4i/wsufZOpxZ0vexCTfCgPJ2q1noonchqyiDRbnqQ+Nuq0mvCo7SDYp5HrN252U4ZGed4ACWl1SnD7I5w7LrnpKqPyrJwu3ECJcZ1qT0nhadR8UJOBg5X8xT818D4YcPg97pN+ZaXK2iDaJSWWzRr3HDFc+kWakcWcQOMIrwvDfS/9eOCO80f4Dhjt/Kqa/Gg2ftSv7wet62Py9srZhjl66EuMKQGMUT9ThnTbfqVMNdhJdMjo1OW7pYNsMSrSjAjgYstLWDCmLn05Z/OSh+n+tk3m0ARmRysytjJ8aUUloEsIDqYuaASdDTpKU4hGEjEJpoYFqpSi1iCXNxidUpb27COpGGOSEBPqJ+1Cz1vsiueVcb8UGJoNWQ/GiwTf77LrziD8C/6KdVuX53hQj2SpRKPmM4n5SY6j4XvjlC5HUsZttBxk1TSu8KsL5X3rirp8C7GRfWQOdv5+kXzuQ/4OEOQoz+kBi2/NUEkCqYc7g=",
+  "sig": "UlN8ETLmhNaGU8WxzYoPICk4++Vd0ICgdmLXKpEK6omkOgRUmduArjvJnUQAES/wLiv4nlZ/l9BMO37v0G7FDQ=="
 }

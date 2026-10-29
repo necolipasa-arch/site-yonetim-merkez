@@ -2,14 +2,12 @@
   "product": "site-yonetim",
   "version": "2.12.4",
   "date": "2026-10-26",
-  "notes": [
-    "Uzak Destek: aylık destek hakkı. Her ay belirli sayıda destek ücretsizdir; hak dolunca \"Destek İste\" ekranında ücret gösterilir ve onayınız alınır. Destek ekranında bu ay kullandığınız destek sayısı görünür. \"Destek Ver\" bölümü yalnızca yetkili teknik servis bilgisayarlarında görünür."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.4/SiteYonetim-Kurulum-2.12.4.exe",
     "sha512": "Y2iO9Olbp/i/Gau4F9DoSWExYRH1lrlqWvPwzMsbFe206S0UZjTz11vt7izoUsLDzZF2it2xotkS0xHIZuNrtA==",
     "size": 79027999
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.4",
-  "sig": "4JXjnB7Sq0S5cy7bsp/SnqT6tjbHmeaaCz9gfCVG9g3ADyjApAICJM1GIN3BrAi/7+tO0xcmnDd6fyRGZJ5pAA=="
+  "notesX": "MuLk2KVU7ExCyYk/Jp8dM8ryC82eG2Hpks4a7Qu229vE1XiXEL7uf6LZfF+fO3fR15V42i/XJWASg1FUuY/hPyOs7mRMk18/BaX4LBEYE9pRZ3XBKDka7FNIxMYNF5EewP23KtiolIBgvFlHH3fH224ZE3+cRe9LWkV9BbTkb83vmkI1vWaZonTojoM+ciPBr8NkV/1v5kkhjcfevMciJvyJu83V0tICEX/RbmoHzvpdAVPba6wriqj24cjDD0eD5fsr4kQCGicipYKtMBNkFKQMWn9B19HNTNjf7sA1xfDZmADmNWVrSeOo+aEA3ridxPRdYoEkeQitA9rH1wYYGIu0mXhJqHGtwIZvBBH3EgsMwkrie9RHIWosctHWa+cj9p/4HbUFbR7R8lW/y4+c9kK8llH1TA1CeGMO6KTlCw8mo8CCDZcgtTCijix2CE4FtFRGOp3Is74kVkxCIz63",
+  "sig": "deHG4K/us/Ub7b8PWx44Q2xDnNcu/5LhaRRveDjx2tlo41Wa3yFHJVHzss5kSI3U8BYBu1ZQ1vPd9T0VEWFVDw=="
 }

@@ -2,14 +2,12 @@
   "product": "site-yonetim",
   "version": "2.12.3",
   "date": "2026-10-26",
-  "notes": [
-    "Uzak Destek: müşterinin bilgisayarında RustDesk penceresi artık görünmüyor; program arka planda bekliyor. Müşteri yalnızca teknik servis bağlanmak istediğinde çıkan onay penceresini görür ve \"Kabul et\" der."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.3/SiteYonetim-Kurulum-2.12.3.exe",
     "sha512": "DZVpVatntUM8bv28VP9EZER32jEV0G3OVHHBDWOU7/urYsVXmMHeucKJa6ECinx+hang2i/s59oggFGhzt7z4w==",
     "size": 79024164
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.3",
-  "sig": "WjRxXhFTJItTcpICuOCQ20vzCwukAgkErK7q6B4cGeSmpowID9uoXERyCMfk5ewZNU/KkPdnOKR8jaxx2cdxDQ=="
+  "notesX": "rRhj0FWj5b8CjGz0xQLWU1c/pw5sPN16qw3kEdveG8C/s19GtaTp6F/K4PD74piclzEIQbFjq4jzuNs5Cx1dsDnWbGBpKytAbXtx/xtDiAfCSMaGa/0/+zqWz3u9podBD+RV0gLhB8bYPQFp/g+MExMQ9dIhjZhkz8c4ufL9JNONUKfcy9rKnZUXW8CSO6T2WO1c3Ifdwfe87lih0AlJ7WQPb7h97252Z1W52pyZXZWX/nEs7ykS9MrjeKFULYLB27xoPz9cimpSgAYGMALh7k+jcsAHGpQICvvZrWj2OOB+0GInNMrF3hal7d5egV2dgSIa9OUbbrH+D7DYV8VRSg==",
+  "sig": "kHuNndxgDHKSPSRJcRoofOEci22ZxptwB7Uf9gNKVyvQTuYjkOW+eFEKV5ASXlLx9YK9MLiXzAA140Xz9tk+Aw=="
 }

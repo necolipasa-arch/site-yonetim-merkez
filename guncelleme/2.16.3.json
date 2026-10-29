@@ -2,15 +2,12 @@
   "product": "site-yonetim",
   "version": "2.16.3",
   "date": "2026-10-27",
-  "notes": [
-    "Plaka Tanıma & Bariyer: sekme düğmeleri (Canlı İzleme, Geçiş Kayıtları…) küçültüldü, sayaç şeridi inceltildi; kamera kutucuğuna daha çok yer kaldı.",
-    "Canlı İzleme artık her ekran boyunda tek ekrana sığar: sayfa görünür alana göre boyutlanır, kamera görüntüsü gerekirse küçülür; \"KAPIYI AÇ\" ve \"Araç geçir\" düğmeleri kaydırmadan hep görünür. Son Geçişler listesi kendi içinde kayar."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.3/SiteYonetim-Kurulum-2.16.3.exe",
     "sha512": "i+Ik0n30Yc8j3E6fFbnpziVNJTeYky2PlO3iDa6xCvfPtfQuKFhuHNvVgInCjHQppNcN0TCR6HQoaeWE+/bjog==",
     "size": 79253749
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.3",
-  "sig": "fDwFDuUmww9PxQN8tXrqZaaMhnwjpgFHpbbOE8kVAD/5JkvS2A7JIVf8ZOTHCijOq5M8nmLdtyfPH9W8ziBcDA=="
+  "notesX": "lDQljXbduyOC33HeypVO6hGr+v3O8+u2bZpjSy2dnvR6j7128XyGII2YLy3U13LcD3xnnEW4vzswmu32sjlgvDomeljDZAMwKLZJ++LXMdvk9LnZipSqs2N5hyWtoDWYqkWFue0iVIeHIlCOPkpdyQSd/CDr8tvs4yGVQjWbVEQ40eeol2NzQnahrl5QzakyRh0LQ75HQJHups/RUM1+P6FUmAHAjj0NmRnJyFWjhukI8B+ZkGA00rrNwxajhmiQOdm95Db2zH0npwat81yfDZdAEqrNFuz98bGKRXoksA+9F1sHDR+TDJdG34fKpB06W2xH2TvxY4W7mwN/8FE8i1gmwLJo1FAYofylSkvspPXuMjGAKcMYcjSWnDxpzTU1lATExLPxCNjUPNWn08owj0YC+tzgQm4bjUym+OO8jb+ncXRzWQoyEtMn/O0aiE4vRHKdNYfkh6hgGvNkIEZ35C5UZHXEWw1in8FcB6CaWrhjlBZE0hFcI13qXk+WEvL3EATrOW2ixlIf76k2M9Rf07W0R3wk+GyQ59Ar3top2DT8Sx8VjCmF+Qm4CTsxJA7QoW730HZSNCJvNmmBiwhESzTWd97CwK+7OC1QeSgvCtx4VFe5",
+  "sig": "dmQWF8dMUB8PtCc93jbcMSAGYVAxR4ez9j/M4XbGvpLmHpUZ/VYMlbVMmHxwAr+uYkjo3jjzMbepblLtBwMEAg=="
 }

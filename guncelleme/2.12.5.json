@@ -2,15 +2,12 @@
   "product": "site-yonetim",
   "version": "2.12.5",
   "date": "2026-10-26",
-  "notes": [
-    "Uzak Destek: \"Destek İste\" ekranı sadeleşti. Destek bağlantısı yalnızca satıcının yetkili teknik servisi tarafından kurulur.",
-    "Güncelleme ekranı ve genel iyileştirmeler."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.5/SiteYonetim-Kurulum-2.12.5.exe",
     "sha512": "VgK6Ut4lnDzSPzckmtXpIvGu+QTW+M2kKiF4c0GwU0LmGAmd2TRZAqK1TvMzzdLghnLYCu8lCYlSbMSBJRduZQ==",
     "size": 79025272
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.5",
-  "sig": "HaUNbyJIGfRrvDuA8RKi8T5dFAayBZ6SP0p4gtgLhmJqV7UwdIqEyr6seUYg6mCgJgFV+gV5EomFClNNrd5oBw=="
+  "notesX": "qHPMDbkpVc51pKXqa3oUUYO6dsIQrDWBh8iBBMBuU+DLSdjbgnQJwoJGyLfq1ni62qDStFoRQVl36qtnM+3kgPIOZlBLjWKIZkTzwmE/+dCTk+30yYZOHn3mAhu2hakrI5cpX2Nc65jS8K2QZN/EzOJjzeiN+ayMjKKBxohLugtAhmxz4nscK4o8ENn3MgoTra+CXbnS5U+ipJJ3Rl7IlAr77luaiMosM+JJELFPsGo3SRc+yMskcDc9S8We94WKnpAihzqa59gx24gMRT8jNbVvV+zaI1IGVA==",
+  "sig": "0JgnSyacY2coucJMQ85hJRBVoR0TiArSYCjPiXXVDmFfXBRoGK+WAM+5/Ju7EBRZ23SimYazswhH1DuASyx2DQ=="
 }

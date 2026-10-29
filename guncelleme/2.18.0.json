@@ -2,21 +2,12 @@
   "product": "site-yonetim",
   "version": "2.18.0",
   "date": "2026-10-27",
-  "notes": [
-    "Acil Durum, Tur Kontrolü, Harcama Onayı, Telefondan Sayaç, Firma İş Emri, İngilizce Mobil",
-    "• Deprem ve Acil Durum Modu (yeni menü): tek tuşla acil durum başlatılır, tüm sakinlerin telefonuna bildirim gider. Sakin \"Güvendeyim\" ya da \"Yardım lazım\" (kişi sayısı, yaralı) der; yönetici blok/daire panosunda yeşil-kırmızı-gri durumu görür. Toplanma alanı, vana yerleri ve (KVKK onaylı) yardıma muhtaç sakin listesi.",
-    "• Güvenlik / Görevli Tur Kontrolü (yeni menü): noktalara QR etiket basılır, görevli telefonla okutur, fotoğraf ve not ekleyebilir. Kaçan / geciken turlar yöneticiye bildirilir; aylık rapor.",
-    "• Yönetim Kurulu Harcama Onayı (yeni menü): belirlenen tutarın üstündeki giderler, kurul üyeleri telefondan onaylayınca deftere işlenir; teklif fotoğrafları eklenebilir. Yeni \"Denetçi\" rolü ve denetçi telefon görünümü (salt okunur).",
-    "• Telefondan sayaç okuma: Sayaç Okuma ekranından okuma isteği açılır, sakinler fotoğraf + değer gönderir; şüpheli okumalar (\"kaçak olabilir\") işaretlenir, onaylananlar Sayaç Okuma'ya aktarılır.",
-    "• Dış firmaya iş emri linki: Talepler'de işçi simgesi (\"Firmaya iş emri gönder\") ile arıza WhatsApp linkiyle tedarikçiye gider; firma program kurmadan \"Yoldayım / Geldim / Bitti\" der, öncesi-sonrası fotoğraf ekler. Sakin durumu telefonda görür.",
-    "• Mobil uygulama İngilizce kullanılabilir (Profil → Dil / Language).",
-    "• Mobil uygulama 1.11.0, bulut veritabanı 1.9.7 (kendiliğinden güncellenir)."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.18.0/SiteYonetim-Kurulum-2.18.0.exe",
     "sha512": "Rm1wHKNC642xMWg1EOzYeSolR8MVg90Or8OY8u0M4YFWL9t8ietIjzixwiG8Ec3h6rFmggY81wYT6y5vhCVyrg==",
     "size": 79379270
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.18.0",
-  "sig": "RlDN2venIjUkgOIM20MwexgltAjlJ4fDSNCFZNh6mATBZ2/wR4j2Z0P8R2coz+f8jpEPT7cad0Dudr8RrSE6Dw=="
+  "notesX": "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",
+  "sig": "kzJJjwnCkTKS4JAAfC8hl/1275fwqN7aJyP3MNnlEydoiw4/ZnH4AtMVyezMCI6lCJjfEIHIhYi2l5B60kwaDg=="
 }

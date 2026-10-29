@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.14.0",
   "date": "2026-10-26",
-  "notes": [
-    "Yeni: Basit Görünüm. Üstteki \"Basit / Gelişmiş\" düğmesiyle seçilir; Gelişmiş, bugüne kadarki tam menüdür.",
-    "Basit görünümde menü 10 anlaşılır başlığa iner (Ana Sayfa, Daireler & Sakinler, Aidat & Borçlar, Kasa & Giderler, Kapı & Güvenlik, Duyuru & Talepler, Toplantılar, Bina İşleri, Raporlar, Ayarlar); alt bölümler sayfanın üstünde sekme olarak durur.",
-    "Ana Sayfa'da \"Ne yapmak istiyorsunuz?\" büyük düğmeleri: Aidat Tahsil Et ve Gider Gir adım adım (daireyi seç → tutarı yaz → nasıl ödendi → kaydet, makbuz), Borçluları Gör, Duyuru Yap, Arıza Kaydet, Ziyaretçi / Kargo.",
-    "Boş kurulumda \"Programı hazırlayalım\" listesi (daireler, sakinler, aidat, kasa/banka, mobil davet). Yeni kurulumlar Basit görünümle açılır; mevcut kullanıcılar Gelişmiş'te kalır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.14.0/SiteYonetim-Kurulum-2.14.0.exe",
     "sha512": "QQlQRHMG992BcsWbntpkGkypCCbxoGVDhakyvZIlFqAv89OS6rHpCPCtzusD+JhnM7IYThsiOHUf5cWH41Kjrg==",
     "size": 79133421
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.14.0",
-  "sig": "kcT2IeRZ6cjteR8mIDiLxSJtfiLCR0ZTB5WNR/FxXflFV4RngwFvCYG+o/hIei5+dXX6oEy9xIkgInoMi4e4Bg=="
+  "notesX": "q4RcdJm7SJHco6aOgV9IQb9lB0NeszYQgg95G/8T4kz1IHR16SIHP7ujQg+d8iqhBVsGJfFnVlOaL3FRI7ND7As3eUghXG2ydCLTkIuC0swFg42au8qG7Bfz38b7qbC2D2DACQGZZUX249xj+Fg/IpiL/mReDYy2ZwTxzl0X1kgg02MLRQlVlLNzQd0uLJmHjocEQZWWfxDXWV7Pp4m6a57nMqZ8ZDyuSDSZSuHX9mJNVt4HshsbOBTXzLGEhRSBnvkMhAubba5ErHkJ+klI31kzqu+eLPYfu6ok5iS5OVWHg2wZ9rLfk72293DpQU1EktjtfQoROosZ5ZqIf2XPQfzK9Gj4I8zyq3QaApiehKqRh5UxNNeh9BZguiEV74IljnNDekmP2o6SOfw9EmCcwKopmAAJx7P0ik7XYoTO7a0tLlZl0M3sXyVCGvYqwjXvaUwu/F/DiotQc1B+io2SA5Ias8mtd4Swv8tcFcCU1QNBN540kokrAUY7qpZMoiQjGVKBIYDfvN6UvkAjwCALbCHKbkw3/Z69eumw5lhycfxV7vwTMlhFhEX5lgxHoJIzZKNbez+X8SLBHk3mJpveCGrfNkMJ3LRm06bqUtvaPr+o8WUMAX8Mo8FMIkxIFOfXdoLeOt2dUnaqaum4dsYUctrxfFH2EvobPSxMCfzKrTZPc04TPpajLNGAFe6pjbX0fWLsCSkNuSJDk2n2vitFIC8jtq9azpC1wM4yy5Yz+hOgOO+R9K14FWzamT5HGMABMgidDW6eY6AqkDS1L0LB9ZQPb8fLeeGihQKmE0UWr87hRRNqksyyuhXUNN/rp5J1SaXCibQ5jfzA1TgeYRytnZm4Sdct6GM+VUBbw6x+hwpiRHrbPYhQ4goKYgy6jNljrS7Oz44FLKQCxjanzRbTDaQ8X1KXItmvHQ6DGQ+NHbeqDbfIlVrtkUCbSxULbvcp41XBpIL5Qujy6fWhMEwF8mYynl8GAqsp6IJgyJ1N0PWhF6+vihc2H21Lqwv9dy91158ElnBWSj+NUwF+OH4zE0SNjvGaC20Wyq6CLERL5Akjf8mBtwf+GT7huu++B/qhllY3j3QT0eurr85XeMTqNfTI3PLmP3v7SRXcffU1zWAhVchjK2fSfUFTR8dT",
+  "sig": "ouB+MknFuvrA4oVonP/mGQ1cZXBfBBjONeijgoLPtVNdHv/xXhIrdfBWzxbF7jESlNX6Z1uI0qyVq0Zy/8O2Bg=="
 }

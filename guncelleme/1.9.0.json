@@ -2,19 +2,12 @@
   "product": "site-yonetim",
   "version": "1.9.0",
   "date": "2026-10-24",
-  "notes": [
-    "Genel Kurul paketi: gündem şablonu, çağrı mektubu + vekâletname, tebliğ listesi, hazirun cetveli, KMK'ya göre toplantı yeter sayısı (sayı ve arsa payı) ve vekâlet sınırı, madde madde oylama (1. ve 2. toplantı kuralları), karar tutanağı ve karar defteri sayfası (PDF); kararlar Toplantı & Kararlar kaydına ve mobil uygulamaya aktarılır",
-    "Anketler: sakinler mobilden oy verir (daire başına bir oy, son oy geçerli), hedef (tüm site / malikler / kiracılar / blok), gizli oylama, çoklu seçim, arsa payı ağırlıklı sonuç, sonuç yazdırma ve duyurma, yeni anket bildirimi",
-    "Online ödeme altyapısı (iyzico / PayTR): Ayarlar → Online Ödeme; sakin mobilden borcunun tamamını veya bir kısmını kartla öder, tahsilat ve makbuz kendiliğinden oluşur; Tahsilat → Online Ödemeler izleme penceresi; test modu ve test tahsilatlarını silme",
-    "Banka entegrasyonu ile birlikte: iyzico / PayTR'nin bankaya yaptığı toplu aktarım tanınır ve yok sayılır (çift tahsilat olmaz)",
-    "Mobil uygulama 1.5.0: Online Öde, son online ödemelerim, Anketler, bildirim tercihlerine \"Yeni anket\" ve \"Online ödemem alındı\"",
-    "kurulum.sql 1.9 yeniden çalıştırılmalı (anket ve online ödeme tabloları); online ödeme için Supabase'e \"odeme\" sunucu fonksiyonu kurulur (Kurulum Kılavuzu Bölüm 13)"
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.9.0/SiteYonetim-Kurulum-1.9.0.exe",
     "sha512": "9o5fFz1QbgvNKrUScgXE3GP3WLYBQgyrtDL1/o9V8qBUcHTV0qYYDvoJ4dAd5IWF2lYxl+A+Dwl0wavJwW9rzQ==",
     "size": 78851643
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.9.0",
-  "sig": "kF6WFvFJvW8FBBQ+mrSZ2C5U0jKYkwTKeiHvEEA9bgvu3CC7yZiBli9KmYqbvJlBNCS4oxYf5WdsfdgYMHsXAg=="
+  "notesX": "fGZwh7hDmEpzmkrug+JqQ1i29mgiX8kBNmC8N/azVG9ABgnvMQVcbUueVjG99WwWjppZ6VxUXddN2L2v+e9d7mZoDu2FdDIzkvI/9zt5WeyYQqIQAOK5xh+3mysmwFnvgfqjxY9MxXWcDY4B8PQ1QZgLn+vprTifnsS3Cs0FcxJHVRyVBfD4T0JOWAVjf/wjwaYu4nBT5zlKps06Hxgs1oPEUIQazCfsegHTykB1JzSLv9HdTk8n6xzeKTFlZKslLQLaccpCOvIpGfTO2WOnNz3DC1kfRLJsCXbh/5G4l6jLoCJ7ynH5911b5rRzhDfOfopcL2E1uCooP4hlHRQJYS6pCwcfhHKT5gn9ihk59rPuNuLEY0NHqxBGsaOOL6Wc90Qd94T3A3pvSzmLSBSXgNeJrN9pYWfHzLwQMrjiiCyRjviZRL3u/e1DUc5ekeJOqb8GPMJWOHTLiqnxg6Jhjwb1o66/O2PeG0sDeGK+6gr7GbZ3NCkA0xTp1Ju6rWhMg02f0xrTZmg/gP2I0nAdpu/SPnvOzB3puSZS7iEwX0Y9DYx/bNRQXfFxCQOC+1Gv6DjxndUrkt6CUc3PeHuFtBkO8gZkZnFPiFEQ99rBEt/VKWfU7yt7lSU9QyM5cWg2ygeFwVSwneE4usT/ricyGQtA2CffDjwfrpA9JIRkNVi2qDeFcRicLr8Po9R7meXmDZjXkqdY+83w9Y6UDXAspmgAsOtSMxnsOygMwYRLGSaLQPux1FhIdZqySDVDcnLFLn0/kTdZfn/FTchGqv55jUv/0ah5XSREpwtSyp7Sm9jdIiiFb3sI4wZu0VQ3mDthjMAkzIWDrkQTchdWW1w9P6v1xfCrRvUS/lhNuVTIY3YI8Sim8bR+j9LRMjq8esNPnz0j1COcpQcZNcydmmOabQ+JFHGrcTPqodcmy7JK8Tu6tVeviuq8qRrxWEeSQqthBKziqUAqA1eunKxv5gagPQNohJ4y1rafYBSI7Tzt+MvcuHYowmG5XOMHozwZi3hp0sGk4fslRgP54YmSWo2FjHTEt7QhWE6qp8z4kDIaHhoFFug0PiSd/zvLHoTPAzA6toaJ/EMce0SZOJzI1WydGnQ0eeremoNOTpwEGS1lWGcNmzCYtl1PKE6ChiFkqMgUSkN5371IBjsTh7UQcQvPhasXJQ2ivOZTWI1w281n1oksnsY2JpyBo3m8wvYTh0dRbwaRoYpVe4OWHIA6JwAUPxCOalHodJZsnv/VnPsOh3EvqYCR1qeJdNnOEp638HDVfA3huKfgHeqBze7cVjmL0HY8oBffxwzzJIQM3jT9I2gk2u+7GAi+0v1oJSfKWwrYFjSSAveO5PyofeBYqwwYf2uEVdOBPumusonTkGQtQsm8lO3FntX9l8zHMA2JNznxTjFFOuE8Ny54TVVyiQO9Y3CCGJg9y721kioO6ULnAr8HGskn+mrJoL6wyvZ7sTTpGy9ZKd23i+DxHYSTZByJMM5ZjU+w7HjC7t3hj0a9nTAXk28ysyGzaWtuxcCuVmXQciVENCY3396zC0sx2bK7AvLB9ZVt+W2wbkdrn0Lnq0sPLJTalztw8fvoQKzxuuPpIAxOs0SXkeoSboLNMrY+Izqrh5oDTNML0l7T202rMCPqNOeiuAO/HLg5jXgo5pDuS6Qpbb6Fm8HHVvDPNZSpMFzE9/EFFp0+QojZMY0+DKraY3BkUFNW6fkCiDekzngsbIWCrJFSS7bZkS3G/bCcdLdF/2tfbyhd8RxWb1cBAJQ//US9dRl6FfzV1VhVN3KDgZ7RGK2lo3tBFJjF3kP9OOEAO41sE8dI",
+  "sig": "KVAccKKtZY0InrGquMBD0H5oPi1Clmo6ZnMjP+NmBxD02cqHfUWY73uOvZIadzHnU7zAfxXdy+Yb2d/QqCr8Dg=="
 }

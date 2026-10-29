@@ -3,17 +3,12 @@
   "version": "2.20.0",
   "date": "2026-10-28",
   "time": "2026-10-28T12:46:35.701Z",
-  "notes": [
-    "Bilgisayar değişince tek kodla geri dönüş · sorunlu güncellemenin geri alınması",
-    "• Bilgisayarınız değişti veya bozulduysa: yeni bilgisayarda programı açın, ilk ekranda \"Kurtarma kodum var\" deyip satıcınızın verdiği kodu yazın. Verileriniz buluttaki yedekten gelir, lisansınız yeni bilgisayara kendiliğinden taşınır.",
-    "• Bir sürümde sorun çıkarsa satıcınız o sürümü geri alabilir: program önceki sağlam sürüme döner (verileriniz korunur, dönmeden önce yedek alınır). \"Şimdi Dön\" diyebilir veya programı kapatınca dönmesini bekleyebilirsiniz.",
-    "• Satıcınız gerektiğinde bulut bağlantınızı uzaktan kontrol edip onarabilir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.20.0/SiteYonetim-Kurulum-2.20.0.exe",
     "sha512": "rS+Nb0js7kghPkhUm62C1utVgpbYNEaRtb1sNdfxaI5g8keQCfWdIbkyzkVakRqD+Mc/3IJ3FBlua2q/g2FxPA==",
     "size": 83958700
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.20.0",
-  "sig": "EHLA+bCUyFu7q/TCVrkwvD0tIC94QAVtJq0hAez1zc7wULQzN8h9gwcoGZDfQxLrclz1Zb5edVOMuVrCbFuKDQ=="
+  "notesX": "fPxR6trvqfEE29u6xG12GSZcJmwcPBuXh7FjwZ3j7T/U0GS8yGJx4cvHIpZwz6uHdq9HoMLv8R/PUQPCZUF90eiSJgSLWFjykIyL5/E+gqZFutAGE4WUBsnB2DiPrQuMt1KYSMCo/jWSIxtkl0mYd0AD13bSsdBdVIKmPT53uDzPVvQDUYuYd1cjiPlbZy9GOJoifkXe2My0QHA3iV2OsHUpKmQkXmyd2wjMZdcisCSbggKsZKYqT/LtTPUCI9iNqi9sq7Wbw5eBibexY7PAgbI7NUjjox9lQN1axnx4RZpshPygx1egfdAKrwAN0CeOFYkfcaZCIRVUok3qoIBqrV8TskPoK9PlrkOFXpm2gOFcPHaA2qS5OgXTPJUs5YvRFH6/8ZISLofgUwBezw8vn4RRPMRFPgCX8DJnEDXopklPNOvpzOnlKtOJgbiPJsWk3kMN98jTLe7SpWzIOvXX/LDW9H2i2467Ts9NRR1IPKoKBVEyNkLsQqOcbNgASM7A2H81XRXx+to37zUnnpA2VFxXE72E+5Dyf04Y7Zj5ct6Iouj2hGfOIyyRjr5nxVe+YbMhVJ/BNPea6m7NXfHuEiI5ThznlEE+pgm50nEbQQaO07TNXMgmvH7w3jxNhwhK2e1UtGHWwebaKN+59vRPqnnMJJmHFlRZ7PSMfOSe9QifmMX8vtdfOyXJV+z2Fn6Yvv8pDs4u4pYPI+gKUPOvm8iB3XwuuIoTUM28I7VpgI9XdtQs30MzQAVZ8TF+457arHRS+5GowAQnjLWZ0RN8gmg4Fr4il90FiW+x4WMUJu6dQEJeF+FXsIj4AQTG8BjK3EKmkjLSLWtImvqhdWhI0J19y1VHzePhHyMiJm99fb4LNfwCZzFtbywnW5kzzERasZG3t5PL1Vywsix97XeK6rbP9Apb/KvTEb8S42QKmEwo4i9Gdy1dt7vvGdfQTglmJ8k=",
+  "sig": "BZQLDtzuJ3i0ZMiIkNzZYZefvgGoZ+Zyvd7hOb6ouw8xNrMY6d+xIRO9ZsjVn9720fvCe2M55oWS5/+LCaCHCQ=="
 }

@@ -3,10 +3,6 @@
   "version": "2.28.1",
   "date": "2026-10-29",
   "time": "2026-10-29T15:44:36.828Z",
-  "notes": [
-    "Düzeltme",
-    "• Deneme süresi: programın deneme başlangıç tarihi lisans sunucusuna da bildirilir. Yazılım firmanızın gördüğü \"kalan gün\" artık programdaki ile aynıdır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.28.1/SiteYonetim-Kurulum-2.28.1.exe",
     "sha512": "h8W9hyeoD6usDH2uG02xuHOBH5unyMDAYbgjjo+PKcrbR8RDt4pbJz/uV86iISuxdo07/8XDCwMQl8g78xfqJQ==",
@@ -23,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "P9maOJ4KwktS0ZeKmRu3lH7cMAOu96B6vesJFDZkOeZQGson7kADpzz+Ayp4p27NnYkOytonwOElTyS8oHUzDw=="
+  "notesX": "TYLYB1xBwmQ74SASGu0berNulUFFeHFNaIqdNn/71wU2zdbNDvXyB3LlQkXnSA5Au1X+7DL/vuBsam+6aDSLLUL2muqH1srGlEQw68q8gDgSHDA3naiNa9rRmFu7EOjgpj571LIwars1CL2gQK3QchTGUZhoB3uOQ1JpW3Tx4mQH4xQ0jS/FUzFEXQ+Akupqo7IW3ZpgegLUM+/PxA9pLjdruayMM7x9Kr7foO6H05R2AjX+D9qIfEx+T7b0lLI3QZ1ggjC8exqadAic72sdvt+195jnO0ueobQ=",
+  "sig": "YS+/93bb0Z5NQmlHf6xcv0yR2Kab3RiiCvFf4+zi4mHDb6Nbtb2UXEPsbnmBLBPAUiw9zMZ62jbKjtfhOrElBg=="
 }

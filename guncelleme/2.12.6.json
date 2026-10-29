@@ -2,15 +2,12 @@
   "product": "site-yonetim",
   "version": "2.12.6",
   "date": "2026-10-26",
-  "notes": [
-    "İlk kurulum ekranı: \"Bu bilgisayar bir Site Ofisi olacak\" ve diğer seçenek düğmelerinin açıklamaları artık kartın dışına taşmıyor; uzun metin alt satıra geçiyor.",
-    "Ofis Bilgisayarı penceresi: \"Taşımayı Geri Al\" açıklaması güncellendi (ofisteki güncel veriler merkeze aktarılır, ofisteki site kapatılır; ofise ulaşılamazsa taşıma öncesi kopya önerilir)."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.6/SiteYonetim-Kurulum-2.12.6.exe",
     "sha512": "DKEcJNMmS7p8T0wF04TBB4noe1mawJ4lvU3CUtdCkHeyHQyPSqbUZo2lFgsX1xi6J/SJDQWyDmDfsLb6xyBCRQ==",
     "size": 79025343
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.6",
-  "sig": "dLO0HsdlvhTBhJzkSjZE/hEi2t6PFCDaW/mzWh6F5vMcr480hVJ5HwJfHKgluD982eiuIn2ahCrytRToBlZhBA=="
+  "notesX": "hf2mSen9ljgXWXxbP/wXGzOCPmVqSe3GuTMBkifnc82g1/We6vPoBs/s0Uflf6iFT4iC1Lma+kB5rJYoFBWB5NnJflZUV09ZOQ2+J81MZ9SgCVpxRpge1zFHUWmNkbhl4kjsQDEjudEweBm58+DeycDr16S3Rs7VQN+9uU3DKRC2v64P/uo7MPaCyFTHSb0/M2Nsol4DMQwRhhO5YWclEt9fIfIHG5QESwbiwryWZiMhzQFq13idyRHnsUXl0Hm4UDJp6/zFMlG/d7d+C0OKXxWvAlhzZfsay+gsv3TjevxcaZ7fQRIv4uYTsQtayZBvDlmvsZJUjnqt25rwxDmkPqON4cL9FrH3km6aZrAi1FmzsHZTxtTL/jc400rCv/YHykXyMwQHxdl2GG2gOK+T6tH4iVk6ytJrSZ+XQM2QSEwHwiJDA7sNGI43m6CRbhPV/ZeKWPfeg6eCPnu7bsoFdrwaAqXdgJcM2RPAcDaa6AgSHKO/U8sPRjD+CrVQrEqpngOw2jjRVMbTn4zCnMpqHlEEWM/hct0H8vwx0O8/UYv0qUkcwOrlOn8=",
+  "sig": "R5kHLSXxpClS9Tbi85Ifnkumbh+bwlG9CgEuOrt+Psp7B/zE3gIL5O9QSo+h02G1BzHcXLvj+KNTrJlM/3jmBQ=="
 }

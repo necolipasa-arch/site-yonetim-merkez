@@ -2,14 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.13",
   "date": "2026-10-26",
-  "notes": [
-    "Merkezden Ayır, o an açık olan sitede de çalışır: program önce kendiliğinden başka bir siteye geçer (oturum açık kalır), sonra ayırma işlemini tamamlar ve sonucu yeni açılan sitede bildirir. \"Açık olan site kaldırılamaz\" hatası artık çıkmaz."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.13/SiteYonetim-Kurulum-2.11.13.exe",
     "sha512": "9Rey6+XPKkll+EPrTW2SFzwOo041cX8faX2NySte08PDcQOlFu0oNi/NBKUS7lEPb5j2ehtAziR9abiGp9MNBw==",
     "size": 79011907
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.13",
-  "sig": "P6AV59B9AUa/ysLDgkF6doC+++tSqWf6rPoQM5gphzqVpm2mCx7H3xYVEJ/nk58hVP/777RbacFPBpyLKTE/AQ=="
+  "notesX": "D6Zlm6XU8HVTfEtYcwPJIEYIDb40OU3atZOhH1A/AkwZIK3W7TGV3nSCXuP/bCcFoR/l4FzZ3LLYJbVc0ovWJ83RL7Ov4Sl8K2KjAhZJuwYPK/IBd/5Inf6D92XHON6H0qTdziw3x+WARUkFi62lILXRTJnQ9aCEONVV0VXD3HcUKZPZar5tJpfBUgm0QDozia0uxZvEap7iMbKY9LgzwGUX0vuu3p3Kygz10eOV49k3iXHiqZKzfojoknXGDXRIVz82Z9sk7M/318+eNepETFEhq/AyVRDBBSWekZvkbWiv8KgsryKzic01cnlExmmNXpVJLZZ+Ph9/xQc95pO/7/b/y9X7bLtfZ0LEyTm0zZ8evi0CU2x1V+qKjCAWEK975WHFC4pLp5j6stMQog==",
+  "sig": "9jGphCoJj8zRSquOvjDzJgu6n0UCtiGCcIk6Rg0wopzxkzf7J8MHeCfN9pT7X2Cm1QyxdTO+G37uWXljaa5nCw=="
 }

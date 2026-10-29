@@ -2,19 +2,12 @@
   "product": "site-yonetim",
   "version": "2.16.0",
   "date": "2026-10-27",
-  "notes": [
-    "YENİ: Plaka Tanıma & Bariyer — kayıtlı araçlar plakasıyla kapıdan kendiliğinden girer, tanımsız araç gelince ekranın sağ altında fotoğraflı uyarı çıkar ve tek tuşla kapı açılır. Bütün giriş/çıkışlar fotoğraflı kaydedilir.",
-    "Hazır sürücüler: Hikvision (HiLook, HiWatch ve OEM'ler), Dahua (Imou ve OEM'ler), Genel HTTP (diğer markalar ve ağ röle kartları) ve gerçek kamera olmadan denemek için Test cihazı. Listede olmayan sistemler için \"Sürücü Ekle\" ile .json sürücü dosyası yüklenebilir.",
-    "Çalışma şekli seçilebilir: \"Kamera kendisi açsın\" (program izinli plakaları kameraya yükler; bilgisayar kapalıyken de çalışır), \"Program karar versin\" veya \"Sadece kayıt\". Çıkış kapısında \"herkese aç\" seçeneği.",
-    "İzinli araçlar: sakin araçları (Araçlar sayfasında yeni \"Bariyer\" seçeneği), personel / servis / tedarikçi plakaları (tarih aralıklı) ve sakinin mobil uygulamadan plakasıyla bildirdiği misafirler. Misafir gelince ziyaretçi kaydı kendiliğinden açılır, çıkış kamerası çıkışı işler.",
-    "Güvenlik Masası'nda \"Araç Girişleri\" kartı ve kapı açma düğmeleri. Ağdaki kameraları bulma, bağlantı testi (kamera görüntüsüyle) ve Tanılama ekranı.",
-    "KVKK: geçiş kayıtları ziyaretçi süresi dolunca anonimleştirilir, fotoğraflar seçilen süre sonunda silinir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.0/SiteYonetim-Kurulum-2.16.0.exe",
     "sha512": "r1LVTPtTlolCp9Q52JHCDugo/RNKNxTPr8ki6629jd0k2debjhb91eyDpWvG4uEf9pjEwsuR6jOaiJ4LAtSQfg==",
     "size": 79249103
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.0",
-  "sig": "8NvPI7xH41hVVgJ/BWk/2lJZl6FV34N5A3pyO1rok0dXSmuwRlE+PfJnjjBzSs1A6dRV/WN/TIRHEz0rngWVCg=="
+  "notesX": "dRJpp8QOnP6B9suCVt3YcSqohQCPXOUT5+Xr9mbXeAsBWci2yfGHjfhH5Pls9DA9T97+rh/g+MERgUzWI2tdCn0uQyOklWTEM36IzAcRjksDVfqAs2NO2plVwZjFSZp1ujRb36/R9joDutm0KGqq0brjyRJPpRp17xGButjagY9K3tfYdXeIz/6eNO3oTMyrOTphuQtDA8/c+O8+vAUGoDul8O61b6sf4OcTihlY5sUecA6bUQQZB32iJRNFp3igY4nnYvXUgUG7EHOvxb2tBpCDiavPVA8Cibqwo+Ct+CDICrO3Wn3hPsJGYMMSBm2mTRqZt9QmgK413Y7GTmOpIfYVNbDeVyCljcKXikC7nV+wNKjaGC41VPDfTCSpBY1q/B8T70eyjORb0ReL1us47Jzo9QgoMrgTbnQMAUrF6dQFxRDTm7w89TwweFZeaqUU3pYjL1J4XZsifHnMQC1PRSsEB2+VvEChZDOkYmwtmuuCbcGzgDfGLJ6OMHkNNtqvfCEfAMcn/tHiBPFAUopmOQGBwBd90ESjaUjIJAtfIrpDD8WHSMRYBucjdET8U4PcdP430WVbytQ0i5gs8Y4WL3MHZSr84j7i9knXJWB1YdD43oW4B1SPcc2qdPqRLIFMS0TRUSvpy/GqsA9JOBeoEpgb0U5mw2Qw7SWw70Qh41o1hR84CdWbm8XqVF4wruF4lvMM78CUt9jEl/lQHb4xK3WcRTYN95joxDWlY1b0BewnXJ2AmUmcY9MdqGSv4OSrEktFOGqW6PggMG8y/FEphqXLjEyu5XPjTN5msEGxh1w3uU+sSC1G6KZzPDXrQMleWGJ3+d7f00CLPp0Hj5jqZpSdFOXgtyoUk04iDJhMOZlQtGzVHt8OdC2HMQK3sgnLBbe7Mv6ZzDtUGGPFkPrOS2LK4pXZ5A7hL37/0HNxmglsAzYt7UDR7TyCUI5w6iRZS39a1t14ic5opB+BWHWHi3b19/kyqmg6TrJTJikvOMfKit8eCxyW54z1jFY0K8vCiQtD/hh4ruIpm9g2IBvXm+Kt1qZORz4qQUC55EAdqLJvm3+yc0bkHIeb9VDP+8JJaiAoEjYRdIvhmQQ8pIt0palFifnDjK7qqwW/E0GLrV/oh5BZrmUNW5CB2ZwMPOxl4u/dHOFx2PpD8Q+CXplBtD9ol7V+47D7M/GrpTuf4GTRz3S/gbNyfIV26BOH1h1VnacQz1lrzpqpxzeChLqv+R5fTVyShSzY5IhLawk1F3smds9p2VHMY9qE0jqEblHZIP2k+HaCp52fBKQalzXMuXg8WT0CN7rioNAkb51nbWJcJddQ15mCg1hAQu4j0QhAlmy6EFo7r3AVoVgb2mOAVMXLJlQLkHe8ABKk3lInPCYwbsULr5U4m1PcgLJ68hY6mTYqsl2oShOFzOsoRkO7csuomgFz20nrKB41MpxwUkGv+GxRqK0GsGwoGwjaVxajwZUpb0mj8FB5+JbbfnIdEgyttay8+XkorjaXtMKrCkkAUtdlaeavHL/FSGFLRmIYsaX3QYXT9W+H4ClPXgGNihdpNOTM0KARdo2Ic4AcMmL3K3tBuRk/Lel3kvSwTz7pEU+MdCm8r0PswG1Tb/zBRwYbTO3GA2EDr0DIse7o1fQDlQif04H9JWHVrXxSpMfdImqnIJ4/jd6/11yp5NuBJJ2UkrE9EFLa11/VK4cieLMv0jvRJrI0i8Av6bu4uAoOr59zYfB8ykdUeYS/a+NznHnsZVtr2MAS2MRG9LSRf/rnhTSbFc2IpDe4jNHAGx1OS0KXRuKRgxtAahy7bjfesz2HiIhDrZTGmpTpkn9o7FsKlmU4fTMdFI33OC5LNjjm+Dq1AwTI7Fv103/uL+DsrA0lP4duPSYhxO62QSET7SCA2YJ5",
+  "sig": "QFTdhQWH3Nc5Ptctq17jUzGAN9YSb07VUKQg2oXHSGbt4AHFamFWq19S62TnKGFbs6gpbsV/E9uAvIQrEdXqBA=="
 }

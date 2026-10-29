@@ -2,16 +2,12 @@
   "product": "site-yonetim",
   "version": "2.13.3",
   "date": "2026-10-26",
-  "notes": [
-    "Test Ortamı'ndaki turuncu çerçeve kaldırıldı; test ortamı yalnızca üstteki \"TEST ORTAMI\" şeridinden anlaşılır.",
-    "Canlı sitede eski sürümlerden kalan örnek veriler: Daha önce \"örnek verilerle başla\" seçilerek kurulan sitelerde Gösterge Paneli'nde Sistem Yöneticisi'ne uyarı çıkar. \"Örnek Verileri Temizle\" düğmesi önce otomatik yedek alır, sonra daireleri, sakinleri ve tüm kayıtları siler. Site bilgileri, kullanıcılar ve banka bağlantıları korunur. Kayıtlar gerçekse \"Bunlar gerçek verilerim\" ile uyarı kapatılır.",
-    "Yeni site eklerken \"Örnek verilerle başla\" seçeneği kaldırıldı. Canlı site her zaman boş başlar; denemek için Test Ortamı kullanılır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.3/SiteYonetim-Kurulum-2.13.3.exe",
     "sha512": "1Y0nU79PX/okv0/IPRSZhhquMdezagTMTvSaRdav6LQ0D5QuIyygfoSqntWY4WSQI0JzfJW7k4b0QuSpcTTw/w==",
     "size": 79123992
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.3",
-  "sig": "Zjcg5t6gRXQwcy87lLrr4wRNZ9FDxI5T8Yw5YHHa1dhftjF5aVOge1WByedEwRkd9B5bcljZKvNL5gckWM84Bw=="
+  "notesX": "Dri0KmjwuquYffpKNnQo3797Ql1JvvYS1xxxk5WJDePNf2SH7ewE80aHrl6hmiIMdW8no8WX09JtVjJ3hB5sdyGThSMrLosGKzdlD3JVp3nnSJcTAvC/Cz72Diy9wKeJOgCcwd2fYWTk3FdYnDce4c0Rf00I5GdeCJZvWu/ysFZK88aBtjfykc4L9ui5jFBAhVdm8Q82sew83YDmHK16xKuB/3XjPrU5TECd4lPDVjmM4WRoJDeHNvjQ6UoONz962Qu5FO51i2tAcm4fS19Mdu3zy6mo9pU5HDLCzSu5WyzzM2dsbL8Njra2X2dY8rTiv1mrjpS3CMgl+vWr6rj3hBymwPKztHt4crnMIbrqdI5rS8kklqJFgIuhX88+u31W7YaolWfGYK1UqAUFDyKQLG3wLtxk8JcQ3+Uca4l/0sfsqKJSLQarkhpyXxCwEcNqmfB+3RAfPXOzXvmw3Sh6j8bHJVvoV955ctqhum5fmVJDvMYgFUANvNMPQ4lcwdfySckD4E1fFv3PayCtvSqRGU7+fKrg4cSyvSTXrNYpXy58CjtniSVsHO37D7M0cs30sNnVSEduXAkc7D80ExaWdi0lib4SKYtVMUCdK7hVOmPDBSGbL7vTZLmj+alyXUCSPElS9W3azHfSL96UhW24i57oOOVidRk+gGY9GvMTcsmZ26opD1AOEMViXKGU4NcAKQyYjoSW5J9IYP20rfoVUR+2wylkpyKT3I3acLk3pca6MYHbGUO+gYMDVclHttU9sknFwZrwzK8PH3ZYI+H1AAyrtauGzCgClQEabaaPDse2gVAmK8ZzuKQdIPIsJghjnbWgA5XOD3BB1mgkeIPlRX7jQg7MIXEVDWHuTBcLFTjEJIAJ1ZuOjhlLBJPrTOujCwOSsWR/moB0g8j79PF7fc4yKfV5BRa1SfR+/Ex0j3ptXTg7cWevXwO2AlZmzU5psmwPoemoKYHZEb/zZ8QjaO9nzt9j2yHRUzoe3goHqQ==",
+  "sig": "Vul+ctHFG1s3jtspDESw6aU+g4AwIl2lMZGxOwXIBz0JBCKhVMIFLH0Vzj71FB13uSSdbQcMrGnX/zw/GWo9DA=="
 }

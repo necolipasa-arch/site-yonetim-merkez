@@ -2,16 +2,12 @@
   "product": "site-yonetim",
   "version": "2.16.2",
   "date": "2026-10-27",
-  "notes": [
-    "Plaka Tanıma & Bariyer ekranı sadeleştirildi: üstteki büyük başlık ve açıklama kutusu kaldırıldı, sekmeler en üstte.",
-    "Canlı İzleme tek ekrana sığar: sayaçlar ince bir şerit oldu, kamera görüntüleri ekran yüksekliğine göre boyutlanır, \"Son Geçişler\" listesi kendi içinde kayar — sayfayı aşağı kaydırmak gerekmez.",
-    "Ayarlar sekmesinde genel ayarlar ile fotoğraf ayarları geniş ekranda yan yana durur."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.2/SiteYonetim-Kurulum-2.16.2.exe",
     "sha512": "yFbd/sTeNNlqp28iAXrt29RdUACsSNOQ2XqP9oHXE5ybimwuJPaUp6+cTizjhZK4s4NJ8FE7VNyo6aCZF78pRg==",
     "size": 79253102
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.2",
-  "sig": "KQ4e7SQyIf25rqfub41EHnIaUifQ43wP9KuFlhbHd0SeKYlERgNaRnd8BWUY2DDM8S0V8f/pv5+6bpkE5/WbDw=="
+  "notesX": "l04qR/oL7bb9dMlZV4rcdxTLhNDA2xCdw8R3k2zI6HfwDmYn/9mlEoAlzOFSpSL0KcGpHS5TjczZ7lcfFgetakEmFdbBujx67crXBYKaOqqCa3SV8CATu4vR153fDlz64svBypiXX9YN0pxarkl55Oopc3Jfah7G05zIC5/yTb+hZuzkUGrA+4S6TgZiKfwkBobGRYuEeOq8hjaSAnERtTOOhvdrai6NtSX0tUzuzy5Sb3h5dXRvin7Csu6/mSJhx1W9lty8enN1Nn1/dHYlhNMIebdvvT46GWBkJB5jvQxm3Cx1BgKJUx121CLLxMSn+pB11DUxFui1/58slZIiuVxR0IO8gBJQlYfKgwzbsHHRdWfirrkYWihxIrX0OH8fjn4TLwjyNHCjV7isSTQ9hvq3k8IiwSN9qVJdganlp9DtKwbWjO8MdQazeTKkGnJnCEDQ1iTwkMy4esg6dpVmhsjfiSDuZG3q+s+D67jdW8+vMDaFqwgta9l458l6Eg3d+Fkd3g8s7oVht3VGXazi817u5bn79koiwag+NncWH391K9rRHB/8t/W+bmQAkJaayIN2ugSh8BkGdpS5exPRwCIIUnbWerJI8/WM4QFUUNb1rb/Q+VP4ldM=",
+  "sig": "f4K1OySzS0ZhTcZmh8rs2WwodMT5AG6TJ2lKzb2HgaDmVXLUpu402kbu154BStFAnD9h6n9UERMxeqWzijrSBg=="
 }

@@ -3,12 +3,6 @@
   "version": "2.26.3",
   "date": "2026-10-28",
   "time": "2026-10-28T23:29:54.650Z",
-  "notes": [
-    "Düzeltmeler",
-    "• Ayarlar → Yedekleme ve Veri → Bulut Yedek bölümünde eski bulut hizmetinin adı (Supabase) yerine genel \"Bulut veritabanı\" ifadesi ve doğru ücretsiz alan sınırı (512 MB) gösterilir.",
-    "• KVKK aydınlatma metninde bulut hizmet sağlayıcısının adı sitenin gerçekten kullandığı hizmete göre yazılır. Metin değiştiği için mobil uygulamada sakinlerden yeniden onay istenebilir.",
-    "• Bulut bağlantı denetimi ve hata mesajları, otomatik kurulan bulutta artık eski kurulumun (SQL Editor) talimatlarını göstermez."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.3/SiteYonetim-Kurulum-2.26.3.exe",
     "sha512": "lDtiQ7bCS9XEshPqz9cXNI6OfVWzhpZiAgFNIHiSvQp3xmKWKcmgyaQfae/XGexUzp/yAQfkQeb4nTSHa+X+JA==",
@@ -25,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "/kV0mVCQAGaakWo1a3cDtFjjUKl2XFvHBvRVbuVVxAGJ7IipEmtgzSsUNHorFhUOD0dbujXxnYVSSA/xvz9IBA=="
+  "notesX": "dfmbYfuesT4JL4TgyOWQFiWKvjlKHY/M4movwKq6l6JvKVvkPEWtPUDOssIlznQUGs0f47ShjMGuFllp78e9N1ZQfwUNGA/hYYR34IG033dVX55qV4wrrhZ45YAJ+TudezImacgnjIBCflGPszfGh7auH2oxqXjmjF6EgiAoyHr2gGM9WLDedD5/tHx+5rWhaZQFizXBTCLAHNihjSZJYDOIMJjJjSXmRmTJ2fcJukhhZDfMlnItBTD89k4I1di9nMvYdduvkT4DpYgfqVkE+p5WSduTZQ0kQjNa3JLQCp61aXvk6lZCqGQQe6XdV9grFmw/ne5Qb1elcY/BAid4iGVE6rMweJZ/Iswbe6GiKVrwMQPWorURVJRwaEx1Q4cba+27CUR//sg3YnzIc1zZyMcjoju0G74+iibDUvliLdt/FlSYkrHJbl1y7ExMOYX2bM0q+1cW7CL6KNoTD8A9pIwyPm0K/OfhZnqRAGF69iWZxXhZGvQkxyEEgk1mk53EIuDpju+rTOPPQzsWuCVWBDtNUEA7iRFiq+cM27xj3MWsTpUMSv5HYr5VxFw2ihbD7RFtUlvjMz1LMypzWqgX8ycNH+5N26tiKxwGJ6F3x9Ar4s2XtySECDqdyDoCv2OuDBC6lSTXNC3mMeUQWx6NcODiVEMQTLH+tZKC22sm9OcFLTCc6BhG971F68fdG8mnFuvZnT7o4Yn/wIpEOedHV4/K3nHgEgGu0JppfZEUP1cwaAGxVW5vpMG33j24xNCukjI72k/d4uLTj+HPdxlrNwK62A==",
+  "sig": "p7X7bwofta4OzPDU4b4tpr8MkxUM5cGgGFo7rYCeW9oqPKw/ZK5sVXbTsWIxiCR1h0dYb8CJXoM9gzuG5XONAg=="
 }

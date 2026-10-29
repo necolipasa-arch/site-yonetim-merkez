@@ -3,13 +3,6 @@
   "version": "2.26.0",
   "date": "2026-10-28",
   "time": "2026-10-28T22:20:44.199Z",
-  "notes": [
-    "Yeni ilk kurulum adımı: Bulut ve VPN hesapları",
-    "• \"Yeni site kur\" seçildiğinde yeni bir adım açılır: önce \"Gmail Hesabı Oluştur\", sonra Neon ve NetBird hesapları \"Google ile giriş\" ile tek tıkla açılır.",
-    "• API anahtarını panelde kopyalamanız yeterli; program anahtarı kendisi alır, doğrular ve panodan siler. Şifreniz hiçbir zaman istenmez.",
-    "• Neon anahtarı kaydedilince satıcınıza Neon kuruluşunuzda Admin daveti kendiliğinden gönderilir (bakım ve destek için); gönderilemezse ekranda hatırlatılır.",
-    "• Kurulum bitince sitenizin bulutu ilk girişte otomatik kurulur; bu bilgisayar VPN'e hemen bağlanır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.0/SiteYonetim-Kurulum-2.26.0.exe",
     "sha512": "HhTBcLbrbgEOsRvnxzlQ7oL4+VYggIQBn9xorMNQesWxyqA11VeuNGngaVEDutlC6eTcXAvFKYxzw5e8HiwmLg==",
@@ -26,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "nSuAAFmiZC0bQ5QeHpeWWjRtmjExuCj+Rt8MpiD/mYxQBMM2YyfYFDXzPJfsozzGgt2Z7LySfAnSuarXmenZCQ=="
+  "notesX": "CWObg3w4X4LiQjJu56iQ1hCTuirNn2GY+rxSVTXdm6nu30Cd//T7rVxF4LhlZQyi0AXQ+KzCRnOgYY9YCXPC5hdiQYvWa7ou34YaLitUNL5CjzfHh/CaWvCAGJaL/QQwJwPYEtuZU7C09A1p8L4lTSuGIH6w1m1cF4gGf3JYif4cDXW+K/EjkXnM7Hc0fTV9oH92aGL9C48891pzKHsGYdkzJbw13Vs47I6ZuqduZpGgKnwCbnAZ12kKaTxqtm2NYc9jnNuKmOwRAVL+4tXXBDCfjIPE6T0NDIcFLFlK7TmKggfsmttnebkS9Y43NFeMfNz3wasOsRHeLnkV0T0ZaBcAAFM/+XXeaQ3NdrOk+XIQmrMT4pqh/QAIPqvk2Zuydd7y6B+piCk+5hJOJrvRtmWVgAk4hpGb3mmST7ey7fWZ2k9tO39YEZ+9V+QzfQTf1McF9N2taiv3sWdDrL5UHaEKqsx8zUB8WVBJZbkGIGYiVP4qq1dKePbtbYjVtRhCFdE0/z+yx0DTQ21T2pqoTkB0Z7STPzz+Lo93/J5IGYafD1zv5p7xxPLEr86/yp3D2ZpFXjDmbyTsykHB7TZJ5erLrFDp5zjoUsO9PN3UDs1gEVfghkE64q3lnZSLY9L6idrfKeTLv4CUvk1EwxdFZ+++i50ri8pjWGt3bG6u66Tmbv2aWZUjfpd17RraP1DkAY8ICg2BCzKHmFd/i35JEAs97GuBujElGYMk2M9/ys6oNH40jxh20qiRpZIGBg0JhNMNTZy9hP7qryxVD5bE0kPgQkVnXZCfs1JenO4oV6SabA8K+inQT4aum+FDuv5UA2nUd6EsNl04L9Nus70/DB0nrRV1td41IhDRaOqxucbYZe1uOmnDC7aeutEKG7xM3vk52ecU7mTRRKsAn1dwq7/a2n9x",
+  "sig": "gVS2monRFXJvSpAyHDWZvYSXLefVDidBcK1SXqR9+4U9AoszRF2og5sZIPiA+cEHqPYugjxwEnZW7S+ZansHBQ=="
 }

@@ -2,21 +2,12 @@
   "product": "site-yonetim",
   "version": "2.15.0",
   "date": "2026-10-27",
-  "notes": [
-    "Yeni: Borç Takibi — borçlulara tek tıkla WhatsApp / SMS hatırlatma (kademeli metinler), toplu gönderim kuyruğu, hukuki takip (ihtarname → avukat → icra), taksit / ödeme planı ve hazır belgeler: Borcu Yoktur yazısı, ihtarname, ödeme protokolü, borç dosyası.",
-    "Yeni: Isınma Paylaşımı — doğalgaz / kalorimetre faturasını 3 adımda dairelere dağıtır (m², eşit, sayaç; ortak alan payı), tek tuşla borçlandırır, geri alınabilir, dağıtım cetveli yazdırılır.",
-    "Yeni: Yasal Takvim — asansör, yangın tüpü, DASK, paratoner, sığınak, genel kurul gibi 26 yükümlülük hazır gelir; tarihi yaklaşınca menüde ve ana sayfada uyarı verir, \"Yapıldı\" ile sonraki tarih kendiliğinden hesaplanır.",
-    "Yeni: Personel Bordrosu — 2026 asgari ücret, SGK, gelir vergisi ve damga vergisi istisnalarıyla net ⇄ brüt hesap; icmal ve ücret pusulası yazdırma, tek tuşla gider kaydı.",
-    "Yeni: Yıllık Faaliyet Raporu — genel kurula hazır rapor: gelir-gider, bütçe gerçekleşmesi, kasa/banka, alacaklar, yapılan işler, toplantılar ve gelecek dönem aidat önerisi.",
-    "Yeni: Yönetici Mobil — yönetim kurulu ve denetçiler kişiye özel linkle telefondan kasa, tahsilat, borçlular, talepler ve yasal tarihleri görür. Sakinlere Şeffaflık: istenirse sakinler mobil uygulamada \"Site Finansı\" ekranında kasa, gelir-gider ve tahsilat oranını görür.",
-    "Basit görünüm ana sayfasına Yasal Takvim ve Belge Hazırla düğmeleri eklendi. Mobil uygulama 1.9.0.",
-    "Düzeltme: otomatik aylık aidat ve otomatik gecikme zammı artık program açılınca da kendiliğinden çalışır (önceden yalnızca ayar kaydedilince çalışıyordu)."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.15.0/SiteYonetim-Kurulum-2.15.0.exe",
     "sha512": "P24veVnCTi2EUmM/aF8L9ai8g+nv9kPz9gKr7VY64VZYt8PgNb6AKDMb3WBG6j2jrXBEoRpOQUzcgFw+Ud8J3g==",
     "size": 79191594
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.15.0",
-  "sig": "8caWW9+IvPNfRElaXZ4u5BoqZIHD/Z0RRKakObUUEBH2Uvglknuaza1v31cGTDbhBjiHvCK6vzPLXixWddxxCQ=="
+  "notesX": "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",
+  "sig": "RQGshMZjgr+BGsE/wELCnkSVG8dv8EpCboHJyZ/zD8r/OTiH7jS87y3AfMhWbxSHB+CBqjgNadCDdtsN1zFGDA=="
 }

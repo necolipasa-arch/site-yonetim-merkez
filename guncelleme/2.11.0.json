@@ -2,16 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.0",
   "date": "2026-10-26",
-  "notes": [
-    "Terminaller ana bilgisayar kapalıyken de çalışır: güvenlik kulübesinde ziyaretçi giriş/çıkış, kargo geldi/teslim, QR misafir kartı ve arıza/olay kayıtları terminalde tutulur; ana bilgisayar açılınca kendiliğinden ona aktarılır (sağ üstte \"Çevrimdışı • N kayıt bekliyor\").",
-    "Ana bilgisayar kapalıyken terminal bilgisayarı yeniden başlasa da açılır ve giriş yapılır (verilerin son kopyası terminalde Windows şifrelemesiyle saklanır).",
-    "Tahsilat, makbuz, aidat gibi diğer işlemler bağlantı gelene kadar yapılamaz."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.0/SiteYonetim-Kurulum-2.11.0.exe",
     "sha512": "7RYXrdG+sHCWfNOzIrO46ZqoXW1nP99WQ4fVPKWdQMvqnC4e3R26uvaj8EDk9hJ4XDjcrXq7/uTRdfZcnH0F1g==",
     "size": 78998639
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.0",
-  "sig": "+7DnqqjPLT9e+1UU3yX1+a8WtIzgxcgySbawfVdqYThj2VczU73SpiwFPv6M9caaSXhtE770muQ4dhZgs1imDQ=="
+  "notesX": "fHlVMYGU69iFcuhGrSFnjm7g4PD5NItW+YgW7veS6gAUybaIwVJATSkDu4eFRDHwhr0Yl3hQ83LPd/4kbTWK7ZZ8MTMgcLx+DGzs7ZvJDsvl/Xe2X/03kBIQ/Qy+tcQ5aTF3KuUXJwuBiqlmOZQbJ+52xzZ0oz5INY6A8Hd2MySIyGoChKRaf5Es4tdcZkmdBp7JTtuFqCE0YNgGzigsHiz/Jp8QJmX2eOzOCQEwh9PB18V3/sSfub/lmHTXlqMWSj+VbHEzla+MB5L7cWNX/vRCY8FX+XiIfdGiMfHFpEGOAsacVyN61PMLdD7h4BcwRTD0o/6r7x/hDtp+jCckdCWgccaj/bYo1odyloVGe67+TtOQ2CwoNTjaGtirKoBY+BEJrwx4QhSbPuV5S5R1+R2IU3JdclKAKFKsNK0jUGEG5cTpiMMiJmVsnPj9FRF/UF5w417I3UUrYHl3zQE6vqpP5ZXHYV8tlULTged5wpbUIo0pOILVYfs+kCJVkjTjoKv7TfWWbhh1lT7KaT//Xa3WpRJmSqQUzOOGA6Vxd84xQbzp2zGxm/ezqosZgGmi980Zo+sMqJS+vrPVue/d4gQ6wtDRG9jSRV82RrwVweo6tQDJLjFTs7jOkTDqIOSBWh7Eil/oLMF5bFN2Kfy5HNNmyco+pNTsZZ9mGJhjyqxdn2OBKDYlirsxR0woU3qC2sv5PJsnRwdfSXAt1l7dbdxh6JuLFFawBi2tmGtE5yQnUVbiiO8hw5ritEf8wZpWn6zmQ4gtCRWgNZ9qyQxUpo0=",
+  "sig": "ms2FlBlZp0lP3HE4BcfDcSQRfT1CwMMbejupB5G9IvnJ3b588hKeoEPYonCDeIg84Pv3fa6rfvFsaYvOh71XCw=="
 }

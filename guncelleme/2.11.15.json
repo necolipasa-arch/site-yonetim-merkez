@@ -2,14 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.15",
   "date": "2026-10-26",
-  "notes": [
-    "Üst yönetime yeniden dahil olma: merkezden ayrılmış (veya hiç bağlanmamış) bir site, verisi kendi bilgisayarında kalarak kolayca merkeze bağlanır. Merkezde Ayarlar → Siteler → \"Ofisteki Siteyi Dahil Et\" ile kod alınır; ofis bilgisayarında Ayarlar → Siteler → \"Üst Yönetime Dahil Ol\" ile adres ve kod girilir. Veri taşınmaz, ilk kurulum ekranına dönülmez, oturum kapanmaz; site merkezin listesine \"ofiste\" olarak eklenir ve merkez lisansıyla çalışır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.15/SiteYonetim-Kurulum-2.11.15.exe",
     "sha512": "LfnOCEc7p8N6IrjW5SkC2+3tzHZCZbSTGTM3wfw27K7jvwb3l5kExb/v3JogK9yERlNVxQWNo+uKsX/khUk/IA==",
     "size": 79014237
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.15",
-  "sig": "hc5upFnyBHxzTLiQyOQs2Nnl293AkQtDngSswiOYEdMy8rtO7LKz0v0roSBh5zmCckAEQWmS6VcJPqXrAyB7Cw=="
+  "notesX": "M8gotqHkjEGZ9/k+hJoruw7f3NQa8La16cUwugaKYbe3IVcxRqetd1uwIs+qRs26MrkhXysjXK4DJi1BHYDg3ty7SC8BYUawt2WLVPXMLfXiTpdZhGpcH1xao2GG/255yHPvDREPSf0gF1cTONviIuIEex9LeCUVa6VGTacyJZFy6DG6FeNz0TC5sijXk++y1//w0nusiiG67Ankj/R7psfHg64aCPqXfcaQaW2wHgUfoL+B6O5tUpm3Pmd6ktwnFN0Ox59vjv/V6qm+n12ti4cafenx61xc0ix84/rKdyTvOqWdS/v23Q5Jgyf41hDMFzEd3D2/k++Z6k2VdzlXfhgxsbPRjSTDqjs8bWU1Qhil6AegPulmtmDu31eMclY/6bW3m4NOH48z3kDHzjHhdOA+BzAqHlHv+MnIjZbQBJYhppZRmjvGjfBrLtZQLlbU1sYbAQFYpT+YQRe1j1sodJFgkPjplskuwMHhgp4fe9S6wHKH27dGbLTAjoErtuj3tsVf7deYSgOcWX1xrVA31DsNZFIgjjbwdNrJR0Ewvq5T74EO1ugGmxmLYHThSynwMg5fFMo7ma61U4hAozsT41PeJgX5HoUTzUW0FBitXwkvoFQswswuYgx+fqNSwnr9jKvmpaExiO7qvBCMd3BD760Z8c1pzh+x4SrPl6XeE7yo6/eoSg6CWaH4",
+  "sig": "n20KIX/VGOO+DsxMiQCloRjN+lkw/l0fvpCnkDVqvE9W0z3VozIFwMRcCelvin8EphscMxK36YisuN+0/xigCw=="
 }

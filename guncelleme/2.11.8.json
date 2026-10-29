@@ -2,14 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.8",
   "date": "2026-10-26",
-  "notes": [
-    "Ofis bilgisayarı kapalıyken merkezden kayıt: Sistem Yöneticisi ve Üst Site Yöneticisi, ofisteki bir sitenin bilgisayarı kapalı olsa da o siteye merkezden kayıt girebilir (tahsilat, gider, sakin, daire, talep, ziyaretçi vb.). Site son kopyasıyla açılır, kayıtlar merkezde şifreli olarak bekler ve ofis bilgisayarı açılınca kendiliğinden aktarılır; merkezde sitenin penceresi kapalı olsa bile. Ofis kapalıyken verilen makbuzlar geçici numara alır, aktarımda ofisin sıradaki makbuz numarasıyla değişir. Kullanıcı, banka bağlantısı, mobil üyelik ve online ödeme işlemleri ofisin açılmasını bekler."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.8/SiteYonetim-Kurulum-2.11.8.exe",
     "sha512": "pItYoYfiCJy7sMSv/plbE2AUfaCWtZWQS38BEWF/mp8BjG0YUm86BP9SW7RUFAhxc0elmRAYonh7C3FM69rN7A==",
     "size": 79007000
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.8",
-  "sig": "ajJLIdeytb3LgBDO551GKtuP+Q8ZBrg1zigmaNqk4kDBHaAGaowOCQ1ddVzyPA8/Llwmh3c0kp7M49RnNcdUDw=="
+  "notesX": "EjUotH04I/zsV4+dDqcKaeAhbjflJ/0QseknD8xwYr1ylIA57NgLSuEPAM0B8QF2P9X3LyHkklBIFAoNOE6MUsWP/Vy+lBh9uJ5WBI7kfZtN+gFwNZdBXZNcAKZmGi2FcNLM0v1fElWAQ0GjoEuocWKkcaVqOJ+AUtZcew04eUbQnShW5h6GRY3GRVSr1O1sf9yvlZ7/GAGLDAJYcHc8x5rMZJYkIIJQb1k3fm6jODl89UplsRf6BcV44U+ouHRAGhCCJUx4Fy3CY/sMzp4lybQ8RZu8GqTaQimBTHBnueOd5DGjlAlmI8Ros856zHJ1B9qhR5eTfoXPTOY0Pm2DjSthyTiBbbFHYGANrNiS6pXe7KqM89yeCCV9HWvSbA+TywpMoGpK1z4AbVquRxBFr1o6DI++4YjcAaMb4roICc6PsSzLeI4K1gCtPycOH5lX9jzulncC2OiIYUz7L0jrwqCGd0R1z1BiI+Km9J6ZurcLAhiDevx1YR81wSSy3VToUQO/ExqNUufFggd90ditiIbM9vp2JZ1VSMaWdCjkDlKR7YgpKuyGi77cGhGI7f+aZ+08dQhcoRzIwZbq4HWCX0++h6UuCpi+sSz/Sfy9DyuOshfnDKcKwC2zrpQUyTn2XZgO2VEdEnbNX++qONhEaEVSydYbLI6zMJmkDvA6us3/Mip4xoDRshgo0IqkVZ51egRI3xyE2cIMQpAko8eYUWxHiDBA6QVuzDXU6oFzWKBB7/h44xspopiOHpB05Jy5bd/Res+e1DikNSQvaITMMNVu7S6Wuk47RwI4u6PhBiqmQXokErYglWeu5D6WMd+4VQtIkBiayzcJavnMQR7Ky0wqlbXsFZHt60Lo35nX0B41gz8UPfrWEte9JE00",
+  "sig": "wpNnTRSq8JcV7zsRw9JKnTWXh1nxwaqvbF9FoYNahIi79d4BDTzrjKH7/lPYKIg0jwsphLSByMAq4AgxVEqvBA=="
 }

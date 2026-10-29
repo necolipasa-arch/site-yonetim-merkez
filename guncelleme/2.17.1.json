@@ -2,20 +2,12 @@
   "product": "site-yonetim",
   "version": "2.17.1",
   "date": "2026-10-27",
-  "notes": [
-    "Reklamlar — düzeltmeler ve yenilikler",
-    "• Yeni reklam yeri: \"Kapıyı Aç düğmesinin hemen altında\" (kapı yoksa borç kartının altında).",
-    "• Yeni hareket seçeneği: Kayan yazı (haber bandı gibi) — yavaş / normal / hızlı. Yazıya dokunan sakin reklamın ayrıntısını ve düğmesini görür.",
-    "• Geçiş süresi düzeltildi: seçilen süre (4–15 sn) telefonda ve Telefon Önizlemesi'nde artık doğru uygulanıyor.",
-    "• \"Duyuruların hemen altında\" seçeneğinde reklam artık duyuruların arasına girmiyor, listenin bitiminde çıkıyor.",
-    "• Açılış (tam sayfa) reklamı: birden fazla reklam seçiliyse hepsi sırayla gösterilir; \"Geç\" hepsini kapatır.",
-    "• Mobil uygulama 1.10.1."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.17.1/SiteYonetim-Kurulum-2.17.1.exe",
     "sha512": "VdPNxLmfSflk3ioI45ThPPtAgNb82LBJ4vabEeM3RPHp3tC/YCO7RGZJJJRqseVFasVkkWRcB+WtzV7zukdwkw==",
     "size": 79314983
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.17.1",
-  "sig": "NG9BSBg3tNo2d6KzEo6PJ+CsZt90ZKvU3qIgnjb+1iUhFHFgQSE9D5GGqwAp3iGaRgX/c471NmYxYTGe8KH6Cg=="
+  "notesX": "MhQdKcNRErQBey+fSIqx4Hu1zilPWe7iUFHlUuao42wUK4gQS4sino5IHwvx7VZU2XyJQgxjsPlCrslrOlpvoWHt5/rykwpzJkRS5y87EhFkXz13xtOjqhdFnV17hjgyfqagnq3Qwen79Bb7ihKlsMyb4aKE8T+2zZhId3ujHvEBdc5NN3EXgmYezKYThtIVquYLwCW2NfZEaM1QzXxzNcnxxE0FjuIuoBWoIZV3Z28J6FwmGA8gA6yvj3Am4mfQ6n5O3xAxyzRxY5FAMfUOAaHEMFhya/aYIW26ZLQFd8MywXiwU8dAA/1k+G6xd+V1oAdZLLxvpL3kARCTOJF4t6hk0ECsxTFKiTmNq0whbkaF0LLQM4uW6Y5qEzJ3nXMHJYJL1ZtwNZczsSpNlNQiz7L/tp1UY1l1+PSz+u9Qje2N1Zd6M0FG8+BCjjR+iWmXJWSMpjgckMtXua5O4lyUy1vVSYPChnFXe0jtNMsgo5UEBrIy/0Huw1jCgApitBIIqoxdMoaNC1mUM7mLfH0+o++f6fDvScUPv2fj/Yi9Gp7s8VkJ24bn6qVTEWj4OyCab3rYX4VQfBlD63a1w47forhmpoPqdV3LchtAwXeeBCwD9xBw3xrZFXUsEM2tAVIW78QPR3s8bY1QCyI1y4o5y8rcCHS0z58R3PhgfGMpVmTO68KxvfnUFxm8OfAFwtsES3GRQK+crQ5ZtBoLeuzv6amtL/SsnRD6pdfNed1pQLU/CnhcjzXEUTpMyFLRLTpcKyzFXTQcyuc+QO5muL8CBrX9sEIHA8PowFDjinUn9uYVUOpsQ+nU6muymURTNhvlut82/uLNYjbnXbhWDOlX/3pXTsQuIcyGlSuSz/+rdfLS5lcoMYhEF/ehD6Xk8mtxkytnl1GlkIs+Nr5Ahv0ppUNXAP0CJYBCXiCbBvzphutzQ7Tkw4IXcGtFs8i8T3pchCe10pbPlfJXM4BC4L38pRWscWtkiP7gbL/9oF2POw1PNEWL3CE=",
+  "sig": "ga6Ut2fmEO9Ap+O8mgBoWIzb1C0Q6G0JPf0Zbr3yvXnkDVvlX4wnNkpFGuXw7Drrx+3CZGe4nAK9SVq1qBXnAg=="
 }

@@ -2,16 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.4",
   "date": "2026-10-26",
-  "notes": [
-    "Site ofisine taşıma yarıda kalırsa en baştan başlatılabilir: ofis bilgisayarında \"Yarım Kalan Site Aktarımı\" ekranı ve \"Aktarımı Baştan Başlat\" düğmesi; merkezde \"Taşımayı Geri Al\" (site, taşımadan önceki haliyle merkezde yeniden açılır) ve taşıma penceresinde \"Baştan Başlat (Yeni Kod)\".",
-    "Terminal bağlantısı kaldırılan bilgisayar, program yeniden başlatılmadan da Site Ofisi olarak kurulabilir (\"Terminal bilgisayarında yapılamaz\" hatası giderildi).",
-    "Aktarım sırasında merkez bağı artık son adımdan önce kurulur; ofis tarafında hata çıkarsa merkez siteyi taşınmış saymaz."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.4/SiteYonetim-Kurulum-2.11.4.exe",
     "sha512": "H48wKXQnE2TXLZLBh/ZAjSvCKtdapUSehzVv+ntWb79W9lhb2blVtH5KyToKK0XEZZTpUm30SHEL3evEmcxmLQ==",
     "size": 79002492
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.4",
-  "sig": "xJSlJN9eFCr84hFEep1Hlht4Ifg7KLXDkEeEGa8giHho+W4NDxsMm0S4ODSeUdh8r8LMGID7CkqJZETSdqDYDA=="
+  "notesX": "YggtW5NvQ6N12I+NWmaWYgQC7WDHV6kHoSQjm44TUQhfHRNeZtkQ85wQrS81m7wWL5uHMn5LnCbj70CArEYGb/UBMmiCIiPvct5utbc7zRM6rgfx/gQrEBXLFv2JHTodO+alRY0HOewLYXcOvT599M/LvEOTL+8SFVQsJWdPfOOBG6zSRnWcAM6XnGSL0q5eUmrGkdoubdUdsru8jN3Gxgl3MwcS1XOS2mOPfepimMEzfH1FSlKYCONMJWBubTV3RNcx0El7NkzxqEtCg/cwpuqNNRnbsPcEmdov3qLyddbBESr80ZmWA3VvYVSmaP5VjfsMYw056uKBUR+VqheYDT7GOG804GkvFlRFj6OFqf4RF5cbX7cbGLYTfz8tPQkiL4HW5Xvc6NdLfOREUz01aIV2MKEwffh9iOkrdJNe939ypDr6bdoiIYsmigz3OH8dOoGGQPvnWl2YDROYHYZWcEVew/3PwHR8YmXQjPhn0SC6vwsfoycCz+/voEw3mGqvlgr9FQjqi1RFCUxJMScjVUb/tu5w7gvDrQN6D1ti2qJdbPqS2SIxLLpMpmwiaQB/g1gVoxxxHoc2gCaSdvp2HlYHwmZoYEWJ8jRwXRn7VR6cvhfRzQ6eHGJmEIaObkZNP7+8hfdaeUzpMQ+firIRaqgmR2Uk64d85IGlwFjR+3DMh8NwYijSksoZmLWBktS+V7MBHZzmNdTOKMj4qmucvwZ3LetskCXuwet4mo2cAGcWjpn0mE6EqZsErKgG/CD89+TCPu6eWpzLSQMsmMHIyI7En+52gNvXhjjPbxlOKEs1Q0T5u6SA3MxTVmUvJi9Y3Uz8IIx2ypWaIcBfOVfUjm+VZGNtP/sjpqNlxSVoqEg4t3O6D67HfgAOmpuVSfydzQ==",
+  "sig": "WpE7MwAFoHjGL524Vm7odLTSTgQY4dvynDJAfYuRKlLj+lo+5ZKAcxaj1EsQDv/XqqolRtDwe3Swn7rFxV1zCw=="
 }

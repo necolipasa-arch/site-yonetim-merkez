@@ -3,10 +3,6 @@
   "version": "2.26.12",
   "date": "2026-10-29",
   "time": "2026-10-29T10:44:02.123Z",
-  "notes": [
-    "Yeni",
-    "• Basit görünümde Destek, Şifre Değiştir ve Çıkış artık sayfanın üstünde, sekmelerin (ör. Ana Sayfa | Ayrıntılı Özet) sağında yazılı, büyük düğmeler: yeşil \"Destek\", \"Şifre Değiştir\" ve kırmızı \"Çıkış\". Her Basit sayfada aynı yerde durur. Sağ üstteki küçük simgeler Basit görünümde kaldırıldı; Gelişmiş görünüm değişmedi."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.12/SiteYonetim-Kurulum-2.26.12.exe",
     "sha512": "QHZ0xZ+xVEzinMHrWi/NswmxXKvTFgey3f0e+P8ncvdTgn70aCUzw0tCvvtnb1K77aaqYqOPIhnPeTOcLn/gIg==",
@@ -23,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "LO55RMzzcH4T1aQ+bQg5x5mG4dPtYKbYRJ/g2IAD0qw63ahwKgWToopBTKLO6EREOU9fW90AqXVIRt6yh1hJCw=="
+  "notesX": "00mUnsLN5CFWXvfwaXgyKm2U/mAdekqW5q4WvdPNNlgdWPdHwhNtTkKksFjoC8rv5uwB9Tt0TLERUE/9y6GhzGsgaW8VsUy0E5B3O5leuEDjRLxd8fbxIsmAC/LzKCtXleqaFCJ1Wmh2eWR6SzLrngKno66tt571+Vt9plxvAAxAVl9FkrxMl6FabBIcla3swceATWQq7T5zn+JSB75CUd68uTFl3SQ9pDIwgF8Z9A86of6+yvzlTPHD8miyLiqgBfqUxhXy+nL8Gi/tEJzq7EwmXcrUXgUpgpWCdcKEHV2U0JLniQBvi6e+LXTeHHecuw8Rz+zldErqjcZRjmW7mI+uKY2mj5hPO2iH/xh4I1CtuwDLZRzhF2cJZXwMTfbbQiW0NaqxdS5oFYgPOZjc8fFYaZmXUM05R+pjZ9tlxJHp9WyE6L1U96j7v3PwZBriZEBqrMXb8EHpM7MhNfIR543V+w2LfoRnUt8uob48nhIbdTWBGjJY9/kDk0K53nWPjBLuItvtsx+vcSPv7QPAGjMeSoHvPqyOf1phpg/u2xzGfWLvmvc1RrI=",
+  "sig": "ht1t9WKME6maUhVDm9Kmi4oqET0QBqD+slZwH4UuZvsAdNTUFvmhiSQno3ewMjLgW+Uq1l7bIrCxbKMNxpd4Dw=="
 }

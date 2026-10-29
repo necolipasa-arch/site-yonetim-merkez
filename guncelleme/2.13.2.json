@@ -2,18 +2,12 @@
   "product": "site-yonetim",
   "version": "2.13.2",
   "date": "2026-10-26",
-  "notes": [
-    "Yeni: Telefon Önizlemesi (Test Ortamı). Mobil uygulamayı bir sakinin gözünden, test verileriyle programın içinde görün: daire ve sakin seçin; borç, hesap ekstresi, duyurular, anketler, talepler, rezervasyonlar ve ziyaretçi bildirimleri telefon çerçevesinde açılır. Önizlemede gönderilen talep, rezervasyon, ziyaretçi bildirimi ve anket oyu test ortamına kaydedilir. Gerçek telefonlara ve internete hiçbir şey gitmez. Test çubuğundaki \"Telefon Önizlemesi\" düğmesiyle veya Ayarlar → Test Ortamı'ndan açılır.",
-    "Yeni: Başka programdan veri al (Excel .xlsx / CSV). Daire listesi, malik / kiracı bilgileri ve devreden bakiyeler tek seferde aktarılır; sütunlar otomatik eşleştirilir, önce önizleme gösterilir. Ayarlar → Yedekleme & Veri'den veya ilk kurulumda \"eski programdan / Excel'den alacağım\" seçilerek açılır. Örnek şablon indirilebilir.",
-    "İlk kurulum ekranına \"Yedek dosyasından geri yükle (.db)\" eklendi (USB bellek, eski bilgisayar veya otomatik yedekten dönüş).",
-    "Lisans kilit ekranında \"Yedek Al\": lisans veya deneme süresi dolduğunda da yönetici kullanıcı adı ve şifresiyle verilerin yedeği alınabilir.",
-    "Merkeze bağlı site ofisleri: daha önce taşınmış sitelerde ofisin bulut bakım anahtarı yoksa merkez bunu otomatik gönderir (bulut güncellemeleri ofiste de yapılabilir)."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.2/SiteYonetim-Kurulum-2.13.2.exe",
     "sha512": "ZHC9DjkQpVepBEq30MCLlSEt/BEf1o5wehFiWbUVCxhQzW7vGEFw56n/4f/H52RuONcoHXYnLoHK61Q5z5/uLA==",
     "size": 79121975
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.2",
-  "sig": "mdEJAZ/8nGTtRphYC6AqjOcLFo+iw9/HVzTtrM49tAUwjUld3K8s7MRNrztjRTmPrDZBRf0geGg0xn4cfZAGCw=="
+  "notesX": "ZAiqEjeFZ+JJ4t7r1Geh8NQOrgT0Rx4Y/wNTUeUSdb0Q2HT43ePD6P7q2WXS14tBxDU0/pNKpbBJI8GXPU0pi71WrVgUTLDsFttK+IOA+Bxy8FVEghPDHHCRM/LpsG8YQ2t+F+U01gkrTJ1ATfiZOGqqVYM4qRIbT2kfWId+uv5pIVfiU01/mrvtg92JSI3dy+vMoaY0puR1Smz+sANsC8aaoJJ/Mz5jRQG/engSBPISlFwEpoLECH7am9OVF8iMXLkt3gPUH5vFG6Z18o/kQEMFfDbXWfKmWPePNtL9YMA977yZ+q2lGh8mKYS4hDaoYNYjjfZ8FqEFrScqxOyg2apLYUPqu+D1YeFrR0HOLHqn0lYMW+vGQmTZ/DDRKbach6mrnwf51vN4+Y3j+XrB8MXqcdPKXoF1QkjUUUGpdB6WboWLBg521XCBAIqpEBNZGR6uX9RZ4e7RvbKhUzoSGjSqD80So90zhYQqOaEmjqoIut3DKfyq2KrM7i0XTgLygcZVCBip1NjgFf7ucQ4WqZFSx0NiISYySqpHOcwavEuQejVyOhyXVaQEDYxiLcC6W2xp6z2bv/HareZJ26fy7T4OLtAFEnZqdCv2HyVd/Dyt3WvGi5ZDkAPiTYZTYQB3te5nj2b8LGza1SsLvzoEJe7EPnyLK/fVeSTFRrRyqxNHppIM+hdqaRuSwECCgNA2B1+ODXRGTEoz7OR3yRBcjXmdxGdr240UZ9SkRUpBTvi+OSz0/y0WDnnvxgBTC0v4W5jHE/LyUC5bfrxO49D4SCHy2ba5Z99U/3WirBQTyfU2NPIYN7eMrowBv28r+c3t/+Rw4r5ZHeRKFobu6od6Aainw1qxkVq6GOdZZbNVHkL/FyzSQHa2mFICTM6TrnEag691xeg4LlZ1h4oeRNo0TKV+5uGH8S4tj05X82rD2u3UXBDm6fFF6twh7Ohjwhb2hywkqcntnkmOinvZy5QX9LWkXxUxK3SonjooiaxAX/W9Qtn76A8slKvbGQRs17u7lK+CLVdl02tDqUOHjBUrHQRn439ARl/gYrnP5lbLNZ8aBlvm/Y7jdbi+YuzkuG1eQGM1BBNWFMQCM2AGCYcKbSEnkAPtGNQUY+6m0d19d8OUGkw+aEzeXotpyzOefdiMR28k8W1JB303xg8+0bIQHBkNYL8iU7BdlhyoF5bRN0f8p/2W3sLKt1OmYifm6lrMa3wMGS8E6HewkBNsuA2VE+vpe5K0ia+FbfiqzCKE9/UhOONkuGPYPgtWTzqhxa0dBMf5n94uajpemwkK5MBKLnds+npOOEyPUP9UfA++OJVd9FjmakogqULkdybrqMZBnvAs0gULgVFXWGtzvb+RZ1M/shJ0tcJuhePgg1MG1zdN+Urq/+JL+mEed5Dszyjhl5RFkcrl8iarr1iZNVs7mb47Wx5qEMZIqSqF9t0pIu7TocxjSA3Ad/xCseAWywnyRiPdfS0q00k9ohBjjZxqmKxsclIs7//ToRH5F6ele9+T7qoRXBIy56kFjrgxWZbu430HI17noJ1RKvHbJ47QlKNsdVIYVB/kc0mREd9nIsItewUJ5gCbAFnTNEpykEL5VEHZqoptzRCZ1Yn8hYpW8FG9EApjDnbxyBSF8JnBGD9hcs0N3J49HZTqeKenQZ3om2lK16S2LKKndSE2M1mWuJwapZZVCPG6KvnacptBu4J2PhWG+P23HT1Fsn0NJqwDnf5ge/8iG6qm5SbrkcgulHxqOauESJ4wnHIsrl1Ql6+4rbiuLHS4fsZLlvwUCkFu5DyKPGTRx7FUHIvRisMsyBcuTRE/fJwJD+h51y4jwM7uxKVkRv1jkaxOXPZidk3h8AXJ8XbflYx7gA==",
+  "sig": "LQ9wz1kq3V9WHV73omKno5F2yUOraybNTFESk0OgTeHDAft6r+H55+GuWbyStSryeNYUc7fPoO7NFqMMZdM9Ag=="
 }

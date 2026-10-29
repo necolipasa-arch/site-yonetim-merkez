@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.8.1",
   "date": "2026-10-25",
-  "notes": [
-    "Yeni: Blok blok aidat. Aidat artık tüm site için, blok blok veya daire daire belirlenebilir.",
-    "Aidat Hesaplama sayfasında \"Bloklara Göre Geçerli Aidat\" tablosu eklendi: her bloğun şu anki aidatı, bölüm sayısı, aylık toplamı ve planlanan değişikliği görünür. Satırdaki \"Değiştir\" ile yalnızca o bloğun aidatı değiştirilir; diğer bloklar etkilenmez.",
-    "\"Aidatı Değiştir\" penceresinde hangi blokların değişeceği seçilir (Tümü düğmesiyle hepsi). Yeni yöntemler: \"Bloğa göre tutar\" (her blok için ayrı tutar) ve \"Daire daire tutar\" (her bölüm için ayrı tutar, \"Hepsine yaz\" kısayoluyla).",
-    "Yeni Aidat Hesabı'nda yeni dağıtım yöntemi: \"Bloğa göre (blok katsayısı)\". Örneğin B Blok için 1,2 yazılırsa B Blok'taki her bölüm %20 fazla öder."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.8.1/SiteYonetim-Kurulum-2.8.1.exe",
     "sha512": "8EA/O9ldcJ8I07fl5Wcoi/xjLzdTxiQwYALsZmxRX6oLu+2PD2Y9NM4EUWt/Qmo6TYcqssDgeigV1A/WMdj7EQ==",
     "size": 78972632
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.8.1",
-  "sig": "n9XFX3O856ZtFFTkpIxZPESFOSKv6DlwkKIBNpBJh5z2RFUsZoTfhi+CCqQJHSXId31Jr4/TW+EPok7ISQiGDQ=="
+  "notesX": "1nT4yqW6jiHN03ZDGDbRjApd6D5+ZJSAuiraQsW/9hOvF0cC3TICnFWSSjjLYG4YRH9Gb5y9gsRLAm+kOlmufrSA1e1SPkkYprCusLepT7j3lwJPxTfzKwxfY4XQ0Urf22PIJ5c4ZpCC3VR/3gc3C1z1/2kMMfIcFpaUYINykqjLtYhkXqNG4WbbJICW13LxZiZTdVDBHDTJ8+KvojeRUyZDXavzkxAbWCHumrqqeB4eH/XQeRUrkStDxcDfVWcLeU5fSwBsQFVGp0+8kZpZfkjcIY4kIGzuEsQxtxx4TLyd+Rf2bK+KeuwdwI2zDG3WGqyVcDf3LZ/cg2NbZr4jOArs7I4riHyAtWaCqPzSpWIxYoGuW+AQc2M1QEKpAxCI7mf5Vjo4SYrYUBLHDp1I8bPtRJmCNqjhbbskqqaKto7UudcxS+XzyqXsX5FKVxDuigWlm0piE50y89baHmPYWQZbVDXGCFcnPpvFsN9Az45Cc2i2ayPMND20k1iD39UFvVWS2rx864J+RjerYRivmdYBO2AhAirTk5ON0tNBJy6UcDKGqvFJH0R1WHEj1FZCtB/K9uUUr0mGp74l7DSC8tCngg4uAdrOYSIe0lgD6rpv3l8+KR8rucqFoh6mYBXGShBDEA7pW9WPp03O81jsHbXk3mw4eZwacvzCE7iBptwalmEEhAMEsTXbZY7mH++tr1UaysGJeF8ov6K+vS32ol466pFTnGqbebszXHKXhWr8VXobeuW93iDcYdsC6h7/HFeLkZHr53ZbQraxNEnC3uwaJrsczI/4BM2P4oXfrkGDl2z6VCcNaowRUThf0sCFtlczEyZ2BBqX7GorcoiKRGBauD7aGX6N1Agz9IqUebcC9vI9/HmyADAf3G00ICX+pJN3heCayVe2DVKGh/tPNDFph7M9+PtuWF+eDl+3mhsO5XM/PoPpmSyLRlRVf70AFFJ+WQZY7M8rAdXEIssJ7ssok4OC4YHtt2zsVOWnV/5Q1My86VVLvmfS/GVnGYchQsKl9ORswFy2Cw4iWhY41OhwU2iK6YNR2Ld4FpXkeSuRdpAxptt8NCVZktUSiBxvZcwlHOYO4PWP3BOGpZNAWF4Jd7AdKt7Ca9J/mOE=",
+  "sig": "IH1jRsh+O/p9h5VAQEaAE9zpYNdCewBO/ZrpXjTnuyvU8F934rqeJMAO8CK/Ukpz435quU5K5JtatglPqJmADA=="
 }

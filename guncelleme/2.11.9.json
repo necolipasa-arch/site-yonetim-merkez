@@ -2,14 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.9",
   "date": "2026-10-26",
-  "notes": [
-    "Merkez bilgisayarı yanlışlıkla terminale dönüşüyordu: merkezde ofisteki sitenin bağlantı penceresinden \"Terminal Ayarları\" kaydedilince bilgisayar o ofisin terminali gibi açılıyor ve diğer siteler görünmüyordu. Bu sürüm açılışta durumu kendiliğinden düzeltir (merkez ve tüm siteler geri gelir) ve aynı hatanın tekrar olmasını engeller. Merkezdeki ofis penceresinin bağlantı bilgisi artık \"Site Ofisi Bağlantısı\" olarak gösterilir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.9/SiteYonetim-Kurulum-2.11.9.exe",
     "sha512": "uFVvJfDHzR/kEKKWm3NvDmaotcfcQuFD0Y2pEuOIgpfHnSDN9rsKQ5XedhsBWpXbmkBuNZ65YpQ2eXDn9yQ9yw==",
     "size": 79007575
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.9",
-  "sig": "s7p5P3NRBypjQxF2p5XexOqoXP32ymWPHgdYorTuc/B6DxqjThN9qhW7RHB707kooPdRF8PmPJvMLwfGf2h/Cg=="
+  "notesX": "Pog6JpP4jt7OT6sN8l0svQcZVsZTY5fmKAXm+Vi5NOT4SX9xfQ95ZNioBVE7Km1VSB8VrFePzCKFhsl1cWgitfzrbdjR85KjKZX7pgOIPbBo/UvMzgvEKQoOyNxC1nC/jitFQmKwDoBPYT0vPEuEW8oki1efd8wKgZfX3UBrkGOVYRveHDLOEUfNul3oaVmMcKJUWAA8TZ+Y2rJbF7G43Duw4SZOWdJD8OYqQboxxLfHEfQF/OUG+efhTe4cTRUHRWNIvtswbiH7kjIl7+6/jH++GtvRF2wc3qXOlL1UTq0w2WBCnJ/Y3Nhpr1TdZswsH0HEBHNYYm0IBpbMVl9ZfeLJ3mCe/HO6glQ/lrar5XqIhBzP02hTP83DGDVIpI8gttDrgAHZwN44/OKTVahkb8NDCjEQHiX3aNFajspbyZc3gyvXyv1jBaiERTMhG+Bo/S0Jye15pQhD8I9GVJK738FmMOglB/EdfPsilSb8Gu+UDN/1KZLK8mWUHEy/62gvbpFj8szb77RbZZBNVZhkbFtc0PB5xS+IQHwfgpVIuzkn+rxizjMi7IiFo22sBIIvMCZHnit87URJzIOv0fWAjij3rKk+jfZN6lwPz74YOjWZP2BdLSaVL2p/5Gd9c5yC2RnWmxZ+zCfNbhjeZ05ddQhbQZFWceZS",
+  "sig": "5MAgPXA6dDxyA7QSRHczvxS0jW6DtrJ3xOxWRjKqf+u7cAahR6wTisk9o09yA7xR03poDRqbrcxVWj0WPbHcDQ=="
 }

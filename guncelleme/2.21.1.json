@@ -3,17 +3,12 @@
   "version": "2.21.1",
   "date": "2026-10-28",
   "time": "2026-10-28T14:18:49.350Z",
-  "notes": [
-    "Hızlı Ara artık menüleri de buluyor",
-    "• Sol üstteki arama kutusuna tıklayınca oluşan iç içe çift çerçeve görüntüsü düzeltildi.",
-    "• Arama kutusu artık menüleri, ayar ve rapor sekmelerini ve sık işleri de bulur: \"anket\" yazınca Anketler (Basit görünümde \"Duyuru & Talepler › Anketler\"), \"yedek\" yazınca Ayarlar › Yedekleme & Veri, \"tahsilat\" yazınca Tahsilat Al... Küçük yazım hataları da tanınır (ör. \"aydat\" → Aidat).",
-    "• Sonuçlar arasında klavyenin ↑ ↓ tuşlarıyla gezilip Enter ile açılabilir; Ctrl+K ile kutuya hemen gidilir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.21.1/SiteYonetim-Kurulum-2.21.1.exe",
     "sha512": "8Sjz+CAP+btgGK2aBthpPkHbjssZLuVF+l2tq2QH+aTlEt6noga3e0JFD/pXExsWrWBOJfPXIBpfKLB9jkj40w==",
     "size": 83990045
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.21.1",
-  "sig": "d+5RrQHTfxGrGEP2rv9Y/6mtUdzvwhlaZWjgfvvE2/MitP1YYlit/DhMPslBNQvWflSY+/NX6F7Pt9DNlTiHAQ=="
+  "notesX": "Q05xLiz7fM9+96q0djeStxs0o2oAR12tyApo5F+XLUHW5W4+zU8GQfmJE+BRzGh6mwlj30kr/oVQxdavmPY0DGwTtSi9Ufp7aMKrhVZBiGGBrxmOQ0fdqOPuE/BnNlr4Qb9SrU1ceYBo5q46KcAHpKh9/yEpRxRxJKSEuUL6x93HVaZ2rftYcu9Owk5CmuBtXCbXT1hx7sTISRfP0MbJzBN9XDqv+Xk+thCE4Hfbjp/zQ8/3eQv+T2ffEB1Rqtl6PEqNfRAM0LsoRt5thO6gwisdRofLpopsmPpaVsVsxpeDZfgihjxgKix8N62Wm0NSkJLKrr8OtXiBHWEdfxfdVgzLSaYJgcX1BaLu7bA1QnjdyYueUj0x4ULhWDLlhIshVu0Ireg18tLJOIjxkgRgseaM6zHLEfLD4NGBy9M5mCpo7aFgP2jmjjC1d48WfBI1mSYBhBTnHfEXhLSIge4AO5v0XLzZHzEP2A7dTS85DHThYhexuWdRPtZcF/zEjcoiP1GLfOxMLnxVunbZ6vPNEV0312j93RiEPz0GZBZjVM9Xb4OMZzhquxTKUKyzcXJqHCr9x7jrzMLVFpzLPbrJpMtSTYvI8TgH2V+N4gYvqT1BUOX/P/4hsuJ1Ajxel75NafI0hpY1yQcBpNRZIIl6F0Lc/LFoDKrmipSCXmB5HhAsBJLk91oG60sDJErzka/cmOpEEqrhChv9Oqb+9vUDEu9LWdVtphq/kJjy3vQJmw+2QNsP6d6+YT0/FgDbiv101tQSmXvqbmtjIj/HLqkQdIXjwj+UlaQO3gooQ4d6cwZLA3v6Xpw6x2/HBN89NqQYn2/G",
+  "sig": "/68P7ylFh/v2fjisKAAeQnvkXshlBD/ZR92QciW8/tfsgn5SmPoHJx2rPHzsk7fV4RFiWqbJUrshYBZ0ZXsfDw=="
 }

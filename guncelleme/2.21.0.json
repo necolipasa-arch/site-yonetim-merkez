@@ -3,21 +3,12 @@
   "version": "2.21.0",
   "date": "2026-10-28",
   "time": "2026-10-28T13:24:59.140Z",
-  "notes": [
-    "Çöp Kutusu · Dönem Kilidi · Veri Kontrolü · İlk Ay Rehberi · Daire El Değiştirme · Yönetim Devir Teslim · Mali Müşavir Paketi",
-    "• Çöp Kutusu: silinen sakin, tahsilat, gider vb. kayıtlar 30 gün saklanır; Çöp Kutusu ekranından tek tıkla geri getirilir. Silme sonrasında çıkan \"Geri Al\" düğmesiyle anında da geri alabilirsiniz.",
-    "• Dönem Kilidi (Ayarlar → Dönem Kilidi): kapatılan aylara yeni kayıt girilemez, eski kayıtlar değiştirilemez. Kilidi yalnızca Sistem Yöneticisi açabilir; açılması İşlem Geçmişi'ne yazılır.",
-    "• Veri Kontrolü: telefonu olmayan sakin, aynı telefon iki dairede, boş daireye aidat, eksiye düşmüş kasa, eşleşmemiş banka hareketi, mobil daveti kullanılmamış daire gibi sorunları listeler; her birinde \"Düzelt\" düğmesi vardır.",
-    "• İlk Ay Rehberi: yeni kurulumda üst çubukta ilerleme çubuğuyla adım adım kontrol listesi (daireler → sakinler → aidat → banka → mobil davetler); her adım ilgili ekranı açar.",
-    "• Daire El Değiştirme sihirbazı (satış / kiracı değişikliği): son sayaç okuma, borç kapama, borcu yoktur yazısı, eski sakinin mobil erişimini otomatik kapatma, yeni sakin ekleme ve davet. Daireler listesinde, daire kartında ve Sakinler ekranında.",
-    "• Yönetim Devir Teslim (Raporlar): kasa/banka bakiyeleri, alacak listesi, demirbaşlar, firma sözleşmeleri, belge arşivi listesi ve imza alanlarıyla tek PDF tutanak; eski yöneticinin hesaplarını kapatma.",
-    "• Mali Müşavir Paketi (Raporlar): ay sonunda tek tıkla gelir-gider, tahsilat, banka, bordro ve faturalar Excel + ZIP olarak; isteğe bağlı Luca / Logo / Mikro aktarım dosyası."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.21.0/SiteYonetim-Kurulum-2.21.0.exe",
     "sha512": "fBz8N6rlLY3+0KbydL2D+0T6Ivm7UNhB46ELE6CelTE5QwhS8WCLKuzJojQyAnRSIS0LXW8IDvvaNr0L248W/g==",
     "size": 83986360
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.21.0",
-  "sig": "qGYHpV/cxuMAF0IOCNOuEXaz5h8OnQBhkrdLpv9Z2c9Ir38HmE90bacBC+4y0jEby/rJO9f52hF/4RvPm24eAw=="
+  "notesX": "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",
+  "sig": "MoAAvwWEmJPYAGHFr5gmnYCVDhIQQD5yzZOdvCHX0LJFtm/TYeA3NJPNqylXIksDuALdzui427RXuErLO3+UCg=="
 }

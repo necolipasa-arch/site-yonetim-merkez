@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.10.1",
   "date": "2026-10-25",
-  "notes": [
-    "Tüm Siteler modunda tarihe göre sıralı listeler (Tahsilat, Gelir & Gider, Ziyaretçi, İşlem Geçmişi vb.) artık sitelere göre gruplanmıyor: tüm sitelerin kayıtları tarih sırasında iç içe, en yeni kayıt en üstte gösteriliyor.",
-    "Tüm Siteler modunda bir sitede olup diğerinde olmayan sütunlar (ör. yalnız etaplı sitedeki \"Etap\" sütunu) artık kaybolmuyor; açık site etapsız olsa da etaplı sitenin etap bilgisi görünüyor.",
-    "Örnek verilerle kurulan sitelerde Aidat Hesaplama sayfası \"Belirlenmedi\" gösteriyordu; örnek aidatlarla aynı aidat planı artık kendiliğinden tanımlanıyor (3+1: 3.500 ₺, 2+1: 2.900 ₺).",
-    "Toplu test: masaüstü, mobil, terminal, merkez ⇄ site ofisi, banka, ödeme, bildirim, lisans ve güncelleme testlerinin tamamı yeni arayüze göre güncellendi ve geçti."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.1/SiteYonetim-Kurulum-2.10.1.exe",
     "sha512": "WeZbfDNljwEC/4vz+xMCCVrjGkq0OgGcjIfD9addsClnTCRxvayLurOPWgslocx/3K/ja3sX+K9yQDjRXhYBRw==",
     "size": 78988578
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.1",
-  "sig": "PWrSC/JRbeFtUhEGqORrWWIxc5I2sSHPcYLcWK5J27U9uHbj1aSP6jP3HRHiZXIdScYWP6LeD88soiw+AnIuAQ=="
+  "notesX": "C+tHelc+LS8uB4jDkdTDHdUeDbwGovbq6ybzpXZ3fDpBZBp6ol2IcH+rOINeg+NsH5SFJ9fNEHYeg75klL3LS5n98nqFuud6u4PxvZLP7WXBNCzQrW+irHJuEPKCXc2SFrPykNYXnRVSDFzAp7tsHLSf4OsJ62ND/rTtI7GQw3W2ThCqVd0OTV9d4mzqxO0yBpsD96+I2ItbPaOA1bJlqsK5e/MuV0QiFtx46SlxFYnZt6H/fMTgg61fQDRGprlP6p/nSIvwujqmh60nE8Jby2wcXBj3445gwsmj58C9q1iQbvDk3nt1BGSHwsrgAKuYYIPjfn7adqLj6TmWxBCjJyh4Ubvje8L2tE/IOrKeyLEPxCb27eFvjBwcSFu474AhrDKBOR65nxG6d7J5hz0wKtwRX17DpnHyECh5ELh4Aiv6vllVVARNv3CgVlVOkQw7NFU8R6+VYqJP5aBUJcnmidn5pqN+h0pgg7rhS+UU6XGoQyY5KnslU+NkISlV4i4fE9dTtvqzIPngl22DtEIhW346fgzsAe8qshwsgXecmLbIhglEXjaOre/SAYKbjVogZYAdId5vBbk7jxTfRdh0XoHhiwLQMMk7eL3TERxJX3Vn/PusHpuFgrA+ORIX1kfx1q03Y/ZE5Wc348Ano7v7mUfa1MyJX9oSBMbO4PtWrhiRx3p+gmW9PtHPaRGkYDV8ZL7gwsyUZOWKB4NN+z5/LhnDNTEIEBsynCF58A/FrTYj3Zfi+AyunR8PWPvGPkDh33YqV/TFhVwZS2dMx850H5AJBzwS1iPZ1W1a0hoZO8jsmGAFl0OqLEyYy+LpdJbknLwpbaKQSA8Ia8u7vINtubL/1qUNn1KJvNhWVF1b6LudX/UuG1TU06yS5sWlLXHndOL487GHrYltz7bRCnAa+krpvXKHtPi3FvDEcxq1HFqrvwYfGFq5P6HAXEZ9kOTMo6zRJEUselTVuK+xTiR5nMAISGP/uaDFHbqz1bu0ji+OVTRhpDO1lyc04n/iLhu6ayck9n6Mp4lZuKghHsATpNGAZgOhT4i2T0CAr9ik3rtfKz3x4FAWC22stKzTxbMjpmmwirQMhGLBiJeSdCGvl8eWk5f9lp2J2skK4FzwsibnrRzmE3NhZZKKExkAi4hZ",
+  "sig": "jvsCnbJhkFei7jQ0PsE5Ro0H5fYgV0dWdyvSwW2OEYHNqPf+xXxGb51P4VSx08VorprctPpOp2BswbKnPRcWCg=="
 }

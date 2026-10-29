@@ -2,18 +2,12 @@
   "product": "site-yonetim",
   "version": "1.8.1",
   "date": "2026-10-24",
-  "notes": [
-    "Mobil uygulama artık her açılışta ve arka plandan öne gelince yeni sürümü kendiliğinden alır (form doldururken \"Yeni sürüm hazır\" uyarısı çıkar); Profil'e \"Güncellemeleri denetle\" eklendi",
-    "Netlify'dan (kendi adresinden) yayınlanan eski mobil uygulamalar için \"Merkezi Uygulamaya Geç\" ve Yönlendirme Paketi: paket eski adrese bir kez yüklenince telefonlar oturumu korunarak merkezi uygulamaya taşınır, sonraki güncellemeler kendiliğinden gelir",
-    "Ayarlar → Mobil Uygulama: kendi adres kullanılıyorsa uyarı; Mobil Uygulamayı Test Et eski sürümü açıkça bildirir",
-    "Bildirimler: \"Bildirimi açık cihaz yok\" durumunda nedenleri ve çözümü anlatan yardım penceresi",
-    "Mobil uygulama 1.4.1 (SQL değişikliği yok; kurulum.sql 1.8 yeterli)"
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.8.1/SiteYonetim-Kurulum-1.8.1.exe",
     "sha512": "QRHLKSNLF1+bhZqjBw4PbyHkPwY1t4/uLv2Saw0uG221AHrWjxKB9D+Rm86XZbSDDUb4sK1cR79NeKubN2mznA==",
     "size": 78817890
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.8.1",
-  "sig": "qk5gab5sCuKFtsldRLCfWwEs7ZxyNWyYC9Z5wCGxwC1iRsuqI4L5lC+kOosRNsDesCVzjN1yrVQeXeMMtDJjBg=="
+  "notesX": "hqU7aFzSCVlYrNqOkL5tCl04Das9qiHGCOAQz8F8OdZktCZP9NJQhXPYfJq/4yXXQz4p6hnxtz/DvNoIB2Zpme6KkMcYTFNpuoMXnMevxsRcOyVzUuGuB1RUD/fc6IEsfNLS7qH8cvNTI3wfRRylMW+83KgQWTPfZeEhk+lwRsUV8KwlqIJeRk+RN2LB1yrpHq38NofbTYpwS4uru7e3a/Gj0paFSWHlrS9d8pOsDkdxQRjlBjz9zv7jK3fkzHWTogaH4TCUIAW3QhsJ1xbaGfPKC8Odqw7Lv5H9BCH/AavNW7QSxZXMNZFcrxyae+dwbv1rikf9+B6XX4RheK0Nbk6AYsgHF0LaVYNOcPgHoGT/WZ8XEZiKgUiI7xHht48r2OgC0exYXTNbPFFi0PFhCYiKkQk3xSbJJCZ6UNqazK6qb3IB2NgTna1+tIgQQhRoId3sP+PZNzZ7nbf2L7kSf7Lk9vT0+zAOSNPcwMyEPM8Oc+ftn5QFX8yGProOY9eWXoqlY/xaLH/HFVOl+35KR3G+jXPNV0gz6tGhxu9faoFugoGnGSke9Lg/+PfxRK7g+gxhPH8F4HO+aUdfX4bw7k9QvNJkqqL1TTS+jTpu1KQQve0MsHF1zzzE5r6yiTADGImmU0PJznuDuS5lfai9hEVrYlvnZ0hJdwz6JOBKzWuRDoiTlYd0Sf3z7GJHq5EWoUYF6SYJyRzS46EQM+l7bQ+JhClfOGV7g1feioUqUYrvgIAUahsg4M6AQLyxwjNz5PM43AdcMk+gBm0HgzV0xq2ZE8i4YnvlZiILwHNjRnSSD8dygILTP8/ssusd7Hm0ucl8KzdeUFKN5UHIWjZNG+sfpBW9BACIyKYQmCpuPrKgKSGHYkBzSyYAB7P3+dP7WkOv1o4hQpvwGhJDvLgx5rF2Ldu5T7iL3baW1f+TScxtqFlz3JLyW74ha8BjppCI+EPLgcqmbXIU2mUHXS834mHjX/sR6QVcsJJbp/nK8vQpn5DOF98od7Fj2Yyya9aREGZs22RSN9PGRXTlxq4p2tr1OM2aWyjLrb8KbApXws58txlOxVzEM9TJAYVN9dnp",
+  "sig": "5TjFND1vtTKkpKiAbMU2kNvgScXbJlBoAY+fMTMia5S4wm15d7c1aGrrkQRL16A0bTgWM6CZaL5DbQDLOVUsCA=="
 }

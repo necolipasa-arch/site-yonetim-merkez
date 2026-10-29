@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.9.0",
   "date": "2026-10-25",
-  "notes": [
-    "Yeni menü: Finans → Gecikme Zammı. Gecikme zammı ayarları Ayarlar'dan bu sayfaya taşındı; Ayarlar'daki \"Finans Ayarları\" sekmesi kaldırıldı (son ödeme günü Aidat Hesaplama'da, sonraki makbuz numarası Tahsilat → Makbuz No düğmesinde).",
-    "Gecikme zammı artık alacak türüne göre ayrı ayrı yönetilir: Aidat, Su, Demirbaş, Yakıt, Doğalgaz… her tür genel kuralı kullanabilir, kendi özel kuralına (oran dönemi, kademeler, üst sınır, başlangıç tarihi, otomatik ekleme) sahip olabilir veya zamdan muaf tutulabilir.",
-    "Hesaplama ve borçlara ekleme tek bir tür, seçilen birkaç tür veya tüm türler için yapılabilir. Her türün zammı ayrı \"<tür> gecikme zammı\" kalemi olarak eklenir; aidat ve diğer alacakların kendi tutarına hiçbir şey eklenmez, her ayın alacağı ayrı izlenir.",
-    "Sayfada her türün vadesi geçmiş borcu, işlemiş zammı, eklenmiş zammı ve eklenecek farkı görünür. Önceki sürümlerde eklenmiş gecikme zamları ilk açılışta otomatik olarak türlere ayrılır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.9.0/SiteYonetim-Kurulum-2.9.0.exe",
     "sha512": "aVOoBsiKJCJ3kShltVwOtOTFFcsZgcAGcJXQCf03FxvQPTBb/a+g47oav05l3XNuLr/hPMcTfV125AfUvsRgig==",
     "size": 78977274
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.9.0",
-  "sig": "sECcnzJ2/bJ9pRG0xvVwmwTynOJRoEVrcCTnJJjSgmCtHsJ8Ef0Fx1GOCWzQc70G4mAC3qRe7XJhGz08EY+VCg=="
+  "notesX": "Em7hCoqIvhPK15h6DTGY3vgZ4cq0G65fzF8a6o56eBPZPhWBRa29ULj8UKAlKgervHFouSwCu2zNsw99Q6vVSxqmnECDQ7F3H4KcT8goi7qr6PjlAyVhygHnRibIdYsFoDmTuleq37qpqfsRohmi7Sg5CZf+ZwlKGLvEuMN8ydeWdNqytrlQmxviIgTTEQZ4mS3IdZkbH9w5tdDPdS9El9d090Hr3GNsE+FWEntyoErUBORkLmcPKdWEyRcxXrpn94785jXYykAdweugE6xVnZNAHDy7v+9mwmBUFShz0f764aXIPzD9Ym35SITddCBUeOB3h6EoA6GwbJZ+fDv5nP2lzZr69WGz6tC0gtYIgYA3+NDNw4u8nQGgD84jYbM5T8/Kbusy425BkKUTex2iG/0rMtDvywu/BXF6S1hULPqL8APJpv8Yy0/FsL11D86+NYwvhtilK+GYqC8clO0q08AOUTYH/V+lUw23E44M3oAPU4y8sH/rmkP84iEwCwy59HnNtxB0RzDTvTmajbU1GHefRqceyVAmOOcyeJe+thxnM9OTjeObOA94Fe8BsW5KZjIPswsSNtyGmkDBDDhFFT8wsqSC8NbtMGETe5C2VB21jCqjD0BJbqMO+jAd6QfSWQBuk0nFv7wGMig39wYem10OhjxW+eHdGFRWpl+UaO7SN47XRRLDKjRISTv7hRIsfbc8wgE4Kv1Qoxi+pQEZXZc2+xDwvNIJk0X9Ssm+R++yMVgd1qGvFpBAE3cNDyHZkJjldjumsDw0BeII6jX5B141OBSjtDVJBS9rx3zPqVymV76AT2CsY+r+Mx1Fm7TrBKTUent2zNJ7JV0nh1FYHaitaSKvyKzjg40HI4kIZPr1fzhSuhaAeD73FjaszfUORZvUz/SdyotpLDLqk8gckQwhqaoDcQmQm64bnCClkrwc0ezzJwV4ujqQdJP+vy4/QyQpo0vFcI0+r+skXCHRUFGMCKijPRMXgb1GaIjhfHrR1l3izquHViXAf1eMvsGhAP5FeS1uNPZtChKm47phC1FAnOkNDNMWRgri6mZyhTw2Us2KV7i4OfXLtF2c2L/KQKuSTs+vKLTN3Kp58KB2gfGQggIba3Rp9b/P1SzyksIDLcNZzHHl5p9iu9F+DqHMF1r9YaPHf7vuomgn7GLoSb7daK0KyUehgGX2hKRamWiPZzdJJwpGPISUDgDGePcIhsi8ee0dmkEP8aarVoCnkeMtim44UNYU1cKpJrO3mWdHz+QOpkI3MPrK5NzIF4NFPOpwD+tYytecM6iylAQhuBHuZNlx44hwPrTqf8zzi2J6eFxSMAiCrKW267HZR1srw9avd/U8SUSy53Lo0FeL65YZPcBBCVF1KHeaJ5ipGh9xxN9mbRElDv++rbvF1laxCbWTrREx+iShgk72YkDbUF61DuefK4w=",
+  "sig": "LH1g725W0QC8dl/Sui4ERjSEmJ0abOPHTRvj7q9o+V+qCVBOUkdpyOFCv1bjqaQ7XbeASWOFBwvn0jBpuNklAA=="
 }

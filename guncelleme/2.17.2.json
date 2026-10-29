@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.17.2",
   "date": "2026-10-27",
-  "notes": [
-    "Reklamlar — \"İkisi birlikte\" seçeneği",
-    "• Görünüm Ayarları → Hareketi: yeni \"İkisi birlikte\" seçeneği. Üstte reklam yazıları haber bandı gibi kayar, hemen altında resimli kartlar seçilen sürede sırayla geçer.",
-    "• Kayan yazının hızı ve kartların geçiş süresi ayrı ayrı seçilebilir.",
-    "• Mobil uygulama 1.10.2."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.17.2/SiteYonetim-Kurulum-2.17.2.exe",
     "sha512": "agVMg92i4EY+SBsJq8U8FNqE+asZPhsJoiaM/AnWoX5l2TIQFv9R1cszIMLky1QRe+Xg1lU1walxS+bzfNkRpQ==",
     "size": 79315329
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.17.2",
-  "sig": "hTKa6fBMRGeldPv3uHqZAtbNcE3Dqj6QARuHaiDezUPYgLgGL7/+LepBqEHVqAsTjV3hjsRGB+D7Iyf8R4wBCA=="
+  "notesX": "5gI6vRqsAj84tfM59GwIvrilJe31DTQ2ZK/SqfZoCfNmsocwGLrSJFXGTrD8enZsQ9LG4Wf3WI5Nqz8famS5EW6L0RZw4f/c/TOoZv6aMS3Wm7VNgy6NB7DHfBQKJFQcZiLCK/AyDhwWur6UiAdwgwfmQutsP82M2R2v2sRHXTjHxCDTpOsLCA5vG4Y78clvK95ZHksL0kvfIWxhct3hkNkxiBDZHAkqqSmNQZfvOGuEzjcMIR202X2fV3byZXPEEb6FUIiMbPFAVriKezIqyPSh9U04Wvw38DKT5FLbmKH6nsjZIM7yC2CV7pZCeOogZgqJxBTJX+X3/RK0YVdcK66L+UoYPqD6IQvWU1itbJG5ZNvQkEoSOFtRCntFVt4qK0HyFq77vswwgLYWRasJIKi65Sh7Xl7yU1/tfu8PicBai+5bcX8A6U5nOIqQB/dJFWcjECdMu8Go+BTdYt7HTlmYtTn9bFDNBoyclN2DsFG+gcDWJdqP2vGIdGogLEI=",
+  "sig": "ZAn6BZuLvUoN1mu8DJoS3IXP48Lg+QV9lIDYjXzAXflroPlFTMujtSLU8aSCgrZzV92b47nZ/EFLB2//ipyxDQ=="
 }

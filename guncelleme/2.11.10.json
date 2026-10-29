@@ -2,14 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.10",
   "date": "2026-10-26",
-  "notes": [
-    "Taşımayı Geri Al artık tam geri alma: merkez, ofis bilgisayarındaki GÜNCEL veriyi (taşımadan sonra girilen kayıtlar ve belgeler dahil) kendine alır, site yeniden merkezde çalışır; ofis bilgisayarındaki site kapatılır (verisi arşivlenir, silinmez; program ilk kurulum ekranına döner). Ofise ulaşılamazsa uyarıyla taşıma öncesi kopya açılır ve ofis bilgisayarı merkeze bir sonraki bağlanışında siteyi kendiliğinden kapatır. Ofis bilgisayarında Ayarlar → Lisans → Merkez Bağlantısı kartına \"Siteyi Kapat (Merkez Geri Aldı)\" düğmesi eklendi."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.10/SiteYonetim-Kurulum-2.11.10.exe",
     "sha512": "8hmcecU4bCdQcObviE+ujXrgPu0sZ8gDhOGSwUWeQTprAKLf01j95NFHwE7OPmUnpS6MSVDN9CqMfRN5MpR2qQ==",
     "size": 79010340
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.10",
-  "sig": "mSOYNpay6nQGun78uAQdfr8VuY/zJF5EQeSvXarGQSMMvY4LpLmrCB4G0UBgp5KqxjkEhTmymUEybN/71Um8Dg=="
+  "notesX": "BD8VELUf9+sJdfyMa115u/4KBDLvnMzlGV9Oaik4n8ym+Gi3+X5tED3IqKeUV/YdnB8uTOkvJTxTj42DGthDBe6vkZpRkWBUVB5VSjdiKZfRXjl3ifcxRVZwuMurT/kMkoWT/j6iOfJgR/Rpa7naGzyHaa0x2qK5uSVVlRNm/5VsSFSSfDJqXpTXpxtJSXGUa8biXS4/ACaBmHLVjDPhAnkbXyXT49U3cIe7ZFpUzMcYcqtnSZwW5rIu+HMtyaF3ZLD7hmsaTC0dDe+TJo4Fh+F2nHJo6QT0RPmmwvvqRYPpe9dXAZRV7MOCpDuxosGaD+gQKT+Rjj5rbq+Sl1ApBTWWMh8UH7+Xydxof3X7dweuYyZZXJF5SXXjBeHxtjP4Avam+uCJfQTsa5smbyMNx4APOzplYYvhUsOhWd/PaN5dtKF5dHa1Xfd18/WQW2s/OiUpC7k+RjhtKtVjTAWszDizNhNOPPLW6sHSUvHB9eLd31mtPmaP8hUbpnIPT7jMHWvxi8SYQY5CCJBBYRLa5jEZCrahLCdrWO8PK81OUagPhTqV+g8O5naXAtHxKCvWobM6OAn/4tQWrygUxkI5tiPWqZJDAVou3yVgS1iyB9cfbRTLSPakMhynTeFiR6O0mfciljE3NfHLLC9eZN3OOD+tvo4Wta52yPCAWE56FBkqiVpE9Sk8PkM0tLrMp02LAvkFg1VoqwnybeUhqpZvvJTk4gBgyvBxsNcGgEjVnTeA+YaaKRUh3FvmFSjhPFMeHj2xo+sTmAhCposI9goyrV0kephCGQDpsROvXngXcrdYxL0jeA5SrnSfuQ==",
+  "sig": "h7auH4olpIpow2xjmqL/BnTg72watE9K1imRxl7PCSaSLDszQj8ZKKFwUYEleHrPvE8A+caIGYG/ibvEv6ckAw=="
 }

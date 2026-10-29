@@ -3,10 +3,6 @@
   "version": "2.26.1",
   "date": "2026-10-28",
   "time": "2026-10-28T22:35:03.266Z",
-  "notes": [
-    "Küçük iyileştirmeler",
-    "• Sitenizin Google hesabının kullanım durumu firmanıza günlük durum bildirimiyle iletilir; Google hesabınızın uzun süre kullanılmadığı için silinmesinin önüne geçilir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.1/SiteYonetim-Kurulum-2.26.1.exe",
     "sha512": "w9B7r5czmCbxTQedNr8t0CG4TXBLsv7qAEnMarUeRC8TEqXmZhray/XYO08fI0+bmeBgJaO/4SQ50u09ZZop2w==",
@@ -23,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "D+v2ABJpgJ5c/rRe0n5+FSHAjVxUjde30YSFF4kPxV6sOiDkQ5NLb2Jnjw3q18faVoY58k2GjqazVi5nXL3YCw=="
+  "notesX": "+4Uegr/VWQh9Zdqi5A8lUUrs9o9HMPIkKVJ1Fir3k3cRHURIbn3FyTSYf/+Z41Jb7g13jPQR8ojuokC6yx0QupMNMbhoPiUpq91358JSmJOzrkolV2hYeqJBns8sDm0aet/GNR2AB5j7oC2KG2pDCJtutEjcoGSimglQ3Ov0f5/4/zOcgU73AuqtOAdrpn6yDvEOSgi80Cd4KNB55BiKYbiuuXvVRJrywzuM+PkirQWJmzfrA1VCsn9a+eu1Njuy1+TiB4f/o4cZ6niCZMPDy7sEOjJb2woBcHNruMd1qSnzBSGnPQfBHZGvK7VuTZuEWxNBqrlA",
+  "sig": "WmchvHl2x1oaXTQmowDzmqPOMgj/3TTh+q9BitnTwGGktysHN8HEwNjHJxwY1ibBHY2h0621hwp6/DYb9yMeAw=="
 }

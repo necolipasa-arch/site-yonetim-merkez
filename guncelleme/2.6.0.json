@@ -2,18 +2,12 @@
   "product": "site-yonetim",
   "version": "2.6.0",
   "date": "2026-10-25",
-  "notes": [
-    "Yeni: Programa entegre VPN (NetBird). Ana bilgisayarla terminaller veya merkez ile site ofisleri aynı yerel ağda değilse artık ayrı bir VPN programı kurup ayarlamanız gerekmez.",
-    "Ayarlar'daki \"Mobil Uygulama & Bulut\" sekmesinin adı \"Mobil-VPN-Bulut\" oldu. Burada yeni \"VPN Bağlantısı\" kartına ücretsiz NetBird hesabınızın API anahtarını bir kez girersiniz; NetBird'ün en güncel sürümü internetten indirilip bu bilgisayara otomatik kurulur (Windows bir kez izin ister).",
-    "Program bir \"VPN kodu\" üretir. Terminal ve site ofisi bilgisayarlarında kurulum ekranındaki \"VPN kodu ile bağlanın\" kutusuna bu kodu girmeniz yeterli: NetBird kurulur, VPN'e katılır, ana bilgisayar kendiliğinden bulunur ve adres alanı dolar.",
-    "Yeni Terminal Ekle ve Ofis Bilgisayarına Taşı pencerelerinde VPN adresi ve VPN kodu da gösterilir. VPN kartında VPN'deki bilgisayarlar ve çevrimiçi durumları listelenir; \"Yeni Kod\" ile kod yenilenebilir (bağlı bilgisayarlar etkilenmez).",
-    "NetBird API anahtarı süresi dolmadan program tarafından otomatik yenilenir; anahtar ve kod bilgisayarda şifreli saklanır, terminallere gönderilmez. VPN bağlantısı koparsa program kendiliğinden yeniden bağlar; NetBird güncellemeleri otomatik yapılır, ayrıca \"Güncellemeleri denetle\" düğmesi vardır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.6.0/SiteYonetim-Kurulum-2.6.0.exe",
     "sha512": "RYirUtgSdh6QCJyV0t2M6XHZ/UMc0SL7K4CItEqa9zDEVEazyfnuv+lANVDQOllZ63sDth/xQCzNZ7L2wiy0lQ==",
     "size": 78953244
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.6.0",
-  "sig": "aoAc3QLLhFQWGCcSpJf4dYbQzb7gZf2z8w0ZRlCgO7pfNVKj+xaTU03gEHwfW/iAYs1O5FBCv+pN+0z85H27CA=="
+  "notesX": "a7dmuyYLRZEgAPVcsqMgXHc9cYivcAg/nInasQJNewhcaMRQbMtAo8+U78M4DtbKvMRAKKDKL09ICwPcA72HBVspqCyoH+jDY6CffKD7HenfIIZQcL4Ywzz1vAN+5FqN7UJ4xFjN9/l+Dzp0MUAJ3+QcUysmYZ2iSXo5jMIRZLUkcm1PPc2w6MBXiwQoXANhGc0/E8p6IAXQ23en29mkDSnKxYabBh4LUp/t9Ee1PTqZA1Fh+p2d6Af56T73k10PoCH7vEiMlxPxB0wDcT70CNzfx+QtNA0ODKxjexU2+Al2rQEr42aRrJ9E2/Nr+VolOD1R3ER4OqmE7GvoUIy0eTz7hQgiaeqlNvmdFagxeJM4sqQWVmYAf5bcFhA5qHG4X+QOrTflZP+hEojD7RC8wYhLLq7CBSE3jnDNg+iAJ9glSpPIi5cK43siiPzmCvGWHoq/BsqQm3Rcj9D2oijQJ+0pgHQrcNtw4ULKZcyvycUHlgFj9ICVlHaHpNq79RCCSmnG19BXz8XRqKtganDJXJYppbGX2u5l4ZXaJsIK1O6ayZz/5To1Qz8955RAiCu7/rdIWZsSkKanfabB/a5QW+U4rQIoRtf3DqXzXfwHVX3NXwLWANlylXVOy+SD6CS094tnGXp5/EbEt44mum0Oh4leUJxGM+4hZCz4OD6MM24m5yLX9Fg8WhXjO7oSSkpjfKUtCGnm8lLWMQwrFx+zuO6f3UyEoESuhcs3/T0r8tM9ruKU7rJ3u6Y2xni3gjFtxjtuAQfD/N1Ut502h5kFz0X2dUuyNZkFTFxZ3xHQcHRREjzpivsXlVOfYRGoY62hvxW0O596mAhGPaw0j8jtfDCOhpScL2N4BEyDa1O/F+vaMJQg41b//E9RW1c9p7jKSvADQfKog5QiTdyYGcMV6qqvi1HTHCMn2tLXZo/BguejrNqU3TWQCQ3rw670PDOrrvqFKnBR88HVTJDYUgOfn4MjM0W4RRuaTY43FWLDehlF0c4rLQjF8EazKpFCK9z7mXxYHt6p4Dw2r/vTdx9j00FNNXQ7X1236SAReRHL/xAFkXuhxRrdvot2h+IqBtoV1enp3dZrV9k/GYirY7zCeFcdUrDaSPiGv6UpHIpXnVGhUA8JeXQVQ82U6/xXZ0xPZbPJsSub+lc+Dtr1UhI8Oi3zYcycguzYcm+cScvwfWzKf31/ADdG6SVWjLQSY+PInZXqAeWZYc73hcSJXn3mxHDxUlT+r6FFHiBot2CllsxM+Kpw4tyVkCRh4RwoBBYVzq8LTpQbHxjcJCtDk7JQ2kPAqqo6vffTv22VM0vTMxJLj9JdYLD4G11jK+o3RMy8NLzZ/dGOXA62hYGW1UezQG2T/t4ryPswu347+V+4iedJajwv7SJwE7ktGetPpUmgQGBdEYxdMB2hQ5DDfgHBdirY7lIGtOZONQKrHrcqGXUnxRwphisZG2Cgj/w6JAJiL435x5qO3Fhqt3cEPRl9sxg+0o/jt06Cn/m/c4T/iQwivYyp87eBsOhMLf2mvPlWRYQy7pqsTIY2XNKAqofKcDn1Q1mbgXjCw6763ByVSk5jx3OPQMHI2uDaswE05NdVCOzYVTu0tsNsIdNhwpBkJJvkYl3WGQ/eMAx/vv3MyWm1cM0FwNaAuQCcqT3i4hwVRFWGX9kgt70CHYCpa1EEsoJGqYwXrL3c+dyqSpUpo6DfV4l/POunYqUjUebd5clXd8Ucuh0LxkGX0v87y5Ry59G5ZMwpYKH5E9RMszxh6t5ZAwAWOyDlVy88PP2v0dqbLG8iY0EW6gWv4o7NXAE=",
+  "sig": "B/0/CgRg5IKgrSXUK4DjI9GZ7pO2CubbQuF+vinADiM1HxdzgeA7EwEn5SF4D0MaaFuYhrJrW6qqgiz4CQNYCw=="
 }

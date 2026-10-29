@@ -3,11 +3,6 @@
   "version": "2.26.13",
   "date": "2026-10-29",
   "time": "2026-10-29T11:05:33.682Z",
-  "notes": [
-    "Yeni",
-    "• Yeni Ana Sayfa (Basit görünüm): sitenizin tek bakışta özeti. Renkli kartlarda bu ayın tahsilatı, gideri, kasa + banka toplamı ve toplam alacak, geçen aya göre artış/azalışla birlikte. Ayrıca son 12 ayın gelir & gider grafiği (fareyle üzerine gelince ay ay tutarlar), bu ayın aidat tahsilat göstergesi, gider dağılımı, daire doluluğu ve site nabzı (arıza, ziyaretçi, kargo, bakım, rezervasyon, duyuru). Kutulara tıklayınca ilgili sayfa açılır.",
-    "• Eski Ana Sayfa'daki büyük işlem kutucukları aynen \"Hızlı İşlemler\" sekmesinde (Ayrıntılı Özet'in yanında)."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.13/SiteYonetim-Kurulum-2.26.13.exe",
     "sha512": "o3M+5jB/UL65aadqzTnJyHNJ4ye2/vKbPQoF2q+V6vCC2nq2xqsoqpXj2R1ipOwzB7ovdX28gAk3rwSePzciCQ==",
@@ -24,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "XrQXYSUpd2tfZpkjb6E/2qJE/RP9vhm2TWyUwIw/cST2Wz7llZKSFfWbcxh8AbvZG1riWcIyOL8uqKOHBcTDBQ=="
+  "notesX": "7CInkMV8n9/k6F/9r9WWJnaJIvb3LSKyOcN4Olhphb6ut0AcKJZp08w8fUdDwTWWPj1LSZtZ2R6Z+Pfrcp7IsKmthEoMglOl+gqDtcLiLmjLT3NshbpN9f6qCKaoJS9rIosA2b8FbazUm8I+diU13w4kfFq7RB/PHb4HxTVEXr0kbp3ucQ5wk9bGawvLqZMFOBS9RzUoT3nG+l+ihZZWGrlmhiGfyalySKbv+TXlw9QGrUgL1dDdqtro0SnT1f4hXtnpp7fqwMgepk1UWgCKdB/sAE930p5czpnwwO17QPQFviTgvS+TX8E85eYEh7UN0nr+bHEkogRpXUiC98rE8rfzSxB2lCrgGbb+8lA1zRR/Wcxcuc5Tqek6XakHGKgJ7G5G+FDpgoXSxb63CUGuoamf+h4FFOB12etMs//I/o3uXla9szu9XxvRYepmZRY8uQ3FSkQNqYln/LOkQRN4LjNcqlFG0VaIx5eRIH+XUpc8EioobL87UuaE137Qg1+OTFruf2JLcfgRc7DOJCFEuizh66Dc1Q2JcouHFpmrgee3nJJm3g/CfW4dMn7plDRXpwG4+jUFcE1BjCZc582ihT4i4V/E8GxJ/wxJfi8VDv4K1skDWod62EBlZeIiGlwVQ2/Ffns6F7ABAlEsArsjlLHGWN+AAQUjD2JlQeranl7K1hQOFhm04IQnmVi2m+TxHCw3kOKStEI8aByCMZwkUiah5Qm+ueaxfJnXxSaUhxNOqarcCZqgnk4G4NatJI21nCH05MlAUBI6pnm8i+atmDVyapE/ZaAuUQkJk7/AG36uCR3P7ZHSRLgCokBR8X7+Nk/9MNHIl0m3mL9YWa1JfYQjXFgZdB7n",
+  "sig": "7EekO17R6pQN7WuRTdXRnAe4kFUhUThd7mJE+/Dk4zoQZ2Y6pPfc+bScvIrweQCnM88FAV40CQAfW/Mfv6wTAw=="
 }

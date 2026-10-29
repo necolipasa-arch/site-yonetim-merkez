@@ -3,10 +3,6 @@
   "version": "2.26.2",
   "date": "2026-10-28",
   "time": "2026-10-28T22:42:56.571Z",
-  "notes": [
-    "İlk kurulum iyileştirmesi",
-    "• Gmail hesabı adımında, kurtarma e-postası olarak firmanızın adresini eklemeniz önerilir (Kopyala düğmesiyle). Google, hesap uzun süre kullanılmazsa silmeden önce ve şüpheli girişlerde bu adrese de uyarı gönderir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.2/SiteYonetim-Kurulum-2.26.2.exe",
     "sha512": "Byz2Iw0J7NzE+4qFX8j4Uv/+mMpAfZhRgMhUdESohJmESsG0y/TWc1LtkxvxICulaMWtTtVSLBpL7wPb9k6TZQ==",
@@ -23,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "IZiyY/djOx34LRFZcnerpfb+2Usl849gQfME2ZRrURUOWvkBx0m/9oyTUXLj/6VIHLfG+6tYddXh0n6OfOaYDw=="
+  "notesX": "mYS/FuUaIzmyKhzHHUDRcFy/74rPt1REfizrH/Ht9vPewso4JOKYgvYkP9rQHGwtd40RDAb4XYbHhsmG1n+kns6IgSCkKumjr3l+xXdR6VFFtyefPN4yEPGQP0iNxPkiFU/7kMdOJ5PD2tbKxwzdKMpkoqwC5w/cvJtRRFyWZhxB0rSjUDhhchAS7OIxYZGD4OEBmW4KSWT7CnIliOXKhstNHqk1UX0YwzqDOJMFajCYCYDGZZYfBpqeeUxd5jYBZjiMOzyTMRs3m1iMOcxwAqjkR3qSLgimrMgBkXlrww9SOG1WyOXF2zjHZ3JjlnSiFmwftC724AfMkIcj42QWlfB3zsGdUMtlPz9TduxPItbpS6T/4oN/VVxcTDZMshEfk2ndNEa27g==",
+  "sig": "Xw0Gfc8lDJPV1IQjgdc3sXxXVDpK5tw3E+rpSwQd4xfaycVcA7BN6vwp9sQKP1j4o3PFmGFNVKUWld+n/JLJBg=="
 }

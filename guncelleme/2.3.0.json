@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.3.0",
   "date": "2026-10-24",
-  "notes": [
-    "Ayarlar → Satıcı Bilgileri (yalnızca Sistem Yöneticisi): kurulum firmasının adı, telefonu, e-postası, web adresi ve notu istendiği zaman girilir; Lisans ekranındaki \"Lisans Almak / Yenilemek\" kutusunda ve WhatsApp ile lisans talebinde kullanılır.",
-    "Çevrimiçi lisans sunucusu devrede: deneme kurulumları ve lisanslar internet varken kendiliğinden doğrulanır; iptal ve yenilenen lisansın otomatik inmesi çalışır (30 gün çevrimdışı tolerans aynen sürüyor).",
-    "Sakinler listesindeki mobil davet kodu düğmesi Site Üst Yöneticisi ve Site Yöneticisi'nde yeniden görünür (Mobil Uygulama sayfası yalnızca Sistem Yöneticisi'nde kalır).",
-    "Lisans ekranında satıcı bilgileri tablosu düzeltmeleri."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.3.0/SiteYonetim-Kurulum-2.3.0.exe",
     "sha512": "LWSaI9bdYUl+s7lxcPATFpS0VwEd/LXzQ0sxvNm6Mxzgb73HAbjhdITkIwRMH23jnz56SgbNQBTw8j8iHLUSAg==",
     "size": 78918198
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.3.0",
-  "sig": "3P9LaT4QnIw4oIiZg1bSZtOL+4Civvup/gJ0+oHBTAcjDi66AG3tRhECaP5d8CMQHO0PTjikubWmVLEVk1R4Ag=="
+  "notesX": "i1I8YbCRT8ZjZuC4Gu4wBYQiL4Aqpu0KuPdDWkOxr1TFClDiw1EHEyhXyEZCwbXhH33dIsL17VMIKyx35N652rF3nk3O+OL4PC6BauxxPm3DUH4X7Q+Bfh8kjypODsJ5BTdfRZaDKHsrWa0fG6R5XTq3dXKs/pTMUyXsDpxUELwU0iZpZ1gPGODfPYDB/xf13ulusS3t2GeOIcOgmfg5DGHvLov5uLd8eOozBYKT0Qtj54447UpB9JjxCuEaCiRCK0XAEW40s2nUiakEKMkw0VwlMZ0Ig2heDM7594Um79Zcem6ZS5H9YaYGCgonMO4nu9KtCyzMIs4hm3MKwaZ5390ZUDkWQfhH21bhkDKxaHssPjxmXonGTPA0WdzgprSdKb6mo6SYngUIw67rWw9dGjKRbTYZhEkCr919NBL/BHGjByaohPd0sry/nSoAoSsPx6jVKlmR67tfFbax57V+3Yk/0zlk4itQfnxTK87DI1bI1kM1VyuEpZnHCW39IwsZd4Vq8j1rgDMHJyPKGdfShtBgvruJ0y9bOrturHNnRYF1+FuBIzp63Up7vHfYI9Qz7W4nB48UMwFD82PJZjmhc/CpJ14T3BiyefiN7wZzDnyPxPNt5bfdAXuweCrr4i35x46wWaDsQWWUhrwcsAvmxO/WJZnYJJI4mGaNPD87SxoUhWcbdyVe2yZP2CQpVHebjFpECH1H8FveyLgrFmhEDyscUcA1Bp53p+ZchDf+8S530ONp/KOfNq6C6jxoohMzA5iEy0HpyLHZhAp8BtXGjgaZTVwg1SPDH0S3rSKZ8fVW8tf7NBlSN2izEd/kuliWrNqI9g//Otxf/FH213ixScaqj36DawnXKTFOdqAevZH/a85WZ8W/ktCDEoVDZ4TzJl5thOTKm4zGUsX3Kc4ay4iW20NOWWoXyeVHvHrOMSoYIhDgVxuSG+BWEesB5V4E7uL9I0BO2OGnhycyxI/VeMjp/XuaRtZvN3YtQMcAojRBUhttku8agw27QmI=",
+  "sig": "xZqoX2fCSfXbrvcFf/+pSKs8atL7Din/udfkXSh8OL4vzEX07VNL5N5HTwBEJBWKNU5ktZdNpDpnK250+DyrBQ=="
 }

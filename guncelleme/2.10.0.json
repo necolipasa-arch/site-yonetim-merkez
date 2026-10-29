@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.10.0",
   "date": "2026-10-25",
-  "notes": [
-    "Tüm Siteler modu: üstteki site kutucuğundan \"Tüm Siteler — Genel Bakış\" seçildikten sonra sol menüdeki sayfalar artık son kullanılan siteye atlamaz; tüm sitelerin kayıtlarını tek tabloda gösterir ve her satırın başında kaydın ait olduğu site yazar. Seçici \"Tüm Siteler\"de kalır.",
-    "Toplu gösterilen bölümler: Bloklar & Daireler, Sakinler, Araçlar, Site Alacakları, Gecikme Zammı (tür bazında özet), Tahsilat, Borç Durumu, Gelir & Gider, Kasa & Banka, Banka Hareketleri, Aidat Hesaplama (blok bazında), Arıza & Talepler, Duyurular, Toplantılar, Genel Kurul, Anketler, Rezervasyon, Ziyaretçi, Kargo, Personel, Tedarikçiler, Periyodik Bakım, Demirbaş, Sayaç Okuma, Belgeler, Rehber ve İşlem Geçmişi. Toplamlar tüm sitelerin toplamıdır; site kutucuklarıyla bazı siteler gizlenebilir; Excel'e aktarma ve yazdırma çalışır.",
-    "Toplu görünüm salt okunurdur. Bir satıra tıklanınca o kaydın sitesine geçilir ve aynı sayfa açılır. Güvenlik Masası, Daire Cari Hesap, Bütçe, Raporlar ve Ayarlar site bazında çalıştığı için bu bölümlerde hangi sitede açılacağı sorulur.",
-    "Her site yalnızca kullanıcının o sitedeki yetkisine göre listelenir; yetkisi olmayan sitelerde açıklama gösterilir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.0/SiteYonetim-Kurulum-2.10.0.exe",
     "sha512": "GbznYfGSkA1lvrM0LV81Kdz7AumL+5bDP5DTYUPpTfmtqabzwcgdr6HsP8pYGcknzB4ehoyf6X8BMQptti9Bbg==",
     "size": 78988323
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.0",
-  "sig": "7XQenBkHm3hRz1bFDscJ8omtrBcLUb/GwnOjgG0IAnU0mtrlheFVx2J6pGBMEKdQimr35nu4M7j4w+KeulluCw=="
+  "notesX": "3yqVjasUnP8wm6sauboLOSfWpcfIZKLuekSFYktFIufdo1qhkGC28bfs4J/vs2z632Uw9oH5tKxLY/31XHRVaTkNTg2VSMoBmTj9SwW2GZfYBYTSGHZ0th+Ewzv9ZGawheVAvNEhydd6LcNTN4tNdETEdO2ao+Dip86NxpcZJB6d2ZJZG/BsqxNmbA7dt9Yd1ypWCuwVVNvPR50hrtBf7yuh/Ef7PmyR5vddUPpFCKV7FVKc7rQMP8CsBmK2PlU8ZNvwxSBT/mUrNErtWn2sXOV6OGIaUsktFH/8qowTFgt6roXC3OGmu7TyAAWa7waDY9iodFCMxq++AwMmQF5/RlJBlsvzJx2r3Ami4bVEH8tAa0MegrFL/GkIV+chhL5Z4c3Ddnqa+5JZ1xvMMdzHfApbG5TmDN9S2yRZXnVffvwCSw5Ul+LE9DsBjy7H1dznS2/qQP/jor8XBVYY6TY/NFnhXW6uD4Yp7izHVxmT3o8G0FNE3ciTpAH/Rbz9SZ22URlRm0lxD8/BmZfktuJ6LZE0R7shc8XY0ngKHoJEI6F58rRemC2xvRMIQzhdOvhGXAwBQkaRBG5YumB7uMkc4JActHqBdzpB/EfmlSY3EJpyEqtPZG0ufc4bQXfWRLeQZYtci9l7DE2i8/96y9ygVgSEqKcOhu+SAjddDfK/Gyzxvy84aV4fvlvIDzKSI7w4QmT9pj3FWiNETejf7O2RP2Zli0eCOK7HArZXdhV6bW3PmL1JuimY+sBLMvPQ2t5fN9pz3CvDYRjPcTdUu4y9HxR/S/ncohbWGPcNbAeAfgbgJ/HRwye8PUlrTCh2ZGNBetGyZja9WXgYj0HzKTqwqCyk+jw3pOshW4mjPwpTE4+S8ZZ2VCnoJcw56rWdMP8CHFjauF4hHQqT0Ej+inKIbKpN5BEIpTp4YCRZ5ANHoKVNTpfzzEYrifC0jcBIGseCWY0MXhGtXtu7rodAF7VYD+bXzt5Pl1Ha2eVN97JBDmNATfANHnvcar3R2gMgobceklnljn5/hn3/nIeJtlgobbexkdkEfJtkGtdTilRvHyzAEZmaFQHsap1OSibBD2VFHA3uOM7UqfpcdTCCmk6q7PWvnmRu6l9dsKXGwnT/jyGsh3q2QeAyigWiIos870phHXtxqeAHhVBvwI12KN+9durhGxWlH7kF7/1ZZvt7JuHKUSjyefrhHyGbtCbjleJjIX7pLfgcNps3pCea2TvMTOu7w9ejPsBnfvh86Lcy2CIxunCF9OzmjMLQ13PLuFkrVMPX35EoEMfMMSw6wqqorE7u41v0ANw5wueU4u8Xr0c8Zp4dhvkkGdIkBc5Eljaq5jQ3TqP7KNseihXY8KZtSscnTgMhc+TTuPc4EUlcqzYkXsnwmr/pODAlqZhSNkwr+h7kYkifnLHovhCoGVl9wZT0X2LntBLyqgsL17FoN+j7CP9Vcap+eA4M+qTN2Z/Z+r9RKbrU2JIssXQ7XF8e6gFZ7+ZnYBMpk6+cUecmfViyqgS1hs15CN/u4IDGd3pS/rVv+MgJgQAvatr/6PDZLUes4IJ7uFXq+3H50ufUgIcFnJ1PysYleCk33xam5sNskMtvJWULtLyaF4rgaCWnJhUO5PvPS8A/Ca9uTdQ27x0oJNmr17l9klQGWwYaDe/2uuDllHkMNPzYeyuRPra+EDoGPo9CkPof47W7ChXB0UU9qrjhsNPy4uPli9+cwctE60Qn32B2cw==",
+  "sig": "y74UxKnupyDCU9do66r9vsSrK2TJp/xCq3hsLVseVAVkOjyPh9vV8CAtHkFy7HIS9a61CsTGQJ4wWvHnnXvUDA=="
 }

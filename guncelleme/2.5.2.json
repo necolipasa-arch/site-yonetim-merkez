@@ -2,15 +2,12 @@
   "product": "site-yonetim",
   "version": "2.5.2",
   "date": "2026-10-25",
-  "notes": [
-    "Ayarlar → Mobil Uygulama & Bulut sadeleşti: bulut hizmetini (Neon — otomatik veya Supabase — elle) listeden seçin; yalnızca seçtiğiniz hizmetin bilgileri görünür.",
-    "Eşitleme sıklığı ve gece sessiz saatleri artık Eşitleme Durumu kartında; mobil uygulama adresi Mobil Uygulama Paketi bölümünde."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.5.2/SiteYonetim-Kurulum-2.5.2.exe",
     "sha512": "shkKSBZWunPC0HvaFD+B1vOk5b/pd6gBgWWV87MAe0LrmrSKnY9HiLjo9CKL1TvrBZL8izJw8/A7fIiABzWZ2w==",
     "size": 78942400
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.5.2",
-  "sig": "qzI1DzKghOL4XuzqVQiF2EbXH3cc58mihnRd2hssZQz54FUjFCBiz/jqdM7dJE2Cpqw5mkZUAhSJ7Y4LbwGQCg=="
+  "notesX": "fdGE+r8aEon5dA58uEHRR1x9lSaIF670AtLBBu30MhSLmuQNBIiGgMcBREBcS4o+e0gIvwY0vFrGKDKGlgyrPjV3uSTXmBpcuCjVumKzhHtiZpUoYwzu+Gv2zxXoOQNudgNWHARRoWDtACSTZq+Mn95cEbJabPBR831uftV+5yw6o/Nc+3R59wqAipEAMjii8nAvm/WvNCttsWPDy1qZesxxYuStHJEyi4Uqg/5DD+kIWbZP7UaHtlI46nJpS4mCskRCQYTJXkgZ4/SkTZ393i6w4O3kvUMpXAvzmyhSl/18D9giyhY4XqBtRG7wPuhNpobbToLMGr72i+wz+IYoUYQWprvgj93Ct3THEZZFfF/8xHW5qeN/P60kIfelDvNCXPFxHilVqNZWE2zBMb3HP+hFocUzn1osH1nF6qsDHeHU+rELgarHMJSmM7x93WaBPTm8NFIys00Dfx6MKg==",
+  "sig": "XrRxWMZG/LPcUUV4igUQ19AlhEqV6BUeEqv15EaTMeGQlCtWWoVus97yqR9k2pEsgdokbBw2FvCbgMGtoIwhAg=="
 }

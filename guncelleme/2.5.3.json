@@ -2,15 +2,12 @@
   "product": "site-yonetim",
   "version": "2.5.3",
   "date": "2026-10-25",
-  "notes": [
-    "Yan menüde Güvenlik Masası'nın altında çıkan \"Tüm Siteler\" düğmesi kaldırıldı; tüm sitelerin özeti sol üstteki site seçiciden (Tüm Siteler — Genel Bakış) açılır.",
-    "Tüm Siteler — Genel Bakış açıkken site seçicide artık son seçilen sitenin adı değil \"Tüm Siteler\" yazar."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.5.3/SiteYonetim-Kurulum-2.5.3.exe",
     "sha512": "ZrpAiL47RruuDARNFV8rYzlV9JNPGGpJKDYPAl21EAqKtz7OqYsKBUNWWp62uWmzwkJtQkc5Npb3FDZJoti3tQ==",
     "size": 78942564
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.5.3",
-  "sig": "SETui/CZo7VS7jDUdfRk+ZucNMLu67DdKSpai0SIy/tsMaJq3cMZo0e9yaB0RLGelRvuiQ/yZrr2PF02Oh21Ag=="
+  "notesX": "uS03rRCbDIWYQFM/Oj8liQThhBaGwQZdzszmNdOCB6Li+3urGpEtves4GIX7+s/PoFSgY3mVi7DbfWUNRaZgoFGzEiFFvVQOxMEXgAjSSFZTc1G+sgiTzW7GitPkSQ0heBE7KWNejgNV38gyPM6eggt2BCMSGsy1ghNBUOmuV2nHsThX2alwRqfzKA7Wuj3dXwqX0NfpXa4QQ6bIglfX1/K4QSJbKNC5Hst684GimKHPFDrnHUXrDFw0aauwWtjWzjo2pMxuI6dEHn8cY9GV+IWckvJ2L6fcE4duXMPiXXv1hHB7mqCGjggAU6wZCjGbAgQtfohE72dPfbcxdb0Updfhp7H0i7WShRD812Jdesy2VtBVUwvQ9/VwnwvwTw7wzhXAeNT3a6xbX3LQlRoXfVrivCjkadIDCZyQTjdaRi0Ni7n3NEZusFrBEfKOAp1LjDpT1Q2O",
+  "sig": "QqUX2xrACxJqtSOjn6PnO9x3m8Jok6chZ0YUdkitkKbOBZKvLcbjcsaaPicafsYPuCujL8uPRLh1zP7EE2r2Ag=="
 }

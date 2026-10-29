@@ -2,15 +2,12 @@
   "product": "site-yonetim",
   "version": "2.10.5",
   "date": "2026-10-25",
-  "notes": [
-    "Kartla ödeme: ayarlar artık her açılışta ve bulut bağlantısı değiştiğinde buluta yeniden gönderilir; mobil uygulamada \"Kartla Öde\" sekmesinin kaybolması giderildi.",
-    "Mobil uygulama 1.8.2: ilk girişte kurulum kolaylaştı — Kayıt Ol / Giriş Yap'a dokununca yükleme sorusu hemen açılır, onaylanınca bildirimler kendiliğinden açılır, sonunda \"Uygulamayı Aç\" ile uygulama adres çubuğu olmadan kendi penceresinde açılır. Ana ekran uygulamasında bildirimler ilk açılışta kendiliğinden açılır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.5/SiteYonetim-Kurulum-2.10.5.exe",
     "sha512": "AT5kw0ANU7X6Yz8ukhq0ZMeqlxcIQOKSKinXS6UH7ZYQSJ0dDjX3Wn+oD/bqx3OKXPXJ+BiJlM08d6sJzqBHWA==",
     "size": 78994640
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.5",
-  "sig": "05IjJNEZOcOab3uHAXXYMLp1IbYUHRp+VDRfjvH/cY0egnPmkgNRZyrBbs0jYUc57tQKGdAg9EagFrHbrGz0DQ=="
+  "notesX": "HwWOXFVOGVmhW1OE5p/iROw50l8jPNoKLxhTRZw+1GxfRLPEhUGO+xaXZOxE8nZIwbkMx3g0/1Q1rz0/c8/y8lt+AwpiD+lLs8nkviMj6AnExJE0mpe1z07W+88k3Ch6yPJp7aoVF/MlTXi2Ty12utdCM0ULD4Qk54nQZpgeY8lau7701ddymUQdi1lPtADShLG3TnRWVrY2q9CGefRptcRF0sPkeefCcUPckod/mhsRRjjXJ6jin9rQOAOmA1uGDr50Cpumlsp2AF4m9eS1ib/wdp8umZKO6QXDPtR+rjEC7GYtlYPjPOrMHjx7uML6JJrtz8Je1PMGT00ZXCsvPWb/w8NIPwhQdqidz4AeBisy934P9XC9m+yzcb+6jPYEwP7ZVq9/tj/iVhjyernT0KwgeK863GP5G7pmqdz1PYh2u77YV/Bg/U5vboTWZt6f9VXLE6/t+yS2qxMlGd217ge6WZq0ajA2qMzbEejVBAbHRxBnfFme1Gx1Tr16ngkWKhjkVDJYpcxWN/t7o7wieB7xsnbqqCwj0meZTOD/yjP2xX0uX9JD5oGWfPteKYX3SpMoPBhpVCJKWQ/6tOHzFfwEBY7G3/Ein5ebakjdmvErWjYjXQEcQpzzwTR33y3X7y8tAhmC3r0xnh+R01iQE6EtMyp2VR0v3mOwcuspP11Nym8DPIBvIFwk5vbgiUrd2a43MfYEnzSqhbbJmSb4Aice2kGqCQeu7qsIzCRbVggOrwfDbrP/",
+  "sig": "uT/LYRRRPEw+CE1qq1KFMH9+xntYyc62JibmPzbtv3iZsVX+OClPCMMcg4sgC/IoUlrRdQP3MKUv89gDqoAaAA=="
 }

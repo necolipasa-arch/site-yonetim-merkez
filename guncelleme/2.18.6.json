@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.18.6",
   "date": "2026-10-27",
-  "notes": [
-    "Kullanım Kılavuzu artık programın içinde · teknik ayarlar yalnızca Sistem Yöneticisi'nde",
-    "• Yeni: üst menüde Yardım → Kullanım Kılavuzu (F1). Kılavuz programla birlikte gelir ve her güncellemeyle kendiliğinden yenilenir.",
-    "• Kılavuz sadeleştirildi: yalnızca günlük kullanımı anlatır; teknik kurulum ayarları çıkarıldı.",
-    "• Plaka Tanıma'daki kamera/bariyer ayarları, Diyafon'da kapı ekleme ve Ayarlar'daki Banka Entegrasyonu, Kartla Ödeme, Test Ortamı ve Terminaller sekmeleri artık yalnızca Sistem Yöneticisi'ne görünür."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.18.6/SiteYonetim-Kurulum-2.18.6.exe",
     "sha512": "LXgepJDjLCqaq8VA/AsznZK4g8ftetqGue6FA4sZ9z4A13oGt+eMsrmuf/DfMfGXPDgOQNMe5zJ3JDTidl29dw==",
     "size": 83974828
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.18.6",
-  "sig": "nrT8G+YhdII96cJguuCvTXkxRgNuKazqkqZPexe1WC56kXx/Q0cf6Tvj5GQjT8qK47q8G4+KprBhPEMN610yBQ=="
+  "notesX": "LwXo4xnyEMYsb+131qIKheUtcfba3/qsx19i3l4+WdnzlSOEEAJQ2CapeJ70IlTpVzkYMTwzIwDfFenjRuah4xxwtpeuV8QTajUAwbOeZ68Xzd0tQkJI2mPC/9gyIjfroePmRPCZ/wWOw2XVCFPrZzw6qKZ1KyqGoT79O9zExVbQTIW/C1c/2OPDsXJmcAKURE/sbpReP1PjFWs8ElKdY56JTIvW6s9sXfulWNYLBu1Glo60va+PHqMk5xyFGb6oqyKSvoVBxKjGthRHD8yVq6KEC/Cp+zJwOuCpPGWR0RSs0pStZdlpEo+U86j3N5IoJeggMY3sGws0eSBgDYbBRvIspduH5jNbdLHhrHlGUVedh/FTDHqNjZTe+ZeJVDjJP7W4jSTd1Dh4JBqnY+4EhntSpEd8oLdcMnvaEvKEo0ViCW5S+uA5iJQs2rzpIRH2PLdWgEeF5DDx4BzcRVgcfoh30oGHK/4wEFg1UjksyHhkg3Xwt/q+OekwMXzEzaTX4RmFqqtfMhrzFFXcNb86+QeHP22PIzQsXoI0jtemymj0FZgfFac0Z5UrMojIFeXsvlNOqj6KfTRwNo2CW2eKVytmd8WMuWaStCfSLDjurBZfBNU2UIumrwSEbg823/VC8QQgk5QoyHJZOfJ6JL14MD6bpbt56t/5nc1RqE9duxf6FjGm27I7fMXdk33kTfYzpszrfd7ApUe8BTNF1Qwqr1CXoUiinfi9Lj/pDEK6vb8fmUa2QDX1xFIGhjD3D7fCg6Wxb5epmvUYuC8hhJ1QXPnK8Un1toJ4+g==",
+  "sig": "D0B+Gjl6QNHWslQZNmMHd/lDT43GI9C7r2QitBPhNG5lrSPHnPMHOhz9QRhfYjt57bKsFSnkfa1Ok0d/OoTdCQ=="
 }

@@ -3,10 +3,6 @@
   "version": "2.26.8",
   "date": "2026-10-29",
   "time": "2026-10-29T06:31:04.678Z",
-  "notes": [
-    "Değişiklik",
-    "• Küçük düzeltmeler ve iyileştirmeler."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.8/SiteYonetim-Kurulum-2.26.8.exe",
     "sha512": "Nragd65yXmYY/45IkkWke7jIuujz/2hrip6MyWmbJmAFZpuVVt2SeWAH5WicFUC8IrxIJO6vdVGeBY1Mo39WRw==",
@@ -23,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "3nKhbtsyx7sqqzOtobqd4xv8g8IW7cP15wmv377MeRfuHxXDk9xyPFeRTrGu6IHWRQwnfYJP1/yWYKzCohXMAA=="
+  "notesX": "ixrY+wlKe/OtQU1jcqTZkMgi6aFD4h6D6P0+6S9sQ6AjWyznkuWaJ5i5F+FaKn19tWm3yBhVPSAtAdY+3y1+2phPvMuq/pi1bv8GJ3u9xzPbA+uI7NRGVoe5C5c=",
+  "sig": "K/RdHp2Jo3qC/Ux3RaK0DHhzK0KXqZ0gJeJPIVleoUkutqfhFtvOVa2o5TURYvHdOxUzJ+lctwv3TEj2hQ3wCg=="
 }

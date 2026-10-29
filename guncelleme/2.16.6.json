@@ -2,19 +2,12 @@
   "product": "site-yonetim",
   "version": "2.16.6",
   "date": "2026-10-27",
-  "notes": [
-    "Menüler arası geçişte ekranın bir an aşağı/yukarı kayması (zıplama) giderildi: sayfa artık ekrana çizilmeden önce yerleşiyor; Duyuru & Talepler, Raporlar ve diğer menülerde hareket olmuyor.",
-    "Bütün menülerde sayfa başlıkları ve alt yazılar aynı punto.",
-    "Basit görünüm Ana Sayfa: Aidat Tahsil Et, Gider Gir gibi kutucuklar ekrandaki boş yere göre büyüyor; yanındaki \"Bu ay\" özeti de orantılı büyüdü.",
-    "Ayrıntılı Özet: alttaki En Yüksek Borçlar, Açık Arıza & Talepler vb. kutular küçültüldü; kaydırma çubuğu çıkmadan ekrana sığıyor (dolu olduklarında kutu kendi içinde kayar).",
-    "Kapı & Güvenlik (Güvenlik Masası): alttaki kartlar (ziyaretçiler, kargolar, rezervasyonlar, araç girişleri) yan yana tek sırada.",
-    "Örnek veri uyarısı tek satıra indirildi."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.6/SiteYonetim-Kurulum-2.16.6.exe",
     "sha512": "mdD+GU3aMSbBq/R/TZ/jW+bf78pIpIj+tHM7OaHzUOsAqkPQAwPs7hegaGUok+kN6B8QtFT+CqrR6EB5jzriSQ==",
     "size": 79259745
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.6",
-  "sig": "YSUfjzy8cabwPR16hHX5VRQG8JPpZgosJ7Nqxz6rIl3enfooWUHoxOWLJCOBTTwH7AWzFfeIGWOyDHQp80AABg=="
+  "notesX": "tcT50KWIa/eJdcmgiKEaO7/dQVrVdv2zbuV3VyW48+z5e5SbJPJcqFxF9Llypdzqp0d6pNs4bmZZn2tgKUmb/uyJS+4I1MTbqBeTGQv5l8bVLElPOj5G2Leaol6EymTlRLj1TiigGJY1l/LXppwV554W6sTWsohS7Br/2pdq5LQGeTMmXbdvoDfCKyL8O3DlcTZ9ND+OZXVemDtmN98BUbm9PszWRrZRnOD2KQg9sF5mONlbw3yPZzOvbaxrWX3IVSK+a2WsoPChPBMByjk7IuFdbvEZDk60+lVhrgILPK04zaKvsLcPjqzOV9NqVdWo+0eevzpPeB1cm32Td0yvqMknYUQ676sIa0+fBW6mFB/xLV4phDoIBBcSIIrXcmtgir9IqPhEpXITrYCFJyLn9eYlyDBwYPlzuIKRVowoQ4IbxfJlCs025HCyrEOKc+purXkr/N9EYlufH62+5PBJQd87nD58DgIgP9nCgotMea4yy4JBla5gVGzWKRjkppjKUnLNzlMK5RFKa36NVApClWCViJgJuI6hHT0Gu4KC2q+VqX2iRsZ3sPvT4aVSXkfR6QBJ9kkZ8AykX7Lu3guPwAJPeFGPEvYTydaeyAaJUcCmdHOR6I752pEpIwkKpNwIGx0pWrIDK5l5CEW4obanEMWJSPZtAcGVX+fte1fwxES/p9Jb1Is8csHvLTTDHAj0ugpjCCDVfhvAYyAMp2kQ3N23508n8aj40uqnm1uiTQIXe8vUKDeLcnP7QIuX/au/f+pFsPC/bwuN+M/3Y9+gxqFuUfbwQ0COXdmgJv3at0KWUJQKJMPWI1i4A6/o43lzcWQZPCKgJYITP30pWiib7AdD0CO3Ov5zXpjrezgKK8f7M79Bidbs/8QIeawgDYa/MyQQ5QYoZKsKgDUr1AfKPj5m9uBDc/Cw1rKKSCyGJa8fuQ/zDZe6MTfCJ5CbR99LZ/CZPgAEhOmh2To4A3h33ZivqRmzhuYeQyYjKZqPEfT9CtRYxy0rv1rIam2Zt/lf8l3f/VVUVxVyu0ABrFTg/tjvAj/dpJC8gTuMQHwAFM8EJ7Xh3+cF/kqx4Ln/6HLOABDdawthHPQVtqyo8h2Hw2F9aIGaV9jS0/siK4J4OEAp23obfeAgrgQ=",
+  "sig": "9sk8mc0GMgVdRF4DRBj9PXsPBNtHmzdOAeufZ307TdocJyseDhA4HFtpX+44QwD7bVI/vV+Wk95IrccTS9THBw=="
 }

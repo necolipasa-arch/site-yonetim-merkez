@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.16.5",
   "date": "2026-10-27",
-  "notes": [
-    "Bütün menülerde ilk ekranlar artık mümkün olduğunca tek ekrana sığıyor; sayfayı aşağı kaydırmak gerekmiyor. Uzun listeler (tablolar, kayıtlar) sayfa yerine kendi içinde kayıyor; başlık, düğmeler, sekmeler, özet kutuları ve sayfa geçiş düğmeleri hep görünür kalıyor. Tablolarda sütun başlıkları kaydırırken sabit duruyor.",
-    "Boşluklar ve büyük kutular sıkılaştırıldı: Basit görünüm grup sekmeleri, sayfa başlıkları, özet kutuları, Güvenlik Masası düğmeleri, Ana Sayfa kutucukları ve filtre alanları daha az yer kaplıyor. Ekran küçükse program görünümü kendiliğinden biraz daha sıklaştırıyor, pencere büyüyünce listeler yeniden uzuyor.",
-    "Birden çok bölümü olan sayfalar sekmelere ayrıldı: Aidat Hesaplama (Geçerli Aidat / Otomatik Aidat Ayarları / Aidat Geçmişi), Gecikme Zammı (Alacak Türleri / Hesapla ve Borçlara Ekle / Genel Kural), Bütçe (Gider / Gelir), Isınma Paylaştırma (Yeni Dağıtım / Geçmiş Dağıtımlar).",
-    "Gösterge Paneli: altı özet kutusu tek sırada, grafik daha kısa, alt listeler kendi içinde kayıyor. Ayarlar ekranında normal kaydırma sürüyor. Yazdırmalar etkilenmez."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.5/SiteYonetim-Kurulum-2.16.5.exe",
     "sha512": "2k/ZxlKD9ZVjARtcoyUKHBaA1g2oWsW7DEdkCX/OK4Y+SPdLuRn8GnmE1U6jxzbqSXOpKkcaryeEWRzpm5Ox4w==",
     "size": 79257586
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.5",
-  "sig": "/o5qVRbZiYd4iVlNAXP9QHpllfqnXQ9UAVokwAnbA2u5tiAC0K6rR0ED8EFEVdSCy6d45ThHlh3VlEyOXSEnDA=="
+  "notesX": "6pnMOdV2ArFViwtNZm6SOGSXU0iPrY+bAz4/D+qEa/hIO71vbIH3qEU7wBTENoyAlD6RKbv59F7Qs2l2csyXS2b1DnL7IdmDcqXnWAp+5f35S5pU1ZfwuHveyEn28cFpglY/OfIMuaBoFP739IuoQ+vvZflIygaYzU64KGTGllDxoYeu2+GQdq5JjBfqcqkDKMn9qBkqL5qSBpREOntQUFgHFJhTCl+/qO6dq5owZWw2tOoCSPIc7ouOE3/M9qGm4NQ74zloT112zZg9mUN59VB0hUANwogzATvjuWMtuz8szfzkuI3fcbyktaPWhD3GZx+d9UvdfHdGUSL5hZzj5ZKz3Mfd/DVGJEfJt7TbppuuF2zEkmSj6g1YtXYYwv/4kuSZ59yJAJEXDRw6WMOqbSpaj5m7RUvAyExdkwOLkiy059BR0xXw2N7P9ODP43Ld/edxw9F96Jz1zJl3Hua1XszH0oSONWg06XQao7fkoAavy2GvH7QU1DsCUonYJOnvyOHHHHq8AIO8V4g0wq/6CV2iJhL213NLqF7iY+9BI+Q8D4/uid58GKqvH2VJjnHEVzQX+qGPy5+YcnIHj8MLr9raMhiYqZv0bXIMVI7fdbLV3bPzCtWbeT0Dba4DNRQxVGx2v1p3xx5I9OPhVCWiC3oTmUujhyKixDc38b7E6XgL+2fDu7qeOOWQ4odYM3axgVcNUSNFbQZGwkAgUAZTkyqSTMoxsITQw9pe3F366MPABhWl221y57k2NgjIUYgmi/Hmth77RaTBLYL94s0j+jYSJ+aAsojVb6JDnBFap7HNuufOPswNsligfjc4flM3JZbPD99C79eYlLWHSdKL5SAN6cew0g/pfprmpSAz7vYBU0SUW/ERqfjTGZWNUwXFE4yCXfdjMPbBHaeFin1oBOC9JQM0DyujEACTyOE7TZLFNpJz4gkjfmrLmUFJYNJZ89859CEJ7Qwc+JAwv5DRdcoDU0KpkH6aw0veYqJpWvzwEsZpzbNSOQmGNo0Q7wJ/YzRRzk1gFznv9juLL1G54TGDCKfpVmTUrfhtTJc+YW/tn+d5khSCr1ziZChJ7CZZ9hgE2Fi8BBVyG5vvtjD+tDdCAe12m5OWhqpFCiXcigURgoQDsv38slLN+jIGQ5flOa8aTUPefJf+gmR4xbR4MjIkDq6pVr5Twd+YCEiCMXHCwoGae64el6PGptsYp5AqbkG81COwx6At0WLfHUdP5wLiSQfzHELF+8VTX9Ud05Sb+Um0R+yAjlLueDf66B7eePVAwiNKr25Sq6JWUxESsRPJWMaU7MBF+FRBKHnUh3qmzcj8LIKJjPHwrGZFqH3/eZKjiepJCpPdyL6vfaoGgsIPo26vGn7p5Rea+jr3KcWUsHw2AF0JEYKL1n0Ei2oRWOuaLETn9GBpnVGveUAZQhDsKRnTQ+sbturWVqiyjeOeaTcnWZYtdXYBqwkckFfq96qlUXYs8B+sc52kkWygzO+gl9YtQVGJKOE5c0aVz7NtmwizMQXzd92X0P5sqYNW5NxfLRo1DGyZChKIxoWobHo80b9WovthzVCKIguVLqhn2pUV024l8h4HUD4Hs2le0LwTWXVqyPy0U5+mlwCU4UDjXG1ACkV7AFI=",
+  "sig": "t9t2xPJdqKg0QD6uvHr1un5Ti1wKD+tsS1YbBI/xLjv3kSvMluXuawPSNyfIAk49DAA4i15KcCZZdSRJ2c3gBQ=="
 }

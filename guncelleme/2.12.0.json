@@ -2,14 +2,12 @@
   "product": "site-yonetim",
   "version": "2.12.0",
   "date": "2026-10-26",
-  "notes": [
-    "Yeni: Uzak Destek. Üst bardaki kulaklık simgesi (veya giriş ekranındaki \"Uzak Destek\" düğmesi) ile müşteri \"Destek İste\" der; ücretsiz RustDesk otomatik indirilip açılır ve ekranda bir destek kodu çıkar (Kopyala / WhatsApp ile Gönder). Teknik servis aynı pencerenin \"Destek Ver\" sekmesine kodu yapıştırıp \"Bağlan\" der; sitenin VPN ağına geçici olarak katılır ve müşterinin ekranına bağlanır. Ayrı sunucu gerekmez, bağlantı yalnızca VPN içinden yapılır, müşteri her bağlantıyı \"Kabul et\" ile onaylar ve \"Desteği Bitir\" ile istediği an keser. Ana bilgisayardan istenen kod tek kullanımlık ve 24 saat geçerlidir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.12.0/SiteYonetim-Kurulum-2.12.0.exe",
     "sha512": "TFnnTUgX7sIfgdb+a6Q3zKG7KqEczgCPEuDkJM/cO+DELaTjT0o9rKWNmY3fFAVNcyQO7jz9i4ZixdOAdXf++g==",
     "size": 79022169
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.12.0",
-  "sig": "HpZK3Hqv7Os2I2fWjd97VSUh0nRekWpmeotsQHT4N4rHlR6e9HGwO1kVhi3Pd2T+vZ8edXSmN08nAJZPr1zwAw=="
+  "notesX": "TLxO8bKPG87FfU708w720NdUcWloP7dch2dDV+hTFb9ixGK1VS0PDgSWEJxxAPkb1ykqrTbJd7BwSvf4Zle4lx1LAQ+sGT1AcR1nH4sCWftVk7ufdMA9mCMaw2LjERWOTK/tHcwGKpvcJngkfzI8+RbEwQ6EaKkRQsD0r27HXsuLw3Od0NSpA0UpKBnBA0XIfBDqYQkQ2LDvvhVacn7M9jrQExcuZYmyiP6aN5VIvxEnekwIWRz9s2ssxLZjf9UOvU/UZx17M0u1sSq2HgsRswAbx8Ua9D06PTCGT64f7UYgias0eL2SRnQU7mCrqR1C5P4remz89rgGE/UdX3cyMqKHBfB103bpUyTOgUI84s0uHUSSOj4onAP/abNknloDndog2r4gP5kXIyMhTNIxuLkkVeGTwWzOCmgFkrNUm8YmNz48c4pN0PEue92rQ+Go7P0NWcjAp1wP7ph3k9V+QOYodoY9izvlQvDlNkJK7N7VvbtTEDIuPf+usvpHYMqft7DaK2/5QeoMYi58b6iQl6zbCYlKSk17XNgs9ASLlmLZiZxcfnZmaDgg9Y4+zObusJvM+ZAyKJcba4j+sB4xtn4j3zSA9YffoiCjmjyb9XFui8i+U9nazJ87zzbRfyPo9vEgGSPp1xtqJsR8+cPfO6wRl4hq+Arjbk8/0a2s6BxOftEmZis+OTS4uG1itzDLRg1CLOVe9wqbeZmepwrtZ0VAm5ujOOBZdyexn1SNS2r9NVvIDUnW8XWhCFcbzFzdYtWWVdkycuU+pBoPQqHKeHChKEXcpxIIUDG+BeJHA6lQHbYhtdsBebOgAEWDlG2RC/YmYQBoqofZPEbdrdjnww60TZKYLvDi2pNyGgThMn1Kc2HG+KEfcMDm3sCiDMJWM9HzTn877wmyT0cCs6yMPEwXNv3IfyGu0H+3bjjB",
+  "sig": "wNHMsI2Yp4fTpI9CeGUBAmutU916TtKPCTPfI4h22xp5eDYykGEzUkg5UzAV5FOIs7/xz0e/YOIkCeBlQVY9BQ=="
 }

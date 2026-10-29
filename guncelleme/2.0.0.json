@@ -2,21 +2,12 @@
   "product": "site-yonetim",
   "version": "2.0.0",
   "date": "2026-10-24",
-  "notes": [
-    "Çoklu site: tek programla birden fazla site yönetilir (yönetim şirketleri için). Her sitenin verisi, kasası, sakinleri, yedekleri ve bulut bağlantısı ayrıdır; sol üstteki site seçiciyle geçilir, açık siteler arka planda eşitlemeye devam eder",
-    "Ortak kullanıcılar: bir kez giriş yapılır, yetkili olunan diğer sitelere şifresiz geçilir. Her sitede ayrı rol verilebilir (Kullanıcılar → Diğer Siteler); şifre değişikliği tüm sitelere yansır",
-    "Tüm Siteler — Genel Bakış: sitelerin borç, tahsilat oranı, kasa, açık talep ve bulut durumları tek tabloda; Excel'e aktarılır",
-    "Etaplar: aynı sitede blokların üstünde ayrı muhasebeli bölümler (1. Etap, 2. Etap…). Üst bardaki etap seçimi daire listesini, borç durumunu, tahakkuku, tahsilatı, gelir-gideri, kasa-bankayı, bütçeyi ve raporları süzer; yeni Etap Bazlı Özet raporu",
-    "Lisans: şirket paketi (aynı paketten N site, site sayısına göre indirim) ve site başına ayrı lisanslar; deneme sürümünde 3 siteye kadar",
-    "Terminaller site seçerek bağlanır; terminal sayısı tüm siteler için toplam lisans hakkıdır",
-    "Mobil uygulama 1.7.0: birden fazla sitede dairesi olan sakin, başlıktaki site adına dokunarak siteler arasında geçer (yalnızca giriş yaptığı siteler); bildirimde site adı görünür, dokununca ilgili site açılır",
-    "1.x kurulumları olduğu gibi açılır: mevcut site \"ilk site\" olarak kalır, veriler taşınmaz. Bulut tarafında değişiklik yok (kurulum.sql 1.9.2 geçerli)"
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.0.0/SiteYonetim-Kurulum-2.0.0.exe",
     "sha512": "WGCON/qgKTenUgg0n/6gwn+//AZDHmQ1emYSW9ZA9Cus65S0jLSupXDaYO7kHodxq20HXHX0YTCO8svzMy+eOA==",
     "size": 78902704
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.0.0",
-  "sig": "qL9Pp01CPAEWlL+Pe8smYpdbNAJTfx+4iwIMqM6E67mcEDopGqX9K6vDDJ5pA3H7FMYGngZjLitTuiEcKLD8AA=="
+  "notesX": "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",
+  "sig": "JwiFj0Kqgo4wV568KIqIyDE7SIkmDV+dksUaWajv8XhNxxiNHovoP2fW+j5X2C3VnmQWFlhSVw4+dh4ybVD6Aw=="
 }

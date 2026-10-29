@@ -2,16 +2,12 @@
   "product": "site-yonetim",
   "version": "2.13.1",
   "date": "2026-10-26",
-  "notes": [
-    "Test Ortamı örnek verileri genişletildi: geçen yılın tamamı (Ocak–Aralık) ve bu yılın Ocak ayından kurulum / sıfırlama gününe kadar olan tüm hareketler oluşur. Aidat artışları (her yıl Ocak genel kurulu, Şubat'tan geçerli plan), mevsimsel giderler (ısınma, havuz, sigorta, asansör muayenesi), demirbaş toplamaları (çatı yalıtımı, kamera), geciken ve yıl sonunda toplu ödeyen daireler, kasadan bankaya aktarımlar, aylık su sayacı okumaları, talepler, toplantılar, duyurular, rezervasyonlar, ziyaretçi / kargo, bakım kayıtları, anketler ve iki yıllık bütçe dahildir.",
-    "Yeni: Yıl seçici. Tahsilat, Gelir & Gider, Tahakkuklar, Daire Cari Hesap ve Raporlar (Aylık Gelir-Gider, Gelir/Gider Dağılımı, Faaliyet Raporu) sayfalarında kayıtlarda bulunan yıllar listelenir; bir yıl seçildiğinde o yılın 1 Ocak – 31 Aralık kayıtları görüntülenir. Tarihleri elle değiştirirseniz seçim \"Özel aralık\" olur.",
-    "Daha önce kurulmuş bir test ortamında yeni örnek verileri görmek için: Ayarlar → Test Ortamı → Örnek Verilerle Sıfırla. Canlı verileriniz etkilenmez."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.1/SiteYonetim-Kurulum-2.13.1.exe",
     "sha512": "iO9mYtud07QQGyYGcFWofFa44cpmTHP1imLf4g/53s2KDHDU8NxulIIt4K+o4BhZHFIiGZnBwvjqaAw2eTG79w==",
     "size": 79035964
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.1",
-  "sig": "Vcda6LXRHJXT/3s7k5BYMGuYBAJatB97zNEjIBRNXONjK/vDj7axiKjY2A9zTuo3yuO+JbxU+q0hXxPYfu44DA=="
+  "notesX": "W6QZzd9hWcFFtIcejztlsoDa2Q1slphiJ7GLH873Us6UU0I6Gg/AY117T0rsPZKE4AKLeXBdTp9DabcEBalkBS6WYXIEURJUy6TAxxpxSbzJ3qp/wgEZk/HPOGbCYg8ZG7OMRM0cIqx6tQlUaJTq0g4/d6NQ3obnzOyb6UQHpoTYVOMP3Zsr6YADmM/3Ee+YTReHy2AKlDmetoNWxNu+ZhUDIsjVFNofT/JE4H8f8TglqfuK9SnL8uNBZkWIWKoaNGJ8EUmJdFPWL50ynTBnbimBzMUu3SwjeGjBJbDruwTMlsjT7PHpjQSWWzcldt4/zUABMSdizJzZFc4JFYSMPvCav10XdH8vr2f/x0dbrC89b+2XtoNE3Z0DOGLV/2PFfafqqqyYs71epd2BtvAk+M7s9ON+DCq29YWVd+biOO95sjA2GX7mNENhY+aFhim3RUbLzHF9nev6vifrvlyws7/GArB8HgrV055DbfFz8lUXngCcaWUe+SMkZ1WvsfDKxOOBoHBedJv46AsiBeBdATBffLtJlBxF9gjKz+VUG0G070l9GW44qgOSFeJbneJroi1CxAe58B/czYwaoNxMYe/gxVIMIP2fYtjuw1ZYT/CxRQ5U29qvzPjcAbrm3cpCa6BCuZM/PpnYj9BLrKkf8pprkWiP5IDMr5DciOmOQzbNtbGTgervwc/k3lVlxqQ52VAbtoJUfeYZPjwqzogByBajJkoOSNIif+AGGRN545MosGT/8ZSyjzqOCrWzz+Bjq53c3ncU5YK8BZYdPimw80DIqwpbdg7zp2cTui1TNsH19Cln0uqw1iPnUhiYCU5VQfl7OOvYFARegvA65ZiKjM3NWSeIZ20JMn3HjxjkiCi6UvNPJXdUMG7KskFyT62YSPLRP1p+t4e5jEoWLCxKKpyP9eczJIg1T0ooq5bUVkzOay3032d9OCY1w0hFXvYLEQHOGyMeyH/DApFnNDxsaZgV1q87977sSj7EkwFrXc80Atc04xu2WiMEVyiC6KxAZg24DlNdMVScS2L42r4/CRgUFicgSdwbMxCOKpaO3l+W00jfMfImM1tyeMYVNkGiQilHL9ebxpBeYI05uEKM/n+uMpQc/EcMIwhY2DOXbJxsl4lVVlcGhQwDASR/+cp+BiscRnPgFNxZyRLjguAY/BIBQ/SlanpyECu9A++Lc8kaPcSEPGubHpiG+YPwFO91qkyQFKGhNU01ulVS9+8KKXiWzJxSif5XjGFW60Lu0qPoxolGRXFVZM6RAlmdqco98f48gvoWRNmEwFDK0pvdZWRo7B+zSJEA4gBZiRzn5XMPADTwO92NNIDdcWOhZk7+RgurBP7sw6CvfcL9LQ+5/FrUXCm9rO4eJEE/hbcOW50q03FXuRRqUJeB5ZmquuVmnhA8yZH3aGCRJC/1fP7orhbJoCOUO/pJGsryAXk6L4TsAjIhmFto5wAqQ20gaPP7YQl8WWSS8ZDJ7RhyzqR8EKIPM+NG+2MVp/rvJAl2yc5qgvyvfhKJnEfWKElZtPF7iEjOxgFh6amX3BiLzZSjfSA=",
+  "sig": "A7ZdB+L4d94RgtauB9kfM+GWMTIanoXLEVJj/C0SOusfeCl2yWqxwlu4e0llqVavO1XNTRuaMMfHQOARx1iJBA=="
 }

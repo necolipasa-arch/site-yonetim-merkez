@@ -3,10 +3,6 @@
   "version": "2.26.14",
   "date": "2026-10-29",
   "time": "2026-10-29T14:04:14.413Z",
-  "notes": [
-    "Değişiklik",
-    "• Ana Sayfa (Basit görünüm): karşılama yazısının sağındaki \"Aidat Tahsil Et\", \"Gider Gir\" ve \"Hızlı İşlemler\" düğmeleri kaldırıldı; ekran daha sade. Bu işlemler üstteki \"Hızlı İşlemler\" sekmesinde aynen duruyor."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.14/SiteYonetim-Kurulum-2.26.14.exe",
     "sha512": "5irupoxRM+12otwlGVwTjFKOJt7/U/uWS+eSunU0V3UDJQ5yyC41ZUPvup/cLT67DQDS+99F7TN4LfDNkGhWZw==",
@@ -23,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "T0WyJdXnogp4Y/K8AKVBdHBnxkcyWrlmSrgkfLz+LhG8J/UtdbUnbeV+CJUE+JatBXCv1VVhTTZ3AbFjdt5eDg=="
+  "notesX": "BF3WTPGFy7LddHA9enXQ4YWjKiZhZkGtuhmdDU7cxxMOiQ0dpUqqUxb5sA6zKjDuYFt4Q7lsbm7da3f2bChEwE8LdlZn0mCZ2o9aj6IIQluV7UCjvLOvlrHdxsOOSNwOFpbB+op0gC7Z4OMHhTP/MDBcB2mkuMlDs9MFrz7HTi3N9DWDcrS93jhTslQFBHqutLjeE45lj84x4K7QmS6hPAyssWMZ8tBFSSNIcvqdjkRD2mp3ung7qcpBaFv/YSrFINft4MaSa4FnIEd7SsJN3oAcvtRY/sZbTpTaqlJ2qDuC7z3t8XOwc8MkFVp0hMidx25SdAK51FzoAavGTtNFHq2tZcmW3cChaCzZcqZflFLTnat0tgorJdGs0j9MLryDOVT/pZI=",
+  "sig": "TxS+q6Aats8rG7Oh/kCs+q0gbGgn+5Ki6eDfNCyow2vQ18lA9hT9vsICUG8JDeEXw2664bEp1rPX+SziPzQpAQ=="
 }

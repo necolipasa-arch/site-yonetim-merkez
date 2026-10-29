@@ -3,18 +3,12 @@
   "version": "2.19.0",
   "date": "2026-10-28",
   "time": "2026-10-28T11:37:23.283Z",
-  "notes": [
-    "Destek isteğinde sorununuzu yazabilirsiniz · daha güvenli güncelleme · otomatik hata bildirimi",
-    "• Destek İste: \"Sorununuz\" kutusuna kısaca ne olduğunu yazabilirsiniz; isteğiniz destek ekibine anında düşer, kodu telefonda okumanıza gerek kalmaz. Destek bağlanana kadar durum ekranda görünür.",
-    "• Güncellemeler artık kademeli gelir: yeni sürüm önce az sayıda sitede denenir, sorun yoksa herkese açılır.",
-    "• Program beklenmedik bir hata alırsa, kişisel veri içermeyen kısa bir hata özeti destek ekibine gönderilir; sorunlar siz bildirmeden düzeltilebilir.",
-    "• Bulut kurulumunda birden çok Neon kuruluşu olan hesaplarda kuruluş seçimi soruluyor."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.19.0/SiteYonetim-Kurulum-2.19.0.exe",
     "sha512": "kPoF6zI2uxOPdNphH/uIPIkycZIJCyMdoqq1qyFvkOK7vuMWPXnWZZ5RDxpb4hI/oCZveSI6RPYP4ZhLa/eY3w==",
     "size": 83994014
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.19.0",
-  "sig": "ewc4KjCuC3YFclPeexog/jo2zEhcx//rVSs6zXKQAYD0vpdPGx9j8t3VS+gEDRQu7xzOwSR022akD2dl7M7GAw=="
+  "notesX": "Hk3eIRAuRuAMw5tok7Oxw3YY2E23mGNGmjkkhxeDXBKN4g8M/v+q8BKK9iEPe18oI3xlEmxD26sqWtti7IKJK1f5zKxmWXMXuD50ai3OjJVMdo6IBubPgQzj16i6LNFG2Bl2aEWh74Bhy7Q4X5yAImbKv4cDmz/FjjhExf+Va0Yi80f4C4uBKpyMX9Ac8thUDOW5s59rIiKYHnh7HZ58Uq7gGJ1zLCagA6G82Zyv+4xpEzVwqlMkQ8inP5KNZvphM6D5RsFgv/xyDaeYDOy12vBKNXGx+61l6/g0sqZF3AUV7NOOwc2OiFflcGFDkR3THNkKKOs0iDG5V4Xzt7RBq8GqalEec4E4AKHhZUGgb4TDH2BuNgQHFf6Mwhp8u8/o8SNY92kqtvyTcqGa3dxTck6eJqw0d2JjNtkINE0/IU+YqbXVli/ihRJ/koKp1Mc3oABrr4va3KCiwVydZu5zeuJI+ttj+9yi9b5+z3+MJnPD+xDookh6sUUye03qbjYiiNJfwIO4CpwdJbU067WLchkp8VHZfSWig7XW9SxHO3Hy+Y4ku4+OlQSTEV7T7xYqjlac2nDFQDoldgxuh3+Z22nQWe6jzXyuL47e2dIQ4cZ4MbHAvWPphfej5NtRoIizKIMT0lQqNTn2GW/gaeKAcBAK+HW9cQH6UCUogxi6d1GMKz/dOSXTbBV08INywRLWs5sI2qBtw3OiyLEgJa8HTA8ChEp2yBV1icnLuF3jv/dec8M+anaRlxlwNBPswC9b3y44WN+Q6QxfH6Uk/TpCoymVy1zsCNr1SjiK2J71JVm1sOKiWkgG+j+1+J0KU/O62Zy+fI7g5/P0mjGOhNAneuABROzJ15FPwWQy8OFMey/u+o9aYJKj1W+ncik4j6gs2z8XgPmAcOm2xwQ4iOqzRScnCv3YVKs1AtAynpBC60SBZtkhqE/UwyPHAGCf6aU8Bw==",
+  "sig": "t3MCHmPac6tuyB3u2rSuRrKZQ1NQia51ELyN3RpP//qnDW0VBQcLk2+1/DCJeAf7iBWFN/ys/Rd8am77Rue8BQ=="
 }

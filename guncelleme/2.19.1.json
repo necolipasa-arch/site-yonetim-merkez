@@ -3,16 +3,12 @@
   "version": "2.19.1",
   "date": "2026-10-28",
   "time": "2026-10-28T12:10:36.185Z",
-  "notes": [
-    "Kullanım Kılavuzu güncellendi",
-    "• Yardım → Kullanım Kılavuzu (F1): ekran görüntüleri yenilendi (Site Yöneticisi hesabıyla; yalnızca kendi yetkinizdeki ekranlar).",
-    "• Uzak Destek anlatımı yeni \"Sorununuz\" kutusu ve \"İsteğiniz teknik servise iletildi\" ekranıyla güncellendi."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.19.1/SiteYonetim-Kurulum-2.19.1.exe",
     "sha512": "7jkTQspM/THNaK+92JuMwzFiZOM+ZKaEzXOvXu+amDLDSWXYmn6x473WS3BFmIjy80TC31P9PM2SXr9laKoo+A==",
     "size": 83952171
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.19.1",
-  "sig": "Vz3w923bAgx/MH2luNiJwRWGDOxvmY2c328eTq0F73XIfW83nWLpq2QaQEvGqmqVeLb3tFBS1/2fSKCQ1OJQDw=="
+  "notesX": "ONvtS76O83U4xUtnuuJcokt2X8njrlckEZJTKwrMtogIQ2L7qGJiIEdvN/IVo+KhmNm1151BICftdcZU1oP1DXxsR3G1O/g0m6fi3aFKoSN+htsavuJxTHXh+rqPXzh7N9UGSevNlCrUJ5TAV8ssrWJAaTeKlmhArzPZBMK0sCOqNaKpdNqAVC5FYOk6plDToJbYc9g6Yc0aE0WQhf3j2GoTSPVP5rDSRmKRJFCmm9apOH+8FwgigLiIcl+bIlHOFo1tZpHDkHrKv6aU2HYUmfmo2XIMu7Jgerba07UJT2+LV1eBwSVRb2VT39J0KytUfh4cBYjkwwfE6qkM1BnQJCoKZsZLkENppVGcA8vxNxQYF7RNHVtXBLCph4dqyzR3b1E4axMjOMWJKZuPQoo9OjKfUgna1NdtX7wIeoqJtsKN6tmyX2KfPy0DZWg=",
+  "sig": "2vhKSd9bRadpjy9JJ3AtrKb7/PMir18vUfiSjRf+uqVbQobCygul27xZWhpB9usSErdi8dA2u86RxlfVOhA0DQ=="
 }

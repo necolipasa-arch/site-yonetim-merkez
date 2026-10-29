@@ -2,18 +2,12 @@
   "product": "site-yonetim",
   "version": "2.18.3",
   "date": "2026-10-27",
-  "notes": [
-    "PDF'ler eksiksiz ve \"Güvenlik Tur Kontrolü\"",
-    "• İndir → PDF'te sütun başlıkları tam adıyla yazılır, rakamlar \"…\" ile kısalmaz; geniş tablolar kendiliğinden yatay sayfaya geçer, gerekirse sayfaya sığacak kadar küçülür. Bu, PDF indirilen bütün yerler için geçerli.",
-    "• Uzun listeler PDF'te birden çok sayfaya akar (önceden ilk sayfada kesiliyordu); toplam satırı yalnızca en sonda çıkar.",
-    "• Bütçe: Gider ve Gelir bütçesi toplam satırına Fark ve Gerçekleşme oranı eklendi.",
-    "• \"Tur Kontrolü\" menüsünün adı \"Güvenlik Tur Kontrolü\" oldu."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.18.3/SiteYonetim-Kurulum-2.18.3.exe",
     "sha512": "5/FMcaE9HFYRxPNnSSDa7yo4Z+7TyQdNTS5JjGd4XQNO7ZJ6Lu5jVd2N6S7glq6/3Vi8uiR1GNRSQOnhf9K9ag==",
     "size": 79390664
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.18.3",
-  "sig": "gRiqkfIPRhPZYeaaT2ZUUzDGEiQ65EI2PyOkIlLQUJw+naYtgxBJbG5PEmfkna4opeFhAySyInrTT7zkdZC2AQ=="
+  "notesX": "u9/DGNPtWFGbdn2yFKsnBu89tXKRRlGHEpF5Vg3U04VSaO3KnU2e97Gl25G5b0zQ/eLb5WHSK6jj7RB1LvE9CdvFh3l1VrLlBaHaBUK3K651+yCj5C3ICny6ALv659l3Tzub+qcTK6nZhhrkCQCO0J/jdGVGNTxSDG8PBnzlvYmCqXEzc1byAod9bqJ9FG0ax5CGy7poqrPBpz5myx5tXhrwJOo9UXMLDvb5kqILfv4heoAzaFsVz7XzJK16vOVL95jfBZULCMBoBsEsT5FdEhA+Bm2KEyaBY8GGrQzQfiW4Z9Y+npoFXHgwfsaaSreuqjItdSIhcVNwpeSq+urTWPtmk/OSe1pnZt6ukLtdGGiOidGj6tc1R1I/nxb0B+it/qw8p4EsjMBR8mU4HgTIKVNanWTrjU4/qSxvEBuWTieVs/baY8wwMxghTyvgh05raDnhKGBTGJEyedF+mkGgDIb74nXBtO8XCV0j35knpeld0JVe4z9iVtZGzIvL5YfxI2Jr+eOBEoYehuiiBK6XfdUmvI2DNIxzHYU0mg81mqmelOEdYmeA4nYkLLEXMOwLjPvxVJP/U+SgD2lNzctjzZE7tMlERwa9wmLTiZNSQQfVvq3NCdKEaMlN2uTuDR7S4AnM7Gj375SKUP2wtCqhh26iOg94x5wNzxOVCk9YcHmKHSusjcdILA4jblD+aWx28jHebiqG/5tMcBwETEvK+35uBA/hyTCm8y20Qcauxdofus9WW9G1W3pr3aRLWT4xe/3dOznkYmy+/UvPCxCRHuqaCzYoxdptlZJpTgdH2og40z5pmpeb4fgxR145mbE3TBj6WtMiZO0=",
+  "sig": "iqtDYReHClbaN+OrUEeYQ3m3Tm+yhUXIyPM8/6RH3jYOflLlQVRl4vHvmNXen28yKfivXx7wFIw8G2tfNbRHCw=="
 }

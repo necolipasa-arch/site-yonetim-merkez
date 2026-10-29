@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.18.4",
   "date": "2026-10-27",
-  "notes": [
-    "Moonwell plaka kamerası ve daha güvenli bulut anahtarı",
-    "• Plaka Tanıma: \"Moonwell\" kamera seçeneği eklendi. Moonwell setlerinde izinli araç listesi Moonwell panelinde kalır; program kameraya bağlanıp geçen plakaları kaydeder, fotoğraf alır ve isterseniz bariyeri açar. Yeni Moonwell cihazında \"Sadece kayıt\" çalışma şekli kendiliğinden seçilir.",
-    "• Bulut: \"Bulutu Kur\" bittikten sonra ana Neon anahtarı bu bilgisayardan silinir; yerine yalnızca bu sitenin bulutuna erişebilen bir anahtar kalır. Bulut ve mobil uygulama aynen çalışır.",
-    "• Lisans: Deneme sürümündeki programın site adı ve daire sayısı satıcıya daha çabuk bildirilir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.18.4/SiteYonetim-Kurulum-2.18.4.exe",
     "sha512": "2GMV+MII7pki4e+uzt6f5cxXXB1/8JfIND0EQWQedFj2WJz1l7hJJ83AgQaD9LOI4QiyIPDNup0yIR8TUmoqUg==",
     "size": 79391963
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.18.4",
-  "sig": "VFPdbGcow0zcr03Mc5s0ZsABLUGb+IMoVbggMi1Gf+fSy8oiNyzIIYp+DGcGIhR/Mfr5azfUACOfY4bccN6ICQ=="
+  "notesX": "6fh/ZeLgl24JOPzrhoNV+I6nmHXpatjNfjLTX9hOx9PKv/QrYDlAqT157lS5VpuPb+sHwAFFq+XfoGSSsgVcvmlaKEAViQn8XdvsjSLWMZZ34oksZT+5ZYeIdwm7uLteYcvHqbKfYpIhecJ8gnMz57N32jiyinRKnqmaac83SEiCPJSCJnIlah2scHiH5JG1MMBpy3Te+N7qU0rieNpyREJME6vB6y328TPtU48zrZ0fZL//pvtYv2JU7//m/WRWnUrCktheRmqhWiRP8g+92I8nKb5H/wUzu9YzffPTvI6g5v+/ubrA3rfJa5A7jrUFlB2AQZyRz4VCO/ISyQwdMa+VFoio8qgVfSGBV/9yI7j/U6wZFqsyCS1lmuU07KjyQ7jHvR29iptXT6HQ3uaPb+5xAZFUa6GpFBwBJIU777NaoBbiSOnBtP2E7fCIvKedeCfpQS1qW6S0/ktcifyGFjrwPuUtVjeLzQC5BjmZjf1SY8DCLE6R3SLZJ4LXbFVi5KSeFpOUvRQvQNf+ll3U21pB6RDi5vNhCF6AysW19Bv1t6kaLoMRKzNa2JgiewP3hMMk4iAfcReJXGuYdGw1iKJpR0K/gOWkHbDkOZ8H/utuf9NeIeEe/3H1X0GDQ34Vd3cHxPp/IzpUv+sKUp7N1pszGCwj2HCBU8g0FOpXECTN2HVr9tK+LmY+4jFJ/FXq/7liSeO+Mq4ojDmrsAMLThAXOdXWp0XPbuR703x6Aac/Xn4WWWjVgdSd8tRmbqptfVEYXMVJFg01GqmOuCbiCrJUXo3pDw326y+jnLcSW712F8vz4iEO4U9/1g2VxkqkilWiHUMw/uR2jrHmCr9d+du3nQmTGH+LYvi7y1PZRgc3O1G2x5f7VEjjetYSLmeUqoxccwsJrqmeZmGbKvksEqyO1TBcTS+up6/j+kHuQju1xlYzPXnop0QGjSVP",
+  "sig": "4OiSXXUj7LW5XOE7OYJTlck+KnC9kt53z7twPhlAULabhsy4CKc7Tur3nTaDjyXAH45c+Q6866s4qcH1Fh9QAg=="
 }

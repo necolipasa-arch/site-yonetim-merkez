@@ -3,10 +3,6 @@
   "version": "2.26.6",
   "date": "2026-10-29",
   "time": "2026-10-29T05:33:53.017Z",
-  "notes": [
-    "Değişiklik",
-    "• Terminal hakkı: her sitede varsayılan olarak 1 terminal bilgisayarı bağlanabilir (deneme süresinde de 1). Daha fazlası yalnızca satıcınızın verdiği lisansla açılır; yeni lisansı girince Ayarlar → Terminaller'deki hak lisanstaki sayıya kendiliğinden çıkar."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.6/SiteYonetim-Kurulum-2.26.6.exe",
     "sha512": "xW2nXrw0LBaxEbNjvLtm67TOQhDAt/ikQijs1KZdxofEV11J80BDK5vzJQxsQuuiml65CWbaYxEjwWOt6mFo2A==",
@@ -23,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "51AeTrZDW3LqaCGcuPR0LzFNnsZS7xb1xosZ2qrHpJqCh+Dbxr+2tfa3J5Y22m+rhiOKbHhr5wv8nwh0bhrzAQ=="
+  "notesX": "r3+QbOfzxxJhaV3ZHDaJcH6zN9kvUxKStKKae3ShFi05YWODzg6TfxlVoG4giSVn8AwW78PXp8no3DbgjIUBTIu5967pDuuTFHr4ByjLvnJJynChjbhSxoOl0omJlKZ4JXTFClPp7Na4SlLV4HWHaLyK0/7fdYZIyzXbf7+LlmNxTq2X9gU5TgT7HZEDZ3xU0orR8tL2EiF6TQluVRr8bVH6TQR4gjNA5btKFZizsxe/EffAnDRoUSGbmi1cBYFCDVqPY079nXv1G9CDzpmTg6m5nq4au/JZ93P84Afu9ia3q2eY/lse+OK4T8eY1HmwoDdGBZZ32+vmc31Tpb72ApPjkA0EoLsNJfPGtuE+EB2xqJGaqrZUOxOTRUZOvuPUR66RVkosbLF9VfGN0gqDB0jLgXfXlU5PYvO3aYNTHPM4Sk39XJUtHQ==",
+  "sig": "FbmdZgsf2yIpEm5jE544JmwwyJ0XCZLopuaPepcwPS3zSA+dgXA5QeJF5cNAmMpmgvq6hsqoij59GyF/EXRvBQ=="
 }

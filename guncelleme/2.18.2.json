@@ -2,21 +2,12 @@
   "product": "site-yonetim",
   "version": "2.18.2",
   "date": "2026-10-27",
-  "notes": [
-    "İndir menüsü (PDF / Word / Excel) ve kaymayan ekranlar",
-    "• Bütün \"Excel\" düğmeleri \"İndir\" oldu: tıklayınca PDF, Word ve gerçek Excel (.xlsx) alt alta çıkar, istediğinizi seçersiniz. Yazdır düğmesi olan raporlarda da İndir var.",
-    "• Filtre, sekme, kutucuk veya blok değiştirince listeler artık sağa sola kaymıyor, ekran büyüyüp küçülmüyor; üst çubuk (Basit/Gelişmiş, Canlıya Dön) hiç oynamıyor.",
-    "• Daire Hesabı: Güncel Bakiye kutusuna tıklayınca borç satırları işaretlenir; arama kutusu küçüldü.",
-    "• Aidat Hesaplama ve Borç Takibi bölümleri sabit yükseklikte; Belgeler tek ekrana sığar.",
-    "• Güvenlik Masası Acil Telefonlar: yalnızca sitenin rehberi, resmî 3 haneli numaralar kırmızı.",
-    "• Plaka & Bariyer Ayarlar'da gereksiz kaydırma çubukları kalktı; Bordro personel tablosu yatay kaydırmasız.",
-    "• Ayarlar menüsü en sona alındı."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.18.2/SiteYonetim-Kurulum-2.18.2.exe",
     "sha512": "FDmbb3/s8fL9PZEmh/3oyrGdlRr92bOuOQrYgV+DalybXwUK/MJ8TcTJK8fQQUdVkSIPACCKczqUdCIC69Hadg==",
     "size": 79389369
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.18.2",
-  "sig": "mlo3vRfPhLjKiPTSsQAxKaaJY0R3ZLgvObA+ev36bKdTwI/zofWl+okH6FbeK14NEgag2XIgl4jvAecLye/TBg=="
+  "notesX": "o8u8B6TCUYm+hEsaEm/630sjevPK7ksjG982882DW2y2NnJ8hTOQWCm/qKkZvoafGzsSQrquKmfbOe1NTyfK/4QNaXnJtLUivFmeXE/qxqzv6bSzlO1E/kTRpofxJQD52stiK0NqMjb7CbdfVaBQrciWVijabIFc77cXNM3K/MafGzXvuWxdoW30wN9ne7VC8ABLi5fSrWixZ8XmvPlgScqYUl+I/inPh38jLK+eaHQdNGDm5kpj1GybSux+YHDpW3VHnkmxUdRXsNY5qILWAvrjO6FzTjWCyNWV/5GVlM+jUT8cwS7pxtdRkA2e6cr2Rcdx9mRvsUFQ0PZqY6tZA2CnGHQkW5eBdFXv6eA5o+1kNN5jFaLEbyAF53S4YZyUUb1Ce9cfnsnHmANwB0g/SHIYGibd+LPQ8+qPql93Dsr6eVQUwnR+cZz5We29bZaC3xqw3CkarKH0SCD/SC3RE4hB8+23Z9ugFjmsos+XdAm3jx5pE3HSiuNO1lK3wllhiwefimL4hGv8taxm59MzdNz8WFVbxVakJYWfYKhKiOn6Udaw9iSxvyu0j78xbKIwDB7Uc8yQanBrPFX4tFUus7KZX4BKiMGRlNJkFDLs7PYAJKk0UUKsL4jDZYMGJ7Mj3KSwYXjJap7MhTAbXiA81UIW5iIkFSEGEe2BwV20xVzaiJjc5tjHS+5QPu/3A1H8Cp61LA18FiNqFxPbQF7oJBEQW/Zfvrk412tdSovzm5vc5GSPucluAdNDSsU7Q/1Z7dQm2aqQWJZnHHm0EBVxjwhTfnMFmLp4xgBo6KF9k690MRxhjO65Ev3qQTOHrBzWIl+ZDEuOxGB0kASEuIvt593kcyISGmV+MQID97try3KWQdVYl/TUj2TWwfNVL/u7lkFe1alNth21vNWcPbVUQ8NMyXsbx7tKrLc02oKDfulghea8SQwbuUzOPOUaYi9qvIPjKgcBZKpARzMU0vqExGnWMR1r5ZQSU2oCWwOwe5qNLKjMXJNtd9hIrRivHslj/EjYAc2nSoetlLdi7LiCc25dJkiYROqMRdiF3r8QBoUHoV87u80+wFkrZEFwybcUQfAB12Rm4yOxM6sxjjQj+s+LdcdI1mzL2IJHS/vfWUVKto8HZ4bhmtIxqDQnj5TcjMK7hXjr9fAl8YcxstNXKkl9M4bCIoU+CwgT5+BSayN59TKoF23sF1rTf0hbKn2nmSHWUTWwkdANRZV3BvSWuJZkXX+szsoRLu0gZP24bMh/4WN2jupVOA==",
+  "sig": "yU0EMIHYj7/gGS84h76JFEf9REmh4rljgcPZBXKI7RI1qbgqlF+nW5T2g4GcPQ16qz6XkgqR6aHy9/8iJX5eDg=="
 }

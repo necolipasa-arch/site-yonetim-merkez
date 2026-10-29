@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.4.0",
   "date": "2026-10-25",
-  "notes": [
-    "Merkez ve site ofisleri: yönetim şirketi siteleri merkezde açıp her sitenin ofisindeki bilgisayara tüm verisiyle taşıyabilir (Ayarlar → Siteler → Ofis Bilgisayarına Taşı). Her ofis kendi verisini tutar, internet veya merkez kapalıyken de çalışır; merkez ofislere ağ / VPN üzerinden bağlanıp yönetir.",
-    "Lisans tek yerde: merkez lisansı ofislere kendiliğinden geçer; terminal hakkı merkez ve ofisler arasında paylaşılır. İsteyen ofis kendi lisansını da alabilir.",
-    "Site bazında askıya alma: ödeme yapmayan site tek başına durdurulur, diğer siteler çalışmaya devam eder (merkezin Sistem Yöneticisi veya satıcı).",
-    "Ayrıntılar: Kullanım Kılavuzu 7.9, Kurulum Kılavuzu 15."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.4.0/SiteYonetim-Kurulum-2.4.0.exe",
     "sha512": "TvhRP2taftg4VB/93wXsN6+hEw0PyqdRoGC0deT3CV0Vlxh/1hjecxK04UQ1ngxLWY550hal/pkHTbbnk1w71w==",
     "size": 78935268
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.4.0",
-  "sig": "vDoxYI4ap3DQ6v4f4cF3+kAQs/vwqK2oAy0wsYKGpSdjZU8FN3oTLalFI3e8Lif1LEHKUGaTfXL2PRPGcUkVCg=="
+  "notesX": "WPIFFENhYjw/WG8CKThdYsyJ/Lv81KdMIiz39aE/H8QCzM6/ZRMlJuwrWySk60ABYo0Hm0H7qWwwn2Tgwz21aQkzqUCRCR9muhKzjQcpWMebOFBsJiZQVufEDGj7vwJfH+VXXb8EAnW/f9kZ3bjCIKdKK1ATKqrKndXnqCg8G2DEzqbnxKcYjx6FFUW8tJcl9HnOYh7PzuiF5R+/J/uy8Y/IWNbKu1QswiSrJLE/mkZoQNeJtKPq3rP/OccEIs/029B54WEy9oArvTxoK2bbNFLGs4lpmMZ8gZwXZ24CbtCXowepzeoI8NQ3g+2E5WjI1SazVgr4eR3Qt8jm6X4vjHxN6xGf3nadXg08AMCwdwnxscWBwlTFi5F48c4cd/eaa3wRJf6DFQ21Wt45CROZ1lb6pb3KUV5SPwQZA+m3aZKoa2p0XW5QYikSM07Rxr1rc2zc0B0ZNl87O38UU3qbpoHm26n17emlnHW8E++22vca+HJHMFFPRMkHohxfJ9k7lOSTLn3dmPNXKdJUdtv+t/t8QAvOCySiQLz9b1H6fcfCGKe1y7KJXst1Ag8r0k5V17lZxfABV3tqWuNfCcgcfk73d63OStzw6BJFIBdLyY/1ZRb2/aUTQIHzke/TddhDUwhk16oupXYXC71OJStF9qijRspaJF1vfV1r4I+IjzaSlodikjSxJ/QE+IcSvewzufzb29FXcOVfCEcn4bzrA99Cd8Q0zM9evYM/06qetR8kZj6SFxOmAQ7ujr8ExJzNc1YshLJmJYSCMAO3gJSVTyMbGvJ/seyws+hlMR+MEJSxbSad9GcxIQZUuJzKm2MvSC6LpLtjvY5GjybWL3pBq1ggexYazY32UIv9JInDVCdUwOcz0B4ELPZl8dQyha2baXeCLUsFkgjZMLms9mJ9j/krKvbNnn1rNKYB3Nvg70N35+EJpUEAzXWA+KsNmxJX4bNwNJUrP4QYu7MnfBe+KDT7WGc9OciPYYEi2ArD",
+  "sig": "Gt7snoTiHe0YhXKZ6n8SdRc44XTuZgK9m9tWK2O5XpkyXqtY73S51IDui104t2sXYpziGY24uMwMSBlTVyKxCQ=="
 }

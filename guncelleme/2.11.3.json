@@ -2,15 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.3",
   "date": "2026-10-26",
-  "notes": [
-    "\"Güncelleme hazır\" düğmesi kurulumdan önce son kez denetler: bu arada daha yeni bir sürüm çıktıysa eskisini kurmaz, yenisini indirip onu kurar. Terminalde ana bilgisayar güncellenince düğme birkaç saniye içinde yeni sürüme döner.",
-    "Ayarlar → Terminaller ekranındaki Sürüm sütunu, terminal güncellendiği anda yenilenir; ana bilgisayardan eski sürümdeki terminaller \"eski — güncelleniyor\" olarak işaretlenir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.3/SiteYonetim-Kurulum-2.11.3.exe",
     "sha512": "6vl8oNH0kvsYvGkHZmff0kDvgH6IO4sy+dxOsfRlUP5C5BGsHZDTYXO63J3vzplMhW3+MGjimOb7hqLk2MMYbQ==",
     "size": 79000506
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.3",
-  "sig": "vbTY6NQGfexdBEPVDT8KYV37PHZem/DBX7TSN4bzZbd8BdXSZskEXzyTHVlrVabIP7WiSKiESgb0iAhSDn92BQ=="
+  "notesX": "q8kAV78DENeHLx4/E7T8/YB//MXQ9jF7LyL2aQSqB/sVUoqo6QQvl6GmybD10ZxSZMWAbOZxTLaCf8paSiLTK7zolL0EqBmzWPzKjki+VSQVc/FlSLE0FTrHdWJb5QPaAlGmGYsDvii+pDAAcfB2vvYfh+/IOgpfs64M9WwaNJXwQzQbiB2D1oD3ABrQ54+3x0apOrqYeyuZ4Fkki59GHIXpQcLmZ3FsvtwTgVCO7D2oW4KLf4mP3Uw3WEWw4jxVu08QL8dDMqgBrIWwGoIInyTqMBXIBsVfbHInLS5vY1l0itVhVgbMxCC6K2ayICgOLaQ+jcvYjTZBH3vFwCOaqd4OjBy4KJmAaP7ZUcfrUN8WdhmP9IKcr2GmpvcQfnVPEJ4nc+Zx6SHb/m95rt0xWZk8lEIpuYPtOIIhncxLy/PdPmZcvany1r3mJCCfyPL4EAVyaXHLw7kuCZwK3dcIq8jiKQ7+QzysayiFx7E/g79JlA1mBIA2X85S42jQFsMRGEr0xcfoOp9TWWCQ1E2rOgKioG7JEP59gIrkYUfkMXpUdT4dDAQcijBM8X/zZMG7yBlNsnpdzH7QQpg4MUOXB8Yes+i0QUCRawr4M2MJUrS/SVZMFTmdc0qx",
+  "sig": "geZvD2vQrXQAzPQipF7jfWiMb7b0LivENlknb0m7oPd1TMiE1E+rXh+FIOwiEh5GmDlma/14G1Q3JtRmVHNiBg=="
 }

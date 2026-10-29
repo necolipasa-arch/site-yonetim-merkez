@@ -3,13 +3,6 @@
   "version": "2.24.0",
   "date": "2026-10-28",
   "time": "2026-10-28T18:37:56.848Z",
-  "notes": [
-    "Yazılı destek talebi",
-    "• Yeni: Destek penceresinde \"Yazarak Sor\" — teknik servise yazılı soru, hata bildirimi veya istek gönderebilirsiniz (isteğe bağlı ekran görüntüsüyle). Yazılı talepler aylık uzaktan destek hakkından düşmez.",
-    "• \"Taleplerim\" sekmesinde gönderdiğiniz talepleri ve gelen cevapları görürsünüz; ek bilgi yazabilir, sorun çözülünce talebi kapatabilirsiniz.",
-    "• Cevap gelince üst çubukta yeşil \"Destek cevabı geldi\" düğmesi çıkar.",
-    "• Uzak bağlantıyla destek \"Bağlanıp Yardım Etsin\" sekmesinde, eskisi gibi çalışır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.24.0/SiteYonetim-Kurulum-2.24.0.exe",
     "sha512": "nJiTiBJb7pyhh+WFguXkKAUMRR5DzN3WKe0j/rhTgt2Ctg1NjMuiqnbC8F/rPGS6S8PqLo3k0irtOR9oon2DxA==",
@@ -26,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "CLvT1mq70m3OKqXEvbg2gWLxl8eHNr1w7iyOMM58NKUNgRKokoup+S7s8SPwcM8oN0I7uR26xwnFzU7+MnKNCQ=="
+  "notesX": "enOjxTvZPZAw3yFsuYKikljXAZq5T7USPaav/BX8CpBbmLXQ+aZMznk2oW0L6NPplDvVO4rPIY4Mg6jPVd7JZxXzL7Id2HWSl55px0blCA4hfggu5JnK8FHI8AqJzSrchl4mMESUHep39l+dpz3oThswVFXtEePP1DtqEsJlOLMfag8ZJeefxRMVkHnbb2cFphiBRLET4wMxcTAuTZH2WlwofLsW5JbHBKDlhPTqp9op8RzSgrwGMvVRKlWFu5vQOLPKNta4eQEKgg1XEpcBOoxHFMwD1J9BdICLZDHcKReOxq+BlYeaxaBr74mBoNAkWOupQdGGWb/te9VjfuEQlqzSuinF+Rg0J4HsbX7p6Dkup0F4oW2omHTnXEv1AhMbfmNYarFOM7PlHiYucyvjTfdRNWwCONsAMzBw9QZvLM/cckn2e00Q3vfjIMJL7matM/Y7tsQkm5sXly45cQreDT5whAEKfZUQidtL4MMJoji8cwkWow1Eir5R3sBYvZf0E6kYRRjDiE4LFgjE8dO3mDY7ZF6kBfeIzC3dVBMq+4BXS6vD9KlrFJZOE0yWs8o4hI7Eu88rrDG9DK8prvQJReEdRyd5gnJxFXlij8pH75nEpFlOuyDAbU4DmW9orsBXCLepaHkMhtJT6VuhKA9a9AMwe7wv32++7uAIQxIU3tLGplNvHddv6OP93BbZgsoGK9kyySti4yRFUxSyMKwrLIXCBy8Vx/2XZLMHQOGhfIXJ0yCN8MZRTmLe5k2CfdslxSkdbzPW0Oqpq+YDcnk+cD7qfkL/P/MLh++zIvGn0AYkvxvDD//1jBS/1ckb2eG9FLw=",
+  "sig": "K59Gv8IMjtEPx0hwKwYTZTmrw6qxyNCdEtVwhsAEDxSTtK3j0IjExtY0g09W8sLj7nrKiNlVFPwrVaYds7GMDg=="
 }

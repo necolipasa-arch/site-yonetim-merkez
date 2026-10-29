@@ -2,15 +2,12 @@
   "product": "site-yonetim",
   "version": "2.10.2",
   "date": "2026-10-25",
-  "notes": [
-    "Sol menüdeki \"Mobil Uygulama\" sayfası (sakinlere mobil uygulama davet linki / kodu gönderme, toplu davet, mobil hesapları yönetme) artık Üst Site Yöneticisi ve Site Yöneticisi tarafından da görülüp kullanılabiliyor.",
-    "Bulut bağlantısı ayarları, mobil uygulama adresi ve bağlantı testi yine yalnızca Sistem Yöneticisi'ndedir; bulut henüz kurulmamışsa sayfa kurulumu Sistem Yöneticisi'nin yapacağını belirtir. Muhasebe, Görevli, Güvenlik ve özel rollere bu sayfa verilemez."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.2/SiteYonetim-Kurulum-2.10.2.exe",
     "sha512": "pWpCwPxeeHKwT7VkDhaBs2aL2YPmv4h9AM2nm4gT4aW3iDdtrE/mYlHwfAPxNsywf3M8IUrd5kPb0WDm4Spz9w==",
     "size": 78988625
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.2",
-  "sig": "5X8DlTnDVIfQLg2rO3Rz9pe3haGQOKPOAP2JBHKog6/yBfo8NQK+l6rsIt28TIsFqfZHoaKQH63OBXpCAyHCCw=="
+  "notesX": "W7bMlILVMfs/jA3qm7l1L7i1ziqm6E6MIjTSivFxP/eEYdBXY7OKyWNXCo16W6s7ilbdU9CbkUQOZPfflKT5SQ1bI+2dkcwo8xpaBO7JXVncqhc8DVRcyMEbn8kXmG4wiQQ5lvE4a2Q4QkFh4C5YExsrttV/a0Cnbvt5JHUGI3TwXMeWZET55ic8Zs/+pVyQOXdfMu5O0Ud6ODtg9W/8OO+jG82SEZmcQLV9jK5/LN6XSwGcIwvBMOfhdwdP8kJvbSA3x0pRv5fHfs5AnHt3JhUmNxYejN6hBuZVZtl5PBT6+NBEL3ot3jjDuM27r306gvvZYRhFuQjvlEI6YywihLIxE1UIPQ5FXjPbJauPJMzJ+EE2f+v3Ce3hWpY1qKH6kWeHkpd3zCSqDUNVOw6qKnu0BCQ6/sPmjPSUgbCh5fXOMwlztujO5Juf3x7BVR/f/iSliLPE5Ju7ZNMXAG2apFXsOkJEw+kAEJp9MMWKmhVrmMTfUCstO3Od5M2Ys3iw/lw5HJHxj8WYLatZJg+cuwW4dHMqFQOKu2yAISwKmLfvmRqAkYlWP8TC/mUNeoB3EVmwY0ceGtXkHpUsDYxL7NKMwqL68SdOhrH+uFPlBU8WdwPKLEnpu3AXnDMiWkX74q5uim37gQ90x7qdH1DeS7OJWJ/PI9XeUU8Xhn4Q34dVmS83+pQsoxoDx9LBQ5D2qwBXT4rYfx/r",
+  "sig": "FS48P0MCVNrjgaj12eJ9e2CRAASgBrub9wjbBDyB9RigkcMvrBUPs5qae8+dBxpih18im5MqdJcwV8yluU1GAQ=="
 }

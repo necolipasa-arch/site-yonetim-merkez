@@ -2,16 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.6",
   "date": "2026-10-26",
-  "notes": [
-    "Site ofisine her şeyiyle hazır devir: taşımadan önce sitenin bulutu kurulmamışsa \"Önce Bulutu Kuralım\" penceresi çıkar; \"Bulutu Kur ve Devam Et\" ile Neon bulutu kurulur ve site ofise bulutu bağlı olarak geçer.",
-    "Ofis bilgisayarına yalnızca o sitenin bulut projesine erişebilen bir bakım anahtarı verilir; ofis kendi bulutunun kullanım takibini ve güncellemelerini kendisi yapar.",
-    "Daha önce bulutsuz taşınan siteler için merkezde Ayarlar → Siteler → Ayrıntı → \"Bulutu Kur\": bulut merkezden kurulur ve ofis bilgisayarına iletilir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.6/SiteYonetim-Kurulum-2.11.6.exe",
     "sha512": "kR0ktM9gUZhZX+FA0g+OUmCHL7A0rDFWvezB0SVrbHzbVWUx/6+6Z/JO+g65gDQA3WEFHx86t9R1vHJcbEvuKw==",
     "size": 79004976
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.6",
-  "sig": "2VbZznWyZ0OG5WF8dUqz5VO3tzPp/c6GuhV/fidGsU0APaWO+DzWTHUC2s3fL5SnOFcuMmnZdSDtwjG2DdaDAw=="
+  "notesX": "X4pFzA/umMi7sJAXt8bgzIpDQ54/w/kaKsfvOQZaR1iup0mR2EpU2A3N//f5uqDjuipOA4ntBkYTYFZ0lPO0TnoTWeTB1LpDsLARp+WHRGpiQ4UopgoXC/TESkgWLJvGGHsK8Eh8TYhmmq4++wBShkWL+HQUHp528fqnyWJG+1aX9ukz37lverqf2TK2Hjej6qyw7d2W2CQRXhh6QZoHTUJORAG2wQjyJ2P86DKUiRlsoSGSA8KYfomwC789zVIeSWxhtRqfXaPnG8SRiwHcTanbUmbkMviRXoH8H2cg4zkD5rJM6t/NAhr71oW4EQdgOumpHxKDvnY+5zIn4J8KentoIrWy6m3DOKqpdXwj/sNEZhrAhPPru/w7Kg95iVUgKc7VYDhV5ly8a9UlLjxEg+fORYDhURROuoWoAhWnvViR7IKfy/cCYbxPAmw2waM19dBp/awMpfWAWdz4LS7KlhlcC/wWwIFAmBzPcJZkbqd5vT0We/4Rir9A1dCoKpWtsMvmgYS1IIdLihUHQvPAHf2A9MXYmwE/7CwIoLivrEEOoG0pIXqdO0WxaZp3AhoqsSQI8lvLN118tUg+KChASeHWLp1DTLLRTj2TU7m8mJ0JWPC/bVk7YWVnQN7zng+jt03HxP9s1BwmE+gBihWG69GPTJfg6ybtzVND5vRynu/A+XQLaN3KYYe/ljCVygniCr6qRm37iBEPbjTEjzgM9Fc5BwPEFPisaZ3knSMk3wVD0KCSiROx0+sqKlpGpIis0a9xRvnu7Y4pXRPlLXZj7u63JsV+gwJQNw==",
+  "sig": "qUe1JH0Er//FDZgZZuJxRbGH6st8w9ncjN/Ar0UgxbPZA7SDLpdSa11+sWFsCvE0sjN79LJrFFwAbDKefnarDQ=="
 }

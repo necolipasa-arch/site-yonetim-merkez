@@ -3,10 +3,6 @@
   "version": "2.26.7",
   "date": "2026-10-29",
   "time": "2026-10-29T06:12:48.510Z",
-  "notes": [
-    "Değişiklik",
-    "• Küçük iyileştirmeler: bulut bağlantısının satıcınız tarafından izlenmesi kolaylaştırıldı (sizin tarafınızda bir şey yapmanız gerekmez)."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.7/SiteYonetim-Kurulum-2.26.7.exe",
     "sha512": "8NtKEjwSYd76LUmACIYz6fNleVCPfhyS7ALHljHrL2XNb8z/DYL3H4Wk7gN9KubrtokSlVDRXm/XxmBHWgi+Ag==",
@@ -23,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "RY87eH5cZzf/iNOp4NK1NyTSwijsrGrpF55zA8zqAYnqdwSHq7joj1kKrGcGXNSOogyBiydtCFPEIhQ9xMvAAg=="
+  "notesX": "7YIOHsX19VSpUeb2vRTUUWSemNGOzTRVUcb4KpjMSdBMuUatZDnJOYv/F0sa7BWWmnhwq7Pgnz/BtmdYiS5XUf/5IuGQ8W1RwdG+SlSHvuKmI7xC1ADB/lIXddcpH3IxQGR8MWj+JVnyfnni3gg9vpO6OdBaEAI2W9PGqne9KeYqfhTlvbmfHcRCHaY4qkOlPtrWudS6eXYAHcNH21qziu5SRqGSDDjeVZXChXXygQDiPRIMLamYROIFiHIc2H+vtnRPdp6Bj2arSilEBDk=",
+  "sig": "8CLaZBpTe0oybXJtUDXhqJl3c4Yz06XZ//D2jBxCRuqTZKZHJQ8EmIcGHcAa2hDs5Jg6Aj96FpwnwyqqsKG/DQ=="
 }

@@ -3,14 +3,6 @@
   "version": "2.26.5",
   "date": "2026-10-29",
   "time": "2026-10-29T05:21:57.330Z",
-  "notes": [
-    "Yenilikler",
-    "• Deneme süresindeki siteler de artık programdan lisans talep edebilir: Ayarlar → Lisans → \"Lisans Talebi\" kartı → \"Lisans Talebi Gönder\". Satıcınızın teklifi programda görünür; kabul edince lisansınız bu bilgisayarda kendiliğinden etkinleşir (anahtar kopyalamaya gerek yok).",
-    "• Terminal hakkı: her lisans paketinde 2 terminal bilgisayarı dahildir. Daha fazlası lisansla birlikte verilir; yeni lisansı girince Ayarlar → Terminaller'deki hak kendiliğinden artar.",
-    "Düzeltmeler",
-    "• Raporlar → Mali Müşavir Paketi ve Yönetim Devir Teslim: onay kutuları çok büyük görünüyordu; tüm programda onay kutuları ve seçim düğmeleri yazıyla orantılı boyuta getirildi. \"Devreden yöneticinin erişimlerini kapat\" listesi düzgün hizalanır.",
-    "• Faaliyet Raporu (Takvim yılı / Özel tarih): \"Artış tahmini\" kutusu diğer kutularla aynı hizada."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.5/SiteYonetim-Kurulum-2.26.5.exe",
     "sha512": "Us1VCa6Q77BK5VNVL6McGOHdTrNpDv9KycQSuXg09v3FhNn/rk27U8wdLQTy8UHTrSxUmHFOdE3xrTieWu2wKQ==",
@@ -27,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "P4dhwGmYvmDy2ubML9Kf83iArNYeVrTnH77t1IevRL6A8PTaCpHWRKNKJd4lczMwo83tAO0t3mUSH56PCWsfDQ=="
+  "notesX": "P4XEbzWowSSFhufltYYq0Z/ZaKVzkp/JE5WGhrh1j7oZ6y7++IWbKEiGh8vrDYf2umvYOwyVJKmAvfJ0MZObdFbeWXdH3gcWKFP8vBGX4BkG3/0L9/F/vw27L4lTHFf8Dc6x+XEPugRYsCbYWl+sVVuF06k/ihqDKdD2jk0AOSW2F1k5LtDQAuH4G6fPehI/7lNEzWeuZ7Ify2IHGAhMDdhMpf3/N6qrxIrTUneVFFGZb4LBCwJqNvhLvPjnwy3TvcBRmu9jBjANTUuLja6NUIEDS0kJoFe9Y/A2JFaHY73a0TFEYu9Ly33W1v2xJJJXOCi75DMj6t5RCe16Do4Tyf6R7jSBzHHwuuIwJYAydPaDDeFsbnqp/reDfOt6wYxlsb/etHnrzGKTosSnwOUip577CWoMrjsOQhLKbHppns2bRotyzi6dgig+CwYe1yFaSH5gpGeJXuwgGx9NLcNg5uUPmWtPvox/9vZl7CYvAZJj4eD2jco4zsUrNsPlh0VmKATU5ftzhaugE0uKK5nUKox6eNWnB/5yqsSvnsDfpZEGqJKFy2kh/NqUagJq6E+i2rnvjez8AZL1zLQttZ0PfO6QICp9mxg8dTHFv24FqBPKyViopOFZJDhfyMTq4vVH6gqEN4Sal3/bD5fchcJApqgakCS8Lp935snhj8f2LBluFnlB4iOIlGrrM6Bl0O+TL/e5UcDBdTN2EUKKATozVFe5KKPNE8hI2lfghK7n/WdDBXMcm/qKudpQtj+whcdBd/eLHrVCflZR9VVAeQliYOEBHLZyNnKsN8ZQ7ZpGx/b+czcxat4aNCw6OHpQijpFD85mHneIMphlVKab6IMZTxX0ZNvFb8TczNQUeq3wORO/W6+wiAiGuCOzX0DGaZKe1G6lIJ9bl1t64Iyj/eYSqiDozkeSRAJCA1nxkVlRIgZGzqAaFSGwk3J3VQRulVnwguy/DPlKyqyq8KCE57sgF0Iy0m7poxjHtShNnlhp5cuj6OElRmdax584eIZlqCKSv4JHZm6bVIoEDlJ+hGdML7G6Ri01skxJe5X2tcyado0HVF2/+E02H/PemIgJKKK4ZxnkeI+IknHjklLtNBBAYv26VlSgzs6RbeuF2NBmiLwLKFAIT4L/5kMFVPw7bBFcPqWAOCGC92UwiyGWNsGVq+sHt1JuGkBCiPpgnteuZJmVdHBvdU/Own8iHeEXS24zO4cHLezZnFar98Dq29iouGp9wShtKb6PAm7ho7vzD+7c",
+  "sig": "OlWMsys06vMcVsuP6YpVPOuk1Nc+RTlxrVIyt2nZtHBr3m2VN3nDeAJF/exSgeOq94O284tK4YJ1b+KgZ1aICA=="
 }

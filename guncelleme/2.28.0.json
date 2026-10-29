@@ -3,11 +3,6 @@
   "version": "2.28.0",
   "date": "2026-10-29",
   "time": "2026-10-29T15:26:11.417Z",
-  "notes": [
-    "Yeni",
-    "• Duyurular: yazılım firmanızın gönderdiği duyurular (bakım, yeni özellik, yasal hatırlatma) programın sağ alt köşesinde kart olarak görünür; \"Tamam\" deyince bir daha çıkmaz. Tümü Yardım → Duyurular menüsünde.",
-    "• Günlük sağlık bildirimi artık yalnızca kullanım SAYILARINI da içerir (tahsilat / tahakkuk / sakin / mobil üye / işlem adedi). Kişisel bilgi gönderilmez; size daha iyi destek verebilmek için kullanılır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.28.0/SiteYonetim-Kurulum-2.28.0.exe",
     "sha512": "MX8a85Mm/Ax8lV67XwlZ+1N6lbSLXLVrivcDSTB3g6JyIjFeo++bFRX3nw3sPdwVRnKZ8Y2JxyihL9oVRxV0Ew==",
@@ -24,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "nz1j4Jc997O9VQ78XUe+7sTBH4rXuUoQasO7ePEnfPmiMcwF5sbPlXmOHKpop2W5nfvJpb+/2X8x83mf35peAQ=="
+  "notesX": "5UuyVMjUHzrGQjrKX1/rqGX6TosUuSeNCMlxmilXY9VH91uXnT2kySzLkmOVnkihU1zMIjJdU6SGxvk9WjRWsAffJ0KZrHt5vg0wCsozJaT4nYLI8MroIrBp25hz6cHivU/QDd6rTqvIyD/+4BXIkom5go9t2Ksc/TP1hZSBmyhWELmumy2eKPkhI/J6N0Ft4mZMXV67y5nnYDa5aQVrvNERnv4xJq7pm8zVVayEcUzSHqro5K1oDg3NpzUybORaHqkQIeyV1vns5ataJsfrthT+JJPf8xgTN7mpq6ctijO8XGdPGPwtu9bCUBoyHxTSq9SyWoEuIL1cEOeJFbpPtZNf9Wx8DTjFYMCRgootvhkNshPVgLI6H94Nn/v8hqI76DhopPaLjM5bkPMPI3U70t//F0eqiS+qIZ1zNv/qrrdxeTqt3RvmC9E+tbSTAwTbwF1i7iklTIxSCZ0wOMViwc+w4oWOf1Xa0TYlLUEuPvLQfEhZyal0u5bzctwcIXrAdh1/bof0wTSqME8V2OgeOPdv/z8ZZcBoRNLYHQjD4ZMqtQqK5VClVInL/ZxmhlFBW28CwfgTm7ShVaJh+qqxNkxiNWSLdQuS7+C0wUN2xDY+zCD8UR7hKm+nYCENTWid0N/pO576dDxhs1dqlXKyD4kS5E0=",
+  "sig": "Ht1xw6pGeSsUPAU43veisSPvxEEHSUjfEWm8Ou+mjxTEnOKvOr0WtRzxOk6iGC6nrCS1UvcXHRxzoWe1JW4jDQ=="
 }

@@ -2,19 +2,12 @@
   "product": "site-yonetim",
   "version": "2.13.0",
   "date": "2026-10-26",
-  "notes": [
-    "Yeni: Test Ortamı. Üst çubuktaki \"Test Ortamı\" düğmesiyle canlı kayıtlara dokunmadan, örnek verilerle (3 blok, 48 daire, 6 aylık hareket) programı deneyebilirsiniz. Her kullanıcı teste kendi rolüyle girer; \"Canlıya Dön\" ile geri dönülür.",
-    "Test ortamında turuncu çerçeve ve \"TEST ORTAMI\" bandı görünür; yazdırılan belgelerde \"TEST — GEÇERSİZ\" filigranı çıkar. Bulut / mobil eşitleme, sakin davetleri, bildirimler, kartla ödeme, gerçek banka bağlantıları (Deneme Bankası hariç), terminal sunucusu ve WhatsApp mesajları test ortamında kapalıdır.",
-    "Ayarlar → Test Ortamı: \"Canlı Verileri Teste Kopyala\" (Sistem Yöneticisi / Üst Site Yöneticisi; bağlantı ayarları ve anahtarlar kopyalanmaz) ve \"Örnek Verilerle Sıfırla\". Test ortamı site hakkı ve daire sayısı hesabına girmez.",
-    "İlk kurulumda \"örnek verilerle başla\" seçeneği kaldırıldı; örnek veriler artık canlı siteye değil, Test Ortamı'na kurulur.",
-    "Lisans: deneme veya lisans süresi dolduğunda program artık salt okunur çalışmaz, tamamen kapanır. Yalnızca lisans ekranı (makine kimliği, lisans talebi, anahtar girişi, satıcı bilgileri) açık kalır; kayıtlar silinmez, anahtar girildiğinde kaldığı yerden açılır.",
-    "Süresiz lisansta güncelleme hakkı bittiyse, hak bitişinden sonra yayınlanan sürümler otomatik kurulmaz (Ayarlar → Güncelleme'de nedeni yazar)."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.13.0/SiteYonetim-Kurulum-2.13.0.exe",
     "sha512": "ni7rlmvFzFnsYJPG77bJMF+5k44cRlPHcXYtiK/XlVebji6ZJg2kmyS7v2IC7L7d9icF/CCtovTe7YM9xyT75Q==",
     "size": 79031353
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.13.0",
-  "sig": "ZYDX9xg0vQSWzmTdZYFdAkTPaZEN8RO8qby5G5HXDz93tsBJMgeGWH6c2nJrTzTol56ZmjTBN59h9lY0CyJyDg=="
+  "notesX": "FbKMtrlDM0XuJUvHKhxN5n6ev9XxNpyBracqq7bDUwqQhc4GfycZ8gS72dK86/pjeZzyhB+e3jy57e4XI6qAu+5JedncY7fpQHXU7pcs41nxWKXOLROZnPkxq27oQ3PgqqIWmomnMfx6V/+B5N81zbCg7wk08zydo4Z1ocF2F4a37NGYOJgHHCmrrzShdBI09LSRaE2uKQxZncz7dHNA63H0mObs00dLIpn40VmGAlIIF4hNzwgZ1zhQULROsG15vkcNMxYKBZQADsKC/ezC1mIvx4bjSZ55lFiEbn+Fy/T7IA9OpHOYaAXAc8HqbdT4wFJa2bcJAbvKGRwi4dsYxYbHLmyFKFjulZo2jUPhK+mQJLU/ZwHJaEpGyK3QlEGW/+SppkDUQ2qNMqbLuaPsa08G/Qo+OgndgMqDVpSrhfrEC8ccgrsh95THr98zVrm4ycfSrCl9KFYEjwoh79u7YXBjyc6gx/cw+ijv4qRu3kIemD7BWZT+GZs+waZuRvkFF5+1JLKJCNAvClMGDJtjkNwKbKMZ5eoXImesAxdBVbvsfRjg+OHKHZMxpXPGej99euu4Vr3dJRRL53jsfOfjfByv+E+WvxfgBcmJwVqkHo9H6ThZIzPiJDEvxvChmM4ac9x4mc/hlxF8fk/na8t7eZqZhtmLTUdDjz29lLwiR6sSx6NFrl3v9bUAjvi8KnKlcZmgKHnjAt4oARHBPqa0/34ZTLs/kD3zE4ltyLvMUtsG79umO5r5RQScc8Hm5/bNI/hcZWrdXsoiK8Ffd+cSNtuytmRfa6Q0YaURw9fgtGv7jloX4y3+bI5c9jYSAk+WbFM4qz3KmXm+i5/QfMX9vM97uFQlcs4/0+3KPGqePkreno5dhp7EDK9SxFW4wFEM7Z10LF9s1saYVFdESJtWrhyibHz8YBIP6p1BWDrRvBaMqnpbV0W5ysDRbWspQW/YVUyC3bgmqT55EqyEpfM5noJ0u9z6+42sfqvz4Cm/bo2BAsKUa6dxrNVycpq/8R7eNXqm4kxJpnNkXebEGC/od44/FFzVtpYQzxCjGUnt8iKGij/LG/n9ZBSCZHDgoVycDQuoUWddl02JvRIFCFM+wRwq0623+djywpObkUKFIz3e5ElEBaC3Q0w8CkUCzG4Id0Q6dUJZTkO5pqipxrpOizmc9pClH+fnp3ywcIpORR1cECK2r99OVygJBT+l1A1Jp+QdiJrIak5nVPpVh8CLfv3TVzH4RbPUSP1WQfahziyrtS6/FIN/eIJLo5C91sa2qAZTnFEf8KOhAptTBTUUVBSSBadRpN8H0p+M4yJJLDf9/LTj4YA86d1vcPYqH2zEFcBxplA/QnRKSuCK0rCdC7hBO8SzSveTc/kwk+lOeQVTJ/W8KtrfULKjog6Q1pIEBRONn1QDTEn2yp++NCEv4IHjLHYvBuGHLKeYEyg38ShVJlOKyIsOx/Rgh460ujulRqJWJKMTiUp9NXbyhIMKvNjF8JcWxy8tgjR1wZB6GUXvycUQVHKcVA8+yGEt1za/Zb8h/vYnEvIlShckUcBXcud8dSd5huHHnRdYth6hG+Trt3pxhuvLZ3zCGqucCg45lIyvJsC0mW7R0sdqq7ZL7B2gvC3qUqIR4hDzvQsGx+24OPsekuAkane/OA8wNHdA5oTtJm6QRCthC7qkrD8jVotv4vHnQ3CMoHgxluOyzlLzNsIT22PofvvM1yuuiHpdPX7zPavKRiVUSGaXhtVLh7jwkseHE7cKLvYUDp0ky58UOUyM8mj6clQuf5wOuDXLuDHrZXk9ZXsqjW3B2Av1guJ43lZlgV0vn8T15CwbCDH8FoFD59k4k/IY7iUw2UAQXD3F9Gq7y4Ch6f/T18ZVA7eYa/JJ6+Zo4EByyWMsYEEh+YjZFzzFXb+t4nUI9gLmSOsTU1ixiNNv4ZIt+smZoEpmfmQESpHY",
+  "sig": "a38pPyyXW5uUkieAdl65+zXGWNFZrvDQDewCR9HX2PXF5nbW1x90ZPAmH6OVpqUDWwPQccGnFRysHe1AO1RbBQ=="
 }

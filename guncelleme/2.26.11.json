@@ -3,11 +3,6 @@
   "version": "2.26.11",
   "date": "2026-10-29",
   "time": "2026-10-29T07:24:09.667Z",
-  "notes": [
-    "Yeni",
-    "• Ek terminal talebi: Lisans süreniz değişmeden satıcınızdan ek terminal hakkı isteyebilirsiniz — Ayarlar → Terminaller → \"Ek Terminal İste\" (veya Ayarlar → Lisans). Satıcınız kalan süreye göre teklif gönderir; kabul edince yeni hak bu bilgisayarda kendiliğinden etkinleşir.",
-    "• Ayarlar → Terminaller → \"Lisansı Güncelle\": satıcınız size ek terminal verdiyse yeni hakkı hemen alırsınız."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.11/SiteYonetim-Kurulum-2.26.11.exe",
     "sha512": "+hgXlD6lythL1h/ojIF8+ply3hCgO3ryTas11ILzQ7rbxfti65qvQXXwsbZLbxxQE86YDxBx/9nn8emny+TPBQ==",
@@ -24,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "zGIcKQMIRbB7Ytbp311k9QTfetRN1cIG/BYqY+CTZTBz98aFhYSIAzLdPB3U3Ji73/n4hvEGFnRa1H8679oiAA=="
+  "notesX": "kcp+5FPsEb+yv4ZI2mEllhdQJ0PEJ/HhzmwReCOOzuF14yV51Nuf1jlHyn8rYNq0aB+25TCS80kyAAp7019DBG5L0i5ByuomzgpRdhsxs7QwA29wiPIVPuxUOiR2fOfE7Tpx+2hizZ3YVvanJisU5yEeyYmagNvc4eqnvnt9stKtnHOsF6eZreQ4w8wsPuMT5hqDoQBE1xutQbv86OSHqyiMBwj0C4RecArL64fgc5Cr3j9VAkc6k1i1gXVEoFaEYpFaIBcyiOap8E+O6yh20hCK5P4x0e9Qo7+eVO+IaVwAJGLEtMIF/7IbYc8GiO1pt0N1iF9u9/7MYpFNZpw9KTSBp+1/Jqgm2Ojr8CYjS1ixw52/Y7Qc5jbWmAo5bvM+j1krZt8Zmk7bOWNRaafIeoGgkwqqZF5k5VEp/GrJZIjwsxrvNN14maXWlAHj1ePQMVZF0qYqG//iWsftAFcIKo9ispftVJ0dTNFR2dPGyo1hHgX3zUaO5CTisRtrhWeev/0gGto0X0QtQWnFw+mAeib/igziD/tKhUaP/OnlZGmwUG49iTLNeD+AFosCeFaPX02w+ZljhOjdVKaT9pEmhwBR6yIUdvLKFmgA2wrXSOugYpixNqw=",
+  "sig": "m20Bj4KuKp2KEVSeBvJSXnUWa216ZSIU/HcxkmvVFcILUm2Kcj0ZLDBAAZtzah/AvNjZXuA3E85spXT/mF9YBg=="
 }

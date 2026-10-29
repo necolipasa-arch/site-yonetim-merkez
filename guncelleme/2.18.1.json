@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.18.1",
   "date": "2026-10-27",
-  "notes": [
-    "Firmaya iş emri düğmesi görünür oldu",
-    "• Arıza & Talepler listesinde her açık talebin satırında yeşil \"Firmaya Gönder\" düğmesi var (gönderilmişse \"İş Durumu\").",
-    "• Talebe tıklayınca açılan pencerenin altında da \"Firmaya İş Emri Gönder\" düğmesi var.",
-    "• Test Ortamı'nda veya bulut kurulu değilken neden gönderilemediği açıkça yazılır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.18.1/SiteYonetim-Kurulum-2.18.1.exe",
     "sha512": "vPwM3f5Zj/2fneQL6nHirwZKrwWiEtoUEVWkcjkeJYonZ7DdZt/0mtR2WHyiZqOI2TVUCd0LGNVOr5IBn7UHCg==",
     "size": 79379419
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.18.1",
-  "sig": "58U6ADVHhfy868BhoT0iKmMIRK85MKPEnSxkI56l2scCmR/a/BLtjvvjQYmiKk381FehOUyg0NJrVbOz6u8CAA=="
+  "notesX": "xIDxRqxZiuPs6oDju/npPcSQxw1PZJCI1XPFGBMNevaY1kRbmo7f1whnfFC0IsLeUic3kj/VjiXptrGypRi+WZszNzat4smVYQEHwq8SWns8T9P++8iDheUpr1ACUT0RN1Mc5rJEc3WujuHetFuwUPNZnmQKDKgJBPIoclhLv4ioKIVzI0wqk++aiCnuF705dm8QICbncLMzJvZ1Kt76AkS+CDne7cCdxm+9HbtA3kuCLm2j6Xw0lv6OK6H+Jx32TS1MEyLwaVnpvtdqQzgtaUl2ry38y8/wE87C7bjBerYENqpAMvIPJLRtqdHc3Y+MfJMK4lnwcbZr3Tlolg1yPId3HGAk0fSiLzYDJVU5AVurETNASXqpllUgazLZp56fGZnPJMc2Qw2tFJmN+CTpj56htZK5j5hqwnqz2o1LOjCpUdM6CYkAW8DhMoKp9vPDOiUUffjik287s+pLs4Ux4/+Q5Kwc0Y6CV8aDfWIvQ6UHXEkqbC4tqdIG4Uw5DogdNL4+qe0s1thYnakLyQV4hgOuTX4xB8VgHkM0ZyhHwA==",
+  "sig": "/qPN7i9H9Iof2TcJUGVh7dVncx9HU9jv2UuXaS4RTC5VRnb1k9oo3nG/cQVUpfdUyxWsBjOvA6Un6CHcrwH6DQ=="
 }

@@ -2,14 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.16",
   "date": "2026-10-26",
-  "notes": [
-    "Ayarlar → Siteler listesinde bir sitenin yanındaki \"Geç\" düğmesine basınca artık gösterge paneline atılmazsınız; seçilen siteye geçilir ve yine Ayarlar → Siteler ekranında kalırsınız. Site ekleme, kaldırma ve arka plan ayarı artık yalnızca Sistem Yöneticisi'ne açık (Üst Site Yöneticisi site listesini görür ve geçiş yapabilir)."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.16/SiteYonetim-Kurulum-2.11.16.exe",
     "sha512": "kvClKQpAe7ntoKFBMCVmjO6deB/eG39Uwm+4R6VsAKNYquS/pyDZTOFKjsV+YLT5SQpSw4tiGra24dsnAbJ43A==",
     "size": 79014183
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.16",
-  "sig": "tohaAspNgdhJMzGU/pitWAHyj0Un0BQp+gzCzhOkbKYrZLacU9/Y6MiXHW9WVvoEsc1pVNOdW4Wxy340ccBiBw=="
+  "notesX": "2FNKPofHkILDS3GlrIvilX6NZ/TNDMspZR5bZM9JcGveBoWKNjnRR/DnF6pQY6DxWrDysViRX6ch9ebVhSA964bTaCdVAurB91KxPQlPFTUFag+kHB1QPjGx6AGK5qvn6FlnkGotqtdJjvcIGy1cvYwe9JyqBoO/Sq/89uxWcxgcWk7/+aZSDozLUqb/IInQVNnMl/NXQXLz/7Lhk8Ym7lVkHrA0xRfmhEyTMSSm7Siv/TKK32Il0SzKkc23DjIwWP9W1vSJ+3D92zsckcn+TzO3/InuCaUFEt3lJH06kTqRX1ZJMGr3EbVM/26XH/CQnmCxuGz3Z6Z0Ev9QHN2eJbAFBKe2kYNwU1dKwdSkmUHE68GOkoyPqAho5y9vw8O96qzVi9TKyL3ifB+XKV4PB+D7Eq9fY5y/osWYvcd5ugn0uudE93Ra+NYUc+3g2iE+O4T7Z9NmGMZKT3jDCcwXQc52Ob8KN1WyfgzSrqqmumh2bXR6b7QSpC4z22d8hggBNGWkXc+H3iIJb5g=",
+  "sig": "0R6phVW2IBD235Q7m/YX/g8ArNZ7z1LMsKH5RPBhUiglaen50h2g9JPGqE9V+D6MVF5ASxAG3+OYGlfb/jGeAA=="
 }

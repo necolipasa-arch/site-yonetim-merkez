@@ -3,11 +3,6 @@
   "version": "2.28.2",
   "date": "2026-10-29",
   "time": "2026-10-29T15:56:13.837Z",
-  "notes": [
-    "Yenilik",
-    "• Ek Terminal İste düğmesi deneme sürümünde de görünür (Ayarlar → Terminaller ve Ayarlar → Lisans): denemede lisans talebi, istediğiniz toplam terminal sayısıyla açılır.",
-    "• Lisans ve yenileme talebine \"Terminal bilgisayarı sayısı\" alanı eklendi; satıcınız teklifi bu sayıya göre hazırlar."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.28.2/SiteYonetim-Kurulum-2.28.2.exe",
     "sha512": "P+MAKiqWewJru50Wyj2eu1H9Eq/PYBtuV6MUlCNQenWILxrMgTgNgnNqF3zNr4YhmnUwZ8nanxc8QkmQhGIliA==",
@@ -24,5 +19,6 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "lEkSqbCqU+oUc4M/3GxaKH81NNe+0G77+Lex/tfDqpUrMxGQGcqfF0vrh2qGobaUNL64F6eWDMjQyg7fmU4lBg=="
+  "notesX": "fG7ZrLXETbQyt5SX1cOrMOZ6BQpi1B/lwQK4Ear3WlKQAgFHP2PaLPlpcoOQfNvglT8qfDFBulzIQvcRaMB53RBh76LXw9OwDOuXAcQia19U0g1nzGa0PfN+EAIlFRhek/II62H+hJsgRgmScPT45golNNroRN40zFOh+n+xdTxT1KK3V42XTl87vKbsNkQcMe6E6dw66eLxSOSnTKbAtibfccz0yfslMJ9WnCnkHQ7xwcdU+FRKBpZ9+Nl7nz92RRmbM13q6jn0NJgeC6/T4LA4e/6gnhyMtLCW60R634QEqgC8UC8kmo+3C9MzVL+96X8wwl+uAwc7FMZ603QNtFBbdMuIMRPwMX31olraDk4+veftkdp4C2DL4HW4IggGHBCGzo0nnYAO3S/3SkuaBm1veH7y5UdGvZuProfoIKuKQVzmzqlSWheKCQiqEv22dfXKm6fecsaic6BXK2aEm2S6UjEOx0BUUHz7RlXi",
+  "sig": "7wwxed5hIp2I47Lr8Hc9h9StMhWmm8D53RM3lboBNFce3j9lkbZLiJbmQtdCBBc1OYrqFDAUBCcq9BNtK0B8Ag=="
 }

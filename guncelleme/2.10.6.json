@@ -2,15 +2,12 @@
   "product": "site-yonetim",
   "version": "2.10.6",
   "date": "2026-10-25",
-  "notes": [
-    "Mobil uygulama 1.8.3: sakinler açtıkları arıza / talep bildirimini \"İptal Et\" düğmesiyle iptal edebilir. Yönetime henüz aktarılmamış bildirim silinir; aktarılmış olan programda da \"İptal\" durumuna geçer.",
-    "Bulut veritabanı (Neon) program güncellendiğinde kendiliğinden güncellenir; yeni mobil özellikler için elle işlem gerekmez."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.10.6/SiteYonetim-Kurulum-2.10.6.exe",
     "sha512": "EfiOJ/Qc+cF0LPRu+bK0UrUpVJy9QE8dhXJMAB0rPpVAFylOQI1DSlnlvkR4MwZLdBqaB5l/PqTUrhkVFrNb+Q==",
     "size": 78995961
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.10.6",
-  "sig": "3K1ueGeOPPqNZkBo+KTU92RRTlfM8w38f+oPPbG8fYAlQkL73QNfCRTR6YJSeccVrOGeFGvm6H3K4F0mbVg2AA=="
+  "notesX": "xTWVqpezCFgrqD68+X+XMhxdfHvj6xwHRWq8AnJsIjZIYYzN5cQr9EGV6NLj3tRBmXXZvHgbosWHax/Szms2/Zp4V/KG5FnUgL7J4pBUVx2cBrSuxJCKV4hQiwTecU0kPWdH5INAsjSTcwQAE2zibdOgZgsx+vJRK9KqZr02/M7KkwNEQKedmynEVsvSCn/hyt8BqVDGWRZXm3+ZqFNKHn9KRwaYcrJ/hNpy/6sOlD9Sf3uSqXJATKNh0CiACIRypxGKx2TaLKuKTT27xISU6Yr3mgGDmYpDK/9aB/T7C7hf7R6q8IWiPCy9TJdDRj3YQoL+T6+GdEdNNYeJlF52prrvFp3wqdkrV1bRjAAGMZ2tau6JhEj3p2wNch5APP1baTUGZQyGME4761lDzN5hbF//t4FEfTZvFAod7BNfZyGclLov+orFdjOUVIHQki/cq55ot+lWMimj9DC23oDgQRRACzspDwfeiJEjCrvM8bfYzWH7IQtuQgwGs+DWWWtLIfgGAv0S",
+  "sig": "pHCa9bdJRcEeF+5cW60qge16IfN1GEUlBhaKN1e8BXOGnQToXDmGwlBDbxdvtnJWD/sTT5yWLbEEMb5E+NvqBw=="
 }

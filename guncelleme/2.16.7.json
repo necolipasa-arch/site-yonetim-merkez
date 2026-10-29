@@ -2,15 +2,12 @@
   "product": "site-yonetim",
   "version": "2.16.7",
   "date": "2026-10-27",
-  "notes": [
-    "Borç Takibi ve Bütçe (Gelişmiş görünüm): sayfa açılırken listenin önce büyük görünüp küçülmesi ve ekranın bir an sağa doğru genişlemesi giderildi.",
-    "Raporlar → Faaliyet Raporu: PDF'in yanında \"Word Kaydet\" düğmesi eklendi. Bilgisayarda Microsoft Word (veya LibreOffice gibi .docx açan bir ofis programı) kuruluysa görünür; rapor grafikleri ve tablolarıyla birlikte düzenlenebilir Word belgesi (.docx) olarak kaydedilir ve hemen açılır. Basit ve Gelişmiş görünümde çalışır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.16.7/SiteYonetim-Kurulum-2.16.7.exe",
     "sha512": "PDTCAUcq98pH6kjW2jHasldqyb0+d/HT6Z9prxh42+7JwvMGcPlxcUp3mTScOMqR5bSBVaLEZXIA6yqCd8S/PA==",
     "size": 79269485
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.16.7",
-  "sig": "PKmMLw0Lt3rAxb6DNbsJxhTEs2whfh+0RIIQiYP9J7MffCgP7o22tUBnOSgt7oKlel2KsQVeOzdwMVDJDzPMBg=="
+  "notesX": "3UnLBT3bjF7O77vViSnF2ZmLzT1T8FjNtZLLmyGufE/CsrAKMgv1hfrOx0C6MBeGhHxGbdUlE+oBRt4Xj7pFI9uWQ+dyv5eS5ABikp2vQHvj4qMBp20/bA6pHMgXLBrPKYIdjkN3rdurc73EUIPws4J8FWxCjUiXD775AvzZvzNKcjxBbtdI6PO+xnsJywAJBmfacTCBsZGK8ZZNSNczSqSCCJvbanKiwYE3ltn5atRI+qpJRX3x6UjC0jJ3wv3qzejD+ox6ZK8PthD+FHavcfVHwmLFL4rrl454/xAn8L/ky/ZTTHFqAs/N/s+GJc6VgTF6NMzSp+nVR/6zhORpd4Y4+Kw3WGSeA3MMYrXIbanC94Og5WCnaiRz3NHFfh7TVWeRXC1oSbO+IYW2hVftp/d0Z1Zq3ZUopj7EDyQRQj0sYe3PL8/pELmViVAVbeCbNvvo8C5GRPNUHpERbumUgbrynhCpe/NJlyGZ27Syg8ybWe1R2ShjHaFngVCkYbAopQRR6RqXN7ZVNXUf0i5FOD6POgxIHXT0z+uaHAp1Rp5s1Vv7olpSm5figNb6o4a/CMMQQulAn0cygHlq16ANQMEiFIBfzGgGgRFgEjjxU/OLemB4jD36h0TYyooy8Y6LzrQNR8RtcBCq/dteUJye6IyRJ2P18+cGdrmUW+ZBG++yAw8etN5zk7CmzCRHDHW3HFOuqKh9peRR4CgrbQgdBwuHaD5hHvoF+BM=",
+  "sig": "SmwXQIYHm5rsltFp6yv1km0Xtj7ssQgnnYarwe+2UlufMHDWgSj7/xZZ1w/cRLwbHxRYlcc4fcb9OK2mhuHjCQ=="
 }

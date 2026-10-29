@@ -2,15 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.2",
   "date": "2026-10-26",
-  "notes": [
-    "Terminaller ana bilgisayarın güncellendiğini birkaç saniye içinde fark eder, yeni sürümü hemen indirir ve kimse kayıt girmiyorken (1 dakika boşta, açık pencere yokken) kendiliğinden güncellenip yeniden açılır. \"Sürüm uyuşmazlığı\" ekranında bekleyen terminal de kendiliğinden güncellenir.",
-    "Yeni sürüm denetimi 6 saatte bir yerine saatte bir yapılır."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.2/SiteYonetim-Kurulum-2.11.2.exe",
     "sha512": "eg7F0D8BejXUuXlJC+3LpBLWnHfw5lUXX2zV3ks97i6zqjoyLcqW8BxCZUbxC0yG/fkPCdQzwwvgcKJyN2hqiw==",
     "size": 79000016
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.2",
-  "sig": "dnQs3myeSD+btfynrQZs29Z5eWjI/XCgdRd/xL1mQr7CmsMePe3Na1NpB/hkY62LbhZU/zD2ppQGSBbv37hPDg=="
+  "notesX": "5ltfVwL4zymbrsot8pnpsNqj28I0t2i1dRzwlttQ1t3PCIqL7nWPuFDG+GkBxC0e66uA4B+IrB070KglB6NcVlXiEjSBCKgi0JWMc1/FjjT9QdLGC6G1VVaTOnP3hYWqhT1llvWuUym8sUaVLzHHpRQS1pmXuVQQN93U40O/9h1hj5q0ixtuwVb4YSVhBn4xnoSCiHTxiCi05DkCEHr4nkq6yc5nzOth6gNDlSYTTmFWAwktrB8By3uHgLZL1qi7JQc1BzNOfKYOR0BaHF/LO5aOPRWP15+A0LB0HQR3vTTJByGiAB8c5fAmz0B6JdbWD88IMH9lqKqap/D8W6Q7/JbRZ+KhLuAz2INKzXecpEabrzlhXj9RBu02kV+WMhBkdtrr8n+HiO725hGtQcpm6S66QSb334CfEqB+G/zQkaKibrLMgauHJ98/ZuhPsTW0DLNbfu3m7dhgxkEy1LGq15HCYI3CstDlVJsjeiAYa0Rf6o+fDjRhSHOJdulJOYZIIXp5IOCdpmR/AmDR5lz4KaO5v2TGlWPPpHsY0rg=",
+  "sig": "HRE+hbphqCKK6TBLrKWMBQeJ55Iwpu0YHlHUNbHGjytCfJK1Vz/x0jrh+s+rVrGTMY0mEhCEWR7VfbTrIWEtAg=="
 }

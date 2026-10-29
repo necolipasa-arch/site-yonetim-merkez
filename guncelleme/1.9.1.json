@@ -2,18 +2,12 @@
   "product": "site-yonetim",
   "version": "1.9.1",
   "date": "2026-10-24",
-  "notes": [
-    "Kartla Ödeme (önizleme): iyzico / PayTR kurulum ekranı kaldırıldı; yerine Ayarlar → Kartla Ödeme geldi. Durum (Kapalı / Önizleme), asgari tutar, tahsilat hesabı, kart kaydetme ve otomatik ödeme izinleri, yalnızca seçilen deneme dairelerinde açma",
-    "Otomatik ödeme talimatları: Toplu Tahakkuk sonrası kayıtlı karttan otomatik ödeme (önizlemede para çekilmez), aynı dönem için tek çekim, süresi dolan kartta sakine bildirim; Kayıtlı Kartlar & Talimatlar ve Kartla Ödemeler pencereleri",
-    "Mobil uygulama 1.6.0: alt çubuğun ortasında \"Kartla Öde\" sekmesi; tamamı / yarısı / başka tutar, kayıtlı kartla tek dokunuşla ödeme, yeni kart (marka tanıma, numara kontrolü), \"Kartımı kaydet\" ve \"Aidatlarım otomatik ödensin\", Kartlarım",
-    "Güvenlik: kart numarası ve CVV hiçbir yere kaydedilmez; yalnızca marka, son 4 hane ve son kullanma tarihi tutulur. Sakin pasif yapılınca / taşınınca kayıtlı kartları silinir",
-    "kurulum.sql 1.9.1 yeniden çalıştırılmalı (kayıtlı kartlar tablosu); Supabase'e ek fonksiyon kurmak gerekmez"
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v1.9.1/SiteYonetim-Kurulum-1.9.1.exe",
     "sha512": "teOv2F66pILxpxEMVC7l7bx9BHmpxZ0iF2ArvMkayk/bgR7I79ZXok+cPyNlhM4OYI2qPy9S09ZvcIV61BtqYw==",
     "size": 78864913
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v1.9.1",
-  "sig": "VDyuhnltR3sU0q8yJZsf9bQjEthw0LdX1CQGwlkT1iavL4cHRea7SS4ceVE1IuK27HQEyVAPOn/9oZzqrDGjDA=="
+  "notesX": "vOZkfEvDH4//2SkRPF3yklc801suR+VDy2NEtdTHIjHSDcKYpozEcL4C5OIKupJb2aPpYEkOts80zc9TzjHTmBJcX7JcaTzEKZr1TqN2MM9HZRV66SACry3TM1UHMbPrtgmoYfrRPo03wME/OUboxmJCBuzVG22ubOWMtsvHytF375JmSj9crCnj/1Qg5v2j/evUFyfkiOfINTizAYxhKsYcHwvZIAWIhx5BYXmfhYHCguwCqzmA4W585cjin1hXucYC26PYWruV88jjpf+5X1hUtuwLiW/zUqzExeWlp1uyP5tKmUAtaM8TTZ+HgtUIaQ7PbxZX83XuyDv/A7V5LukWoh0LUMLG6RzMRgqmpH7vWZbPcHyQXZnprH0XHsm67LkjkXQTXNQvTLCxFoh9l/D0Ro46pz/pF9q318+TnqIMov/UWQCIgmMLZBV4V1QFIIrsf+y426cME+Cet6iIu9k4CcmBeS7zGGTzgXWP9m/2Lu/b/+1fYy3VJYFFQaBVBHhDG7cra2oW4Mp0jF0NtTSa62xcuFi5NGx9se3+1TuYUF+QRWgqLzTdziK6vBGBmONhy6MJvYjDQqcrkIHFmC7zGjoKKjE+kmWwIaYggfK6fnatH/U+JH+Pd2uXc1g22F96EDa6QzeGmgvSujiukZYLcUOlGNGvYNACkqD49ZbjbwvqKje7S3db0yD30muDUsi9nVZxo0TpFq1sXY16VzPpY59zGEEO7qEr6dKqugnQNhFbtFO749cnDAxURhfW7h34ORfSwH3Fa2bX+BXezDzBYwYc7rj6xPxZ0iG60j14m0Yk62oFWd1yfrOUGMk4Elu/Nmak2P7guOK58wMJrl3z6GDVJdgKsjqZfFFJr9HD3ga34uXiBkEKJT9ReL+YJres7BA/d6YpL1z4wiU7hVedlQaQbZQE8HJL5zWid/TYQZqKqQ3VfQTEpkGc7It3i+p7dhAx9GmJ5/i/zGBJiDyY+up/e8oa8NEqpA4Gv/ye6VPv3ojaTTCkaznu9Crl9HSbcZPkcAZnQk9q+CsepZIO+qVv2FJEy6/gnENhI7IkbtzzDyTe6NtqY+qlVyBR3hJbFYsIbVvKDZqMs9mnUrEzAa7cRJU5ZC/i6OVS3lkSO+UQP58WpNXA9LTIub0q/l6z3TFKj2SWeKmuSCZ3/rT5oBXfIfRE5cC0gugzuthv7ZRC8seeRJ2kEadgCsXFxfNd/S4l66J0IrpJT2r+x0A26u2Opnlmurx95StjeidYtsGZ7IM4iWK6GNfGuA+sSt2Tg4KFmmHQZVXgXT/ud+REbZ/RpwitvNQioasmrJ+KbNxnJjblFSMLpHFI3cVeXmV/tbKTR1g9Tu6E8wkXsOizBDcUVASEGDzw1uv3dVpZJeeBbonqZqQWorQfKYq3J7WPP7o4sYXp6MVqAuK7yZcGT8YXFsdoPt/8pgS4fmP+LCu1/Tg6/IW3aEB1QsvX7SHOLk3q8NKWAfY=",
+  "sig": "rj9AqTGbiVB5wEM6tXLfxf/E/i8xBgnTOsgwjoZA+Zz3iizh9XujXbzZXERFQ0VXjuDTgjMD1GMoPDMKn3pKDQ=="
 }

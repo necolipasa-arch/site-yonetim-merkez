@@ -2,14 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.1",
   "date": "2026-10-26",
-  "notes": [
-    "Terminalin ana bilgisayar kapalıyken çalışması artık terminal başına bir seçenek: Ayarlar → Terminaller listesinde \"Çevrimdışı çalışma\" kutusu (yeni terminal eklerken de seçilebilir). Açıksa ana bilgisayar kapalıyken ziyaretçi, kargo, QR misafir ve arıza/olay kaydı girilir ve sonra aktarılır; kapalıysa eskisi gibi yalnızca görüntüleme yapılır. Varsayılan: kapalı."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.1/SiteYonetim-Kurulum-2.11.1.exe",
     "sha512": "gKnF8jn+7lEDFmfQDqekbXQeZJIV2/TEEMOl7ytEik9SbQlhEiCObk9vz8KMwrLqSr6TVWefp/aO6aQ5lui6Yw==",
     "size": 78999457
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.1",
-  "sig": "MxgoY58sip3aHyqnhbPfQ3ieR2pPAv0udisHBfBkb1OCw/ex+N7+1Ic5mIu1kW7DcpcWi8VpKY9oDGh6MkEuCw=="
+  "notesX": "txbZ3wef2Jbk/jMiKenptivmqSABWEx3df9ZE+/SS+RL0P6kYqZdJuPDUY3bDYiSzZRrNI4QfRkmHzR/DQkLKDFXrkV3JfxWvhL2y5agGyckHnGnGek+N+BckVC4mpfq4cYACve5zCO+D76vtihiwFKv41kEyRD/o1jaSD7Mm1f2FgQWeoJ8OdXA9egVt/2Hb1RzcEIu/OxlPmHqNYcmfp8HPlukk4ROCK+oRqLGqkBD2i21Tv6yKOB5rkn4fhqZWOL9t5hU/NX8bYrpU1+R/orOKPsNZKy+nysiJhnnQasPhJ5RMHOWKE+EaYVUjD9lqqZCuvYz63gjKnRUr8qSn+F75lqbzJTYLj9vxLsQEoR5JwqYFn4t/oJlJ61th+yoOu6CglpuP6IHl81lXri18doykbc++JpKRfuAk619GnpcNh+4e6w2dxKCdnAb/nb1Nq6QQXO4Q6kxJQA9I1AX8u6nwx5L8H4QS1RJFzgGO5LGhWIsWbSsC1l0ceTxPu6JryEtH2kBBQLtKAiJkEJEYnadqOqA/2D/L9KZQ00xAw90IkKaYx0GCydpFpySEsWrvMri",
+  "sig": "loSi+2wg1j8TYnU0fIwENhwQv/nstznioyOqRUmP3YxXdeMRhO2Lovv66AnFUXwYjL/yRtgut/f30jKzeSgVBQ=="
 }

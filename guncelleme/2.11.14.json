@@ -2,14 +2,12 @@
   "product": "site-yonetim",
   "version": "2.11.14",
   "date": "2026-10-26",
-  "notes": [
-    "Ofis bilgisayarına giden \"Merkez bu siteyi bıraktı\" ve \"Site merkeze geri alındı\" bilgileri artık kısa süreli yazı olarak kaybolmuyor; \"Tamam, anladım\" düğmesine basılana kadar ekranda kalır. Program o sırada kapanırsa bir sonraki açılışta yine gösterilir."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.11.14/SiteYonetim-Kurulum-2.11.14.exe",
     "sha512": "ezILuNLOS22o61y7/e6ZKLs2NV7vnl3o1WEQqaYEFUXnjQFNgp/uh+pnBWUszwu02JJdXTaYPofRq0+VZeJqsA==",
     "size": 79012103
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.11.14",
-  "sig": "aZgB38WHAFB8N1BjBduCfxyv1cZjfELSccfCFrkUw5lf8lTJ/Q1lFPHqncQdrCS2atOEcrv5NC2pVkDdoOy4Dw=="
+  "notesX": "LJfxBbIcVdDdQT8aNYJqQ1+KYmleFLobVA0qiv08Vz1Qk0ej0Wl/8nc8eIwM29uYyCLQOGVpnmT6EzcSDG99b+LYzeGlsD/mseFtZlUzjHkc9rMgEP43xM4PGTkKWv6vbtoBNGKuN5OLmFebIDquJ0wtMHluIWl+vk5HhyMwG4qV6DDe6cQw6FEHwbVUGEGkiTtBrrQAg68aSmg+YoX38CAgWi6ytTeugUxGmlCw1HLHOA8mY5Yo3Jey0UrCJXoh+yPH/tfJ2/Rgrvg6vdaDCA6ajKvdLAPQ5DQgsVqq2PRChDoSyPmD3HtV+Sp4dcVVj9kk+Rlx+corVfeKWiWIgsDVMuFHlmi0hD+6bPn70grlHgklniHmdldOzDZ0sz1NrtZfNsQ/luZdk0GwJqoJZbGerKDC2fY7UvlZ",
+  "sig": "RU4SjSvRrQ2ErdBcp72FxangvFXjpBIQPcXKFaGG+FRbm8iu+7bp7JucsxCQhd/ENSp6OfEksuSAa/2RhB5vDQ=="
 }

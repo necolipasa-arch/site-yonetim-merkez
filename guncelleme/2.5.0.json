@@ -2,17 +2,12 @@
   "product": "site-yonetim",
   "version": "2.5.0",
   "date": "2026-10-25",
-  "notes": [
-    "Özel roller: Ayarlar → Roller sekmesinden siteye özel personel rolleri tanımlayın (ör. Teknik Müdür, Peyzaj Sorumlusu, Danışma). Rol yalnızca seçtiğiniz menüleri görür; Ayarlar'a giremez.",
-    "Yetki hiyerarşisi: her rol bir üst merciye bağlıdır; kimse kendinden yüksek bir merciye rol açamaz ve yalnızca kendi erişebildiği menüleri verebilir. Sistem Yöneticisi her şeyi yapabilir.",
-    "Birden fazla site: rol tüm sitelerde ya da seçilen sitede açılır; silinen roldeki kullanıcılar seçtiğiniz role taşınır.",
-    "Ayrıntılar: Kullanım Kılavuzu 7.3 (Roller)."
-  ],
   "file": {
     "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.5.0/SiteYonetim-Kurulum-2.5.0.exe",
     "sha512": "5kr5RX/yIRj0AEe37CDe/Ov7Uvuqz0seAReeQ7tb7YJHYusfqrxruZmQ6Dl74FgTADhXGEBgaD4Hy34K++q8Gw==",
     "size": 78941624
   },
   "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.5.0",
-  "sig": "LUpEjtHCSCtH8OBrieWtD46eoBwyQmXTDg1bdekF+wUGpnHtU5js8d6LDTnHvJiDboPRojYzcFCDhEYIEeNyBg=="
+  "notesX": "0j0bcJjgqTyd3TSqy0MxQAq3xHjdu1vN+L4lh96+mIgFKgXP+8VAWc1jOkV2i+vUSac0uD3t4SMENJ1FLLNhRHX9UQRn7SaivBqXZfiyPMia+6jfjrkRMSKbf1F87QRlwloVc2J4YSNijCDvN23m9ilW86B+/JmnFywJNwcdpE9433vdwaatKeUpqP0x0MIAN5hX0rqzxuv0/f3Niux1K6CeIU7a8L85eVuggrxRC8J5LpFaycb1c4KZYPtGtkXNQ6NoqSzvxFQYm3CyiVn/v0XZ509W5PuTasfB+wPRqUHZjxhOylyHKBPOVN6bGFezHfVE8cWTDuCbM3EzF2RZz+NQ625y8lT5vyIEVWvNnt0AeNVwpNAyVKv8z1Z4tW7zB0ya3ktc+J5OSOfvKuf6VTLRntPmNdB9aS3V9psJkUBeWB/JZ3/8KoYk/UlzwTc4UT+gXyynVhCtQDfvxAihQV+b6P3qP5DgxRoiIfVHYkvdxnRJvt5vsf/Ku8O1rzz7pZqniGfDaXEQVpmQSMElHUQneGnqg4MPrMfu8ugKDdVOSrzeu6IBkIuR7JQrNaQsiDxRXrASF0P2YXfJ6+1MVhtwhboDqkX8URuqHK7PDhVCDNtA48xj9KD8LbpRP3qUiWpqwkPgNTu6/GRbiNhDNtVKz1aQZ48OxNdUcmbuMG4HkubyPWKYM2xHCHHP5culxTuVDt+7IN7KxQ/u3nz9e8uyVN9pWu3jb5haHKYDoBHcAl1PDwkS06Cbz2yMZeg5FPq1cCAWaQOzeAQYjyNQOagLOXUOivIeMhbAvvQIaijYbSjYcKNHGTccv4i3EuI=",
+  "sig": "5lKjbw/WW5Z79pLCEvI0CgHGDW6XbZkyxQMzsI3VQKm4gxiBrVqwwkqKHV2vmpDKh/sHPUkzjyTnBHWpkP+FAw=="
 }

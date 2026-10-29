@@ -1,15 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.30.0",
+  "version": "2.30.1",
   "date": "2026-10-29",
-  "time": "2026-10-29T21:00:30.597Z",
-  "notesX": "B2kUorcCp8cLV5Jsy1TKfiIlpJTrPhV41uCp/nU9azSQlroQKpCEpgfnGmyPoICh8RAwnkw4/LcUegQqgbcilcEPfRjG9tEgGxbkRaz6QT+nnjWI9Ztj/227dV92ImGNia60NOEq1Uk4GPFTVwA5ROO2vS2lrQaCe2Xs6bhjwPAd0skBVtBoHTB6bseeNcjl32gU0JEqWB1H+nh3w8mo8N2EsTgGxNPQPy3rjxRJvqkFXLBNoz7LI53zfL9RMGnDBnC49kas9MBmEjcerUE83GIHoaIyM4CCompOnavBk7AOXvAxeici++/x4RHLY2zXq2V3Qrvu3tgooSFTJiqe+p1w1SakukLhQ+2CRLo0U9aDv/ASBIGHjEKWy0XxKeicadNp2CIg+B8yqLTKqrahupdghjpsXjPWDjFGx0G5Ve8fotlXOjhTnxCuLsINHoDB0mn4FOkpKlsBe8QEFedaJURjgntVJobcI66dqJjhT5551uY/0UCr+JdZzL78vU+GI+Q+KqJGYK9s3Sb2VOgvQpJ5+LDKQycYWww=",
+  "time": "2026-10-29T21:19:52.851Z",
+  "notesX": "nUF1lqXv/rfAetl8Oec+ZxNV8f8QA6cTG17cAa+fGMD2XCNKKrc4OIxlTn5ID8ceppvNXnumnU79xYW9azvGDCv7PXD5M7dl1iONXV5rrgG6/IfvPrYnOWa+/QN99cByD3HWJWpFSwU=",
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.30.0/SiteYonetim-Kurulum-2.30.0.exe",
-    "sha512": "0FxBgy931XBSKjDARJQRt1aob4adwVpBpccUcn710Y6BswjniEQi5iUj9J6uWJyWnUA7O45pEejJP/EFeU41JQ==",
-    "size": 84622468
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.30.1/SiteYonetim-Kurulum-2.30.1.exe",
+    "sha512": "V18qnATc3ffJdPiTbv+igesDi0QiWP+qAAj6EqeEMcF4Nbmbj0cbgxyQdC8fec7CIBWz3VQ01bdj9z8sPcRu6Q==",
+    "size": 84621172
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.30.0",
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.30.1",
   "lisans": [
     {
       "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
@@ -20,5 +20,5 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "WbpMeyITFv+2xqs4Ev2cUNoLpn6qSrzucKOG3FstngefAE/netaHVqA/3igdItFVqcdZ3YAgQlfFydtsM+d4AQ=="
+  "sig": "pK9hRyHUY9jt7trreEGKEvwMo7sy2zLsZnd6VMEHNit2QnB6FZh0yqdngV/hDBuC+Or3FcmyzDdIf1Xe8oOSCA=="
 }

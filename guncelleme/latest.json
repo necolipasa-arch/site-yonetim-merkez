@@ -1,15 +1,15 @@
 {
   "product": "site-yonetim",
-  "version": "2.30.1",
+  "version": "2.31.0",
   "date": "2026-10-29",
-  "time": "2026-10-29T21:19:52.851Z",
-  "notesX": "nUF1lqXv/rfAetl8Oec+ZxNV8f8QA6cTG17cAa+fGMD2XCNKKrc4OIxlTn5ID8ceppvNXnumnU79xYW9azvGDCv7PXD5M7dl1iONXV5rrgG6/IfvPrYnOWa+/QN99cByD3HWJWpFSwU=",
+  "time": "2026-10-29T21:48:45.569Z",
+  "notesX": "AUF7npOx3QvKKd+LH6WjGvGqZJsgz8KYQVICTHzd2cugrgEZPVveQ7lu2S/aH/evSaKfTVQbVYO9BGH7Nk59mh/98G5W+j4b+hoLAZDnB5tkyUOwYrpMURsPftV6ZfIaCtMuEOqeqt5sZNK6O9q0FjhzNcakodVPhiaTA/LJpb63vjPJORUa41CkUjorLJFnimvSJ/cz1dE0cE6cvvgjiqAv2R+z/I5xJ+2W994aINJPjaVG412gxVOef+3G9UXDk0d6eumhofGVZLILszT2ksu+YJq2RcoXo6J3tku8RwRLjIvbntAZb0b3rXKq7PMm4R8Gr13LSNkLdRZsHMoWfvhxfE+nf/bf7oGOXhIg3mhdozZzlcZFf0V4fafd+HV8KyhXApSIrvay5bhgHiPyfOhftLy/tSGPE0vBBaV58K6Qiv1jA/3+PcBVziF3S86wWSEmtfv3ebA108FaAzua64snuFBVFdgk141VyYPUsnkmo6xGzeAUfrbik6v+dwj7NnY6iD/vvt+gN5HwAINxTzx4vHjmbIREubjFaNADejhDtQU9/ZZgYcd9TeHSpwFxdMfFKmCNWIHTHS1GCXcgwoxxWgbidwq8DVNNuGR90hW2iF/1B17yOPdL/gTOMhFO08xbD92+xDUnQENUuTwylXmqYEHovnNx9u85Nh1lPtB1FgS1zm6/to46/nLfAnsaZpPtR+/CBSEyTqiQ1A3imaZC4GqV4pYtV1lF1VC0T6XKbjljfNQH0JKFUQi3A8eNlIAggN7cFBd24HU+EM151JF04i8RFEPuLdBnISTscu0/rpIx4PtacdBCHGPHBNBvhpu1Db82rgRGFQOXcMEiizAXXUuKb9vj3VbJqqN881b+XJhu4yQ4zDlEVZQHAdGH+yMGnMnPTEZWdORN4l/cKj2fgR8Cwo/pjiLCHxWsfWnfTFAyshksc0tfyZu4aibKleHF0H24jtHlU2YKSGXYuhrVyRb0cmiBiLvl3S2R1AKE7OQ9ohEUmeraVreuzoG7YchTNova1XlbUeJgHce1NldSIEAel/zq9yuLYX90XPtXQ3jw1dopVO+O3apOGR6yjHwa2pWsDlAGuDKqez7+6FYV2mmlZp8XRLeNB/EBqHOd8ilIeuwZTzK23gUnpxPjiICoXHV0fr8Kf1NvDk6XPEjRHenqpuhXFMivi+G+a+cYC4xdCPJzW09XjwRyRrHbf7UlDzBOs9lPUHaa7g6+5HNvbZZ8JBWcLwUaLhTnqd2FfvNZ1ScmEWBl2A==",
   "file": {
-    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.30.1/SiteYonetim-Kurulum-2.30.1.exe",
-    "sha512": "V18qnATc3ffJdPiTbv+igesDi0QiWP+qAAj6EqeEMcF4Nbmbj0cbgxyQdC8fec7CIBWz3VQ01bdj9z8sPcRu6Q==",
-    "size": 84621172
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.31.0/SiteYonetim-Kurulum-2.31.0.exe",
+    "sha512": "DiqYnoixTIRpBjpMQfmn4kuLxVUZ68+aCU5+uU4le+ceeReC96a0igoMxU6+DtrIkXr7XG3FWscap7saCadP1Q==",
+    "size": 84645517
   },
-  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.30.1",
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.31.0",
   "lisans": [
     {
       "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
@@ -20,5 +20,5 @@
       "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
     }
   ],
-  "sig": "pK9hRyHUY9jt7trreEGKEvwMo7sy2zLsZnd6VMEHNit2QnB6FZh0yqdngV/hDBuC+Or3FcmyzDdIf1Xe8oOSCA=="
+  "sig": "XXgxmAWJgxiTpQIYAwyp5OADw13R1Ki/6rw4Jnp5UUyvGVgSKas1pKEjYFODYD2CP9+yLyj/2hJg/np/hwABAQ=="
 }

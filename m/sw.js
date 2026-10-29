@@ -1,5 +1,5 @@
 // Site Yönetim Mobil — çevrim dışı önbellek
-const VERSION = 'sym-v1.14.0-20261029145606';
+const VERSION = 'sym-v1.14.0-20261029214853';
 const SHELL = ['./', 'index.html', 'app.css', 'app.js', 'qrcode.js', 'config.js', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png', 'icons/favicon-32.png'];
 

@@ -1,0 +1,28 @@
+{
+  "product": "site-yonetim",
+  "version": "2.26.11",
+  "date": "2026-10-29",
+  "time": "2026-10-29T07:24:09.667Z",
+  "notes": [
+    "Yeni",
+    "• Ek terminal talebi: Lisans süreniz değişmeden satıcınızdan ek terminal hakkı isteyebilirsiniz — Ayarlar → Terminaller → \"Ek Terminal İste\" (veya Ayarlar → Lisans). Satıcınız kalan süreye göre teklif gönderir; kabul edince yeni hak bu bilgisayarda kendiliğinden etkinleşir.",
+    "• Ayarlar → Terminaller → \"Lisansı Güncelle\": satıcınız size ek terminal verdiyse yeni hakkı hemen alırsınız."
+  ],
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.26.11/SiteYonetim-Kurulum-2.26.11.exe",
+    "sha512": "+hgXlD6lythL1h/ojIF8+ply3hCgO3ryTas11ILzQ7rbxfti65qvQXXwsbZLbxxQE86YDxBx/9nn8emny+TPBQ==",
+    "size": 84022984
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.26.11",
+  "lisans": [
+    {
+      "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    },
+    {
+      "u": "https://ep-fancy-pond-b93i3gy6.apirest.c-7.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    }
+  ],
+  "sig": "zGIcKQMIRbB7Ytbp311k9QTfetRN1cIG/BYqY+CTZTBz98aFhYSIAzLdPB3U3Ji73/n4hvEGFnRa1H8679oiAA=="
+}

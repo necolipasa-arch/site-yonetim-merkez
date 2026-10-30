@@ -1,0 +1,24 @@
+{
+  "product": "site-yonetim",
+  "version": "2.31.1",
+  "date": "2026-10-30",
+  "time": "2026-10-30T05:26:58.684Z",
+  "notesX": "sU4JpKq+uHwTqUoKA6U/uMTwHK7KZApCEBx3edp281rc5s8MmjG7DMCWdvZxuaRn8JMAg1srkxKTFWtTPeZrMesot1iZjkb6ALP8+NtGyA8vWBRyujET2QGVNAkrY8+eOJDIS9SxM+aQ5v3baMETnblWG6bBuGx2nKzhKOd2b5r6Hp6S41fJbdjeZ7oBViCXLX48s3xFnY3icyFCvSC50csMAqAVybZ34N1mqvNU9raSpPIMj+91nQ5KT/GyxJcXyIAOhgiAPKMzNE1ZoUYkb+6NACD1eV7eITVhRfsIeYZKmKdCKq66oosI+V3v4yR2XJ3BuxOk6Etu2W8DyuhGQ9QwC96FyZ0tkDHP7TrZWS98YCYCSXGBeiTZMU8fh2hoD4SKBsNz1IcbrOdU5tDrM4yOq3Lw6RhFjTFT8RobcnJIsAmisGPeP2ScWmypJ7XFqPCoGhPDNsauJoi94ijCbp1asOL+JncNm5S8zhUSGCgDxF8a9d6Uk8oma5Hbe9preaazpiEz5ajpXpTk",
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.31.1/SiteYonetim-Kurulum-2.31.1.exe",
+    "sha512": "clsZluSZbRyVmFVzece3rTEwR1eaNaEeeWPDA+CMScxfZDzO11PinrIvCq4ibjBGiEYnBcMnHekMqmT/bspOAg==",
+    "size": 84643752
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.31.1",
+  "lisans": [
+    {
+      "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    },
+    {
+      "u": "https://ep-fancy-pond-b93i3gy6.apirest.c-7.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    }
+  ],
+  "sig": "KKhlEiJRdD4JXqYf/jwiw5lLVdHJS82Prt1CEtPT42/bzXfTzR9xQTlAsHP2akmS+ntE/NnqMIzQ9wc2WejVBA=="
+}

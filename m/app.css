@@ -460,3 +460,23 @@ a.btn { text-decoration: none; color: inherit; box-sizing: border-box; }
   body.x-printing #xPrint { display: block; padding: 10mm; }
   body.x-printing { background: #fff !important; }
 }
+
+/* 1.15.0 (masaüstü 2.32.0): Site Portalı — geniş ekranda (bilgisayar) masaüstü görünüm */
+@media (min-width: 940px) {
+  body.web { background: #eceaf6; }
+  body.web .topbar { margin-left: 244px; max-width: none; border-radius: 0; }
+  body.web .content { margin-left: 244px; max-width: 1080px; padding: 22px 30px 46px; }
+  body.web .bottom-nav { left: 0; top: 0; bottom: 0; transform: none; width: 244px; max-width: none; height: 100%;
+    flex-direction: column; justify-content: flex-start; gap: 6px; padding: 18px 12px; border-top: 0; border-right: 1px solid var(--line); background: #fff; }
+  body.web .bottom-nav button { flex: 0 0 auto; flex-direction: row; justify-content: flex-start; align-items: center; gap: 12px;
+    padding: 12px 14px; border-radius: 12px; font-size: 14.5px; width: 100%; }
+  body.web .bottom-nav button .ic { width: 20px; height: 20px; }
+  body.web .bottom-nav button.on { background: var(--primary-l); }
+  body.web .bottom-nav button.on::before { display: none; }
+  body.web .bottom-nav .dot { position: static; margin-left: auto; }
+  body.web .webbrand { display: flex; gap: 10px; align-items: center; padding: 4px 10px 16px; border-bottom: 1px solid var(--line); margin-bottom: 10px; }
+  body.web .webbrand img { width: 38px; height: 38px; border-radius: 9px; }
+  body.web .webbrand b { font-size: 15px; display: block; }
+  body.web .webbrand small { color: var(--muted); font-size: 11.5px; }
+  body.web .card, body.web .list .li { max-width: 980px; }
+}

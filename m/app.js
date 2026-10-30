@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.14.0';
-const APP_BUILD = '20261030052707';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.15.0';
+const APP_BUILD = '20261030142727';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -1878,7 +1878,22 @@ document.addEventListener('click', async (e) => {
   }
 });
 
+// 1.15.0 (masaüstü 2.32.0): Site Portalı — sakin uygulaması bilgisayar tarayıcısında masaüstü görünümle açılır
+function webWanted() { return /[?&]web=1/.test(location.search) || !!(S.data && S.data.site && S.data.site.site_web === '1'); }
+function webTick() {
+  const on = webWanted() && !S.mgr && !!S.token && window.matchMedia('(min-width: 940px)').matches;
+  document.body.classList.toggle('web', on);
+  const nav = document.querySelector('.bottom-nav');
+  if (nav) {
+    if (on && !nav.querySelector('.webbrand')) {
+      const d = S.data || {}, site = (d.site && d.site.site_name) || CFG.siteName || 'Site';
+      nav.insertAdjacentHTML('afterbegin', `<div class="webbrand"><img src="icons/icon-192.png" alt=""><div><b>${esc(site)}</b><small>Site Portalı — web görünümü</small></div></div>`);
+    }
+    if (!on) { const b = nav.querySelector('.webbrand'); if (b) b.remove(); }
+  }
+}
 function afterRender() {
+  try { webTick(); } catch (e) { /* */ }
   const pc = $('#pushCard'); if (pc) pushCard(pc);
   if (S.view === 'meter') Meter.bind();
   if (S.view === 'gk') X.bind();
@@ -2635,7 +2650,7 @@ const MgrX = {
   perms(r) { const p = String((r && r.perms) || '').split(',').map(s => s.trim()).filter(Boolean); if (r && r.scope === 'gorevli' && !p.includes('tur')) p.push('tur'); return p; },
   tabs(r) {
     const p = this.perms(r), t = [];
-    if (r.scope !== 'gorevli') t.push(['ozet', 'Özet', 'chart']);
+    if (r.scope !== 'gorevli') { t.push(['ozet', 'Özet', 'chart']); if (r.scope === 'tam') t.push(['talep', 'Talepler', 'wrench']); }   // 1.15.0: durum güncelleme
     if (p.includes('acil')) t.push(['acil', 'Acil', 'siren']);
     if (p.includes('onay') || p.includes('denetci')) t.push(['onay', 'Onaylar', 'stamp']);
     if (p.includes('tur')) t.push(['tur', 'Tur', 'route']);
@@ -2657,7 +2672,7 @@ const MgrX = {
   D: {},
   ensure(k, force) {
     const d = this.D[k]; if (!force && d && (d.busy || Date.now() - d.at < 45000)) return;
-    const fn = { acil: () => rpc('mgr_emg', { p_code: Mgr.code(), p_act: 'board' }), onay: () => rpc('mgr_exp', { p_code: Mgr.code(), p_act: 'list' }), tur: () => rpc('mgr_patrol', { p_code: Mgr.code(), p_act: 'info' }) }[k];
+    const fn = { acil: () => rpc('mgr_emg', { p_code: Mgr.code(), p_act: 'board' }), onay: () => rpc('mgr_exp', { p_code: Mgr.code(), p_act: 'list' }), tur: () => rpc('mgr_patrol', { p_code: Mgr.code(), p_act: 'info' }), talep: () => rpc('mgr_act', { p_code: Mgr.code(), p_act: 'reqs' }) }[k];   // 1.15.0
     if (!fn) return;
     this.D[k] = { ...(d || {}), busy: true, at: Date.now() };
     fn().then(v => { this.D[k] = { v, at: Date.now() }; }).catch(e => { this.D[k] = { ...(d || {}), err: e.message || String(e), at: Date.now() }; }).finally(() => { if (S.mgr) render(); });
@@ -2788,6 +2803,15 @@ const MgrX = {
       loop();
     } catch (e) { end(); Sheet.close(); toast('Kamera açılamadı: ' + (e.message || e), 'error'); }
   },
+  // --- Talepler (1.15.0: durum güncelleme) ---
+  talep(r) {
+    const w = this.wait('talep'); if (w) return w;
+    const list = (this.D.talep.v && this.D.talep.v.reqs) || [];
+    return `<p class="muted small">Açık arıza / talep kayıtları. Durumu buradan değiştirin; ofis bilgisayarı eşitlendiğinde uygulanır ve sakinin uygulamasında da görünür.</p>
+      ${list.length ? `<div class="list">${list.map(x => `<div class="li" style="flex-wrap:wrap"><span class="li-ic qi ${x.s === 'Açık' ? 'orange' : 'blue'}">${ic('wrench')}</span><div class="li-b"><b>${esc(x.t)}</b><small>${esc([x.u, x.cat, x.pr, x.d].filter(Boolean).join(' · '))}</small></div>${badge(x.s)}</div>
+        <div style="display:flex;gap:8px;margin:-6px 0 8px 54px">${x.s === 'Açık' ? `<button class="btn sm primary" data-mx="reqset:${x.i}:İşlemde">İşleme Al</button>` : ''}${x.s === 'İşlemde' ? `<button class="btn sm" data-mx="reqset:${x.i}:Beklemede">Beklet</button>` : ''}<button class="btn sm" data-mx="reqok:${x.i}">Çözüldü İşaretle</button></div>`).join('')}</div>`
+        : `<div class="empty">${ic('check')}<p>Açık talep yok.</p></div>`}`;
+  },
   // --- Denetçi ---
   denetim(r) {
     const a = r.data.audit, q = (S.mxQ || '').toLocaleLowerCase('tr');
@@ -2823,6 +2847,19 @@ const MgrX = {
         };
       });
     }
+    if (k === 'reqset' || k === 'reqok') {   // 1.15.0: talep durumunu telefondan güncelle
+      const id = Number(x), st = k === 'reqok' ? 'Çözüldü' : y;
+      const send = async (note) => {
+        const r = await rpc('mgr_act', { p_code: Mgr.code(), p_act: 'req_set', p_args: { id, status: st, note: note || '' } });
+        if (r && r.ok === false) throw new Error(r.error || 'İşlem yapılamadı');
+        toast('Kaydedildi — ofis eşitlenince uygulanır.');
+        this.D.talep = { at: 0 }; this.ensure('talep', true); Mgr.load(true); render();
+      };
+      if (k === 'reqset') { send('').catch(e => toast(e.message, 'error')); return; }
+      return Sheet.open(`<h3>Talep “Çözüldü” olarak kapatılsın mı?</h3><div class="fld"><label>Çözüm notu (isteğe bağlı)</label><textarea data-rn maxlength="300" placeholder="Örn: Arıza giderildi, parça değişti"></textarea></div><button class="btn primary block" data-rgo>Çözüldü Olarak İşaretle</button>`, (sh) => {
+        sh.querySelector('[data-rgo]').onclick = async (e) => { e.target.disabled = true; try { await send(sh.querySelector('[data-rn]').value.trim()); Sheet.close(); } catch (er) { toast(er.message, 'error'); e.target.disabled = false; } };
+      });
+    }
     if (k === 'emgend') {
       if (!confirm('Acil durum modu kapatılsın mı?')) return;
       try { const r = await rpc('mgr_emg', { p_code: Mgr.code(), p_act: 'end' }); this.D.acil = { v: r, at: Date.now() }; toast('Acil durum sona erdi.'); Mgr.load(true); render(); } catch (e) { toast(e.message, 'error'); }
@@ -2831,6 +2868,7 @@ const MgrX = {
 };
 setInterval(() => { if (document.visibilityState === 'visible' && S.mgr && S.mgrTabCur && S.mgrTabCur !== 'ozet') { const d = MgrX.D[S.mgrTabCur]; if (S.mgrTabCur === 'acil' && d && d.v && d.v.active) MgrX.ensure('acil', true); } }, 20000);
 document.addEventListener('input', (e) => { const q = e.target.closest && e.target.closest('[data-mxq]'); if (!q) return; S.mxQ = q.value; clearTimeout(S.mxQt); S.mxQt = setTimeout(() => { render(); const n = $('[data-mxq]'); if (n) { n.focus(); n.setSelectionRange(n.value.length, n.value.length); } }, 350); });
+window.addEventListener('resize', () => { try { webTick(); } catch (e) { /* */ } });   // 1.15.0
 document.addEventListener('click', (e) => {
   const t = e.target; if (!t.closest) return;
   const em = t.closest('[data-emg]'); if (em) { Emg.act(em.dataset.emg); return; }

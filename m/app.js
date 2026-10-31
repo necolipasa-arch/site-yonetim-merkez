@@ -5,8 +5,8 @@
    ===================================================================== */
 'use strict';
 
-const APP_VERSION = '1.15.0';
-const APP_BUILD = '20261030193708';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
+const APP_VERSION = '1.16.0';
+const APP_BUILD = '20261031174351';   // merkezi yayında dev/build-central-mobile.js yayın damgasını yazar (version.json ile karşılaştırılır)
 // ---------------- site bağlantı ayarları ----------------
 // Kendi adresinde yayınlanan pakette ayarlar config.js içindedir. Merkezi uygulamada (config.js boş, central:true)
 // ayarlar davet linkindeki "s" parametresiyle gelir ve bu cihazda saklanır.
@@ -400,7 +400,8 @@ const SUB = {
   deals: { get title() { return typeof Ads !== 'undefined' ? Ads.title() : 'Fırsatlar'; }, parent: 'more' }, doors: { title: 'Kapılar', parent: 'more' },
   meter: { title: 'Sayaç Okuma', parent: 'home' },
   works: { title: 'Tadilat & Taşınma', parent: 'more' }, docs: { title: 'Belgelerim', parent: 'more' }, cons: { title: 'Tüketimim', parent: 'more' },
-  deposits: { title: 'Anahtar & Emanet', parent: 'more' }, gk: { title: 'Genel Kurul', parent: 'more' }   // 1.14.0
+  deposits: { title: 'Anahtar & Emanet', parent: 'more' }, gk: { title: 'Genel Kurul', parent: 'more' },   // 1.14.0
+  faces: { title: 'Yüz ile Geçiş', parent: 'more' }   // 1.16.0
 };
 
 async function refresh(silent) {
@@ -464,7 +465,7 @@ function render() {
   const activeTab = sub ? sub.parent : S.view;
   const d = S.data, u = d.unit || {};
   const siteName = (d.site && d.site.site_name) || CFG.siteName || 'Site Yönetim';
-  const views = { works: () => X.worksView(), docs: () => X.docsView(), cons: () => X.consView(), deposits: () => X.depView(), gk: () => X.gkView(), fin: finView, home: homeView, account: accountView, pay: payView, requests: requestsView, reserve: reserveView, more: moreView, ann: annView, cargo: cargoView, visitors: visitorsView, meetings: meetingsView, polls: pollsView, contacts: contactsView, profile: profileView, deals: () => Ads.pageView(), doors: () => Door.view(), meter: () => Meter.view() };
+  const views = { faces: () => Face.view(), works: () => X.worksView(), docs: () => X.docsView(), cons: () => X.consView(), deposits: () => X.depView(), gk: () => X.gkView(), fin: finView, home: homeView, account: accountView, pay: payView, requests: requestsView, reserve: reserveView, more: moreView, ann: annView, cargo: cargoView, visitors: visitorsView, meetings: meetingsView, polls: pollsView, contacts: contactsView, profile: profileView, deals: () => Ads.pageView(), doors: () => Door.view(), meter: () => Meter.view() };
   const waitingCargo = (d.cargo || []).filter(c => !c.delivered_at).length;
   app.innerHTML = `
     <header class="topbar">
@@ -1212,6 +1213,7 @@ function moreView() {
       ${li('data-go="ann"', 'megaphone', 'purple', 'Duyurular', `${(d.announcements || []).length} duyuru`)}
       ${li('data-go="cargo"', 'package', 'teal', 'Kargolarım', cargo ? `${cargo} kargo teslim alınmayı bekliyor` : 'Bekleyen kargo yok', cargo ? badge(String(cargo), 'red') : '')}
       ${Door.moreLi(li)}
+      ${Face.moreLi(li)}
       ${li('data-go="visitors"', 'guest', 'green', 'Ziyaretçi Bildirimi', 'Misafirinizi güvenliğe önceden bildirin')}
       ${Ads.moreLi(li)}
       ${S.data.polls === undefined ? '' : li('data-go="polls"', 'poll', 'purple', 'Anketler', pendingPolls().length ? `${pendingPolls().length} anket oyunuzu bekliyor` : 'Site anketlerine oy verin', pendingPolls().length ? badge(String(pendingPolls().length), 'red') : '')}
@@ -3213,6 +3215,136 @@ const X = {
   }
 };
 document.addEventListener('click', (e) => { const b = e.target.closest('[data-xa]'); if (b && !b.disabled) { e.preventDefault(); X.act(b); } });
+
+// =====================================================================
+// 1.16.0 (masaüstü 2.33.0): YÜZ İLE GEÇİŞ — sakin kendisi / yakını için özçekim + açık rıza ile başvurur,
+//   yönetim onaylayınca kapıdan yüzüyle geçer. Fotoğraf yönetim başvuruyu alır almaz buluttan silinir.
+// =====================================================================
+P.face = 'M12 4a8 8 0 110 16 8 8 0 010-16zm0 1.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zM9.3 9.6a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zm5.4 0a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4zM8.8 13.6h1.7a1.6 1.6 0 003 0h1.7a3.3 3.3 0 01-6.4 0zM2 7V4a2 2 0 012-2h3v2H4v3H2zm15-5h3a2 2 0 012 2v3h-2V4h-3V2zM2 17h2v3h3v2H4a2 2 0 01-2-2v-3zm18 0h2v3a2 2 0 01-2 2h-3v-2h3v-3z';
+const Face = {
+  data: null, at: 0, busy: false, err: '',
+  KIND: { Sakin: 'Kendim', Yakın: 'Yakınım (sürekli)', Misafir: 'Misafir / süreli' },
+  REL: ['Eşi', 'Çocuğu', 'Annesi / Babası', 'Kardeşi', 'Akrabası', 'Yardımcı / Bakıcı', 'Misafir', 'Diğer'],
+  ST: { Bekliyor: 'orange', Onaylı: 'green', Reddedildi: 'red', Askıda: 'gray', 'Süresi Doldu': 'gray' },
+  DAYS: ['Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt', 'Paz'],
+  on() { return !!(S.data && S.data.site && S.data.site.face_on === '1'); },
+  call(act, args) { return call('member_face', { p_act: act, p_args: args || {} }); },
+  async load(force) {
+    if (this.busy || (!force && this.data && Date.now() - this.at < 30000)) return;
+    this.busy = true;
+    try { this.data = await this.call('list'); this.err = ''; this.at = Date.now(); }
+    catch (x) { this.err = x.message || String(x); }
+    this.busy = false;
+    if (S.view === 'faces') render();
+  },
+  moreLi(li) {
+    if (!this.on()) return '';
+    return li('data-go="faces"', 'face', 'blue', 'Yüz ile Geçiş', 'Kapıdan yüzünüzle geçin, yakınlarınızı ekleyin');
+  },
+  sched(p) {
+    const d = String(p.days || '').split('').map(Number).filter(x => x >= 1 && x <= 7);
+    const ds = !d.length || d.length === 7 ? '' : d.map(x => this.DAYS[x - 1]).join(', ');
+    const t = p.t1 ? `${p.t1}–${p.t2 || ''}` : '';
+    return [ds, t].filter(Boolean).join(' ') || 'Her zaman';
+  },
+  valid(p) { return p.valid_to ? `${p.valid_from ? fmt.date(p.valid_from) : ''} – ${fmt.date(p.valid_to)}` : 'Süresiz'; },
+  view() {
+    this.load();
+    const d = this.data;
+    if (!d) return this.err ? `<div class="empty">${ic('alert')}<p>${esc(this.err)}</p><button class="btn" data-fa="reload">Tekrar dene</button></div>` : `<div class="boot" style="min-height:40vh"><div class="spinner"></div></div>`;
+    const list = d.people || [], r = d.rule || {}, act = list.filter(p => ['Bekliyor', 'Onaylı'].includes(p.status) && !p.del_req).length;
+    return `${d.on ? `<button class="btn primary block" data-fa="new" style="margin-bottom:12px" ${act >= (r.max || 6) ? 'disabled' : ''}>${ic('plus')} Kişi Ekle</button>` : `<div class="alert orange">${ic('alert')}<div><b>Yüz ile geçiş şu an kapalı</b>Yönetim bu özelliği daireniz için açmamış.</div></div>`}
+      <div class="card"><p class="small">Yüzü tanıtılan kişiler apartman / site kapısından elleri dolu bile olsa <b>yüzleriyle</b> geçer. Kendinizi, ailenizi, bakıcınızı veya belirli günlerde gelecek misafirinizi ekleyebilirsiniz; yönetim onayından sonra etkinleşir.</p>
+        <p class="muted small" style="margin-top:6px">Daireniz için en çok <b>${r.max || 6}</b> kişi${r.guest ? ` · misafir en çok ${r.guestDays || 30} gün` : ' · misafir eklenemez'} · Kayıtlı: <b>${act}</b></p></div>
+      ${list.length ? `<div class="sec-title">Kişiler</div>` + list.map(p => `<div class="item"><div class="item-h"><b>${esc(p.name)}</b>${p.del_req ? badge('Silinmesi istendi', 'gray') : badge(p.status, this.ST[p.status])}</div>
+        <div class="meta">${esc([p.relation, this.KIND[p.kind] || p.kind].filter(Boolean).join(' · '))}</div>
+        <div class="meta">${esc(this.valid(p))} · ${esc(this.sched(p))}</div>
+        ${p.office_note ? `<div class="res"><b>Yönetim:</b> ${esc(p.office_note)}</div>` : ''}
+        ${p.del_req ? '' : `<div class="acts"><button class="btn sm danger" data-fa="del" data-id="${p.id}">${p.status === 'Bekliyor' ? 'Başvuruyu Geri Al' : 'Sil'}</button></div>`}</div>`).join('')
+      : `<div class="empty">${ic('face')}<p>Henüz kimse eklenmedi.</p></div>`}
+      <p class="muted small center" style="margin:10px 0 18px">Yüz tanıma isteğe bağlıdır; kart, anahtar veya diyafonla geçişiniz aynen devam eder. Rızanızı istediğiniz an “Sil” ile geri alabilirsiniz.</p>`;
+  },
+  // fotoğrafı küçült (uzun kenar 640 px, JPEG)
+  shrink(file) {
+    return new Promise((res, rej) => {
+      const url = URL.createObjectURL(file), img = new Image();
+      img.onload = () => {
+        const k = Math.min(1, 640 / Math.max(img.naturalWidth, img.naturalHeight));
+        const c = document.createElement('canvas'); c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+        let q = 0.86, out = c.toDataURL('image/jpeg', q);
+        while (out.length > 280000 && q > 0.45) { q -= 0.1; out = c.toDataURL('image/jpeg', q); }
+        res(out);
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); rej(new Error('Fotoğraf açılamadı')); };
+      img.src = url;
+    });
+  },
+  sheet() {
+    const d = this.data || {}, r = d.rule || {}, me = (S.data && S.data.member) || {};
+    const mineSelf = (d.people || []).some(p => p.kind === 'Sakin' && p.mine && ['Bekliyor', 'Onaylı'].includes(p.status) && !p.del_req);
+    let kind = mineSelf ? 'Yakın' : 'Sakin', photo = null;
+    const kinds = Object.keys(this.KIND).filter(k => k !== 'Misafir' || r.guest);
+    Sheet.open(`<h3>Yüz ile Geçiş — Kişi Ekle</h3><form id="faceForm">
+      <div class="fld"><label>Kimi ekliyorsunuz?</label><div class="chips" data-chips="k">${kinds.map(k => `<button type="button" class="chip ${k === kind ? 'on' : ''}" data-v="${k}">${this.KIND[k]}</button>`).join('')}</div></div>
+      <div class="face-m-pic" data-pic>${ic('face')}<span>Yüz fotoğrafı</span></div>
+      <label class="btn block" style="margin:8px 0 2px">${ic('camera')} Fotoğraf Çek<input type="file" accept="image/*" capture="user" data-cam hidden></label>
+      <p class="muted small">Yüz kameraya dönük, aydınlık, gözlüksüz ve maskesiz olsun; karede tek kişi bulunsun.</p>
+      <div class="fld"><label>Ad Soyad</label><input name="name" maxlength="80" value="${kind === 'Sakin' ? esc(me.full_name || '') : ''}" required></div>
+      <div class="fld" data-rel ${kind === 'Sakin' ? 'hidden' : ''}><label>Yakınlık</label><select name="rel">${this.REL.map(x => `<option>${x}</option>`).join('')}</select></div>
+      <div class="row2"><div class="fld"><label>Başlangıç</label><input type="date" name="d1" min="${today()}" value="${today()}"></div><div class="fld"><label data-d2l>Bitiş ${r.perm ? '(boş = süresiz)' : ''}</label><input type="date" name="d2" min="${today()}"></div></div>
+      ${r.sched ? `<div class="fld"><label>Yalnızca şu günler (seçmezseniz her gün)</label><div class="chips" data-days>${this.DAYS.map((x, i) => `<button type="button" class="chip" data-d="${i + 1}">${x}</button>`).join('')}</div></div>
+      <div class="row2"><div class="fld"><label>Saat (başlangıç)</label><input type="time" name="t1"></div><div class="fld"><label>Saat (bitiş)</label><input type="time" name="t2"></div></div>` : ''}
+      <div class="face-m-consent">${esc(d.consent || 'Yüz görüntüm ve yüz imzam yalnızca kapı geçişi amacıyla işlenecektir. Yüz tanıma isteğe bağlıdır; rızamı istediğim an geri alabilirim.')}</div>
+      <label class="emg-chk"><input type="checkbox" name="ok"> Açık rıza metnini okudum; bu kişinin yüz verisinin kapı geçişi için işlenmesine <b>açık rıza veriyorum</b> (18 yaş altı için veli olarak).</label>
+      <button class="btn primary block" type="submit">${ic('check')} Onaya Gönder</button>
+      <p class="muted small center" style="margin-top:8px">Yönetim onayladığında bildirim alırsınız.</p></form>`, (sh) => {
+      const f = sh.querySelector('#faceForm');
+      const setKind = (k) => {
+        kind = k; sh.querySelectorAll('[data-chips="k"] .chip').forEach(c => c.classList.toggle('on', c.dataset.v === k));
+        sh.querySelector('[data-rel]').hidden = k === 'Sakin';
+        if (k === 'Sakin' && !f.name.value) f.name.value = me.full_name || '';
+        if (k !== 'Sakin' && f.name.value === (me.full_name || '')) f.name.value = '';
+        if (k === 'Misafir') { f.rel.value = 'Misafir'; if (!f.d2.value) f.d2.value = addDays(today(), Math.min(7, r.guestDays || 30)); }
+        sh.querySelector('[data-d2l]').textContent = k === 'Misafir' || (k === 'Yakın' && !r.perm) ? 'Bitiş (zorunlu)' : 'Bitiş (boş = süresiz)';
+      };
+      setKind(kind);
+      sh.querySelector('[data-chips="k"]').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (b) setKind(b.dataset.v); });
+      const dd = sh.querySelector('[data-days]'); if (dd) dd.addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (b) b.classList.toggle('on'); });
+      sh.querySelector('[data-cam]').onchange = async (e) => {
+        const file = e.target.files && e.target.files[0]; if (!file) return;
+        try { photo = await this.shrink(file); sh.querySelector('[data-pic]').innerHTML = `<img src="${photo}" alt="">`; }
+        catch (x) { toast(x.message, 'error'); }
+        e.target.value = '';
+      };
+      f.onsubmit = async (e) => {
+        e.preventDefault();
+        if (!photo) return toast('Yüz fotoğrafı çekin.', 'error');
+        if (f.name.value.trim().length < 3) return toast('Ad soyad yazın.', 'error');
+        if (!f.ok.checked) return toast('Açık rıza onayı olmadan gönderilemez.', 'error');
+        const days = dd ? [...dd.querySelectorAll('.chip.on')].map(b => b.dataset.d).join('') : '';
+        const b = f.querySelector('[type=submit]'); b.disabled = true; b.textContent = 'Gönderiliyor…';
+        try {
+          await this.call('add', { kind, name: f.name.value.trim(), relation: kind === 'Sakin' ? 'Kendisi' : f.rel.value, valid_from: f.d1.value, valid_to: f.d2.value,
+            days: days.length === 7 ? '' : days, t1: f.t1 ? f.t1.value : '', t2: f.t2 ? f.t2.value : '', photo, consent: true, consent_ver: 'mobil-1.16' });
+          Sheet.close(); toast('Başvurunuz yönetime iletildi ✓'); await this.load(true);
+        } catch (x) { toast(x.message, 'error'); b.disabled = false; b.innerHTML = `${ic('check')} Onaya Gönder`; }
+      };
+    });
+  },
+  async act(b) {
+    const a = b.dataset.fa;
+    if (a === 'reload') return this.load(true);
+    if (a === 'new') return this.sheet();
+    if (a === 'del') {
+      if (!confirm('Bu kişi yüz ile geçişten çıkarılsın mı? Yüz verisi silinir.')) return;
+      b.disabled = true;
+      try { await this.call('del', { id: Number(b.dataset.id) }); toast('İsteğiniz alındı ✓'); await this.load(true); }
+      catch (x) { toast(x.message, 'error'); b.disabled = false; }
+    }
+  }
+};
+document.addEventListener('click', (e) => { const b = e.target.closest('[data-fa]'); if (b && !b.disabled) { e.preventDefault(); Face.act(b); } });
 
 // ---- herkese açık belge doğrulama (#dv=KOD) — giriş gerekmez ----
 const Dv = {

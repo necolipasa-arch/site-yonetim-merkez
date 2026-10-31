@@ -1,0 +1,24 @@
+{
+  "product": "site-yonetim",
+  "version": "2.33.1",
+  "date": "2026-10-31",
+  "time": "2026-10-31T17:48:50.580Z",
+  "notesX": "Hz7VCc3FDQWDp91ouNsIQhnvth/adB2+/TRZPBkONevZ4rp6quq9YmBYBZqgYrmKGSCrxDBL4Cjxplk1fEKIBIOSSIVtZ0ohwZZJyXnCxg7sb5jpMUpzhARQCn0eWH2DQwNQXm/osas1djBicdgMpbJcvNF2diT2GBD43GHoqB5TeU5kqp23r1lhMlK6oA8yCm43N/2Hy3TcesFhjGZtRFhF9KViMrUV7xq3Z+HWHmLM83eXZHy9CrQctP9uwwEML8cJIpcCVEKeO1/Uyx8usGRUps6DG722ZrEgx7BRYwvtxeB1ZuZqEWhoJ2agLpoQDxZM4HX0q8vshWtu42/qD9icRPjMfVeUzV1P6BR6383I5dInfqbp5xS4e/ngFxMbY7U1bT8fiGPmV102R6elrPKGQJmojP0+ikq8W2U/GLufbD5DVIAPB/n1gqYTtownf8Wh7ZmkvygvAJITyFTS45N4wTzcy2pfNiljDb7WR+hYvZvOvyLVMDn0jEWZUpAiNibfU8LCN/3rFIS+f4i0ODs0UvjHRnZxhoCgt8I20Zg2U63e1Jqhf8FCCvYEtRkFSierQV/wKXVCHvSkVj1/qb9R+CtOLSkRhcIdsUN6WRi/1jaBQJ9b6KGiP3y7DIpWvfSpsdXQrA3i41N1zQEMm2gNsggtFjkw5LtL1rK3jeRKxZXqNZZxMa2EhCbErdoiZ9cJebK0tx+kcDY9Kc8zgP2liAlZ0FIgjpC6bJHIiIY/fllXb8+8r2UwClfG63Gfa1BSdWN3z3V4mtv1p/GYCi2CPwmzi6MVuQ29GnLmROqXBcUo3CTtnAL6CHSvjO6x5J2lU67MNR4UNzkmkrUOUXRFI9OgurNqRO3WKulug9tMH1Jrd2tFmYAeuvV6eMGXS2EqoCMrQVW1kE/ct3eRUmGZWtXyiVMhrTdmdgXkelOaekgi1MdOuvyT5nMu4R6DTDK9JmD/GGO+QyGkLzv8tkVLe/MduFxX47DxQDRVV6UULb80JBNo892piK/CF6vpRwTt3xToFX7yqzR6gJNLnQp04AO5xyumuVHuyflb9ocKMrwvNCRwwiCAm/EFJc97FTsEvBQkioczmXxViEmMPdcLpqQO6bFvjd716q9ph1fcMEnrMjuMTpfXsVDbfUuPzuUqnN5gBpD8usD10thRhBjXKs9J+jziBxM2xSN0Ig2vn80RfciFtD/fvXnnesziad8/Zo3skvfxZeGkkSV19uO4Isnuqrp7lu+iEZ6RduZMyvadRo/9XinqnZLJdhBc+nQ0ccs33wCLoUdzJbZpoj8=",
+  "file": {
+    "url": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/download/v2.33.1/SiteYonetim-Kurulum-2.33.1.exe",
+    "sha512": "SQm8tEzCHb11f+VsT9F5InNHzyycQxKLbVLMbOQ9Z6BF3RjILi49oul1IYClhLRO8k6MxQlvb1tPE6B7x4/tYA==",
+    "size": 93630804
+  },
+  "page": "https://github.com/necolipasa-arch/site-yonetim-merkez/releases/tag/v2.33.1",
+  "lisans": [
+    {
+      "u": "https://ep-jolly-shape-ba957d00.apirest.c-8.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    },
+    {
+      "u": "https://ep-fancy-pond-b93i3gy6.apirest.c-7.eu-central-1.aws.neon.tech/neondb",
+      "k": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN5bG12bXphZWFpIn0.eyJyb2xlIjoiYW5vbnltb3VzIiwiaWF0IjoxNzkyODgxMzkwLCJleHAiOjI1ODEyODEzOTB9.ZLuCc1WnB4qRewxGuDn6TE_DLKZphj6V97ZvaqDR7NXJ94-vgZF6ctxccIOwk4aTrWxIOeeDmoH30jS1qZEHydb3jznoyJ09Hquz4P2iePjPM8z734qXc2F2zGVZY39RYX2U2F0LVK12MuSh_mtZ1E_rBuyN0_ArP3mtxiKJ9PrxAbxhjMrCzYryC5b6649U9dUrmC11iBcNORVaDqAbVOb7bDwL0Wi7z3eEPOjEyoaz90dY15Roznlll28qruWSVjj6IoAForOFI5LqvZuqU27N2HhajVyMxL2KaczLg5vOwXETqY_L-kyNe8Zef-bsVo2Diqw-IhmvTeoizKQlqw"
+    }
+  ],
+  "sig": "kiN7M6BNypRR29aSXVvTKS6XN6fPMauHjca5xmiVPxm9tevbRqOInYtsmoiOIhEiEz/qSdu6XHt/gsO5mSxLCQ=="
+}
